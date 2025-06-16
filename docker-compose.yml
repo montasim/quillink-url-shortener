@@ -1,20 +1,33 @@
+# Configuration for the Docker Compose file version 3.8
 version: '3.8'
+
 services:
+    # Define the services that make up your application, so they can be run together in an isolated environment.
     app:
-        build: .
+        # Configuration for the 'app' service.
+        build:
+            # Build configuration for the service.
+            context: . # The context is the set of files located in the current directory.
+            dockerfile: Dockerfile # Specifies which Dockerfile to use for the build process.
+
         ports:
-            - '3000:3000'
-        depends_on:
-            - redis
-            - postgres
+            - '3000:3000' # Binds the host port 3000 to the container port 3000.
+            - '3001:3001' # Binds the host port 3001 to the container port 3001 for Next.js' hot-reloading.
+
+        env_file:
+            - .env.development.development # Specifies the environment file to load environment variables from.
+
+        volumes:
+            - .:/usr/src/app # Mounts the current directory into the container at /usr/src/app.
+            - /usr/src/app/node_modules # Persists node_modules folder to prevent recreation on each build.
+
+        restart: unless-stopped
+
+        # The container will restart unless it is explicitly stopped.
         environment:
-            - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/shortener
-            - REDIS_URL=redis://redis:6379
-    redis:
-        image: redis:7
-    postgres:
-        image: postgres:15
-        environment:
-            POSTGRES_DB: shortener
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: postgres
+            - NODE_ENV=development # Sets the NODE_ENV environment variable to 'development'.
+            - DEBUG=true # Enables debugging capabilities by setting the DEBUG environment variable to true.
+            - NEXT_PUBLIC_NODE_ENV=development # Ensures Next.js uses the correct environment.
+
+        # Command to run the Next.js development server.
+        command: yarn dev

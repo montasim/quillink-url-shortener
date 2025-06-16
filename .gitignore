@@ -115,13 +115,13 @@ yarn-error.log*
 # ENVIRONMENT VARIABLE CONFIGURATIONS
 ####################################################
 # Purpose:
-# Environment configuration files such as `.env` files often contain
+# Environment configuration files such as `.env.development` files often contain
 # sensitive information like API keys, database URLs, or other secrets.
 # These files should not be committed to prevent unauthorized access
 # and to maintain environment-specific configurations locally.
 
 # Default environment variables file.
-.env
+.env.development
 
 # Environment variables for development builds.
 .env.development

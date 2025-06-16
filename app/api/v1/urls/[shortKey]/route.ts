@@ -6,7 +6,7 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
-import {selection} from "@/app/data/selection";
+import { selection } from '@/app/data/selection';
 
 const { URL_DELETION_MESSAGES, SINGLE_URL_DETAILS_MESSAGES } = MESSAGES;
 const { shortUrlModel } = dataService;

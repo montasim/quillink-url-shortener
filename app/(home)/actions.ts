@@ -6,7 +6,7 @@ import { deleteData } from '@/lib/axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
 
 export const handleCreate = withErrorHandler(
-    async (formData, setCreating, setUrls, setFormData) => {
+    async (formData, setCreating, setUrls, setFormData, router) => {
         if (!formData.originalUrl) {
             toast.error('Original URL is required.');
             return;
@@ -21,6 +21,7 @@ export const handleCreate = withErrorHandler(
         toast.success('Short URL created!');
         setFormData({ originalUrl: '', expiresAt: '', customKey: '' });
         setCreating(false);
+        router.push('/dashboard/urls');
     },
     'Failed to create short URL'
 );
@@ -30,11 +31,43 @@ export const handleCopy = (url: string) => {
     toast.success('Copied to clipboard');
 };
 
-export const handleShare = (url: string) => {
-    window.open(
-        `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`,
-        '_blank'
-    );
+export const handleShare = (url: string, platform: string = 'link') => {
+    const encodedUrl = encodeURIComponent(url);
+
+    switch (platform) {
+        case 'twitter':
+            window.open(
+                `https://twitter.com/intent/tweet?url=${encodedUrl}`,
+                '_blank'
+            );
+            break;
+
+        case 'facebook':
+            window.open(
+                `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+                '_blank'
+            );
+            break;
+
+        case 'instagram':
+            // Instagram does not support direct URL sharing via a link
+            alert(
+                'Instagram does not support direct web sharing. Please share manually.'
+            );
+            break;
+
+        case 'github':
+            window.open(`https://github.com/search?q=${encodedUrl}`, '_blank');
+            break;
+
+        case 'link':
+        default:
+            navigator.clipboard
+                .writeText(url)
+                .then(() => alert('Link copied to clipboard!'))
+                .catch(() => alert('Failed to copy link.'));
+            break;
+    }
 };
 
 export const handleDelete = withErrorHandler(

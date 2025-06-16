@@ -7,7 +7,7 @@ import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortenUrlSchema } from '@/schemas/schemas';
-import { selection } from "@/app/data/selection";
+import { selection } from '@/app/data/selection';
 
 const { ALL_URLS_LISTING_MESSAGES, URL_CREATION_MESSAGES } = MESSAGES;
 const { shortUrlModel } = dataService;

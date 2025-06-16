@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    Menubar,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarTrigger,
-} from '@/components/ui/menubar';
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSub,
+    DropdownMenuSubTrigger,
+    DropdownMenuSubContent,
+} from '@/components/ui/dropdown-menu';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { MoreHorizontal, Copy, Share2, Info, Trash2 } from 'lucide-react';
+import { MoreHorizontal, Copy, Share2, Info, Trash2, Link, Facebook, Instagram, Github } from 'lucide-react';
 import { IShortUrl } from '@/app/data/types';
 import {
     handleCopy,
@@ -71,29 +73,76 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                 </TableCell>
                 <TableCell>{url.clicks ?? 0}</TableCell>
                 <TableCell className="text-center">
-                    <Menubar>
-                        <MenubarMenu>
-                            <MenubarTrigger asChild>
+                    <div className="flex items-center justify-center gap-2">
+                        {/* Copy Button */}
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleCopy(shortUrlFull)}
+                            aria-label="Copy URL"
+                        >
+                            <Copy className="h-4 w-4 mr-1" />
+                        </Button>
+
+                        {/* Dropdown Menu Button */}
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    aria-label="Actions"
+                                    aria-label="More Actions"
                                 >
                                     <MoreHorizontal className="h-5 w-5" />
                                 </Button>
-                            </MenubarTrigger>
-                            <MenubarContent align="end" className="w-44">
-                                <MenubarItem
-                                    onClick={() => handleCopy(shortUrlFull)}
-                                >
-                                    <Copy className="mr-2 h-4 w-4" /> Copy
-                                </MenubarItem>
-                                <MenubarItem
-                                    onClick={() => handleShare(shortUrlFull)}
-                                >
-                                    <Share2 className="mr-2 h-4 w-4" /> Share
-                                </MenubarItem>
-                                <MenubarItem
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-52">
+                                <DropdownMenuSub>
+                                    <DropdownMenuSubTrigger>
+                                        <Share2 className="mr-2 h-4 w-4" />
+                                        Share
+                                    </DropdownMenuSubTrigger>
+                                    <DropdownMenuSubContent>
+                                        <DropdownMenuItem
+                                            onClick={() =>
+                                                handleShare(shortUrlFull)
+                                            }
+                                        >
+                                            <span className="flex items-center gap-2"><Link/> Share as Link</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            onClick={() =>
+                                                handleShare(
+                                                    shortUrlFull,
+                                                    'facebook'
+                                                )
+                                            }
+                                        >
+                                            <span className="flex items-center gap-2"><Facebook/> Share with Facebook</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            onClick={() =>
+                                                handleShare(
+                                                    shortUrlFull,
+                                                    'instagram'
+                                                )
+                                            }
+                                        >
+                                            <span className="flex items-center gap-2"><Instagram/> Share with Instagram</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            onClick={() =>
+                                                handleShare(
+                                                    shortUrlFull,
+                                                    'github'
+                                                )
+                                            }
+                                        >
+                                            <span className="flex items-center gap-2"><Github/> Share with GitHub</span>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuSubContent>
+                                </DropdownMenuSub>
+
+                                <DropdownMenuItem
                                     onClick={() =>
                                         setExpandedId(
                                             expandedId === url.id
@@ -103,17 +152,18 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                     }
                                 >
                                     <Info className="mr-2 h-4 w-4" /> Details
-                                </MenubarItem>
-                                <MenubarItem
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
                                     onClick={() =>
                                         handleDelete(setUrls, url.shortKey)
                                     }
                                 >
-                                    <Trash2 className="mr-2 h-4 w-4" /> Delete
-                                </MenubarItem>
-                            </MenubarContent>
-                        </MenubarMenu>
-                    </Menubar>
+                                    <Trash2 className="mr-2 h-4 w-4 text-red-600" />{' '}
+                                    Delete
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </TableCell>
             </TableRow>
 
