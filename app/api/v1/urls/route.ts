@@ -7,6 +7,7 @@ import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortenUrlSchema } from '@/schemas/schemas';
+import { selection } from "@/app/data/selection";
 
 const { ALL_URLS_LISTING_MESSAGES, URL_CREATION_MESSAGES } = MESSAGES;
 const { shortUrlModel } = dataService;
@@ -51,6 +52,7 @@ const createShortUrl = async (request: NextRequest) => {
             shortKey: generatedShortKey,
             expiresAt: expirationDate,
         },
+        select: selection, // includes fields like clickLogs
     });
 
     // Return a success response with the newly created short URL
@@ -101,9 +103,7 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
     // Fetch short URL records from the database based on filter conditions
     const shortUrlRecords = await shortUrlModel.findMany({
         where: filterConditions,
-        include: {
-            clickLogs: true,
-        },
+        select: selection,
         orderBy: { createdAt: 'desc' },
     });
 

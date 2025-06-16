@@ -6,6 +6,7 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
+import {selection} from "@/app/data/selection";
 
 const { URL_DELETION_MESSAGES, SINGLE_URL_DETAILS_MESSAGES } = MESSAGES;
 const { shortUrlModel } = dataService;
@@ -56,9 +57,7 @@ const getShortUrlDetailsById = async (
     // Find the short URL record, including its click logs
     const shortUrlRecord = await shortUrlModel.findUnique({
         where: { shortKey },
-        include: {
-            clickLogs: true,
-        },
+        select: selection,
     });
 
     // If no record is found, return a 404 response
