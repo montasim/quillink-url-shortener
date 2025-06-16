@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+    app:
+        build: .
+        ports:
+            - '3000:3000'
+        depends_on:
+            - redis
+            - postgres
+        environment:
+            - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/shortener
+            - REDIS_URL=redis://redis:6379
+    redis:
+        image: redis:7
+    postgres:
+        image: postgres:15
+        environment:
+            POSTGRES_DB: shortener
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
