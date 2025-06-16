@@ -10,7 +10,17 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { MoreHorizontal, Copy, Share2, Info, Trash2, Link, Facebook, Instagram, Github } from 'lucide-react';
+import {
+    MoreHorizontal,
+    Copy,
+    Share2,
+    Info,
+    Trash2,
+    Link,
+    Facebook,
+    Instagram,
+    Github,
+} from 'lucide-react';
 import { IShortUrl } from '@/app/data/types';
 import {
     handleCopy,
@@ -107,7 +117,9 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                                 handleShare(shortUrlFull)
                                             }
                                         >
-                                            <span className="flex items-center gap-2"><Link/> Share as Link</span>
+                                            <span className="flex items-center gap-2">
+                                                <Link /> Share as Link
+                                            </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
                                             onClick={() =>
@@ -117,7 +129,9 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                                 )
                                             }
                                         >
-                                            <span className="flex items-center gap-2"><Facebook/> Share with Facebook</span>
+                                            <span className="flex items-center gap-2">
+                                                <Facebook /> Share with Facebook
+                                            </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
                                             onClick={() =>
@@ -127,7 +141,10 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                                 )
                                             }
                                         >
-                                            <span className="flex items-center gap-2"><Instagram/> Share with Instagram</span>
+                                            <span className="flex items-center gap-2">
+                                                <Instagram /> Share with
+                                                Instagram
+                                            </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
                                             onClick={() =>
@@ -137,7 +154,9 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                                 )
                                             }
                                         >
-                                            <span className="flex items-center gap-2"><Github/> Share with GitHub</span>
+                                            <span className="flex items-center gap-2">
+                                                <Github /> Share with GitHub
+                                            </span>
                                         </DropdownMenuItem>
                                     </DropdownMenuSubContent>
                                 </DropdownMenuSub>
