@@ -17,9 +17,10 @@ export const handleLogin = withErrorHandler(
 
 export const handleGoogleLogin = () => {
     const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
+
     const options = {
-        redirect_uri: configuration.googleOauth2.redirectUri,
-        client_id: configuration.googleOauth2.clientId,
+        redirect_uri: process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI || '',
+        client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
         access_type: 'offline',
         response_type: 'code',
         prompt: 'consent',
