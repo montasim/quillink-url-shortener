@@ -53,4 +53,4 @@ export const clearAuthCookies = async () => {
     const cookieJar = await cookies();
     cookieJar.delete('accessToken');
     cookieJar.delete('refreshToken');
-}
+};
