@@ -19,7 +19,7 @@ const createShortUrl = async (request: NextRequest) => {
     const schemaValidationResult = ShortenUrlSchema.safeParse(requestBody); // Renamed from parseResult
     if (!schemaValidationResult.success) {
         return sendResponse(
-            httpStatusLite.UNPROCESSABLE_ENTITY,
+            httpStatusLite.BAD_REQUEST,
             URL_CREATION_MESSAGES.VALIDATION_ERROR,
             {},
             schemaValidationResult.error.flatten()
@@ -32,7 +32,6 @@ const createShortUrl = async (request: NextRequest) => {
     const existingShortUrlRecord = await shortUrlModel.findFirst({
         where: { originalUrl },
     });
-
     if (existingShortUrlRecord) {
         return sendResponse(
             httpStatusLite.OK,

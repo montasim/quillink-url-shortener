@@ -15,3 +15,9 @@ export interface IShortUrl {
     clicks: number;
     clickLogs: IClickLog[];
 }
+
+export interface IUser {
+    id?: string;
+    name: string;
+    email: string;
+}

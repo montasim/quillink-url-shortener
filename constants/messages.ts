@@ -46,6 +46,19 @@ const URL_VALIDATION = {
     INVALID_SHORT_KEY: 'Invalid short key format.',
 };
 
+const USER_LOGIN_MESSAGES = {
+    VALIDATION_ERROR: 'Invalid request data.',
+    UNAUTHORIZED:
+        'Unauthorized access. Please check your email and password and try again.',
+    AUTHORIZED: 'Authorized',
+};
+
+const USER_SIGNUP_MESSAGES = {
+    VALIDATION_ERROR: 'Invalid request data.',
+    ALREADY_EXISTS: 'Account already exists.',
+    CREATED: 'Signup successful. Login to your account.',
+};
+
 const COMMON = {
     VALIDATION_REQUIRED: 'This field is required.',
     VALIDATION_ERROR: 'Invalid request data.',
@@ -60,6 +73,8 @@ const MESSAGES = {
     URL_REDIRECT_MESSAGES,
     ALL_URLS_LISTING_MESSAGES,
     URL_VALIDATION,
+    USER_LOGIN_MESSAGES,
+    USER_SIGNUP_MESSAGES,
     COMMON,
 };
 

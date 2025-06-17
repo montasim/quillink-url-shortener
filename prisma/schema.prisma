@@ -33,3 +33,12 @@ model ShortUrl {
   createdAt   DateTime   @default(now())
   expiresAt   DateTime?
 }
+
+model User {
+  id        String    @id @default(cuid()) @map("_id")
+  name      String
+  email     String    @unique
+  password  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+}

@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,23 +18,24 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import configuration from '@/configuration/configuration';
+import {handleGoogleLogin, handleLogin} from '@/app/login/actions';
+import { LoginSchema } from '@/schemas/schemas';
 
-const formSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(8, 'Password must be at least 8 characters long'),
-});
+const LoginPage = () => {
+    const router = useRouter();
+    const [loading, setLoading] = useState(false);
 
-const Login01Page = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
+    const form = useForm<z.infer<typeof LoginSchema>>({
         defaultValues: {
             email: '',
             password: '',
         },
-        resolver: zodResolver(formSchema),
+        resolver: zodResolver(LoginSchema),
     });
 
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
+        await handleLogin(data, setLoading, router);
     };
 
     return (
@@ -40,10 +43,10 @@ const Login01Page = () => {
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight">
-                    Log in to Shadcn UI Blocks
+                    Log in to {configuration.name} account
                 </p>
 
-                <Button className="mt-8 w-full gap-3">
+                <Button onClick={handleGoogleLogin} className="mt-8 w-full gap-3">
                     <GoogleLogo />
                     Continue with Google
                 </Button>
@@ -95,8 +98,12 @@ const Login01Page = () => {
                                 </FormItem>
                             )}
                         />
-                        <Button type="submit" className="mt-4 w-full">
-                            Continue with Email
+                        <Button
+                            type="submit"
+                            className="mt-4 w-full"
+                            disabled={loading}
+                        >
+                            {loading ? 'Logging in...' : 'Continue with Email'}
                         </Button>
                     </form>
                 </Form>
@@ -111,7 +118,7 @@ const Login01Page = () => {
                     <p className="text-sm text-center">
                         Don&apos;t have an account?
                         <Link
-                            href="#"
+                            href="/signup"
                             className="ml-1 underline text-muted-foreground"
                         >
                             Create account
@@ -159,4 +166,4 @@ const GoogleLogo = () => (
     </svg>
 );
 
-export default Login01Page;
+export default LoginPage;

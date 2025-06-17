@@ -16,23 +16,28 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { SignupSchema } from '@/schemas/schemas';
+import { handleSignup } from '@/app/signup/actions';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import configuration from "@/configuration/configuration";
+import {handleGoogleLogin} from "@/app/login/actions";
 
-const formSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(8, 'Password must be at least 8 characters long'),
-});
+const SignUpPage = () => {
+    const router = useRouter();
+    const [loading, setLoading] = useState(false);
 
-const SignUp04Page = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
+    const form = useForm<z.infer<typeof SignupSchema>>({
         defaultValues: {
+            name: '',
             email: '',
             password: '',
         },
-        resolver: zodResolver(formSchema),
+        resolver: zodResolver(SignupSchema),
     });
 
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof SignupSchema>) => {
+        await handleSignup(data, setLoading, router);
     };
 
     return (
@@ -41,10 +46,10 @@ const SignUp04Page = () => {
                 <div className="max-w-xs m-auto w-full flex flex-col items-center">
                     <Logo />
                     <p className="mt-4 text-xl font-bold tracking-tight">
-                        Sign up for Shadcn UI Blocks
+                        Sign up for {configuration.name} account
                     </p>
 
-                    <Button className="mt-8 w-full gap-3">
+                    <Button onClick={handleGoogleLogin} className="mt-8 w-full gap-3">
                         <GoogleLogo />
                         Continue with Google
                     </Button>
@@ -60,6 +65,24 @@ const SignUp04Page = () => {
                             className="w-full space-y-4"
                             onSubmit={form.handleSubmit(onSubmit)}
                         >
+                            <FormField
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Name</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="text"
+                                                placeholder="Name"
+                                                className="w-full"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
                             <FormField
                                 control={form.control}
                                 name="email"
@@ -96,8 +119,14 @@ const SignUp04Page = () => {
                                     </FormItem>
                                 )}
                             />
-                            <Button type="submit" className="mt-4 w-full">
-                                Continue with Email
+                            <Button
+                                type="submit"
+                                className="mt-4 w-full"
+                                disabled={loading}
+                            >
+                                {loading
+                                    ? 'Signing up...'
+                                    : 'Continue with Email'}
                             </Button>
                         </form>
                     </Form>
@@ -105,7 +134,7 @@ const SignUp04Page = () => {
                     <p className="mt-5 text-sm text-center">
                         Already have an account?
                         <Link
-                            href="#"
+                            href="/login"
                             className="ml-1 underline text-muted-foreground"
                         >
                             Log in
@@ -154,4 +183,4 @@ const GoogleLogo = () => (
     </svg>
 );
 
-export default SignUp04Page;
+export default SignUpPage;
