@@ -1,6 +1,12 @@
 import jwt from 'jsonwebtoken';
 import configuration from '@/configuration/configuration';
 
+type JwtPayload = {
+    id: string;
+    name: string;
+    email: string;
+};
+
 export const createToken = async (userDetails: {}) => {
     const tokenDetails = {
         expiry: new Date(Date.now() + configuration.jwt.accessToken.expiration),
@@ -34,4 +40,18 @@ export const createToken = async (userDetails: {}) => {
     );
 
     return { accessToken, refreshToken, tokenDetails };
+};
+
+export const verifyToken = (
+    token: string,
+    type: 'access' | 'refresh' = 'access'
+): JwtPayload => {
+    const secret = type === 'access' ? configuration.jwt.accessToken.secret : configuration.jwt.refreshToken.secret;
+
+    try {
+        const decoded = jwt.verify(token, secret);
+        return decoded as JwtPayload;
+    } catch (err) {
+        throw new Error('Invalid or expired token');
+    }
 };

@@ -5,12 +5,11 @@ import { createToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import { cookies } from 'next/headers';
 import httpStatus from 'http-status-lite';
+import asyncError from "@/lib/asyncError";
+import configuration from "@/configuration/configuration";
+import contentTypesLite from "content-types-lite";
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID!;
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!;
-const REDIRECT_URI = 'https://quillink.netlify.app/api/v1/auth/google/callback';
-
-export const GET = async (req: NextRequest) => {
+const handleGoogleLogin = async (req: NextRequest) => {
     const url = new URL(req.url);
     const code = url.searchParams.get('code');
 
@@ -24,14 +23,14 @@ export const GET = async (req: NextRequest) => {
             'https://oauth2.googleapis.com/token',
             {
                 code,
-                client_id: GOOGLE_CLIENT_ID,
-                client_secret: GOOGLE_CLIENT_SECRET,
-                redirect_uri: REDIRECT_URI,
+                client_id: configuration.googleOauth2.clientId,
+                client_secret: configuration.googleOauth2.clientSecret,
+                redirect_uri: configuration.googleOauth2.redirectUri,
                 grant_type: 'authorization_code',
             },
             {
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': contentTypesLite.JSON,
                 },
             }
         );
@@ -57,7 +56,7 @@ export const GET = async (req: NextRequest) => {
         const cookieJar = await cookies();
         cookieJar.set('accessToken', accessToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             sameSite: 'lax',
             path: '/',
             maxAge: 60 * 60,
@@ -65,7 +64,7 @@ export const GET = async (req: NextRequest) => {
 
         cookieJar.set('refreshToken', refreshToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             sameSite: 'lax',
             path: '/',
             maxAge: 60 * 60 * 24 * 7,
@@ -81,3 +80,5 @@ export const GET = async (req: NextRequest) => {
         );
     }
 };
+
+export const GET = asyncError(handleGoogleLogin);
