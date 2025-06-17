@@ -5,6 +5,7 @@ type GoogleProfile = {
     email: string;
     name: string;
     picture: string;
+    provider: string;
 };
 
 export const upsertUserFromGoogleProfile = async (profile: GoogleProfile) => {
@@ -15,10 +16,13 @@ export const upsertUserFromGoogleProfile = async (profile: GoogleProfile) => {
         where: { email },
         update: {
             name,
+            picture,
         },
         create: {
             email,
             name,
+            picture,
+            provider: 'google',
         },
         select: {
             id: true,

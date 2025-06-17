@@ -37,8 +37,10 @@ model ShortUrl {
 model User {
   id        String    @id @default(cuid()) @map("_id")
   name      String
+  picture   String?
   email     String    @unique
   password  String?
+  provider  String? // e.g., 'google', 'credentials'
   createdAt DateTime  @default(now())
   updatedAt DateTime?
 }
