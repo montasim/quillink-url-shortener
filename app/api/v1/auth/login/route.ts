@@ -32,10 +32,10 @@ const loginHandler = async (req: NextRequest) => {
     const user = await userModel.findUnique({
         where: { email },
         select: {
-            id: true,
             name: true,
             email: true,
             password: true,
+            picture: true,
         },
     });
 
@@ -58,21 +58,20 @@ const loginHandler = async (req: NextRequest) => {
         );
     }
 
-    // ✅ Generate JWT tokens
-    const { accessToken, refreshToken } = await createToken({
-        id: user.id,
+    const userData = {
         name: user.name,
         email: user.email,
-    });
+        picture: user.picture,
+    };
+
+    // ✅ Generate JWT tokens
+    const { accessToken, refreshToken } = await createToken(userData);
 
     // ✅ Set cookies
     await setAuthCookies({ accessToken, refreshToken });
 
     // ✅ Return response with public user info only
-    return sendResponse(httpStatus.OK, USER_LOGIN_MESSAGES.AUTHORIZED, {
-        name: user.name,
-        email: user.email,
-    });
+    return sendResponse(httpStatus.OK, USER_LOGIN_MESSAGES.AUTHORIZED, userData);
 };
 
 export const POST = asyncError(loginHandler);

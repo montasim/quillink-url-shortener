@@ -23,7 +23,7 @@ const refreshTokenHandler = async () => {
         const decoded = verifyToken(refreshToken, 'refresh');
 
         // Access nested properties: decoded.currentUser.id or decoded.currentUser.email
-        if (!decoded || !decoded.currentUser || !decoded.currentUser.id) {
+        if (!decoded || !decoded.currentUser || !decoded.currentUser.email) {
             return sendResponse(
                 httpStatus.UNAUTHORIZED,
                 'Invalid refresh token payload or missing user info'
@@ -32,9 +32,8 @@ const refreshTokenHandler = async () => {
 
         // Use decoded.currentUser.id for lookup, as it's the primary key
         const user = await prisma.user.findUnique({
-            where: { id: decoded.currentUser.id },
+            where: { email: decoded.currentUser.email },
             select: {
-                id: true,
                 name: true,
                 email: true,
                 picture: true,
@@ -65,13 +64,7 @@ const refreshTokenHandler = async () => {
             refreshToken: newRefreshToken,
         });
 
-        const userData = {
-            name: user.name,
-            email: user.email,
-            picture: user.picture,
-        };
-
-        return sendResponse(httpStatus.OK, 'Access token refreshed', userData);
+        return sendResponse(httpStatus.OK, 'Access token refreshed', user);
     } catch (error) {
         console.error('Refresh token error:', error);
         // Distinguish between actual token expiration/invalidity and other errors
