@@ -12,8 +12,13 @@ const meHandler = async () => {
     }
 
     try {
-        const user = verifyToken(token);
-        return sendResponse(httpStatus.OK, 'User authenticated', user);
+        const user = verifyToken(token, 'access');
+        const userData = {
+            name: user.currentUser.name,
+            email: user.currentUser.email,
+            picture: user.currentUser.picture,
+        };
+        return sendResponse(httpStatus.OK, 'User authenticated', userData);
     } catch (error) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,

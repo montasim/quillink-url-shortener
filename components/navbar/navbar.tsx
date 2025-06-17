@@ -3,82 +3,43 @@
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { NavMenu } from '@/components/navbar/nav-menu';
+import Loading from '@/components/navbar/loading';
 import { NavigationSheet } from '@/components/navbar/navigation-sheet';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { checkAuth } from '@/components/navbar/actions';
 
-// Assuming checkAuth remains the same as previously defined
-export const checkAuth = async (): Promise<boolean> => {
-    try {
-        const res = await fetch('/api/v1/auth/me', {
-            method: 'GET',
-            credentials: 'include',
-        });
-
-        if (res.status === 200) {
-            return true;
-        }
-
-        if (res.status === 401) {
-            const refreshRes = await fetch('/api/v1/auth/refresh', {
-                method: 'GET',
-                credentials: 'include',
-            });
-            return refreshRes.status === 200;
-        }
-        return false;
-    } catch (err) {
-        console.error('Error during authentication check:', err);
-        return false;
-    }
-};
+// Define the UserProfile interface to match what checkAuth returns
+interface UserProfile {
+    id: string;
+    name: string;
+    email: string;
+    picture?: string;
+}
 
 const NavbarPage = () => {
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
     const [authChecked, setAuthChecked] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
 
         const verify = async () => {
-            const result = await checkAuth();
-            setIsAuthenticated(result);
-            setAuthChecked(true); // Indicate that auth check is complete
+            const { authenticated, user } = await checkAuth();
+            setIsAuthenticated(authenticated);
+            setUserProfile(user || null);
+            setAuthChecked(true);
         };
 
         verify();
     }, []);
 
-    // --- Loading State ---
     if (!isMounted || !authChecked) {
-        // Render a basic skeleton or loading indicator for the navbar
-        return (
-            <div className="bg-muted">
-                <nav className="h-16 bg-background border-b animate-pulse">
-                    <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex items-center gap-8">
-                            <div className="h-6 w-24 bg-gray-200 rounded"></div>{' '}
-                            {/* Skeleton for Logo */}
-                            <div className="hidden md:flex gap-4">
-                                <div className="h-6 w-20 bg-gray-200 rounded"></div>{' '}
-                                {/* Skeleton for NavMenu items */}
-                                <div className="h-6 w-20 bg-gray-200 rounded"></div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className="h-10 w-20 bg-gray-200 rounded"></div>{' '}
-                            {/* Skeleton for Buttons */}
-                            <div className="h-10 w-10 bg-gray-200 rounded-full md:hidden"></div>{' '}
-                            {/* Skeleton for Mobile Menu */}
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        );
+        return <Loading />;
     }
-    // --- End Loading State ---
 
     return (
         <div className="bg-muted">
@@ -90,7 +51,38 @@ const NavbarPage = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        {!isAuthenticated && (
+                        {isAuthenticated && userProfile ? (
+                            <div className="flex items-center gap-2">
+                                {userProfile.picture ? (
+                                    <img
+                                        src={userProfile.picture}
+                                        alt={userProfile.name || 'User Avatar'}
+                                        className="h-10 w-10 rounded-full object-cover cursor-pointer"
+                                        // You might want to add an onClick here to go to profile/dashboard
+                                        onClick={() =>
+                                            router.push('/dashboard/profile')
+                                        }
+                                    />
+                                ) : (
+                                    // Fallback if no picture URL is available
+                                    <div
+                                        className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer"
+                                        onClick={() =>
+                                            router.push('/dashboard/profile')
+                                        }
+                                    >
+                                        {userProfile.name
+                                            ? userProfile.name
+                                                  .charAt(0)
+                                                  .toUpperCase()
+                                            : 'U'}
+                                    </div>
+                                )}
+                                {/* Optional: Display user name next to picture */}
+                                {/* <span className="hidden sm:inline text-sm font-medium">{userProfile.name}</span> */}
+                            </div>
+                        ) : (
+                            // If not authenticated, show Sign In/Sign Up buttons
                             <>
                                 <Button
                                     variant="outline"
