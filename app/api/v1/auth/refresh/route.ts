@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import jwt from 'jsonwebtoken';
 import { verifyToken, createToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import prisma from '@/lib/prisma';
