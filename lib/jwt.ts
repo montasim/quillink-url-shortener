@@ -3,7 +3,6 @@ import configuration from '@/configuration/configuration';
 
 // Define the shape of the user details you pass into the token
 interface TokenUserDetails {
-    id: string;
     name: string;
     email: string;
     picture?: string | null;
