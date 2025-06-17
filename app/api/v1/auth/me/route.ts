@@ -3,28 +3,57 @@ import httpStatus from 'http-status-lite';
 import { verifyToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import asyncError from '@/lib/asyncError';
+import MESSAGES from '@/constants/messages';
+import dataService from '@/lib/databaseOperation';
+import { meSelection } from '@/app/api/v1/auth/me/selection';
 
-const meHandler = async () => {
+const { AUTHENTICATION_MESSAGES, ME_HANDLER_MESSAGES } = MESSAGES;
+const { userModel } = dataService;
+
+const retrieveUserProfileHandler = async () => {
     const cookieStore = await cookies();
-    const token = cookieStore.get('accessToken')?.value;
-    if (!token) {
-        return sendResponse(httpStatus.UNAUTHORIZED, 'Not authenticated');
-    }
+    const accessToken = cookieStore.get('accessToken')?.value;
 
-    try {
-        const user = verifyToken(token, 'access');
-        const userData = {
-            name: user.currentUser.name,
-            email: user.currentUser.email,
-            picture: user.currentUser.picture,
-        };
-        return sendResponse(httpStatus.OK, 'User authenticated', userData);
-    } catch (error) {
+    if (!accessToken) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
-            'Invalid or expired token'
+            AUTHENTICATION_MESSAGES.UNAUTHORIZED
         );
     }
+
+    let decodedPayload: any;
+    try {
+        decodedPayload = verifyToken(accessToken, 'access');
+    } catch (error) {
+        console.error('Access token verification failed:', error);
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+        );
+    }
+
+    console.log(decodedPayload);
+
+    if (!decodedPayload || !decodedPayload?.currentUser?.id) {
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+        );
+    }
+
+    const user = await userModel.findUnique({
+        where: { id: decodedPayload?.currentUser?.id },
+        select: meSelection,
+    });
+
+    if (!user) {
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+        );
+    }
+
+    return sendResponse(httpStatus.OK, ME_HANDLER_MESSAGES.SUCCESSFUL, user);
 };
 
-export const GET = asyncError(meHandler);
+export const GET = asyncError(retrieveUserProfileHandler);

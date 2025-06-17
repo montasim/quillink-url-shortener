@@ -53,6 +53,24 @@ const USER_LOGIN_MESSAGES = {
     AUTHORIZED: 'Authorized',
 };
 
+const REFRESH_TOKEN_MESSAGES = {
+    VALIDATION_ERROR: 'No refresh token provided',
+    UNAUTHORIZED: 'Invalid token. Please login and try again.',
+    SUCCESSFUL: 'Successful.',
+};
+
+const ME_HANDLER_MESSAGES = {
+    VALIDATION_ERROR: 'No refresh token provided',
+    UNAUTHORIZED: 'Invalid token. Please login and try again.',
+    SUCCESSFUL: 'Successful.',
+};
+
+const AUTHENTICATION_MESSAGES = {
+    VALIDATION_ERROR: 'No refresh token provided',
+    UNAUTHORIZED: 'Invalid token. Please login and try again.',
+    SUCCESSFUL: 'Successful.',
+};
+
 const USER_SIGNUP_MESSAGES = {
     VALIDATION_ERROR: 'Invalid request data.',
     ALREADY_EXISTS: 'Account already exists.',
@@ -74,7 +92,10 @@ const MESSAGES = {
     ALL_URLS_LISTING_MESSAGES,
     URL_VALIDATION,
     USER_LOGIN_MESSAGES,
+    REFRESH_TOKEN_MESSAGES,
+    ME_HANDLER_MESSAGES,
     USER_SIGNUP_MESSAGES,
+    AUTHENTICATION_MESSAGES,
     COMMON,
 };
 

@@ -8,6 +8,7 @@ import comparePassword from '@/utils/comparePassword';
 import { createToken } from '@/lib/jwt';
 import asyncError from '@/lib/asyncError';
 import { setAuthCookies } from '@/lib/cookies';
+import { loginSelection } from '@/app/api/v1/auth/login/selection';
 
 const { USER_LOGIN_MESSAGES } = MESSAGES;
 const { userModel } = dataService;
@@ -31,12 +32,7 @@ const loginHandler = async (req: NextRequest) => {
     // ✅ Find user by email
     const user = await userModel.findUnique({
         where: { email },
-        select: {
-            name: true,
-            email: true,
-            password: true,
-            picture: true,
-        },
+        select: loginSelection,
     });
 
     if (!user) {
@@ -59,6 +55,7 @@ const loginHandler = async (req: NextRequest) => {
     }
 
     const userData = {
+        id: user.id,
         name: user.name,
         email: user.email,
         picture: user.picture,
@@ -70,8 +67,14 @@ const loginHandler = async (req: NextRequest) => {
     // ✅ Set cookies
     await setAuthCookies({ accessToken, refreshToken });
 
+    delete userData.id;
+
     // ✅ Return response with public user info only
-    return sendResponse(httpStatus.OK, USER_LOGIN_MESSAGES.AUTHORIZED, userData);
+    return sendResponse(
+        httpStatus.OK,
+        USER_LOGIN_MESSAGES.AUTHORIZED,
+        userData
+    );
 };
 
 export const POST = asyncError(loginHandler);
