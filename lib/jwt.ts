@@ -6,7 +6,7 @@ interface TokenUserDetails {
     id: string;
     name: string;
     email: string;
-    picture?: string; // Add picture if it's consistently part of user details
+    picture?: string | null;
 }
 
 // Define the shape of the token payload *as it's actually signed*
