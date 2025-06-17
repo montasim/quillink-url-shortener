@@ -3,18 +3,21 @@ import axios from 'axios';
 import { upsertUserFromGoogleProfile } from '@/lib/userService';
 import { createToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
-import { cookies } from 'next/headers';
 import httpStatus from 'http-status-lite';
-import asyncError from "@/lib/asyncError";
-import configuration from "@/configuration/configuration";
-import contentTypesLite from "content-types-lite";
+import asyncError from '@/lib/asyncError';
+import configuration from '@/configuration/configuration';
+import contentTypesLite from 'content-types-lite';
+import { setAuthCookies } from '@/lib/cookies';
 
 const handleGoogleLogin = async (req: NextRequest) => {
     const url = new URL(req.url);
     const code = url.searchParams.get('code');
 
     if (!code) {
-        return sendResponse(httpStatus.BAD_REQUEST, 'Missing authorization code');
+        return sendResponse(
+            httpStatus.BAD_REQUEST,
+            'Missing authorization code'
+        );
     }
 
     try {
@@ -53,22 +56,7 @@ const handleGoogleLogin = async (req: NextRequest) => {
         // Generate tokens
         const { accessToken, refreshToken } = await createToken(user);
 
-        const cookieJar = await cookies();
-        cookieJar.set('accessToken', accessToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'lax',
-            path: '/',
-            maxAge: 60 * 60,
-        });
-
-        cookieJar.set('refreshToken', refreshToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'lax',
-            path: '/',
-            maxAge: 60 * 60 * 24 * 7,
-        });
+        await setAuthCookies({ accessToken, refreshToken });
 
         // ✅ Redirect to dashboard
         return NextResponse.redirect(new URL('/dashboard/urls', req.url));

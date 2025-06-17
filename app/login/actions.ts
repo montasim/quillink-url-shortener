@@ -1,7 +1,7 @@
 import { toast } from 'sonner';
 import axios from 'axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
-import configuration from "@/configuration/configuration";
+import configuration from '@/configuration/configuration';
 
 export const handleLogin = withErrorHandler(
     async (formData, setLoading: (val: boolean) => void, router: any) => {

@@ -1,5 +1,4 @@
 import { NextRequest } from 'next/server';
-import { cookies } from 'next/headers';
 import httpStatus from 'http-status-lite';
 import { LoginSchema } from '@/schemas/schemas';
 import sendResponse from '@/utils/sendResponse';
@@ -8,6 +7,7 @@ import dataService from '@/lib/databaseOperation';
 import comparePassword from '@/utils/comparePassword';
 import { createToken } from '@/lib/jwt';
 import asyncError from '@/lib/asyncError';
+import { setAuthCookies } from '@/lib/cookies';
 
 const { USER_LOGIN_MESSAGES } = MESSAGES;
 const { userModel } = dataService;
@@ -47,7 +47,10 @@ const loginHandler = async (req: NextRequest) => {
     }
 
     // ✅ Validate password
-    const isValidPassword = await comparePassword(password, user.password || '');
+    const isValidPassword = await comparePassword(
+        password,
+        user.password || ''
+    );
     if (!isValidPassword) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
@@ -62,23 +65,8 @@ const loginHandler = async (req: NextRequest) => {
         email: user.email,
     });
 
-    // ✅ Set HTTP-only cookies
-    const cookieJar = await cookies();
-    cookieJar.set('accessToken', accessToken, {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'lax',
-        path: '/',
-        maxAge: 60 * 60, // 1 hour
-    });
-
-    cookieJar.set('refreshToken', refreshToken, {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'lax',
-        path: '/',
-        maxAge: 60 * 60 * 24 * 7, // 7 days
-    });
+    // ✅ Set cookies
+    await setAuthCookies({ accessToken, refreshToken });
 
     // ✅ Return response with public user info only
     return sendResponse(httpStatus.OK, USER_LOGIN_MESSAGES.AUTHORIZED, {

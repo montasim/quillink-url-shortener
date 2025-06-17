@@ -3,35 +3,54 @@ import { verifyToken, createToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import prisma from '@/lib/prisma';
 import httpStatus from 'http-status-lite';
+import asyncError from '@/lib/asyncError';
+import { setAuthCookies } from '@/lib/cookies';
 
-export const GET = async () => {
+const refreshTokenHandler = async () => {
     const cookieJar = await cookies();
     const refreshToken = cookieJar.get('refreshToken')?.value;
 
     if (!refreshToken) {
-        return sendResponse(httpStatus.UNAUTHORIZED, 'No refresh token provided');
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            'No refresh token provided'
+        );
     }
 
     try {
         const decoded = verifyToken(refreshToken);
-        const user = await prisma.user.findUnique({ where: { id: decoded.id } });
+
+        if (!decoded || !decoded.id) {
+            return sendResponse(
+                httpStatus.UNAUTHORIZED,
+                'Invalid refresh token payload'
+            );
+        }
+
+        const user = await prisma.user.findUnique({
+            where: { id: decoded.id },
+        });
 
         if (!user) {
             return sendResponse(httpStatus.UNAUTHORIZED, 'User not found');
         }
 
-        const { accessToken } = await createToken(user);
+        const { accessToken, refreshToken: newRefreshToken } =
+            await createToken(user);
 
-        cookieJar.set('accessToken', accessToken, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'lax',
-            path: '/',
-            maxAge: 60 * 60, // 1 hour
+        await setAuthCookies({
+            accessToken,
+            refreshToken: newRefreshToken || refreshToken,
         });
 
         return sendResponse(httpStatus.OK, 'Access token refreshed');
     } catch (error) {
-        return sendResponse(httpStatus.UNAUTHORIZED, 'Invalid refresh token');
+        console.error('Refresh token error:', error);
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            'Invalid or expired refresh token'
+        );
     }
 };
+
+export const GET = asyncError(refreshTokenHandler);

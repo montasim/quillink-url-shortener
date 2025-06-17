@@ -7,42 +7,28 @@ import { NavigationSheet } from '@/components/navbar/navigation-sheet';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+// Assuming checkAuth remains the same as previously defined
 export const checkAuth = async (): Promise<boolean> => {
     try {
-        console.log("Checking authentication...");
         const res = await fetch('/api/v1/auth/me', {
             method: 'GET',
             credentials: 'include',
         });
 
-        console.log("Auth check response status:", res.status);
-
         if (res.status === 200) {
-            console.log("User is authenticated via /me endpoint.");
             return true;
         }
 
         if (res.status === 401) {
-            console.log("Unauthorized, attempting to refresh token...");
             const refreshRes = await fetch('/api/v1/auth/refresh', {
                 method: 'GET',
                 credentials: 'include',
             });
-
-            console.log("Refresh token response status:", refreshRes.status);
-            if (refreshRes.status === 200) {
-                console.log("Token refreshed successfully.");
-                return true;
-            } else {
-                console.log("Failed to refresh token.");
-                return false;
-            }
+            return refreshRes.status === 200;
         }
-
-        console.log("Authentication failed with status:", res.status);
         return false;
     } catch (err) {
-        console.error("Error during authentication check:", err);
+        console.error('Error during authentication check:', err);
         return false;
     }
 };
@@ -51,21 +37,48 @@ const NavbarPage = () => {
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [authChecked, setAuthChecked] = useState(false); // 👈 new
+    const [authChecked, setAuthChecked] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
 
         const verify = async () => {
             const result = await checkAuth();
-            console.log("Authentication check result:", result); // Log the final result
             setIsAuthenticated(result);
+            setAuthChecked(true); // Indicate that auth check is complete
         };
 
         verify();
     }, []);
 
-    if (!isMounted || !authChecked) return null; // 👈 wait for auth check
+    // --- Loading State ---
+    if (!isMounted || !authChecked) {
+        // Render a basic skeleton or loading indicator for the navbar
+        return (
+            <div className="bg-muted">
+                <nav className="h-16 bg-background border-b animate-pulse">
+                    <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex items-center gap-8">
+                            <div className="h-6 w-24 bg-gray-200 rounded"></div>{' '}
+                            {/* Skeleton for Logo */}
+                            <div className="hidden md:flex gap-4">
+                                <div className="h-6 w-20 bg-gray-200 rounded"></div>{' '}
+                                {/* Skeleton for NavMenu items */}
+                                <div className="h-6 w-20 bg-gray-200 rounded"></div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-20 bg-gray-200 rounded"></div>{' '}
+                            {/* Skeleton for Buttons */}
+                            <div className="h-10 w-10 bg-gray-200 rounded-full md:hidden"></div>{' '}
+                            {/* Skeleton for Mobile Menu */}
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        );
+    }
+    // --- End Loading State ---
 
     return (
         <div className="bg-muted">

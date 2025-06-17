@@ -7,8 +7,6 @@ import asyncError from '@/lib/asyncError';
 const meHandler = async () => {
     const cookieStore = await cookies();
     const token = cookieStore.get('accessToken')?.value;
-    console.log(token);
-
     if (!token) {
         return sendResponse(httpStatus.UNAUTHORIZED, 'Not authenticated');
     }
@@ -17,7 +15,10 @@ const meHandler = async () => {
         const user = verifyToken(token);
         return sendResponse(httpStatus.OK, 'User authenticated', user);
     } catch (error) {
-        return sendResponse(httpStatus.UNAUTHORIZED, 'Invalid or expired token');
+        return sendResponse(
+            httpStatus.UNAUTHORIZED,
+            'Invalid or expired token'
+        );
     }
 };
 

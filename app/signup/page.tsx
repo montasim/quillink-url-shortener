@@ -20,8 +20,8 @@ import { SignupSchema } from '@/schemas/schemas';
 import { handleSignup } from '@/app/signup/actions';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import configuration from "@/configuration/configuration";
-import {handleGoogleLogin} from "@/app/login/actions";
+import configuration from '@/configuration/configuration';
+import { handleGoogleLogin } from '@/app/login/actions';
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -49,7 +49,10 @@ const SignUpPage = () => {
                         Sign up for {configuration.name} account
                     </p>
 
-                    <Button onClick={handleGoogleLogin} className="mt-8 w-full gap-3">
+                    <Button
+                        onClick={handleGoogleLogin}
+                        className="mt-8 w-full gap-3"
+                    >
                         <GoogleLogo />
                         Continue with Google
                     </Button>

@@ -19,7 +19,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import configuration from '@/configuration/configuration';
-import {handleGoogleLogin, handleLogin} from '@/app/login/actions';
+import { handleGoogleLogin, handleLogin } from '@/app/login/actions';
 import { LoginSchema } from '@/schemas/schemas';
 
 const LoginPage = () => {
@@ -46,7 +46,10 @@ const LoginPage = () => {
                     Log in to {configuration.name} account
                 </p>
 
-                <Button onClick={handleGoogleLogin} className="mt-8 w-full gap-3">
+                <Button
+                    onClick={handleGoogleLogin}
+                    className="mt-8 w-full gap-3"
+                >
                     <GoogleLogo />
                     Continue with Google
                 </Button>

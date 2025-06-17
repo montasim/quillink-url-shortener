@@ -3,6 +3,8 @@ import getEnvironmentData from '@/utils/getEnvironmentData';
 const configuration = {
     name: 'QuilLink',
 
+    nodeEnv: getEnvironmentData('NODE_ENV'),
+
     jwt: {
         accessToken: {
             secret: getEnvironmentData('JWT_ACCESS_TOKEN_SECRET'),
@@ -30,7 +32,7 @@ const configuration = {
         clientId: getEnvironmentData('GOOGLE_CLIENT_ID'),
         clientSecret: getEnvironmentData('GOOGLE_CLIENT_SECRET'),
         redirectUri: getEnvironmentData('GOOGLE_REDIRECT_URI'),
-    }
+    },
 };
 
 export default configuration;

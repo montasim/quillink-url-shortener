@@ -46,7 +46,10 @@ export const verifyToken = (
     token: string,
     type: 'access' | 'refresh' = 'access'
 ): JwtPayload => {
-    const secret = type === 'access' ? configuration.jwt.accessToken.secret : configuration.jwt.refreshToken.secret;
+    const secret =
+        type === 'access'
+            ? configuration.jwt.accessToken.secret
+            : configuration.jwt.refreshToken.secret;
 
     try {
         const decoded = jwt.verify(token, secret);
