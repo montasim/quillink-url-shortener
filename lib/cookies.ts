@@ -6,8 +6,6 @@ interface AuthTokens {
     refreshToken: string;
 }
 
-const cookieJar = await cookies();
-
 export const setCookie = async (
     name: string,
     value: string,
@@ -17,6 +15,7 @@ export const setCookie = async (
     path: string,
     maxAge: number
 ) => {
+    const cookieJar = await cookies();
     cookieJar.set(name, value, {
         httpOnly,
         secure,
@@ -51,6 +50,7 @@ export async function setAuthCookies(tokens: AuthTokens) {
 }
 
 export const clearAuthCookies = async () => {
+    const cookieJar = await cookies();
     cookieJar.delete('accessToken');
     cookieJar.delete('refreshToken');
 }
