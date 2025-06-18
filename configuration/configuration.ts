@@ -5,6 +5,10 @@ const configuration = {
 
     nodeEnv: getEnvironmentData('NODE_ENV'),
 
+    api: {
+        timeout: parseInt(getEnvironmentData('API_CALL_TIMEOUT_S')),
+    },
+
     jwt: {
         accessToken: {
             secret: getEnvironmentData('JWT_ACCESS_TOKEN_SECRET'),
@@ -13,6 +17,9 @@ const configuration = {
             ),
         },
         refreshToken: {
+            apiInterval: parseInt(
+                getEnvironmentData('JWT_REFRESH_INTERVAL_MS')
+            ),
             secret: getEnvironmentData('JWT_REFRESH_TOKEN_SECRET'),
             expiration: parseInt(
                 getEnvironmentData('JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES')
