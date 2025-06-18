@@ -136,118 +136,50 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
     const guestToken = cookieStore.get(COOKIES.NAME.GUEST_TOKEN)?.value;
     const accessToken = cookieStore.get(COOKIES.NAME.ACCESS_TOKEN)?.value;
 
-    if (guestToken) {
-        // Renamed from handleGetUrls
-        const urlQueryParameters = request.nextUrl.searchParams;
+    let userId: string | null = null;
+    let guestId: string | null = null;
 
-        const shortKeyParam = urlQueryParameters.get('shortKey');
-        const originalUrlParam = urlQueryParameters.get('originalUrl');
-        const expiredParam = urlQueryParameters.get('expired');
-
-        const filterConditions: any = {
-            guestId: guestToken,
-        };
-
-        // Apply filter for shortKey if provided
-        if (shortKeyParam) {
-            filterConditions.shortKey = {
-                contains: shortKeyParam,
-                mode: 'insensitive',
-            };
-        }
-
-        // Apply filter for originalUrl if provided
-        if (originalUrlParam) {
-            filterConditions.originalUrl = {
-                contains: originalUrlParam,
-                mode: 'insensitive',
-            };
-        }
-
-        // Apply filter for expiration status
-        if (expiredParam === 'true') {
-            filterConditions.expiresAt = { lt: new Date() };
-        } else if (expiredParam === 'false') {
-            // URLs that have not expired or have no expiration set
-            filterConditions.OR = [
-                { expiresAt: null },
-                { expiresAt: { gte: new Date() } },
-            ];
-        }
-
-        // Fetch short URL records from the database based on filter conditions
-        const shortUrlRecords = await shortUrlModel.findMany({
-            where: filterConditions,
-            select: urlSelection,
-            orderBy: { createdAt: 'desc' },
-        });
-
-        // If no URLs are found after applying filters, return a 404 response
-        if (!shortUrlRecords.length) {
-            return sendResponse(
-                httpStatusLite.NOT_FOUND,
-                ALL_URLS_LISTING.NOT_FOUND
+    if (accessToken) {
+        try {
+            const decodedPayload: ISignedJwtPayload = verifyToken(
+                accessToken,
+                COOKIES.TYPE.ACCESS
             );
+            if (decodedPayload?.currentUser?.id) {
+                userId = decodedPayload.currentUser.id;
+            }
+        } catch (error) {
+            console.error('Access token verification failed:', error);
+            // Fall through to guest token if access token is invalid
         }
-
-        // Return a success response with the fetched URL records
-        return sendResponse(
-            httpStatusLite.OK,
-            ALL_URLS_LISTING.SUCCESS,
-            shortUrlRecords
-        );
     }
 
-    if (!accessToken) {
+    if (!userId && guestToken) {
+        guestId = guestToken;
+    }
+
+    if (!userId && !guestId) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
             AUTHENTICATION.UNAUTHORIZED
         );
     }
 
-    let decodedPayload: ISignedJwtPayload;
-    try {
-        decodedPayload = verifyToken(accessToken, COOKIES.TYPE.ACCESS);
-    } catch (error) {
-        console.error('Access token verification failed:', error);
-        return sendResponse(
-            httpStatus.UNAUTHORIZED,
-            AUTHENTICATION.UNAUTHORIZED
-        );
-    }
-
-    if (!decodedPayload || !decodedPayload?.currentUser?.id) {
-        return sendResponse(
-            httpStatus.UNAUTHORIZED,
-            AUTHENTICATION.UNAUTHORIZED
-        );
-    }
-
-    const userId = decodedPayload?.currentUser?.id;
-    const user = await userModel.findUnique({
-        where: { id: userId },
-        select: meSelection,
-    });
-
-    if (!user) {
-        return sendResponse(
-            httpStatus.UNAUTHORIZED,
-            AUTHENTICATION.UNAUTHORIZED
-        );
-    }
-
-    // Renamed from handleGetUrls
+    // Extract query parameters
     const urlQueryParameters = request.nextUrl.searchParams;
-
     const shortKeyParam = urlQueryParameters.get('shortKey');
     const originalUrlParam = urlQueryParameters.get('originalUrl');
     const expiredParam = urlQueryParameters.get('expired');
 
-    const filterConditions: any = {
-        userId,
-    };
+    const filterConditions: any = {};
 
-    // Apply filter for shortKey if provided
+    if (userId) {
+        filterConditions.userId = userId;
+    } else if (guestId) {
+        filterConditions.guestId = guestId;
+    }
+
+    // Apply filters based on query parameters
     if (shortKeyParam) {
         filterConditions.shortKey = {
             contains: shortKeyParam,
@@ -255,7 +187,6 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
         };
     }
 
-    // Apply filter for originalUrl if provided
     if (originalUrlParam) {
         filterConditions.originalUrl = {
             contains: originalUrlParam,
@@ -263,25 +194,22 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
         };
     }
 
-    // Apply filter for expiration status
     if (expiredParam === 'true') {
         filterConditions.expiresAt = { lt: new Date() };
     } else if (expiredParam === 'false') {
-        // URLs that have not expired or have no expiration set
         filterConditions.OR = [
             { expiresAt: null },
             { expiresAt: { gte: new Date() } },
         ];
     }
 
-    // Fetch short URL records from the database based on filter conditions
+    // Fetch short URL records from the database
     const shortUrlRecords = await shortUrlModel.findMany({
         where: filterConditions,
         select: urlSelection,
         orderBy: { createdAt: 'desc' },
     });
 
-    // If no URLs are found after applying filters, return a 404 response
     if (!shortUrlRecords.length) {
         return sendResponse(
             httpStatusLite.NOT_FOUND,
@@ -289,7 +217,6 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
         );
     }
 
-    // Return a success response with the fetched URL records
     return sendResponse(
         httpStatusLite.OK,
         ALL_URLS_LISTING.SUCCESS,
