@@ -61,7 +61,7 @@ const loginHandler = async (req: NextRequest) => {
     // ✅ Set cookies
     await setAuthCookies({ accessToken, refreshToken });
 
-    const { id, ...userWithoutId } = user;
+    const { id, ...userWithoutId } = userData;
 
     // ✅ Return response with public user info only
     return sendResponse(httpStatus.OK, USER_LOGIN.SUCCESS, userWithoutId);

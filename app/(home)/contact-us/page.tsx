@@ -1,8 +1,4 @@
-import {
-    GithubIcon,
-    LinkedinIcon,
-    MailIcon,
-} from 'lucide-react';
+import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const ContactPage = () => (

@@ -1,46 +1,28 @@
 'use client';
 
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { NavMenu } from '@/components/navbar/nav-menu';
 import Loading from '@/components/navbar/loading';
 import { NavigationSheet } from '@/components/navbar/navigation-sheet';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { checkAuth } from '@/components/navbar/actions';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { LayoutDashboardIcon, LogOut, User } from 'lucide-react';
-import { IUserProfile } from '@/types/types';
+import { LayoutDashboardIcon, LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
 
-const NavbarPage = () => {
+const Navbar = () => {
     const router = useRouter();
-    const [isMounted, setIsMounted] = useState(false);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userProfile, setUserProfile] = useState<IUserProfile | null>(null);
-    const [authChecked, setAuthChecked] = useState(false);
+    const { isAuthenticated, user, loading, refreshAuth } = useAuth();
 
-    useEffect(() => {
-        setIsMounted(true);
+    console.log(user);
 
-        const verify = async () => {
-            const { authenticated, user } = await checkAuth();
-            setIsAuthenticated(authenticated);
-            setUserProfile(user || null);
-            setAuthChecked(true);
-        };
-
-        verify();
-    }, []);
-
-    if (!isMounted || !authChecked) {
-        return <Loading />;
-    }
+    if (loading) return <Loading />;
 
     return (
         <div className="bg-muted">
@@ -52,27 +34,29 @@ const NavbarPage = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        {isAuthenticated && userProfile ? (
+                        {isAuthenticated && user ? (
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    {userProfile.picture ? (
-                                        <img
-                                            src={userProfile.picture}
-                                            alt={
-                                                userProfile.name ||
-                                                'User Avatar'
-                                            }
-                                            className="h-10 w-10 rounded-full object-cover cursor-pointer"
-                                        />
-                                    ) : (
-                                        <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer">
-                                            {userProfile.name
-                                                ? userProfile.name
-                                                      .charAt(0)
-                                                      .toUpperCase()
-                                                : 'U'}
-                                        </div>
-                                    )}
+                                    <div className="h-10 w-10 rounded-full overflow-hidden">
+                                        {user?.picture ? (
+                                            // Only render when picture is valid
+                                            <img
+                                                src={user.picture}
+                                                alt={user.name || 'User Avatar'}
+                                                className="h-10 w-10 object-cover cursor-pointer"
+                                            />
+                                        ) : user?.name ? (
+                                            // Use name fallback
+                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer">
+                                                {user.name
+                                                    .charAt(0)
+                                                    .toUpperCase()}
+                                            </div>
+                                        ) : (
+                                            // Blank skeleton while waiting
+                                            <div className="h-10 w-10 bg-gray-200 animate-pulse rounded-full" />
+                                        )}
+                                    </div>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent
                                     align="end"
@@ -89,10 +73,10 @@ const NavbarPage = () => {
                                     </DropdownMenuItem>
                                     <DropdownMenuItem
                                         onClick={async () => {
-                                            // Call logout logic (API + clear cookies or redirect)
                                             await getData(
                                                 '/api/v1/auth/logout'
                                             );
+                                            await refreshAuth();
                                             router.push('/login');
                                         }}
                                         className="cursor-pointer text-red-600"
@@ -103,7 +87,6 @@ const NavbarPage = () => {
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         ) : (
-                            // If not authenticated, show Sign In/Sign Up buttons
                             <>
                                 <Button
                                     variant="outline"
@@ -130,4 +113,4 @@ const NavbarPage = () => {
     );
 };
 
-export default NavbarPage;
+export default Navbar;

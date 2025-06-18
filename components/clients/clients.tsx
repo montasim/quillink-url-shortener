@@ -1,9 +1,4 @@
-import {
-    Logo01,
-    Logo02,
-    Logo03,
-    Logo04,
-} from '@/components/clients/logos';
+import { Logo01, Logo02, Logo03, Logo04 } from '@/components/clients/logos';
 
 const Clients = () => {
     return (

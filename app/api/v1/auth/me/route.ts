@@ -7,7 +7,7 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { meSelection } from '@/app/api/v1/auth/me/selection';
 import COOKIES from '@/constants/cookies';
-import {ISignedJwtPayload} from "@/types/types";
+import { ISignedJwtPayload } from '@/types/types';
 
 const { AUTHENTICATION, ME_HANDLER } = MESSAGES;
 const { userModel } = dataService;

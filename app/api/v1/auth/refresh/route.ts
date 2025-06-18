@@ -8,7 +8,7 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { refreshTokenSelection } from '@/app/api/v1/auth/refresh/selection';
 import COOKIES from '@/constants/cookies';
-import {ISignedJwtPayload} from "@/types/types";
+import { ISignedJwtPayload } from '@/types/types';
 
 const { AUTHENTICATION, REFRESH_TOKEN } = MESSAGES;
 const { userModel } = dataService;

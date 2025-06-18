@@ -3,10 +3,17 @@ import { withErrorHandler } from '@/components/withErrorHandler';
 import { createData } from '@/lib/axios';
 
 export const handleLogin = withErrorHandler(
-    async (formData, setLoading: (val: boolean) => void, router: any) => {
+    async (
+        formData,
+        setLoading: (val: boolean) => void,
+        router: any,
+        refreshAuth
+    ) => {
         setLoading(true);
 
         const { data } = await createData('/api/v1/auth/login', formData);
+
+        await refreshAuth(); // 🧠 make sure auth context is updated
 
         toast.success(`Login successful. Welcome ${data.name}`);
         router.push('/dashboard/urls'); // or wherever your post-login page is
