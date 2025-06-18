@@ -47,7 +47,7 @@ const Hero = () => {
                     </div>
 
                     <p className="mt-4 text-sm text-left">
-                        By clicking Shorten URL, you are agree to QuilLink's
+                        By clicking Shorten URL, you are agree to QuilLink&lsquo;s
                         <Link
                             href="#"
                             className="ml-1 underline text-muted-foreground"
@@ -116,7 +116,7 @@ const Hero = () => {
                 </h1>
                 <p className="mt-4 text-[17px] md:text-lg">
                     Create short links, QR codes, share them anywhere. Track
-                    what's working, and what's not. All inside the QuilLink
+                    what&lsquo;s working, and what&lsquo;s not. All inside the QuilLink
                     Connection Platform.
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-4">

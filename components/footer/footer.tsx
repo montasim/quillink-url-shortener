@@ -1,9 +1,7 @@
 import { Separator } from '@/components/ui/separator';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import configuration from '@/configuration/configuration';
-import QuilLinkLogo from '@/public/logo.png';
 import { Logo } from '@/components/logo';
 
 const footerLinks = [

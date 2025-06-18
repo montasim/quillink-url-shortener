@@ -1,5 +1,4 @@
 import { toast } from 'sonner';
-import axios from 'axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
 import { createData } from '@/lib/axios';
 

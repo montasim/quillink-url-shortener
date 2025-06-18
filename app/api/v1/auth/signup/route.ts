@@ -37,7 +37,7 @@ const signupHandler = async (req: NextRequest) => {
     const hashedPassword = await hashPassword(password);
 
     // ✅ Create user
-    const newUser = await userModel.create({
+    await userModel.create({
         data: {
             name,
             email,

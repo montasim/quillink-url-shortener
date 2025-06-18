@@ -46,6 +46,7 @@ export interface IAuthTokens {
 }
 
 export interface ITokenUserDetails {
+    id?: string;
     name: string;
     email: string;
     picture?: string | null;

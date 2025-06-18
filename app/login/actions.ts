@@ -1,7 +1,5 @@
 import { toast } from 'sonner';
-import axios from 'axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
-import configuration from '@/configuration/configuration';
 import { createData } from '@/lib/axios';
 
 export const handleLogin = withErrorHandler(

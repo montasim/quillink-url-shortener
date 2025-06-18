@@ -2,8 +2,6 @@ import {
     GithubIcon,
     LinkedinIcon,
     MailIcon,
-    MapPinIcon,
-    PhoneIcon,
 } from 'lucide-react';
 import Link from 'next/link';
 

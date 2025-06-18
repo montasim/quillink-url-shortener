@@ -1,7 +1,7 @@
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 import { IShortUrl } from '@/types/types';
-import { createData, deleteData, getData } from '@/lib/axios';
+import { createData, deleteData } from '@/lib/axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
 
 export const handleCreate = withErrorHandler(
