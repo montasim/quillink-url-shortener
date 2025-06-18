@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import configuration from '@/configuration/configuration';
 import COOKIES from '@/constants/cookies';
+import ENVIRONMENTS from '@/constants/environments';
 import { IAuthTokens } from '@/types/types';
 
 export const setCookie = async (
@@ -23,7 +24,7 @@ export const setCookie = async (
 };
 
 export async function setAuthCookies(tokens: IAuthTokens) {
-    const isProduction = configuration.nodeEnv === 'production';
+    const isProduction = configuration.nodeEnv === ENVIRONMENTS.PRODUCTION;
 
     await setCookie(
         COOKIES.NAME.ACCESS_TOKEN,
@@ -51,4 +52,5 @@ export const clearAuthCookies = async () => {
 
     cookieJar.delete(COOKIES.NAME.ACCESS_TOKEN);
     cookieJar.delete(COOKIES.NAME.REFRESH_TOKEN);
+    cookieJar.delete(COOKIES.NAME.GUEST_TOKEN);
 };

@@ -20,8 +20,6 @@ const Navbar = () => {
     const router = useRouter();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
 
-    console.log(user);
-
     if (loading) return <Loading />;
 
     return (

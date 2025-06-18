@@ -15,32 +15,45 @@ datasource db {
 }
 
 model ClickLog {
-  id        String   @id @default(cuid()) @map("_id")
+  id String @id @default(cuid()) @map("_id")
+
   shortKey  String
   ipAddress String
   userAgent String?
-  createdAt DateTime @default(now())
+  shortUrl  ShortUrl @relation(fields: [shortKey], references: [shortKey], onDelete: Cascade)
 
-  shortUrl ShortUrl @relation(fields: [shortKey], references: [shortKey], onDelete: Cascade)
+  createdAt DateTime @default(now())
 }
 
 model ShortUrl {
-  id          String     @id @default(cuid()) @map("_id")
-  shortKey    String     @unique
+  id String @id @default(cuid()) @map("_id")
+
+  shortKey    String @unique
   originalUrl String
-  clicks      Int        @default(0)
-  clickLogs   ClickLog[]
-  createdAt   DateTime   @default(now())
-  expiresAt   DateTime?
+  clicks      Int    @default(0)
+
+  clickLogs ClickLog[]
+
+  guestId String?
+  userId  String? // null = guest
+  user    User?   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
 }
 
 model User {
-  id        String    @id @default(cuid()) @map("_id")
-  name      String
-  picture   String?
-  email     String    @unique
-  password  String?
-  provider  String? // e.g., 'google', 'credentials'
+  id String @id @default(cuid()) @map("_id")
+
+  name         String
+  picture      String?
+  email        String  @unique
+  password     String?
+  provider     String? // e.g., 'google', 'credentials'
+  subscription Boolean @default(false)
+
+  shortUrls ShortUrl[]
+
   createdAt DateTime  @default(now())
   updatedAt DateTime?
 }

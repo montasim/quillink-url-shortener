@@ -7,6 +7,8 @@ const MESSAGES = Object.freeze({
         ALREADY_EXISTS: 'This URL has already been shortened.',
         SUCCESS: 'The short URL was created successfully.',
         INTERNAL_ERROR: 'An unexpected error occurred. Please try again later.',
+        NEED_LOGIN: 'Limit reached. Sign in to create more.',
+        NEED_SUBSCRIPTION: 'Limit reached. Sign in to create more.',
     },
 
     URL_RETRIEVAL: {
