@@ -1,4 +1,4 @@
-export const selection = {
+export const urlSelection = {
     shortKey: true,
     originalUrl: true,
     clicks: true,

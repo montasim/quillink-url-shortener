@@ -1,38 +1,23 @@
 import jwt from 'jsonwebtoken';
 import configuration from '@/configuration/configuration';
+import COOKIES from '@/constants/cookies';
+import { ISignedJwtPayload, ITokenUserDetails } from '@/types/types';
 
-// Define the shape of the user details you pass into the token
-interface TokenUserDetails {
-    name: string;
-    email: string;
-    picture?: string | null;
-}
-
-// Define the shape of the token payload *as it's actually signed*
-// This reflects what `jwt.verify` will return
-interface SignedJwtPayload {
-    type: 'access' | 'refresh';
-    expiry: Date | string; // It will be a string when decoded from a token
-    currentUser: TokenUserDetails; // The user details are nested under currentUser
-    iat: number; // Issued at (automatically added by jwt.sign)
-    exp: number; // Expiration time (automatically added by jwt.sign)
-}
-
-export const createToken = async (userDetails: TokenUserDetails) => {
+export const createToken = async (userDetails: ITokenUserDetails) => {
     // Convert expiration minutes to milliseconds for Date object calculation
     const accessTokenExpirationMs =
         configuration.jwt.accessToken.expiration * 60 * 1000;
     const refreshTokenExpirationMs =
         configuration.jwt.refreshToken.expiration * 60 * 1000;
 
-    const accessTokenDetails: Omit<SignedJwtPayload, 'iat' | 'exp'> = {
-        type: 'access',
+    const accessTokenDetails: Omit<ISignedJwtPayload, 'iat' | 'exp'> = {
+        type: COOKIES.TYPE.ACCESS,
         expiry: new Date(Date.now() + accessTokenExpirationMs).toISOString(), // Store as ISO string
         currentUser: { ...userDetails },
     };
 
-    const refreshTokenDetails: Omit<SignedJwtPayload, 'iat' | 'exp'> = {
-        type: 'refresh',
+    const refreshTokenDetails: Omit<ISignedJwtPayload, 'iat' | 'exp'> = {
+        type: COOKIES.TYPE.REFRESH,
         expiry: new Date(Date.now() + refreshTokenExpirationMs).toISOString(), // Store as ISO string
         currentUser: { ...userDetails },
     };
@@ -59,17 +44,17 @@ export const createToken = async (userDetails: TokenUserDetails) => {
 
 export const verifyToken = (
     token: string,
-    type: 'access' | 'refresh' = 'access'
-): SignedJwtPayload => {
+    type: 'access' | 'refresh' = COOKIES.TYPE.ACCESS
+): ISignedJwtPayload => {
     // Corrected return type
     const secret =
-        type === 'access'
+        type === COOKIES.TYPE.ACCESS
             ? configuration.jwt.accessToken.secret
             : configuration.jwt.refreshToken.secret;
 
     try {
         // Explicitly cast to SignedJwtPayload as jwt.verify returns `object | string`
-        return jwt.verify(token, secret) as SignedJwtPayload;
+        return jwt.verify(token, secret) as ISignedJwtPayload;
     } catch (err) {
         // It's better to throw an error with more specific information if possible,
         // or just re-throw the original error after logging.

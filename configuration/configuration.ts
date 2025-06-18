@@ -29,9 +29,11 @@ const configuration = {
     },
 
     googleOauth2: {
-        clientId: getEnvironmentData('GOOGLE_CLIENT_ID'),
-        clientSecret: getEnvironmentData('GOOGLE_CLIENT_SECRET'),
-        redirectUri: getEnvironmentData('GOOGLE_REDIRECT_URI'),
+        clientId: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_CLIENT_ID'),
+        clientSecret: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET'),
+        redirectUri: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_REDIRECT_URI'),
+        tokenUrl: getEnvironmentData('GOOGLE_OAUTH_TOKEN_URL'),
+        userInfoUrl: getEnvironmentData('GOOGLE_OAUTH_USERINFO_URL'),
     },
 };
 

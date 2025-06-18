@@ -1,6 +1,7 @@
 import httpStatusLite from 'http-status-lite';
 import { NextRequest, NextResponse } from 'next/server';
 import sendResponse from '@/utils/sendResponse';
+import MESSAGES from '@/constants/messages';
 
 type Handler<T = any> = (
     req: NextRequest,
@@ -18,7 +19,7 @@ const asyncError = <T = any>(handler: Handler<T>) => {
             console.error('Unhandled error:', err);
             return sendResponse(
                 httpStatusLite.INTERNAL_SERVER_ERROR,
-                'Internal Server Error'
+                MESSAGES.COMMON.INTERNAL_SERVER_ERROR
             );
         }
     };

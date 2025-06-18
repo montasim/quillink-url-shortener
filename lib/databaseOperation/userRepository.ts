@@ -1,14 +1,5 @@
 import prisma from '@/lib/prisma';
-import { User } from '@/lib/generated/prisma';
-
-interface IUserRepo {
-    findUnique: (args: any) => Promise<User | null>;
-    findFirst: (args: any) => Promise<User | null>;
-    findMany: (args: any) => Promise<User[]>;
-    update: (args: any) => Promise<User>;
-    deleteData: (args: any) => Promise<User>;
-    create: (args: any) => Promise<User>;
-}
+import { IUserRepo } from '@/types/types';
 
 const userRepository: IUserRepo = {
     findUnique: async (args) => await prisma.user.findUnique(args),

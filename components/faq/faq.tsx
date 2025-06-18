@@ -29,7 +29,7 @@ const faq = [
     },
     {
         question: 'What if I receive a damaged item?',
-        answer: 'Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.',
+        answer: 'Please contact-us our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.',
     },
     {
         question: 'Can I cancel or change my order?',
@@ -48,7 +48,7 @@ const faq = [
         answer: 'Many of our products are made with sustainable materials and eco-friendly practices to reduce environmental impact while maintaining quality.',
     },
     {
-        question: 'How can I contact customer support?',
+        question: 'How can I contact-us customer support?',
         answer: 'Reach out via email at support@example.com or call us at 1-800-123-4567 for assistance with any inquiries.',
     },
 ];
@@ -78,7 +78,7 @@ const Faq = () => {
                                 <AccordionPrimitive.Header className="flex">
                                     <AccordionPrimitive.Trigger
                                         className={cn(
-                                            'flex flex-1 items-center justify-between py-4 font-semibold transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
+                                            'flex flex-1 items-center justify-between py-4 font-semibold transition-all hover:underline [&[types-state=open]>svg]:rotate-45',
                                             'text-start text-lg'
                                         )}
                                     >
@@ -106,7 +106,7 @@ const Faq = () => {
                                 <AccordionPrimitive.Header className="flex">
                                     <AccordionPrimitive.Trigger
                                         className={cn(
-                                            'flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
+                                            'flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all hover:underline [&[types-state=open]>svg]:rotate-45',
                                             'text-start text-lg'
                                         )}
                                     >

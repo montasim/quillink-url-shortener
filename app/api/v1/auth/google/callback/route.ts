@@ -1,29 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 import axios from 'axios';
+import httpStatus from 'http-status-lite';
+import contentTypesLite from 'content-types-lite';
+
+import sendResponse from '@/utils/sendResponse';
 import { upsertUserFromGoogleProfile } from '@/lib/userService';
 import { createToken } from '@/lib/jwt';
-import sendResponse from '@/utils/sendResponse';
-import httpStatus from 'http-status-lite';
 import asyncError from '@/lib/asyncError';
 import configuration from '@/configuration/configuration';
-import contentTypesLite from 'content-types-lite';
 import { setAuthCookies } from '@/lib/cookies';
+import MESSAGES from '@/constants/messages';
 
-const handleGoogleLogin = async (req: NextRequest) => {
+const { GOOGLE_AUTH } = MESSAGES;
+
+const googleAuthCallbackHandler = async (req: NextRequest) => {
     const url = new URL(req.url);
     const code = url.searchParams.get('code');
 
     if (!code) {
-        return sendResponse(
-            httpStatus.BAD_REQUEST,
-            'Missing authorization code'
-        );
+        return sendResponse(httpStatus.BAD_REQUEST, GOOGLE_AUTH.MISSING_CODE);
     }
 
     try {
         // Exchange code for tokens
         const { data: tokenResponse } = await axios.post(
-            'https://oauth2.googleapis.com/token',
+            configuration.googleOauth2.tokenUrl,
             {
                 code,
                 client_id: configuration.googleOauth2.clientId,
@@ -40,9 +42,16 @@ const handleGoogleLogin = async (req: NextRequest) => {
 
         const { access_token } = tokenResponse;
 
+        if (!access_token) {
+            return sendResponse(
+                httpStatus.INTERNAL_SERVER_ERROR,
+                GOOGLE_AUTH.TOKEN_EXCHANGE_FAILED
+            );
+        }
+
         // Fetch user profile
         const { data: profile } = await axios.get(
-            'https://www.googleapis.com/oauth2/v2/userinfo',
+            configuration.googleOauth2.userInfoUrl,
             {
                 headers: {
                     Authorization: `Bearer ${access_token}`,
@@ -50,23 +59,44 @@ const handleGoogleLogin = async (req: NextRequest) => {
             }
         );
 
+        if (!profile) {
+            return sendResponse(
+                httpStatus.INTERNAL_SERVER_ERROR,
+                GOOGLE_AUTH.PROFILE_FETCH_FAILED
+            );
+        }
+
         // Upsert user in DB
         const user = await upsertUserFromGoogleProfile(profile);
+
+        if (!user) {
+            return sendResponse(
+                httpStatus.INTERNAL_SERVER_ERROR,
+                GOOGLE_AUTH.UPSERT_FAILED
+            );
+        }
 
         // Generate tokens
         const { accessToken, refreshToken } = await createToken(user);
 
         await setAuthCookies({ accessToken, refreshToken });
 
-        // ✅ Redirect to dashboard
+        // Redirect to dashboard on successful login
+        // Note: For successful redirects, sendResponse is typically not used,
+        // as NextResponse.redirect handles the entire response.
         return NextResponse.redirect(new URL('/dashboard/urls', req.url));
     } catch (error) {
-        console.error('OAuth error:', error);
+        if (axios.isAxiosError(error)) {
+            return sendResponse(
+                httpStatus.INTERNAL_SERVER_ERROR,
+                GOOGLE_AUTH.INTERNAL_ERROR
+            );
+        }
         return sendResponse(
             httpStatus.INTERNAL_SERVER_ERROR,
-            'OAuth failed. Please try again.'
+            GOOGLE_AUTH.INTERNAL_ERROR
         );
     }
 };
 
-export const GET = asyncError(handleGoogleLogin);
+export const GET = asyncError(googleAuthCallbackHandler);

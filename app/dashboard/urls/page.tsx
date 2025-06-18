@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { IShortUrl } from '@/app/data/types';
-import { fetchUrls } from '@/app/(home)/actions';
+import { IShortUrl } from '@/types/types';
 import {
     Table,
     TableBody,
@@ -11,6 +10,7 @@ import {
     TableRow,
 } from '@/components/ui/table';
 import RenderUrlRow from '@/app/(home)/components/UrlRow';
+import { fetchUrls } from '@/app/dashboard/urls/actions';
 
 const UrlDashboard = () => {
     const [urls, setUrls] = useState<IShortUrl[]>([]);

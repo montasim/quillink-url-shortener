@@ -74,9 +74,7 @@ export const ShortenUrlSchema = z
                     return !val.startsWith(ownDomain ?? '');
                 },
                 {
-                    message:
-                        MESSAGES.URL_CREATION_MESSAGES
-                            .OWN_DOMAIN_VALIDATION_ERROR,
+                    message: MESSAGES.URL_CREATION.OWN_DOMAIN_ERROR,
                 }
             ),
     })
@@ -89,7 +87,7 @@ export const ShortKeySchema = z
             .trim()
             .min(1, MESSAGES.COMMON.VALIDATION_REQUIRED)
             .regex(SHORT_KEY_REGEX, {
-                message: MESSAGES.URL_VALIDATION.INVALID_SHORT_KEY,
+                message: MESSAGES.URL_VALIDATION.INVALID_SHORT_KEY_FORMAT,
             }),
     })
     .strict();

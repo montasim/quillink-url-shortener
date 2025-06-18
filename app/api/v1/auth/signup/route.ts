@@ -8,7 +8,7 @@ import dataService from '@/lib/databaseOperation';
 import asyncError from '@/lib/asyncError';
 import hashPassword from '@/utils/hashPassword';
 
-const { USER_SIGNUP_MESSAGES } = MESSAGES;
+const { USER_SIGNUP } = MESSAGES;
 const { userModel } = dataService;
 
 const signupHandler = async (req: NextRequest) => {
@@ -19,7 +19,7 @@ const signupHandler = async (req: NextRequest) => {
     if (!validation.success) {
         return sendResponse(
             httpStatus.BAD_REQUEST,
-            USER_SIGNUP_MESSAGES.VALIDATION_ERROR,
+            USER_SIGNUP.VALIDATION_ERROR,
             {},
             validation.error.flatten()
         );
@@ -30,10 +30,7 @@ const signupHandler = async (req: NextRequest) => {
     // ✅ Check if user already exists
     const existingUser = await userModel.findUnique({ where: { email } });
     if (existingUser) {
-        return sendResponse(
-            httpStatus.CONFLICT,
-            USER_SIGNUP_MESSAGES.ALREADY_EXISTS
-        );
+        return sendResponse(httpStatus.CONFLICT, USER_SIGNUP.ALREADY_EXISTS);
     }
 
     // ✅ Hash password
@@ -53,8 +50,8 @@ const signupHandler = async (req: NextRequest) => {
         },
     });
 
-    // ✅ Return public user data
-    return sendResponse(httpStatus.CREATED, USER_SIGNUP_MESSAGES.CREATED);
+    // ✅ Return public user types
+    return sendResponse(httpStatus.CREATED, USER_SIGNUP.SUCCESS);
 };
 
 export const POST = asyncError(signupHandler);

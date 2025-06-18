@@ -1,11 +1,7 @@
 import prisma from '@/lib/prisma';
-import { ClickLog } from '@/lib/generated/prisma';
+import { IClickLogRepository } from '@/types/types';
 
-interface ClickLogRepository {
-    create: (args: any) => Promise<ClickLog>;
-}
-
-const clickLogRepository: ClickLogRepository = {
+const clickLogRepository: IClickLogRepository = {
     create: async (args) => await prisma.clickLog.create(args),
 };
 

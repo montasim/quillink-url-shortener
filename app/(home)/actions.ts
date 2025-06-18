@@ -1,23 +1,21 @@
 import { toast } from 'sonner';
 import { format } from 'date-fns';
-import axios from 'axios';
-import { IShortUrl } from '@/app/data/types';
-import { deleteData } from '@/lib/axios';
+import { IShortUrl } from '@/types/types';
+import { createData, deleteData, getData } from '@/lib/axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
 
 export const handleCreate = withErrorHandler(
-    async (formData, setCreating, setUrls, setFormData, router) => {
+    async (formData, setCreating, setFormData, router) => {
         if (!formData.originalUrl) {
             toast.error('Original URL is required.');
             return;
         }
 
         setCreating(true);
-        const { data } = await axios.post('/api/v1/urls', {
+        await createData('/api/v1/urls', {
             originalUrl: formData.originalUrl,
         });
 
-        setUrls((prev: IShortUrl[]) => [data.data, ...prev]);
         toast.success('Short URL created!');
         setFormData({ originalUrl: '', expiresAt: '', customKey: '' });
         setCreating(false);
@@ -26,8 +24,8 @@ export const handleCreate = withErrorHandler(
     'Failed to create short URL'
 );
 
-export const handleCopy = (url: string) => {
-    navigator.clipboard.writeText(url);
+export const handleCopy = async (url: string) => {
+    await navigator.clipboard.writeText(url);
     toast.success('Copied to clipboard');
 };
 
@@ -85,15 +83,6 @@ export const handleDelete = withErrorHandler(
 
 export const generateQrUrl = (shortKey: string) =>
     `/api/v1/urls/qr-code/${shortKey}`;
-
-export const fetchUrls = withErrorHandler(
-    async (setUrls, setError, setLoading) => {
-        const { data } = await axios.get('/api/v1/urls');
-        setUrls(data.data);
-        setLoading(false);
-    },
-    'Failed to fetch short URLs'
-);
 
 export const safeFormat = (date?: string, fallback = '-') => {
     try {

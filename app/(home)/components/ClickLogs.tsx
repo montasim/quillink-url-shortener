@@ -1,5 +1,5 @@
 import { safeFormat } from '@/app/(home)/actions';
-import { IClickLog } from '@/app/data/types';
+import { IClickLog } from '@/types/types';
 import { UAParser } from 'ua-parser-js';
 
 const parseUserAgent = (ua: string) => {

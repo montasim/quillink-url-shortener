@@ -10,7 +10,7 @@ import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 
-const { QR_CODE_GENERATION_MESSAGES } = MESSAGES;
+const { QR_CODE_GENERATION } = MESSAGES;
 const { shortUrlModel } = dataService;
 
 const generateShortUrlQRCode = async (
@@ -27,13 +27,13 @@ const generateShortUrlQRCode = async (
     if (!shortKey) {
         return sendResponse(
             httpStatusLite.BAD_REQUEST,
-            QR_CODE_GENERATION_MESSAGES.VALIDATION_ERROR.MISSING_SHORT_KEY
+            QR_CODE_GENERATION.MISSING_SHORT_KEY
         );
     }
 
     // Find the short URL record in the database
     const shortUrlRecord = await shortUrlModel.findUnique({
-        // Renamed from data for clarity
+        // Renamed from types for clarity
         where: { shortKey },
     });
 
@@ -41,7 +41,7 @@ const generateShortUrlQRCode = async (
     if (!shortUrlRecord) {
         return sendResponse(
             httpStatusLite.NOT_FOUND,
-            QR_CODE_GENERATION_MESSAGES.NOT_FOUND
+            QR_CODE_GENERATION.NOT_FOUND
         );
     }
 
@@ -49,10 +49,10 @@ const generateShortUrlQRCode = async (
     // This assumes process.env.NEXT_PUBLIC_BASE_URL is configured correctly
     const fullRedirectUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${shortUrlRecord.shortKey}`;
 
-    // Generate the QR code as a base64 data URL
+    // Generate the QR code as a base64 types URL
     const qrCodeDataUrl = await generateQRCode(fullRedirectUrl);
 
-    // Extract the base64 encoded image data from the data URL
+    // Extract the base64 encoded image types from the types URL
     const base64EncodedImage = qrCodeDataUrl.split(',')[1];
 
     // Decode the base64 string into a Uint8Array buffer

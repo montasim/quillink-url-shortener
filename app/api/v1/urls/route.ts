@@ -7,9 +7,9 @@ import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortenUrlSchema } from '@/schemas/schemas';
-import { selection } from '@/app/data/selection';
+import { urlSelection } from '@/app/api/v1/urls/selection';
 
-const { ALL_URLS_LISTING_MESSAGES, URL_CREATION_MESSAGES } = MESSAGES;
+const { ALL_URLS_LISTING, URL_CREATION } = MESSAGES;
 const { shortUrlModel } = dataService;
 
 const createShortUrl = async (request: NextRequest) => {
@@ -20,7 +20,7 @@ const createShortUrl = async (request: NextRequest) => {
     if (!schemaValidationResult.success) {
         return sendResponse(
             httpStatusLite.BAD_REQUEST,
-            URL_CREATION_MESSAGES.VALIDATION_ERROR,
+            URL_CREATION.VALIDATION_ERROR,
             {},
             schemaValidationResult.error.flatten()
         );
@@ -35,7 +35,7 @@ const createShortUrl = async (request: NextRequest) => {
     if (existingShortUrlRecord) {
         return sendResponse(
             httpStatusLite.OK,
-            URL_CREATION_MESSAGES.URL_ALREADY_EXISTS,
+            URL_CREATION.ALREADY_EXISTS,
             existingShortUrlRecord
         );
     }
@@ -51,13 +51,13 @@ const createShortUrl = async (request: NextRequest) => {
             shortKey: generatedShortKey,
             expiresAt: expirationDate,
         },
-        select: selection, // includes fields like clickLogs
+        select: urlSelection, // includes fields like clickLogs
     });
 
     // Return a success response with the newly created short URL
     return sendResponse(
         httpStatusLite.CREATED,
-        URL_CREATION_MESSAGES.URL_CREATED_SUCCESS,
+        URL_CREATION.SUCCESS,
         createdShortUrlRecord
     );
 };
@@ -102,7 +102,7 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
     // Fetch short URL records from the database based on filter conditions
     const shortUrlRecords = await shortUrlModel.findMany({
         where: filterConditions,
-        select: selection,
+        select: urlSelection,
         orderBy: { createdAt: 'desc' },
     });
 
@@ -110,14 +110,14 @@ const retrieveFilteredShortUrls = async (request: NextRequest) => {
     if (!shortUrlRecords.length) {
         return sendResponse(
             httpStatusLite.NOT_FOUND,
-            ALL_URLS_LISTING_MESSAGES.NOT_FOUND
+            ALL_URLS_LISTING.NOT_FOUND
         );
     }
 
     // Return a success response with the fetched URL records
     return sendResponse(
         httpStatusLite.OK,
-        ALL_URLS_LISTING_MESSAGES.SUCCESSFUL,
+        ALL_URLS_LISTING.SUCCESS,
         shortUrlRecords
     );
 };

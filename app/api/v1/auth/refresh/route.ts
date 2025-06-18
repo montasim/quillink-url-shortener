@@ -7,36 +7,39 @@ import { setAuthCookies } from '@/lib/cookies';
 import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { refreshTokenSelection } from '@/app/api/v1/auth/refresh/selection';
+import COOKIES from '@/constants/cookies';
 
-const { AUTHENTICATION_MESSAGES, REFRESH_TOKEN_MESSAGES } = MESSAGES;
+const { AUTHENTICATION, REFRESH_TOKEN } = MESSAGES;
 const { userModel } = dataService;
 
 const handleTokenRefresh = async () => {
-    const cookieStore = cookies();
-    const currentRefreshToken = cookieStore.get('refreshToken')?.value;
+    const cookieStore = await cookies();
+    const currentRefreshToken = cookieStore.get(
+        COOKIES.NAME.REFRESH_TOKEN
+    )?.value;
 
     if (!currentRefreshToken) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
-            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+            AUTHENTICATION.UNAUTHORIZED
         );
     }
 
     let decodedPayload: any;
     try {
-        decodedPayload = verifyToken(currentRefreshToken, 'refresh');
+        decodedPayload = verifyToken(currentRefreshToken, COOKIES.TYPE.REFRESH);
     } catch (error) {
         console.error('Refresh token verification failed:', error);
         return sendResponse(
             httpStatus.UNAUTHORIZED,
-            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+            AUTHENTICATION.UNAUTHORIZED
         );
     }
 
     if (!decodedPayload || !decodedPayload?.currentUser?.id) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
-            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+            AUTHENTICATION.UNAUTHORIZED
         );
     }
 
@@ -48,21 +51,21 @@ const handleTokenRefresh = async () => {
     if (!user) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
-            AUTHENTICATION_MESSAGES.UNAUTHORIZED
+            AUTHENTICATION.UNAUTHORIZED
         );
     }
 
     const { accessToken, refreshToken: newRefreshToken } =
         await createToken(user);
 
-    delete user.id;
+    const { id, ...userWithoutId } = user;
 
     await setAuthCookies({
         accessToken,
         refreshToken: newRefreshToken,
     });
 
-    return sendResponse(httpStatus.OK, REFRESH_TOKEN_MESSAGES.SUCCESSFUL, user);
+    return sendResponse(httpStatus.OK, REFRESH_TOKEN.SUCCESS, userWithoutId);
 };
 
 export const GET = asyncError(handleTokenRefresh);

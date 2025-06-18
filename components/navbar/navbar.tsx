@@ -8,20 +8,21 @@ import { NavigationSheet } from '@/components/navbar/navigation-sheet';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { checkAuth } from '@/components/navbar/actions';
-
-// Define the UserProfile interface to match what checkAuth returns
-interface UserProfile {
-    id: string;
-    name: string;
-    email: string;
-    picture?: string;
-}
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { LayoutDashboardIcon, LogOut, User } from 'lucide-react';
+import { IUserProfile } from '@/types/types';
+import { getData } from '@/lib/axios';
 
 const NavbarPage = () => {
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+    const [userProfile, setUserProfile] = useState<IUserProfile | null>(null);
     const [authChecked, setAuthChecked] = useState(false);
 
     useEffect(() => {
@@ -52,35 +53,55 @@ const NavbarPage = () => {
 
                     <div className="flex items-center gap-3">
                         {isAuthenticated && userProfile ? (
-                            <div className="flex items-center gap-2">
-                                {userProfile.picture ? (
-                                    <img
-                                        src={userProfile.picture}
-                                        alt={userProfile.name || 'User Avatar'}
-                                        className="h-10 w-10 rounded-full object-cover cursor-pointer"
-                                        // You might want to add an onClick here to go to profile/dashboard
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    {userProfile.picture ? (
+                                        <img
+                                            src={userProfile.picture}
+                                            alt={
+                                                userProfile.name ||
+                                                'User Avatar'
+                                            }
+                                            className="h-10 w-10 rounded-full object-cover cursor-pointer"
+                                        />
+                                    ) : (
+                                        <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer">
+                                            {userProfile.name
+                                                ? userProfile.name
+                                                      .charAt(0)
+                                                      .toUpperCase()
+                                                : 'U'}
+                                        </div>
+                                    )}
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent
+                                    align="end"
+                                    className="w-48"
+                                >
+                                    <DropdownMenuItem
                                         onClick={() =>
-                                            router.push('/dashboard/profile')
+                                            router.push('/dashboard/urls')
                                         }
-                                    />
-                                ) : (
-                                    // Fallback if no picture URL is available
-                                    <div
-                                        className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer"
-                                        onClick={() =>
-                                            router.push('/dashboard/profile')
-                                        }
+                                        className="cursor-pointer"
                                     >
-                                        {userProfile.name
-                                            ? userProfile.name
-                                                  .charAt(0)
-                                                  .toUpperCase()
-                                            : 'U'}
-                                    </div>
-                                )}
-                                {/* Optional: Display user name next to picture */}
-                                {/* <span className="hidden sm:inline text-sm font-medium">{userProfile.name}</span> */}
-                            </div>
+                                        <LayoutDashboardIcon className="w-4 h-4 mr-2" />
+                                        Dashboard
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem
+                                        onClick={async () => {
+                                            // Call logout logic (API + clear cookies or redirect)
+                                            await getData(
+                                                '/api/v1/auth/logout'
+                                            );
+                                            router.push('/login');
+                                        }}
+                                        className="cursor-pointer text-red-600"
+                                    >
+                                        <LogOut className="w-4 h-4 mr-2" />
+                                        Logout
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         ) : (
                             // If not authenticated, show Sign In/Sign Up buttons
                             <>

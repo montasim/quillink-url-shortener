@@ -1,5 +1,5 @@
 import { TableCell, TableRow } from '@/components/ui/table';
-import { IShortUrl } from '@/app/data/types';
+import { IShortUrl } from '@/types/types';
 import { generateQrUrl } from '@/app/(home)/actions';
 import RenderClickChart from '@/app/(home)/components/ClickChart';
 import RenderClickLogs from '@/app/(home)/components/ClickLogs';

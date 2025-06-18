@@ -8,7 +8,7 @@ import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 
-const { URL_REDIRECT_MESSAGES } = MESSAGES;
+const { URL_REDIRECT } = MESSAGES;
 const { shortUrlModel, clickLogModel } = dataService;
 
 const handleShortUrlRedirect = async (
@@ -28,10 +28,7 @@ const handleShortUrlRedirect = async (
 
     // If no record is found, return a 404 response
     if (!urlMappingRecord) {
-        return sendResponse(
-            httpStatusLite.NOT_FOUND,
-            URL_REDIRECT_MESSAGES.NOT_FOUND
-        );
+        return sendResponse(httpStatusLite.NOT_FOUND, URL_REDIRECT.NOT_FOUND);
     }
 
     // Check if the URL has expired
@@ -39,7 +36,7 @@ const handleShortUrlRedirect = async (
         urlMappingRecord.expiresAt &&
         new Date(urlMappingRecord.expiresAt) < new Date()
     ) {
-        return sendResponse(httpStatusLite.GONE, URL_REDIRECT_MESSAGES.EXPIRED);
+        return sendResponse(httpStatusLite.GONE, URL_REDIRECT.EXPIRED);
     }
 
     // Increment the click count for the short URL

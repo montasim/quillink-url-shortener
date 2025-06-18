@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-interface AnimatedGridPatternProps {
+interface IAnimatedGridPatternProps {
     width?: number;
     height?: number;
     x?: number;
@@ -28,7 +28,7 @@ export default function AnimatedGridPattern({
     maxOpacity = 0.5,
     duration = 4,
     ...props
-}: AnimatedGridPatternProps) {
+}: IAnimatedGridPatternProps) {
     const id = useId();
     const containerRef = useRef(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

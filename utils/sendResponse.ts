@@ -18,7 +18,7 @@ const sendResponse = <T>(
         message,
     };
 
-    // Conditionally add 'data' if it's not null
+    // Conditionally add 'types' if it's not null
     if (data !== null) {
         responseBody.data = data;
     }

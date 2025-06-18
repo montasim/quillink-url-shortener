@@ -10,7 +10,7 @@ import asyncError from '@/lib/asyncError';
 import { setAuthCookies } from '@/lib/cookies';
 import { loginSelection } from '@/app/api/v1/auth/login/selection';
 
-const { USER_LOGIN_MESSAGES } = MESSAGES;
+const { USER_LOGIN } = MESSAGES;
 const { userModel } = dataService;
 
 const loginHandler = async (req: NextRequest) => {
@@ -21,7 +21,7 @@ const loginHandler = async (req: NextRequest) => {
     if (!validation.success) {
         return sendResponse(
             httpStatus.BAD_REQUEST,
-            USER_LOGIN_MESSAGES.VALIDATION_ERROR,
+            USER_LOGIN.VALIDATION_ERROR,
             {},
             validation.error.flatten()
         );
@@ -36,10 +36,7 @@ const loginHandler = async (req: NextRequest) => {
     });
 
     if (!user) {
-        return sendResponse(
-            httpStatus.UNAUTHORIZED,
-            USER_LOGIN_MESSAGES.UNAUTHORIZED
-        );
+        return sendResponse(httpStatus.UNAUTHORIZED, USER_LOGIN.UNAUTHORIZED);
     }
 
     // ✅ Validate password
@@ -48,10 +45,7 @@ const loginHandler = async (req: NextRequest) => {
         user.password || ''
     );
     if (!isValidPassword) {
-        return sendResponse(
-            httpStatus.UNAUTHORIZED,
-            USER_LOGIN_MESSAGES.UNAUTHORIZED
-        );
+        return sendResponse(httpStatus.UNAUTHORIZED, USER_LOGIN.UNAUTHORIZED);
     }
 
     const userData = {
@@ -67,14 +61,10 @@ const loginHandler = async (req: NextRequest) => {
     // ✅ Set cookies
     await setAuthCookies({ accessToken, refreshToken });
 
-    delete userData.id;
+    const { id, ...userWithoutId } = user;
 
     // ✅ Return response with public user info only
-    return sendResponse(
-        httpStatus.OK,
-        USER_LOGIN_MESSAGES.AUTHORIZED,
-        userData
-    );
+    return sendResponse(httpStatus.OK, USER_LOGIN.SUCCESS, userWithoutId);
 };
 
 export const POST = asyncError(loginHandler);

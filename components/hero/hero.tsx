@@ -11,12 +11,10 @@ import { Link as LinkIcon, QrCode } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
-import { IShortUrl } from '@/app/data/types';
 import { handleCreate } from '@/app/(home)/actions';
 
 const Hero = () => {
     const router = useRouter();
-    const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [formData, setFormData] = useState({
         originalUrl: '',
         expiresAt: '',
@@ -78,7 +76,6 @@ const Hero = () => {
                             handleCreate(
                                 formData,
                                 setCreating,
-                                setUrls,
                                 setFormData,
                                 router
                             )

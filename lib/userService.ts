@@ -1,14 +1,7 @@
 import prisma from '@/lib/prisma';
+import { IGoogleProfile } from '@/types/types';
 
-type GoogleProfile = {
-    id: string;
-    email: string;
-    name: string;
-    picture: string;
-    provider: string;
-};
-
-export const upsertUserFromGoogleProfile = async (profile: GoogleProfile) => {
+export const upsertUserFromGoogleProfile = async (profile: IGoogleProfile) => {
     const { email, name, picture } = profile;
 
     // Upsert the user based on email

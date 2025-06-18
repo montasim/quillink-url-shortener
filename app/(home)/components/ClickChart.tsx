@@ -7,7 +7,7 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from 'recharts';
-import { IClickLog } from '@/app/data/types';
+import { IClickLog } from '@/types/types';
 
 const RenderClickChart = (logs?: IClickLog[]) => {
     if (!Array.isArray(logs) || logs.length === 0) {

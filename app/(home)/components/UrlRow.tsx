@@ -21,7 +21,7 @@ import {
     Instagram,
     Github,
 } from 'lucide-react';
-import { IShortUrl } from '@/app/data/types';
+import { IRenderUrlRowProps } from '@/types/types';
 import {
     handleCopy,
     handleDelete,
@@ -29,13 +29,6 @@ import {
     safeFormat,
 } from '@/app/(home)/actions';
 import RenderDetails from '@/app/(home)/components/Details';
-
-interface IRenderUrlRowProps {
-    url: IShortUrl;
-    expandedId: string | null;
-    setExpandedId: React.Dispatch<React.SetStateAction<string | null>>;
-    setUrls: React.Dispatch<React.SetStateAction<IShortUrl[]>>;
-}
 
 const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
     url,
@@ -88,7 +81,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                         <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => handleCopy(shortUrlFull)}
+                            onClick={async () => handleCopy(shortUrlFull)}
                             aria-label="Copy URL"
                         >
                             <Copy className="h-4 w-4 mr-1" />

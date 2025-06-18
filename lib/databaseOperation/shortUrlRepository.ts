@@ -1,14 +1,5 @@
 import prisma from '@/lib/prisma';
-import { ShortUrl } from '@/lib/generated/prisma';
-
-interface IShortUrlRepo {
-    findUnique: (args: any) => Promise<ShortUrl | null>;
-    findFirst: (args: any) => Promise<ShortUrl | null>;
-    findMany: (args: any) => Promise<ShortUrl[]>;
-    update: (args: any) => Promise<ShortUrl>;
-    deleteData: (args: any) => Promise<ShortUrl>;
-    create: (args: any) => Promise<ShortUrl>;
-}
+import { IShortUrlRepo } from '@/types/types';
 
 const shortUrlRepository: IShortUrlRepo = {
     findUnique: async (args) => await prisma.shortUrl.findUnique(args),

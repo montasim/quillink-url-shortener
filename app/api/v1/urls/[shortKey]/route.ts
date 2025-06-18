@@ -6,9 +6,9 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
-import { selection } from '@/app/data/selection';
+import { urlSelection } from '@/app/api/v1/urls/selection';
 
-const { URL_DELETION_MESSAGES, SINGLE_URL_DETAILS_MESSAGES } = MESSAGES;
+const { URL_DELETION, SINGLE_URL_DETAILS } = MESSAGES;
 const { shortUrlModel } = dataService;
 
 const deleteShortUrlById = async (
@@ -29,10 +29,7 @@ const deleteShortUrlById = async (
 
     // If no record is found, return a 404 response
     if (!shortUrlRecord) {
-        return sendResponse(
-            httpStatusLite.NOT_FOUND,
-            URL_DELETION_MESSAGES.NOT_FOUND
-        );
+        return sendResponse(httpStatusLite.NOT_FOUND, URL_DELETION.NOT_FOUND);
     }
 
     // Delete the short URL record from the database
@@ -41,7 +38,7 @@ const deleteShortUrlById = async (
     });
 
     // Return a success response
-    return sendResponse(httpStatusLite.OK, URL_DELETION_MESSAGES.SUCCESSFUL);
+    return sendResponse(httpStatusLite.OK, URL_DELETION.SUCCESS);
 };
 
 const getShortUrlDetailsById = async (
@@ -57,29 +54,26 @@ const getShortUrlDetailsById = async (
     // Find the short URL record, including its click logs
     const shortUrlRecord = await shortUrlModel.findUnique({
         where: { shortKey },
-        select: selection,
+        select: urlSelection,
     });
 
     // If no record is found, return a 404 response
     if (!shortUrlRecord) {
         return sendResponse(
             httpStatusLite.NOT_FOUND,
-            SINGLE_URL_DETAILS_MESSAGES.NOT_FOUND
+            SINGLE_URL_DETAILS.NOT_FOUND
         );
     }
 
     // Check if the URL has expired
     if (shortUrlRecord.expiresAt && new Date() > shortUrlRecord.expiresAt) {
-        return sendResponse(
-            httpStatusLite.GONE,
-            SINGLE_URL_DETAILS_MESSAGES.EXPIRED
-        );
+        return sendResponse(httpStatusLite.GONE, SINGLE_URL_DETAILS.EXPIRED);
     }
 
     // Return a success response with the URL details
     return sendResponse(
         httpStatusLite.OK,
-        SINGLE_URL_DETAILS_MESSAGES.SUCCESSFUL,
+        SINGLE_URL_DETAILS.SUCCESS,
         shortUrlRecord
     );
 };
