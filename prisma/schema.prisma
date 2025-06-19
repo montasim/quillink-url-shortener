@@ -53,7 +53,20 @@ model User {
   subscription Boolean @default(false)
 
   shortUrls ShortUrl[]
+  token     Token[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime?
+}
+
+model Token {
+  id String @id @default(cuid()) @map("_id")
+
+  token     String   @unique
+  type      String // 'auth' | 'reset' | etc.
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  expiresAt DateTime
+
+  createdAt DateTime @default(now())
 }

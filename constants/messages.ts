@@ -77,6 +77,7 @@ const MESSAGES = Object.freeze({
         NO_TOKEN_PROVIDED: 'Authentication token not provided.',
         SUCCESS: 'Authentication successful.',
     },
+
     REFRESH_TOKEN: {
         NO_TOKEN_PROVIDED: 'No refresh token provided.',
         UNAUTHORIZED: 'Invalid refresh token. Please log in again.',
@@ -86,6 +87,18 @@ const MESSAGES = Object.freeze({
     ME_HANDLER: {
         UNAUTHORIZED: 'Unauthorized access to user profile.',
         SUCCESS: 'User profile retrieved successfully.',
+    },
+
+    FORGET_PASSWORD: {
+        VALIDATION_ERROR: 'Invalid email. Please try again.',
+        FORBIDDEN:
+            'If your email is registered, you’ll receive reset instructions shortly.',
+        SUCCESS: 'Password reset link sent.',
+    },
+
+    RESET_PASSWORD: {
+        INVALID_TOKEN: 'Invalid or expired token.',
+        SUCCESS: 'Password reset successful.',
     },
 
     LOGOUT_HANDLER: {

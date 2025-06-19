@@ -46,7 +46,7 @@ const Footer = () => {
                         <span className="text-muted-foreground">
                             &copy; {new Date().getFullYear()}{' '}
                             <Link href="/" target="_blank">
-                                {configuration.name}
+                                {configuration.app.name}
                             </Link>
                             . All rights reserved.
                         </span>

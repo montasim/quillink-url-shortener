@@ -3,42 +3,50 @@ import configuration from '@/configuration/configuration';
 import COOKIES from '@/constants/cookies';
 import { ISignedJwtPayload, ITokenUserDetails } from '@/types/types';
 
+export const signToken = (
+    payload: Omit<ISignedJwtPayload, 'iat' | 'exp'>,
+    secret: string,
+    expiresInMinutes: number
+): string => {
+    return jwt.sign(payload, secret, {
+        expiresIn: `${expiresInMinutes}m`,
+    });
+};
+
 export const createToken = async (userDetails: ITokenUserDetails) => {
-    // Convert expiration minutes to milliseconds for Date object calculation
-    const accessTokenExpirationMs =
-        configuration.jwt.accessToken.expiration * 60 * 1000;
-    const refreshTokenExpirationMs =
-        configuration.jwt.refreshToken.expiration * 60 * 1000;
+    const accessTokenExpirationMinutes =
+        configuration.jwt.accessToken.expiration;
+    const refreshTokenExpirationMinutes =
+        configuration.jwt.refreshToken.expiration;
 
     const accessTokenDetails: Omit<ISignedJwtPayload, 'iat' | 'exp'> = {
         type: COOKIES.TYPE.ACCESS,
-        expiry: new Date(Date.now() + accessTokenExpirationMs).toISOString(), // Store as ISO string
+        expiry: new Date(
+            Date.now() + accessTokenExpirationMinutes
+        ).toISOString(),
         currentUser: { ...userDetails },
     };
 
     const refreshTokenDetails: Omit<ISignedJwtPayload, 'iat' | 'exp'> = {
         type: COOKIES.TYPE.REFRESH,
-        expiry: new Date(Date.now() + refreshTokenExpirationMs).toISOString(), // Store as ISO string
+        expiry: new Date(
+            Date.now() + refreshTokenExpirationMinutes
+        ).toISOString(),
         currentUser: { ...userDetails },
     };
 
-    const accessToken = jwt.sign(
+    const accessToken = signToken(
         accessTokenDetails,
         configuration.jwt.accessToken.secret,
-        {
-            expiresIn: `${configuration.jwt.accessToken.expiration}m`,
-        }
+        accessTokenExpirationMinutes
     );
 
-    const refreshToken = jwt.sign(
+    const refreshToken = signToken(
         refreshTokenDetails,
         configuration.jwt.refreshToken.secret,
-        {
-            expiresIn: `${configuration.jwt.refreshToken.expiration}m`,
-        }
+        refreshTokenExpirationMinutes
     );
 
-    // Only return accessToken and refreshToken, tokenDetails object is not typically returned
     return { accessToken, refreshToken };
 };
 

@@ -47,7 +47,7 @@ const SignUpPage = () => {
                 <div className="max-w-xs m-auto w-full flex flex-col items-center">
                     <Logo />
                     <p className="mt-4 text-xl font-bold tracking-tight">
-                        Sign up for {configuration.name} account
+                        Sign up for {configuration.app.name} account
                     </p>
 
                     <Button

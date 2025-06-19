@@ -9,6 +9,7 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
+import configuration from '@/configuration/configuration';
 
 const { QR_CODE_GENERATION } = MESSAGES;
 const { shortUrlModel } = dataService;
@@ -47,7 +48,7 @@ const generateShortUrlQRCode = async (
 
     // Construct the full URL that the QR code will point to
     // This assumes process.env.NEXT_PUBLIC_BASE_URL is configured correctly
-    const fullRedirectUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${shortUrlRecord.shortKey}`;
+    const fullRedirectUrl = `${configuration.app.baseUrl}/${shortUrlRecord.shortKey}`;
 
     // Generate the QR code as a base64 types URL
     const qrCodeDataUrl = await generateQRCode(fullRedirectUrl);

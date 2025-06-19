@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShortUrl, ClickLog, User } from '@/lib/generated/prisma';
+import { ShortUrl, ClickLog, User, Token } from '@/lib/generated/prisma';
 
 export interface IClickLog {
     id: string;
@@ -59,6 +59,11 @@ export interface ISignedJwtPayload {
     iat: number;
     exp: number;
 }
+export interface ISendMail {
+    to: string;
+    subject: string;
+    html: string;
+}
 
 export interface IShortUrlRepo {
     findUnique: (args: any) => Promise<ShortUrl | null>;
@@ -80,6 +85,15 @@ export interface IUserRepo {
     update: (args: any) => Promise<User>;
     deleteData: (args: any) => Promise<User>;
     create: (args: any) => Promise<User>;
+}
+
+export interface ITokenRepo {
+    findUnique: (args: any) => Promise<Token | null>;
+    findFirst: (args: any) => Promise<Token | null>;
+    findMany: (args: any) => Promise<Token[]>;
+    update: (args: any) => Promise<Token>;
+    deleteData: (args: any) => Promise<Token>;
+    create: (args: any) => Promise<Token>;
 }
 
 export interface IRenderUrlRowProps {

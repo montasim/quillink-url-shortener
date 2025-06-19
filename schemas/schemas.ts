@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import MESSAGES from '@/constants/messages';
 import REGEX_PATTERNS from '@/constants/regexPatterns';
+import configuration from '@/configuration/configuration';
 
 const {
     SHORT_KEY_REGEX,
@@ -70,7 +71,7 @@ export const ShortenUrlSchema = z
             .transform((val) => normalizeUrl(val))
             .refine(
                 (val) => {
-                    const ownDomain = process.env.NEXT_PUBLIC_BASE_URL;
+                    const ownDomain = configuration.app.baseUrl;
                     return !val.startsWith(ownDomain ?? '');
                 },
                 {
@@ -104,6 +105,19 @@ export const SignupSchema = z
         name,
         email,
         password,
+    })
+    .strict();
+
+export const ForgotPasswordSchema = z
+    .object({
+        email,
+    })
+    .strict();
+
+export const ResetPasswordSchema = z
+    .object({
+        token: nonEmptyString('Token'),
+        newPassword: password,
     })
     .strict();
 

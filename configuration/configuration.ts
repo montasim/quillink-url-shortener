@@ -1,7 +1,10 @@
 import getEnvironmentData from '@/utils/getEnvironmentData';
 
 const configuration = {
-    name: 'QuilLink',
+    app: {
+        name: 'QuilLink',
+        baseUrl: getEnvironmentData('NEXT_PUBLIC_BASE_URL'),
+    },
 
     nodeEnv: getEnvironmentData('NODE_ENV'),
 
@@ -27,6 +30,10 @@ const configuration = {
         },
     },
 
+    forgetPassword: {
+        expires: parseInt(getEnvironmentData('FORGET_PASSWORD_EXPIRES_MS')),
+    },
+
     cookies: {
         secure: getEnvironmentData('COOKIE_SECURE'),
         sameSite: getEnvironmentData('COOKIE_SAME_SITE'),
@@ -41,6 +48,14 @@ const configuration = {
         redirectUri: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_REDIRECT_URI'),
         tokenUrl: getEnvironmentData('GOOGLE_OAUTH_TOKEN_URL'),
         userInfoUrl: getEnvironmentData('GOOGLE_OAUTH_USERINFO_URL'),
+    },
+
+    mailer: {
+        service: getEnvironmentData('MAILER_SERVICE'),
+        auth: {
+            user: getEnvironmentData('MAILER_USER'),
+            pass: getEnvironmentData('MAILER_PASS'),
+        },
     },
 };
 

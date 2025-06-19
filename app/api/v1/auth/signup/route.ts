@@ -6,7 +6,7 @@ import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import asyncError from '@/lib/asyncError';
-import hashPassword from '@/utils/hashPassword';
+import generateHash from '@/utils/generateHash';
 
 const { USER_SIGNUP } = MESSAGES;
 const { userModel } = dataService;
@@ -34,7 +34,7 @@ const signupHandler = async (req: NextRequest) => {
     }
 
     // ✅ Hash password
-    const hashedPassword = await hashPassword(password);
+    const hashedPassword = await generateHash(password);
 
     // ✅ Create user
     await userModel.create({

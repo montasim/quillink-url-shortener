@@ -1,7 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,27 +18,37 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import configuration from '@/configuration/configuration';
-import { handleGoogleLogin, handleLogin } from '@/app/login/actions';
-import { LoginSchema } from '@/schemas/schemas';
-import { useAuth } from '@/context/AuthContext';
-import GoogleLogo from '@/components/googleLogo';
+import { handleForgotPassword } from '@/app/forgot-password/actions';
+import { ResetPasswordSchema } from '@/schemas/schemas';
+import { toast } from 'sonner';
 
-const LoginPage = () => {
+const ResetPassword = () => {
     const router = useRouter();
+    const searchParams = useSearchParams();
     const [loading, setLoading] = useState(false);
-    const { refreshAuth } = useAuth();
 
-    const form = useForm<z.infer<typeof LoginSchema>>({
+    const form = useForm<z.infer<typeof ResetPasswordSchema>>({
         defaultValues: {
-            email: '',
-            password: '',
+            token: '',
+            newPassword: '',
         },
-        resolver: zodResolver(LoginSchema),
+        resolver: zodResolver(ResetPasswordSchema),
     });
 
-    const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
-        await handleLogin(data, setLoading, router, refreshAuth);
+    useEffect(() => {
+        const token = searchParams.get('token');
+        if (token) {
+            form.setValue('token', token);
+        } else {
+            toast.error(
+                "No 'token' found in the URL query parameters. Redirecting to login."
+            );
+            router.push('/login');
+        }
+    }, [searchParams, form, router]);
+
+    const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
+        await handleForgotPassword(data, setLoading, router);
     };
 
     return (
@@ -46,20 +56,11 @@ const LoginPage = () => {
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight">
-                    Log in to {configuration.app.name} account
+                    Reset your password
                 </p>
 
-                <Button
-                    onClick={handleGoogleLogin}
-                    className="mt-8 w-full gap-3"
-                >
-                    <GoogleLogo />
-                    Continue with Google
-                </Button>
-
-                <div className="my-7 w-full flex items-center justify-center overflow-hidden">
+                <div className="my-4 w-full flex items-center justify-center overflow-hidden">
                     <Separator />
-                    <span className="text-sm px-2">OR</span>
                     <Separator />
                 </div>
 
@@ -70,25 +71,7 @@ const LoginPage = () => {
                     >
                         <FormField
                             control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="email"
-                                            placeholder="Email"
-                                            className="w-full"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="password"
+                            name="newPassword"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
@@ -109,25 +92,19 @@ const LoginPage = () => {
                             className="mt-4 w-full"
                             disabled={loading}
                         >
-                            {loading ? 'Logging in...' : 'Continue with Email'}
+                            {loading ? 'Processing...' : 'Continue with Email'}
                         </Button>
                     </form>
                 </Form>
 
                 <div className="mt-5 space-y-5">
-                    <Link
-                        href="/forgot-password"
-                        className="text-sm block underline text-muted-foreground text-center"
-                    >
-                        Forgot your password?
-                    </Link>
                     <p className="text-sm text-center">
-                        Don&apos;t have an account?
+                        Remember password?
                         <Link
-                            href="/signup"
+                            href="/login"
                             className="ml-1 underline text-muted-foreground"
                         >
-                            Create account
+                            Login
                         </Link>
                     </p>
                 </div>
@@ -136,4 +113,12 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+const ResetPasswordPage = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ResetPassword />
+        </Suspense>
+    );
+};
+
+export default ResetPasswordPage;
