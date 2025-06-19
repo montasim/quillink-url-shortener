@@ -9,29 +9,33 @@ const configuration = {
     nodeEnv: getEnvironmentData('NODE_ENV'),
 
     api: {
-        timeout: parseInt(getEnvironmentData('API_CALL_TIMEOUT_S')),
+        timeout: parseInt(getEnvironmentData('API_CALL_TIMEOUT_S'), 10),
     },
 
     jwt: {
         accessToken: {
             secret: getEnvironmentData('JWT_ACCESS_TOKEN_SECRET'),
             expiration: parseInt(
-                getEnvironmentData('JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES')
+                getEnvironmentData('JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES'),
+                10
             ),
         },
+
         refreshToken: {
             apiInterval: parseInt(
-                getEnvironmentData('JWT_REFRESH_INTERVAL_MS')
+                getEnvironmentData('NEXT_PUBLIC_JWT_REFRESH_INTERVAL_MS'),
+                10
             ),
             secret: getEnvironmentData('JWT_REFRESH_TOKEN_SECRET'),
             expiration: parseInt(
-                getEnvironmentData('JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES')
+                getEnvironmentData('JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES'),
+                10
             ),
         },
     },
 
     forgetPassword: {
-        expires: parseInt(getEnvironmentData('FORGET_PASSWORD_EXPIRES_MS')),
+        expires: parseInt(getEnvironmentData('FORGET_PASSWORD_EXPIRES_MS'), 10),
     },
 
     cookies: {

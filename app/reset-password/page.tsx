@@ -18,7 +18,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { handleForgotPassword } from '@/app/forgot-password/actions';
+import { handleResetPassword } from '@/app/reset-password/actions';
 import { ResetPasswordSchema } from '@/schemas/schemas';
 import { toast } from 'sonner';
 
@@ -48,7 +48,7 @@ const ResetPassword = () => {
     }, [searchParams, form, router]);
 
     const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
-        await handleForgotPassword(data, setLoading, router);
+        await handleResetPassword(data, setLoading, router);
     };
 
     return (
@@ -92,7 +92,7 @@ const ResetPassword = () => {
                             className="mt-4 w-full"
                             disabled={loading}
                         >
-                            {loading ? 'Processing...' : 'Continue with Email'}
+                            {loading ? 'Processing...' : 'Reset Password'}
                         </Button>
                     </form>
                 </Form>

@@ -77,7 +77,7 @@ const ForgotPasswordPage = () => {
                             className="mt-4 w-full"
                             disabled={loading}
                         >
-                            {loading ? 'Processing...' : 'Continue with Email'}
+                            {loading ? 'Processing...' : 'Send Email'}
                         </Button>
                     </form>
                 </Form>

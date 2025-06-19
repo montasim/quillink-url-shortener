@@ -99,19 +99,21 @@ export const startProactiveRefresh = () => {
     if (refreshTimer) {
         clearInterval(refreshTimer);
     }
-    refreshTimer = setInterval(async () => {
-        if (!isRefreshing) {
-            // Only attempt if no refresh is already in progress
-            console.log('Attempting proactive token refresh...');
-            try {
-                // Perform a silent refresh
-                await axiosInstance.get('/api/v1/auth/refresh');
-                console.log('Proactive token refresh successful.');
-            } catch (error) {
-                console.error('Proactive token refresh failed:', error);
+
+    refreshTimer = setInterval(
+        async () => {
+            if (!isRefreshing) {
+                console.log('Attempting proactive token refresh...');
+                try {
+                    await getData('/api/v1/auth/refresh');
+                    console.log('Proactive token refresh successful.');
+                } catch (error) {
+                    console.error('Proactive token refresh failed:', error);
+                }
             }
-        }
-    }, configuration.jwt.refreshToken.apiInterval);
+        },
+        1000 * 60 * 50
+    );
 };
 
 export const getData = async (endpoint: string) => {

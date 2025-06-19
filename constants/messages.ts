@@ -97,6 +97,7 @@ const MESSAGES = Object.freeze({
     },
 
     RESET_PASSWORD: {
+        VALIDATION_ERROR: 'Invalid email, or password. Please try again.',
         INVALID_TOKEN: 'Invalid or expired token.',
         SUCCESS: 'Password reset successful.',
     },

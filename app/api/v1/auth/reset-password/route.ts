@@ -5,12 +5,26 @@ import MESSAGES from '@/constants/messages';
 import dataService from '@/lib/databaseOperation';
 import generateHash from '@/utils/generateHash';
 import { NextRequest } from 'next/server';
+import { ResetPasswordSchema } from '@/schemas/schemas';
 
 const { RESET_PASSWORD } = MESSAGES;
 const { tokenModel, userModel } = dataService;
 
 const forgotPasswordHandler = async (req: NextRequest) => {
-    const { token, newPassword } = await req.json();
+    const body = await req.json();
+
+    // ✅ Validate request body
+    const validation = ResetPasswordSchema.safeParse(body);
+    if (!validation.success) {
+        return sendResponse(
+            httpStatus.BAD_REQUEST,
+            RESET_PASSWORD.VALIDATION_ERROR,
+            {},
+            validation.error.flatten()
+        );
+    }
+
+    const { token, newPassword } = validation.data;
 
     const tokenEntry = await tokenModel.findUnique({
         where: { token },
