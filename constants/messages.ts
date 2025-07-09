@@ -111,6 +111,16 @@ const MESSAGES = Object.freeze({
         VALIDATION_ERROR: 'Invalid request types provided.',
         INTERNAL_SERVER_ERROR: 'An unexpected internal server error occurred.',
     },
+
+    SYSTEM: {
+        ENV_DATA_VALIDATION_ERROR_SEPARATOR:
+            '====================================================',
+        ENV_DATA_VALIDATION_ERROR: 'Environment variable validation error:',
+        INVALID_ENV_CONFIGURATION:
+            'Invalid environment configuration. Please check your .env file.',
+        UNEXPECTED_ENV_VALIDATION_ERROR:
+            'Failed to load environment configuration.',
+    },
 } as const);
 
 export default MESSAGES;
