@@ -125,7 +125,6 @@
     This will run the project.
 
 4. **Code Prettier:**
-
     - To check if files are formatted correctly:
 
         ```bash

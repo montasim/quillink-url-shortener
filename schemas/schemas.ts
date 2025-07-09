@@ -12,7 +12,7 @@ const {
     SPECIAL_CHARACTER_REGEX,
 } = REGEX_PATTERNS;
 
-const nonEmptyString = (fieldName: string) =>
+export const nonEmptyString = (fieldName: string) =>
     z.string().nonempty(`${fieldName} is required`);
 const validEmail = (fieldName = 'Email') =>
     nonEmptyString(fieldName)
