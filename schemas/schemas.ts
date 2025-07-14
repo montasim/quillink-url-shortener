@@ -1,23 +1,61 @@
 import { z } from 'zod';
 import MESSAGES from '@/constants/messages';
 import REGEX_PATTERNS from '@/constants/regexPatterns';
-import configuration from '@/configuration/configuration';
+import getEnvironmentData from '@/utils/getEnvironmentData';
 
 const {
-    SHORT_KEY_REGEX,
-    EMAIL_REGEX,
-    UPPERCASE_REGEX,
-    LOWERCASE_REGEX,
-    NUMBER_REGEX,
-    SPECIAL_CHARACTER_REGEX,
+    ENGLISH_LETTERS_ONLY,
+    NUMBERS_ONLY,
+    ENGLISH_ALPHANUMERIC_ONLY,
+    FLOAT_STRING,
+    POSITIVE_INTEGER_STRING,
+    SHORT_KEY,
+    EMAIL,
+    UPPERCASE,
+    LOWERCASE,
+    NUMBER,
+    SPECIAL_CHARACTER,
 } = REGEX_PATTERNS;
 
 export const nonEmptyString = (fieldName: string) =>
     z.string().nonempty(`${fieldName} is required`);
-const validEmail = (fieldName = 'Email') =>
-    nonEmptyString(fieldName)
+
+export const englishLettersOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        ENGLISH_LETTERS_ONLY,
+        `${fieldName} must contain only English letters.`
+    );
+
+export const englishAlphanumericOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        ENGLISH_ALPHANUMERIC_ONLY,
+        `${fieldName} must contain only English letters and numbers.`
+    );
+
+export const numbersOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        NUMBERS_ONLY,
+        `${fieldName} must contain only numbers.`
+    );
+export const floatStringOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        FLOAT_STRING,
+        `${fieldName} must be a valid number (e.g., 123, -4.5).`
+    );
+export const positiveIntegerStringOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        POSITIVE_INTEGER_STRING,
+        `${fieldName} must be a positive integer.`
+    );
+
+export const validUrl = (fieldName = 'Url') =>
+    z.string().url(`Invalid ${fieldName.toLowerCase()}`);
+
+export const validEmail = (fieldName = 'Email') =>
+    z.string()
         .email(`Invalid ${fieldName.toLowerCase()}`)
-        .regex(EMAIL_REGEX, `Invalid ${fieldName.toLowerCase()} format`);
+        .regex(EMAIL, `Invalid ${fieldName.toLowerCase()} format`);
+
 export const validPassword = (
     fieldName = 'Password',
     minLength = 8,
@@ -33,21 +71,21 @@ export const validPassword = (
         .max(maxLength, {
             message: `${fieldName} must be at most ${maxLength} characters`,
         })
-        .refine((val) => UPPERCASE_REGEX.test(val), {
+        .refine((val) => UPPERCASE.test(val), {
             message: `${fieldName} must contain at least one uppercase letter`,
         })
-        .refine((val) => LOWERCASE_REGEX.test(val), {
+        .refine((val) => LOWERCASE.test(val), {
             message: `${fieldName} must contain at least one lowercase letter`,
         })
-        .refine((val) => NUMBER_REGEX.test(val), {
+        .refine((val) => NUMBER.test(val), {
             message: `${fieldName} must contain at least one number`,
         })
-        .refine((val) => SPECIAL_CHARACTER_REGEX.test(val), {
+        .refine((val) => SPECIAL_CHARACTER.test(val), {
             message: `${fieldName} must contain at least one special character (@$!%*?&#)`,
         });
 
 // Define the Zod validation schema
-const name = nonEmptyString('Name');
+const name = englishLettersOnly('Name');
 const email = validEmail('Email');
 const password = validPassword('Password', 8, 20);
 
@@ -71,7 +109,7 @@ export const ShortenUrlSchema = z
             .transform((val) => normalizeUrl(val))
             .refine(
                 (val) => {
-                    const ownDomain = configuration.app.baseUrl;
+                    const ownDomain = getEnvironmentData('NEXT_PUBLIC_BASE_URL');
                     return !val.startsWith(ownDomain ?? '');
                 },
                 {
@@ -87,7 +125,7 @@ export const ShortKeySchema = z
             .string()
             .trim()
             .min(1, MESSAGES.COMMON.VALIDATION_REQUIRED)
-            .regex(SHORT_KEY_REGEX, {
+            .regex(SHORT_KEY, {
                 message: MESSAGES.URL_VALIDATION.INVALID_SHORT_KEY_FORMAT,
             }),
     })
