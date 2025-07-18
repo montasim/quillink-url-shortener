@@ -6,13 +6,13 @@ import httpStatusLite from 'http-status-lite';
 import contentTypesLite from 'content-types-lite';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 import configuration from '@/configuration/configuration';
+import { getShortUrlDetails } from '@/services/url.service';
+import { urlSelection } from '@/app/api/v1/urls/selection';
 
 const { QR_CODE_GENERATION } = MESSAGES;
-const { shortUrlModel } = dataService;
 
 const generateShortUrlQRCode = async (
     request: NextRequest,
@@ -33,10 +33,7 @@ const generateShortUrlQRCode = async (
     }
 
     // Find the short URL record in the database
-    const shortUrlRecord = await shortUrlModel.findUnique({
-        // Renamed from types for clarity
-        where: { shortKey },
-    });
+    const shortUrlRecord = await getShortUrlDetails({ shortKey }, urlSelection);
 
     // If no record is found for the given shortKey, return a 404 response
     if (!shortUrlRecord) {

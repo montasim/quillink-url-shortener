@@ -1,22 +1,19 @@
-import { cookies } from 'next/headers';
 import httpStatus from 'http-status-lite';
 import { verifyToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import asyncError from '@/lib/asyncError';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import { meSelection } from '@/app/api/v1/auth/me/selection';
 import COOKIES from '@/constants/cookies';
 import { ISignedJwtPayload } from '@/types/types';
+import { getAccessCookie } from '@/lib/cookies';
+import { getUserDetails } from '@/services/user.service';
 
 const { AUTHENTICATION, ME_HANDLER } = MESSAGES;
-const { userModel } = dataService;
 
 const retrieveUserProfileHandler = async () => {
-    const cookieStore = await cookies();
-    const accessToken = cookieStore.get(COOKIES.NAME.ACCESS_TOKEN)?.value;
-
-    if (!accessToken) {
+    const accessCookie = await getAccessCookie();
+    if (!accessCookie) {
         return sendResponse(
             httpStatus.UNAUTHORIZED,
             AUTHENTICATION.UNAUTHORIZED
@@ -25,7 +22,7 @@ const retrieveUserProfileHandler = async () => {
 
     let decodedPayload: ISignedJwtPayload;
     try {
-        decodedPayload = verifyToken(accessToken, COOKIES.TYPE.ACCESS);
+        decodedPayload = verifyToken(accessCookie, COOKIES.TYPE.ACCESS);
     } catch (error) {
         console.error('Access token verification failed:', error);
         return sendResponse(
@@ -41,10 +38,10 @@ const retrieveUserProfileHandler = async () => {
         );
     }
 
-    const user = await userModel.findUnique({
-        where: { id: decodedPayload?.currentUser?.id },
-        select: meSelection,
-    });
+    const user = await getUserDetails(
+        { id: decodedPayload?.currentUser?.id },
+        meSelection
+    );
 
     if (!user) {
         return sendResponse(

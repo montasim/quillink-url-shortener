@@ -4,12 +4,13 @@ import getClientIp from '@/lib/getClientIp';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
+import { getShortUrlDetails, updateShortUrl } from '@/services/url.service';
+import { createClickLog } from '@/services/clickLog.service';
+import { clickLogSelection } from '@/app/api/v1/urls/selection';
 
 const { URL_REDIRECT } = MESSAGES;
-const { shortUrlModel, clickLogModel } = dataService;
 
 const handleShortUrlRedirect = async (
     request: NextRequest,
@@ -22,9 +23,7 @@ const handleShortUrlRedirect = async (
     const shortKey = validation.data.shortKey;
 
     // Find the URL mapping record using the short key
-    const urlMappingRecord = await shortUrlModel.findUnique({
-        where: { shortKey },
-    });
+    const urlMappingRecord = await getShortUrlDetails({ shortKey });
 
     // If no record is found, return a 404 response
     if (!urlMappingRecord) {
@@ -40,19 +39,17 @@ const handleShortUrlRedirect = async (
     }
 
     // Increment the click count for the short URL
-    await shortUrlModel.update({
-        where: { shortKey },
-        data: { clicks: { increment: 1 } },
-    });
+    await updateShortUrl({ shortKey }, { clicks: { increment: 1 } });
 
     // Log the click event details
-    await clickLogModel.create({
-        data: {
+    await createClickLog(
+        {
             shortKey,
             ipAddress: getClientIp(request),
             userAgent: request.headers.get('user-agent') ?? 'unknown',
         },
-    });
+        clickLogSelection
+    );
 
     // Redirect the user to the original URL
     return NextResponse.redirect(urlMappingRecord.originalUrl);

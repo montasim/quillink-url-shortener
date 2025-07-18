@@ -4,12 +4,12 @@ import httpStatus from 'http-status-lite';
 import { SignupSchema } from '@/schemas/schemas';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import asyncError from '@/lib/asyncError';
 import generateHash from '@/utils/generateHash';
+import { createUser, getUserDetails } from '@/services/user.service';
+import { meSelection } from '@/app/api/v1/auth/me/selection';
 
 const { USER_SIGNUP } = MESSAGES;
-const { userModel } = dataService;
 
 const signupHandler = async (req: NextRequest) => {
     const body = await req.json();
@@ -28,7 +28,7 @@ const signupHandler = async (req: NextRequest) => {
     const { name, email, password } = validation.data;
 
     // ✅ Check if user already exists
-    const existingUser = await userModel.findUnique({ where: { email } });
+    const existingUser = await getUserDetails({ email }, meSelection);
     if (existingUser) {
         return sendResponse(httpStatus.CONFLICT, USER_SIGNUP.ALREADY_EXISTS);
     }
@@ -37,18 +37,18 @@ const signupHandler = async (req: NextRequest) => {
     const hashedPassword = await generateHash(password);
 
     // ✅ Create user
-    await userModel.create({
-        data: {
+    await createUser(
+        {
             name,
             email,
             password: hashedPassword,
         },
-        select: {
+        {
             id: true,
             name: true,
             email: true,
-        },
-    });
+        }
+    );
 
     // ✅ Return public user types
     return sendResponse(httpStatus.CREATED, USER_SIGNUP.SUCCESS);

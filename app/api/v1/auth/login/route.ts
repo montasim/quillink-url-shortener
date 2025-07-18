@@ -3,15 +3,14 @@ import httpStatus from 'http-status-lite';
 import { LoginSchema } from '@/schemas/schemas';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import comparePassword from '@/utils/comparePassword';
 import { createToken } from '@/lib/jwt';
 import asyncError from '@/lib/asyncError';
 import { setAuthCookies } from '@/lib/cookies';
 import { loginSelection } from '@/app/api/v1/auth/login/selection';
+import { getUserDetails } from '@/services/user.service';
 
 const { USER_LOGIN } = MESSAGES;
-const { userModel } = dataService;
 
 const loginHandler = async (req: NextRequest) => {
     const body = await req.json();
@@ -30,11 +29,7 @@ const loginHandler = async (req: NextRequest) => {
     const { email, password } = validation.data;
 
     // ✅ Find user by email
-    const user = await userModel.findUnique({
-        where: { email },
-        select: loginSelection,
-    });
-
+    const user = await getUserDetails({ email }, loginSelection);
     if (!user) {
         return sendResponse(httpStatus.UNAUTHORIZED, USER_LOGIN.UNAUTHORIZED);
     }

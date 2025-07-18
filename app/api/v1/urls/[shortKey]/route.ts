@@ -3,13 +3,11 @@ import httpStatusLite from 'http-status-lite';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
-import { urlSelection } from '@/app/api/v1/urls/selection';
+import { deleteShortUrl, getShortUrlDetails } from '@/services/url.service';
 
 const { URL_DELETION, SINGLE_URL_DETAILS } = MESSAGES;
-const { shortUrlModel } = dataService;
 
 const deleteShortUrlById = async (
     request: NextRequest,
@@ -22,10 +20,7 @@ const deleteShortUrlById = async (
     const shortKey = validation.data.shortKey;
 
     // Attempt to find the URL record before attempting deletion
-    const shortUrlRecord = await shortUrlModel.findUnique({
-        // Renamed from url
-        where: { shortKey },
-    });
+    const shortUrlRecord = await getShortUrlDetails({ shortKey });
 
     // If no record is found, return a 404 response
     if (!shortUrlRecord) {
@@ -33,9 +28,7 @@ const deleteShortUrlById = async (
     }
 
     // Delete the short URL record from the database
-    await shortUrlModel.deleteData({
-        where: { shortKey },
-    });
+    await deleteShortUrl({ shortKey });
 
     // Return a success response
     return sendResponse(httpStatusLite.OK, URL_DELETION.SUCCESS);
@@ -50,14 +43,9 @@ const getShortUrlDetailsById = async (
     if (!validation.success) return validation.response;
 
     const shortKey = validation.data.shortKey;
+    const shortUrlRecord = await getShortUrlDetails({ shortKey });
 
     // Find the short URL record, including its click logs
-    const shortUrlRecord = await shortUrlModel.findUnique({
-        where: { shortKey },
-        select: urlSelection,
-    });
-
-    // If no record is found, return a 404 response
     if (!shortUrlRecord) {
         return sendResponse(
             httpStatusLite.NOT_FOUND,

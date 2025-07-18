@@ -1,15 +1,17 @@
 import { sendMail } from '@/lib/mailer';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import sendResponse from '@/utils/sendResponse';
 import httpStatus from 'http-status-lite';
 import generateToken from '@/utils/generateToken';
 import configuration from '@/configuration/configuration';
 import { NextRequest } from 'next/server';
 import { ForgotPasswordSchema } from '@/schemas/schemas';
+import { getUserDetails } from '@/services/user.service';
+import { meSelection } from '@/app/api/v1/auth/me/selection';
+import { createToken } from '@/services/token.service';
+import { tokenSelection } from '@/app/api/v1/auth/refresh/selection';
 
 const { FORGET_PASSWORD } = MESSAGES;
-const { tokenModel, userModel } = dataService;
 
 export const POST = async (req: NextRequest) => {
     const body = await req.json();
@@ -27,7 +29,7 @@ export const POST = async (req: NextRequest) => {
 
     const { email } = validation.data;
 
-    const user = await userModel.findUnique({ where: { email } });
+    const user = await getUserDetails({ email }, meSelection);
     if (!user) {
         return sendResponse(httpStatus.FORBIDDEN, FORGET_PASSWORD.FORBIDDEN);
     }
@@ -35,14 +37,15 @@ export const POST = async (req: NextRequest) => {
     const token = await generateToken();
     const expires = new Date(Date.now() + configuration.forgetPassword.expires);
 
-    await tokenModel.create({
-        data: {
+    await createToken(
+        {
             token,
             userId: user.id,
             type: 'reset',
             expiresAt: expires,
         },
-    });
+        tokenSelection
+    );
 
     const resetUrl = `${configuration.app.baseUrl}/reset-password?token=${token}`;
 

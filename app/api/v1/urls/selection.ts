@@ -13,3 +13,11 @@ export const urlSelection = {
         orderBy: { createdAt: 'desc' },
     },
 };
+
+export const clickLogSelection = {
+    id: true,
+    shortKey: true,
+    ipAddress: true,
+    userAgent: true,
+    createdAt: true,
+};

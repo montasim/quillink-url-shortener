@@ -2,13 +2,13 @@ import sendResponse from '@/utils/sendResponse';
 import httpStatus from 'http-status-lite';
 import asyncError from '@/lib/asyncError';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/dataService';
 import generateHash from '@/utils/generateHash';
 import { NextRequest } from 'next/server';
 import { ResetPasswordSchema } from '@/schemas/schemas';
+import { updateUser } from '@/services/user.service';
+import { deleteToken, getTokenDetails } from '@/services/token.service';
 
 const { RESET_PASSWORD } = MESSAGES;
-const { tokenModel, userModel } = dataService;
 
 const forgotPasswordHandler = async (req: NextRequest) => {
     const body = await req.json();
@@ -26,10 +26,7 @@ const forgotPasswordHandler = async (req: NextRequest) => {
 
     const { token, newPassword } = validation.data;
 
-    const tokenEntry = await tokenModel.findUnique({
-        where: { token },
-        include: { user: true },
-    });
+    const tokenEntry = await getTokenDetails({ token }, { user: true }, {});
 
     if (
         !tokenEntry ||
@@ -44,12 +41,9 @@ const forgotPasswordHandler = async (req: NextRequest) => {
 
     const hashedPassword = await generateHash(newPassword);
 
-    await userModel.update({
-        where: { id: tokenEntry.userId },
-        data: { password: hashedPassword },
-    });
+    await updateUser({ id: tokenEntry.userId }, { password: hashedPassword });
 
-    await tokenModel.deleteData({ where: { token } });
+    await deleteToken({ token });
 
     return sendResponse(httpStatus.OK, RESET_PASSWORD.SUCCESS);
 };

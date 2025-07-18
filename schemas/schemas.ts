@@ -52,7 +52,8 @@ export const validUrl = (fieldName = 'Url') =>
     z.string().url(`Invalid ${fieldName.toLowerCase()}`);
 
 export const validEmail = (fieldName = 'Email') =>
-    z.string()
+    z
+        .string()
         .email(`Invalid ${fieldName.toLowerCase()}`)
         .regex(EMAIL, `Invalid ${fieldName.toLowerCase()} format`);
 
@@ -109,7 +110,9 @@ export const ShortenUrlSchema = z
             .transform((val) => normalizeUrl(val))
             .refine(
                 (val) => {
-                    const ownDomain = getEnvironmentData('NEXT_PUBLIC_BASE_URL');
+                    const ownDomain = getEnvironmentData(
+                        'NEXT_PUBLIC_BASE_URL'
+                    );
                     return !val.startsWith(ownDomain ?? '');
                 },
                 {
