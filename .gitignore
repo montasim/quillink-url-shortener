@@ -121,7 +121,7 @@ yarn-error.log*
 # and to maintain environment-specific configurations locally.
 
 # Default environment variables file.
-.env.development
+.env
 
 # Environment variables for development builds.
 .env.development
@@ -209,3 +209,4 @@ next-env.d.ts
 /lib/generated/prisma
 
 /pnpm-lock.yaml
+/.env
