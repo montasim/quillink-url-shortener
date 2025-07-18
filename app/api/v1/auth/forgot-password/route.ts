@@ -1,6 +1,6 @@
 import { sendMail } from '@/lib/mailer';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import sendResponse from '@/utils/sendResponse';
 import httpStatus from 'http-status-lite';
 import generateToken from '@/utils/generateToken';

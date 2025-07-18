@@ -3,7 +3,7 @@ import httpStatus from 'http-status-lite';
 import { LoginSchema } from '@/schemas/schemas';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import comparePassword from '@/utils/comparePassword';
 import { createToken } from '@/lib/jwt';
 import asyncError from '@/lib/asyncError';

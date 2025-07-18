@@ -5,7 +5,7 @@ import sendResponse from '@/utils/sendResponse';
 import asyncError from '@/lib/asyncError';
 import { setAuthCookies } from '@/lib/cookies';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { refreshTokenSelection } from '@/app/api/v1/auth/refresh/selection';
 import COOKIES from '@/constants/cookies';
 import { ISignedJwtPayload } from '@/types/types';

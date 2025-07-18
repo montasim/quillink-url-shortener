@@ -4,7 +4,7 @@ import httpStatus from 'http-status-lite';
 import { SignupSchema } from '@/schemas/schemas';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import asyncError from '@/lib/asyncError';
 import generateHash from '@/utils/generateHash';
 

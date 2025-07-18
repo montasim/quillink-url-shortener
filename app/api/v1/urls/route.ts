@@ -5,7 +5,7 @@ import { addMonths } from 'date-fns';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { ShortenUrlSchema } from '@/schemas/schemas';
 import { urlSelection } from '@/app/api/v1/urls/selection';
 import { cookies } from 'next/headers';

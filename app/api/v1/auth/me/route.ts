@@ -4,7 +4,7 @@ import { verifyToken } from '@/lib/jwt';
 import sendResponse from '@/utils/sendResponse';
 import asyncError from '@/lib/asyncError';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { meSelection } from '@/app/api/v1/auth/me/selection';
 import COOKIES from '@/constants/cookies';
 import { ISignedJwtPayload } from '@/types/types';

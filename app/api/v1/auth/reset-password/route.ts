@@ -2,7 +2,7 @@ import sendResponse from '@/utils/sendResponse';
 import httpStatus from 'http-status-lite';
 import asyncError from '@/lib/asyncError';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import generateHash from '@/utils/generateHash';
 import { NextRequest } from 'next/server';
 import { ResetPasswordSchema } from '@/schemas/schemas';

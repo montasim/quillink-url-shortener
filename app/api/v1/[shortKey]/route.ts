@@ -4,7 +4,7 @@ import getClientIp from '@/lib/getClientIp';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 

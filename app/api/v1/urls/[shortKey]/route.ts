@@ -3,7 +3,7 @@ import httpStatusLite from 'http-status-lite';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 import { urlSelection } from '@/app/api/v1/urls/selection';

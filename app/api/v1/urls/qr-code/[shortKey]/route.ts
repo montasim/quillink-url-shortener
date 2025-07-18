@@ -6,7 +6,7 @@ import httpStatusLite from 'http-status-lite';
 import contentTypesLite from 'content-types-lite';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import dataService from '@/lib/databaseOperation';
+import dataService from '@/lib/dataService';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 import configuration from '@/configuration/configuration';
