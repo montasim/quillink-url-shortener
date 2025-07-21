@@ -7,10 +7,10 @@
     "pnpm": ">=10.x"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "infisical run -- next dev --turbopack",
     "prisma:generate": "prisma generate",
     "build": "prisma generate && next build",
-    "start": "next start",
+    "start": "infisical run -- next start",
     "lint": "next lint",
     "prettier:check": "prettier . --check",
     "prettier:fix": "prettier . --write",
@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
+    "@infisical/cli": "^0.41.94",
     "@prisma/client": "^6.9.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-avatar": "^1.1.10",
