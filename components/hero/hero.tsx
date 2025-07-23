@@ -9,7 +9,7 @@ import ShortLink from './tab/short-link';
 import QrCode from './tab/qr-code';
 
 const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
 };
 
@@ -49,7 +49,8 @@ const Hero = () => {
                     ease: [0.22, 1, 0.36, 1], // a natural "easeOutBack" effect
                 }}
                 className={cn(
-                    'absolute top-0 left-0 object-cover w-full h-full'
+                    'absolute top-0 left-0 object-cover w-full h-full',
+                    'will-change-transform'
                 )}
             />
 
@@ -91,7 +92,7 @@ const Hero = () => {
                     initial={{ opacity: 0, filter: 'blur(8px)' }}
                     animate={{ opacity: 1, filter: 'blur(0px)' }}
                     transition={{ duration: 0.4, delay: 0.4, ease: 'easeInOut' }}
-                    className="mt-8 flex items-center justify-center gap-4"
+                    className="mt-8 flex items-center justify-center gap-4 will-change-transform"
                 >
                     <Tabs defaultValue={tabs[0].value} className="w-full">
                         <TabsList className="w-full p-0 bg-background justify-start border-b rounded-none">
@@ -99,7 +100,10 @@ const Hero = () => {
                                 <TabsTrigger
                                     key={tab.value}
                                     value={tab.value}
-                                    className="rounded-none bg-background h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background -mb-[2px] rounded-t"
+                                    className={cn(
+                                        "rounded-none bg-black h-full border border-transparent border-b-border",
+                                        "-mb-[2px] rounded-t",
+                                        "data-[state=active]:bg-amber-300 data-[state=active]:shadow-none data-[state=active]:border-border data-[state=active]:border-b-background")}
                                 >
                                     <code className="flex items-center gap-2 text-[13px]">
                                         {tab.icon} {tab.name}
@@ -114,8 +118,8 @@ const Hero = () => {
                                     key={tab.value}
                                     initial={{ opacity: 0, filter: 'blur(8px)' }}
                                     animate={{ opacity: 1, filter: 'blur(0px)' }}
-                                    transition={{ duration: 0.4 }}
-                                    className="w-full"
+                                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                                    className="w-full will-change-transform"
                                 >
                                     {tab.content}
                                 </motion.div>
