@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -94,16 +94,17 @@ const Hero = () => {
                     transition={{ duration: 0.4, delay: 0.4, ease: 'easeInOut' }}
                     className="mt-8 flex items-center justify-center gap-4 will-change-transform"
                 >
-                    <Tabs defaultValue={tabs[0].value} className="w-full">
-                        <TabsList className="w-full p-0 bg-background justify-start border-b rounded-none">
+                    <Tabs defaultValue={tabs[0].value} className="w-full space-y-0 gap-0">
+                        <TabsList className="w-full p-0 bg-background/80 backdrop-blur-sm rounded-t-xl rounded-b-none overflow-hidden justify-start">
                             {tabs.map((tab) => (
                                 <TabsTrigger
                                     key={tab.value}
                                     value={tab.value}
                                     className={cn(
-                                        "rounded-none bg-black h-full border border-transparent border-b-border",
-                                        "-mb-[2px] rounded-t",
-                                        "data-[state=active]:bg-amber-300 data-[state=active]:shadow-none data-[state=active]:border-border data-[state=active]:border-b-background")}
+                                        "bg-transparent text-muted-foreground text-sm transition-colors",
+                                        "data-[state=active]:bg-blue-500 data-[state=active]:text-white",
+                                        "p-0 border-none"
+                                    )}
                                 >
                                     <code className="flex items-center gap-2 text-[13px]">
                                         {tab.icon} {tab.name}
@@ -112,19 +113,22 @@ const Hero = () => {
                             ))}
                         </TabsList>
 
-                        {tabs.map((tab) => (
-                            <TabsContent key={tab.value} value={tab.value}>
-                                <motion.div
-                                    key={tab.value}
-                                    initial={{ opacity: 0, filter: 'blur(8px)' }}
-                                    animate={{ opacity: 1, filter: 'blur(0px)' }}
-                                    transition={{ duration: 0.4, ease: 'easeInOut' }}
-                                    className="w-full will-change-transform"
-                                >
-                                    {tab.content}
-                                </motion.div>
-                            </TabsContent>
-                        ))}
+                        <AnimatePresence mode="wait">
+                            {tabs.map((tab) => (
+                                <TabsContent key={tab.value} value={tab.value} className="mt-0">
+                                    <motion.div
+                                        key={tab.value}
+                                        initial={{ opacity: 0, y: -20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -20 }}
+                                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                                        className="w-full p-6 bg-background/80 backdrop-blur-sm rounded-b-xl shadow-md will-change-transform"
+                                    >
+                                        {tab.content}
+                                    </motion.div>
+                                </TabsContent>
+                            ))}
+                        </AnimatePresence>
                     </Tabs>
                 </motion.div>
             </motion.div>

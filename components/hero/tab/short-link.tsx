@@ -20,7 +20,7 @@ export default function ShortLink() {
     });
     const [creating, setCreating] = useState(false);
     return (
-        <div className='text-white'>
+        <div className=''>
             <div className="w-full">
                 <Label htmlFor="originalUrl">Paste a long URL</Label>{' '}
                 <Input
