@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Hero from '@/components/hero/hero';
 import Clients from '@/components/clients/clients';

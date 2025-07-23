@@ -1,103 +1,31 @@
-'use client';
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Link as LinkIcon, QrCode } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import Link from 'next/link';
-import { handleCreate } from '@/app/(home)/actions';
-import ActionButton from './action-button';
+import { Link as LinkIcon, QrCode as QrCodeIcon } from 'lucide-react';
+import ShortLink from './tab/short-link';
+import QrCode from './tab/qr-code';
 
 const Hero = () => {
-    const router = useRouter();
-    const [formData, setFormData] = useState({
-        originalUrl: '',
-        expiresAt: '',
-        customKey: '',
-    });
-    const [creating, setCreating] = useState(false);
 
     const tabs = [
         {
             name: 'Short Link',
             icon: <LinkIcon />,
             value: 'short_link',
-            content: (
-                <>
-                    <div className="w-full">
-                        <Label htmlFor="originalUrl">Paste a long URL</Label>{' '}
-                        <Input
-                            id="originalUrl"
-                            type="url"
-                            placeholder="https://example.com/super-long-link-dot-com"
-                            className="mt-2"
-                            value={formData.originalUrl}
-                            onChange={(e) =>
-                                setFormData({
-                                    ...formData,
-                                    originalUrl: e.target.value,
-                                })
-                            }
-                        />
-                    </div>
-
-                    <p className="mt-4 text-sm text-left">
-                        By clicking Shorten URL, you are agree to
-                        QuilLink&lsquo;s
-                        <Link
-                            href="#"
-                            className="ml-1 underline text-muted-foreground"
-                        >
-                            Terms of use
-                        </Link>
-                        ,
-                        <Link
-                            href="#"
-                            className="ml-1 underline text-muted-foreground"
-                        >
-                            Privacy Policy
-                        </Link>
-                        , and
-                        <Link
-                            href="#"
-                            className="ml-1 underline text-muted-foreground"
-                        >
-                            Cookie Policy
-                        </Link>
-                    </p>
-
-                    <ActionButton
-                        targetText={creating ? 'Creating...' : 'Shorten URL'}
-                        className="mt-4"
-                        onClick={() =>
-                            handleCreate(
-                                formData,
-                                setCreating,
-                                setFormData,
-                                router
-                            )
-                        }
-                        disabled={creating}
-                    />
-                </>
-            ),
+            content: <ShortLink />,
         },
         {
             name: 'QR Code',
-            icon: <QrCode />,
+            icon: <QrCodeIcon />,
             value: 'qr_code',
-            content: 'Coming soon!',
+            content: <QrCode />,
         },
     ];
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <div className="relative min-h-screen flex justify-center px-6 overflow-hidden">
             <AnimatedGridPattern
                 numSquares={30}
                 maxOpacity={0.1}
@@ -108,11 +36,16 @@ const Hero = () => {
                 )}
             />
 
-            <div className="relative z-10 text-center max-w-2xl">
-                <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 border-none">
+            <div className="relative z-10 text-center max-w-2xl mt-20">
+                <Badge className={
+                    cn(
+                        "rounded-full px-2",
+                        "bg-gradient-to-r from-purple-500 to-indigo-500 text-white",
+                        "text-xs font-semibold tracking-wide uppercase"
+                    )}>
                     Just released v1.0.0
                 </Badge>
-                <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight">
+                <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2]">
                     Make every connection count
                 </h1>
                 <p className="mt-4 text-[17px] md:text-lg">
