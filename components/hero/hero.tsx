@@ -102,7 +102,7 @@ const Hero = () => {
                                         key={tab.value}
                                         value={tab.value}
                                         className={cn(
-                                            "bg-transparent text-muted-foreground text-sm transition-colors",
+                                            "bg-transparent text-muted-foreground text-sm transition-colors duration-300",
                                             "data-[state=active]:bg-blue-500 data-[state=active]:text-white",
                                             "p-0 border-none"
                                         )}
@@ -118,10 +118,10 @@ const Hero = () => {
                                 <TabsContent key={tab.value} value={tab.value} className="mt-0">
                                     <motion.div
                                         key={tab.value}
-                                        initial={{ opacity: 0, filter: 'blur(8px)' }}
+                                        initial={{ opacity: 0.4, filter: 'blur(8px)' }}
                                         animate={{ opacity: 1, filter: 'blur(0px)' }}
                                         transition={{ duration: 0.4, ease: 'easeInOut' }}
-                                        className="w-full p-6 bg-background/80 backdrop-blur-sm rounded-b-xl shadow-md will-change-transform"
+                                        className="w-full p-6 bg-background/80 backdrop-blur-sm rounded-b-xl shadow-md transition-transform duration-300 transform will-change-transform"
                                     >
                                         {tab.content}
                                     </motion.div>
@@ -131,6 +131,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
             </AnimatePresence>
+            <div className="absolute w-full bottom-0 inset-x-0 h-10 md:h-20 lg:h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         </div>
     );
 };

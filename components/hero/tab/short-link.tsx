@@ -27,7 +27,7 @@ export default function ShortLink() {
                     id="originalUrl"
                     type="url"
                     placeholder="https://example.com/super-long-link-dot-com"
-                    className="mt-2"
+                    className="mt-2 border border-blue-500 focus-visible:border-blue-500 focus-visible:ring-blue"
                     value={formData.originalUrl}
                     onChange={(e) =>
                         setFormData({
