@@ -79,8 +79,8 @@ export default function Feature() {
 
             </motion.div>
             <div className='grid md:grid-cols-2 gap-5'>
-                <div className='flex flex-col justify-center space-y-4'>
-                    <h3 className='text-xl sm:text-2xl md:text-4xl'>Campaign Monitoring & <br /> Analysis</h3>
+                <div className='flex flex-col items-center md:items-start justify-center space-y-4'>
+                    <h3 className='text-xl sm:text-2xl md:text-4xl text-center md:text-start'>Campaign Monitoring & <br /> Analysis</h3>
                     <p className="text-[17px] md:text-lg text-muted-foreground">Learn from your links and build better Campaigns</p>
                     <button className="w-fit p-[3px] relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
