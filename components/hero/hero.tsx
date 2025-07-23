@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { handleCreate } from '@/app/(home)/actions';
+import ActionButton from './action-button';
 
 const Hero = () => {
     const router = useRouter();
@@ -71,8 +72,9 @@ const Hero = () => {
                         </Link>
                     </p>
 
-                    <Button
-                        className="mt-6 w-full"
+                    <ActionButton
+                        targetText={creating ? 'Creating...' : 'Shorten URL'}
+                        className="mt-4"
                         onClick={() =>
                             handleCreate(
                                 formData,
@@ -82,9 +84,7 @@ const Hero = () => {
                             )
                         }
                         disabled={creating}
-                    >
-                        {creating ? 'Creating...' : 'Shorten URL'}
-                    </Button>
+                    />
                 </>
             ),
         },
