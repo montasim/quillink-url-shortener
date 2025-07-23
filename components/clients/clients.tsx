@@ -67,9 +67,9 @@ const Clients = () => {
         <div className="flex items-center justify-center px-6 mb-20 max-w-screen mx-auto overflow-hidden">
             <div>
                 <h1 className='text-xl sm:text-2xl md:text-3xl text-center font-bold my-5'>We work with them to provide your benefit 🚀</h1>
-                <h3 className="flex items-center gap-4 text-center text-lg font-semibold">
+                <h3 className="flex items-center gap-1.5 text-center text-lg font-semibold">
                     <span className="flex-grow border-t border-border"></span>
-                    Trusted by over<span className="font-semibold">{clients.length}</span>companies
+                    Trusted by over<span className="font-semibold bg-amber-300 px-2.5 rounded-lg"> {clients.length} </span>companies
                     <span className="flex-grow border-t border-border"></span>
                 </h3>
 
