@@ -33,13 +33,13 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    if (loading) return <Loading />;
+    if (loading) return null;
 
     return (
         <motion.div 
             initial={{ opacity: 0, y: -10, }}
             animate={{ opacity: 1, y: 0, }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            // transition={{ duration: 0.4, ease: 'easeInOut' }}
             className="fixed top-0 left-0 w-full z-50">
             <nav className={cn(
                     "h-16 transition-colors duration-200", 

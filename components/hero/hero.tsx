@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -40,16 +39,22 @@ const Hero = () => {
 
     return (
         <div className="relative min-h-screen flex justify-center px-6 overflow-hidden">
-            <img
+            <motion.img
                 src="/image/Hero.png"
                 alt="hero"
+                initial={{ scale: 1.3, scaleX: 1.3, opacity: 0 }}
+                animate={{ scale: 1, scaleX: 1, opacity: 1 }}
+                transition={{
+                    duration: 1,
+                    ease: [0.22, 1, 0.36, 1], // a natural "easeOutBack" effect
+                }}
                 className={cn(
-                    'absolute top-0 left-0 object-cover w-full'
-                )} 
+                    'absolute top-0 left-0 object-cover w-full h-full'
+                )}
             />
 
             <motion.div
-                className="relative z-10 text-center max-w-2xl mt-20"
+                className="relative z-10 text-center max-w-2xl translate-y-2/12"
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
@@ -68,14 +73,14 @@ const Hero = () => {
 
                 <motion.h1
                     variants={fadeUp}
-                    className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2]"
+                    className="mt-4 text-background text-2xl sm:text-3xl md:text-4xl font-bold !leading-[1.2]"
                 >
                     Make every connection count
                 </motion.h1>
 
                 <motion.p
                     variants={fadeUp}
-                    className="mt-4 text-[17px] md:text-lg"
+                    className="mt-4 text-[17px] md:text-lg text-muted"
                 >
                     Create short links, QR codes, share them anywhere. Track
                     what&apos;s working, and what&apos;s not. All inside the
