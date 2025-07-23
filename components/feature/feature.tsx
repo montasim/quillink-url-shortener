@@ -2,7 +2,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { Link, QrCode } from 'lucide-react';
-import { Button } from '../ui/button';
 import { Chart } from './chart';
 
 export default function Feature() {

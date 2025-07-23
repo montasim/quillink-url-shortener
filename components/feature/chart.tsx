@@ -1,13 +1,11 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
 
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -18,24 +16,42 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-export const description = "An area chart with gradient fill"
-
+// Link click data for 15 days
 const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
+    { date: "Jul 11", clicks: 23 },
+    { date: "Jul 12", clicks: 45 },
+    { date: "Jul 13", clicks: 31 },
+    { date: "Jul 14", clicks: 62 },
+    { date: "Jul 15", clicks: 40 },
+    { date: "Jul 16", clicks: 52 },
+    { date: "Jul 17", clicks: 71 },
+    { date: "Jul 18", clicks: 38 },
+    { date: "Jul 19", clicks: 49 },
+    { date: "Jul 20", clicks: 55 },
+    { date: "Jul 21", clicks: 61 },
+    { date: "Jul 22", clicks: 44 },
+    { date: "Jul 23", clicks: 70 },
+    { date: "Jul 24", clicks: 85 },
+    { date: "Jul 25", clicks: 90 },
 ]
 
+// Get total clicks
+const totalClicks = chartData.reduce((sum, d) => sum + d.clicks, 0)
+
+// Extract unique month names from date strings (e.g., "Jul")
+const monthSet = new Set(chartData.map(item => item.date.split(" ")[0]))
+const monthRange = [...monthSet].join(" - ") // "Jul" or "Jul - Aug"
+
+// Extract day numbers for the X-axis
+const transformedData = chartData.map(item => ({
+    ...item,
+    day: item.date.split(" ")[1], // e.g., "11" from "Jul 11"
+}))
+
+// Chart configuration for single line
 const chartConfig = {
-    desktop: {
-        label: "Desktop",
-        color: "var(--chart-1)",
-    },
-    mobile: {
-        label: "Mobile",
+    clicks: {
+        label: "Link Clicks",
         color: "var(--chart-2)",
     },
 } satisfies ChartConfig
@@ -44,83 +60,44 @@ export function Chart() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Area Chart - Gradient</CardTitle>
+                <CardTitle>Total Clicks: {totalClicks}</CardTitle>
                 <CardDescription>
-                    Showing total visitors for the last 6 months
+                    Link click activity for the last 15 days [{monthRange}]
                 </CardDescription>
             </CardHeader>
             <CardContent>
                 <ChartContainer config={chartConfig}>
-                    <AreaChart
-                        accessibilityLayer
-                        data={chartData}
-                    >
-                        <CartesianGrid vertical={false} />
+                    <AreaChart data={transformedData}>
+                        <CartesianGrid vertical={false} strokeDasharray="3 3" />
                         <XAxis
-                            dataKey="month"
+                            dataKey="day"
                             tickLine={false}
                             axisLine={false}
                             tickMargin={8}
-                            tickFormatter={(value) => value.slice(0, 3)}
+                        />
+                        <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={0}
                         />
                         <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
                         <defs>
-                            <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                                <stop
-                                    offset="5%"
-                                    stopColor="var(--color-desktop)"
-                                    stopOpacity={0.8}
-                                />
-                                <stop
-                                    offset="95%"
-                                    stopColor="var(--color-desktop)"
-                                    stopOpacity={0.1}
-                                />
-                            </linearGradient>
-                            <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                                <stop
-                                    offset="5%"
-                                    stopColor="var(--color-mobile)"
-                                    stopOpacity={0.8}
-                                />
-                                <stop
-                                    offset="95%"
-                                    stopColor="var(--color-mobile)"
-                                    stopOpacity={0.1}
-                                />
+                            <linearGradient id="fillClicks" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="var(--color-clicks)" stopOpacity={0.8} />
+                                <stop offset="95%" stopColor="var(--color-clicks)" stopOpacity={0.1} />
                             </linearGradient>
                         </defs>
                         <Area
-                            dataKey="mobile"
+                            dataKey="clicks"
                             type="natural"
-                            fill="url(#fillMobile)"
+                            fill="url(#fillClicks)"
                             fillOpacity={0.4}
-                            stroke="var(--color-mobile)"
-                            stackId="a"
-                        />
-                        <Area
-                            dataKey="desktop"
-                            type="natural"
-                            fill="url(#fillDesktop)"
-                            fillOpacity={0.4}
-                            stroke="var(--color-desktop)"
+                            stroke="var(--color-clicks)"
                             stackId="a"
                         />
                     </AreaChart>
                 </ChartContainer>
             </CardContent>
-            <CardFooter>
-                <div className="flex w-full items-start gap-2 text-sm">
-                    <div className="grid gap-2">
-                        <div className="flex items-center gap-2 leading-none font-medium">
-                            Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-                        </div>
-                        <div className="text-muted-foreground flex items-center gap-2 leading-none">
-                            January - June 2024
-                        </div>
-                    </div>
-                </div>
-            </CardFooter>
         </Card>
     )
 }
