@@ -2,6 +2,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { Link, QrCode } from 'lucide-react';
+import { Button } from '../ui/button';
+import { Chart } from './chart';
 
 export default function Feature() {
 
@@ -44,7 +46,7 @@ export default function Feature() {
             </motion.div>
 
 
-            <motion.div 
+            <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
@@ -52,31 +54,46 @@ export default function Feature() {
                 className='flex gap-3 w-full items-center justify-center my-5'
             >
 
-                <motion.div 
+                <motion.div
                     variants={fadeUp}
                     className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-white bg-blue-500 rounded-full'
                 >
-                    <Link className='w-5 h-5 rounded-full bg-white text-blue-500 p-1'/>
+                    <Link className='w-5 h-5 rounded-full bg-white text-blue-500 p-1' />
                     <span>Short Links</span>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     variants={fadeUp}
                     className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
                 >
-                    <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1'/>
+                    <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1' />
                     <span>Generate QR Codes</span>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     variants={fadeUp}
                     className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
                 >
-                    <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1'/>
+                    <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1' />
                     <span>Manage your links</span>
                 </motion.div>
 
             </motion.div>
+            <div className='grid md:grid-cols-2 gap-5'>
+                <div className='space-y-4'>
+                    <h3 className='text-xl sm:text-2xl md:text-4xl'>Campaign Monitoring & <br /> Analysis</h3>
+                    <p className="text-[17px] md:text-lg text-muted-foreground">Learn from your links and build better Campaigns</p>
+                    <button className="p-[3px] relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+                        <div className="px-8 py-2 bg-background cursor-pointer rounded-[6px] relative group transition duration-200 hover:text-white hover:bg-transparent">
+                            Start for free
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <Chart/>
+                </div>
+            </div>
         </div>
     )
 }
