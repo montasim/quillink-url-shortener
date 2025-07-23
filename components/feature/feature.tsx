@@ -55,7 +55,7 @@ export default function Feature() {
 
                 <motion.div
                     variants={fadeUp}
-                    className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-white bg-blue-500 rounded-full'
+                    className='text-xs md:text-sm w-fit flex items-center gap-2 p-1 pr-2 text-white bg-blue-500 rounded-full'
                 >
                     <Link className='w-5 h-5 rounded-full bg-white text-blue-500 p-1' />
                     <span>Short Links</span>
@@ -63,7 +63,7 @@ export default function Feature() {
 
                 <motion.div
                     variants={fadeUp}
-                    className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
+                    className='text-xs md:text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
                 >
                     <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1' />
                     <span>Generate QR Codes</span>
@@ -71,7 +71,7 @@ export default function Feature() {
 
                 <motion.div
                     variants={fadeUp}
-                    className='text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
+                    className='text-xs md:text-sm w-fit flex items-center gap-2 p-1 pr-2 text-blue-500 ring-1 ring-blue-500 rounded-full'
                 >
                     <QrCode className='w-5 h-5 rounded-full bg-blue-500 text-white p-1' />
                     <span>Manage your links</span>
