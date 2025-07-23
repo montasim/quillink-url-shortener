@@ -1,4 +1,6 @@
+'use client';
 
+import { motion } from 'framer-motion';
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -7,8 +9,20 @@ import { Link as LinkIcon, QrCode as QrCodeIcon } from 'lucide-react';
 import ShortLink from './tab/short-link';
 import QrCode from './tab/qr-code';
 
-const Hero = () => {
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+};
 
+const staggerContainer = {
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const Hero = () => {
     const tabs = [
         {
             name: 'Short Link',
@@ -36,24 +50,46 @@ const Hero = () => {
                 )}
             />
 
-            <div className="relative z-10 text-center max-w-2xl mt-20">
-                <Badge className={
-                    cn(
-                        "rounded-full px-2",
-                        "bg-gradient-to-r from-purple-500 to-indigo-500 text-white",
-                        "text-xs font-semibold tracking-wide uppercase"
-                    )}>
-                    Just released v1.0.0
-                </Badge>
-                <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2]">
+            <motion.div
+                className="relative z-10 text-center max-w-2xl mt-20"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div variants={fadeUp}>
+                    <Badge
+                        className={cn(
+                            'rounded-full px-2',
+                            'bg-gradient-to-r from-purple-500 to-indigo-500 text-white',
+                            'text-xs font-semibold tracking-wide uppercase'
+                        )}
+                    >
+                        Just released v1.0.0
+                    </Badge>
+                </motion.div>
+
+                <motion.h1
+                    variants={fadeUp}
+                    className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2]"
+                >
                     Make every connection count
-                </h1>
-                <p className="mt-4 text-[17px] md:text-lg">
+                </motion.h1>
+
+                <motion.p
+                    variants={fadeUp}
+                    className="mt-4 text-[17px] md:text-lg"
+                >
                     Create short links, QR codes, share them anywhere. Track
-                    what&lsquo;s working, and what&lsquo;s not. All inside the
-                    QuilLink Connection Platform.
-                </p>
-                <div className="mt-8 flex items-center justify-center gap-4">
+                    what&apos;s working, and what&apos;s not. All inside the 
+                    <strong> QuilLink Connection Platform.</strong>
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, filter: 'blur(8px)' }}
+                    animate={{ opacity: 1, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.4, delay: 0.4, ease: 'easeInOut' }}
+                    className="mt-8 flex items-center justify-center gap-4"
+                >
                     <Tabs defaultValue={tabs[0].value} className="w-full">
                         <TabsList className="w-full p-0 bg-background justify-start border-b rounded-none">
                             {tabs.map((tab) => (
@@ -71,12 +107,20 @@ const Hero = () => {
 
                         {tabs.map((tab) => (
                             <TabsContent key={tab.value} value={tab.value}>
-                                <div className="w-full mt-4">{tab.content}</div>
+                                <motion.div
+                                    key={tab.value}
+                                    initial={{ opacity: 0, filter: 'blur(8px)' }}
+                                    animate={{ opacity: 1, filter: 'blur(0px)' }}
+                                    transition={{ duration: 0.4 }}
+                                    className="w-full"
+                                >
+                                    {tab.content}
+                                </motion.div>
                             </TabsContent>
                         ))}
                     </Tabs>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };

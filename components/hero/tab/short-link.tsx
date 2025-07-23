@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { handleCreate } from '@/app/(home)/actions';
 import ActionButton from '../action-button';
+import { Button } from '@/components/ui/button';
+import { Link as LinkIcon } from 'lucide-react';
 
 
 export default function ShortLink() {
@@ -41,29 +43,28 @@ export default function ShortLink() {
                 QuilLink&lsquo;s
                 <Link
                     href="#"
-                    className="ml-1 underline text-muted-foreground"
+                    className="ml-1 underline text-blue-600"
                 >
                     Terms of use
                 </Link>
                 ,
                 <Link
                     href="#"
-                    className="ml-1 underline text-muted-foreground"
+                    className="ml-1 underline text-blue-600"
                 >
                     Privacy Policy
                 </Link>
                 , and
                 <Link
                     href="#"
-                    className="ml-1 underline text-muted-foreground"
+                    className="ml-1 underline text-blue-600"
                 >
                     Cookie Policy
                 </Link>
             </p>
 
-            <ActionButton
-                targetText={creating ? 'Creating...' : 'Shorten URL'}
-                className="mt-4"
+            <Button
+                className="mt-4 w-full cursor-pointer bg-gradient-to-r from-purple-300 via-blue-500 to-purple-600"
                 onClick={() =>
                     handleCreate(
                         formData,
@@ -72,8 +73,10 @@ export default function ShortLink() {
                         router
                     )
                 }
-                disabled={creating}
-            />
+                disabled={creating}>
+                <LinkIcon className="w-4 h-4 mr-2" />
+                <span>{creating ? 'Creating...' : 'Shorten URL'}</span>
+            </Button>
         </div>
     )
 }
