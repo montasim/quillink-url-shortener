@@ -6,6 +6,7 @@ import {
     Card,
     CardContent,
     CardDescription,
+    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -60,9 +61,10 @@ export function Chart() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Total Clicks: {totalClicks}</CardTitle>
-                <CardDescription>
-                    Link click activity for the last 15 days [{monthRange}]
+                <CardTitle> Total Clicks: {totalClicks} </CardTitle>
+                <CardDescription className="flex justify-between">
+                    <span>Link click activity for the last 15 days.</span>
+                    <span>[ {monthRange} ]</span>
                 </CardDescription>
             </CardHeader>
             <CardContent>
@@ -76,6 +78,7 @@ export function Chart() {
                             tickMargin={8}
                         />
                         <YAxis
+                            width={20}
                             tickLine={false}
                             axisLine={false}
                             tickMargin={0}
