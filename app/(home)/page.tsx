@@ -4,6 +4,7 @@ import Clients from '@/components/clients/clients';
 import Testimonial from '@/components/testimonial/testimonial';
 import Faq from '@/components/faq/faq';
 import { GlobeUI } from '@/components/globe/ui';
+import Feature from '@/components/feature/feature';
 
 export default function HomePage() {
     return (
@@ -12,7 +13,9 @@ export default function HomePage() {
 
             <Clients />
 
-            <GlobeUI/>
+            <GlobeUI />
+
+            <Feature />
 
             <Testimonial />
 

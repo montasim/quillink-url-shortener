@@ -396,7 +396,7 @@ export function GlobeUI() {
 
   return (
     <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="mx-auto w-screen relative overflow-hidden h-[40rem] px-4">
+      <div className="mx-auto w-screen relative overflow-hidden h-96 px-4">
         <motion.div
           initial={{
             opacity: 0,

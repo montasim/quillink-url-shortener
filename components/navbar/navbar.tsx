@@ -15,16 +15,36 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LayoutDashboardIcon, LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const router = useRouter();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
+    const [onTop, setOnTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setOnTop(window.scrollY < window.innerHeight / 2);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     if (loading) return <Loading />;
 
     return (
-        <div className="bg-muted">
-            <nav className="h-16 bg-background border-b">
+        <motion.div 
+            initial={{ opacity: 0, y: -10, }}
+            animate={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="fixed top-0 left-0 w-full z-50">
+            <nav className={cn(
+                    "h-16 transition-colors duration-200", 
+                    onTop ? 'shadow-none text-background' : 'bg-background/10 backdrop-blur-2xl shadow-lg text-foreground'
+                )}>
                 <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center gap-8">
                         <Logo />
@@ -88,7 +108,7 @@ const Navbar = () => {
                             <>
                                 <Button
                                     variant="outline"
-                                    className="hidden sm:inline-flex cursor-pointer"
+                                    className="hidden sm:inline-flex cursor-pointer text-foreground"
                                     onClick={() => router.push('/login')}
                                 >
                                     Sign In
@@ -107,7 +127,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
+        </motion.div>
     );
 };
 

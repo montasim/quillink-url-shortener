@@ -40,14 +40,12 @@ const Hero = () => {
 
     return (
         <div className="relative min-h-screen flex justify-center px-6 overflow-hidden">
-            <AnimatedGridPattern
-                numSquares={30}
-                maxOpacity={0.1}
-                duration={3}
+            <img
+                src="/image/Hero.png"
+                alt="hero"
                 className={cn(
-                    '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-                    'inset-x-0 h-full skew-y-12'
-                )}
+                    'absolute top-0 left-0 object-cover w-full'
+                )} 
             />
 
             <motion.div
@@ -80,7 +78,7 @@ const Hero = () => {
                     className="mt-4 text-[17px] md:text-lg"
                 >
                     Create short links, QR codes, share them anywhere. Track
-                    what&apos;s working, and what&apos;s not. All inside the 
+                    what&apos;s working, and what&apos;s not. All inside the
                     <strong> QuilLink Connection Platform.</strong>
                 </motion.p>
 

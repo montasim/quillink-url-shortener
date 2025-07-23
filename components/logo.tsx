@@ -19,7 +19,7 @@ export const Logo = () => {
             </div>
 
             {/* Brand Text */}
-            <span className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+            <span className="text-xl font-bold tracking-tight">
                 QuilLink
             </span>
         </Link>
