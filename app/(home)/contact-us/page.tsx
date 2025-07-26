@@ -2,7 +2,7 @@ import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const ContactPage = () => (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="2xl:mt-40 xl:mt-36 lg:mt-36 md:mt-28 sm:mt-20 mt-16 flex items-center justify-center">
         <div className="text-center">
             <b className="text-muted-foreground">Contact Us</b>
             <h2 className="mt-3 text-2xl md:text-4xl font-bold tracking-tight">
