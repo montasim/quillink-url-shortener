@@ -12,10 +12,7 @@ const Clients = () => {
                     <div className="marquee flex items-center gap-x-14 whitespace-nowrap will-change-transform">
                         {/* Logos duplicated for seamless scrolling */}
                         {[...Array(2)].map((_, i) => (
-                            <div
-                                key={i}
-                                className="flex items-center gap-x-14"
-                            >
+                            <div key={i} className="flex items-center gap-x-14">
                                 <Logo01 />
                                 <Logo02 />
                                 <Logo03 />

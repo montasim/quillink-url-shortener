@@ -49,24 +49,15 @@ const Hero = () => {
                     <p className="mt-4 text-sm text-left text-secondary">
                         By clicking Shorten URL, you are agree to
                         QuilLink&lsquo;s
-                        <Link
-                            href="#"
-                            className="ml-1 underline"
-                        >
+                        <Link href="#" className="ml-1 underline">
                             Terms of use
                         </Link>
                         ,
-                        <Link
-                            href="#"
-                            className="ml-1 underline"
-                        >
+                        <Link href="#" className="ml-1 underline">
                             Privacy Policy
                         </Link>
                         , and
-                        <Link
-                            href="#"
-                            className="ml-1 underline"
-                        >
+                        <Link href="#" className="ml-1 underline">
                             Cookie Policy
                         </Link>
                     </p>

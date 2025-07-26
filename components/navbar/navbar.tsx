@@ -24,7 +24,7 @@ const Navbar = () => {
 
     return (
         <div className="bg-muted">
-            <nav className="h-16 bg-background border-b">
+            <nav className="h-16 bg-background border-b px-4 xl:px-0">
                 <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto">
                     <div className="flex items-center gap-8">
                         <Logo />
@@ -87,8 +87,10 @@ const Navbar = () => {
                             <>
                                 <Button
                                     variant="outline"
-                                    className="bg-gradient-to-r from-sky-400 to-cyan-300 text-white hidden sm:inline-flex cursor-pointer"
-                                    onClick={() => router.push('/dashboard/urls')}
+                                    className="bg-gradient-to-r from-sky-400 to-cyan-300 text-white hidden sm:inline-flex cursor-pointer hover:bg-gradient-to-b hover:text-white"
+                                    onClick={() =>
+                                        router.push('/dashboard/urls')
+                                    }
                                 >
                                     Dashboard
                                 </Button>

@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="grow bg-muted" />
             <footer>
                 <div className="max-w-screen-xl mx-auto">
-                    <div className="flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-4 xl:px-0">
                         <div>
                             {/* Logo */}
                             <Logo />
@@ -43,7 +43,7 @@ const Footer = () => {
 
                     <Separator />
 
-                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0 text-primary">
+                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-4 xl:px-0 text-primary">
                         {/* Copyright */}
                         <span className="">
                             &copy; {new Date().getFullYear()}{' '}

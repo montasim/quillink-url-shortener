@@ -86,7 +86,9 @@ const Faq = () => {
                                         <PlusIcon className="h-5 w-5 shrink-0 text-primary transition-transform duration-200" />
                                     </AccordionPrimitive.Trigger>
                                 </AccordionPrimitive.Header>
-                                <AccordionContent className="text-secondary">{answer}</AccordionContent>
+                                <AccordionContent className="text-secondary">
+                                    {answer}
+                                </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
@@ -114,7 +116,9 @@ const Faq = () => {
                                         <PlusIcon className="h-5 w-5 shrink-0 text-primary transition-transform duration-200" />
                                     </AccordionPrimitive.Trigger>
                                 </AccordionPrimitive.Header>
-                                <AccordionContent className="text-secondary">{answer}</AccordionContent>
+                                <AccordionContent className="text-secondary">
+                                    {answer}
+                                </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>

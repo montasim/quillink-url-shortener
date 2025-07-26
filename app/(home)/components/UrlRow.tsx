@@ -59,9 +59,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                             {url.originalUrl}
                         </a>
                     ) : (
-                        <span className="text-muted italic">
-                            Missing URL
-                        </span>
+                        <span className="text-muted italic">Missing URL</span>
                     )}
                 </TableCell>
                 <TableCell className="font-mono">

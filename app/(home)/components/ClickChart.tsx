@@ -11,11 +11,7 @@ import { IClickLog } from '@/types/types';
 
 const RenderClickChart = (logs?: IClickLog[]) => {
     if (!Array.isArray(logs) || logs.length === 0) {
-        return (
-            <p className="text-muted text-sm">
-                No click data available.
-            </p>
-        );
+        return <p className="text-muted text-sm">No click data available.</p>;
     }
 
     const grouped = logs.reduce((acc: Record<string, number>, log) => {

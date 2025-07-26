@@ -23,8 +23,10 @@ const UrlDashboard = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto 2xl:my-20 xl:my-16 lg:my-14 md:my-8 sm:my-6 my-4">
-            <h2 className="text-2xl font-bold mb-6 text-primary">Your Short URLs</h2>
+        <div className="max-w-screen-xl mx-auto 2xl:my-20 xl:my-16 lg:my-14 md:my-8 sm:my-6 my-4 px-4 xl:px-0">
+            <h2 className="2xl:text-2xl xl:text-2xl lg:text-xl md:text-xl sm:text-lg text-lg font-bold 2xl:mb-6 xl:mb-6 lg:mb-5 md:mb-4 sm:mb-4 mb-3 text-primary">
+                Your Short URLs
+            </h2>
             {loading ? (
                 <p className="text-muted">Loading short URLs...</p>
             ) : error ? (
