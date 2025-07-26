@@ -42,7 +42,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="2xl:my-40 xl:my-36 lg:my-36 md:my-28 sm:my-20 my-16 flex items-center justify-center">
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight">
