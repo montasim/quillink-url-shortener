@@ -6,11 +6,6 @@ const Loading = () => {
                     <div className="flex items-center gap-8">
                         <div className="h-6 w-24 bg-gray-200 rounded"></div>{' '}
                         {/* Skeleton for Logo */}
-                        <div className="hidden md:flex gap-4">
-                            <div className="h-6 w-20 bg-gray-200 rounded"></div>{' '}
-                            {/* Skeleton for NavMenu items */}
-                            <div className="h-6 w-20 bg-gray-200 rounded"></div>
-                        </div>
                     </div>
                     <div className="flex items-center gap-3">
                         <div className="h-10 w-20 bg-gray-200 rounded"></div>{' '}

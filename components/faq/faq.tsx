@@ -106,8 +106,8 @@ const Faq = () => {
                                 <AccordionPrimitive.Header className="flex">
                                     <AccordionPrimitive.Trigger
                                         className={cn(
-                                            'flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all hover:underline [&[types-state=open]>svg]:rotate-45',
-                                            'text-start text-lg'
+                                            'flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all [&[types-state=open]>svg]:rotate-45',
+                                            'text-start text-lg cursor-pointer'
                                         )}
                                     >
                                         {question}

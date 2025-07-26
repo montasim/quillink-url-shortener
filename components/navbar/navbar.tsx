@@ -25,10 +25,9 @@ const Navbar = () => {
     return (
         <div className="bg-muted">
             <nav className="h-16 bg-background border-b">
-                <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto">
                     <div className="flex items-center gap-8">
                         <Logo />
-                        <NavMenu className="hidden md:block" />
                     </div>
 
                     <div className="flex items-center gap-3">
@@ -89,9 +88,9 @@ const Navbar = () => {
                                 <Button
                                     variant="outline"
                                     className="hidden sm:inline-flex cursor-pointer"
-                                    onClick={() => router.push('/login')}
+                                    onClick={() => router.push('/dashboard/urls')}
                                 >
-                                    Sign In
+                                    Dashboard
                                 </Button>
                                 <Button
                                     className="cursor-pointer"
