@@ -12,7 +12,7 @@ import { IClickLog } from '@/types/types';
 const RenderClickChart = (logs?: IClickLog[]) => {
     if (!Array.isArray(logs) || logs.length === 0) {
         return (
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted text-sm">
                 No click data available.
             </p>
         );

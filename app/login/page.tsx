@@ -45,7 +45,7 @@ const LoginPage = () => {
         <div className="2xl:my-40 xl:my-36 lg:my-36 md:my-28 sm:my-20 my-16 flex items-center justify-center">
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
-                <p className="mt-4 text-xl font-bold tracking-tight">
+                <p className="mt-4 text-xl font-bold tracking-tight text-primary">
                     Log in to {configuration.app.name} account
                 </p>
 
@@ -117,7 +117,7 @@ const LoginPage = () => {
                 <div className="mt-5 space-y-5">
                     <Link
                         href="/forgot-password"
-                        className="text-sm block underline text-muted-foreground text-center"
+                        className="text-sm block underline text-muted text-center"
                     >
                         Forgot your password?
                     </Link>
@@ -125,7 +125,7 @@ const LoginPage = () => {
                         Don&apos;t have an account?
                         <Link
                             href="/signup"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline text-muted"
                         >
                             Create account
                         </Link>

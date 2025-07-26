@@ -46,7 +46,7 @@ const SignUpPage = () => {
             <div className="w-full h-full grid lg:grid-cols-2 p-4">
                 <div className="max-w-xs m-auto w-full flex flex-col items-center">
                     <Logo />
-                    <p className="mt-4 text-xl font-bold tracking-tight">
+                    <p className="mt-4 text-xl font-bold tracking-tight text-primary">
                         Sign up for {configuration.app.name} account
                     </p>
 
@@ -139,7 +139,7 @@ const SignUpPage = () => {
                         Already have an account?
                         <Link
                             href="/login"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline text-muted"
                         >
                             Log in
                         </Link>

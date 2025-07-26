@@ -64,14 +64,14 @@ const testimonials = [
 const Testimonial = () => (
     <div className="flex justify-center items-center 2xl:mt-40 xl:mt-36 lg:mt-36 md:mt-28 sm:mt-20 mt-16 p-6">
         <div>
-            <h2 className="mb-14 text-xl sm:text-2xl md:text-3xl font-bold text-center tracking-tight">
+            <h2 className="mb-14 text-xl sm:text-2xl md:text-3xl font-bold text-center tracking-tight text-primary">
                 Hundred of people already trust us
             </h2>
             <div className="max-w-screen-xl mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
                 {testimonials.map((testimonial) => (
                     <div
                         key={testimonial.id}
-                        className="mb-8 bg-accent rounded-xl p-6 break-inside-avoid"
+                        className="mb-8 bg-gradient-to-r from-gray-100 to-gray-300 rounded-xl p-6 break-inside-avoid"
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ const Testimonial = () => (
                                     </AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <p className="text-lg font-semibold">
+                                    <p className="text-lg font-semibold text-primary">
                                         {testimonial.name}
                                     </p>
                                     <p className="text-sm text-gray-500">
@@ -95,7 +95,7 @@ const Testimonial = () => (
                                 </Link>
                             </Button>
                         </div>
-                        <p className="mt-5 text-[17px]">
+                        <p className="mt-5 text-[17px] text-secondary">
                             {testimonial.testimonial}
                         </p>
                     </div>

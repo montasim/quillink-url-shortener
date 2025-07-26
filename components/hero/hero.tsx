@@ -46,33 +46,33 @@ const Hero = () => {
                         />
                     </div>
 
-                    <p className="mt-4 text-sm text-left">
+                    <p className="mt-4 text-sm text-left text-secondary">
                         By clicking Shorten URL, you are agree to
                         QuilLink&lsquo;s
                         <Link
                             href="#"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline"
                         >
                             Terms of use
                         </Link>
                         ,
                         <Link
                             href="#"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline"
                         >
                             Privacy Policy
                         </Link>
                         , and
                         <Link
                             href="#"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline"
                         >
                             Cookie Policy
                         </Link>
                     </p>
 
                     <Button
-                        className="mt-6 w-full cursor-pointer"
+                        className="mt-6 w-full cursor-pointer bg-gradient-to-r from-gray-100 to-gray-300 text-secondary"
                         onClick={() =>
                             handleCreate(
                                 formData,
@@ -83,7 +83,7 @@ const Hero = () => {
                         }
                         disabled={creating}
                     >
-                        {creating ? 'Creating...' : 'Shorten URL'}
+                        {creating ? 'Creating...' : 'Create short URL'}
                     </Button>
                 </>
             ),
@@ -109,13 +109,13 @@ const Hero = () => {
             />
 
             <div className="relative z-10 text-center max-w-2xl">
-                <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 border-none">
+                <Badge className="bg-gradient-to-r from-sky-400 to-cyan-300 rounded-full py-1 border-none">
                     Just released v1.0.0
                 </Badge>
-                <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight">
+                <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-primary">
                     Make every connection count
                 </h1>
-                <p className="mt-4 text-[17px] md:text-lg">
+                <p className="mt-4 text-secondary text-[17px] md:text-lg">
                     Create short links, QR codes, share them anywhere. Track
                     what&lsquo;s working, and what&lsquo;s not. All inside the
                     QuilLink Connection Platform.
@@ -127,7 +127,7 @@ const Hero = () => {
                                 <TabsTrigger
                                     key={tab.value}
                                     value={tab.value}
-                                    className="rounded-none bg-background h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background -mb-[2px] rounded-t cursor-pointer"
+                                    className="rounded-none h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background data-[state=active]:bg-gradient-to-r from-gray-100 to-gray-300 -mb-[2px] rounded-t cursor-pointer text-secondary"
                                 >
                                     <code className="flex items-center gap-2 text-[13px]">
                                         {tab.icon} {tab.name}

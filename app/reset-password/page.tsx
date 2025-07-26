@@ -55,7 +55,7 @@ const ResetPassword = () => {
         <div className="min-h-screen flex items-center justify-center">
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
-                <p className="mt-4 text-xl font-bold tracking-tight">
+                <p className="mt-4 text-xl font-bold tracking-tight text-primary">
                     Reset your password
                 </p>
 
@@ -102,7 +102,7 @@ const ResetPassword = () => {
                         Remember password?
                         <Link
                             href="/login"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline text-muted"
                         >
                             Login
                         </Link>

@@ -44,7 +44,7 @@ const Navbar = () => {
                                             />
                                         ) : user?.name ? (
                                             // Use name fallback
-                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer">
+                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-primary font-bold text-lg cursor-pointer">
                                                 {user.name
                                                     .charAt(0)
                                                     .toUpperCase()}
@@ -87,13 +87,13 @@ const Navbar = () => {
                             <>
                                 <Button
                                     variant="outline"
-                                    className="hidden sm:inline-flex cursor-pointer"
+                                    className="bg-gradient-to-r from-sky-400 to-cyan-300 text-white hidden sm:inline-flex cursor-pointer"
                                     onClick={() => router.push('/dashboard/urls')}
                                 >
                                     Dashboard
                                 </Button>
                                 <Button
-                                    className="cursor-pointer"
+                                    className="bg-gray-800 cursor-pointer"
                                     onClick={() => router.push('/signup')}
                                 >
                                     Sign Up

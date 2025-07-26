@@ -58,7 +58,7 @@ const Faq = () => {
     return (
         <div className="flex items-center justify-center px-6 2xl:my-40 xl:my-36 lg:my-36 md:my-28 sm:my-20 my-16">
             <div className="w-full max-w-screen-lg">
-                <h2 className="text-xl sm:text-2xl md:text-3xl !leading-[1.15] font-bold tracking-tight text-center">
+                <h2 className="text-xl sm:text-2xl md:text-3xl !leading-[1.15] font-bold tracking-tight text-center text-primary">
                     Your Questions, Answered
                 </h2>
 
@@ -79,14 +79,14 @@ const Faq = () => {
                                     <AccordionPrimitive.Trigger
                                         className={cn(
                                             'flex flex-1 items-center justify-between py-4 font-semibold transition-all [&[types-state=open]>svg]:rotate-45',
-                                            'text-start text-lg cursor-pointer'
+                                            'text-start text-lg cursor-pointer text-primary'
                                         )}
                                     >
                                         {question}
-                                        <PlusIcon className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+                                        <PlusIcon className="h-5 w-5 shrink-0 text-primary transition-transform duration-200" />
                                     </AccordionPrimitive.Trigger>
                                 </AccordionPrimitive.Header>
-                                <AccordionContent>{answer}</AccordionContent>
+                                <AccordionContent className="text-secondary">{answer}</AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
@@ -107,14 +107,14 @@ const Faq = () => {
                                     <AccordionPrimitive.Trigger
                                         className={cn(
                                             'flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all [&[types-state=open]>svg]:rotate-45',
-                                            'text-start text-lg cursor-pointer'
+                                            'text-start text-lg cursor-pointer text-primary'
                                         )}
                                     >
                                         {question}
-                                        <PlusIcon className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+                                        <PlusIcon className="h-5 w-5 shrink-0 text-primary transition-transform duration-200" />
                                     </AccordionPrimitive.Trigger>
                                 </AccordionPrimitive.Header>
-                                <AccordionContent>{answer}</AccordionContent>
+                                <AccordionContent className="text-secondary">{answer}</AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>

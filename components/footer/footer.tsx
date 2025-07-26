@@ -31,7 +31,7 @@ const Footer = () => {
                                     <li key={title}>
                                         <Link
                                             href={href}
-                                            className="text-muted-foreground hover:text-foreground"
+                                            className="text-primary hover:text-foreground"
                                         >
                                             {title}
                                         </Link>
@@ -43,9 +43,9 @@ const Footer = () => {
 
                     <Separator />
 
-                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
+                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0 text-primary">
                         {/* Copyright */}
-                        <span className="text-muted-foreground">
+                        <span className="">
                             &copy; {new Date().getFullYear()}{' '}
                             <Link href="/" target="_blank">
                                 {configuration.app.name}
@@ -53,7 +53,7 @@ const Footer = () => {
                             . All rights reserved.
                         </span>
 
-                        <div className="flex items-center gap-5 text-muted-foreground">
+                        <div className="flex items-center gap-5">
                             <a
                                 href="mailto:montasimmamun@gmail.com"
                                 target="_blank"
