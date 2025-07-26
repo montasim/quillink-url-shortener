@@ -56,7 +56,7 @@ const Faq = () => {
     const [value, setValue] = useState<string>();
 
     return (
-        <div className="flex items-center justify-center px-6 py-12">
+        <div className="flex items-center justify-center px-6 2xl:my-40 xl:my-36 lg:my-36 md:my-28 sm:my-20 my-16">
             <div className="w-full max-w-screen-lg">
                 <h2 className="text-xl sm:text-2xl md:text-3xl !leading-[1.15] font-bold tracking-tight text-center">
                     Your Questions, Answered
@@ -78,8 +78,8 @@ const Faq = () => {
                                 <AccordionPrimitive.Header className="flex">
                                     <AccordionPrimitive.Trigger
                                         className={cn(
-                                            'flex flex-1 items-center justify-between py-4 font-semibold transition-all hover:underline [&[types-state=open]>svg]:rotate-45',
-                                            'text-start text-lg'
+                                            'flex flex-1 items-center justify-between py-4 font-semibold transition-all [&[types-state=open]>svg]:rotate-45',
+                                            'text-start text-lg cursor-pointer'
                                         )}
                                     >
                                         {question}

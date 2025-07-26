@@ -62,7 +62,7 @@ const testimonials = [
 ];
 
 const Testimonial = () => (
-    <div className="flex justify-center items-center mb-12 p-6">
+    <div className="flex justify-center items-center 2xl:mt-40 xl:mt-36 lg:mt-36 md:mt-28 sm:mt-20 mt-16 p-6">
         <div>
             <h2 className="mb-14 text-xl sm:text-2xl md:text-3xl font-bold text-center tracking-tight">
                 Hundred of people already trust us

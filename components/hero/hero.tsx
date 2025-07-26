@@ -72,7 +72,7 @@ const Hero = () => {
                     </p>
 
                     <Button
-                        className="mt-6 w-full"
+                        className="mt-6 w-full cursor-pointer"
                         onClick={() =>
                             handleCreate(
                                 formData,
@@ -97,7 +97,7 @@ const Hero = () => {
     ];
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <div className="relative 2xl:mt-40 xl:mt-36 lg:mt-36 md:mt-28 sm:mt-20 mt-16 flex items-center justify-center px-6 overflow-hidden">
             <AnimatedGridPattern
                 numSquares={30}
                 maxOpacity={0.1}
@@ -127,7 +127,7 @@ const Hero = () => {
                                 <TabsTrigger
                                     key={tab.value}
                                     value={tab.value}
-                                    className="rounded-none bg-background h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background -mb-[2px] rounded-t"
+                                    className="rounded-none bg-background h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background -mb-[2px] rounded-t cursor-pointer"
                                 >
                                     <code className="flex items-center gap-2 text-[13px]">
                                         {tab.icon} {tab.name}
