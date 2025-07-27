@@ -29,6 +29,7 @@ const SignUpPage = () => {
     const [loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof SignupSchema>>({
+        mode: 'onChange',
         defaultValues: {
             name: '',
             email: '',
@@ -125,8 +126,8 @@ const SignUpPage = () => {
                             />
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
-                                disabled={loading}
+                                className={`mt-4 w-full ${!form.formState.isValid || loading ? 'cursor-none' : 'cursor-pointer'} disabled:bg-secondary hover:bg-primary`}
+                                disabled={!form.formState.isValid || loading}
                             >
                                 {loading
                                     ? 'Signing up...'
@@ -145,7 +146,8 @@ const SignUpPage = () => {
                         </Link>
                     </p>
                 </div>
-                <div className="bg-muted hidden lg:block rounded-lg" />
+
+                <div className="bg-gray-50 hidden lg:block rounded-lg" />
             </div>
         </div>
     );
