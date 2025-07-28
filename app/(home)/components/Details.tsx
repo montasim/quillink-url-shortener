@@ -22,9 +22,7 @@ const RenderDetails = (url: IShortUrl) => (
                             className="border rounded-md bg-white"
                         />
                     ) : (
-                        <p className="text-muted-foreground">
-                            QR code unavailable
-                        </p>
+                        <p className="text-muted">QR code unavailable</p>
                     )}
 
                     <div className="mt-4">

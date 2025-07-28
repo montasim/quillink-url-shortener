@@ -1,123 +1,75 @@
 ####################################################
-# .editorconfig Configuration File
-####################################################
-#
-# Version: 1.1.0
-# License: CC BY-NC-ND 4.0
-#
-# Author: Mohammad Montasim-Al-Mamun Shuvo
-# Created: 2025-01-28
-# Contact Email: montasimmamun@gmail.com
-# Contact GitHub: https://github.com/montasim
+# GENERAL SETTINGS
 ####################################################
 # Purpose:
-# This file defines and enforces consistent coding styles across different
-# text editors and IDEs. It improves code readability, maintainability,
-# and collaboration within teams by applying universal formatting rules.
-####################################################
-
-
-####################################################
-# ROOT DECLARATION
-####################################################
-# Purpose:
-# Identifies this file as the root EditorConfig configuration.
-# No other .editorconfig files outside this folder will be applied.
-
+# The root setting determines whether this is the top-level
+# .editorconfig file in the directory hierarchy.
+# - `root = true` specifies that this is the highest priority
+#   configuration file, and all other .editorconfig files in
+#   parent directories (if any) will be ignored.
 root = true
 
 
 ####################################################
-# JAVASCRIPT / TYPESCRIPT FILES
+# JAVASCRIPT, JSX, TYPESCRIPT, TSX FILES
 ####################################################
 # Purpose:
-# Enforces consistent style in JavaScript and TypeScript source files.
-
+# Defines rules explicitly for JavaScript, JSX, TypeScript,
+# and TSX files to enforce consistent formatting styles.
+# Rules:
+# - `charset = utf-8`: Ensures the character encoding for these
+#   files is universally UTF-8, avoiding issues with different encodings.
+# - `indent_style = space`: Specifies that spaces, not tabs,
+#   should be used for indentation.
+# - `indent_size = 4`: Sets the visual space equivalent to 4 spaces
+#   for each level of indentation.
+# - `end_of_line = lf`: Enforces the use of carriage return plus
+#   line feed (LF) as the newline character, commonly used in Windows.
+# - `trim_trailing_whitespace = true`: Automatically removes all
+#   unnecessary whitespace at the end of a line.
+# - `insert_final_newline = true`: Ensures every file ends with a
+#   single newline character, following POSIX standards.
+# - `max_line_length = 80`: Specifies that every line should ideally
+#   not exceed 80 characters to enhance readability.
 [*.{js,jsx,ts,tsx}]
 charset = utf-8
 indent_style = space
 indent_size = 4
-end_of_line = crlf
+end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 80
 
 
 ####################################################
-# JSON & JSONC FILES
+# JSON FILES
 ####################################################
 # Purpose:
-# Ensures consistent and compact formatting for JSON and JSONC (JSON with comments).
-
-[*.{json,jsonc}]
+# Rules specified here are tailored specifically to handle JSON data files.
+# Because JSON has strict styling and formatting requirements, this
+# section ensures that JSON files comply with common conventions.
+# Rules:
+# - `indent_style = space`: Spaces are used for indentation, as is
+#   standard in JSON formatting.
+# - `indent_size = 2`: Each level of indentation consists of 2 spaces
+#   (commonly used for JSON for compactness).
+# - `insert_final_newline = true`: Ensures each file ends with a
+#   newline for better compatibility across systems when reading files.
+[*.json]
 indent_style = space
 indent_size = 2
 insert_final_newline = true
-
-
-####################################################
-# YAML / YML FILES
-####################################################
-# Purpose:
-# Ensures consistent formatting for YAML configuration files.
-
-[*.{yml,yaml}]
-indent_style = space
-indent_size = 2
-insert_final_newline = true
-trim_trailing_whitespace = true
 
 
 ####################################################
 # MARKDOWN FILES
 ####################################################
 # Purpose:
-# Maintains formatting integrity for Markdown files, especially where
-# trailing whitespace may affect rendering.
-
+# Specifies formatting rules for markdown files (.md), used best
+# for writing documentation or plain-text files.
+# Rules:
+# - `trim_trailing_whitespace = false`: Ensures that whitespace is
+#   preserved in Markdown files, as trailing whitespace can have
+#   semantic meaning (e.g., for line breaks in Markdown).
 [*.md]
-charset = utf-8
 trim_trailing_whitespace = false
-insert_final_newline = true
-
-
-####################################################
-# HTML / CSS / SCSS FILES
-####################################################
-# Purpose:
-# Ensures consistent indentation for frontend templating and styling files.
-
-[*.{html,css,scss}]
-indent_style = space
-indent_size = 2
-insert_final_newline = true
-trim_trailing_whitespace = true
-
-
-####################################################
-# SHELL AND CONFIG FILES
-####################################################
-# Purpose:
-# Keeps configuration and script files clean and consistent.
-
-[*.{sh,bash,env}]
-charset = utf-8
-indent_style = space
-indent_size = 2
-end_of_line = lf
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-
-####################################################
-# PLAINTEXT & TEXT FILES
-####################################################
-# Purpose:
-# Applies basic formatting rules for plain text files (README, LICENSE, etc.)
-
-[*.{txt,text}]
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
-indent_style = space
-indent_size = 2

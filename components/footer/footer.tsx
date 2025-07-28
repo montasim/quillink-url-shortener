@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="grow bg-muted" />
             <footer>
                 <div className="max-w-screen-xl mx-auto">
-                    <div className="py-12 flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-6 xl:px-0">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-4 xl:px-0">
                         <div>
                             {/* Logo */}
                             <Logo />
@@ -31,7 +31,7 @@ const Footer = () => {
                                     <li key={title}>
                                         <Link
                                             href={href}
-                                            className="text-muted-foreground hover:text-foreground"
+                                            className="text-primary hover:text-foreground"
                                         >
                                             {title}
                                         </Link>
@@ -40,10 +40,12 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
+
                     <Separator />
-                    <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
+
+                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-4 xl:px-0 text-primary">
                         {/* Copyright */}
-                        <span className="text-muted-foreground">
+                        <span className="">
                             &copy; {new Date().getFullYear()}{' '}
                             <Link href="/" target="_blank">
                                 {configuration.app.name}
@@ -51,7 +53,7 @@ const Footer = () => {
                             . All rights reserved.
                         </span>
 
-                        <div className="flex items-center gap-5 text-muted-foreground">
+                        <div className="flex items-center gap-5">
                             <a
                                 href="mailto:montasimmamun@gmail.com"
                                 target="_blank"

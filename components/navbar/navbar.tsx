@@ -24,11 +24,10 @@ const Navbar = () => {
 
     return (
         <div className="bg-muted">
-            <nav className="h-16 bg-background border-b">
-                <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="h-16 bg-background border-b px-4 xl:px-0">
+                <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto">
                     <div className="flex items-center gap-8">
                         <Logo />
-                        <NavMenu className="hidden md:block" />
                     </div>
 
                     <div className="flex items-center gap-3">
@@ -45,7 +44,7 @@ const Navbar = () => {
                                             />
                                         ) : user?.name ? (
                                             // Use name fallback
-                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-lg cursor-pointer">
+                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-primary font-bold text-lg cursor-pointer">
                                                 {user.name
                                                     .charAt(0)
                                                     .toUpperCase()}
@@ -88,13 +87,15 @@ const Navbar = () => {
                             <>
                                 <Button
                                     variant="outline"
-                                    className="hidden sm:inline-flex cursor-pointer"
-                                    onClick={() => router.push('/login')}
+                                    className="bg-gradient-to-r from-sky-400 to-cyan-300 text-white hidden sm:inline-flex cursor-pointer hover:bg-gradient-to-b hover:text-white"
+                                    onClick={() =>
+                                        router.push('/dashboard/urls')
+                                    }
                                 >
-                                    Sign In
+                                    Dashboard
                                 </Button>
                                 <Button
-                                    className="cursor-pointer"
+                                    className="bg-gray-800 cursor-pointer"
                                     onClick={() => router.push('/signup')}
                                 >
                                     Sign Up

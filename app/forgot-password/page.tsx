@@ -87,7 +87,7 @@ const ForgotPasswordPage = () => {
                         Remember password?
                         <Link
                             href="/login"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline text-muted"
                         >
                             Login
                         </Link>

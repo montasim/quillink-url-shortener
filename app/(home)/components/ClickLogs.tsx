@@ -31,7 +31,7 @@ const RenderClickLogs = (logs?: IClickLog[]) =>
         })
     ) : (
         <tr>
-            <td colSpan={3} className="text-center text-muted-foreground py-2">
+            <td colSpan={3} className="text-center text-muted py-2">
                 No click logs
             </td>
         </tr>

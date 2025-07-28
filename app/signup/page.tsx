@@ -29,6 +29,7 @@ const SignUpPage = () => {
     const [loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof SignupSchema>>({
+        mode: 'onChange',
         defaultValues: {
             name: '',
             email: '',
@@ -46,7 +47,7 @@ const SignUpPage = () => {
             <div className="w-full h-full grid lg:grid-cols-2 p-4">
                 <div className="max-w-xs m-auto w-full flex flex-col items-center">
                     <Logo />
-                    <p className="mt-4 text-xl font-bold tracking-tight">
+                    <p className="mt-4 text-xl font-bold tracking-tight text-primary">
                         Sign up for {configuration.app.name} account
                     </p>
 
@@ -125,8 +126,8 @@ const SignUpPage = () => {
                             />
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
-                                disabled={loading}
+                                className={`mt-4 w-full ${!form.formState.isValid || loading ? 'cursor-none' : 'cursor-pointer'} disabled:bg-secondary hover:bg-primary`}
+                                disabled={!form.formState.isValid || loading}
                             >
                                 {loading
                                     ? 'Signing up...'
@@ -139,13 +140,14 @@ const SignUpPage = () => {
                         Already have an account?
                         <Link
                             href="/login"
-                            className="ml-1 underline text-muted-foreground"
+                            className="ml-1 underline text-muted"
                         >
                             Log in
                         </Link>
                     </p>
                 </div>
-                <div className="bg-muted hidden lg:block rounded-lg" />
+
+                <div className="bg-gray-50 hidden lg:block rounded-lg" />
             </div>
         </div>
     );

@@ -23,14 +23,16 @@ const UrlDashboard = () => {
     }, []);
 
     return (
-        <div className="w-full container mx-auto py-10">
-            <h2 className="text-2xl font-bold mb-6">Your Short URLs</h2>
+        <div className="max-w-screen-xl mx-auto 2xl:my-20 xl:my-16 lg:my-14 md:my-8 sm:my-6 my-4 px-4 xl:px-0">
+            <h2 className="2xl:text-2xl xl:text-2xl lg:text-xl md:text-xl sm:text-lg text-lg font-bold 2xl:mb-6 xl:mb-6 lg:mb-5 md:mb-4 sm:mb-4 mb-3 text-primary">
+                Your Short URLs
+            </h2>
             {loading ? (
-                <p className="text-muted-foreground">Loading short URLs...</p>
+                <p className="text-muted">Loading short URLs...</p>
             ) : error ? (
                 <p className="text-red-500">{error}</p>
             ) : urls.length === 0 ? (
-                <div className="text-center text-muted-foreground py-10">
+                <div className="text-center text-muted py-10">
                     <img
                         src="/empty.svg"
                         alt="Empty"
@@ -41,7 +43,7 @@ const UrlDashboard = () => {
                     </p>
                 </div>
             ) : (
-                <Table className="w-full">
+                <Table className="w-full text-primary">
                     <TableHeader>
                         <TableRow>
                             <TableHead>Created At</TableHead>
