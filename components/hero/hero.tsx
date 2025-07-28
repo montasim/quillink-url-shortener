@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { handleCreate } from '@/app/(home)/actions';
+import TabSection from '@/components/TabSection';
 
 const Hero = () => {
     const router = useRouter();
@@ -112,27 +113,13 @@ const Hero = () => {
                     QuilLink Connection Platform.
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-4">
-                    <Tabs defaultValue={tabs[0].value} className="w-full">
-                        <TabsList className="w-full p-0 bg-background justify-start border-b rounded-none">
-                            {tabs.map((tab) => (
-                                <TabsTrigger
-                                    key={tab.value}
-                                    value={tab.value}
-                                    className="rounded-none h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background data-[state=active]:bg-gradient-to-r from-gray-100 to-gray-300 -mb-[2px] rounded-t cursor-pointer text-secondary"
-                                >
-                                    <code className="flex items-center gap-2 text-[13px]">
-                                        {tab.icon} {tab.name}
-                                    </code>
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
-
-                        {tabs.map((tab) => (
-                            <TabsContent key={tab.value} value={tab.value}>
-                                <div className="w-full mt-4">{tab.content}</div>
-                            </TabsContent>
-                        ))}
-                    </Tabs>
+                    <TabSection
+                        defaultValue="short_link"
+                        tabs={tabs}
+                        listClassName="w-full p-0 bg-background justify-start border-b rounded-none"
+                        triggerClassName="rounded-none h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background data-[state=active]:bg-gradient-to-r from-gray-100 to-gray-300 -mb-[2px] rounded-t cursor-pointer text-secondary"
+                        contentWrapperClassName="w-full mt-4"
+                    />
                 </div>
             </div>
         </div>
