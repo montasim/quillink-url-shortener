@@ -16,7 +16,7 @@ import configuration from '@/configuration/configuration';
 import { handleGoogleLogin } from '@/app/login/actions';
 import GoogleLogo from '@/components/googleLogo';
 import SubmitButton from '@/components/SubmitButton';
-import CustomFormField from '@/components/CustomFormField';
+import { PasswordField, TextField } from '@/components/CustomFormField';
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -64,24 +64,23 @@ const SignUpPage = () => {
                             className="w-full space-y-4"
                             onSubmit={form.handleSubmit(onSubmit)}
                         >
-                            <CustomFormField
+                            <TextField
                                 control={form.control}
                                 name="name"
                                 label="Name"
                                 placeholder="Name"
                             />
-                            <CustomFormField
+                            <TextField
                                 control={form.control}
                                 name="email"
                                 label="Email"
                                 type="email"
                                 placeholder="Enter a valid email"
                             />
-                            <CustomFormField
+                            <PasswordField
                                 control={form.control}
                                 name="password"
                                 label="Password"
-                                type="password"
                                 placeholder="Enter a strong password"
                             />
 

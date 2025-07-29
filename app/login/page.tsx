@@ -15,7 +15,7 @@ import { handleGoogleLogin, handleLogin } from '@/app/login/actions';
 import { LoginSchema } from '@/schemas/schemas';
 import { useAuth } from '@/context/AuthContext';
 import GoogleLogo from '@/components/googleLogo';
-import CustomFormField from '@/components/CustomFormField';
+import { PasswordField, TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 
@@ -30,6 +30,7 @@ const LoginPage = () => {
         defaultValues: {
             email: '',
             password: '',
+            cfToken: '',
         },
         resolver: zodResolver(LoginSchema),
     });
@@ -78,27 +79,33 @@ const LoginPage = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <CustomFormField
+                        <TextField
                             control={form.control}
                             name="email"
                             label="Email"
                             type="email"
                             placeholder="Enter your email"
                         />
-                        <CustomFormField
+                        <PasswordField
                             control={form.control}
                             name="password"
                             label="Password"
-                            type="password"
                             placeholder="Password"
+                            viewPasswordStrength={false}
+                            viewPasswordMessage={false}
                         />
 
                         <TurnstileField
-                            onVerify={(token) => setCfToken(token)}
+                            onVerify={(token) => {
+                                setCfToken(token);
+                                form.setValue('cfToken', token);
+                            }}
                         />
 
                         <SubmitButton
-                            disabled={!form.formState.isValid || loading}
+                            disabled={
+                                !form.formState.isValid || loading || !cfToken
+                            }
                             loading={loading}
                             loadingLabel={'Authenticating'}
                             label={'Continue with Email'}

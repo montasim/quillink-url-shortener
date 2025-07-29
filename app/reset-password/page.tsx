@@ -12,7 +12,7 @@ import { z } from 'zod';
 import { handleResetPassword } from '@/app/reset-password/actions';
 import { ResetPasswordSchema } from '@/schemas/schemas';
 import { toast } from 'sonner';
-import CustomFormField from '@/components/CustomFormField';
+import { PasswordField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 
 const ResetPassword = () => {
@@ -63,11 +63,10 @@ const ResetPassword = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <CustomFormField
+                        <PasswordField
                             control={form.control}
                             name="password"
                             label="Password"
-                            type="password"
                             placeholder="Password"
                         />
 

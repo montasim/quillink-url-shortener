@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { handleForgotPassword } from '@/app/forgot-password/actions';
 import { ForgotPasswordSchema } from '@/schemas/schemas';
-import CustomFormField from '@/components/CustomFormField';
+import { TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 
 const ForgotPasswordPage = () => {
@@ -48,7 +48,7 @@ const ForgotPasswordPage = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <CustomFormField
+                        <TextField
                             control={form.control}
                             name="email"
                             label="Email"
