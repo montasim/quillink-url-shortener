@@ -1,10 +1,4 @@
 {
-  "common": {
-    "validationRequired": "Ce champ est obligatoire.",
-    "validationError": "Types de demande non valides fournis.",
-    "internalServerError": "Une erreur interne inattendue du serveur s'est produite.",
-    "unexpectedError": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
-  },
   "navigation": {
     "home": "Accueil",
     "dashboard": "Tableau de Bord",
@@ -167,7 +161,9 @@
     "subtitle": "Prenez contact avec nous",
     "description": "Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible.",
     "name": "Nom",
-    "email": "E-mail",
+    "email": "E-Mail",
+    "office": "Bureau",
+    "github": "GitHub",
     "message": "Message",
     "send": "Envoyer le Message",
     "sending": "Envoi..."
@@ -277,5 +273,23 @@
         "answer": "Contactez-nous par e-mail à support@example.com ou appelez-nous au 1-800-123-4567 pour obtenir de l'aide pour toute demande."
       }
     ]
+  },
+  "common": {
+    "validationRequired": "Ce champ est obligatoire.",
+    "validationError": "Types de demande non valides fournis.",
+    "internalServerError": "Une erreur interne inattendue du serveur s'est produite.",
+    "unexpectedError": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
+    "comingSoon": "Bientôt disponible...",
+    "verify": "Vérifier",
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "networkError": "Erreur réseau : Aucune réponse reçue du serveur.",
+    "axiosError": "Erreur Axios : {message}",
+    "veryWeak": "Très faible",
+    "weak": "Faible",
+    "fair": "Moyen",
+    "good": "Bon",
+    "strong": "Fort",
+    "hidePassword": "Masquer le mot de passe",
+    "showPassword": "Afficher le mot de passe"
   }
 }

@@ -1,10 +1,4 @@
 {
-  "common": {
-    "validationRequired": "Dieses Feld ist erforderlich.",
-    "validationError": "Ungültige Anfrage-Typen bereitgestellt.",
-    "internalServerError": "Ein unerwarteter interner Serverfehler ist aufgetreten.",
-    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
-  },
   "navigation": {
     "home": "Startseite",
     "dashboard": "Dashboard",
@@ -168,6 +162,8 @@
     "description": "Wir würden gerne von Ihnen hören. Senden Sie uns eine Nachricht und wir antworten so schnell wie möglich.",
     "name": "Name",
     "email": "E-Mail",
+    "office": "Bureau",
+    "github": "GitHub",
     "message": "Nachricht",
     "send": "Nachricht senden",
     "sending": "Senden..."
@@ -277,5 +273,23 @@
         "answer": "Kontaktieren Sie uns per E-Mail unter support@example.com oder rufen Sie uns unter 1-800-123-4567 an, um Unterstützung bei Anfragen zu erhalten."
       }
     ]
+  },
+  "common": {
+    "validationRequired": "Dieses Feld ist erforderlich.",
+    "validationError": "Ungültige Anfrage-Typen bereitgestellt.",
+    "internalServerError": "Ein unerwarteter interner Serverfehler ist aufgetreten.",
+    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+    "comingSoon": "Kommt bald...",
+    "verify": "Verifizieren",
+    "somethingWentWrong": "Etwas ist schief gelaufen",
+    "networkError": "Netzwerkfehler: Keine Antwort vom Server erhalten.",
+    "axiosError": "Axios-Fehler: {message}",
+    "veryWeak": "Sehr schwach",
+    "weak": "Schwach",
+    "fair": "Mittel",
+    "good": "Gut",
+    "strong": "Stark",
+    "hidePassword": "Passwort ausblenden",
+    "showPassword": "Passwort anzeigen"
   }
 }

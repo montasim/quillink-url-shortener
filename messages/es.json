@@ -1,10 +1,4 @@
 {
-  "common": {
-    "validationRequired": "Este campo es obligatorio.",
-    "validationError": "Tipos de solicitud no válidos proporcionados.",
-    "internalServerError": "Se produjo un error interno inesperado del servidor.",
-    "unexpectedError": "Se produjo un error inesperado. Por favor, inténtelo de nuevo más tarde."
-  },
   "navigation": {
     "home": "Inicio",
     "dashboard": "Panel de Control",
@@ -279,5 +273,23 @@
         "answer": "Póngase en contacto por correo electrónico en support@example.com o llámenos al 1-800-123-4567 para obtener ayuda con cualquier consulta."
       }
     ]
+  },
+  "common": {
+    "validationRequired": "Este campo es obligatorio.",
+    "validationError": "Tipos de solicitud no válidos proporcionados.",
+    "internalServerError": "Se produjo un error interno inesperado del servidor.",
+    "unexpectedError": "Se produjo un error inesperado. Por favor, inténtelo de nuevo más tarde.",
+    "comingSoon": "Próximamente...",
+    "verify": "Verificar",
+    "somethingWentWrong": "Algo salió mal",
+    "networkError": "Error de red: No se recibió respuesta del servidor.",
+    "axiosError": "Error de Axios: {message}",
+    "veryWeak": "Muy débil",
+    "weak": "Débil",
+    "fair": "Regular",
+    "good": "Bueno",
+    "strong": "Fuerte",
+    "hidePassword": "Ocultar contraseña",
+    "showPassword": "Mostrar contraseña"
   }
 }

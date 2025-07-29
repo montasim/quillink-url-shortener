@@ -1,10 +1,4 @@
 {
-  "common": {
-    "validationRequired": "This field is required.",
-    "validationError": "Invalid request types provided.",
-    "internalServerError": "An unexpected internal server error occurred.",
-    "unexpectedError": "An unexpected error occurred. Please try again later."
-  },
   "navigation": {
     "home": "Home",
     "dashboard": "Dashboard",
@@ -315,6 +309,10 @@
     ]
   },
   "common": {
+    "validationRequired": "This field is required.",
+    "validationError": "Invalid request types provided.",
+    "internalServerError": "An unexpected internal server error occurred.",
+    "unexpectedError": "An unexpected error occurred. Please try again later.",
     "comingSoon": "Coming soon...",
     "verify": "Verify",
     "somethingWentWrong": "Something went wrong",
