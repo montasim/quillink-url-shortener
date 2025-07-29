@@ -9,6 +9,7 @@ import asyncError from '@/lib/asyncError';
 import { setAuthCookies } from '@/lib/cookies';
 import { loginSelection } from '@/app/api/v1/auth/login/selection';
 import { getUserDetails } from '@/services/user.service';
+import { verifyTurnstileToken } from '@/services/auth.service';
 
 const { USER_LOGIN } = MESSAGES;
 
@@ -26,7 +27,17 @@ const loginHandler = async (req: NextRequest) => {
         );
     }
 
-    const { email, password } = validation.data;
+    const { email, password, cfToken } = validation.data;
+
+    // ✅ Step 1: Verify Turnstile token
+    const isValid = await verifyTurnstileToken(cfToken);
+
+    if (!isValid) {
+        return new Response(
+            JSON.stringify({ error: 'Robot verification failed.' }),
+            { status: 400 }
+        );
+    }
 
     // ✅ Find user by email
     const user = await getUserDetails({ email }, loginSelection);

@@ -1,10 +1,10 @@
 const configuration = {
     app: {
         name: 'QuilLink',
-        baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
+        baseUrl: process.env.NEXT_PUBLIC_BASE_URL || '',
     },
 
-    nodeEnv: process.env.NODE_ENV,
+    nodeEnv: process.env.NODE_ENV || '',
 
     api: {
         timeout: parseInt(process.env.API_CALL_TIMEOUT_S || '0', 10),
@@ -12,7 +12,7 @@ const configuration = {
 
     jwt: {
         accessToken: {
-            secret: process.env.JWT_ACCESS_TOKEN_SECRET,
+            secret: process.env.JWT_ACCESS_TOKEN_SECRET || '',
             expiration: parseInt(
                 process.env.JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES || '0',
                 10
@@ -24,7 +24,7 @@ const configuration = {
                 process.env.NEXT_PUBLIC_JWT_REFRESH_INTERVAL_MS || '0',
                 10
             ),
-            secret: process.env.JWT_REFRESH_TOKEN_SECRET,
+            secret: process.env.JWT_REFRESH_TOKEN_SECRET || '',
             expiration: parseInt(
                 process.env.JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES || '0',
                 10
@@ -37,26 +37,26 @@ const configuration = {
     },
 
     cookies: {
-        secure: process.env.COOKIE_SECURE,
-        sameSite: process.env.COOKIE_SAME_SITE,
-        httpOnly: process.env.COOKIE_HTTP_ONLY,
+        secure: process.env.COOKIE_SECURE || '',
+        sameSite: process.env.COOKIE_SAME_SITE || '',
+        httpOnly: process.env.COOKIE_HTTP_ONLY || '',
         maxAge: parseInt(process.env.COOKIE_MAX_AGE_IN_SECONDS || '0', 10),
-        userTokenName: process.env.COOKIE_USER_TOKEN_NAME,
+        userTokenName: process.env.COOKIE_USER_TOKEN_NAME || '',
     },
 
     googleOauth2: {
-        clientId: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET,
-        redirectUri: process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI,
-        tokenUrl: process.env.GOOGLE_OAUTH_TOKEN_URL,
-        userInfoUrl: process.env.GOOGLE_OAUTH_USERINFO_URL,
+        clientId: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_ID || '',
+        clientSecret: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET || '',
+        redirectUri: process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI || '',
+        tokenUrl: process.env.GOOGLE_OAUTH_TOKEN_URL || '',
+        userInfoUrl: process.env.GOOGLE_OAUTH_USERINFO_URL || '',
     },
 
     mailer: {
-        service: process.env.MAILER_SERVICE,
+        service: process.env.MAILER_SERVICE || '',
         auth: {
-            user: process.env.MAILER_USER,
-            pass: process.env.MAILER_PASS,
+            user: process.env.MAILER_USER || '',
+            pass: process.env.MAILER_PASS || '',
         },
     },
 };

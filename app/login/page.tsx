@@ -17,10 +17,12 @@ import { useAuth } from '@/context/AuthContext';
 import GoogleLogo from '@/components/googleLogo';
 import CustomFormField from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
+import TurnstileField from '@/components/TurnstileField';
 
 const LoginPage = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [cfToken, setCfToken] = useState<string | null>(null);
     const { refreshAuth } = useAuth();
 
     const form = useForm<z.infer<typeof LoginSchema>>({
@@ -33,7 +35,20 @@ const LoginPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
-        await handleLogin(data, setLoading, router, refreshAuth);
+        if (!cfToken) {
+            form.setError('email', {
+                type: 'manual',
+                message: "Please verify you're not a robot.",
+            });
+            return;
+        }
+
+        await handleLogin(
+            { ...data, cfToken },
+            setLoading,
+            router,
+            refreshAuth
+        );
     };
 
     return (
@@ -76,6 +91,10 @@ const LoginPage = () => {
                             label="Password"
                             type="password"
                             placeholder="Password"
+                        />
+
+                        <TurnstileField
+                            onVerify={(token) => setCfToken(token)}
                         />
 
                         <SubmitButton

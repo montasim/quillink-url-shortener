@@ -96,6 +96,7 @@ export const validPassword = (
 const name = englishLettersWithSpaceOnly('Name');
 const email = validEmail('Email');
 const password = validPassword('Password', 8, 20);
+const cfToken = nonEmptyString('cfToken');
 
 const normalizeUrl = (url: string): string => {
     try {
@@ -144,6 +145,7 @@ export const LoginSchema = z
     .object({
         email,
         password,
+        cfToken,
     })
     .strict();
 
