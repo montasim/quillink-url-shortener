@@ -16,7 +16,7 @@ import { Form } from '@/components/ui/form';
 import { ShortenUrlSchema } from '@/schemas/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import SubmitButton from '@/components/SubmitButton';
-import CustomFormField from '@/components/CustomFormField';
+import { TextField } from '@/components/CustomFormField';
 
 const Hero = () => {
     const router = useRouter();
@@ -45,7 +45,7 @@ const Hero = () => {
                         className="w-full"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <CustomFormField
+                        <TextField
                             control={form.control}
                             name="originalUrl"
                             label="Paste a long URL"
