@@ -1,7 +1,7 @@
 const MESSAGES = Object.freeze({
     URL_CREATION: {
         VALIDATION_ERROR:
-            'The provided types is invalid. Please check your input.',
+            'The provided data is invalid. Please check your input.',
         OWN_DOMAIN_ERROR:
             'You cannot shorten a URL that points to this service.',
         ALREADY_EXISTS: 'This URL has already been shortened.',

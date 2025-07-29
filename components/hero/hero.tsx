@@ -4,24 +4,35 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Link as LinkIcon, QrCode } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { handleCreate } from '@/app/(home)/actions';
 import TabSection from '@/components/TabSection';
 import ComingSoon from '@/components/ComingSoon';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Form } from '@/components/ui/form';
+import { ShortenUrlSchema } from '@/schemas/schemas';
+import { zodResolver } from '@hookform/resolvers/zod';
+import SubmitButton from '@/components/SubmitButton';
+import CustomFormField from '@/components/CustomFormField';
 
 const Hero = () => {
     const router = useRouter();
-    const [formData, setFormData] = useState({
-        originalUrl: '',
-        expiresAt: '',
-        customKey: '',
-    });
     const [creating, setCreating] = useState(false);
+
+    const form = useForm<z.infer<typeof ShortenUrlSchema>>({
+        mode: 'onChange',
+        defaultValues: {
+            originalUrl: '',
+        },
+        resolver: zodResolver(ShortenUrlSchema),
+    });
+
+    const onSubmit = async (data: z.infer<typeof ShortenUrlSchema>) => {
+        await handleCreate(data, setCreating, router);
+    };
 
     const tabs = [
         {
@@ -29,55 +40,46 @@ const Hero = () => {
             icon: <LinkIcon />,
             value: 'short_link',
             content: (
-                <>
-                    <div className="w-full">
-                        <Label htmlFor="originalUrl">Paste a long URL</Label>{' '}
-                        <Input
-                            id="originalUrl"
-                            type="url"
-                            placeholder="https://example.com/super-long-link-dot-com"
-                            className="mt-2"
-                            value={formData.originalUrl}
-                            onChange={(e) =>
-                                setFormData({
-                                    ...formData,
-                                    originalUrl: e.target.value,
-                                })
+                <Form {...form}>
+                    <form
+                        className="w-full"
+                        onSubmit={form.handleSubmit(onSubmit)}
+                    >
+                        <CustomFormField
+                            control={form.control}
+                            name="originalUrl"
+                            label="Paste a long URL"
+                            type="text"
+                            placeholder="Paste a long URL"
+                        />
+
+                        <p className="mt-4 text-sm text-left text-secondary">
+                            By clicking Shorten URL, you are agree to
+                            QuilLink&lsquo;s
+                            <Link href="#" className="ml-1 underline">
+                                Terms of use
+                            </Link>
+                            ,
+                            <Link href="#" className="ml-1 underline">
+                                Privacy Policy
+                            </Link>
+                            , and
+                            <Link href="#" className="ml-1 underline">
+                                Cookie Policy
+                            </Link>
+                        </p>
+
+                        <SubmitButton
+                            disabled={!form.formState.isValid || creating}
+                            loading={creating}
+                            loadingLabel={'Creating'}
+                            label={'Create short URL'}
+                            className={
+                                'mt-6 w-full cursor-pointer bg-gradient-to-r from-gray-100 to-gray-300 text-secondary'
                             }
                         />
-                    </div>
-
-                    <p className="mt-4 text-sm text-left text-secondary">
-                        By clicking Shorten URL, you are agree to
-                        QuilLink&lsquo;s
-                        <Link href="#" className="ml-1 underline">
-                            Terms of use
-                        </Link>
-                        ,
-                        <Link href="#" className="ml-1 underline">
-                            Privacy Policy
-                        </Link>
-                        , and
-                        <Link href="#" className="ml-1 underline">
-                            Cookie Policy
-                        </Link>
-                    </p>
-
-                    <Button
-                        className="mt-6 w-full cursor-pointer bg-gradient-to-r from-gray-100 to-gray-300 text-secondary"
-                        onClick={() =>
-                            handleCreate(
-                                formData,
-                                setCreating,
-                                setFormData,
-                                router
-                            )
-                        }
-                        disabled={creating}
-                    >
-                        {creating ? 'Creating...' : 'Create short URL'}
-                    </Button>
-                </>
+                    </form>
+                </Form>
             ),
         },
         {

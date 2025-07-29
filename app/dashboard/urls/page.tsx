@@ -55,14 +55,16 @@ const UrlDashboard = () => {
         <>
             {/* Navbar is now sticky and styled in the Navbar component */}
             <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* Tabs */}
-                <TabSection
-                    defaultValue="links"
-                    tabs={tabs}
-                    listClassName="w-32 p-0 bg-background justify-start border-b rounded-none"
-                    triggerClassName="rounded-none h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background data-[state=active]:bg-gradient-to-r from-gray-100 to-gray-300 -mb-[2px] rounded-t cursor-pointer text-secondary"
-                    contentWrapperClassName="w-full mt-4"
-                />
+                <div className="flex items-center justify-between">
+                    {/* Tabs */}
+                    <TabSection
+                        defaultValue="links"
+                        tabs={tabs}
+                        listClassName="w-32 p-0 bg-background justify-start border-b rounded-none"
+                        triggerClassName="rounded-none h-full data-[state=active]:shadow-none border border-transparent border-b-border data-[state=active]:border-border data-[state=active]:border-b-background data-[state=active]:bg-gradient-to-r from-gray-100 to-gray-300 -mb-[2px] rounded-t cursor-pointer text-secondary"
+                        contentWrapperClassName="w-full mt-4"
+                    />
+                </div>
             </div>
         </>
     );

@@ -1,28 +1,26 @@
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 import { IShortUrl } from '@/types/types';
-import { createData, deleteData } from '@/lib/axios';
+import { deleteData } from '@/lib/axios';
 import { withErrorHandler } from '@/components/withErrorHandler';
+import { handleAuthAction } from '@/services/auth.service';
+import API_ENDPOINT from '@/constants/apiEndPoint';
+import ROUTE_ENDPOINT from '@/constants/routeEndPoint';
 
-export const handleCreate = withErrorHandler(
-    async (formData, setCreating, setFormData, router) => {
-        if (!formData.originalUrl) {
-            toast.error('Original URL is required.');
-            return;
-        }
-
-        setCreating(true);
-        await createData('/api/v1/urls', {
-            originalUrl: formData.originalUrl,
-        });
-
-        toast.success('Short URL created!');
-        setFormData({ originalUrl: '', expiresAt: '', customKey: '' });
-        setCreating(false);
-        router.push('/dashboard/urls');
-    },
-    'Failed to create short URL'
-);
+export const handleCreate = async (
+    formData: any,
+    setLoading: (val: boolean) => void,
+    router: any
+) => {
+    await handleAuthAction({
+        apiEndpoint: API_ENDPOINT.URLS,
+        formData,
+        setLoading,
+        router,
+        successRedirectUrl: ROUTE_ENDPOINT.DASHBOARD_URLS,
+        successMessage: 'Short url create successful.',
+    });
+};
 
 export const handleCopy = async (url: string) => {
     await navigator.clipboard.writeText(url);

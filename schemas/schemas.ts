@@ -113,13 +113,12 @@ export const ShortenUrlSchema = z
     .object({
         originalUrl: z
             .string()
+            .url({ message: MESSAGES.URL_CREATION.VALIDATION_ERROR })
             .transform((val) => val.trim())
             .transform((val) => normalizeUrl(val))
             .refine(
                 (val) => {
-                    const ownDomain = getEnvironmentData(
-                        'NEXT_PUBLIC_BASE_URL'
-                    );
+                    const ownDomain = process.env.NEXT_PUBLIC_BASE_URL;
                     return !val.startsWith(ownDomain ?? '');
                 },
                 {

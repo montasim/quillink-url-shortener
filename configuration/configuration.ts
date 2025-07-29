@@ -1,64 +1,62 @@
-import getEnvironmentData from '@/utils/getEnvironmentData';
-
 const configuration = {
     app: {
         name: 'QuilLink',
-        baseUrl: getEnvironmentData('NEXT_PUBLIC_BASE_URL'),
+        baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
     },
 
-    nodeEnv: getEnvironmentData('NODE_ENV'),
+    nodeEnv: process.env.NODE_ENV,
 
     api: {
-        timeout: parseInt(getEnvironmentData('API_CALL_TIMEOUT_S'), 10),
+        timeout: parseInt(process.env.API_CALL_TIMEOUT_S || '0', 10),
     },
 
     jwt: {
         accessToken: {
-            secret: getEnvironmentData('JWT_ACCESS_TOKEN_SECRET'),
+            secret: process.env.JWT_ACCESS_TOKEN_SECRET,
             expiration: parseInt(
-                getEnvironmentData('JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES'),
+                process.env.JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES || '0',
                 10
             ),
         },
 
         refreshToken: {
             apiInterval: parseInt(
-                getEnvironmentData('NEXT_PUBLIC_JWT_REFRESH_INTERVAL_MS'),
+                process.env.NEXT_PUBLIC_JWT_REFRESH_INTERVAL_MS || '0',
                 10
             ),
-            secret: getEnvironmentData('JWT_REFRESH_TOKEN_SECRET'),
+            secret: process.env.JWT_REFRESH_TOKEN_SECRET,
             expiration: parseInt(
-                getEnvironmentData('JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES'),
+                process.env.JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES || '0',
                 10
             ),
         },
     },
 
     forgetPassword: {
-        expires: parseInt(getEnvironmentData('FORGET_PASSWORD_EXPIRES_MS'), 10),
+        expires: parseInt(process.env.FORGET_PASSWORD_EXPIRES_MS || '0', 10),
     },
 
     cookies: {
-        secure: getEnvironmentData('COOKIE_SECURE'),
-        sameSite: getEnvironmentData('COOKIE_SAME_SITE'),
-        httpOnly: getEnvironmentData('COOKIE_HTTP_ONLY'),
-        maxAge: parseInt(getEnvironmentData('COOKIE_MAX_AGE_IN_SECONDS'), 10),
-        userTokenName: getEnvironmentData('COOKIE_USER_TOKEN_NAME'),
+        secure: process.env.COOKIE_SECURE,
+        sameSite: process.env.COOKIE_SAME_SITE,
+        httpOnly: process.env.COOKIE_HTTP_ONLY,
+        maxAge: parseInt(process.env.COOKIE_MAX_AGE_IN_SECONDS || '0', 10),
+        userTokenName: process.env.COOKIE_USER_TOKEN_NAME,
     },
 
     googleOauth2: {
-        clientId: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_CLIENT_ID'),
-        clientSecret: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET'),
-        redirectUri: getEnvironmentData('GOOGLE_OAUTH_GOOGLE_REDIRECT_URI'),
-        tokenUrl: getEnvironmentData('GOOGLE_OAUTH_TOKEN_URL'),
-        userInfoUrl: getEnvironmentData('GOOGLE_OAUTH_USERINFO_URL'),
+        clientId: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET,
+        redirectUri: process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI,
+        tokenUrl: process.env.GOOGLE_OAUTH_TOKEN_URL,
+        userInfoUrl: process.env.GOOGLE_OAUTH_USERINFO_URL,
     },
 
     mailer: {
-        service: getEnvironmentData('MAILER_SERVICE'),
+        service: process.env.MAILER_SERVICE,
         auth: {
-            user: getEnvironmentData('MAILER_USER'),
-            pass: getEnvironmentData('MAILER_PASS'),
+            user: process.env.MAILER_USER,
+            pass: process.env.MAILER_PASS,
         },
     },
 };

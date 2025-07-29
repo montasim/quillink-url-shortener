@@ -6,6 +6,7 @@ type SubmitButtonProps = {
     loading: boolean;
     loadingLabel: string;
     label: string;
+    className?: string;
 };
 
 const SubmitButton = ({
@@ -13,11 +14,16 @@ const SubmitButton = ({
     loading,
     loadingLabel,
     label,
+    className,
 }: SubmitButtonProps) => {
     return (
         <Button
             type="submit"
-            className="mt-4 w-full disabled:bg-secondary hover:bg-primary cursor-pointer disabled:cursor-not-allowed"
+            className={
+                className
+                    ? className
+                    : 'mt-4 w-full disabled:bg-secondary hover:bg-primary cursor-pointer disabled:cursor-not-allowed'
+            }
             disabled={disabled}
         >
             {loading ? (
