@@ -1,6 +1,7 @@
 import { handleAuthAction } from '@/services/auth.service';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { startProactiveRefresh } from '@/lib/axios';
+import ROUTE_ENDPOINT from '@/constants/routeEndPoint';
 
 export const handleLogin = async (
     formData: any,
@@ -13,7 +14,7 @@ export const handleLogin = async (
         formData,
         setLoading,
         router,
-        successRedirectUrl: API_ENDPOINT.DASHBOARD_URLS,
+        successRedirectUrl: ROUTE_ENDPOINT.DASHBOARD_URLS,
         successMessage: 'Login successful! Redirecting to dashboard.',
     });
 

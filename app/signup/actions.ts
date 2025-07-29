@@ -1,5 +1,6 @@
 import { handleAuthAction } from '@/services/auth.service';
 import API_ENDPOINT from '@/constants/apiEndPoint';
+import ROUTE_ENDPOINT from '@/constants/routeEndPoint';
 
 export const handleSignup = async (
     formData: any,
@@ -11,7 +12,7 @@ export const handleSignup = async (
         formData,
         setLoading,
         router,
-        successRedirectUrl: API_ENDPOINT.LOGIN,
+        successRedirectUrl: ROUTE_ENDPOINT.LOGIN,
         successMessage: 'Signup successful! Please log in.',
     });
 };

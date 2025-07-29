@@ -1,5 +1,6 @@
 import { handleAuthAction } from '@/services/auth.service';
 import API_ENDPOINT from '@/constants/apiEndPoint';
+import ROUTE_ENDPOINT from '@/constants/routeEndPoint';
 
 export const handleForgotPassword = async (
     formData: any,
@@ -11,7 +12,7 @@ export const handleForgotPassword = async (
         formData,
         setLoading,
         router,
-        successRedirectUrl: API_ENDPOINT.RESET_PASSWORD,
+        successRedirectUrl: ROUTE_ENDPOINT.RESET_PASSWORD,
         successMessage: 'Password reset link sent to your email!',
     });
 };

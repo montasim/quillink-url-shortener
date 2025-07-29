@@ -5,8 +5,9 @@ import getEnvironmentData from '@/utils/getEnvironmentData';
 
 const {
     ENGLISH_LETTERS_ONLY,
-    NUMBERS_ONLY,
     ENGLISH_ALPHANUMERIC_ONLY,
+    ENGLISH_LETTERS_AND_SPACES,
+    NUMBERS_ONLY,
     FLOAT_STRING,
     POSITIVE_INTEGER_STRING,
     SHORT_KEY,
@@ -23,6 +24,12 @@ export const nonEmptyString = (fieldName: string) =>
 export const englishLettersOnly = (fieldName: string) =>
     nonEmptyString(fieldName).regex(
         ENGLISH_LETTERS_ONLY,
+        `${fieldName} must contain only English letters.`
+    );
+
+export const englishLettersWithSpaceOnly = (fieldName: string) =>
+    nonEmptyString(fieldName).regex(
+        ENGLISH_LETTERS_AND_SPACES,
         `${fieldName} must contain only English letters.`
     );
 
@@ -86,7 +93,7 @@ export const validPassword = (
         });
 
 // Define the Zod validation schema
-const name = englishLettersOnly('Name');
+const name = englishLettersWithSpaceOnly('Name');
 const email = validEmail('Email');
 const password = validPassword('Password', 8, 20);
 
