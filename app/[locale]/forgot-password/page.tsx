@@ -32,7 +32,10 @@ const ForgotPasswordPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof ForgotPasswordSchema>) => {
-        if (!cfToken) {
+        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+
+        // Only require Turnstile token if site key is configured
+        if (siteKey && !cfToken) {
             form.setError('email', {
                 type: 'manual',
                 message: t('turnstileError'),
@@ -40,7 +43,11 @@ const ForgotPasswordPage = () => {
             return;
         }
 
-        await handleForgotPassword({ ...data, cfToken }, setLoading, router);
+        await handleForgotPassword(
+            { ...data, cfToken: cfToken || 'dev-bypass' },
+            setLoading,
+            router
+        );
     };
 
     return (

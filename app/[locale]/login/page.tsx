@@ -11,7 +11,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import configuration from '@/configuration/configuration';
 import { handleGoogleLogin, handleLogin } from '@/lib/actions/auth';
 import { LoginSchema } from '@/schemas/schemas';
 import { useAuth } from '@/context/AuthContext';
@@ -38,7 +37,10 @@ const LoginPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
-        if (!cfToken) {
+        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+
+        // Only require Turnstile token if site key is configured
+        if (siteKey && !cfToken) {
             form.setError('email', {
                 type: 'manual',
                 message: t('turnstileError'),
@@ -47,7 +49,7 @@ const LoginPage = () => {
         }
 
         await handleLogin(
-            { ...data, cfToken },
+            { ...data, cfToken: cfToken || 'dev-bypass' },
             setLoading,
             router,
             refreshAuth

@@ -15,11 +15,7 @@ interface Props {
 
 const TurnstileField = ({ onVerify }: Props) => {
     const t = useTranslations('common');
-    const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
-
-    if (!siteKey) {
-        return;
-    }
+    const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY || '';
 
     return (
         <FormItem>
@@ -29,7 +25,10 @@ const TurnstileField = ({ onVerify }: Props) => {
                     <Turnstile
                         turnstileSiteKey={siteKey}
                         callback={onVerify}
+                        size={'flexible'}
                         theme="light"
+                        retry="auto"
+                        refreshExpired="auto"
                     />
                 </div>
             </FormControl>

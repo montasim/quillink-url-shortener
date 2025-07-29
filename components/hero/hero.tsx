@@ -103,7 +103,7 @@ const Hero = () => {
                 )}
             />
 
-            <div className="relative z-10 text-center max-w-2xl">
+            <div className="relative z-10 text-center w-full">
                 <Badge className="bg-gradient-to-r from-sky-400 to-cyan-300 rounded-full py-1 border-none">
                     {t('badge')}
                 </Badge>
@@ -113,7 +113,7 @@ const Hero = () => {
                 <p className="mt-4 text-secondary text-[17px] md:text-lg">
                     {t('description')}
                 </p>
-                <div className="mt-8 flex items-center justify-center gap-4">
+                <div className="mt-8 flex items-center justify-center gap-4 w-full">
                     <TabSection
                         defaultValue="short_link"
                         tabs={tabs}

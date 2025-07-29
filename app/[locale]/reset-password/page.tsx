@@ -1,3 +1,5 @@
+'use client';
+
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import { Logo } from '@/components/logo';
@@ -43,7 +45,10 @@ const ResetPassword = () => {
     }, [searchParams, form, router, t]);
 
     const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
-        if (!cfToken) {
+        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+
+        // Only require Turnstile token if site key is configured
+        if (siteKey && !cfToken) {
             form.setError('newPassword', {
                 type: 'manual',
                 message: t('turnstileError'),
@@ -51,7 +56,11 @@ const ResetPassword = () => {
             return;
         }
 
-        await handleResetPassword({ ...data, cfToken }, setLoading, router);
+        await handleResetPassword(
+            { ...data, cfToken: cfToken || 'dev-bypass' },
+            setLoading,
+            router
+        );
     };
 
     return (

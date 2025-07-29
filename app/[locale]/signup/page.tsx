@@ -13,7 +13,6 @@ import { SignupSchema } from '@/schemas/schemas';
 import { handleSignup } from '@/lib/actions/signup';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import configuration from '@/configuration/configuration';
 import { handleGoogleLogin } from '@/lib/actions/auth';
 import GoogleLogo from '@/components/googleLogo';
 import SubmitButton from '@/components/SubmitButton';
@@ -38,7 +37,10 @@ const SignUpPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof SignupSchema>) => {
-        if (!cfToken) {
+        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+
+        // Only require Turnstile token if site key is configured
+        if (siteKey && !cfToken) {
             form.setError('email', {
                 type: 'manual',
                 message: t('turnstileError'),
@@ -46,7 +48,11 @@ const SignUpPage = () => {
             return;
         }
 
-        await handleSignup({ ...data, cfToken }, setLoading, router);
+        await handleSignup(
+            { ...data, cfToken: cfToken || 'dev-bypass' },
+            setLoading,
+            router
+        );
     };
 
     return (
