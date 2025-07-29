@@ -54,7 +54,6 @@ export const handleAuthAction = async ({
 export async function verifyTurnstileToken(token: string, ip?: string) {
     const secret = process.env.CF_TURNSTILE_SECRET_KEY!;
     const verifyUrl = process.env.CF_TURNSTILE_VERIFY_URL!;
-    console.log(secret);
     const response = await axios.post(
         verifyUrl,
         new URLSearchParams({
