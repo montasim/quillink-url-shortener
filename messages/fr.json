@@ -1,0 +1,281 @@
+{
+  "common": {
+    "validationRequired": "Ce champ est obligatoire.",
+    "validationError": "Types de demande non valides fournis.",
+    "internalServerError": "Une erreur interne inattendue du serveur s'est produite.",
+    "unexpectedError": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "dashboard": "Tableau de Bord",
+    "login": "Se Connecter",
+    "signup": "S'inscrire",
+    "logout": "Se Déconnecter",
+    "contactUs": "Nous Contacter"
+  },
+  "hero": {
+    "title": "Faites compter chaque connexion",
+    "subtitle": "Créez des liens courts et mémorables avec notre raccourcisseur d'URL",
+    "description": "Créez des liens courts, des codes QR, partagez-les partout. Suivez ce qui fonctionne et ce qui ne fonctionne pas. Tout dans la Plateforme de Connexion QuilLink.",
+    "getStarted": "Commencer",
+    "learnMore": "En Savoir Plus",
+    "badge": "Nouvellement publié v1.0.0",
+    "pasteUrl": "Coller une URL longue",
+    "createShortUrl": "Créer une URL courte",
+    "creating": "Création",
+    "shortLink": "Lien Court",
+    "qrCode": "Code QR",
+    "qrCodeComingSoon": "Code QR bientôt disponible...",
+    "termsAgreement": "En cliquant sur Raccourcir l'URL, vous acceptez les",
+    "termsOfUse": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de Confidentialité",
+    "cookiePolicy": "Politique des Cookies"
+  },
+  "auth": {
+    "login": {
+      "title": "Bon Retour",
+      "subtitle": "Connectez-vous à votre compte",
+      "email": "E-mail",
+      "password": "Mot de Passe",
+      "submitButton": "Se Connecter",
+      "forgotPassword": "Mot de Passe Oublié ?",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "signUpLink": "Inscrivez-vous ici",
+      "validationError": "Types de demande non valides.",
+      "unauthorized": "E-mail ou mot de passe non valide. Veuillez réessayer.",
+      "success": "Connexion réussie."
+    },
+    "signup": {
+      "title": "Créer un Compte",
+      "subtitle": "Rejoignez-nous aujourd'hui",
+      "continueWithGoogle": "Continuer avec Google",
+      "or": "OU",
+      "name": "Nom Complet",
+      "email": "E-mail",
+      "password": "Mot de Passe",
+      "confirmPassword": "Confirmer le Mot de Passe",
+      "submitButton": "Créer un Compte",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "loginLink": "Connectez-vous ici",
+      "validationError": "Types de demande non valides.",
+      "alreadyExists": "Un compte avec cet e-mail existe déjà.",
+      "success": "Inscription réussie. Vous pouvez maintenant vous connecter."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié ?",
+      "subtitle": "Entrez votre e-mail pour réinitialiser le mot de passe",
+      "email": "E-mail",
+      "emailPlaceholder": "Entrez un e-mail valide",
+      "processing": "Traitement",
+      "submitButton": "Envoyer l'E-mail de Vérification",
+      "rememberPassword": "Vous souvenez-vous du mot de passe ?",
+      "loginLink": "Connexion",
+      "turnstileError": "Veuillez vérifier que vous n'êtes pas un robot.",
+      "backToLogin": "Retour à la Connexion",
+      "validationError": "E-mail non valide. Veuillez réessayer.",
+      "forbidden": "Si votre e-mail est enregistré, vous recevrez bientôt les instructions de réinitialisation.",
+      "success": "Lien de réinitialisation du mot de passe envoyé."
+    },
+    "resetPassword": {
+      "title": "Définir un Nouveau Mot de Passe",
+      "subtitle": "Entrez votre nouveau mot de passe",
+      "password": "Nouveau Mot de Passe",
+      "confirmPassword": "Confirmer le Nouveau Mot de Passe",
+      "submitButton": "Réinitialiser le Mot de Passe",
+      "validationError": "E-mail ou mot de passe non valide. Veuillez réessayer.",
+      "invalidToken": "Token non valide ou expiré.",
+      "success": "Réinitialisation du mot de passe réussie."
+    }
+  },
+  "url": {
+    "creation": {
+      "validationError": "Les données fournies ne sont pas valides. Veuillez vérifier votre saisie.",
+      "ownDomainError": "Vous ne pouvez pas raccourcir une URL qui pointe vers ce service.",
+      "alreadyExists": "Cette URL a déjà été raccourcie.",
+      "success": "L'URL courte a été créée avec succès.",
+      "internalError": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
+      "needLogin": "Limite atteinte. Connectez-vous pour en créer plus.",
+      "needSubscription": "Limite atteinte. Connectez-vous pour en créer plus."
+    },
+    "retrieval": {
+      "notFound": "L'URL courte demandée n'a pas été trouvée.",
+      "success": "URL courte récupérée avec succès."
+    },
+    "deletion": {
+      "notFound": "L'URL courte à supprimer n'a pas été trouvée.",
+      "success": "URL courte supprimée avec succès."
+    },
+    "details": {
+      "notFound": "Les détails de cette URL courte n'ont pas été trouvés.",
+      "expired": "Cette URL courte a expiré.",
+      "success": "Détails de l'URL courte récupérés avec succès."
+    },
+    "redirect": {
+      "notFound": "L'URL courte pour la redirection n'a pas été trouvée.",
+      "expired": "Cette URL courte a expiré et ne peut pas être redirigée."
+    },
+    "listing": {
+      "notFound": "Aucune URL courte trouvée correspondant à vos critères.",
+      "success": "Toutes les URLs courtes récupérées avec succès."
+    },
+    "validation": {
+      "invalidShortKeyFormat": "Format de clé courte non valide."
+    }
+  },
+  "qrCode": {
+    "missingShortKey": "ShortKey manquant. Veuillez fournir la clé courte pour générer le code QR.",
+    "notFound": "URL courte non trouvée pour la génération du code QR.",
+    "success": "Code QR généré avec succès."
+  },
+  "dashboard": {
+    "title": "Tableau de Bord",
+    "welcome": "Bienvenue sur votre tableau de bord",
+    "totalUrls": "URLs Totales",
+    "totalClicks": "Clics Totaux",
+    "urlsThisMonth": "URLs ce Mois",
+    "links": "Liens",
+    "analysis": "Analyse",
+    "realtime": "Temps Réel",
+    "analysisComingSoon": "Analyse bientôt disponible...",
+    "realtimeComingSoon": "Statistiques en temps réel bientôt disponibles...",
+    "loadingUrls": "Chargement des URLs courtes...",
+    "noUrls": "Aucune URL courte pour le moment. Commencez par en créer une !",
+    "createdAt": "Créé Le",
+    "originalUrl": "URL Originale",
+    "shortUrl": "URL Courte",
+    "clicks": "Clics",
+    "actions": "Actions",
+    "copy": "Copier",
+    "share": "Partager",
+    "details": "Détails",
+    "delete": "Supprimer",
+    "shareAsLink": "Partager comme Lien",
+    "shareWithFacebook": "Partager avec Facebook",
+    "shareWithInstagram": "Partager avec Instagram",
+    "shareWithGithub": "Partager avec GitHub",
+    "missingUrl": "URL Manquante",
+    "qrCodeUnavailable": "Code QR indisponible",
+    "ipAddress": "IP",
+    "browser": "Navigateur",
+    "os": "OS",
+    "clickedAt": "Cliqué Le",
+    "noClickLogs": "Aucun journal de clics",
+    "unknown": "Inconnu"
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "subtitle": "Prenez contact avec nous",
+    "description": "Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible.",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "sending": "Envoi..."
+  },
+  "footer": {
+    "allRightsReserved": "Tous droits réservés.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation"
+  },
+  "clients": {
+    "title": "Plus de 6 entreprises nous font déjà confiance"
+  },
+  "testimonial": {
+    "title": "Des centaines de personnes nous font déjà confiance",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "designation": "Ingénieur logiciel",
+        "company": "TechCorp",
+        "testimonial": "Ce produit a complètement transformé notre façon de travailler. L'efficacité et la facilité d'utilisation sont inégalées !",
+        "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Sophia Lee",
+        "designation": "Analyste de données",
+        "company": "InsightTech",
+        "testimonial": "Cet outil m'a fait gagner des heures de travail ! Les fonctionnalités d'analyse et de reporting sont incroyablement puissantes.",
+        "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Michael Johnson",
+        "designation": "Concepteur UX",
+        "company": "DesignPro",
+        "testimonial": "Un outil incroyable qui simplifie les tâches complexes. Fortement recommandé pour les professionnels du secteur. L'interface intuitive facilite l'intégration des nouveaux membres de l'équipe et les fonctionnalités d'automatisation nous font gagner d'innombrables heures chaque semaine.",
+        "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Emily Davis",
+        "designation": "Spécialiste en marketing",
+        "company": "BrandBoost",
+        "testimonial": "J'ai constaté une amélioration significative de la productivité de notre équipe depuis que nous avons commencé à utiliser ce service.",
+        "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Daniel Martinez",
+        "designation": "Développeur Full-Stack",
+        "company": "CodeCrafters",
+        "testimonial": "Le meilleur investissement que nous ayons fait ! L'équipe d'assistance est également super réactive et serviable.",
+        "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Jane Smith",
+        "designation": "Chef de produit",
+        "company": "InnovateX",
+        "testimonial": "L'expérience utilisateur est de premier ordre ! L'interface est propre, intuitive et facile à naviguer.",
+        "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Vos questions, nos réponses",
+    "faqs": [
+      {
+        "question": "Quelle est votre politique de retour ?",
+        "answer": "Vous pouvez retourner les articles non utilisés dans leur emballage d'origine dans les 30 jours pour un remboursement ou un échange. Contactez le support pour obtenir de l'aide."
+      },
+      {
+        "question": "Comment suivre ma commande ?",
+        "answer": "Suivez votre commande à l'aide du lien fourni dans votre e-mail de confirmation, ou connectez-vous à votre compte pour afficher les détails de suivi."
+      },
+      {
+        "question": "Expédiez-vous à l'international ?",
+        "answer": "Oui, nous expédions dans le monde entier. Les frais d'expédition et les délais de livraison varient selon l'endroit, et des droits de douane peuvent s'appliquer pour certains pays."
+      },
+      {
+        "question": "Quels modes de paiement acceptez-vous ?",
+        "answer": "Nous acceptons les cartes Visa, MasterCard, American Express, PayPal, Apple Pay et Google Pay, garantissant des options de paiement sécurisées pour tous les clients."
+      },
+      {
+        "question": "Que se passe-t-il si je reçois un article endommagé ?",
+        "answer": "Veuillez contacter notre équipe d'assistance dans les 48 heures suivant la livraison avec des photos de l'article endommagé. Nous organiserons un remplacement ou un remboursement."
+      },
+      {
+        "question": "Puis-je annuler ou modifier ma commande ?",
+        "answer": "Oui, vous pouvez annuler ou modifier votre commande dans les 24 heures suivant sa passation. Contactez le service client pour effectuer des mises à jour."
+      },
+      {
+        "question": "Offrez-vous des réductions pour les achats en gros ?",
+        "answer": "Oui, nous offrons des remises spéciales pour les commandes en gros. Contactez notre équipe de vente avec vos besoins pour un devis personnalisé."
+      },
+      {
+        "question": "Combien de temps prend la livraison ?",
+        "answer": "La livraison prend généralement de 3 à 7 jours ouvrables au niveau national et de 7 à 14 jours ouvrables à l'international, en fonction de votre emplacement et du mode d'expédition choisi."
+      },
+      {
+        "question": "Vos produits sont-ils respectueux de l'environnement ?",
+        "answer": "Beaucoup de nos produits sont fabriqués avec des matériaux durables et des pratiques respectueuses de l'environnement pour réduire l'impact environnemental tout en maintenant la qualité."
+      },
+      {
+        "question": "Comment puis-je contacter le service client ?",
+        "answer": "Contactez-nous par e-mail à support@example.com ou appelez-nous au 1-800-123-4567 pour obtenir de l'aide pour toute demande."
+      }
+    ]
+  }
+}

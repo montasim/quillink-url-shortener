@@ -1,11 +1,14 @@
 import { Logo01, Logo02, Logo03, Logo04 } from '@/components/clients/logos';
+import { useTranslations } from 'next-intl';
 
 const Clients = () => {
+    const t = useTranslations('clients');
+
     return (
         <div className="flex items-center justify-center px-6 2xl:mt-40 xl:mt-36 lg:mt-36 md:mt-28 sm:mt-20 mt-16 overflow-hidden">
             <div className="w-full max-w-screen-xl">
                 <p className="text-center text-xl text-secondary">
-                    More than 6 companies already trust us
+                    {t('title')}
                 </p>
 
                 <div className="relative mt-10 overflow-hidden">

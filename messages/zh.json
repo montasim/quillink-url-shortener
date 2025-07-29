@@ -1,0 +1,281 @@
+{
+  "common": {
+    "validationRequired": "此字段为必填项。",
+    "validationError": "提供的请求类型无效。",
+    "internalServerError": "发生了意外的内部服务器错误。",
+    "unexpectedError": "发生了意外错误。请稍后重试。"
+  },
+  "navigation": {
+    "home": "首页",
+    "dashboard": "仪表板",
+    "login": "登录",
+    "signup": "注册",
+    "logout": "注销",
+    "contactUs": "联系我们"
+  },
+  "hero": {
+    "title": "让每一个连接都有价值",
+    "subtitle": "使用我们的网址缩短器创建简短、易记的链接",
+    "description": "创建短链接、二维码，随处分享。跟踪什么有效，什么无效。一切尽在QuilLink连接平台。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多",
+    "badge": "刚刚发布 v1.0.0",
+    "pasteUrl": "粘贴长网址",
+    "createShortUrl": "创建短网址",
+    "creating": "正在创建",
+    "shortLink": "短链接",
+    "qrCode": "二维码",
+    "qrCodeComingSoon": "二维码即将推出...",
+    "termsAgreement": "点击缩短网址，即表示您同意QuilLink的",
+    "termsOfUse": "使用条款",
+    "privacyPolicy": "隐私政策",
+    "cookiePolicy": "Cookie政策"
+  },
+  "auth": {
+    "login": {
+      "title": "欢迎回来",
+      "subtitle": "登录到您的账户",
+      "email": "邮箱",
+      "password": "密码",
+      "submitButton": "登录",
+      "forgotPassword": "忘记密码？",
+      "noAccount": "没有账户？",
+      "signUpLink": "在此注册",
+      "validationError": "无效的请求类型。",
+      "unauthorized": "邮箱或密码无效。请重试。",
+      "success": "登录成功。"
+    },
+    "signup": {
+      "title": "创建账户",
+      "subtitle": "今天就加入我们",
+      "continueWithGoogle": "使用Google继续",
+      "or": "或",
+      "name": "全名",
+      "email": "邮箱",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "submitButton": "创建账户",
+      "haveAccount": "已有账户？",
+      "loginLink": "在此登录",
+      "validationError": "无效的请求类型。",
+      "alreadyExists": "此邮箱已存在账户。",
+      "success": "注册成功。您现在可以登录。"
+    },
+    "forgotPassword": {
+      "title": "忘记密码？",
+      "subtitle": "输入您的邮箱以重置密码",
+      "email": "邮箱",
+      "emailPlaceholder": "输入有效邮箱",
+      "processing": "处理中",
+      "submitButton": "发送验证邮件",
+      "rememberPassword": "记起密码了？",
+      "loginLink": "登录",
+      "turnstileError": "请验证您不是机器人。",
+      "backToLogin": "返回登录",
+      "validationError": "无效的邮箱。请重试。",
+      "forbidden": "如果您的邮箱已注册，您将很快收到重置说明。",
+      "success": "密码重置链接已发送。"
+    },
+    "resetPassword": {
+      "title": "设置新密码",
+      "subtitle": "输入您的新密码",
+      "password": "新密码",
+      "confirmPassword": "确认新密码",
+      "submitButton": "重置密码",
+      "validationError": "无效的邮箱或密码。请重试。",
+      "invalidToken": "无效或过期的令牌。",
+      "success": "密码重置成功。"
+    }
+  },
+  "url": {
+    "creation": {
+      "validationError": "提供的数据无效。请检查您的输入。",
+      "ownDomainError": "您无法缩短指向此服务的网址。",
+      "alreadyExists": "此网址已被缩短。",
+      "success": "短网址创建成功。",
+      "internalError": "发生了意外错误。请稍后重试。",
+      "needLogin": "已达到限制。请登录以创建更多。",
+      "needSubscription": "已达到限制。请登录以创建更多。"
+    },
+    "retrieval": {
+      "notFound": "未找到请求的短网址。",
+      "success": "短网址检索成功。"
+    },
+    "deletion": {
+      "notFound": "未找到要删除的短网址。",
+      "success": "短网址删除成功。"
+    },
+    "details": {
+      "notFound": "未找到此短网址的详细信息。",
+      "expired": "此短网址已过期。",
+      "success": "短网址详细信息获取成功。"
+    },
+    "redirect": {
+      "notFound": "未找到用于重定向的短网址。",
+      "expired": "此短网址已过期，无法重定向。"
+    },
+    "listing": {
+      "notFound": "未找到符合您条件的短网址。",
+      "success": "所有短网址获取成功。"
+    },
+    "validation": {
+      "invalidShortKeyFormat": "无效的短密钥格式。"
+    }
+  },
+  "qrCode": {
+    "missingShortKey": "缺少shortKey。请提供短密钥以生成二维码。",
+    "notFound": "未找到用于生成二维码的短网址。",
+    "success": "二维码生成成功。"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎来到您的仪表板",
+    "totalUrls": "总网址数",
+    "totalClicks": "总点击数",
+    "urlsThisMonth": "本月网址数",
+    "links": "链接",
+    "analysis": "分析",
+    "realtime": "实时",
+    "analysisComingSoon": "分析功能即将推出...",
+    "realtimeComingSoon": "实时统计即将推出...",
+    "loadingUrls": "正在加载短网址...",
+    "noUrls": "暂无短网址。开始创建一个吧！",
+    "createdAt": "创建时间",
+    "originalUrl": "原始网址",
+    "shortUrl": "短网址",
+    "clicks": "点击数",
+    "actions": "操作",
+    "copy": "复制",
+    "share": "分享",
+    "details": "详情",
+    "delete": "删除",
+    "shareAsLink": "分享为链接",
+    "shareWithFacebook": "分享到Facebook",
+    "shareWithInstagram": "分享到Instagram",
+    "shareWithGithub": "分享到GitHub",
+    "missingUrl": "缺少网址",
+    "qrCodeUnavailable": "二维码不可用",
+    "ipAddress": "IP地址",
+    "browser": "浏览器",
+    "os": "操作系统",
+    "clickedAt": "点击时间",
+    "noClickLogs": "无点击记录",
+    "unknown": "未知"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们取得联系",
+    "description": "我们很乐意听到您的声音。给我们发送消息，我们会尽快回复。",
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "消息",
+    "send": "发送消息",
+    "sending": "发送中..."
+  },
+  "footer": {
+    "allRightsReserved": "版权所有。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  },
+  "clients": {
+    "title": "已有超过6家公司信任我们"
+  },
+  "testimonial": {
+    "title": "已有数百人信任我们",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "张三",
+        "designation": "软件工程师",
+        "company": "科技公司",
+        "testimonial": "这个产品彻底改变了我们的工作方式。效率和易用性无与伦比！",
+        "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "李四",
+        "designation": "数据分析师",
+        "company": "洞察科技",
+        "testimonial": "这个工具为我节省了数小时的工作时间！分析和报告功能非常强大。",
+        "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
+      },
+      {
+        "id": 3,
+        "name": "王五",
+        "designation": "用户体验设计师",
+        "company": "设计专业",
+        "testimonial": "一个简化复杂任务的了不起的工具。强烈推荐给业内专业人士。直观的界面使新团队成员的入职变得容易，自动化功能每周为我们节省了无数小时。",
+        "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+      },
+      {
+        "id": 4,
+        "name": "赵六",
+        "designation": "营销专员",
+        "company": "品牌助推",
+        "testimonial": "自从我们开始使用这项服务以来，我看到我们团队的生产力有了显着提高。",
+        "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+      },
+      {
+        "id": 5,
+        "name": "孙七",
+        "designation": "全栈开发人员",
+        "company": "代码工匠",
+        "testimonial": "这是我们做出的最好的投资！支持团队的响应速度也非常快，而且乐于助人。",
+        "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
+      },
+      {
+        "id": 6,
+        "name": "周八",
+        "designation": "产品经理",
+        "company": "创新X",
+        "testimonial": "用户体验一流！界面干净、直观、易于浏览。",
+        "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+      }
+    ]
+  },
+  "faq": {
+    "title": "您的问题，已回答",
+    "faqs": [
+      {
+        "question": "你们的退货政策是什么？",
+        "answer": "您可以在30天内退回未使用过的、包装完好的商品，以获得退款或换货。请联系支持人员寻求帮助。"
+      },
+      {
+        "question": "如何追踪我的订单？",
+        "answer": "使用您确认邮件中提供的链接追踪您的订单，或登录您的帐户查看追踪详情。"
+      },
+      {
+        "question": "你们是否提供国际运输？",
+        "answer": "是的，我们全球范围内发货。运费和送达时间因地点而异，某些国家/地区可能会收取关税。"
+      },
+      {
+        "question": "你们接受哪些付款方式？",
+        "answer": "我们接受维萨卡、万事达卡、美国运通卡、贝宝、Apple Pay和Google Pay，确保为所有客户提供安全的支付选项。"
+      },
+      {
+        "question": "如果我收到的商品损坏了怎么办？",
+        "answer": "请在收到商品后48小时内联系我们的支持团队，并提供损坏商品的照片。我们将安排换货或退款。"
+      },
+      {
+        "question": "我可以取消或更改我的订单吗？",
+        "answer": "是的，您可以在下单后24小时内取消或更改订单。请联系客户支持进行更新。"
+      },
+      {
+        "question": "你们为批量采购提供折扣吗？",
+        "answer": "是的，我们为批量订单提供特别折扣。请联系我们的销售团队，告知您的要求以获取定制报价。"
+      },
+      {
+        "question": "运输需要多长时间？",
+        "answer": "国内运输通常需要3-7个工作日，国际运输需要7-14个工作日，具体取决于您所在的地区和选择的运输方式。"
+      },
+      {
+        "question": "你们的产品环保吗？",
+        "answer": "我们的许多产品都采用可持续材料和环保做法制成，以减少对环境的影响，同时保持质量。"
+      },
+      {
+        "question": "我如何联系客户支持？",
+        "answer": "请发送电子邮件至support@example.com或致电1-800-123-4567与我们联系，以获取任何查询的帮助。"
+      }
+    ]
+  }
+}

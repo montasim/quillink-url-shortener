@@ -1,4 +1,4 @@
-import UrlCard from '@/app/dashboard/urls/UrlCard';
+import UrlCard from '@/app/[locale]/dashboard/urls/UrlCard';
 import { IShortUrl } from '@/types/types';
 
 const UrlGrid = ({ urlData }: { urlData: IShortUrl[] }) => {

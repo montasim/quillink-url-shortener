@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import zxcvbn from 'zxcvbn';
 import { Control } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 
 interface PasswordFieldProps {
     control: Control<any>;
@@ -31,6 +32,7 @@ export const PasswordField = ({
     viewPasswordStrength = true,
     viewPasswordMessage = true,
 }: PasswordFieldProps) => {
+    const t = useTranslations('common');
     const [showPassword, setShowPassword] = useState(false);
     const [passwordStrength, setPasswordStrength] =
         useState<zxcvbn.ZXCVBNResult | null>(null);
@@ -49,16 +51,16 @@ export const PasswordField = ({
     const strengthInfo = useMemo(() => {
         const score = passwordStrength?.score;
         const map = [
-            { text: 'Very Weak', color: 'bg-red-500' },
-            { text: 'Weak', color: 'bg-orange-500' },
-            { text: 'Fair', color: 'bg-yellow-500' },
-            { text: 'Good', color: 'bg-lime-500' },
-            { text: 'Strong', color: 'bg-green-500' },
+            { text: t('veryWeak'), color: 'bg-red-500' },
+            { text: t('weak'), color: 'bg-orange-500' },
+            { text: t('fair'), color: 'bg-yellow-500' },
+            { text: t('good'), color: 'bg-lime-500' },
+            { text: t('strong'), color: 'bg-green-500' },
         ];
         return score !== undefined
             ? map[score]
             : { text: '', color: 'bg-gray-200' };
-    }, [passwordStrength?.score]);
+    }, [passwordStrength?.score, t]);
 
     return (
         <FormField
@@ -86,8 +88,8 @@ export const PasswordField = ({
                                 onClick={togglePasswordVisibility}
                                 aria-label={
                                     showPassword
-                                        ? 'Hide password'
-                                        : 'Show password'
+                                        ? t('hidePassword')
+                                        : t('showPassword')
                                 }
                             >
                                 {showPassword ? (

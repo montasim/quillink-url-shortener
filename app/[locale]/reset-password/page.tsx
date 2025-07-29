@@ -1,5 +1,3 @@
-'use client';
-
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import { Logo } from '@/components/logo';
@@ -9,14 +7,16 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { handleResetPassword } from '@/app/reset-password/actions';
+import { handleResetPassword } from '@/lib/actions/resetPassword';
 import { ResetPasswordSchema } from '@/schemas/schemas';
 import { toast } from 'sonner';
 import { PasswordField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
+import { useTranslations } from 'next-intl';
 
 const ResetPassword = () => {
+    const t = useTranslations('auth.resetPassword');
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [cfToken, setCfToken] = useState<string | null>(null);
@@ -37,18 +37,16 @@ const ResetPassword = () => {
         if (token) {
             form.setValue('token', token);
         } else {
-            toast.error(
-                "No 'token' found in the URL query parameters. Redirecting to login."
-            );
+            toast.error(t('noTokenError'));
             router.push('/login');
         }
-    }, [searchParams, form, router]);
+    }, [searchParams, form, router, t]);
 
     const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
         if (!cfToken) {
             form.setError('newPassword', {
                 type: 'manual',
-                message: "Please verify you're not a robot.",
+                message: t('turnstileError'),
             });
             return;
         }
@@ -61,7 +59,7 @@ const ResetPassword = () => {
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight text-primary">
-                    Reset your password
+                    {t('title')}
                 </p>
 
                 <div className="my-4 w-full flex items-center justify-center overflow-hidden">
@@ -77,8 +75,8 @@ const ResetPassword = () => {
                         <PasswordField
                             control={form.control}
                             name="newPassword"
-                            label="New Password"
-                            placeholder="Enter your new password"
+                            label={t('password')}
+                            placeholder={t('password')}
                         />
 
                         <TurnstileField
@@ -93,20 +91,20 @@ const ResetPassword = () => {
                                 !form.formState.isValid || loading || !cfToken
                             }
                             loading={loading}
-                            loadingLabel={'Processing'}
-                            label={'Reset Password'}
+                            loadingLabel={t('processing')}
+                            label={t('submitButton')}
                         />
                     </form>
                 </Form>
 
                 <div className="mt-5 space-y-5">
                     <p className="text-sm text-center">
-                        Remember password?
+                        {t('rememberPassword')}
                         <Link
                             href="/login"
                             className="ml-1 underline text-muted"
                         >
-                            Login
+                            {t('loginLink')}
                         </Link>
                     </p>
                 </div>
@@ -116,8 +114,9 @@ const ResetPassword = () => {
 };
 
 const ResetPasswordPage = () => {
+    const t = useTranslations('auth.resetPassword');
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{t('loading')}</div>}>
             <ResetPassword />
         </Suspense>
     );

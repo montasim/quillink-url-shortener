@@ -2,6 +2,7 @@ import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import contentTypesLite from 'content-types-lite';
 import configuration from '@/configuration/configuration';
 import httpStatusLite from 'http-status-lite';
+import API_ENDPOINT from '@/constants/apiEndPoint';
 
 let isRefreshing = false;
 let failedQueue: {
@@ -54,7 +55,7 @@ axiosInstance.interceptors.response.use(
         if (
             error.response?.status === httpStatusLite.UNAUTHORIZED &&
             originalRequest &&
-            originalRequest.url !== '/api/v1/auth/refresh'
+            originalRequest.url !== API_ENDPOINT.REFRESH
         ) {
             if (isRefreshing) {
                 return new Promise((resolve, reject) => {
@@ -70,7 +71,7 @@ axiosInstance.interceptors.response.use(
 
             try {
                 const refreshResponse = await axiosInstance.get(
-                    '/api/v1/auth/refresh'
+                    API_ENDPOINT.REFRESH
                 );
 
                 isRefreshing = false;
@@ -105,7 +106,7 @@ export const startProactiveRefresh = () => {
             if (!isRefreshing) {
                 console.log('Attempting proactive token refresh...');
                 try {
-                    await getData('/api/v1/auth/refresh');
+                    await getData(API_ENDPOINT.REFRESH);
                     console.log('Proactive token refresh successful.');
                 } catch (error) {
                     console.error('Proactive token refresh failed:', error);

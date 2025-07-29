@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/logo';
 import { Form } from '@/components/ui/form';
 import { Separator } from '@/components/ui/separator';
@@ -9,13 +10,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { handleForgotPassword } from '@/app/forgot-password/actions';
+import { handleForgotPassword } from '@/lib/actions/forgotPassword';
 import { ForgotPasswordSchema } from '@/schemas/schemas';
 import { TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 
 const ForgotPasswordPage = () => {
+    const t = useTranslations('auth.forgotPassword');
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [cfToken, setCfToken] = useState<string | null>(null);
@@ -33,7 +35,7 @@ const ForgotPasswordPage = () => {
         if (!cfToken) {
             form.setError('email', {
                 type: 'manual',
-                message: "Please verify you're not a robot.",
+                message: t('turnstileError'),
             });
             return;
         }
@@ -46,7 +48,7 @@ const ForgotPasswordPage = () => {
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight">
-                    Forgot your password
+                    {t('title')}
                 </p>
 
                 <div className="my-4 w-full flex items-center justify-center overflow-hidden">
@@ -62,9 +64,9 @@ const ForgotPasswordPage = () => {
                         <TextField
                             control={form.control}
                             name="email"
-                            label="Email"
+                            label={t('email')}
                             type="email"
-                            placeholder="Enter a valid email"
+                            placeholder={t('emailPlaceholder')}
                         />
 
                         <TurnstileField
@@ -79,20 +81,20 @@ const ForgotPasswordPage = () => {
                                 !form.formState.isValid || loading || !cfToken
                             }
                             loading={loading}
-                            loadingLabel={'Processing'}
-                            label={'Send Verification Email'}
+                            loadingLabel={t('processing')}
+                            label={t('submitButton')}
                         />
                     </form>
                 </Form>
 
                 <div className="mt-5 space-y-5">
                     <p className="text-sm text-center">
-                        Remember password?
+                        {t('rememberPassword')}
                         <Link
                             href="/login"
                             className="ml-1 underline text-muted"
                         >
-                            Login
+                            {t('loginLink')}
                         </Link>
                     </p>
                 </div>

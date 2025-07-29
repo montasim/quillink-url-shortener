@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -27,8 +28,8 @@ import {
     handleDelete,
     handleShare,
     safeFormat,
-} from '@/app/(home)/actions';
-import RenderDetails from '@/app/(home)/components/Details';
+} from '@/lib/actions/home';
+import RenderDetails from '@/app/[locale]/(home)/components/Details';
 
 const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
     url,
@@ -36,6 +37,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
     setExpandedId,
     setUrls,
 }) => {
+    const t = useTranslations('dashboard');
     const shortUrlFull =
         typeof window !== 'undefined'
             ? `${window.location.origin}/${url.shortKey}`
@@ -59,7 +61,9 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                             {url.originalUrl}
                         </a>
                     ) : (
-                        <span className="text-muted italic">Missing URL</span>
+                        <span className="text-muted italic">
+                            {t('missingUrl')}
+                        </span>
                     )}
                 </TableCell>
                 <TableCell className="font-mono">
@@ -80,7 +84,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                             variant="ghost"
                             size="sm"
                             onClick={async () => handleCopy(shortUrlFull)}
-                            aria-label="Copy URL"
+                            aria-label={t('copy')}
                         >
                             <Copy className="h-4 w-4 mr-1" />
                         </Button>
@@ -91,7 +95,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    aria-label="More Actions"
+                                    aria-label={t('actions')}
                                 >
                                     <MoreHorizontal className="h-5 w-5" />
                                 </Button>
@@ -100,7 +104,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                 <DropdownMenuSub>
                                     <DropdownMenuSubTrigger>
                                         <Share2 className="mr-2 h-4 w-4" />
-                                        Share
+                                        {t('share')}
                                     </DropdownMenuSubTrigger>
                                     <DropdownMenuSubContent>
                                         <DropdownMenuItem
@@ -109,7 +113,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                             }
                                         >
                                             <span className="flex items-center gap-2">
-                                                <Link /> Share as Link
+                                                <Link /> {t('shareAsLink')}
                                             </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
@@ -121,7 +125,8 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                             }
                                         >
                                             <span className="flex items-center gap-2">
-                                                <Facebook /> Share with Facebook
+                                                <Facebook />{' '}
+                                                {t('shareWithFacebook')}
                                             </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
@@ -133,8 +138,8 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                             }
                                         >
                                             <span className="flex items-center gap-2">
-                                                <Instagram /> Share with
-                                                Instagram
+                                                <Instagram />{' '}
+                                                {t('shareWithInstagram')}
                                             </span>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
@@ -146,7 +151,8 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                             }
                                         >
                                             <span className="flex items-center gap-2">
-                                                <Github /> Share with GitHub
+                                                <Github />{' '}
+                                                {t('shareWithGithub')}
                                             </span>
                                         </DropdownMenuItem>
                                     </DropdownMenuSubContent>
@@ -161,7 +167,8 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                         )
                                     }
                                 >
-                                    <Info className="mr-2 h-4 w-4" /> Details
+                                    <Info className="mr-2 h-4 w-4" />{' '}
+                                    {t('details')}
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                     onClick={() =>
@@ -169,7 +176,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
                                     }
                                 >
                                     <Trash2 className="mr-2 h-4 w-4 text-red-600" />{' '}
-                                    Delete
+                                    {t('delete')}
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>

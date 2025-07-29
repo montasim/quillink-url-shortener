@@ -5,34 +5,37 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
 
 const ViewsChart = dynamic(() => import('@/components/ViewsChart'), {
     ssr: false,
 });
 
 export default function DashboardPage() {
+    const t = useTranslations('dashboard');
+
     return (
         <div className="space-y-6 max-w-screen-xl mx-auto 2xl:my-20 xl:my-16 lg:my-14 md:my-8 sm:my-6 my-4 px-4 xl:px-0">
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold">Sink</h1>
+                    <h1 className="text-2xl font-bold">{t('sink')}</h1>
                     <p className="text-sm text-muted-foreground">
-                        Dashboard / Sink
+                        {t('title')} / {t('sink')}
                     </p>
                 </div>
                 <div className="flex gap-4">
-                    <Badge variant="outline">Last 7 Days</Badge>
-                    <Badge variant="secondary">Filter Links</Badge>
+                    <Badge variant="outline">{t('last7Days')}</Badge>
+                    <Badge variant="secondary">{t('filterLinks')}</Badge>
                 </div>
             </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                    { label: 'Visits', value: '1,549' },
-                    { label: 'Visitors', value: '842' },
-                    { label: 'Referrers', value: '32' },
+                    { label: t('visits'), value: '1,549' },
+                    { label: t('visitors'), value: '842' },
+                    { label: t('referrers'), value: '32' },
                 ].map(({ label, value }) => (
                     <Card key={label}>
                         <CardContent className="p-6">
@@ -48,7 +51,7 @@ export default function DashboardPage() {
             {/* Views Chart */}
             <Card>
                 <CardContent className="p-6">
-                    <h2 className="text-lg font-medium mb-4">Views</h2>
+                    <h2 className="text-lg font-medium mb-4">{t('views')}</h2>
                     <ViewsChart />
                 </CardContent>
             </Card>
@@ -57,11 +60,13 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
                 <Card className="xl:col-span-2">
                     <CardContent className="p-6">
-                        <h2 className="text-lg font-medium mb-4">Locations</h2>
+                        <h2 className="text-lg font-medium mb-4">
+                            {t('locations')}
+                        </h2>
                         <div className="h-60 bg-muted flex items-center justify-center rounded-md">
                             {/* Placeholder for Map */}
                             <p className="text-muted-foreground">
-                                World Map Here
+                                {t('worldMapHere')}
                             </p>
                         </div>
                     </CardContent>
@@ -72,10 +77,14 @@ export default function DashboardPage() {
                         <Tabs defaultValue="country" className="w-full">
                             <TabsList className="grid grid-cols-3">
                                 <TabsTrigger value="country">
-                                    Country
+                                    {t('country')}
                                 </TabsTrigger>
-                                <TabsTrigger value="region">Region</TabsTrigger>
-                                <TabsTrigger value="city">City</TabsTrigger>
+                                <TabsTrigger value="region">
+                                    {t('region')}
+                                </TabsTrigger>
+                                <TabsTrigger value="city">
+                                    {t('city')}
+                                </TabsTrigger>
                             </TabsList>
                             <TabsContent value="country">
                                 <ScrollArea className="h-56 mt-4">
@@ -105,7 +114,7 @@ export default function DashboardPage() {
 
             {/* Referer, Language, Device */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {['Referrer', 'Language', 'Device'].map((title) => (
+                {[t('referrer'), t('language'), t('device')].map((title) => (
                     <Card key={title}>
                         <CardContent className="p-6">
                             <Tabs defaultValue="main">
@@ -114,7 +123,7 @@ export default function DashboardPage() {
                                         {title}
                                     </TabsTrigger>
                                     <TabsTrigger value="details">
-                                        Details
+                                        {t('details')}
                                     </TabsTrigger>
                                 </TabsList>
                                 <TabsContent
@@ -152,17 +161,19 @@ export default function DashboardPage() {
                     <CardContent className="p-6">
                         <Tabs defaultValue="os">
                             <TabsList className="grid grid-cols-3">
-                                <TabsTrigger value="os">OS</TabsTrigger>
+                                <TabsTrigger value="os">{t('os')}</TabsTrigger>
                                 <TabsTrigger value="browser">
-                                    Browser
+                                    {t('browser')}
                                 </TabsTrigger>
-                                <TabsTrigger value="type">Type</TabsTrigger>
+                                <TabsTrigger value="type">
+                                    {t('type')}
+                                </TabsTrigger>
                             </TabsList>
                             <TabsContent
                                 value="os"
                                 className="mt-4 text-muted-foreground text-sm"
                             >
-                                <p>No data available.</p>
+                                <p>{t('noDataAvailable')}</p>
                             </TabsContent>
                         </Tabs>
                     </CardContent>
@@ -171,7 +182,7 @@ export default function DashboardPage() {
 
             {/* Footer */}
             <p className="text-center text-xs text-muted-foreground mt-8">
-                Sink © 2025 Products of HTML_ZONE
+                {t('footerText')}
             </p>
         </div>
     );

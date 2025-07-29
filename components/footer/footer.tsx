@@ -1,21 +1,25 @@
+import { useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
 import configuration from '@/configuration/configuration';
 import { Logo } from '@/components/logo';
 
-const footerLinks = [
-    {
-        title: 'Home',
-        href: '/',
-    },
-    {
-        title: 'Contact Us',
-        href: '/contact-us',
-    },
-];
-
 const Footer = () => {
+    const t = useTranslations('footer');
+    const tNav = useTranslations('navigation');
+
+    const footerLinks = [
+        {
+            title: tNav('home'),
+            href: '/',
+        },
+        {
+            title: tNav('contactUs'),
+            href: '/contact-us',
+        },
+    ];
+
     return (
         <div className="flex flex-col">
             <div className="grow bg-muted" />
@@ -50,7 +54,7 @@ const Footer = () => {
                             <Link href="/" target="_blank">
                                 {configuration.app.name}
                             </Link>
-                            . All rights reserved.
+                            . {t('allRightsReserved')}
                         </span>
 
                         <div className="flex items-center gap-5">

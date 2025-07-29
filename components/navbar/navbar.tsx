@@ -2,11 +2,13 @@
 
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { NavMenu } from '@/components/navbar/nav-menu';
 import Loading from '@/components/navbar/loading';
 import { NavigationSheet } from '@/components/navbar/navigation-sheet';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -17,6 +19,7 @@ import { LayoutDashboardIcon, LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
 
 const Navbar = () => {
+    const t = useTranslations('navigation');
     const router = useRouter();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
 
@@ -31,6 +34,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
+                        <LanguageSwitcher />
                         {isAuthenticated && user ? (
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
@@ -66,7 +70,7 @@ const Navbar = () => {
                                         className="cursor-pointer"
                                     >
                                         <LayoutDashboardIcon className="w-4 h-4 mr-2" />
-                                        Dashboard
+                                        {t('dashboard')}
                                     </DropdownMenuItem>
                                     <DropdownMenuItem
                                         onClick={async () => {
@@ -79,7 +83,7 @@ const Navbar = () => {
                                         className="cursor-pointer text-red-600"
                                     >
                                         <LogOut className="w-4 h-4 mr-2" />
-                                        Logout
+                                        {t('logout')}
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -92,13 +96,13 @@ const Navbar = () => {
                                         router.push('/dashboard/urls')
                                     }
                                 >
-                                    Dashboard
+                                    {t('dashboard')}
                                 </Button>
                                 <Button
                                     className="bg-gray-800 cursor-pointer"
                                     onClick={() => router.push('/signup')}
                                 >
-                                    Sign Up
+                                    {t('signup')}
                                 </Button>
                             </>
                         )}

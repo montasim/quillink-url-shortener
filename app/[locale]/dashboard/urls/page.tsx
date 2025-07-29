@@ -1,33 +1,33 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { IShortUrl } from '@/types/types';
-import { fetchUrls } from '@/app/dashboard/urls/actions';
-import UrlGrid from '@/app/dashboard/urls/UrlGrid';
+import { fetchUrls } from '@/lib/actions/dashboard';
+import UrlGrid from '@/app/[locale]/dashboard/urls/UrlGrid';
 import TabSection from '@/components/TabSection';
 import { Folder } from 'lucide-react';
 import ComingSoon from '@/components/ComingSoon';
 
 const UrlDashboard = () => {
+    const t = useTranslations('dashboard');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
 
     const tabs = [
         {
-            name: 'Links',
+            name: t('links'),
             value: 'links',
             content: (
                 <div className="min-h-[400px]">
                     {loading ? (
                         <p className="text-muted-foreground">
-                            Loading short URLs...
+                            {t('loadingUrls')}
                         </p>
                     ) : urls.length === 0 ? (
                         <div className="text-center text-muted-foreground py-10">
                             <Folder className="mx-auto w-16 h-16 text-muted" />
-                            <p className="mt-2">
-                                No short URLs yet. Start by creating one!
-                            </p>
+                            <p className="mt-2">{t('noUrls')}</p>
                         </div>
                     ) : (
                         <UrlGrid urlData={urls} />
@@ -36,14 +36,14 @@ const UrlDashboard = () => {
             ),
         },
         {
-            name: 'Analysis',
+            name: t('analysis'),
             value: 'analysis',
-            content: <ComingSoon text="Analysis coming soon..." />,
+            content: <ComingSoon text={t('analysisComingSoon')} />,
         },
         {
-            name: 'Realtime',
+            name: t('realtime'),
             value: 'realtime',
-            content: <ComingSoon text="Realtime stats coming soon..." />,
+            content: <ComingSoon text={t('realtimeComingSoon')} />,
         },
     ];
 

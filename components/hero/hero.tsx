@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Link as LinkIcon, QrCode } from 'lucide-react';
 import Link from 'next/link';
-import { handleCreate } from '@/app/(home)/actions';
+import { handleCreate } from '@/lib/actions/home';
 import TabSection from '@/components/TabSection';
 import ComingSoon from '@/components/ComingSoon';
 import { useForm } from 'react-hook-form';
@@ -17,10 +17,12 @@ import { ShortenUrlSchema } from '@/schemas/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import SubmitButton from '@/components/SubmitButton';
 import { TextField } from '@/components/CustomFormField';
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
     const router = useRouter();
     const [creating, setCreating] = useState(false);
+    const t = useTranslations('hero');
 
     const form = useForm<z.infer<typeof ShortenUrlSchema>>({
         mode: 'onChange',
@@ -36,7 +38,7 @@ const Hero = () => {
 
     const tabs = [
         {
-            name: 'Short Link',
+            name: t('shortLink'),
             icon: <LinkIcon />,
             value: 'short_link',
             content: (
@@ -48,32 +50,31 @@ const Hero = () => {
                         <TextField
                             control={form.control}
                             name="originalUrl"
-                            label="Paste a long URL"
+                            label={t('pasteUrl')}
                             type="text"
-                            placeholder="Paste a long URL"
+                            placeholder={t('pasteUrl')}
                         />
 
                         <p className="mt-4 text-sm text-left text-secondary">
-                            By clicking Shorten URL, you are agree to
-                            QuilLink&lsquo;s
+                            {t('termsAgreement')}
                             <Link href="#" className="ml-1 underline">
-                                Terms of use
+                                {t('termsOfUse')}
                             </Link>
                             ,
                             <Link href="#" className="ml-1 underline">
-                                Privacy Policy
+                                {t('privacyPolicy')}
                             </Link>
                             , and
                             <Link href="#" className="ml-1 underline">
-                                Cookie Policy
+                                {t('cookiePolicy')}
                             </Link>
                         </p>
 
                         <SubmitButton
                             disabled={!form.formState.isValid || creating}
                             loading={creating}
-                            loadingLabel={'Creating'}
-                            label={'Create short URL'}
+                            loadingLabel={t('creating')}
+                            label={t('createShortUrl')}
                             className={
                                 'mt-6 w-full cursor-pointer bg-gradient-to-r from-gray-100 to-gray-300 text-secondary'
                             }
@@ -83,10 +84,10 @@ const Hero = () => {
             ),
         },
         {
-            name: 'QR Code',
+            name: t('qrCode'),
             icon: <QrCode />,
             value: 'qr_code',
-            content: <ComingSoon text="QR code coming soon..." />,
+            content: <ComingSoon text={t('qrCodeComingSoon')} />,
         },
     ];
 
@@ -104,15 +105,13 @@ const Hero = () => {
 
             <div className="relative z-10 text-center max-w-2xl">
                 <Badge className="bg-gradient-to-r from-sky-400 to-cyan-300 rounded-full py-1 border-none">
-                    Just released v1.0.0
+                    {t('badge')}
                 </Badge>
                 <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-primary">
-                    Make every connection count
+                    {t('title')}
                 </h1>
                 <p className="mt-4 text-secondary text-[17px] md:text-lg">
-                    Create short links, QR codes, share them anywhere. Track
-                    what&lsquo;s working, and what&lsquo;s not. All inside the
-                    QuilLink Connection Platform.
+                    {t('description')}
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-4">
                     <TabSection

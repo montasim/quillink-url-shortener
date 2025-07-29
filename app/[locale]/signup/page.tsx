@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -9,17 +10,18 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { SignupSchema } from '@/schemas/schemas';
-import { handleSignup } from '@/app/signup/actions';
+import { handleSignup } from '@/lib/actions/signup';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import configuration from '@/configuration/configuration';
-import { handleGoogleLogin } from '@/app/login/actions';
+import { handleGoogleLogin } from '@/lib/actions/auth';
 import GoogleLogo from '@/components/googleLogo';
 import SubmitButton from '@/components/SubmitButton';
 import { PasswordField, TextField } from '@/components/CustomFormField';
 import TurnstileField from '@/components/TurnstileField';
 
 const SignUpPage = () => {
+    const t = useTranslations('auth.signup');
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [cfToken, setCfToken] = useState<string | null>(null);
@@ -39,7 +41,7 @@ const SignUpPage = () => {
         if (!cfToken) {
             form.setError('email', {
                 type: 'manual',
-                message: "Please verify you're not a robot.",
+                message: t('turnstileError'),
             });
             return;
         }
@@ -53,7 +55,7 @@ const SignUpPage = () => {
                 <div className="max-w-xs m-auto w-full flex flex-col items-center">
                     <Logo />
                     <p className="mt-4 text-xl font-bold tracking-tight text-primary">
-                        Sign up for {configuration.app.name} account
+                        {t('title')}
                     </p>
 
                     <Button
@@ -61,12 +63,12 @@ const SignUpPage = () => {
                         className="mt-8 w-full gap-3 cursor-pointer"
                     >
                         <GoogleLogo />
-                        Continue with Google
+                        {t('continueWithGoogle')}
                     </Button>
 
                     <div className="my-7 w-full flex items-center justify-center overflow-hidden">
                         <Separator />
-                        <span className="text-sm px-2">OR</span>
+                        <span className="text-sm px-2">{t('or')}</span>
                         <Separator />
                     </div>
 
@@ -78,21 +80,21 @@ const SignUpPage = () => {
                             <TextField
                                 control={form.control}
                                 name="name"
-                                label="Name"
-                                placeholder="Name"
+                                label={t('name')}
+                                placeholder={t('name')}
                             />
                             <TextField
                                 control={form.control}
                                 name="email"
-                                label="Email"
+                                label={t('email')}
                                 type="email"
-                                placeholder="Enter a valid email"
+                                placeholder={t('email')}
                             />
                             <PasswordField
                                 control={form.control}
                                 name="password"
-                                label="Password"
-                                placeholder="Enter a strong password"
+                                label={t('password')}
+                                placeholder={t('password')}
                             />
 
                             <TurnstileField
@@ -109,19 +111,19 @@ const SignUpPage = () => {
                                     !cfToken
                                 }
                                 loading={loading}
-                                loadingLabel={'Creating your account'}
-                                label={'Continue with Email'}
+                                loadingLabel={t('validationError')}
+                                label={t('submitButton')}
                             />
                         </form>
                     </Form>
 
                     <p className="mt-5 text-sm text-center">
-                        Already have an account?
+                        {t('haveAccount')}
                         <Link
                             href="/login"
                             className="ml-1 underline text-muted"
                         >
-                            Log in
+                            {t('loginLink')}
                         </Link>
                     </p>
                 </div>

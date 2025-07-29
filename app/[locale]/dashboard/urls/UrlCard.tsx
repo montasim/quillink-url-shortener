@@ -8,8 +8,10 @@ import { toast } from 'sonner';
 import { IShortUrl } from '@/types/types';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 const UrlCard = ({ url }: { url: IShortUrl }) => {
+    const t = useTranslations('dashboard');
     const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const [showQrPopover, setShowQrPopover] = useState(false);
     const popoverRef = useRef<HTMLDivElement>(null);
@@ -21,7 +23,7 @@ const UrlCard = ({ url }: { url: IShortUrl }) => {
     const copyToClipboard = (e: React.MouseEvent) => {
         e.stopPropagation();
         navigator.clipboard.writeText(shortUrl);
-        toast.success('Copied to clipboard');
+        toast.success(t('copiedToClipboard'));
     };
 
     const redirectToDestination = () => {
@@ -37,7 +39,7 @@ const UrlCard = ({ url }: { url: IShortUrl }) => {
                 setQrCodeUrl(URL.createObjectURL(blob));
             } else {
                 setQrCodeUrl(null);
-                toast.error('QR Code fetch failed.');
+                toast.error(t('qrCodeFetchFailed'));
             }
         }
         setShowQrPopover(!showQrPopover);
@@ -126,7 +128,7 @@ const UrlCard = ({ url }: { url: IShortUrl }) => {
                         <>
                             <Image
                                 src={qrCodeUrl}
-                                alt="QR Code"
+                                alt={t('qrCodeAlt')}
                                 width={160}
                                 height={160}
                                 unoptimized
@@ -143,12 +145,12 @@ const UrlCard = ({ url }: { url: IShortUrl }) => {
                                     link.click();
                                 }}
                             >
-                                ⬇ Download QR Code
+                                ⬇ {t('downloadQrCode')}
                             </Button>
                         </>
                     ) : (
                         <p className="text-xs text-muted-foreground">
-                            Loading...
+                            {t('loading')}
                         </p>
                     )}
                 </div>

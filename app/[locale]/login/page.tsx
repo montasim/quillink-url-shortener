@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -11,7 +12,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import configuration from '@/configuration/configuration';
-import { handleGoogleLogin, handleLogin } from '@/app/login/actions';
+import { handleGoogleLogin, handleLogin } from '@/lib/actions/auth';
 import { LoginSchema } from '@/schemas/schemas';
 import { useAuth } from '@/context/AuthContext';
 import GoogleLogo from '@/components/googleLogo';
@@ -20,6 +21,7 @@ import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 
 const LoginPage = () => {
+    const t = useTranslations('auth.login');
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [cfToken, setCfToken] = useState<string | null>(null);
@@ -39,7 +41,7 @@ const LoginPage = () => {
         if (!cfToken) {
             form.setError('email', {
                 type: 'manual',
-                message: "Please verify you're not a robot.",
+                message: t('turnstileError'),
             });
             return;
         }
@@ -57,7 +59,7 @@ const LoginPage = () => {
             <div className="max-w-xs w-full flex flex-col items-center">
                 <Logo />
                 <p className="mt-4 text-xl font-bold tracking-tight text-primary">
-                    Log in to {configuration.app.name} account
+                    {t('title')}
                 </p>
 
                 <Button
@@ -65,12 +67,12 @@ const LoginPage = () => {
                     className="mt-8 w-full gap-3 cursor-pointer"
                 >
                     <GoogleLogo />
-                    Continue with Google
+                    {t('continueWithGoogle')}
                 </Button>
 
                 <div className="my-7 w-full flex items-center justify-center overflow-hidden">
                     <Separator />
-                    <span className="text-sm px-2">OR</span>
+                    <span className="text-sm px-2">{t('or')}</span>
                     <Separator />
                 </div>
 
@@ -82,15 +84,15 @@ const LoginPage = () => {
                         <TextField
                             control={form.control}
                             name="email"
-                            label="Email"
+                            label={t('email')}
                             type="email"
-                            placeholder="Enter your email"
+                            placeholder={t('email')}
                         />
                         <PasswordField
                             control={form.control}
                             name="password"
-                            label="Password"
-                            placeholder="Password"
+                            label={t('password')}
+                            placeholder={t('password')}
                             viewPasswordStrength={false}
                             viewPasswordMessage={false}
                         />
@@ -107,8 +109,8 @@ const LoginPage = () => {
                                 !form.formState.isValid || loading || !cfToken
                             }
                             loading={loading}
-                            loadingLabel={'Authenticating'}
-                            label={'Continue with Email'}
+                            loadingLabel={t('authenticating')}
+                            label={t('submitButton')}
                         />
                     </form>
                 </Form>
@@ -118,15 +120,15 @@ const LoginPage = () => {
                         href="/forgot-password"
                         className="text-sm block underline text-muted text-center"
                     >
-                        Forgot your password?
+                        {t('forgotPassword')}
                     </Link>
                     <p className="text-sm text-center">
-                        Don&apos;t have an account?
+                        {t('noAccount')}
                         <Link
                             href="/signup"
                             className="ml-1 underline text-muted"
                         >
-                            Create account
+                            {t('signUpLink')}
                         </Link>
                     </p>
                 </div>
