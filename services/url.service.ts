@@ -1,4 +1,7 @@
 import dataService from '@/lib/dataService';
+import { getData } from '@/lib/axios';
+import { toast } from 'sonner';
+import MESSAGES from '@/constants/messages';
 
 const { shortUrlModel } = dataService;
 
@@ -55,4 +58,45 @@ export const updateShortUrl = async (filterConditions: {}, updateData: {}) => {
         where: filterConditions,
         data: updateData,
     });
+};
+
+interface FetchActionParams {
+    apiEndpoint: string;
+    setLoading: (val: boolean) => void;
+    setData: any;
+    successMessage?: string;
+    errorMessage?: string;
+}
+
+export const handleFetchAction = async ({
+    apiEndpoint,
+    setLoading,
+    setData,
+    successMessage,
+    errorMessage,
+}: FetchActionParams) => {
+    setLoading(true);
+
+    try {
+        const { success, message, data } = await getData(apiEndpoint);
+
+        if (success) {
+            toast.success(successMessage || message);
+            setData(data);
+        } else {
+            toast.error(errorMessage || message);
+        }
+    } catch (error: any) {
+        if (
+            error.response &&
+            error.response.data &&
+            error.response.data.message
+        ) {
+            toast.error(error.response.data.message);
+        } else {
+            toast.error(errorMessage || MESSAGES.COMMON.UNEXPECTED_ERROR);
+        }
+    } finally {
+        setLoading(false);
+    }
 };

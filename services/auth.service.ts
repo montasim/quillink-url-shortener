@@ -1,5 +1,6 @@
 import { createData } from '@/lib/axios';
 import { toast } from 'sonner';
+import MESSAGES from '@/constants/messages';
 
 interface AuthActionParams {
     apiEndpoint: string;
@@ -41,10 +42,7 @@ export const handleAuthAction = async ({
         ) {
             toast.error(error.response.data.message);
         } else {
-            toast.error(
-                errorMessage ||
-                    'An unexpected error occurred. Please try again.'
-            );
+            toast.error(errorMessage || MESSAGES.COMMON.UNEXPECTED_ERROR);
         }
     } finally {
         setLoading(false);

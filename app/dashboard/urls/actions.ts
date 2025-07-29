@@ -1,11 +1,14 @@
-import { getData } from '@/lib/axios';
-import { withErrorHandler } from '@/components/withErrorHandler';
+import { handleFetchAction } from '@/services/url.service';
+import API_ENDPOINT from '@/constants/apiEndPoint';
 
-export const fetchUrls = withErrorHandler(
-    async (setUrls, setError, setLoading) => {
-        const { data } = await getData('/api/v1/urls');
-        setUrls(data);
-        setLoading(false);
-    },
-    'Failed to fetch short URLs'
-);
+export const fetchUrls = async (
+    setData: any,
+    setLoading: (val: boolean) => void
+) => {
+    await handleFetchAction({
+        apiEndpoint: API_ENDPOINT.URLS,
+        setLoading,
+        setData,
+        successMessage: '',
+    });
+};

@@ -6,13 +6,13 @@ import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Link as LinkIcon, QrCode } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { handleCreate } from '@/app/(home)/actions';
 import TabSection from '@/components/TabSection';
+import ComingSoon from '@/components/ComingSoon';
 
 const Hero = () => {
     const router = useRouter();
@@ -84,7 +84,7 @@ const Hero = () => {
             name: 'QR Code',
             icon: <QrCode />,
             value: 'qr_code',
-            content: 'Coming soon!',
+            content: <ComingSoon text="QR code coming soon..." />,
         },
     ];
 

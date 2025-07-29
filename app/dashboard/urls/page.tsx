@@ -1,16 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IShortUrl } from '@/types/types';
 import { fetchUrls } from '@/app/dashboard/urls/actions';
 import UrlGrid from '@/app/dashboard/urls/UrlGrid';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import TabSection from '@/components/TabSection';
+import { Folder } from 'lucide-react';
+import ComingSoon from '@/components/ComingSoon';
 
 const UrlDashboard = () => {
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
 
     const tabs = [
         {
@@ -22,16 +22,10 @@ const UrlDashboard = () => {
                         <p className="text-muted-foreground">
                             Loading short URLs...
                         </p>
-                    ) : error ? (
-                        <p className="text-red-500">{error}</p>
                     ) : urls.length === 0 ? (
                         <div className="text-center text-muted-foreground py-10">
-                            <img
-                                src="/empty.svg"
-                                alt="Empty"
-                                className="mx-auto h-32"
-                            />
-                            <p className="mt-4">
+                            <Folder className="mx-auto w-16 h-16 text-muted" />
+                            <p className="mt-2">
                                 No short URLs yet. Start by creating one!
                             </p>
                         </div>
@@ -44,25 +38,17 @@ const UrlDashboard = () => {
         {
             name: 'Analysis',
             value: 'analysis',
-            content: (
-                <div className="py-10 text-center text-muted-foreground">
-                    Analysis coming soon...
-                </div>
-            ),
+            content: <ComingSoon text="Analysis coming soon..." />,
         },
         {
             name: 'Realtime',
             value: 'realtime',
-            content: (
-                <div className="py-10 text-center text-muted-foreground">
-                    Realtime stats coming soon...
-                </div>
-            ),
+            content: <ComingSoon text="Realtime stats coming soon..." />,
         },
     ];
 
     useEffect(() => {
-        fetchUrls(setUrls, setError, setLoading);
+        fetchUrls(setUrls, setLoading);
     }, []);
 
     return (

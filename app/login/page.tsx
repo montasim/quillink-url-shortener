@@ -4,15 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { Form } from '@/components/ui/form';
 import { Separator } from '@/components/ui/separator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';

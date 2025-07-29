@@ -3,7 +3,8 @@ const API_ENDPOINT = Object.freeze({
     SIGNUP: '/api/v1/auth/signup',
     FORGOT_PASSWORD: '/api/v1/auth/forgot-password',
     RESET_PASSWORD: '/api/v1/auth/reset-password',
-    DASHBOARD_URLS: '/dashboard/urls',
+
+    URLS: '/api/v1/urls',
 } as const);
 
 export default API_ENDPOINT;
