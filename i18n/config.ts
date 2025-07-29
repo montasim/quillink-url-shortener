@@ -10,6 +10,7 @@ export const locales = [
     'hi',
     'ur',
     'ar',
+    'bn',
 ] as const;
 export const defaultLocale = 'en' as const;
 

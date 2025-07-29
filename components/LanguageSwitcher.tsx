@@ -13,10 +13,14 @@ import { Globe } from 'lucide-react';
 
 const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'bn', name: 'বাংলা', flag: '🇧🇩' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'ur', name: 'اردو', flag: '🇵🇰' },
     { code: 'es', name: 'Español', flag: '🇪🇸' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
 ];
 
 export default function LanguageSwitcher() {
