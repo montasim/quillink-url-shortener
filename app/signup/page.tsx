@@ -17,10 +17,12 @@ import { handleGoogleLogin } from '@/app/login/actions';
 import GoogleLogo from '@/components/googleLogo';
 import SubmitButton from '@/components/SubmitButton';
 import { PasswordField, TextField } from '@/components/CustomFormField';
+import TurnstileField from '@/components/TurnstileField';
 
 const SignUpPage = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [cfToken, setCfToken] = useState<string | null>(null);
 
     const form = useForm<z.infer<typeof SignupSchema>>({
         mode: 'onChange',
@@ -28,12 +30,21 @@ const SignUpPage = () => {
             name: '',
             email: '',
             password: '',
+            cfToken: '',
         },
         resolver: zodResolver(SignupSchema),
     });
 
     const onSubmit = async (data: z.infer<typeof SignupSchema>) => {
-        await handleSignup(data, setLoading, router);
+        if (!cfToken) {
+            form.setError('email', {
+                type: 'manual',
+                message: "Please verify you're not a robot.",
+            });
+            return;
+        }
+
+        await handleSignup({ ...data, cfToken }, setLoading, router);
     };
 
     return (
@@ -84,8 +95,19 @@ const SignUpPage = () => {
                                 placeholder="Enter a strong password"
                             />
 
+                            <TurnstileField
+                                onVerify={(token) => {
+                                    setCfToken(token);
+                                    form.setValue('cfToken', token);
+                                }}
+                            />
+
                             <SubmitButton
-                                disabled={!form.formState.isValid || loading}
+                                disabled={
+                                    !form.formState.isValid ||
+                                    loading ||
+                                    !cfToken
+                                }
                                 loading={loading}
                                 loadingLabel={'Creating your account'}
                                 label={'Continue with Email'}

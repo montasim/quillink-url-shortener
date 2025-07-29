@@ -13,21 +13,32 @@ import { handleForgotPassword } from '@/app/forgot-password/actions';
 import { ForgotPasswordSchema } from '@/schemas/schemas';
 import { TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
+import TurnstileField from '@/components/TurnstileField';
 
 const ForgotPasswordPage = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [cfToken, setCfToken] = useState<string | null>(null);
 
     const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
         mode: 'onChange',
         defaultValues: {
             email: '',
+            cfToken: '',
         },
         resolver: zodResolver(ForgotPasswordSchema),
     });
 
     const onSubmit = async (data: z.infer<typeof ForgotPasswordSchema>) => {
-        await handleForgotPassword(data, setLoading, router);
+        if (!cfToken) {
+            form.setError('email', {
+                type: 'manual',
+                message: "Please verify you're not a robot.",
+            });
+            return;
+        }
+
+        await handleForgotPassword({ ...data, cfToken }, setLoading, router);
     };
 
     return (
@@ -56,8 +67,17 @@ const ForgotPasswordPage = () => {
                             placeholder="Enter a valid email"
                         />
 
+                        <TurnstileField
+                            onVerify={(token) => {
+                                setCfToken(token);
+                                form.setValue('cfToken', token);
+                            }}
+                        />
+
                         <SubmitButton
-                            disabled={!form.formState.isValid || loading}
+                            disabled={
+                                !form.formState.isValid || loading || !cfToken
+                            }
                             loading={loading}
                             loadingLabel={'Processing'}
                             label={'Send Verification Email'}

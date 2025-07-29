@@ -10,6 +10,7 @@ import { getUserDetails } from '@/services/user.service';
 import { meSelection } from '@/app/api/v1/auth/me/selection';
 import { createToken } from '@/services/token.service';
 import { tokenSelection } from '@/app/api/v1/auth/refresh/selection';
+import { verifyTurnstileToken } from '@/services/auth.service';
 
 const { FORGET_PASSWORD } = MESSAGES;
 
@@ -27,7 +28,16 @@ export const POST = async (req: NextRequest) => {
         );
     }
 
-    const { email } = validation.data;
+    const { email, cfToken } = validation.data;
+
+    // ✅ Verify Turnstile token
+    const isValid = await verifyTurnstileToken(cfToken);
+    if (!isValid) {
+        return new Response(
+            JSON.stringify({ error: 'Robot verification failed.' }),
+            { status: 400 }
+        );
+    }
 
     const user = await getUserDetails({ email }, meSelection);
     if (!user) {

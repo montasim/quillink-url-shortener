@@ -29,9 +29,8 @@ const loginHandler = async (req: NextRequest) => {
 
     const { email, password, cfToken } = validation.data;
 
-    // ✅ Step 1: Verify Turnstile token
+    // ✅ Verify Turnstile token
     const isValid = await verifyTurnstileToken(cfToken);
-
     if (!isValid) {
         return new Response(
             JSON.stringify({ error: 'Robot verification failed.' }),

@@ -154,12 +154,14 @@ export const SignupSchema = z
         name,
         email,
         password,
+        cfToken,
     })
     .strict();
 
 export const ForgotPasswordSchema = z
     .object({
         email,
+        cfToken,
     })
     .strict();
 
@@ -167,6 +169,7 @@ export const ResetPasswordSchema = z
     .object({
         token: nonEmptyString('Token'),
         newPassword: password,
+        cfToken,
     })
     .strict();
 

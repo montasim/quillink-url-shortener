@@ -14,10 +14,12 @@ import { ResetPasswordSchema } from '@/schemas/schemas';
 import { toast } from 'sonner';
 import { PasswordField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
+import TurnstileField from '@/components/TurnstileField';
 
 const ResetPassword = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [cfToken, setCfToken] = useState<string | null>(null);
     const searchParams = useSearchParams();
 
     const form = useForm<z.infer<typeof ResetPasswordSchema>>({
@@ -25,6 +27,7 @@ const ResetPassword = () => {
         defaultValues: {
             token: '',
             newPassword: '',
+            cfToken: '',
         },
         resolver: zodResolver(ResetPasswordSchema),
     });
@@ -42,7 +45,15 @@ const ResetPassword = () => {
     }, [searchParams, form, router]);
 
     const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
-        await handleResetPassword(data, setLoading, router);
+        if (!cfToken) {
+            form.setError('newPassword', {
+                type: 'manual',
+                message: "Please verify you're not a robot.",
+            });
+            return;
+        }
+
+        await handleResetPassword({ ...data, cfToken }, setLoading, router);
     };
 
     return (
@@ -65,13 +76,22 @@ const ResetPassword = () => {
                     >
                         <PasswordField
                             control={form.control}
-                            name="password"
-                            label="Password"
-                            placeholder="Password"
+                            name="newPassword"
+                            label="New Password"
+                            placeholder="Enter your new password"
+                        />
+
+                        <TurnstileField
+                            onVerify={(token) => {
+                                setCfToken(token);
+                                form.setValue('cfToken', token);
+                            }}
                         />
 
                         <SubmitButton
-                            disabled={!form.formState.isValid || loading}
+                            disabled={
+                                !form.formState.isValid || loading || !cfToken
+                            }
                             loading={loading}
                             loadingLabel={'Processing'}
                             label={'Reset Password'}

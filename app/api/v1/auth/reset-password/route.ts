@@ -7,6 +7,7 @@ import { NextRequest } from 'next/server';
 import { ResetPasswordSchema } from '@/schemas/schemas';
 import { updateUser } from '@/services/user.service';
 import { deleteToken, getTokenDetails } from '@/services/token.service';
+import { verifyTurnstileToken } from '@/services/auth.service';
 
 const { RESET_PASSWORD } = MESSAGES;
 
@@ -24,7 +25,16 @@ const forgotPasswordHandler = async (req: NextRequest) => {
         );
     }
 
-    const { token, newPassword } = validation.data;
+    const { token, newPassword, cfToken } = validation.data;
+
+    // ✅ Verify Turnstile token
+    const isValid = await verifyTurnstileToken(cfToken);
+    if (!isValid) {
+        return new Response(
+            JSON.stringify({ error: 'Robot verification failed.' }),
+            { status: 400 }
+        );
+    }
 
     const tokenEntry = await getTokenDetails({ token }, { user: true }, {});
 
