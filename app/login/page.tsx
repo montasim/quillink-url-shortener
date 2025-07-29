@@ -76,7 +76,7 @@ const LoginPage = () => {
                             name="email"
                             label="Email"
                             type="email"
-                            placeholder="Enter a valid email"
+                            placeholder="Enter your email"
                         />
                         <CustomFormField
                             control={form.control}

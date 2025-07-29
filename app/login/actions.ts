@@ -1,26 +1,25 @@
-import { toast } from 'sonner';
-import { withErrorHandler } from '@/components/withErrorHandler';
-import { createData, startProactiveRefresh } from '@/lib/axios';
+import { handleAuthAction } from '@/services/auth.service';
+import API_ENDPOINT from '@/constants/apiEndPoint';
+import { startProactiveRefresh } from '@/lib/axios';
 
-export const handleLogin = withErrorHandler(
-    async (
+export const handleLogin = async (
+    formData: any,
+    setLoading: (val: boolean) => void,
+    router: any,
+    refreshAuth: any
+) => {
+    await handleAuthAction({
+        apiEndpoint: API_ENDPOINT.LOGIN,
         formData,
-        setLoading: (val: boolean) => void,
-        router: any,
-        refreshAuth
-    ) => {
-        setLoading(true);
+        setLoading,
+        router,
+        successRedirectUrl: API_ENDPOINT.DASHBOARD_URLS,
+        successMessage: 'Login successful! Redirecting to dashboard.',
+    });
 
-        const { data } = await createData('/api/v1/auth/login', formData);
-
-        await refreshAuth(); // 🧠 make sure auth context is updated
-        startProactiveRefresh();
-
-        toast.success(`Login successful. Welcome ${data.name}`);
-        router.push('/dashboard/urls'); // or wherever your post-login page is
-    },
-    'Login failed. Please check your credentials.'
-);
+    await refreshAuth(); // 🧠 make sure auth context is updated
+    startProactiveRefresh();
+};
 
 export const handleGoogleLogin = () => {
     const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';

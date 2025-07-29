@@ -1,17 +1,17 @@
-import { toast } from 'sonner';
-import { withErrorHandler } from '@/components/withErrorHandler';
-import { createData } from '@/lib/axios';
+import { handleAuthAction } from '@/services/auth.service';
+import API_ENDPOINT from '@/constants/apiEndPoint';
 
-export const handleForgotPassword = withErrorHandler(
-    async (formData, setLoading: (val: boolean) => void, router: any) => {
-        setLoading(true);
-
-        await createData('/api/v1/auth/forgot-password', formData);
-
-        toast.success(
-            'Confirmation email send to your account. Reset your password.'
-        );
-        router.push('/reset-password');
-    },
-    'Forgot password failed. Please check your email.'
-);
+export const handleForgotPassword = async (
+    formData: any,
+    setLoading: (val: boolean) => void,
+    router: any
+) => {
+    await handleAuthAction({
+        apiEndpoint: API_ENDPOINT.FORGOT_PASSWORD,
+        formData,
+        setLoading,
+        router,
+        successRedirectUrl: API_ENDPOINT.RESET_PASSWORD,
+        successMessage: 'Password reset link sent to your email!',
+    });
+};

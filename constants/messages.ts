@@ -110,6 +110,8 @@ const MESSAGES = Object.freeze({
         VALIDATION_REQUIRED: 'This field is required.',
         VALIDATION_ERROR: 'Invalid request types provided.',
         INTERNAL_SERVER_ERROR: 'An unexpected internal server error occurred.',
+        UNEXPECTED_ERROR:
+            'An unexpected error occurred. Please try again later.',
     },
 
     SYSTEM: {

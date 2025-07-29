@@ -1,15 +1,17 @@
-import { toast } from 'sonner';
-import { withErrorHandler } from '@/components/withErrorHandler';
-import { createData } from '@/lib/axios';
+import { handleAuthAction } from '@/services/auth.service';
+import API_ENDPOINT from '@/constants/apiEndPoint';
 
-export const handleSignup = withErrorHandler(
-    async (formData, setLoading: (val: boolean) => void, router: any) => {
-        setLoading(true);
-
-        const { data } = await createData('/api/v1/auth/signup', formData);
-
-        toast.success('Signup successful');
-        router.push('/login');
-    },
-    'Signup failed. Please check your types.'
-);
+export const handleSignup = async (
+    formData: any,
+    setLoading: (val: boolean) => void,
+    router: any
+) => {
+    await handleAuthAction({
+        apiEndpoint: API_ENDPOINT.SIGNUP,
+        formData,
+        setLoading,
+        router,
+        successRedirectUrl: API_ENDPOINT.LOGIN,
+        successMessage: 'Signup successful! Please log in.',
+    });
+};

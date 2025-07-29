@@ -82,7 +82,7 @@ const SignUpPage = () => {
                                 name="password"
                                 label="Password"
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Enter a strong password"
                             />
 
                             <SubmitButton

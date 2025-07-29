@@ -17,7 +17,7 @@ const SubmitButton = ({
     return (
         <Button
             type="submit"
-            className="mt-4 w-full disabled:bg-secondary hover:bg-primary"
+            className="mt-4 w-full disabled:bg-secondary hover:bg-primary cursor-pointer disabled:cursor-not-allowed"
             disabled={disabled}
         >
             {loading ? (
