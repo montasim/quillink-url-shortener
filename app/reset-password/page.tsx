@@ -21,11 +21,13 @@ import { z } from 'zod';
 import { handleResetPassword } from '@/app/reset-password/actions';
 import { ResetPasswordSchema } from '@/schemas/schemas';
 import { toast } from 'sonner';
+import CustomFormField from '@/components/CustomFormField';
+import SubmitButton from '@/components/SubmitButton';
 
 const ResetPassword = () => {
     const router = useRouter();
-    const searchParams = useSearchParams();
     const [loading, setLoading] = useState(false);
+    const searchParams = useSearchParams();
 
     const form = useForm<z.infer<typeof ResetPasswordSchema>>({
         defaultValues: {
@@ -69,31 +71,20 @@ const ResetPassword = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <FormField
+                        <CustomFormField
                             control={form.control}
-                            name="newPassword"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Password</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="password"
-                                            placeholder="Password"
-                                            className="w-full"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                            name="password"
+                            label="Password"
+                            type="password"
+                            placeholder="Password"
                         />
-                        <Button
-                            type="submit"
-                            className="mt-4 w-full"
-                            disabled={loading}
-                        >
-                            {loading ? 'Processing...' : 'Reset Password'}
-                        </Button>
+
+                        <SubmitButton
+                            disabled={!form.formState.isValid || loading}
+                            loading={loading}
+                            loadingLabel={'Processing'}
+                            label={'Reset Password'}
+                        />
                     </form>
                 </Form>
 

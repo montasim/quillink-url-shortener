@@ -2,15 +2,7 @@
 
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { Form } from '@/components/ui/form';
 import { Separator } from '@/components/ui/separator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
@@ -23,6 +15,8 @@ import { useState } from 'react';
 import configuration from '@/configuration/configuration';
 import { handleGoogleLogin } from '@/app/login/actions';
 import GoogleLogo from '@/components/googleLogo';
+import SubmitButton from '@/components/SubmitButton';
+import CustomFormField from '@/components/CustomFormField';
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -53,7 +47,7 @@ const SignUpPage = () => {
 
                     <Button
                         onClick={handleGoogleLogin}
-                        className="mt-8 w-full gap-3"
+                        className="mt-8 w-full gap-3 cursor-pointer"
                     >
                         <GoogleLogo />
                         Continue with Google
@@ -70,69 +64,33 @@ const SignUpPage = () => {
                             className="w-full space-y-4"
                             onSubmit={form.handleSubmit(onSubmit)}
                         >
-                            <FormField
+                            <CustomFormField
                                 control={form.control}
                                 name="name"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Name</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                type="text"
-                                                placeholder="Name"
-                                                className="w-full"
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
+                                label="Name"
+                                placeholder="Name"
                             />
-                            <FormField
+                            <CustomFormField
                                 control={form.control}
                                 name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Email</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                type="email"
-                                                placeholder="Email"
-                                                className="w-full"
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
+                                label="Email"
+                                type="email"
+                                placeholder="Enter a valid email"
                             />
-                            <FormField
+                            <CustomFormField
                                 control={form.control}
                                 name="password"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Password</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                type="password"
-                                                placeholder="Password"
-                                                className="w-full"
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
+                                label="Password"
+                                type="password"
+                                placeholder="Password"
                             />
-                            <Button
-                                type="submit"
-                                className={`mt-4 w-full ${!form.formState.isValid || loading ? 'cursor-none' : 'cursor-pointer'} disabled:bg-secondary hover:bg-primary`}
+
+                            <SubmitButton
                                 disabled={!form.formState.isValid || loading}
-                            >
-                                {loading
-                                    ? 'Signing up...'
-                                    : 'Continue with Email'}
-                            </Button>
+                                loading={loading}
+                                loadingLabel={'Creating your account'}
+                                label={'Continue with Email'}
+                            />
                         </form>
                     </Form>
 

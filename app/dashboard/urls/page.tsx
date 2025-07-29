@@ -32,8 +32,7 @@ const UrlDashboard = () => {
                                 className="mx-auto h-32"
                             />
                             <p className="mt-4">
-                                No short URLs yet. Start by
-                                creating one!
+                                No short URLs yet. Start by creating one!
                             </p>
                         </div>
                     ) : (

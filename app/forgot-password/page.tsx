@@ -20,12 +20,15 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { handleForgotPassword } from '@/app/forgot-password/actions';
 import { ForgotPasswordSchema } from '@/schemas/schemas';
+import CustomFormField from '@/components/CustomFormField';
+import SubmitButton from '@/components/SubmitButton';
 
 const ForgotPasswordPage = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
+        mode: 'onChange',
         defaultValues: {
             email: '',
         },
@@ -54,31 +57,20 @@ const ForgotPasswordPage = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <FormField
+                        <CustomFormField
                             control={form.control}
                             name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="email"
-                                            placeholder="Email"
-                                            className="w-full"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                            label="Email"
+                            type="email"
+                            placeholder="Enter a valid email"
                         />
-                        <Button
-                            type="submit"
-                            className="mt-4 w-full"
-                            disabled={loading}
-                        >
-                            {loading ? 'Processing...' : 'Send Email'}
-                        </Button>
+
+                        <SubmitButton
+                            disabled={!form.formState.isValid || loading}
+                            loading={loading}
+                            loadingLabel={'Processing'}
+                            label={'Send Verification Email'}
+                        />
                     </form>
                 </Form>
 

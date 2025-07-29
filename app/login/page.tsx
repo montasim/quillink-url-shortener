@@ -23,6 +23,8 @@ import { handleGoogleLogin, handleLogin } from '@/app/login/actions';
 import { LoginSchema } from '@/schemas/schemas';
 import { useAuth } from '@/context/AuthContext';
 import GoogleLogo from '@/components/googleLogo';
+import CustomFormField from '@/components/CustomFormField';
+import SubmitButton from '@/components/SubmitButton';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -30,6 +32,7 @@ const LoginPage = () => {
     const { refreshAuth } = useAuth();
 
     const form = useForm<z.infer<typeof LoginSchema>>({
+        mode: 'onChange',
         defaultValues: {
             email: '',
             password: '',
@@ -51,7 +54,7 @@ const LoginPage = () => {
 
                 <Button
                     onClick={handleGoogleLogin}
-                    className="mt-8 w-full gap-3"
+                    className="mt-8 w-full gap-3 cursor-pointer"
                 >
                     <GoogleLogo />
                     Continue with Google
@@ -68,49 +71,27 @@ const LoginPage = () => {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
-                        <FormField
+                        <CustomFormField
                             control={form.control}
                             name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="email"
-                                            placeholder="Email"
-                                            className="w-full"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                            label="Email"
+                            type="email"
+                            placeholder="Enter a valid email"
                         />
-                        <FormField
+                        <CustomFormField
                             control={form.control}
                             name="password"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Password</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="password"
-                                            placeholder="Password"
-                                            className="w-full"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                            label="Password"
+                            type="password"
+                            placeholder="Password"
                         />
-                        <Button
-                            type="submit"
-                            className="mt-4 w-full"
-                            disabled={loading}
-                        >
-                            {loading ? 'Logging in...' : 'Continue with Email'}
-                        </Button>
+
+                        <SubmitButton
+                            disabled={!form.formState.isValid || loading}
+                            loading={loading}
+                            loadingLabel={'Authenticating'}
+                            label={'Continue with Email'}
+                        />
                     </form>
                 </Form>
 
