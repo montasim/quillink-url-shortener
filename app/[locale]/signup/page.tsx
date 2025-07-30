@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,7 @@ import SubmitButton from '@/components/SubmitButton';
 import { PasswordField, TextField } from '@/components/CustomFormField';
 import TurnstileField from '@/components/TurnstileField';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
+import configuration from '@/configuration/configuration';
 
 const SignUpPage = () => {
     const t = useTranslations('auth.signup');
@@ -57,9 +58,9 @@ const SignUpPage = () => {
     };
 
     return (
-        <div className="h-screen flex items-center justify-center">
-            <div className="w-full h-full grid lg:grid-cols-2 p-4">
-                <div className="max-w-xs m-auto w-full flex flex-col items-center">
+        <div className="min-h-screen flex items-center justify-center py-8">
+            <div className="w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 p-4">
+                <div className="max-w-xs mx-auto w-full flex flex-col items-center justify-center">
                     <Logo />
                     <p className="mt-4 text-xl font-bold tracking-tight text-primary">
                         {t('title')}
@@ -137,7 +138,16 @@ const SignUpPage = () => {
                     <LanguageOfferSwitcher />
                 </div>
 
-                <div className="bg-gray-50 hidden lg:block rounded-lg" />
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 hidden lg:flex items-center justify-center rounded-lg p-8 min-h-[600px]">
+                    <Image
+                        src="/url_shortner.svg"
+                        alt={`${configuration.app.name} illustration`}
+                        width={500}
+                        height={500}
+                        className="object-contain max-w-full max-h-full drop-shadow-sm"
+                        priority
+                    />
+                </div>
             </div>
         </div>
     );
