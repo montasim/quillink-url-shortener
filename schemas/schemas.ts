@@ -120,7 +120,11 @@ export const ShortenUrlSchema = z
             .refine(
                 (val) => {
                     const ownDomain = process.env.NEXT_PUBLIC_BASE_URL;
-                    return !val.startsWith(ownDomain ?? '');
+                    // Only apply the restriction if ownDomain is set and not empty
+                    if (!ownDomain || ownDomain.trim() === '') {
+                        return true;
+                    }
+                    return !val.startsWith(ownDomain);
                 },
                 {
                     message: MESSAGES.URL_CREATION.OWN_DOMAIN_ERROR,
