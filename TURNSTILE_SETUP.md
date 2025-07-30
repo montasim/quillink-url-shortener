@@ -153,3 +153,4 @@ If you encounter issues:
 | Development (no keys)   | ❌ No             | ❌ No               | Shows warning, allows all requests |
 | Development (with keys) | ✅ Yes            | ✅ Yes              | Full Turnstile validation          |
 | Production              | ✅ Yes            | ✅ Yes              | Full Turnstile validation          |
+
