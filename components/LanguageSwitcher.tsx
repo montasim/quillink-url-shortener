@@ -46,13 +46,27 @@ export default function LanguageSwitcher({
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2">
-                    {showIcon && <Globe size={16} />}
-                    <span className="hidden sm:inline">
-                        {currentLanguage.name}
-                    </span>
-                    <span className="sm:hidden">{currentLanguage.flag}</span>
-                </Button>
+                {showIcon ? (
+                    <Button variant="ghost" size="sm" className="gap-2">
+                        <Globe size={16} />
+                        <span className="hidden sm:inline">
+                            {currentLanguage.name}
+                        </span>
+                        <span className="sm:hidden">
+                            {currentLanguage.flag}
+                        </span>
+                    </Button>
+                ) : (
+                    <p className="gap-2 ml-1 cursor-pointer">
+                        <span className="hidden sm:inline">
+                            {currentLanguage.name}
+                        </span>
+
+                        <span className="sm:hidden">
+                            {currentLanguage.flag}
+                        </span>
+                    </p>
+                )}
             </DropdownMenuTrigger>
 
             <DropdownMenuContent align="end">
