@@ -1,22 +1,4 @@
 {
-  "common": {
-    "validationRequired": "यह फ़ील्ड आवश्यक है।",
-    "validationError": "अमान्य अनुरोध प्रकार प्रदान किए गए।",
-    "internalServerError": "एक अप्रत्याशित आंतरिक सर्वर त्रुटि हुई।",
-    "unexpectedError": "एक अप्रत्याशित त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
-    "comingSoon": "जल्द आ रहा है...",
-    "verify": "सत्यापित करें",
-    "somethingWentWrong": "कुछ गलत हो गया",
-    "networkError": "नेटवर्क त्रुटि: सर्वर से कोई प्रतिक्रिया नहीं मिली।",
-    "axiosError": "एक्सियोस त्रुटि: {message}",
-    "veryWeak": "बहुत कमजोर",
-    "weak": "कमजोर",
-    "fair": "ठीक",
-    "good": "अच्छा",
-    "strong": "मजबूत",
-    "hidePassword": "पासवर्ड छुपाएं",
-    "showPassword": "पासवर्ड दिखाएं"
-  },
   "navigation": {
     "home": "होम",
     "dashboard": "डैशबोर्ड",
@@ -325,5 +307,24 @@
         "answer": "किसी भी पूछताछ में सहायता के लिए support@example.com पर ईमेल के माध्यम से संपर्क करें या 1-800-123-4567 पर हमें कॉल करें।"
       }
     ]
+  },
+  "common": {
+    "validationRequired": "यह फ़ील्ड आवश्यक है।",
+    "validationError": "अवैध अनुरोध प्रकार प्रदान किए गए।",
+    "internalServerError": "एक अप्रत्याशित आंतरिक सर्वर त्रुटि हुई।",
+    "unexpectedError": "एक अप्रत्याशित त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
+    "comingSoon": "जल्दी आ रहा है...",
+    "verify": "सत्यापित करें",
+    "somethingWentWrong": "कुछ गलत हुआ",
+    "networkError": "नेटवर्क त्रुटि: सर्वर से कोई प्रतिक्रिया नहीं मिली।",
+    "axiosError": "Axios त्रुटि: {message}",
+    "veryWeak": "बहुत कमजोर",
+    "weak": "कमजोर",
+    "fair": "ठीक",
+    "good": "अच्छा",
+    "strong": "मजबूत",
+    "hidePassword": "पासवर्ड छुपाएं",
+    "showPassword": "पासवर्ड दिखाएं",
+    "offeredIn": "में उपलब्ध"
   }
 }

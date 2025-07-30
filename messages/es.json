@@ -290,6 +290,7 @@
     "good": "Bueno",
     "strong": "Fuerte",
     "hidePassword": "Ocultar contraseña",
-    "showPassword": "Mostrar contraseña"
+    "showPassword": "Mostrar contraseña",
+    "offeredIn": "disponible en"
   }
 }

@@ -16,6 +16,7 @@ import { PasswordField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 import { useTranslations } from 'next-intl';
+import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
 
 const ResetPassword = () => {
     const t = useTranslations('auth.resetPassword');
@@ -117,6 +118,8 @@ const ResetPassword = () => {
                         </Link>
                     </p>
                 </div>
+
+                <LanguageOfferSwitcher />
             </div>
         </div>
     );

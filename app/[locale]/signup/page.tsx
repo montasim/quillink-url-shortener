@@ -18,6 +18,7 @@ import GoogleLogo from '@/components/googleLogo';
 import SubmitButton from '@/components/SubmitButton';
 import { PasswordField, TextField } from '@/components/CustomFormField';
 import TurnstileField from '@/components/TurnstileField';
+import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
 
 const SignUpPage = () => {
     const t = useTranslations('auth.signup');
@@ -132,6 +133,8 @@ const SignUpPage = () => {
                             {t('loginLink')}
                         </Link>
                     </p>
+
+                    <LanguageOfferSwitcher />
                 </div>
 
                 <div className="bg-gray-50 hidden lg:block rounded-lg" />

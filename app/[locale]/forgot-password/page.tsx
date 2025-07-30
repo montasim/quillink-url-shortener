@@ -15,6 +15,7 @@ import { ForgotPasswordSchema } from '@/schemas/schemas';
 import { TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
+import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
 
 const ForgotPasswordPage = () => {
     const t = useTranslations('auth.forgotPassword');
@@ -105,6 +106,8 @@ const ForgotPasswordPage = () => {
                         </Link>
                     </p>
                 </div>
+
+                <LanguageOfferSwitcher />
             </div>
         </div>
     );

@@ -23,7 +23,11 @@ const languages = [
     { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
 ];
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({
+    showIcon = true,
+}: {
+    showIcon?: boolean;
+}) {
     const locale = useLocale();
     const router = useRouter();
     const pathname = usePathname();
@@ -43,13 +47,14 @@ export default function LanguageSwitcher() {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="gap-2">
-                    <Globe size={16} />
+                    {showIcon && <Globe size={16} />}
                     <span className="hidden sm:inline">
                         {currentLanguage.name}
                     </span>
                     <span className="sm:hidden">{currentLanguage.flag}</span>
                 </Button>
             </DropdownMenuTrigger>
+
             <DropdownMenuContent align="end">
                 {languages.map((language) => (
                     <DropdownMenuItem

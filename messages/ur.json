@@ -1,22 +1,4 @@
 {
-  "common": {
-    "validationRequired": "یہ فیلڈ درکار ہے۔",
-    "validationError": "غلط درخواست کی اقسام فراہم کی گئیں۔",
-    "internalServerError": "ایک غیر متوقع اندرونی سرور کی خرابی پیش آئی۔",
-    "unexpectedError": "ایک غیر متوقع خرابی پیش آئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
-    "comingSoon": "جلد آ رہا ہے...",
-    "verify": "تصدیق کریں",
-    "somethingWentWrong": "کچھ غلط ہو گیا",
-    "networkError": "نیٹ ورک کی خرابی: سرور سے کوئی جواب موصول نہیں ہوا۔",
-    "axiosError": "ایکسیس کی خرابی: {message}",
-    "veryWeak": "بہت کمزور",
-    "weak": "کمزور",
-    "fair": "مناسب",
-    "good": "اچھا",
-    "strong": "مضبوط",
-    "hidePassword": "پاس ورڈ چھپائیں",
-    "showPassword": "پاس ورڈ دکھائیں"
-  },
   "navigation": {
     "home": "ہوم",
     "dashboard": "ڈیش بورڈ",
@@ -325,5 +307,24 @@
         "answer": "کسی بھی پوچھ گچھ میں مدد کے لیے support@example.com پر ای میل کے ذریعے رابطہ کریں یا 1-800-123-4567 پر ہمیں کال کریں۔"
       }
     ]
+  },
+  "common": {
+    "validationRequired": "یہ فیلڈ درکار ہے۔",
+    "validationError": "غلط درخواست کی اقسام فراہم کی گئیں۔",
+    "internalServerError": "ایک غیر متوقع اندرونی سرور کی خرابی ہوئی۔",
+    "unexpectedError": "ایک غیر متوقع خرابی ہوئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
+    "comingSoon": "جلد آ رہا ہے...",
+    "verify": "تصدیق کریں",
+    "somethingWentWrong": "کچھ غلط ہوگیا",
+    "networkError": "نیٹ ورک کی خرابی: سرور سے کوئی جواب نہیں ملا۔",
+    "axiosError": "Axios خرابی: {message}",
+    "veryWeak": "بہت کمزور",
+    "weak": "کمزور",
+    "fair": "ٹھیک",
+    "good": "اچھا",
+    "strong": "مضبوط",
+    "hidePassword": "پاس ورڈ چھپائیں",
+    "showPassword": "پاس ورڈ دکھائیں",
+    "offeredIn": "میں دستیاب"
   }
 }

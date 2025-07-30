@@ -324,6 +324,7 @@
     "good": "Good",
     "strong": "Strong",
     "hidePassword": "Hide password",
-    "showPassword": "Show password"
+    "showPassword": "Show password",
+    "offeredIn": "offered in"
   }
 }
