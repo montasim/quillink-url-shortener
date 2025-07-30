@@ -37,7 +37,11 @@
       "signUpLink": "Hier registrieren",
       "validationError": "Ungültige Anfrage-Typen.",
       "unauthorized": "Ungültige E-Mail oder Passwort. Bitte versuchen Sie es erneut.",
-      "success": "Anmeldung erfolgreich."
+      "success": "Anmeldung erfolgreich.",
+      "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
+      "continueWithGoogle": "Mit Google fortfahren",
+      "or": "ODER",
+      "authenticating": "Authentifizierung"
     },
     "signup": {
       "title": "Konto erstellen",
@@ -53,7 +57,8 @@
       "loginLink": "Hier anmelden",
       "validationError": "Ungültige Anfrage-Typen.",
       "alreadyExists": "Ein Konto mit dieser E-Mail existiert bereits.",
-      "success": "Registrierung erfolgreich. Sie können sich jetzt anmelden."
+      "success": "Registrierung erfolgreich. Sie können sich jetzt anmelden.",
+      "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind."
     },
     "forgotPassword": {
       "title": "Passwort vergessen?",
@@ -78,7 +83,13 @@
       "submitButton": "Passwort zurücksetzen",
       "validationError": "Ungültige E-Mail oder Passwort. Bitte versuchen Sie es erneut.",
       "invalidToken": "Ungültiger oder abgelaufener Token.",
-      "success": "Passwort-Reset erfolgreich."
+      "success": "Passwort-Reset erfolgreich.",
+      "noTokenError": "Kein 'Token' in den URL-Abfrageparametern gefunden. Weiterleitung zur Anmeldung.",
+      "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
+      "processing": "Verarbeitung",
+      "rememberPassword": "Passwort erinnern?",
+      "loginLink": "Anmelden",
+      "loading": "Wird geladen..."
     }
   },
   "url": {
@@ -154,7 +165,30 @@
     "os": "Betriebssystem",
     "clickedAt": "Geklickt Am",
     "noClickLogs": "Keine Klick-Protokolle",
-    "unknown": "Unbekannt"
+    "unknown": "Unbekannt",
+    "sink": "Sink",
+    "last7Days": "Letzte 7 Tage",
+    "filterLinks": "Links filtern",
+    "visits": "Besuche",
+    "visitors": "Besucher",
+    "referrers": "Verweiser",
+    "views": "Ansichten",
+    "locations": "Standorte",
+    "worldMapHere": "Weltkarte hier",
+    "country": "Land",
+    "region": "Region",
+    "city": "Stadt",
+    "referrer": "Verweiser",
+    "language": "Sprache",
+    "device": "Gerät",
+    "type": "Typ",
+    "noDataAvailable": "Keine Daten verfügbar.",
+    "footerText": "Sink © 2025 Produkte von HTML_ZONE",
+    "copiedToClipboard": "In die Zwischenablage kopiert",
+    "qrCodeFetchFailed": "QR-Code-Abruf fehlgeschlagen.",
+    "downloadQrCode": "QR-Code herunterladen",
+    "loading": "Wird geladen...",
+    "qrCodeAlt": "QR-Code"
   },
   "contact": {
     "title": "Kontaktieren Sie uns",
