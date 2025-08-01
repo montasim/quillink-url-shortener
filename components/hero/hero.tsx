@@ -110,7 +110,7 @@ const Hero = () => {
                 <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-primary">
                     {t('title')}
                 </h1>
-                <p className="mt-4 text-secondary text-[17px] md:text-lg">
+                <p className="mt-4 text-secondary text-[17px] md:text-lg w-3xl mx-auto">
                     {t('description')}
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-4 w-full">
