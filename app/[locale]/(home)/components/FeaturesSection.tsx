@@ -3,40 +3,20 @@
 import React from 'react';
 import { BarChart3, Zap, Shield, Globe, QrCode, Link2 } from 'lucide-react';
 
-const features = [
-    {
-        icon: Link2,
-        title: 'Easy Link Shortening',
-        description: 'Transform long URLs into short, memorable links in just one click. Simple, fast, and efficient.',
-    },
-    {
-        icon: BarChart3,
-        title: 'Advanced Analytics',
-        description: 'Track clicks, geographic data, referrers, and more with our comprehensive analytics dashboard.',
-    },
-    {
-        icon: QrCode,
-        title: 'QR Code Generation',
-        description: 'Automatically generate QR codes for your shortened links. Perfect for print and mobile.',
-    },
-    {
-        icon: Zap,
-        title: 'Lightning Fast',
-        description: 'Our global CDN ensures your links redirect instantly, anywhere in the world.',
-    },
-    {
-        icon: Shield,
-        title: 'Secure & Reliable',
-        description: 'Enterprise-grade security with 99.9% uptime guarantee. Your links are always available.',
-    },
-    {
-        icon: Globe,
-        title: 'Custom Domains',
-        description: 'Use your own branded domain for shortened links to build trust and recognition.',
-    },
-];
+import { useTranslations } from 'next-intl';
 
 const FeaturesSection = () => {
+    const t = useTranslations('home.features');
+
+    const featuresList = [
+        { icon: Link2, key: 'shortening' },
+        { icon: BarChart3, key: 'analytics' },
+        { icon: QrCode, key: 'qr' },
+        { icon: Zap, key: 'fast' },
+        { icon: Shield, key: 'secure' },
+        { icon: Globe, key: 'domains' },
+    ];
+
     return (
         <section className="py-32 px-6 bg-background relative">
             <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -46,20 +26,21 @@ const FeaturesSection = () => {
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-semibold text-sm mb-8 backdrop-blur-sm">
-                        Features
+                        {t('badge')}
                     </Badge>
                     <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-8 tracking-tight">
-                        Explore features for more <span className="text-primary">efficiency</span>
+                        {t('headingPart1')}<span className="text-primary">{t('headingHighlight')}</span>{t('headingPart2')}
                     </h2>
                     <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
-                        Everything you need to create, manage, and track your shortened links in one powerful platform.
+                        {t('subheading')}
                     </p>
                 </div>
 
                 {/* Features Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                    {features.map((feature, index) => {
+                    {featuresList.map((feature, index) => {
                         const Icon = feature.icon;
+                        const key = feature.key;
                         return (
                             <div
                                 key={index}
@@ -69,10 +50,10 @@ const FeaturesSection = () => {
                                     <Icon className="w-7 h-7 text-primary-foreground" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
-                                    {feature.title}
+                                    {t(`list.${key}.title`)}
                                 </h3>
                                 <p className="text-muted-foreground/80 font-medium leading-relaxed">
-                                    {feature.description}
+                                    {t(`list.${key}.description`)}
                                 </p>
                             </div>
                         );

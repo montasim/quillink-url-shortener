@@ -1,52 +1,202 @@
 {
   "navigation": {
-    "home": "Startseite",
+    "home": "Home",
     "dashboard": "Dashboard",
-    "login": "Anmelden",
-    "signup": "Registrieren",
+    "login": "Login",
+    "signup": "Anmelden",
     "logout": "Abmelden",
-    "contactUs": "Kontaktieren Sie uns"
+    "contactUs": "Kontakt",
+    "terms": "AGB",
+    "privacy": "Datenschutz"
   },
-  "hero": {
-    "title": "Machen Sie jede Verbindung zählen",
-    "subtitle": "Erstellen Sie kurze, einprägsame Links mit unserem URL-Verkürzer",
-    "description": "Erstellen Sie kurze Links, QR-Codes, teilen Sie sie überall. Verfolgen Sie was funktioniert und was nicht. Alles in der QuilLink-Verbindungsplattform.",
-    "getStarted": "Loslegen",
-    "learnMore": "Mehr Erfahren",
-    "badge": "Gerade veröffentlicht v1.0.0",
-    "pasteUrl": "Lange URL einfügen",
-    "createShortUrl": "Kurze URL erstellen",
-    "creating": "Erstellen",
-    "shortLink": "Kurzer Link",
-    "qrCode": "QR-Code",
-    "qrCodeComingSoon": "QR-Code kommt bald...",
-    "termsAgreement": "Durch Klicken auf URL verkürzen stimmen Sie QuilLinks",
-    "termsOfUse": "Nutzungsbedingungen",
-    "privacyPolicy": "Datenschutzrichtlinie",
-    "cookiePolicy": "Cookie-Richtlinie"
+  "home": {
+    "hero": {
+      "badge": "✨ Kostenloser URL Shortener",
+      "headingPart1": "Machen Sie jede ",
+      "headingPart2": "wertvoll",
+      "headingHighlight": "Verbindung",
+      "subheading": "Erstellen Sie kurze, kurze Links in Sekunden. Verfolgen Sie Klicks, analysieren Sie die Leistung und teilen Sie sie überall mit dem leistungsstarken URL-Shortener von QuilLink.",
+      "inputPlaceholder": "Geben Sie hier Ihre lange URL ein...",
+      "shortenButton": "URL kürzen",
+      "creating": "Erstellen...",
+      "agreementPart1": "Durch das Kürzen einer URL stimmen Sie unseren ",
+      "terms": "Nutzungsbedingungen",
+      "agreementPart2": " und ",
+      "privacy": "Datenschutzrichtlinien",
+      "stats": {
+        "linksCreated": {
+          "value": "10M+",
+          "label": "Links erstellt"
+        },
+        "activeUsers": {
+          "value": "500K+",
+          "label": "Aktive Benutzer"
+        },
+        "uptime": {
+          "value": "99,9%",
+          "label": "Verfügbarkeit"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      }
+    },
+    "features": {
+      "badge": "Funktionen",
+      "headingPart1": "Entdecken Sie Funktionen für mehr ",
+      "headingPart2": "",
+      "headingHighlight": "Effizienz",
+      "subheading": "Alles, was Sie zum Erstellen, Verwalten und Verfolgen Ihrer kurzen Links auf einer leistungsstarken Plattform benötigen.",
+      "list": {
+        "shortening": {
+          "title": "Einfache Link-Kürzung",
+          "description": "Verwandeln Sie lange URLs mit nur einem Klick in kurze, kurze Links. Einfach, schnell und effizient."
+        },
+        "analytics": {
+          "title": "Erweiterte Analysen",
+          "description": "Verfolgen Sie Klicks, geografische Daten, Verweise und mehr mit unserem umfassenden Analyse-Dashboard."
+        },
+        "qr": {
+          "title": "QR-Code-Generierung",
+          "description": "Erstellen Sie automatisch QR-Codes für Ihre kurzen Links. Perfekt für Druck und Mobilgeräte."
+        },
+        "fast": {
+          "title": "Blitzschnell",
+          "description": "Unser globales CDN stellt sicher, dass Ihre Links überall auf der Welt sofort weitergeleitet werden."
+        },
+        "secure": {
+          "title": "Sicher & Zuverlässig",
+          "description": "Sicherheit auf Unternehmensniveau mit 99,9% Verfügbarkeitsgarantie. Ihre Links sind immer verfügbar."
+        },
+        "domains": {
+          "title": "Benutzerdefinierte Domains",
+          "description": "Verwenden Sie Ihre eigene Marken-Domain für kurze Links, um Vertrauen und Wiedererkennung aufzubauen."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Referenzen",
+      "heading": "Hunderte vertrauen uns bereits",
+      "subheading": "Sehen Sie, was unsere Kunden über ihre Erfahrungen mit QuilLink sagen.",
+      "list": {
+        "sarah": {
+          "name": "Sarah Johnson",
+          "role": "Marketing Director",
+          "company": "TechCorp Inc.",
+          "text": "QuilLink hat die Art und Weise verändert, wie wir unsere Marketingkampagnen verwalten. Die Analysen sind unglaublich detailliert und die Benutzeroberfläche ist so intuitiv."
+        },
+        "michael": {
+          "name": "Michael Chen",
+          "role": "Social Media Manager",
+          "company": "Creative Studio",
+          "text": "Der beste URL-Shortener, den ich je benutzt habe. Benutzerdefinierte Domains, QR-Codes und detaillierte Analysen an einem Ort."
+        },
+        "emily": {
+          "name": "Emily Rodriguez",
+          "role": "Content Creator",
+          "company": "Freelancer",
+          "text": "Als Content Creator ist das Verfolgen der Link-Performance entscheidend. QuilLink macht es so einfach zu sehen, was funktioniert."
+        },
+        "david": {
+          "name": "David Kim",
+          "role": "E-Commerce-Inhaber",
+          "company": "ShopNow",
+          "text": "Wir verwenden QuilLink für alle unsere Produktlinks. Die Zuverlässigkeit ist hervorragend und die Funktion für benutzerdefinierte Domains schafft Vertrauen."
+        },
+        "lisa": {
+          "name": "Lisa Anderson",
+          "role": "Digital Marketer",
+          "company": "Growth Agency",
+          "text": "Das Analyse-Dashboard gibt uns Einblicke, die wir vorher nie hatten. Jetzt können wir unsere Kampagnen in Echtzeit optimieren."
+        },
+        "james": {
+          "name": "James Wilson",
+          "role": "Startup-Gründer",
+          "company": "InnovateLab",
+          "text": "QuilLink ist ein unverzichtbares Werkzeug für unser Startup. Es ist erschwinglich, leistungsstark und das Support-Team reagiert unglaublich schnell."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Starten Sie heute",
+      "headingPart1": "Sind Sie bereit, Ihre Links zu ",
+      "headingPart2": "?",
+      "headingHighlight": "transformieren",
+      "subheading": "Schließen Sie sich Tausenden von Kreativen und Unternehmen an, die QuilLink nutzen, um ihre Reichweite zu vergrößern und jeden Klick zu verfolgen.",
+      "startButton": "Kostenlos starten",
+      "contactButton": "Vertrieb kontaktieren"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "heading": "Ihre Fragen, beantwortet",
+      "subheading": "Alles, was Sie über QuilLink wissen müssen und wie es funktioniert.",
+      "questions": {
+        "whatIs": {
+          "q": "Was ist ein URL-Shortener?",
+          "a": "Ein URL-Shortener ist ein Tool, das lange URLs in kürzere, handlichere Links umwandelt."
+        },
+        "howWork": {
+          "q": "Wie funktioniert QuilLink?",
+          "a": "Fügen Sie einfach Ihre lange URL in unseren Shortener ein, und QuilLink erstellt für Sie einen kurzen, einzigartigen Link."
+        },
+        "isFree": {
+          "q": "Ist QuilLink kostenlos?",
+          "a": "Ja! QuilLink bietet einen kostenlosen Plan mit wesentlichen Funktionen wie Link-Kürzung, grundlegenden Analysen und QR-Code-Generierung."
+        },
+        "canTrack": {
+          "q": "Kann ich meine kurzen Links verfolgen?",
+          "a": "Absolut! Jeder kurze Link enthält umfassende Analysen, einschließlich Klickzahlen und geografischer Daten."
+        },
+        "customDomain": {
+          "q": "Kann ich meine eigene benutzerdefinierte Domain verwenden?",
+          "a": "Ja, unsere Premium-Pläne ermöglichen es Ihnen, Ihre eigene Marken-Domain für kurze Links zu verwenden."
+        },
+        "howLong": {
+          "q": "Wie lange bleiben kurze Links bestehen?",
+          "a": "Standardmäßig laufen mit QuilLink erstellte kurze Links nie ab."
+        },
+        "limit": {
+          "q": "Gibt es ein Limit für die Anzahl der erstellbaren Links?",
+          "a": "Kostenlose Konten können bis zu 100 Links pro Monat erstellen."
+        },
+        "safe": {
+          "q": "Sind kurze Links sicher?",
+          "a": "Ja, QuilLink nimmt Sicherheit ernst. Wir scannen alle URLs auf bösartige Inhalte."
+        }
+      },
+      "cta": {
+        "headingPart1": "Haben Sie noch ",
+        "headingPart2": "?",
+        "headingHighlight": "Fragen",
+        "subheading": "Finden Sie nicht die Antwort, nach der Sie suchen? Treten Sie unserer Community bei oder chatten Sie mit unserem freundlichen Support-Team.",
+        "getInTouch": "Kontakt aufnehmen",
+        "emailSupport": "E-Mail-Support"
+      }
+    }
   },
   "auth": {
     "login": {
       "title": "Willkommen zurück",
-      "subtitle": "Melden Sie sich in Ihrem Konto an",
+      "subtitle": "Melden Sie sich bei Ihrem Konto an",
       "email": "E-Mail",
       "password": "Passwort",
       "submitButton": "Anmelden",
       "forgotPassword": "Passwort vergessen?",
-      "noAccount": "Haben Sie kein Konto?",
+      "noAccount": "Kein Konto?",
       "signUpLink": "Hier registrieren",
-      "validationError": "Ungültige Anfrage-Typen.",
+      "validationError": "Ungültige Anfragetypen.",
       "unauthorized": "Ungültige E-Mail oder Passwort. Bitte versuchen Sie es erneut.",
       "success": "Anmeldung erfolgreich.",
       "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
-      "continueWithGoogle": "Mit Google fortfahren",
+      "continueWithGoogle": "Weiter mit Google",
       "or": "ODER",
       "authenticating": "Authentifizierung"
     },
     "signup": {
       "title": "Konto erstellen",
       "subtitle": "Treten Sie uns heute bei",
-      "continueWithGoogle": "Mit Google fortfahren",
+      "continueWithGoogle": "Weiter mit Google",
       "or": "ODER",
       "name": "Vollständiger Name",
       "email": "E-Mail",
@@ -55,7 +205,7 @@
       "submitButton": "Konto erstellen",
       "haveAccount": "Haben Sie bereits ein Konto?",
       "loginLink": "Hier anmelden",
-      "validationError": "Ungültige Anfrage-Typen.",
+      "validationError": "Ungültige Anfragetypen.",
       "alreadyExists": "Ein Konto mit dieser E-Mail existiert bereits.",
       "success": "Registrierung erfolgreich. Sie können sich jetzt anmelden.",
       "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind."
@@ -66,14 +216,14 @@
       "email": "E-Mail",
       "emailPlaceholder": "Geben Sie eine gültige E-Mail ein",
       "processing": "Verarbeitung",
-      "submitButton": "Verifizierungs-E-Mail senden",
-      "rememberPassword": "Passwort erinnern?",
+      "submitButton": "Bestätigungs-E-Mail senden",
+      "rememberPassword": "Passwort erinnert?",
       "loginLink": "Anmelden",
       "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
       "backToLogin": "Zurück zur Anmeldung",
       "validationError": "Ungültige E-Mail. Bitte versuchen Sie es erneut.",
-      "forbidden": "Wenn Ihre E-Mail registriert ist, erhalten Sie in Kürze Reset-Anweisungen.",
-      "success": "Passwort-Reset-Link gesendet."
+      "forbidden": "Wenn Ihre E-Mail registriert ist, erhalten Sie in Kürze Anweisungen zum Zurücksetzen.",
+      "success": "Link zum Zurücksetzen des Passworts gesendet."
     },
     "resetPassword": {
       "title": "Neues Passwort festlegen",
@@ -82,22 +232,16 @@
       "confirmPassword": "Neues Passwort bestätigen",
       "submitButton": "Passwort zurücksetzen",
       "validationError": "Ungültige E-Mail oder Passwort. Bitte versuchen Sie es erneut.",
-      "invalidToken": "Ungültiger oder abgelaufener Token.",
-      "success": "Passwort-Reset erfolgreich.",
-      "noTokenError": "Kein 'Token' in den URL-Abfrageparametern gefunden. Weiterleitung zur Anmeldung.",
-      "turnstileError": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
-      "processing": "Verarbeitung",
-      "rememberPassword": "Passwort erinnern?",
-      "loginLink": "Anmelden",
-      "loading": "Wird geladen..."
+      "invalidToken": "Ungültiges oder abgelaufenes Token.",
+      "success": "Passwort erfolgreich zurückgesetzt."
     }
   },
   "url": {
     "creation": {
-      "validationError": "Die bereitgestellten Daten sind ungültig. Bitte überprüfen Sie Ihre Eingabe.",
-      "ownDomainError": "Sie können keine URL verkürzen, die auf diesen Service verweist.",
-      "alreadyExists": "Diese URL wurde bereits verkürzt.",
-      "success": "Die kurze URL wurde erfolgreich erstellt.",
+      "validationError": "Die angegebenen Daten sind ungültig. Bitte überprüfen Sie Ihre Eingabe.",
+      "ownDomainError": "Sie können keine URL kürzen, die auf diesen Dienst verweist.",
+      "alreadyExists": "Diese URL wurde bereits gekürzt.",
+      "success": "Kurze URL erfolgreich erstellt.",
       "internalError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
       "needLogin": "Limit erreicht. Melden Sie sich an, um mehr zu erstellen.",
       "needSubscription": "Limit erreicht. Melden Sie sich an, um mehr zu erstellen."
@@ -111,41 +255,151 @@
       "success": "Kurze URL erfolgreich gelöscht."
     },
     "details": {
-      "notFound": "Die Details für diese kurze URL wurden nicht gefunden.",
+      "notFound": "Details für diese kurze URL wurden nicht gefunden.",
       "expired": "Diese kurze URL ist abgelaufen.",
-      "success": "Details der kurzen URL erfolgreich abgerufen."
+      "success": "Details zur kurzen URL erfolgreich abgerufen."
     },
     "redirect": {
-      "notFound": "Die kurze URL für die Umleitung wurde nicht gefunden.",
-      "expired": "Diese kurze URL ist abgelaufen und kann nicht umgeleitet werden."
+      "notFound": "Kurze URL für die Weiterleitung wurde nicht gefunden.",
+      "expired": "Diese kurze URL ist abgelaufen und kann nicht weitergeleitet werden."
     },
     "listing": {
-      "notFound": "Keine kurzen URLs gefunden, die Ihren Kriterien entsprechen.",
-      "success": "Alle kurzen URLs erfolgreich abgerufen."
+      "notFound": "Keine kurzen Links gefunden, die Ihren Kriterien entsprechen.",
+      "success": "Alle kurzen Links erfolgreich abgerufen."
     },
     "validation": {
-      "invalidShortKeyFormat": "Ungültiges Format des kurzen Schlüssels."
+      "invalidShortKeyFormat": "Ungültiges Short-Key-Format."
     }
   },
   "qrCode": {
-    "missingShortKey": "ShortKey fehlt. Bitte geben Sie den kurzen Schlüssel an, um den QR-Code zu generieren.",
-    "notFound": "Kurze URL für QR-Code-Generierung nicht gefunden.",
-    "success": "QR-Code erfolgreich generiert."
+    "missingShortKey": "ShortKey fehlt. Bitte geben Sie den Short Key an, um einen QR-Code zu generieren.",
+    "notFound": "Kurze URL für die QR-Code-Generierung nicht gefunden.",
+    "success": "QR-Code erfolgreich erstellt."
+  },
+  "privacy": {
+    "badge": "Rechtliches",
+    "titleHighlight": "Datenschutz",
+    "titlePart2": " richtlinie",
+    "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
+    "sections": {
+      "intro": {
+        "title": "1. Einleitung",
+        "content": "Bei QuilLink nehmen wir Ihre Privatsphäre ernst. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen."
+      },
+      "collect": {
+        "title": "2. Informationen, die wir sammeln",
+        "content": "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen, wenn Sie ein Konto erstellen oder unseren Dienst nutzen. Dazu können gehören:",
+        "list": [
+          "Kontoinformationen (Name, E-Mail-Adresse, Passwort)",
+          "URLs, die Sie kürzen, und ihre ursprünglichen Ziele",
+          "Nutzungsdaten und Analysen für Ihre kurzen Links",
+          "Geräte- und Browserinformationen"
+        ]
+      },
+      "use": {
+        "title": "3. Wie wir Ihre Informationen verwenden",
+        "content": "Wir verwenden die gesammelten Informationen, um unsere Dienste bereitzustellen, zu warten und zu verbessern."
+      },
+      "analytics": {
+        "title": "4. Datenanalyse",
+        "content": "Wenn jemand auf einen QuilLink-Link klickt, sammeln wir bestimmte Informationen über den Klick, wie z. B. die IP-Adresse und den geografischen Standort."
+      },
+      "security": {
+        "title": "5. Sicherheit",
+        "content": "Wir setzen administrative, technische und physische Sicherheitsmaßnahmen ein, um Ihre persönlichen Daten zu schützen."
+      },
+      "contact": {
+        "title": "6. Kontakt",
+        "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:",
+        "email": "E-Mail: privacy@quillink.com"
+      }
+    }
+  },
+  "terms": {
+    "badge": "Rechtliches",
+    "titleHighlight": "Nutzungs",
+    "titlePart2": " bedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Annahme der Bedingungen",
+        "content": "Durch den Zugriff auf oder die Nutzung der Dienste von QuilLink stimmen Sie zu, an diese Nutzungsbedingungen gebunden zu sein."
+      },
+      "description": {
+        "title": "2. Beschreibung des Dienstes",
+        "content": "QuilLink bietet einen URL-Verkürzungsdienst an, mit dem Benutzer kürzere Versionen langer URLs erstellen können."
+      },
+      "responsibilities": {
+        "title": "3. Verantwortung des Benutzers",
+        "content": "Sie sind für alle Aktivitäten verantwortlich, die unter Ihrem Konto stattfinden. Sie stimmen zu, QuilLink nicht zu verwenden für:",
+        "list": [
+          "Versenden von Spam oder unaufgeforderten Mitteilungen",
+          "Verbreitung von Malware, Viren oder anderem schädlichen Code",
+          "Erstellen von Links zu illegalen oder verbotenen Inhalten",
+          "Jede Aktivität, die gegen Gesetze verstößt"
+        ]
+      },
+      "expiration": {
+        "title": "4. Linkinhalt & Ablauf",
+        "content": "Wir behalten uns das Recht vor, jeden Link zu deaktivieren, der gegen unsere Bedingungen verstößt."
+      },
+      "property": {
+        "title": "5. Geistiges Eigentum",
+        "content": "Der Name QuilLink, das Logo und alle zugehörigen Designs und Software sind geistiges Eigentum von QuilLink."
+      },
+      "liability": {
+        "title": "6. Haftungsbeschränkung",
+        "content": "QuilLink stellt seine Dienste \"wie besehen\" ohne jegliche Garantie zur Verfügung."
+      },
+      "termination": {
+        "title": "7. Beendigung",
+        "content": "Wir behalten uns das Recht vor, Ihr Konto jederzeit zu kündigen oder auszusetzen."
+      },
+      "contact": {
+        "title": "8. Kontakt",
+        "content": "Fragen zu den Nutzungsbedingungen richten Sie bitte an uns:",
+        "email": "E-Mail: legal@quillink.com"
+      }
+    }
+  },
+  "contact": {
+    "badge": "Kontaktieren Sie uns",
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Treten Sie mit uns in Verbindung",
+    "description": "Wir würden uns freuen, von Ihnen zu hören. Senden Sie uns eine Nachricht und wir werden so schnell wie möglich antworten.",
+    "email": "E-Mail",
+    "office": "Büro",
+    "github": "GitHub",
+    "name": "Name",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Senden...",
+    "emailLabel": "E-Mail senden",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Nachricht auf LinkedIn",
+    "githubLabel": "Besuchen Sie unser GitHub",
+    "chat": {
+      "title": "Bevorzugen Sie einen ",
+      "titleHighlight": "Live-Chat?",
+      "description": "Unser Support-Team steht zur Verfügung. Schauen Sie in unsere FAQs oder kontaktieren Sie uns direkt.",
+      "viewFaqs": "FAQs ansehen",
+      "emailSupport": "E-Mail-Support"
+    }
   },
   "dashboard": {
     "dashboardTitle": "Link-Dashboard",
-    "dashboardSubtitle": "Verwalten und verfolgen Sie alle Ihre Kurzlinks",
-    "totalLinks": "Gesamt-Links",
-    "totalClicks": "Gesamt-Klicks",
+    "dashboardSubtitle": "Verwalten und verfolgen Sie alle Ihre kurzen Links",
+    "totalLinks": "Gesamte Links",
+    "totalClicks": "Gesamte Klicks",
     "activeLinks": "Aktive Links",
-    "searchPlaceholder": "Nach Kurzlink oder Ziel-URL suchen...",
+    "searchPlaceholder": "Nach kurzem Link oder Ziel-URL suchen...",
     "newest": "Neueste",
     "oldest": "Älteste",
-    "mostClicks": "Die meisten Klicks",
+    "mostClicks": "Meiste Klicks",
     "noLinksFound": "Keine Links gefunden",
     "tryAdjustingSearch": "Versuchen Sie, Ihre Suchanfrage oder Filter anzupassen",
-    "createFirstLinkDesc": "Erstellen Sie Ihren ersten Kurzlink, um mit Tracking und Analyse zu beginnen",
-    "createFirstLinkButton": "Ersten Link erstellen",
+    "createFirstLinkDesc": "Erstellen Sie Ihren ersten kurzen Link, um Tracking und Analysen zu starten",
+    "createFirstLinkButton": "Erstellen Sie Ihren ersten Link",
     "createLink": "Link erstellen",
     "createNewLink": "Neuen Link erstellen",
     "createLinkDesc": "Geben Sie Ihre lange URL ein, um einen kurzen, teilbaren Link zu erstellen.",
@@ -157,12 +411,12 @@
     "downloadQr": "QR herunterladen",
     "close": "Schließen",
     "generating": "Generieren...",
-    "areYouSure": "Bist du sicher?",
+    "areYouSure": "Sind Sie sicher?",
     "keepIt": "Behalten",
     "deleteLink": "Link löschen",
     "deleting": "Löschen...",
-    "overallTraffic": "Gesamtverkehrsentwicklung",
-    "overallTrafficDesc": "Klicks und eindeutige Besucher über alle Links",
+    "overallTraffic": "Gesamte Verkehrsentwicklung",
+    "overallTrafficDesc": "Klicks und eindeutige Besucher über alle Links hinweg",
     "topPerformingLinks": "Leistungsstärkste Links",
     "updatedAgo": "Vor 2 Stunden aktualisiert",
     "noDataYet": "Noch keine Daten",
@@ -172,10 +426,10 @@
     "realtime": "Echtzeit",
     "analysisComingSoon": "Analyse kommt bald...",
     "realtimeComingSoon": "Echtzeit-Statistiken kommen bald...",
-    "loadingUrls": "Kurze URLs werden geladen...",
-    "noUrls": "Noch keine kurzen URLs. Beginnen Sie mit der Erstellung einer!",
-    "createdAt": "Erstellt Am",
-    "originalUrl": "Original-URL",
+    "loadingUrls": "Lade kurze URLs...",
+    "noUrls": "Noch keine kurzen URLs. Beginnen Sie, indem Sie eine erstellen!",
+    "createdAt": "Erstellt am",
+    "originalUrl": "Ursprüngliche URL",
     "shortUrl": "Kurze URL",
     "clicks": "Klicks",
     "actions": "Aktionen",
@@ -183,17 +437,17 @@
     "share": "Teilen",
     "details": "Details",
     "delete": "Löschen",
-    "confirmDelete": "Sind Sie sicher, dass Sie diesen Kurzlink löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "confirmDelete": "Möchten Sie diesen kurzen Link wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
     "shareAsLink": "Als Link teilen",
     "shareWithFacebook": "Mit Facebook teilen",
     "shareWithInstagram": "Mit Instagram teilen",
     "shareWithGithub": "Mit GitHub teilen",
     "missingUrl": "Fehlende URL",
     "qrCodeUnavailable": "QR-Code nicht verfügbar",
-    "ipAddress": "IP",
+    "ipAddress": "IP-Adresse",
     "browser": "Browser",
     "os": "Betriebssystem",
-    "clickedAt": "Geklickt Am",
+    "clickedAt": "Geklickt am",
     "noClickLogs": "Keine Klick-Protokolle",
     "unknown": "Unbekannt",
     "sink": "Sink",
@@ -201,150 +455,32 @@
     "filterLinks": "Links filtern",
     "visits": "Besuche",
     "visitors": "Besucher",
-    "referrers": "Verweiser",
-    "views": "Ansichten",
+    "referrers": "Referrer",
+    "views": "Aufrufe",
     "locations": "Standorte",
     "worldMapHere": "Weltkarte hier",
     "country": "Land",
     "region": "Region",
     "city": "Stadt",
-    "referrer": "Verweiser",
+    "referrer": "Referrer",
     "language": "Sprache",
     "device": "Gerät",
     "type": "Typ",
     "noDataAvailable": "Keine Daten verfügbar.",
-    "footerText": "Sink © 2025 Produkte von HTML_ZONE",
+    "footerText": "Sink © 2025 HTML_ZONE Produkte",
     "copiedToClipboard": "In die Zwischenablage kopiert",
-    "qrCodeFetchFailed": "QR-Code-Abruf fehlgeschlagen.",
+    "qrCodeFetchFailed": "QR-Code konnte nicht abgerufen werden.",
     "downloadQrCode": "QR-Code herunterladen",
-    "loading": "Wird geladen...",
+    "loading": "Laden...",
     "qrCodeAlt": "QR-Code"
-  },
-  "contact": {
-    "title": "Kontaktieren Sie uns",
-    "subtitle": "Nehmen Sie Kontakt mit uns auf",
-    "description": "Wir würden gerne von Ihnen hören. Senden Sie uns eine Nachricht und wir antworten so schnell wie möglich.",
-    "name": "Name",
-    "email": "E-Mail",
-    "office": "Bureau",
-    "github": "GitHub",
-    "message": "Nachricht",
-    "send": "Nachricht senden",
-    "sending": "Senden..."
-  },
-  "footer": {
-    "allRightsReserved": "Alle Rechte vorbehalten.",
-    "privacyPolicy": "Datenschutzrichtlinie",
-    "termsOfService": "Nutzungsbedingungen"
-  },
-  "clients": {
-    "title": "Mehr als 6 Unternehmen vertrauen uns bereits"
-  },
-  "testimonial": {
-    "title": "Hunderte von Menschen vertrauen uns bereits",
-    "testimonials": [
-      {
-        "id": 1,
-        "name": "John Doe",
-        "designation": "Software-Ingenieur",
-        "company": "TechCorp",
-        "testimonial": "Dieses Produkt hat die Art und Weise, wie wir arbeiten, völlig verändert. Die Effizienz und Benutzerfreundlichkeit sind unübertroffen!",
-        "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Sophia Lee",
-        "designation": "Datenanalystin",
-        "company": "InsightTech",
-        "testimonial": "Dieses Tool hat mir Stunden an Arbeit erspart! Die Analyse- und Berichtsfunktionen sind unglaublich leistungsstark.",
-        "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Michael Johnson",
-        "designation": "UX-Designer",
-        "company": "DesignPro",
-        "testimonial": "Ein erstaunliches Werkzeug, das komplexe Aufgaben vereinfacht. Sehr empfehlenswert für Fachleute in der Branche. Die intuitive Benutzeroberfläche erleichtert die Einarbeitung neuer Teammitglieder und die Automatisierungsfunktionen sparen uns jede Woche unzählige Stunden.",
-        "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Emily Davis",
-        "designation": "Marketingspezialistin",
-        "company": "BrandBoost",
-        "testimonial": "Ich habe eine deutliche Verbesserung der Produktivität unseres Teams festgestellt, seit wir diesen Service nutzen.",
-        "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Daniel Martinez",
-        "designation": "Full-Stack-Entwickler",
-        "company": "CodeCrafters",
-        "testimonial": "Die beste Investition, die wir je getätigt haben! Das Support-Team ist auch super reaktionsschnell und hilfsbereit.",
-        "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
-      },
-      {
-        "id": 6,
-        "name": "Jane Smith",
-        "designation": "Produktmanagerin",
-        "company": "InnovateX",
-        "testimonial": "Die Benutzererfahrung ist erstklassig! Die Benutzeroberfläche ist sauber, intuitiv und einfach zu navigieren.",
-        "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
-      }
-    ]
-  },
-  "faq": {
-    "title": "Ihre Fragen, beantwortet",
-    "faqs": [
-      {
-        "question": "Wie lauten Ihre Rückgabebedingungen?",
-        "answer": "Sie können unbenutzte Artikel in der Originalverpackung innerhalb von 30 Tagen gegen eine Rückerstattung oder einen Umtausch zurückgeben. Wenden Sie sich an den Support, um Unterstützung zu erhalten."
-      },
-      {
-        "question": "Wie verfolge ich meine Bestellung?",
-        "answer": "Verfolgen Sie Ihre Bestellung über den Link in Ihrer Bestätigungs-E-Mail oder melden Sie sich in Ihrem Konto an, um die Sendungsverfolgungsdetails anzuzeigen."
-      },
-      {
-        "question": "Versenden Sie international?",
-        "answer": "Ja, wir versenden weltweit. Die Versandkosten und Lieferzeiten variieren je nach Standort und für einige Länder können Zollgebühren anfallen."
-      },
-      {
-        "question": "Welche Zahlungsmethoden akzeptieren Sie?",
-        "answer": "Wir akzeptieren Visa, MasterCard, American Express, PayPal, Apple Pay und Google Pay und gewährleisten so sichere Zahlungsoptionen für alle Kunden."
-      },
-      {
-        "question": "Was ist, wenn ich einen beschädigten Artikel erhalte?",
-        "answer": "Bitte kontaktieren Sie unser Support-Team innerhalb von 48 Stunden nach der Lieferung mit Fotos des beschädigten Artikels. Wir werden einen Ersatz oder eine Rückerstattung veranlassen."
-      },
-      {
-        "question": "Kann ich meine Bestellung stornieren oder ändern?",
-        "answer": "Ja, Sie können Ihre Bestellung innerhalb von 24 Stunden nach der Bestellung stornieren oder ändern. Wenden Sie sich an den Kundendienst, um Aktualisierungen vorzunehmen."
-      },
-      {
-        "question": "Bieten Sie Rabatte für Großeinkäufe an?",
-        "answer": "Ja, wir bieten Sonderrabatte für Großbestellungen. Wenden Sie sich mit Ihren Anforderungen an unser Verkaufsteam, um ein individuelles Angebot zu erhalten."
-      },
-      {
-        "question": "Wie lange dauert der Versand?",
-        "answer": "Der Versand dauert in der Regel 3-7 Werktage im Inland und 7-14 Werktage international, abhängig von Ihrem Standort und der gewählten Versandart."
-      },
-      {
-        "question": "Sind Ihre Produkte umweltfreundlich?",
-        "answer": "Viele unserer Produkte werden aus nachhaltigen Materialien und umweltfreundlichen Verfahren hergestellt, um die Umweltbelastung zu reduzieren und gleichzeitig die Qualität zu erhalten."
-      },
-      {
-        "question": "Wie kann ich den Kundendienst kontaktieren?",
-        "answer": "Kontaktieren Sie uns per E-Mail unter support@example.com oder rufen Sie uns unter 1-800-123-4567 an, um Unterstützung bei Anfragen zu erhalten."
-      }
-    ]
   },
   "common": {
     "validationRequired": "Dieses Feld ist erforderlich.",
-    "validationError": "Ungültige Anfrage-Typen bereitgestellt.",
+    "validationError": "Ungültige Anfragetypen angegeben.",
     "internalServerError": "Ein unerwarteter interner Serverfehler ist aufgetreten.",
     "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
     "comingSoon": "Kommt bald...",
-    "verify": "Verifizieren",
+    "verify": "Überprüfen",
     "somethingWentWrong": "Etwas ist schief gelaufen",
     "networkError": "Netzwerkfehler: Keine Antwort vom Server erhalten.",
     "axiosError": "Axios-Fehler: {message}",
@@ -353,8 +489,13 @@
     "fair": "Mittel",
     "good": "Gut",
     "strong": "Stark",
-    "hidePassword": "Passwort ausblenden",
+    "hidePassword": "Passwort verbergen",
     "showPassword": "Passwort anzeigen",
-    "offeredIn": "verfügbar in"
+    "offeredIn": "angeboten in"
+  },
+  "footer": {
+    "allRightsReserved": "Alle Rechte vorbehalten.",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen"
   }
 }

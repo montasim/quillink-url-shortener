@@ -15,16 +15,16 @@ const ContactPage = () => {
             title: t('email'),
             value: 'montasimmamun@gmail.com',
             href: 'mailto:montasimmamun@gmail.com',
-            label: 'Send an email',
+            label: t('emailLabel'),
             color: 'text-blue-500',
             bgColor: 'bg-blue-500/10'
         },
         {
             icon: LinkedinIcon,
-            title: t('office'),
+            title: t('linkedin'),
             value: 'LinkedIn Profile',
             href: 'https://linkedin.com/in/montasimmamun',
-            label: 'Message on LinkedIn',
+            label: t('linkedinLabel'),
             color: 'text-sky-600',
             bgColor: 'bg-sky-600/10'
         },
@@ -33,7 +33,7 @@ const ContactPage = () => {
             title: t('github'),
             value: 'GitHub Profile',
             href: 'https://github.com/montasim',
-            label: 'Check our GitHub',
+            label: t('githubLabel'),
             color: 'text-slate-900 dark:text-slate-100',
             bgColor: 'bg-slate-900/10 dark:bg-slate-100/10'
         },
@@ -50,7 +50,7 @@ const ContactPage = () => {
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
-                        Contact Us
+                        {t('badge')}
                     </Badge>
                     <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
                         {t('subtitle')}
@@ -101,23 +101,23 @@ const ContactPage = () => {
                             <MessageSquare className="w-10 h-10 text-primary" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight">
-                            Prefer a <span className="text-primary italic">live chat?</span>
+                            {t('chat.title')}<span className="text-primary italic">{t('chat.titleHighlight')}</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Our support team is available check the common questions in our FAQ section or reach out directly.
+                            {t('chat.description')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <Link
                                 href="/#faq"
                                 className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-primary text-primary-foreground hover:bg-primary/95 h-16 px-12 shadow-2xl active:scale-95"
                             >
-                                View FAQs
+                                {t('chat.viewFaqs')}
                             </Link>
                             <Link
                                 href="mailto:montasimmamun@gmail.com"
                                 className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-background border-2 border-border text-foreground hover:bg-muted h-16 px-12 shadow-xl active:scale-95"
                             >
-                                Email Support
+                                {t('chat.emailSupport')}
                             </Link>
                         </div>
                     </div>

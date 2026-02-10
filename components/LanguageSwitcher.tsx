@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -36,18 +36,14 @@ export default function LanguageSwitcher({
         languages.find((lang) => lang.code === locale) || languages[0];
 
     const handleLanguageChange = (newLocale: string) => {
-        // Remove the current locale from the pathname
-        const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
-
-        // Navigate to the new locale
-        router.push(`/${newLocale}${pathWithoutLocale}`);
+        router.push(pathname, { locale: newLocale });
     };
 
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 {showIcon ? (
-                    <Button variant="ghost" size="sm" className="gap-2">
+                    <Button variant="ghost" size="sm" className="gap-2 text-primary">
                         <Globe size={16} />
                         <span className="hidden sm:inline">
                             {currentLanguage.name}
@@ -57,7 +53,7 @@ export default function LanguageSwitcher({
                         </span>
                     </Button>
                 ) : (
-                    <p className="gap-2 ml-1 cursor-pointer">
+                    <p className="gap-2 ml-1 cursor-pointer text-primary">
                         <span className="hidden sm:inline">
                             {currentLanguage.name}
                         </span>

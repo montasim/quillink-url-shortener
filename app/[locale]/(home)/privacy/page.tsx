@@ -3,7 +3,11 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 
+import { useTranslations } from 'next-intl';
+
 const PrivacyPage = () => {
+    const t = useTranslations('privacy');
+
     return (
         <div className="min-h-screen bg-background relative overflow-hidden">
             {/* Background elements */}
@@ -15,68 +19,67 @@ const PrivacyPage = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
-                        Legal
+                        {t('badge')}
                     </Badge>
                     <h1 className="text-3xl md:text-4xl font-black tracking-tight text-foreground mb-6 leading-[1.1]">
-                        <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">Privacy</span> Policy
+                        <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('titleHighlight')}</span>{t('titlePart2')}
                     </h1>
                     <p className="text-lg text-muted-foreground">
-                        Last updated: February 10, 2026
+                        {t('lastUpdated')}
                     </p>
                 </div>
 
                 {/* Content */}
                 <div className="prose prose-slate dark:prose-invert max-w-none space-y-12">
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.intro.title')}</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            At QuilLink, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our URL shortening service. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+                            {t('sections.intro.content')}
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">2. Information We Collect</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.collect.title')}</h2>
                         <div className="space-y-4">
                             <p className="text-muted-foreground leading-relaxed">
-                                We collect information that you provide directly to us when you create an account, shorten a URL, or contact us for support. This may include:
+                                {t('sections.collect.content')}
                             </p>
                             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                                <li>Account information (name, email address, password)</li>
-                                <li>URLs you shorten and their original destinations</li>
-                                <li>Usage data and analytics for your shortened links</li>
-                                <li>Device and browser information</li>
+                                {['0', '1', '2', '3'].map((i) => (
+                                    <li key={i}>{t(`sections.collect.list.${i}`)}</li>
+                                ))}
                             </ul>
                         </div>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">3. How We Use Your Information</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.use.title')}</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            We use the information we collect to provide, maintain, and improve our services, to develop new features, and to protect QuilLink and our users. This includes using data to track link performance, prevent spam and abuse, and personalize your experience.
+                            {t('sections.use.content')}
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Analytics</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.analytics.title')}</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            When someone clicks on a QuilLink URL, we collect certain information about the click, such as the IP address (anonymized), geographic location, referrer, and device type. This information is used to provide analytics to the creator of the link and to help us improve our service.
+                            {t('sections.analytics.content')}
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">5. Security</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.security.title')}</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.
+                            {t('sections.security.content')}
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-foreground mb-4">6. Contact Us</h2>
+                        <h2 className="text-2xl font-bold text-foreground mb-4">{t('sections.contact.title')}</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            If you have questions or comments about this Privacy Policy, please contact us at:
+                            {t('sections.contact.content')}
                         </p>
                         <div className="mt-4 p-6 rounded-2xl bg-muted/50 border border-border inline-block">
-                            <p className="font-semibold text-foreground">Email: privacy@quillink.com</p>
+                            <p className="font-semibold text-foreground">{t('sections.contact.email')}</p>
                         </div>
                     </section>
                 </div>

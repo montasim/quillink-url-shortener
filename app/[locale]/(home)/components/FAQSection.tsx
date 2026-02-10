@@ -9,45 +9,19 @@ import {
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 
-const faqs = [
-    {
-        question: 'What is a URL shortener?',
-        answer: 'A URL shortener is a tool that converts long URLs into shorter, more manageable links. These shortened links redirect to the original URL when clicked, making them easier to share on social media, emails, and other platforms.',
-    },
-    {
-        question: 'How does QuilLink work?',
-        answer: 'Simply paste your long URL into our shortener, and QuilLink will generate a short, unique link for you. You can customize the link, track its performance, and even generate QR codes - all from your dashboard.',
-    },
-    {
-        question: 'Is QuilLink free to use?',
-        answer: 'Yes! QuilLink offers a free plan with essential features including link shortening, basic analytics, and QR code generation. We also offer premium plans with advanced features like custom domains and detailed analytics.',
-    },
-    {
-        question: 'Can I track my shortened links?',
-        answer: 'Absolutely! Every shortened link comes with comprehensive analytics including click counts, geographic data, referrer information, device types, and more. You can access all this data from your dashboard.',
-    },
-    {
-        question: 'Can I use my own custom domain?',
-        answer: 'Yes, our premium plans allow you to use your own branded domain for shortened links. This helps build trust and brand recognition with your audience.',
-    },
-    {
-        question: 'How long do shortened links last?',
-        answer: 'Shortened links created with QuilLink never expire by default. However, you have the option to set custom expiration dates for your links if needed.',
-    },
-    {
-        question: 'Is there a limit to how many links I can create?',
-        answer: 'Free accounts can create up to 100 links per month. Premium plans offer unlimited link creation along with other advanced features.',
-    },
-    {
-        question: 'Are shortened links safe?',
-        answer: 'Yes, QuilLink takes security seriously. We scan all URLs for malicious content and provide SSL encryption for all redirects. We also offer link password protection on premium plans.',
-    },
-];
+import { useTranslations } from 'next-intl';
 
 const FAQSection = () => {
-    const half = Math.ceil(faqs.length / 2);
-    const leftFaqs = faqs.slice(0, half);
-    const rightFaqs = faqs.slice(half);
+    const t = useTranslations('home.faq');
+
+    const faqKeys = [
+        'whatIs', 'howWork', 'isFree', 'canTrack',
+        'customDomain', 'howLong', 'limit', 'safe'
+    ];
+
+    const half = Math.ceil(faqKeys.length / 2);
+    const leftFaqKeys = faqKeys.slice(0, half);
+    const rightFaqKeys = faqKeys.slice(half);
 
     return (
         <section className="py-24 px-6 bg-background">
@@ -55,47 +29,47 @@ const FAQSection = () => {
                 {/* Section Header */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
-                        FAQ
+                        {t('badge')}
                     </Badge>
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                        Your questions, answered
+                        {t('heading')}
                     </h2>
                     <p className="text-lg text-muted-foreground">
-                        Everything you need to know about QuilLink and how it works.
+                        {t('subheading')}
                     </p>
                 </div>
 
                 {/* FAQ Grid */}
                 <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 items-start">
                     <Accordion type="single" collapsible className="w-full space-y-4">
-                        {leftFaqs.map((faq, index) => (
+                        {leftFaqKeys.map((key, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`left-item-${index}`}
                                 className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
                             >
                                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
-                                    {faq.question}
+                                    {t(`questions.${key}.q`)}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                                    {faq.answer}
+                                    {t(`questions.${key}.a`)}
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
 
                     <Accordion type="single" collapsible className="w-full space-y-4">
-                        {rightFaqs.map((faq, index) => (
+                        {rightFaqKeys.map((key, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`right-item-${index}`}
                                 className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
                             >
                                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
-                                    {faq.question}
+                                    {t(`questions.${key}.q`)}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                                    {faq.answer}
+                                    {t(`questions.${key}.a`)}
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
@@ -116,10 +90,10 @@ const FAQSection = () => {
                             </svg>
                         </div>
                         <h3 className="text-3xl md:text-4xl font-black text-foreground mb-6 leading-tight">
-                            Still have <span className="text-primary italic">questions?</span>
+                            {t('cta.headingPart1')}<span className="text-primary italic">{t('cta.headingHighlight')}</span>{t('cta.headingPart2')}
                         </h3>
                         <p className="text-xl text-muted-foreground mb-12 max-w-2xl font-medium leading-relaxed">
-                            Can&apos;t find the answer you&apos;re looking for? Join our community or chat with our friendly support team.
+                            {t('cta.subheading')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6">
                             <Button
@@ -128,7 +102,7 @@ const FAQSection = () => {
                                 asChild
                             >
                                 <Link href="/contact-us">
-                                    Get in Touch
+                                    {t('cta.getInTouch')}
                                 </Link>
                             </Button>
                             <Button
@@ -138,7 +112,7 @@ const FAQSection = () => {
                                 asChild
                             >
                                 <a href="mailto:support@quillink.com">
-                                    Email Support
+                                    {t('cta.emailSupport')}
                                 </a>
                             </Button>
                         </div>

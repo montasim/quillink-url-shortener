@@ -6,7 +6,11 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
 import Link from 'next/link';
 
+import { useTranslations } from 'next-intl';
+
 const CTASection = () => {
+    const t = useTranslations('home.cta');
+
     return (
         <section className="py-32 px-6 bg-background relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -18,15 +22,15 @@ const CTASection = () => {
 
                     <div className="max-w-3xl mx-auto text-center relative z-10">
                         <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-bold text-sm mb-8 tracking-wider uppercase">
-                            Get Started Today
+                            {t('badge')}
                         </Badge>
 
                         <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 leading-[1.1] tracking-tight">
-                            Ready to <span className="text-primary italic">transform</span> your links?
+                            {t('headingPart1')}<span className="text-primary italic">{t('headingHighlight')}</span>{t('headingPart2')}
                         </h2>
 
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 leading-relaxed">
-                            Join thousands of creators and businesses who use QuilLink to scale their reach and track every click.
+                            {t('subheading')}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -36,7 +40,7 @@ const CTASection = () => {
                                 asChild
                             >
                                 <Link href="/signup">
-                                    Start for Free
+                                    {t('startButton')}
                                     <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                                 </Link>
                             </Button>
@@ -47,7 +51,7 @@ const CTASection = () => {
                                 asChild
                             >
                                 <Link href="/contact-us">
-                                    Contact Sales
+                                    {t('contactButton')}
                                 </Link>
                             </Button>
                         </div>

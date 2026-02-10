@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import configuration from '@/configuration/configuration';
 import { Logo } from '@/components/logo';
 
@@ -15,11 +15,11 @@ const Footer = () => {
             href: '/',
         },
         {
-            title: 'Terms',
+            title: tNav('terms'),
             href: '/terms',
         },
         {
-            title: 'Privacy',
+            title: tNav('privacy'),
             href: '/privacy',
         },
         {

@@ -5,25 +5,175 @@
     "login": "Login",
     "signup": "Sign Up",
     "logout": "Logout",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "terms": "Terms",
+    "privacy": "Privacy"
   },
-  "hero": {
-    "title": "Make every connection count",
-    "subtitle": "Create short, memorable links with our URL shortener",
-    "description": "Create short links, QR codes, share them anywhere. Track what's working, and what's not. All inside the QuilLink Connection Platform.",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More",
-    "badge": "Just released v1.0.0",
-    "pasteUrl": "Paste a long URL",
-    "createShortUrl": "Create short URL",
-    "creating": "Creating",
-    "shortLink": "Short Link",
-    "qrCode": "QR Code",
-    "qrCodeComingSoon": "QR code coming soon...",
-    "termsAgreement": "By clicking Shorten URL, you are agree to QuilLink's",
-    "termsOfUse": "Terms of use",
-    "privacyPolicy": "Privacy Policy",
-    "cookiePolicy": "Cookie Policy"
+  "home": {
+    "hero": {
+      "badge": "✨ Free URL Shortener",
+      "headingPart1": "Make every ",
+      "headingPart2": "count",
+      "headingHighlight": "connection",
+      "subheading": "Create short, memorable links in seconds. Track clicks, analyze performance, and share anywhere with QuilLink's powerful URL shortener.",
+      "inputPlaceholder": "Enter your long URL here...",
+      "shortenButton": "Shorten URL",
+      "creating": "Creating...",
+      "agreementPart1": "By shortening a URL, you agree to our ",
+      "terms": "Terms of Service",
+      "agreementPart2": " and ",
+      "privacy": "Privacy Policy",
+      "stats": {
+        "linksCreated": {
+          "value": "10M+",
+          "label": "Links Created"
+        },
+        "activeUsers": {
+          "value": "500K+",
+          "label": "Active Users"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Uptime"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      }
+    },
+    "features": {
+      "badge": "Features",
+      "headingPart1": "Explore features for more ",
+      "headingPart2": "",
+      "headingHighlight": "efficiency",
+      "subheading": "Everything you need to create, manage, and track your shortened links in one powerful platform.",
+      "list": {
+        "shortening": {
+          "title": "Easy Link Shortening",
+          "description": "Transform long URLs into short, memorable links in just one click. Simple, fast, and efficient."
+        },
+        "analytics": {
+          "title": "Advanced Analytics",
+          "description": "Track clicks, geographic data, referrers, and more with our comprehensive analytics dashboard."
+        },
+        "qr": {
+          "title": "QR Code Generation",
+          "description": "Automatically generate QR codes for your shortened links. Perfect for print and mobile."
+        },
+        "fast": {
+          "title": "Lightning Fast",
+          "description": "Our global CDN ensures your links redirect instantly, anywhere in the world."
+        },
+        "secure": {
+          "title": "Secure & Reliable",
+          "description": "Enterprise-grade security with 99.9% uptime guarantee. Your links are always available."
+        },
+        "domains": {
+          "title": "Custom Domains",
+          "description": "Use your own branded domain for shortened links to build trust and recognition."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "heading": "Hundreds of people already trust us",
+      "subheading": "See what our customers have to say about their experience with QuilLink.",
+      "list": {
+        "sarah": {
+          "name": "Sarah Johnson",
+          "role": "Marketing Director",
+          "company": "TechCorp Inc.",
+          "text": "QuilLink has transformed how we manage our marketing campaigns. The analytics are incredibly detailed and the interface is so intuitive. Highly recommend!"
+        },
+        "michael": {
+          "name": "Michael Chen",
+          "role": "Social Media Manager",
+          "company": "Creative Studio",
+          "text": "The best URL shortener I've used. Custom domains, QR codes, and detailed analytics all in one place. It's a game-changer for our social media strategy."
+        },
+        "emily": {
+          "name": "Emily Rodriguez",
+          "role": "Content Creator",
+          "company": "Independent",
+          "text": "As a content creator, tracking link performance is crucial. QuilLink makes it so easy to see what's working and what's not. Love the clean dashboard!"
+        },
+        "david": {
+          "name": "David Kim",
+          "role": "E-commerce Owner",
+          "company": "ShopNow",
+          "text": "We use QuilLink for all our product links. The reliability is outstanding and the custom domain feature helps build trust with our customers."
+        },
+        "lisa": {
+          "name": "Lisa Anderson",
+          "role": "Digital Marketer",
+          "company": "Growth Agency",
+          "text": "The analytics dashboard gives us insights we never had before. We can now optimize our campaigns in real-time. Absolutely worth it!"
+        },
+        "james": {
+          "name": "James Wilson",
+          "role": "Startup Founder",
+          "company": "InnovateLab",
+          "text": "QuilLink is an essential tool for our startup. It's affordable, powerful, and the support team is incredibly responsive. Can't imagine working without it."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Get Started Today",
+      "headingPart1": "Ready to ",
+      "headingPart2": " your links?",
+      "headingHighlight": "transform",
+      "subheading": "Join thousands of creators and businesses who use QuilLink to scale their reach and track every click.",
+      "startButton": "Start for Free",
+      "contactButton": "Contact Sales"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "heading": "Your questions, answered",
+      "subheading": "Everything you need to know about QuilLink and how it works.",
+      "questions": {
+        "whatIs": {
+          "q": "What is a URL shortener?",
+          "a": "A URL shortener is a tool that converts long URLs into shorter, more manageable links. These shortened links redirect to the original URL when clicked, making them easier to share on social media, emails, and other platforms."
+        },
+        "howWork": {
+          "q": "How does QuilLink work?",
+          "a": "Simply paste your long URL into our shortener, and QuilLink will generate a short, unique link for you. You can customize the link, track its performance, and even generate QR codes - all from your dashboard."
+        },
+        "isFree": {
+          "q": "Is QuilLink free to use?",
+          "a": "Yes! QuilLink offers a free plan with essential features including link shortening, basic analytics, and QR code generation. We also offer premium plans with advanced features like custom domains and detailed analytics."
+        },
+        "canTrack": {
+          "q": "Can I track my shortened links?",
+          "a": "Absolutely! Every shortened link comes with comprehensive analytics including click counts, geographic data, referrer information, device types, and more. You can access all this data from your dashboard."
+        },
+        "customDomain": {
+          "q": "Can I use my own custom domain?",
+          "a": "Yes, our premium plans allow you to use your own branded domain for shortened links. This helps build trust and brand recognition with your audience."
+        },
+        "howLong": {
+          "q": "How long do shortened links last?",
+          "a": "Shortened links created with QuilLink never expire by default. However, you have the option to set custom expiration dates for your links if needed."
+        },
+        "limit": {
+          "q": "Is there a limit to how many links I can create?",
+          "a": "Free accounts can create up to 100 links per month. Premium plans offer unlimited link creation along with other advanced features."
+        },
+        "safe": {
+          "q": "Are shortened links safe?",
+          "a": "Yes, QuilLink takes security seriously. We scan all URLs for malicious content and provide SSL encryption for all redirects. We also offer link password protection on premium plans."
+        }
+      },
+      "cta": {
+        "headingPart1": "Still have ",
+        "headingPart2": "?",
+        "headingHighlight": "questions",
+        "subheading": "Can't find the answer you're looking for? Join our community or chat with our friendly support team.",
+        "getInTouch": "Get in Touch",
+        "emailSupport": "Email Support"
+      }
+    }
   },
   "auth": {
     "login": {
@@ -38,7 +188,7 @@
       "validationError": "Invalid request types.",
       "unauthorized": "Invalid email or password. Please try again.",
       "success": "Login successful.",
-      "turnstileError": "Please verify you're not a robot.",
+      "turnstileError": "Please verify you are not a robot.",
       "continueWithGoogle": "Continue with Google",
       "or": "OR",
       "authenticating": "Authenticating"
@@ -54,14 +204,14 @@
       "confirmPassword": "Confirm Password",
       "submitButton": "Create Account",
       "haveAccount": "Already have an account?",
-      "loginLink": "Sign in here",
+      "loginLink": "Login here",
       "validationError": "Invalid request types.",
       "alreadyExists": "An account with this email already exists.",
-      "success": "Signup successful. You can now log in.",
-      "turnstileError": "Please verify you're not a robot."
+      "success": "Signup successful. You can now login.",
+      "turnstileError": "Please verify you are not a robot."
     },
     "forgotPassword": {
-      "title": "Forgot your password",
+      "title": "Forgot Password?",
       "subtitle": "Enter your email to reset password",
       "email": "Email",
       "emailPlaceholder": "Enter a valid email",
@@ -69,10 +219,10 @@
       "submitButton": "Send Verification Email",
       "rememberPassword": "Remember password?",
       "loginLink": "Login",
-      "turnstileError": "Please verify you're not a robot.",
+      "turnstileError": "Please verify you are not a robot.",
       "backToLogin": "Back to Login",
       "validationError": "Invalid email. Please try again.",
-      "forbidden": "If your email is registered, you'll receive reset instructions shortly.",
+      "forbidden": "If your email is registered, you will receive reset instructions shortly.",
       "success": "Password reset link sent."
     },
     "resetPassword": {
@@ -81,11 +231,11 @@
       "password": "New Password",
       "confirmPassword": "Confirm New Password",
       "submitButton": "Reset Password",
-      "validationError": "Invalid email, or password. Please try again.",
+      "validationError": "Invalid email or password. Please try again.",
       "invalidToken": "Invalid or expired token.",
       "success": "Password reset successful.",
-      "noTokenError": "No 'token' found in the URL query parameters. Redirecting to login.",
-      "turnstileError": "Please verify you're not a robot.",
+      "noTokenError": "No 'token' found in URL query parameters. Redirecting to login.",
+      "turnstileError": "Please verify that you are not a robot.",
       "processing": "Processing",
       "rememberPassword": "Remember password?",
       "loginLink": "Login",
@@ -94,29 +244,29 @@
   },
   "url": {
     "creation": {
-      "validationError": "The provided data is invalid. Please check your input.",
-      "ownDomainError": "You cannot shorten a URL that points to this service.",
+      "validationError": "Invalid data provided. Please check your input.",
+      "ownDomainError": "You cannot shorten a URL pointing to this service.",
       "alreadyExists": "This URL has already been shortened.",
-      "success": "The short URL was created successfully.",
+      "success": "Short URL created successfully.",
       "internalError": "An unexpected error occurred. Please try again later.",
-      "needLogin": "Limit reached. Sign in to create more.",
-      "needSubscription": "Limit reached. Sign in to create more."
+      "needLogin": "Limit reached. Login to create more.",
+      "needSubscription": "Limit reached. Login to create more."
     },
     "retrieval": {
       "notFound": "The requested short URL was not found.",
       "success": "Short URL retrieved successfully."
     },
     "deletion": {
-      "notFound": "The short URL to delete was not found.",
+      "notFound": "Short URL to delete was not found.",
       "success": "Short URL deleted successfully."
     },
     "details": {
-      "notFound": "The details for this short URL were not found.",
+      "notFound": "Details for this short URL were not found.",
       "expired": "This short URL has expired.",
       "success": "Short URL details fetched successfully."
     },
     "redirect": {
-      "notFound": "The short URL for redirection was not found.",
+      "notFound": "Short URL for redirection was not found.",
       "expired": "This short URL has expired and cannot be redirected."
     },
     "listing": {
@@ -128,13 +278,123 @@
     }
   },
   "qrCode": {
-    "missingShortKey": "Missing shortKey. Please provide the short key to generate the QR code.",
+    "missingShortKey": "ShortKey is missing. Please provide the short key to generate QR code.",
     "notFound": "Short URL not found for QR code generation.",
     "success": "QR code generated successfully."
   },
+  "privacy": {
+    "badge": "Legal",
+    "titleHighlight": "Privacy",
+    "titlePart2": " Policy",
+    "lastUpdated": "Last updated: February 10, 2026",
+    "sections": {
+      "intro": {
+        "title": "1. Introduction",
+        "content": "At QuilLink, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our URL shortening service. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site."
+      },
+      "collect": {
+        "title": "2. Information We Collect",
+        "content": "We collect information that you provide directly to us when you create an account, shorten a URL, or contact us for support. This may include:",
+        "list": [
+          "Account information (name, email address, password)",
+          "URLs you shorten and their original destinations",
+          "Usage data and analytics for your shortened links",
+          "Device and browser information"
+        ]
+      },
+      "use": {
+        "title": "3. How We Use Your Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, to develop new features, and to protect QuilLink and our users. This includes using data to track link performance, prevent spam and abuse, and personalize your experience."
+      },
+      "analytics": {
+        "title": "4. Data Analytics",
+        "content": "When someone clicks on a QuilLink URL, we collect certain information about the click, such as the IP address (anonymized), geographic location, referrer, and device type. This information is used to provide analytics to the creator of the link and to help us improve our service."
+      },
+      "security": {
+        "title": "5. Security",
+        "content": "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable."
+      },
+      "contact": {
+        "title": "6. Contact Us",
+        "content": "If you have questions or comments about this Privacy Policy, please contact us at:",
+        "email": "Email: privacy@quillink.com"
+      }
+    }
+  },
+  "terms": {
+    "badge": "Legal",
+    "titleHighlight": "Terms",
+    "titlePart2": " of Service",
+    "lastUpdated": "Last updated: February 10, 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing or using QuilLink's services, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions, then you may not access the website or use any services."
+      },
+      "description": {
+        "title": "2. Description of Service",
+        "content": "QuilLink provides a URL shortening service that allows users to create shorter versions of long URLs. We also provide analytics, QR code generation, and other related services. We reserve the right to modify or discontinue any part of the service at any time without notice."
+      },
+      "responsibilities": {
+        "title": "3. User Responsibilities",
+        "content": "You are responsible for all activity that occurs under your account. You agree not to use QuilLink for:",
+        "list": [
+          "Spamming or sending unsolicited communications",
+          "Distributing malware, viruses, or other harmful code",
+          "Creating links to illegal or prohibited content",
+          "Any activity that violates local, state, or international laws"
+        ]
+      },
+      "expiration": {
+        "title": "4. Link Content & Expiration",
+        "content": "QuilLink does not claim ownership of the content of the URLs shortened. We reserve the right to disable any link that violates our terms or is deemed inappropriate. Free accounts may have their links subject to certain limits or expiration policies as defined in our pricing guide."
+      },
+      "property": {
+        "title": "5. Intellectual Property",
+        "content": "The QuilLink name, logo, and all related designs and software are the intellectual property of QuilLink and its licensors. You may not use our branding without prior written permission."
+      },
+      "liability": {
+        "title": "6. Limitation of Liability",
+        "content": "QuilLink provides its services \"as is\" without any warranty. We are not liable for any damages resulting from the use or inability to use our services, including but not limited to lost profits, data loss, or service interruptions."
+      },
+      "termination": {
+        "title": "7. Termination",
+        "content": "We reserve the right to terminate or suspend your account and access to our services at our sole discretion, without notice, for behavior that we believe violates these Terms of Service or is harmful to other users or our business interests."
+      },
+      "contact": {
+        "title": "8. Contact",
+        "content": "Questions about the Terms of Service should be sent to us at:",
+        "email": "Email: legal@quillink.com"
+      }
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us",
+    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "email": "Email",
+    "office": "Office",
+    "github": "GitHub",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "emailLabel": "Send an email",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Message on LinkedIn",
+    "githubLabel": "Check our GitHub",
+    "chat": {
+      "title": "Prefer a ",
+      "titleHighlight": "live chat?",
+      "description": "Our support team is available check the common questions in our FAQ section or reach out directly.",
+      "viewFaqs": "View FAQs",
+      "emailSupport": "Email Support"
+    }
+  },
   "dashboard": {
-    "dashboardTitle": "Links Dashboard",
-    "dashboardSubtitle": "Manage and track all your shortened links",
+    "dashboardTitle": "Link Dashboard",
+    "dashboardSubtitle": "Manage and track all your short links",
     "totalLinks": "Total Links",
     "totalClicks": "Total Clicks",
     "activeLinks": "Active Links",
@@ -144,8 +404,8 @@
     "mostClicks": "Most Clicks",
     "noLinksFound": "No links found",
     "tryAdjustingSearch": "Try adjusting your search query or filters",
-    "createFirstLinkDesc": "Create your first short link to get started with tracking and analytics",
-    "createFirstLinkButton": "Create Your First Link",
+    "createFirstLinkDesc": "Create your first short link to start tracking and analytics",
+    "createFirstLinkButton": "Create your first link",
     "createLink": "Create Link",
     "createNewLink": "Create New Link",
     "createLinkDesc": "Enter your long URL to create a short, shareable link.",
@@ -164,7 +424,7 @@
     "overallTraffic": "Overall Traffic Evolution",
     "overallTrafficDesc": "Clicks and unique visitors across all links",
     "topPerformingLinks": "Top Performing Links",
-    "updatedAgo": "Updated 2h ago",
+    "updatedAgo": "Updated 2 hours ago",
     "noDataYet": "No data yet",
     "trafficByLocation": "Traffic by Location",
     "links": "Links",
@@ -189,8 +449,8 @@
     "shareWithInstagram": "Share with Instagram",
     "shareWithGithub": "Share with GitHub",
     "missingUrl": "Missing URL",
-    "qrCodeUnavailable": "QR code unavailable",
-    "ipAddress": "IP",
+    "qrCodeUnavailable": "QR Code unavailable",
+    "ipAddress": "IP Address",
     "browser": "Browser",
     "os": "OS",
     "clickedAt": "Clicked At",
@@ -198,7 +458,7 @@
     "unknown": "Unknown",
     "sink": "Sink",
     "last7Days": "Last 7 Days",
-    "filterLinks": "Filter Links",
+    "filterLinks": "Filter links",
     "visits": "Visits",
     "visitors": "Visitors",
     "referrers": "Referrers",
@@ -213,130 +473,12 @@
     "device": "Device",
     "type": "Type",
     "noDataAvailable": "No data available.",
-    "footerText": "Sink © 2025 Products of HTML_ZONE",
+    "footerText": "Sink © 2025 HTML_ZONE Products",
     "copiedToClipboard": "Copied to clipboard",
-    "qrCodeFetchFailed": "QR Code fetch failed.",
+    "qrCodeFetchFailed": "Failed to fetch QR code.",
     "downloadQrCode": "Download QR Code",
     "loading": "Loading...",
     "qrCodeAlt": "QR Code"
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with us",
-    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "email": "Email",
-    "office": "Office",
-    "github": "GitHub",
-    "name": "Name",
-    "message": "Message",
-    "send": "Send Message",
-    "sending": "Sending..."
-  },
-  "footer": {
-    "allRightsReserved": "All rights reserved.",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
-  },
-  "clients": {
-    "title": "More than 6 companies already trust us"
-  },
-  "testimonial": {
-    "title": "Hundred of people already trust us",
-    "testimonials": [
-      {
-        "id": 1,
-        "name": "John Doe",
-        "designation": "Software Engineer",
-        "company": "TechCorp",
-        "testimonial": "This product has completely transformed the way we work. The efficiency and ease of use are unmatched!",
-        "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Sophia Lee",
-        "designation": "Data Analyst",
-        "company": "InsightTech",
-        "testimonial": "This tool has saved me hours of work! The analytics and reporting features are incredibly powerful.",
-        "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Michael Johnson",
-        "designation": "UX Designer",
-        "company": "DesignPro",
-        "testimonial": "An amazing tool that simplifies complex tasks. Highly recommended for professionals in the industry. The intuitive interface makes it easy to onboard new team members, and the automation features save us countless hours every week. ",
-        "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Emily Davis",
-        "designation": "Marketing Specialist",
-        "company": "BrandBoost",
-        "testimonial": "I've seen a significant improvement in our team's productivity since we started using this service.",
-        "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Daniel Martinez",
-        "designation": "Full-Stack Developer",
-        "company": "CodeCrafters",
-        "testimonial": "The best investment we've made! The support team is also super responsive and helpful.",
-        "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
-      },
-      {
-        "id": 6,
-        "name": "Jane Smith",
-        "designation": "Product Manager",
-        "company": "InnovateX",
-        "testimonial": "The user experience is top-notch! The interface is clean, intuitive, and easy to navigate.",
-        "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
-      }
-    ]
-  },
-  "faq": {
-    "title": "Your Questions, Answered",
-    "faqs": [
-      {
-        "question": "What is your return policy?",
-        "answer": "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance."
-      },
-      {
-        "question": "How do I track my order?",
-        "answer": "Track your order using the link provided in your confirmation email, or log into your account to view tracking details."
-      },
-      {
-        "question": "Do you ship internationally?",
-        "answer": "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries."
-      },
-      {
-        "question": "What payment methods do you accept?",
-        "answer": "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers."
-      },
-      {
-        "question": "What if I receive a damaged item?",
-        "answer": "Please contact-us our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund."
-      },
-      {
-        "question": "Can I cancel or change my order?",
-        "answer": "Yes, you can cancel or change your order within 24 hours of placing it. Contact customer support to make updates."
-      },
-      {
-        "question": "Do you offer discounts for bulk purchases?",
-        "answer": "Yes, we provide special discounts for bulk orders. Contact our sales team with your requirements for a customized quote."
-      },
-      {
-        "question": "How long does shipping take?",
-        "answer": "Shipping usually takes 3-7 business days domestically and 7-14 business days internationally, depending on your location and selected shipping method."
-      },
-      {
-        "question": "Are your products eco-friendly?",
-        "answer": "Many of our products are made with sustainable materials and eco-friendly practices to reduce environmental impact while maintaining quality."
-      },
-      {
-        "question": "How can I contact-us customer support?",
-        "answer": "Reach out via email at support@example.com or call us at 1-800-123-4567 for assistance with any inquiries."
-      }
-    ]
   },
   "common": {
     "validationRequired": "This field is required.",
@@ -356,5 +498,10 @@
     "hidePassword": "Hide password",
     "showPassword": "Show password",
     "offeredIn": "offered in"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
   }
 }

@@ -5,356 +5,497 @@
     "login": "লগইন",
     "signup": "সাইন আপ",
     "logout": "লগআউট",
-    "contactUs": "আমাদের সাথে যোগাযোগ করুন"
+    "contactUs": "যোগাযোগ করুন",
+    "terms": "শর্তাবলী",
+    "privacy": "গোপনীয়তা"
   },
-  "hero": {
-    "title": "প্রতিটি সংযোগকে গুরুত্বপূর্ণ করুন",
-    "subtitle": "আমাদের ইউআরএল শর্টনার দিয়ে ছোট, স্মরণীয় লিঙ্ক তৈরি করুন",
-    "description": "ছোট লিঙ্ক, কিউআর কোড তৈরি করুন, যেকোনো জায়গায় শেয়ার করুন। কী কাজ করছে এবং কী করছে না তা ট্র্যাক করুন। QuilLink কানেকশন প্ল্যাটফর্মের ভিতরে সবকিছু।",
-    "getStarted": "শুরু করুন",
-    "learnMore": "আরও জানুন",
-    "badge": "এইমাত্র প্রকাশিত v1.0.0",
-    "pasteUrl": "একটি দীর্ঘ ইউআরএল পেস্ট করুন",
-    "createShortUrl": "ছোট ইউআরএল তৈরি করুন",
-    "creating": "তৈরি হচ্ছে",
-    "shortLink": "ছোট লিঙ্ক",
-    "qrCode": "কিউআর কোড",
-    "qrCodeComingSoon": "কিউআর কোড শীঘ্রই আসছে...",
-    "termsAgreement": "ছোট ইউআরএল-এ ক্লিক করে, আপনি QuilLink-এর",
-    "termsOfUse": "ব্যবহারের শর্তাবলী",
-    "privacyPolicy": "গোপনীয়তা নীতি",
-    "cookiePolicy": "কুকি নীতি"
-  },
-  "auth": {
-    "login": {
-      "title": "স্বাগতম",
-      "subtitle": "আপনার অ্যাকাউন্টে সাইন ইন করুন",
-      "email": "ইমেল",
-      "password": "পাসওয়ার্ড",
-      "submitButton": "সাইন ইন করুন",
-      "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
-      "noAccount": "অ্যাকাউন্ট নেই?",
-      "signUpLink": "এখানে সাইন আপ করুন",
-      "validationError": "অবৈধ অনুরোধের ধরন।",
-      "unauthorized": "অবৈধ ইমেল বা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।",
-      "success": "লগইন সফল।",
-      "turnstileError": "অনুগ্রহ করে যাচাই করুন যে আপনি রোবট নন।",
-      "continueWithGoogle": "গুগল দিয়ে চালিয়ে যান",
-      "or": "অথবা",
-      "authenticating": "প্রমাণীকরণ হচ্ছে"
+  "home": {
+    "hero": {
+      "badge": "✨ ফ্রি ইউআরএল শর্টেনার",
+      "headingPart1": "প্রতিটি ",
+      "headingPart2": "সফল করুন",
+      "headingHighlight": "কানেকশন",
+      "subheading": "কয়েক সেকেন্ডের মধ্যে ছোট, স্মরণীয় লিঙ্ক তৈরি করুন। লিঙ্ক ক্লিক ট্র্যাক করুন, পারফরম্যান্স বিশ্লেষণ করুন এবং QuilLink-এর শক্তিশালী ইউআরএল শর্টেনার দিয়ে যেকোনো জায়গায় শেয়ার করুন।",
+      "inputPlaceholder": "আপনার দীর্ঘ ইউআরএল এখানে লিখুন...",
+      "shortenButton": "ইউআরএল ছোট করুন",
+      "creating": "তৈরি হচ্ছে...",
+      "agreementPart1": "ইউআরএল ছোট করার মাধ্যমে, আপনি আমাদের ",
+      "terms": "ব্যবহারের শর্তাবলী",
+      "agreementPart2": " এবং ",
+      "privacy": "গোপনীয়তা নীতি",
+      "stats": {
+        "linksCreated": {
+          "value": "১০ M+",
+          "label": "লিঙ্ক তৈরি হয়েছে"
+        },
+        "activeUsers": {
+          "value": "৫০০ K+",
+          "label": "সক্রিয় ব্যবহারকারী"
+        },
+        "uptime": {
+          "value": "৯৯.৯%",
+          "label": "আপটাইম"
+        },
+        "support": {
+          "value": "২৪/৭",
+          "label": "সাপোর্ট"
+        }
+      }
     },
-    "signup": {
-      "title": "অ্যাকাউন্ট তৈরি করুন",
-      "subtitle": "আজই আমাদের সাথে যোগ দিন",
-      "continueWithGoogle": "গুগল দিয়ে চালিয়ে যান",
-      "or": "অথবা",
-      "name": "পুরো নাম",
-      "email": "ইমেল",
-      "password": "পাসওয়ার্ড",
-      "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
-      "submitButton": "অ্যাকাউন্ট তৈরি করুন",
-      "haveAccount": "ইতিমধ্যে একটি অ্যাকাউন্ট আছে?",
-      "loginLink": "এখানে সাইন ইন করুন",
-      "validationError": "অবৈধ অনুরোধের ধরন।",
-      "alreadyExists": "এই ইমেল দিয়ে একটি অ্যাকাউন্ট ইতিমধ্যে বিদ্যমান।",
-      "success": "সাইন আপ সফল। আপনি এখন লগইন করতে পারেন।",
-      "turnstileError": "অনুগ্রহ করে যাচাই করুন যে আপনি রোবট নন।"
+    "features": {
+      "badge": "বৈশিষ্ট্য",
+      "headingPart1": "আরও ",
+      "headingPart2": " পেতে বৈশিষ্ট্যগুলো দেখুন",
+      "headingHighlight": "দক্ষতা",
+      "subheading": "একটি শক্তিশালী প্ল্যাটফর্মে আপনার সংক্ষিপ্ত লিঙ্কগুলি তৈরি, পরিচালনা এবং ট্র্যাক করার জন্য আপনার প্রয়োজনীয় সবকিছু।",
+      "list": {
+        "shortening": {
+          "title": "সহজ লিঙ্ক সংক্ষিপ্তকরণ",
+          "description": "মাত্র একটি ক্লিকে দীর্ঘ ইউআরএলকে ছোট, স্মরণীয় লিঙ্কে রূপান্তর করুন। সহজ, দ্রুত এবং দক্ষ।"
+        },
+        "analytics": {
+          "title": "উন্নত বিশ্লেষণ",
+          "description": "আমাদের ব্যাপক অ্যানালিটিক্স ড্যাশবোর্ডের মাধ্যমে ক্লিক, ভৌগোলিক তথ্য, রেফারার এবং আরও অনেক কিছু ট্র্যাক করুন।"
+        },
+        "qr": {
+          "title": "কিউআর কোড জেনারেশন",
+          "description": "আপনার ছোট লিঙ্কের জন্য স্বয়ংক্রিয়ভাবে কিউআর কোড তৈরি করুন। প্রিন্ট এবং মোবাইলের জন্য উপযুক্ত।"
+        },
+        "fast": {
+          "title": "বিদ্যুৎ গতি",
+          "description": "আমাদের গ্লোবাল সিডিএন নিশ্চিত করে যে আপনার লিঙ্কগুলি বিশ্বের যেকোনো স্থানে তাৎক্ষণিকভাবে রিডাইরেক্ট হবে।"
+        },
+        "secure": {
+          "title": "নিরাপদ এবং নির্ভরযোগ্য",
+          "description": "৯৯.৯% আপটাইম গ্যারান্টি সহ এন্টারপ্রাইজ-গ্রেড নিরাপত্তা। আপনার লিঙ্ক সবসময় উপলব্ধ।"
+        },
+        "domains": {
+          "title": "কাস্টম ডোমেইন",
+          "description": "বিশ্বাস এবং স্বীকৃতি বাড়াতে সংক্ষিপ্ত লিঙ্কের জন্য আপনার নিজস্ব ব্র্যান্ডেড ডোমেইন ব্যবহার করুন।"
+        }
+      }
     },
-    "forgotPassword": {
-      "title": "পাসওয়ার্ড ভুলে গেছেন",
-      "subtitle": "পাসওয়ার্ড রিসেট করতে আপনার ইমেল লিখুন",
-      "email": "ইমেল",
-      "emailPlaceholder": "একটি বৈধ ইমেল লিখুন",
-      "processing": "প্রসেসিং",
-      "submitButton": "যাচাইকরণ ইমেল পাঠান",
-      "rememberPassword": "পাসওয়ার্ড মনে আছে?",
-      "loginLink": "লগইন",
-      "turnstileError": "অনুগ্রহ করে যাচাই করুন যে আপনি রোবট নন।",
-      "backToLogin": "লগইনে ফিরে যান",
-      "validationError": "অবৈধ ইমেল। অনুগ্রহ করে আবার চেষ্টা করুন।",
-      "forbidden": "যদি আপনার ইমেল নিবন্ধিত থাকে, তাহলে আপনি শীঘ্রই রিসেট নির্দেশাবলী পাবেন।",
-      "success": "পাসওয়ার্ড রিসেট লিঙ্ক পাঠানো হয়েছে।"
+    "testimonials": {
+      "badge": "টেস্টিমোনিয়াল",
+      "heading": "শত শত মানুষ ইতিমধ্যে আমাদের বিশ্বাস করেন",
+      "subheading": "আমাদের গ্রাহকরা QuilLink সম্পর্কে কী বলছেন তা দেখুন।",
+      "list": {
+        "sarah": {
+          "name": "সারা জনসন",
+          "role": "মার্কেটিং ডিরেক্টর",
+          "company": "টেককর্প ইনক।",
+          "text": "QuilLink আমাদের মার্কেটিং ক্যাম্পেইন পরিচালনার পদ্ধতি বদলে দিয়েছে। অ্যানালিটিক্সগুলো খুবই বিস্তারিত এবং ইন্টারফেসটি অত্যন্ত সহজ।"
+        },
+        "michael": {
+          "name": "মাইকেল চেন",
+          "role": "সোশ্যাল মিডিয়া ম্যানেজার",
+          "company": "ক্রিয়েটিভ স্টুডিও",
+          "text": "আমার দেখা সেরা ইউআরএল শর্টেনার। কাস্টম ডোমেইন, কিউআর কোড এবং বিস্তারিত অ্যানালিটিক্স - সব এক জায়গায়। এটি আমাদের সোশ্যাল মিডিয়া কৌশলের জন্য যুগান্তকারী।"
+        },
+        "emily": {
+          "name": "এমিলি রদ্রিগেজ",
+          "role": "কন্টেন্ট ক্রিয়েটর",
+          "company": "ইন্ডিপেন্ডেন্ট",
+          "text": "কন্টেন্ট ক্রিয়েটর হিসেবে লিঙ্ক পারফরম্যান্স ট্র্যাক করা অত্যন্ত জরুরি। QuilLink কাজটি খুব সহজ করে দিয়েছে। এর ড্যাশবোর্ডটি আমার খুব পছন্দ!"
+        },
+        "david": {
+          "name": "ডেভিড কিম",
+          "role": "ই-কমার্স মালিক",
+          "company": "শপনাউ",
+          "text": "আমরা আমাদের সব পণ্যের লিঙ্কের জন্য QuilLink ব্যবহার করি। এর নির্ভরযোগ্যতা অসাধারণ এবং কাস্টম ডোমেইন বৈশিষ্ট্যটি গ্রাহকদের আস্থা বাড়াতে সাহায্য করে।"
+        },
+        "lisa": {
+          "name": "লিসা অ্যান্ডারসন",
+          "role": "ডিজিটাল মার্কেটার",
+          "company": "গ্রোথ এজেন্সি",
+          "text": "অ্যানালিটিক্স ড্যাশবোর্ড আমাদের এমন সব তথ্য দেয় যা আগে আমাদের ছিল না। আমরা এখন রিয়েল-টাইমে আমাদের ক্যাম্পেইন অপ্টিমাইজ করতে পারছি।"
+        },
+        "james": {
+          "name": "জেমস উইলসন",
+          "role": "স্টার্টআপ প্রতিষ্ঠাতা",
+          "company": "ইনোভেশনল্যাব",
+          "text": "QuilLink আমাদের স্টার্টআপের জন্য একটি অপরিহার্য টুল। এটি সাশ্রয়ী, শক্তিশালী এবং সাপোর্ট টিম খুবই সহযোগিতাপূর্ণ।"
+        }
+      }
     },
-    "resetPassword": {
-      "title": "নতুন পাসওয়ার্ড সেট করুন",
-      "subtitle": "আপনার নতুন পাসওয়ার্ড লিখুন",
-      "password": "নতুন পাসওয়ার্ড",
-      "confirmPassword": "নতুন পাসওয়ার্ড নিশ্চিত করুন",
-      "submitButton": "পাসওয়ার্ড রিসেট করুন",
-      "validationError": "অবৈধ ইমেল, বা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।",
-      "invalidToken": "অবৈধ বা মেয়াদোত্তীর্ণ টোকেন।",
-      "success": "পাসওয়ার্ড রিসেট সফল।",
-      "noTokenError": "ইউআরএল ক্যোয়ারী প্যারামিটারে কোনো 'টোকেন' পাওয়া যায়নি। লগইনে পুনঃনির্দেশিত হচ্ছে।",
-      "turnstileError": "অনুগ্রহ করে যাচাই করুন যে আপনি রোবট নন।",
-      "processing": "প্রসেসিং",
-      "rememberPassword": "পাসওয়ার্ড মনে আছে?",
-      "loginLink": "লগইন",
-      "loading": "লোড হচ্ছে..."
+    "cta": {
+      "badge": "আজই শুরু করুন",
+      "headingPart1": "আপনার লিঙ্কগুলোকে ",
+      "headingPart2": " করতে প্রস্তুত?",
+      "headingHighlight": "রূপান্তরিত",
+      "subheading": "হাজার হাজার নির্মাতা এবং ব্যবসার সাথে যোগ দিন যারা তাদের লিঙ্কের প্রসার বাড়াতে এবং প্রতিটি ক্লিক ট্র্যাক করতে QuilLink ব্যবহার করেন।",
+      "startButton": "বিনামূল্যে শুরু করুন",
+      "contactButton": "সেলস টিমের সাথে যোগাযোগ করুন"
+    },
+    "faq": {
+      "badge": "প্রশ্নোত্তর",
+      "heading": "আপনার প্রশ্নের উত্তর",
+      "subheading": "QuilLink এবং এটি কীভাবে কাজ করে সে সম্পর্কে আপনার যা জানা দরকার।",
+      "questions": {
+        "whatIs": {
+          "q": "ইউআরএল শর্টেনার কী?",
+          "a": "ইউআরএল শর্টেনার হলো এমন একটি টুল যা দীর্ঘ ইউআরএলকে ছোট, আরও সহজ লিঙ্কে রূপান্তর করে। এই ছোট করা লিঙ্কগুলো ক্লিক করলে মূল ইউআরএলে রিডাইরেক্ট হয়।"
+        },
+        "howWork": {
+          "q": "QuilLink কীভাবে কাজ করে?",
+          "a": "সহজভাবে আপনার দীর্ঘ ইউআরএলটি আমাদের শর্টেনারে পেস্ট করুন, এবং QuilLink আপনার জন্য একটি ছোট, অনন্য লিঙ্ক তৈরি করবে।"
+        },
+        "isFree": {
+          "q": "QuilLink কি বিনামূল্যে ব্যবহার করা যায়?",
+          "a": "হ্যাঁ! QuilLink একটি ফ্রি প্ল্যান অফার করে যাতে লিঙ্ক সংক্ষিপ্তকরণ, বেসিক অ্যানালিটিক্স এবং কিউআর কোড জেনারেশনের মতো প্রয়োজনীয় বৈশিষ্ট্য রয়েছে।"
+        },
+        "canTrack": {
+          "q": "আমি কি আমার ছোট করা লিঙ্কগুলো ট্র্যাক করতে পারি?",
+          "a": "অবশ্যই! প্রতিটি ছোট করা লিঙ্কের সাথে ক্লিক সংখ্যা, ভৌগোলিক তথ্য, রেফারার তথ্য সহ পুঙ্খানুপুঙ্খ অ্যানালিটিক্স থাকে।"
+        },
+        "customDomain": {
+          "q": "আমি কি আমার নিজস্ব কাস্টম ডোমেইন ব্যবহার করতে পারি?",
+          "a": "হ্যাঁ, আমাদের প্রিমিয়াম প্ল্যানগুলো আপনাকে ছোট করা লিঙ্কের জন্য আপনার নিজস্ব ব্র্যান্ডেড ডোমেইন ব্যবহার করতে দেয়।"
+        },
+        "howLong": {
+          "q": "সংক্ষিপ্ত লিঙ্কগুলো কতদিন টিকে থাকে?",
+          "a": "ডিফল্টভাবে QuilLink-এ তৈরি করা সংক্ষিপ্ত লিঙ্কগুলোর মেয়াদ কখনও শেষ হয় না।"
+        },
+        "limit": {
+          "q": "আমি কতগুলো লিঙ্ক তৈরি করতে পারি তার কি কোনো সীমা আছে?",
+          "a": "ফ্রি অ্যাকাউন্টে প্রতি মাসে ১০০টি পর্যন্ত লিঙ্ক তৈরি করা যায়। প্রিমিয়াম প্ল্যানগুলোতে আনলিমিটেড লিঙ্ক তৈরির সুবিধা রয়েছে।"
+        },
+        "safe": {
+          "q": "সংক্ষিপ্ত লিঙ্কগুলো কি নিরাপদ?",
+          "a": "হ্যাঁ, QuilLink নিরাপত্তাকে গুরুত্ব দেয়। আমরা সব ইউআরএল ক্ষতিকারক কন্টেন্টের জন্য স্ক্যান করি এবং সব রিডাইরেক্টের জন্য এসএসএল এনক্রিপশন প্রদান করি।"
+        }
+      },
+      "cta": {
+        "headingPart1": "এখনও ",
+        "headingPart2": " আছে?",
+        "headingHighlight": "প্রশ্ন",
+        "subheading": "আপনার কাঙ্ক্ষিত উত্তর খুঁজে পাচ্ছেন না? আমাদের কমিউনিটিতে যোগ দিন বা আমাদের সাপোর্ট টিমের সাথে চ্যাট করুন।",
+        "getInTouch": "যোগাযোগ করুন",
+        "emailSupport": "ইমেইল সাপোর্ট"
+      }
     }
   },
-  "url": {
-    "creation": {
-      "validationError": "প্রদত্ত ডেটা অবৈধ। অনুগ্রহ করে আপনার ইনপুট পরীক্ষা করুন।",
-      "ownDomainError": "আপনি এই পরিষেবাতে নির্দেশ করে এমন একটি ইউআরএল ছোট করতে পারবেন না।",
-      "alreadyExists": "এই ইউআরএলটি ইতিমধ্যে ছোট করা হয়েছে।",
-      "success": "ছোট ইউআরএল সফলভাবে তৈরি করা হয়েছে।",
-      "internalError": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
-      "needLogin": "সীমা পৌঁছে গেছে। আরও তৈরি করতে সাইন ইন করুন।",
-      "needSubscription": "সীমা পৌঁছে গেছে। আরও তৈরি করতে সাইন ইন করুন।"
-    },
-    "retrieval": {
-      "notFound": "অনুরোধ করা ছোট ইউআরএল পাওয়া যায়নি।",
-      "success": "ছোট ইউআরএল সফলভাবে পুনরুদ্ধার করা হয়েছে।"
-    },
-    "deletion": {
-      "notFound": "মুছে ফেলার জন্য ছোট ইউআরএল পাওয়া যায়নি।",
-      "success": "ছোট ইউআরএল সফলভাবে মুছে ফেলা হয়েছে।"
-    },
-    "details": {
-      "notFound": "এই ছোট ইউআরএল-এর জন্য বিস্তারিত পাওয়া যায়নি।",
-      "expired": "এই ছোট ইউআরএল-এর মেয়াদ শেষ হয়ে গেছে।",
-      "success": "ছোট ইউআরএল বিস্তারিত সফলভাবে আনা হয়েছে।"
-    },
-    "redirect": {
-      "notFound": "পুনঃনির্দেশের জন্য ছোট ইউআরএল পাওয়া যায়নি।",
-      "expired": "এই ছোট ইউআরএল-এর মেয়াদ শেষ হয়ে গেছে এবং এটি পুনঃনির্দেশিত করা যাবে না।"
-    },
-    "listing": {
-      "notFound": "আপনার মানদণ্ডের সাথে মেলে এমন কোনো ছোট ইউআরএল পাওয়া যায়নি।",
-      "success": "সমস্ত ছোট ইউআরএল সফলভাবে আনা হয়েছে।"
-    },
-    "validation": {
-      "invalidShortKeyFormat": "অবৈধ ছোট কী ফর্ম্যাট।"
+  "privacy": {
+    "badge": "আইনি",
+    "titleHighlight": "গোপনীয়তা",
+    "titlePart2": " নীতি",
+    "lastUpdated": "সর্বশেষ আপডেট: ১০ ফেব্রুয়ারি, ২০২৬",
+    "sections": {
+      "intro": {
+        "title": "১. ভূমিকা",
+        "content": "QuilLink-এ আমরা আপনার গোপনীয়তাকে গুরুত্ব দিই। এই গোপনীয়তা নীতি ব্যাখ্যা করে যে আমরা কীভাবে আপনার তথ্য সংগ্রহ করি, ব্যবহার করি এবং রক্ষা করি।"
+      },
+      "collect": {
+        "title": "২. আমরা যে তথ্য সংগ্রহ করি",
+        "content": "আপনি যখন একটি একাউন্ট তৈরি করেন বা আমাদের সার্ভিস ব্যবহার করেন, তখন আমরা সরাসরি আপনার কাছ থেকে কিছু তথ্য সংগ্রহ করি। এর মধ্যে থাকতে পারে:",
+        "list": [
+          "অ্যাকাউন্ট তথ্য (নাম, ইমেইল ঠিকানা, পাসওয়ার্ড)",
+          "আপনার ছোট করা ইউআরএল এবং তাদের মূল গন্তব্য",
+          "আপনার ছোট করা লিঙ্কের ব্যবহারের তথ্য এবং অ্যানালিটিক্স",
+          "ডিভাইস এবং ব্রাউজার তথ্য"
+        ]
+      },
+      "use": {
+        "title": "৩. আমরা কীভাবে আপনার তথ্য ব্যবহার করি",
+        "content": "সংগৃহীত তথ্য আমরা আমাদের পরিষেবা প্রদান, রক্ষণাবেক্ষণ এবং উন্নত করতে ব্যবহার করি।"
+      },
+      "analytics": {
+        "title": "৪. ডেটা অ্যানালিটিক্স",
+        "content": "যখন কেউ QuilLink ইউআরএলে ক্লিক করে, আমরা সেই ক্লিক সম্পর্কে কিছু তথ্য সংগ্রহ করি, যেমন আইপি ঠিকানা (বেনামী), ভৌগোলিক অবস্থান এবং ডিভাইসের ধরন।"
+      },
+      "security": {
+        "title": "৫. নিরাপত্তা",
+        "content": "আপনার ব্যক্তিগত তথ্য রক্ষা করতে আমরা বিভিন্ন প্রশাসনিক ও প্রযুক্তিগত নিরাপত্তা ব্যবস্থা ব্যবহার করি।"
+      },
+      "contact": {
+        "title": "৬. আমাদের সাথে যোগাযোগ করুন",
+        "content": "এই গোপনীয়তা নীতি সম্পর্কে আপনার কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন:",
+        "email": "ইমেইল: privacy@quillink.com"
+      }
     }
   },
-  "qrCode": {
-    "missingShortKey": "ছোট কী অনুপস্থিত। কিউআর কোড তৈরি করতে অনুগ্রহ করে ছোট কী সরবরাহ করুন।",
-    "notFound": "কিউআর কোড তৈরির জন্য ছোট ইউআরএল পাওয়া যায়নি।",
-    "success": "কিউআর কোড সফলভাবে তৈরি করা হয়েছে।"
-  },
-  "dashboard": {
-    "dashboardTitle": "লিঙ্ক ড্যাশবোর্ড",
-    "dashboardSubtitle": "আপনার সমস্ত ছোট লিঙ্কগুলি পরিচালনা এবং ট্র্যাক করুন",
-    "totalLinks": "মোট লিঙ্ক",
-    "totalClicks": "মোট ক্লিক",
-    "activeLinks": "সক্রিয় লিঙ্ক",
-    "searchPlaceholder": "ছোট লিঙ্ক বা গন্তব্য ইউআরএল দ্বারা অনুসন্ধান করুন...",
-    "newest": "নতুন",
-    "oldest": "পুরাতন",
-    "mostClicks": "সর্বাধিক ক্লিক",
-    "noLinksFound": "কোন লিঙ্ক পাওয়া যায়নি",
-    "tryAdjustingSearch": "আপনার অনুসন্ধান ক্যোয়ারী বা ফিল্টার সামঞ্জস্য করার চেষ্টা করুন",
-    "createFirstLinkDesc": "ট্র্যাকিং এবং বিশ্লেষণের সাথে শুরু করতে আপনার প্রথম ছোট লিঙ্কটি তৈরি করুন",
-    "createFirstLinkButton": "আপনার প্রথম লিঙ্ক তৈরি করুন",
-    "createLink": "লিঙ্ক তৈরি করুন",
-    "createNewLink": "নতুন লিঙ্ক তৈরি করুন",
-    "createLinkDesc": "একটি সংক্ষিপ্ত, শেয়ারযোগ্য লিঙ্ক তৈরি করতে আপনার দীর্ঘ ইউআরএল লিখুন।",
-    "destinationUrl": "গন্তব্য ইউআরএল",
-    "cancel": "বাতিল করুন",
-    "visit": "ভিজিট",
-    "qrCode": "কিউআর কোড",
-    "scanToVisit": "আপনার লিঙ্ক ভিজিট করতে স্ক্যান করুন",
-    "downloadQr": "কিউআর ডাউনলোড করুন",
-    "close": "বন্ধ করুন",
-    "generating": "তৈরি হচ্ছে...",
-    "areYouSure": "আপনি কি নিশ্চিত?",
-    "keepIt": "রেখে দিন",
-    "deleteLink": "লিঙ্ক মুছুন",
-    "deleting": "মুছে ফেলা হচ্ছে...",
-    "overallTraffic": "সামগ্রিক ট্রাফিক বিবর্তন",
-    "overallTrafficDesc": "সমস্ত লিঙ্ক জুড়ে ক্লিক এবং অনন্য দর্শক",
-    "topPerformingLinks": "শীর্ষ পারফর্মিং লিঙ্ক",
-    "updatedAgo": "২ ঘন্টা আগে আপডেট করা হয়েছে",
-    "noDataYet": "এখনও কোনও ডেটা নেই",
-    "trafficByLocation": "অবস্থান অনুযায়ী ট্রাফিক",
-    "links": "লিঙ্ক",
-    "analysis": "বিশ্লেষণ",
-    "realtime": "রিয়েলটাইম",
-    "analysisComingSoon": "বিশ্লেষণ শীঘ্রই আসছে...",
-    "realtimeComingSoon": "রিয়েলটাইম পরিসংখ্যান শীঘ্রই আসছে...",
-    "loadingUrls": "ছোট ইউআরএল লোড হচ্ছে...",
-    "noUrls": "এখনও কোনো ছোট ইউআরএল নেই। একটি তৈরি করে শুরু করুন!",
-    "createdAt": "তৈরির তারিখ",
-    "originalUrl": "মূল ইউআরএল",
-    "shortUrl": "ছোট ইউআরএল",
-    "clicks": "ক্লিক",
-    "actions": "কার্যক্রম",
-    "copy": "কপি করুন",
-    "share": "শেয়ার করুন",
-    "details": "বিস্তারিত",
-    "delete": "মুছুন",
-    "confirmDelete": "আপনি কি নিশ্চিত যে আপনি এই সংক্ষিপ্ত লিঙ্কটি মুছে ফেলতে চান? এই কাজটি আর ফিরিয়ে নেওয়া যাবে না।",
-    "shareAsLink": "লিঙ্ক হিসাবে শেয়ার করুন",
-    "shareWithFacebook": "ফেসবুকের সাথে শেয়ার করুন",
-    "shareWithInstagram": "ইনস্টাগ্রামের সাথে শেয়ার করুন",
-    "shareWithGithub": "গিটহাবের সাথে শেয়ার করুন",
-    "missingUrl": "ইউআরএল অনুপস্থিত",
-    "qrCodeUnavailable": "কিউআর কোড অনুপলব্ধ",
-    "ipAddress": "আইপি",
-    "browser": "ব্রাউজার",
-    "os": "ওএস",
-    "clickedAt": "ক্লিক করা হয়েছে",
-    "noClickLogs": "কোনো ক্লিক লগ নেই",
-    "unknown": "অজানা",
-    "sink": "সিঙ্ক",
-    "last7Days": "গত 7 দিন",
-    "filterLinks": "লিঙ্ক ফিল্টার করুন",
-    "visits": "ভিজিট",
-    "visitors": "ভিজিটর",
-    "referrers": "রেফারার",
-    "views": "ভিউ",
-    "locations": "অবস্থান",
-    "worldMapHere": "বিশ্ব মানচিত্র এখানে",
-    "country": "দেশ",
-    "region": "অঞ্চল",
-    "city": "শহর",
-    "referrer": "রেফারার",
-    "language": "ভাষা",
-    "device": "ডিভাইস",
-    "type": "প্রকার",
-    "noDataAvailable": "কোনো ডেটা উপলব্ধ নেই।",
-    "footerText": "সিঙ্ক © 2025 HTML_ZONE এর পণ্য",
-    "copiedToClipboard": "ক্লিপবোর্ডে কপি করা হয়েছে",
-    "qrCodeFetchFailed": "কিউআর কোড আনতে ব্যর্থ হয়েছে।",
-    "downloadQrCode": "কিউআর কোড ডাউনলোড করুন",
-    "loading": "লোড হচ্ছে...",
-    "qrCodeAlt": "কিউআর কোড"
+  "terms": {
+    "badge": "আইনি",
+    "titleHighlight": "ব্যবহারের",
+    "titlePart2": " শর্তাবলী",
+    "lastUpdated": "সর্বশেষ আপডেট: ১০ ফেব্রুয়ারি, ২০২৬",
+    "sections": {
+      "acceptance": {
+        "title": "১. শর্তাবলি গ্রহণ",
+        "content": "QuilLink-এর পরিষেবা ব্যবহার করার মাধ্যমে, আপনি আমাদের ব্যবহারের শর্তাবলি মেনে নিতে সম্মত হচ্ছেন।"
+      },
+      "description": {
+        "title": "২. পরিষেবার বিবরণ",
+        "content": "QuilLink একটি ইউআরএল শর্টেনার পরিষেবা প্রদান করে যা ব্যবহারকারীদের দীর্ঘ ইউআরএলের সংক্ষিপ্ত সংস্করণ তৈরি করতে দেয়।"
+      },
+      "responsibilities": {
+        "title": "৩. ব্যবহারকারীর দায়িত্ব",
+        "content": "আপনার অ্যাকাউন্টের অধীনে পরিচালিত সকল কার্যক্রমের জন্য আপনি দায়ী। আপনি QuilLink ব্যবহার না করার জন্য সম্মত হচ্ছেন:",
+        "list": [
+          "স্প্যাম বা অযাচিত যোগাযোগ পাঠানোর জন্য",
+          "ম্যালওয়্যার বা ক্ষতিকারক কোড বিতরণের জন্য",
+          "অবৈধ বা নিষিদ্ধ কন্টেন্টের লিঙ্ক তৈরির জন্য",
+          "আইন লঙ্কারী যেকোনো কার্যক্রমের জন্য"
+        ]
+      },
+      "expiration": {
+        "title": "৪. লিঙ্কের কন্টেন্ট ও মেয়াদ",
+        "content": "QuilLink সংক্ষিপ্ত করা ইউআরএলের কন্টেন্টের মালিকানা দাবি করে না। তবে শর্তাবলি লঙ্ঘন করলে আমরা যেকোনো লিঙ্ক নিষ্ক্রিয় করার অধিকার রাখি।"
+      },
+      "property": {
+        "title": "৫. বুদ্ধিবৃত্তিক সম্পদ",
+        "content": "QuilLink নাম, লোগো এবং সকল সংশ্লিষ্ট ডিজাইন QuilLink-এর সম্পদ।"
+      },
+      "liability": {
+        "title": "৬. দায়ের সীমাবদ্ধতা",
+        "content": "QuilLink তার পরিষেবা \"যেমন আছে\" (as is) ভিত্তিতে প্রদান করে।"
+      },
+      "termination": {
+        "title": "৭. পরিসমাপ্তি",
+        "content": "শর্তাবলি লঙ্ঘন করলে আমরা যেকোনো সময় আপনার অ্যাকাউন্ট স্থগিত বা বাতিল করার অধিকার রাখি।"
+      },
+      "contact": {
+        "title": "৮. যোগাযোগ",
+        "content": "ব্যবহারের শর্তাবলি সম্পর্কে প্রশ্ন আমাদের কাছে পাঠান:",
+        "email": "ইমেইল: legal@quillink.com"
+      }
+    }
   },
   "contact": {
-    "title": "আমাদের সাথে যোগাযোগ করুন",
+    "badge": "যোগাযোগ করুন",
+    "title": "যোগাযোগ করুন",
     "subtitle": "আমাদের সাথে যোগাযোগ করুন",
-    "description": "আমরা আপনার কাছ থেকে শুনতে চাই। আমাদের একটি বার্তা পাঠান এবং আমরা যত তাড়াতাড়ি সম্ভব উত্তর দেব।",
-    "email": "ইমেল",
+    "description": "আমরা আপনার কাছ থেকে শুনতে আগ্রহী। আমাদের একটি বার্তা পাঠান এবং আমরা দ্রুত উত্তর দেওয়ার চেষ্টা করব।",
+    "email": "ইমেইল",
     "office": "অফিস",
     "github": "গিটহাব",
     "name": "নাম",
     "message": "বার্তা",
     "send": "বার্তা পাঠান",
-    "sending": "পাঠানো হচ্ছে..."
+    "sending": "পাঠানো হচ্ছে...",
+    "emailLabel": "একটি ইমেইল পাঠান",
+    "linkedin": "লিঙ্কডইন",
+    "linkedinLabel": "লিঙ্কডইন-এ বার্তা পাঠান",
+    "githubLabel": "আমাদের গিটহাব দেখুন",
+    "chat": {
+      "title": "আপনি কি ",
+      "titleHighlight": "সরাসরি চ্যাট করতে চান?",
+      "description": "আমাদের সাপোর্ট টিম আপনার সেবায় নিয়োজিত। আমাদের এফএকিউ বিভাগটি দেখুন অথবা সরাসরি যোগাযোগ করুন।",
+      "viewFaqs": "এফএকিউ দেখুন",
+      "emailSupport": "ইমেইল সাপোর্ট"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "submitButton": "Sign In",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up here",
+      "validationError": "Invalid request types.",
+      "unauthorized": "Invalid email or password. Please try again.",
+      "success": "Login successful.",
+      "turnstileError": "Please verify you are not a robot.",
+      "continueWithGoogle": "Continue with Google",
+      "or": "OR",
+      "authenticating": "Authenticating"
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Join us today",
+      "continueWithGoogle": "Continue with Google",
+      "or": "OR",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submitButton": "Create Account",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Login here",
+      "validationError": "Invalid request types.",
+      "alreadyExists": "An account with this email already exists.",
+      "success": "Signup successful. You can now login.",
+      "turnstileError": "Please verify you are not a robot."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password?",
+      "subtitle": "Enter your email to reset password",
+      "email": "Email",
+      "emailPlaceholder": "Enter a valid email",
+      "processing": "Processing",
+      "submitButton": "Send Verification Email",
+      "rememberPassword": "Remember password?",
+      "loginLink": "Login",
+      "turnstileError": "Please verify you are not a robot.",
+      "backToLogin": "Back to Login",
+      "validationError": "Invalid email. Please try again.",
+      "forbidden": "If your email is registered, you will receive reset instructions shortly.",
+      "success": "Password reset link sent."
+    },
+    "resetPassword": {
+      "title": "Set New Password",
+      "subtitle": "Enter your new password",
+      "password": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submitButton": "Reset Password",
+      "validationError": "Invalid email or password. Please try again.",
+      "invalidToken": "Invalid or expired token.",
+      "success": "Password reset successful."
+    }
+  },
+  "url": {
+    "creation": {
+      "validationError": "Invalid data provided. Please check your input.",
+      "ownDomainError": "You cannot shorten a URL pointing to this service.",
+      "alreadyExists": "This URL has already been shortened.",
+      "success": "Short URL created successfully.",
+      "internalError": "An unexpected error occurred. Please try again later.",
+      "needLogin": "Limit reached. Login to create more.",
+      "needSubscription": "Limit reached. Login to create more."
+    },
+    "retrieval": {
+      "notFound": "The requested short URL was not found.",
+      "success": "Short URL retrieved successfully."
+    },
+    "deletion": {
+      "notFound": "Short URL to delete was not found.",
+      "success": "Short URL deleted successfully."
+    },
+    "details": {
+      "notFound": "Details for this short URL were not found.",
+      "expired": "This short URL has expired.",
+      "success": "Short URL details fetched successfully."
+    },
+    "redirect": {
+      "notFound": "Short URL for redirection was not found.",
+      "expired": "This short URL has expired and cannot be redirected."
+    },
+    "listing": {
+      "notFound": "No short URLs found matching your criteria.",
+      "success": "All short URLs fetched successfully."
+    },
+    "validation": {
+      "invalidShortKeyFormat": "Invalid short key format."
+    }
+  },
+  "qrCode": {
+    "missingShortKey": "ShortKey is missing. Please provide the short key to generate QR code.",
+    "notFound": "Short URL not found for QR code generation.",
+    "success": "QR code generated successfully."
   },
   "footer": {
     "allRightsReserved": "সর্বস্বত্ব সংরক্ষিত।",
     "privacyPolicy": "গোপনীয়তা নীতি",
-    "termsOfService": "পরিষেবার শর্তাবলী"
+    "termsOfService": "সেবার শর্তাবলী"
   },
-  "clients": {
-    "title": "6টিরও বেশি কোম্পানি ইতিমধ্যে আমাদের বিশ্বাস করে"
-  },
-  "testimonial": {
-    "title": "শত শত মানুষ ইতিমধ্যে আমাদের বিশ্বাস করে",
-    "testimonials": [
-      {
-        "id": 1,
-        "name": "জন ডো",
-        "designation": "সফটওয়্যার ইঞ্জিনিয়ার",
-        "company": "টেককর্প",
-        "testimonial": "এই পণ্যটি আমাদের কাজ করার পদ্ধতিকে সম্পূর্ণ পরিবর্তন করেছে। দক্ষতা এবং ব্যবহারের সহজতা অতুলনীয়!",
-        "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "সোফিয়া লি",
-        "designation": "ডেটা বিশ্লেষক",
-        "company": "ইনসাইটটেক",
-        "testimonial": "এই টুলটি আমার ঘন্টার কাজ বাঁচিয়েছে! বিশ্লেষণ এবং রিপোর্টিং বৈশিষ্ট্যগুলি অবিশ্বাস্যভাবে শক্তিশালী।",
-        "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
-      },
-      {
-        "id": 3,
-        "name": "মাইকেল জনসন",
-        "designation": "ইউএক্স ডিজাইনার",
-        "company": "ডিজাইনপ্রো",
-        "testimonial": "একটি আশ্চর্যজনক টুল যা জটিল কাজগুলিকে সহজ করে তোলে। শিল্পের পেশাদারদের জন্য অত্যন্ত প্রস্তাবিত। স্বজ্ঞাত ইন্টারফেস নতুন দলের সদস্যদের জন্য সহজ করে তোলে, এবং অটোমেশন বৈশিষ্ট্যগুলি আমাদের প্রতি সপ্তাহে অগণিত ঘন্টা বাঁচায়।",
-        "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
-      },
-      {
-        "id": 4,
-        "name": "এমিলি ডেভিস",
-        "designation": "মার্কেটিং বিশেষজ্ঞ",
-        "company": "ব্র্যান্ডবুস্ট",
-        "testimonial": "এই পরিষেবাটি ব্যবহার করা শুরু করার পর থেকে আমি আমাদের দলের উৎপাদনে উল্লেখযোগ্য উন্নতি দেখেছি।",
-        "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
-      },
-      {
-        "id": 5,
-        "name": "ড্যানিয়েল মার্টিনেজ",
-        "designation": "ফুল-স্ট্যাক ডেভেলপার",
-        "company": "কোডক্রাফটার্স",
-        "testimonial": "এটি আমাদের সেরা বিনিয়োগ! সাপোর্ট টিমও খুব প্রতিক্রিয়াশীল এবং সহায়ক।",
-        "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
-      },
-      {
-        "id": 6,
-        "name": "জেন স্মিথ",
-        "designation": "পণ্য ব্যবস্থাপক",
-        "company": "ইনোভাটএক্স",
-        "testimonial": "ব্যবহারকারীর অভিজ্ঞতা শীর্ষস্থানীয়! ইন্টারফেস পরিষ্কার, স্বজ্ঞাত এবং নেভিগেট করা সহজ।",
-        "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
-      }
-    ]
-  },
-  "faq": {
-    "title": "আপনার প্রশ্ন, উত্তর দেওয়া হয়েছে",
-    "faqs": [
-      {
-        "question": "আপনার রিটার্ন নীতি কি?",
-        "answer": "আপনি অব্যবহৃত জিনিসপত্র তাদের আসল প্যাকেজিংয়ে 30 দিনের মধ্যে ফেরত দিতে পারেন ফেরত বা বিনিময়ের জন্য। সহায়তার জন্য সাপোর্টে যোগাযোগ করুন।"
-      },
-      {
-        "question": "আমি কিভাবে আমার অর্ডার ট্র্যাক করব?",
-        "answer": "আপনার নিশ্চিতকরণ ইমেলের প্রদত্ত লিঙ্ক ব্যবহার করে আপনার অর্ডার ট্র্যাক করুন, অথবা ট্র্যাকিং বিবরণ দেখতে আপনার অ্যাকাউন্টে লগইন করুন।"
-      },
-      {
-        "question": "আপনি কি আন্তর্জাতিকভাবে শিপিং করেন?",
-        "answer": "হ্যাঁ, আমরা বিশ্বব্যাপী শিপিং করি। শিপিং ফি এবং ডেলিভারি সময় অবস্থান অনুসারে পরিবর্তিত হয়, এবং কিছু দেশের জন্য কাস্টমস শুল্ক প্রযোজ্য হতে পারে।"
-      },
-      {
-        "question": "আপনি কোন পেমেন্ট পদ্ধতি গ্রহণ করেন?",
-        "answer": "আমরা ভিসা, মাস্টারকার্ড, আমেরিকান এক্সপ্রেস, পেপ্যাল, অ্যাপল পে, এবং গুগল পে গ্রহণ করি, যা সমস্ত গ্রাহকদের জন্য নিরাপদ পেমেন্ট বিকল্প নিশ্চিত করে।"
-      },
-      {
-        "question": "যদি আমি একটি ক্ষতিগ্রস্ত আইটেম পাই তাহলে কি হবে?",
-        "answer": "অনুগ্রহ করে ক্ষতিগ্রস্ত আইটেমের ছবি সহ ডেলিভারির 48 ঘন্টার মধ্যে আমাদের সহায়তা দলের সাথে যোগাযোগ করুন। আমরা একটি প্রতিস্থাপন বা ফেরত ব্যবস্থা করব।"
-      },
-      {
-        "question": "আমি কি আমার অর্ডার বাতিল বা পরিবর্তন করতে পারি?",
-        "answer": "হ্যাঁ, আপনি অর্ডার দেওয়ার 24 ঘন্টার মধ্যে আপনার অর্ডার বাতিল বা পরিবর্তন করতে পারেন। আপডেট করার জন্য গ্রাহক সহায়তায় যোগাযোগ করুন।"
-      },
-      {
-        "question": "আপনি কি বাল্ক ক্রয়ের জন্য ছাড় দেন?",
-        "answer": "হ্যাঁ, আমরা বাল্ক অর্ডারের জন্য বিশেষ ছাড় প্রদান করি। একটি কাস্টমাইজড উদ্ধৃতির জন্য আপনার প্রয়োজনীয়তা সহ আমাদের বিক্রয় দলের সাথে যোগাযোগ করুন।"
-      },
-      {
-        "question": "শিপিংয়ে কত সময় লাগে?",
-        "answer": "আপনার অবস্থান এবং নির্বাচিত শিপিং পদ্ধতির উপর নির্ভর করে, শিপিংয়ে সাধারণত অভ্যন্তরীণভাবে 3-7 কার্যদিবস এবং আন্তর্জাতিকভাবে 7-14 কার্যদিবস লাগে।"
-      },
-      {
-        "question": "আপনার পণ্য পরিবেশ-বান্ধব?",
-        "answer": "আমাদের অনেক পণ্য টেকসই উপকরণ এবং পরিবেশ-বান্ধব অনুশীলন দিয়ে তৈরি করা হয় যাতে গুণমান বজায় রেখে পরিবেশগত প্রভাব কমানো যায়।"
-      },
-      {
-        "question": "আমি কিভাবে গ্রাহক সহায়তায় যোগাযোগ করতে পারি?",
-        "answer": "যেকোনো জিজ্ঞাসার জন্য support@example.com এ ইমেলের মাধ্যমে যোগাযোগ করুন অথবা 1-800-123-4567 নম্বরে আমাদের কল করুন।"
-      }
-    ]
+  "dashboard": {
+    "dashboardTitle": "Link Dashboard",
+    "dashboardSubtitle": "Manage and track all your short links",
+    "totalLinks": "Total Links",
+    "totalClicks": "Total Clicks",
+    "activeLinks": "Active Links",
+    "searchPlaceholder": "Search by short link or destination URL...",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "mostClicks": "Most Clicks",
+    "noLinksFound": "No links found",
+    "tryAdjustingSearch": "Try adjusting your search query or filters",
+    "createFirstLinkDesc": "Create your first short link to start tracking and analytics",
+    "createFirstLinkButton": "Create your first link",
+    "createLink": "লিঙ্ক তৈরি করুন",
+    "createNewLink": "নতুন লিঙ্ক তৈরি করুন",
+    "createLinkDesc": "আপনার দীর্ঘ ইউআরএলটি এখানে পেস্ট করুন এবং একটি সংক্ষিপ্ত লিঙ্ক পান।",
+    "destinationUrl": "গন্তব্য ইউআরএল",
+    "cancel": "বাতিল করুন",
+    "visit": "Visit",
+    "qrCode": "QR Code",
+    "scanToVisit": "Scan to visit your link",
+    "downloadQr": "Download QR",
+    "close": "Close",
+    "generating": "Generating...",
+    "areYouSure": "Are you sure?",
+    "keepIt": "Keep it",
+    "deleteLink": "Delete Link",
+    "deleting": "Deleting...",
+    "overallTraffic": "Overall Traffic Evolution",
+    "overallTrafficDesc": "Clicks and unique visitors across all links",
+    "topPerformingLinks": "Top Performing Links",
+    "updatedAgo": "Updated 2 hours ago",
+    "noDataYet": "No data yet",
+    "trafficByLocation": "Traffic by Location",
+    "links": "Links",
+    "analysis": "Analysis",
+    "realtime": "Realtime",
+    "analysisComingSoon": "Analysis coming soon...",
+    "realtimeComingSoon": "Realtime stats coming soon...",
+    "loadingUrls": "Loading short URLs...",
+    "noUrls": "No short URLs yet. Start by creating one!",
+    "createdAt": "Created At",
+    "originalUrl": "Original URL",
+    "shortUrl": "Short URL",
+    "clicks": "Clicks",
+    "actions": "Actions",
+    "copy": "Copy",
+    "share": "Share",
+    "details": "Details",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this short link? This action cannot be undone.",
+    "shareAsLink": "Share as Link",
+    "shareWithFacebook": "Share with Facebook",
+    "shareWithInstagram": "Share with Instagram",
+    "shareWithGithub": "Share with GitHub",
+    "missingUrl": "Missing URL",
+    "qrCodeUnavailable": "QR Code unavailable",
+    "ipAddress": "IP Address",
+    "browser": "Browser",
+    "os": "OS",
+    "clickedAt": "Clicked At",
+    "noClickLogs": "No click logs",
+    "unknown": "Unknown",
+    "sink": "Sink",
+    "last7Days": "Last 7 Days",
+    "filterLinks": "Filter links",
+    "visits": "Visits",
+    "visitors": "Visitors",
+    "referrers": "Referrers",
+    "views": "Views",
+    "locations": "Locations",
+    "worldMapHere": "World Map Here",
+    "country": "Country",
+    "region": "Region",
+    "city": "City",
+    "referrer": "Referrer",
+    "language": "Language",
+    "device": "Device",
+    "type": "Type",
+    "noDataAvailable": "No data available.",
+    "footerText": "Sink © 2025 HTML_ZONE Products",
+    "copiedToClipboard": "Copied to clipboard",
+    "qrCodeFetchFailed": "Failed to fetch QR code.",
+    "downloadQrCode": "Download QR Code",
+    "loading": "Loading...",
+    "qrCodeAlt": "QR Code"
   },
   "common": {
-    "validationRequired": "এই ক্ষেত্রটি প্রয়োজনীয়।",
-    "validationError": "অবৈধ অনুরোধের ধরন প্রদান করা হয়েছে।",
-    "internalServerError": "একটি অপ্রত্যাশিত অভ্যন্তরীণ সার্ভার ত্রুটি ঘটেছে।",
-    "unexpectedError": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। দয়া করে পরে আবার চেষ্টা করুন।",
+    "validationRequired": "এই ক্ষেত্রটি পূরণ করা বাধ্যতামূলক।",
+    "validationError": "অনুরোধের ধরণটি সঠিক নয়।",
+    "internalServerError": "একটি অপ্রত্যাশিত সার্ভার ত্রুটি ঘটেছে।",
+    "unexpectedError": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
     "comingSoon": "শীঘ্রই আসছে...",
     "verify": "যাচাই করুন",
     "somethingWentWrong": "কিছু ভুল হয়েছে",
-    "networkError": "নেটওয়ার্ক ত্রুটি: সার্ভার থেকে কোনো প্রতিক্রিয়া পাওয়া যায়নি।",
+    "networkError": "নেটওয়ার্ক ত্রুটি: সার্ভার থেকে কোনো সাড়া পাওয়া যায়নি।",
     "axiosError": "Axios ত্রুটি: {message}",
-    "veryWeak": "অত্যন্ত দুর্বল",
+    "veryWeak": "খুব দুর্বল",
     "weak": "দুর্বল",
     "fair": "মোটামুটি",
-    "good": "ভাল",
+    "good": "ভালো",
     "strong": "শক্তিশালী",
     "hidePassword": "পাসওয়ার্ড লুকান",
     "showPassword": "পাসওয়ার্ড দেখান",
-    "offeredIn": "এতে উপলব্ধ"
+    "offeredIn": "প্রদান করা হচ্ছে"
   }
 }
