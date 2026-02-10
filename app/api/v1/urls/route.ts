@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import httpStatusLite from 'http-status-lite';
-import { nanoid } from 'nanoid';
+import { customAlphabet } from 'nanoid';
 import { addMonths } from 'date-fns';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
@@ -108,7 +108,9 @@ const handleCreateShortUrl = async (request: NextRequest) => {
     }
 
     // Create short URL
-    const shortKey = nanoid(7);
+    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const nanoid = customAlphabet(alphabet, 7);
+    const shortKey = nanoid();
     const expiresAt = addMonths(new Date(), 6);
 
     const createdShortUrl = await createShortUrl(

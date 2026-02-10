@@ -45,7 +45,7 @@ const MESSAGES = Object.freeze({
     },
 
     URL_VALIDATION: {
-        INVALID_SHORT_KEY_FORMAT: 'Invalid short key format.',
+        INVALID_SHORT_KEY_FORMAT: 'Short key must contain only letters and numbers.',
     },
 
     USER_LOGIN: {

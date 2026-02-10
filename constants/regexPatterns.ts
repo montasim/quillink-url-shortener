@@ -1,5 +1,5 @@
 const REGEX_PATTERNS = Object.freeze({
-    SHORT_KEY: /^[a-zA-Z0-9_-]{7}$/,
+    SHORT_KEY: /^[a-zA-Z0-9]{7}$/,
     EMAIL: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     UPPERCASE: /[A-Z]/,
     LOWERCASE: /[a-z]/,
