@@ -28,7 +28,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
     const [isDeleting, setIsDeleting] = useState(false);
     const popoverRef = useRef<HTMLDivElement>(null);
 
-    const shortUrl = `https://qlnk.app/${url?.shortKey}`;
+    const shortUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${url?.shortKey}`;
     const fullUrl = url?.originalUrl;
     const date = new Date(url?.createdAt || '').toLocaleDateString('en-US', {
         month: 'short',
