@@ -18,7 +18,10 @@ const handleShortUrlRedirect = async (
 ) => {
     const resolvedParams = await context.params;
     const validation = validateParams(ShortKeySchema, resolvedParams);
-    if (!validation.success) return validation.response;
+    if (!validation.success) {
+        // Redirect to the not-found page to show the 404 page with navbar and footer
+        return sendResponse(httpStatusLite.NOT_FOUND, URL_REDIRECT.NOT_FOUND);
+    }
 
     const shortKey = validation.data.shortKey;
 
