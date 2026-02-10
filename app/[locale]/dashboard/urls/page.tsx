@@ -14,6 +14,8 @@ import { Card } from '@/components/ui/card';
 import CreateLinkModal from '@/components/dashboard/CreateLinkModal';
 import AnalysisTab from '@/components/dashboard/AnalysisTab';
 import RealtimeComingSoon from '@/components/dashboard/RealtimeComingSoon';
+import { LinksSkeleton } from '@/components/dashboard/LinksSkeleton';
+import { AnalysisSkeleton } from '@/components/dashboard/AnalysisSkeleton';
 
 const UrlDashboard = () => {
     const t = useTranslations('dashboard');
@@ -59,7 +61,9 @@ const UrlDashboard = () => {
             name: t('links'),
             value: 'links',
             icon: <Link2 className="w-4 h-4" />,
-            content: (
+            content: loading ? (
+                <LinksSkeleton />
+            ) : (
                 <div className="space-y-6">
                     {/* Stats Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -131,16 +135,7 @@ const UrlDashboard = () => {
 
                     {/* URLs Grid */}
                     <div className="min-h-[400px]">
-                        {loading ? (
-                            <div className="flex items-center justify-center py-20">
-                                <div className="flex flex-col items-center gap-4">
-                                    <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
-                                    <p className="text-sm text-muted-foreground">
-                                        {t('loadingUrls')}
-                                    </p>
-                                </div>
-                            </div>
-                        ) : filteredUrls.length === 0 ? (
+                        {filteredUrls.length === 0 ? (
                             <Card className="border-dashed border-2 bg-muted/20">
                                 <div className="text-center py-16 px-4">
                                     <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -174,7 +169,7 @@ const UrlDashboard = () => {
             name: t('analysis'),
             value: 'analysis',
             icon: <TrendingUp className="w-4 h-4" />,
-            content: <AnalysisTab urls={urls} />,
+            content: loading ? <AnalysisSkeleton /> : <AnalysisTab urls={urls} />,
         },
         {
             name: t('realtime'),

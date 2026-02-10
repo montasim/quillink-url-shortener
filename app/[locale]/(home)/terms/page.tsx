@@ -17,7 +17,7 @@ const TermsPage = () => {
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
                         Legal
                     </Badge>
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
+                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
                         Terms of Service
                     </h1>
                     <p className="text-lg text-muted-foreground">

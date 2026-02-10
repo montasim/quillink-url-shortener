@@ -16,6 +16,8 @@ import { IShortUrl } from '@/types/types';
 import { fetchUrls } from '@/lib/actions/dashboard';
 import { format, subDays, eachDayOfInterval } from 'date-fns';
 
+import { DashboardSkeleton } from '@/components/dashboard/DashboardSkeleton';
+
 export default function DashboardPage() {
     const t = useTranslations('dashboard');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
@@ -78,14 +80,7 @@ export default function DashboardPage() {
     }, [urls]);
 
     if (loading) {
-        return (
-            <div className="flex h-[80vh] items-center justify-center">
-                <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
-                    <p className="text-sm text-muted-foreground">Loading dashboard data...</p>
-                </div>
-            </div>
-        );
+        return <DashboardSkeleton />;
     }
 
     return (
