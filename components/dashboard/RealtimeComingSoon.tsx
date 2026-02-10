@@ -65,9 +65,6 @@ const RealtimeComingSoon = () => {
                             <Loader2 className="w-4 h-4 animate-spin" />
                             Engine in Development
                         </div>
-                        <p className="text-xs text-muted-foreground/60 max-w-xs font-medium">
-                            Expected beta launch: Q3 2026. Get ready for sub-second redirect tracking.
-                        </p>
                     </div>
                 </motion.div>
             </div>

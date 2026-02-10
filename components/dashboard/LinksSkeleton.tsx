@@ -4,20 +4,20 @@ import { Card, CardContent } from "@/components/ui/card";
 export const LinksSkeleton = () => {
     return (
         <div className="space-y-6">
-            {/* Stats Cards Skeleton */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[1, 2, 3].map((i) => (
-                    <Card key={i} className="p-6 border-border/40">
-                        <div className="flex items-center justify-between">
-                            <div className="space-y-2">
-                                <Skeleton className="h-4 w-24" />
-                                <Skeleton className="h-8 w-16" />
-                            </div>
-                            <Skeleton className="h-12 w-12 rounded-xl" />
-                        </div>
-                    </Card>
-                ))}
-            </div>
+            {/*/!* Stats Cards Skeleton *!/*/}
+            {/*<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">*/}
+            {/*    {[1, 2, 3].map((i) => (*/}
+            {/*        <Card key={i} className="p-6 border-border/40">*/}
+            {/*            <div className="flex items-center justify-between">*/}
+            {/*                <div className="space-y-2">*/}
+            {/*                    <Skeleton className="h-4 w-24" />*/}
+            {/*                    <Skeleton className="h-8 w-16" />*/}
+            {/*                </div>*/}
+            {/*                <Skeleton className="h-12 w-12 rounded-xl" />*/}
+            {/*            </div>*/}
+            {/*        </Card>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
 
             {/* Search Bar Skeleton */}
             <div className="flex flex-col sm:flex-row gap-3">

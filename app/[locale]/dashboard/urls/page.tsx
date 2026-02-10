@@ -69,44 +69,44 @@ const UrlDashboard = () => {
                 <LinksSkeleton />
             ) : (
                 <div className="space-y-6">
-                    {/* Stats Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 border-blue-200 dark:border-blue-800/50">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">{t('totalLinks')}</p>
-                                    <p className="text-3xl font-bold text-blue-900 dark:text-blue-100 mt-1">{stats.totalLinks}</p>
-                                </div>
-                                <div className="p-3 bg-blue-200 dark:bg-blue-800/50 rounded-xl">
-                                    <Link className="w-6 h-6 text-blue-700 dark:text-blue-300" />
-                                </div>
-                            </div>
-                        </Card>
+                    {/*/!* Stats Cards *!/*/}
+                    {/*<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">*/}
+                    {/*    <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 border-blue-200 dark:border-blue-800/50">*/}
+                    {/*        <div className="flex items-center justify-between">*/}
+                    {/*            <div>*/}
+                    {/*                <p className="text-sm font-medium text-blue-700 dark:text-blue-300">{t('totalLinks')}</p>*/}
+                    {/*                <p className="text-3xl font-bold text-blue-900 dark:text-blue-100 mt-1">{stats.totalLinks}</p>*/}
+                    {/*            </div>*/}
+                    {/*            <div className="p-3 bg-blue-200 dark:bg-blue-800/50 rounded-xl">*/}
+                    {/*                <Link className="w-6 h-6 text-blue-700 dark:text-blue-300" />*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </Card>*/}
 
-                        <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20 border-purple-200 dark:border-purple-800/50">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm font-medium text-purple-700 dark:text-purple-300">{t('totalClicks')}</p>
-                                    <p className="text-3xl font-bold text-purple-900 dark:text-purple-100 mt-1">{stats.totalClicks}</p>
-                                </div>
-                                <div className="p-3 bg-purple-200 dark:bg-purple-800/50 rounded-xl">
-                                    <MousePointerClick className="w-6 h-6 text-purple-700 dark:text-purple-300" />
-                                </div>
-                            </div>
-                        </Card>
+                    {/*    <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20 border-purple-200 dark:border-purple-800/50">*/}
+                    {/*        <div className="flex items-center justify-between">*/}
+                    {/*            <div>*/}
+                    {/*                <p className="text-sm font-medium text-purple-700 dark:text-purple-300">{t('totalClicks')}</p>*/}
+                    {/*                <p className="text-3xl font-bold text-purple-900 dark:text-purple-100 mt-1">{stats.totalClicks}</p>*/}
+                    {/*            </div>*/}
+                    {/*            <div className="p-3 bg-purple-200 dark:bg-purple-800/50 rounded-xl">*/}
+                    {/*                <MousePointerClick className="w-6 h-6 text-purple-700 dark:text-purple-300" />*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </Card>*/}
 
-                        <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/20 border-green-200 dark:border-green-800/50">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm font-medium text-green-700 dark:text-green-300">{t('activeLinks')}</p>
-                                    <p className="text-3xl font-bold text-green-900 dark:text-green-100 mt-1">{stats.activeLinks}</p>
-                                </div>
-                                <div className="p-3 bg-green-200 dark:bg-green-800/50 rounded-xl">
-                                    <TrendingUp className="w-6 h-6 text-green-700 dark:text-green-300" />
-                                </div>
-                            </div>
-                        </Card>
-                    </div>
+                    {/*    <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/20 border-green-200 dark:border-green-800/50">*/}
+                    {/*        <div className="flex items-center justify-between">*/}
+                    {/*            <div>*/}
+                    {/*                <p className="text-sm font-medium text-green-700 dark:text-green-300">{t('activeLinks')}</p>*/}
+                    {/*                <p className="text-3xl font-bold text-green-900 dark:text-green-100 mt-1">{stats.activeLinks}</p>*/}
+                    {/*            </div>*/}
+                    {/*            <div className="p-3 bg-green-200 dark:bg-green-800/50 rounded-xl">*/}
+                    {/*                <TrendingUp className="w-6 h-6 text-green-700 dark:text-green-300" />*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </Card>*/}
+                    {/*</div>*/}
 
                     {/* Search and Filter Bar */}
                     <div className="flex flex-col sm:flex-row gap-3">
