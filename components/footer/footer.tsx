@@ -15,72 +15,80 @@ const Footer = () => {
             href: '/',
         },
         {
+            title: 'Terms',
+            href: '/terms',
+        },
+        {
+            title: 'Privacy',
+            href: '/privacy',
+        },
+        {
             title: tNav('contactUs'),
             href: '/contact-us',
         },
     ];
 
     return (
-        <div className="flex flex-col">
-            <div className="grow bg-muted" />
-            <footer>
-                <div className="max-w-screen-xl mx-auto">
-                    <div className="flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10 px-4 xl:px-0">
-                        <div>
-                            {/* Logo */}
-                            <Logo />
+        <footer className="border-t border-border bg-background">
+            <div className="max-w-7xl mx-auto py-12 px-4 xl:px-0">
+                <div className="flex flex-col sm:flex-row items-start justify-between gap-x-8 gap-y-10">
+                    <div>
+                        {/* Logo */}
+                        <Logo />
 
-                            <ul className="mt-6 flex items-center gap-4 flex-wrap">
-                                {footerLinks.map(({ title, href }) => (
-                                    <li key={title}>
-                                        <Link
-                                            href={href}
-                                            className="text-primary hover:text-foreground"
-                                        >
-                                            {title}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <Separator />
-
-                    <div className="my-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-4 xl:px-0 text-primary">
-                        {/* Copyright */}
-                        <span className="">
-                            &copy; {new Date().getFullYear()}{' '}
-                            <Link href="/" target="_blank">
-                                {configuration.app.name}
-                            </Link>
-                            . {t('allRightsReserved')}
-                        </span>
-
-                        <div className="flex items-center gap-5">
-                            <a
-                                href="mailto:montasimmamun@gmail.com"
-                                target="_blank"
-                            >
-                                <MailIcon className="h-5 w-5" />
-                            </a>
-                            <a
-                                href="https://linkedin.com/in/montasimmamun"
-                                target="_blank"
-                            >
-                                <LinkedinIcon className="h-5 w-5" />
-                            </a>
-                            <a
-                                href="https://github.com/montasim"
-                                target="_blank"
-                            >
-                                <GithubIcon className="h-5 w-5" />
-                            </a>
-                        </div>
+                        <ul className="mt-6 flex items-center gap-6 flex-wrap">
+                            {footerLinks.map(({ title, href }) => (
+                                <li key={title}>
+                                    <Link
+                                        href={href}
+                                        className="text-muted-foreground hover:text-foreground transition-colors"
+                                    >
+                                        {title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
-            </footer>
-        </div>
+
+                <Separator className="my-8" />
+
+                <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 text-sm text-muted-foreground">
+                    {/* Copyright */}
+                    <span>
+                        &copy; {new Date().getFullYear()}{' '}
+                        <Link href="/" className="hover:text-foreground transition-colors">
+                            {configuration.app.name}
+                        </Link>
+                        . {t('allRightsReserved')}
+                    </span>
+
+                    <div className="flex items-center gap-5">
+                        <a
+                            href="mailto:montasimmamun@gmail.com"
+                            target="_blank"
+                            className="hover:text-foreground transition-colors"
+                        >
+                            <MailIcon className="h-5 w-5" />
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/montasimmamun"
+                            target="_blank"
+                            className="hover:text-foreground transition-colors"
+                        >
+                            <LinkedinIcon className="h-5 w-5" />
+                        </a>
+                        <a
+                            href="https://github.com/montasim"
+                            target="_blank"
+                            className="hover:text-foreground transition-colors"
+                        >
+                            <GithubIcon className="h-5 w-5" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 };
 

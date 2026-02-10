@@ -42,10 +42,30 @@ const handleShortUrlRedirect = async (
     await updateShortUrl({ shortKey }, { clicks: { increment: 1 } });
 
     // Log the click event details
+    const ipAddress = getClientIp(request);
+    let country = request.headers.get('x-vercel-ip-country') || 'Unknown';
+    let countryCode = request.headers.get('x-vercel-ip-country-code') || '??';
+
+    // If we don't have country info from headers (e.g. running locally), try a basic lookup
+    if (country === 'Unknown' && ipAddress && ipAddress !== '127.0.0.1' && ipAddress !== '::1') {
+        try {
+            const geoRes = await fetch(`http://ip-api.com/json/${ipAddress}`);
+            const geoData = await geoRes.json();
+            if (geoData.status === 'success') {
+                country = geoData.country;
+                countryCode = geoData.countryCode;
+            }
+        } catch (error) {
+            console.error('GeoIP lookup failed:', error);
+        }
+    }
+
     await createClickLog(
         {
             shortKey,
-            ipAddress: getClientIp(request),
+            ipAddress,
+            country,
+            countryCode,
             userAgent: request.headers.get('user-agent') ?? 'unknown',
         },
         clickLogSelection

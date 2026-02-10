@@ -26,9 +26,9 @@ const Navbar = () => {
     if (loading) return <Loading />;
 
     return (
-        <div className="bg-muted">
-            <nav className="h-16 bg-background border-b px-4 xl:px-0">
-                <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto">
+        <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+            <nav className="h-16 px-4 xl:px-0">
+                <div className="h-full flex items-center justify-between max-w-7xl mx-auto">
                     <div className="flex items-center gap-8">
                         <Logo />
                     </div>
@@ -38,24 +38,21 @@ const Navbar = () => {
                         {isAuthenticated && user ? (
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    <div className="h-10 w-10 rounded-full overflow-hidden">
+                                    <div className="h-10 w-10 rounded-full overflow-hidden ring-2 ring-primary/20 hover:ring-primary/40 transition-all cursor-pointer">
                                         {user?.picture ? (
-                                            // Only render when picture is valid
                                             <img
                                                 src={user.picture}
                                                 alt={user.name || 'User Avatar'}
-                                                className="h-10 w-10 object-cover cursor-pointer"
+                                                className="h-10 w-10 object-cover"
                                             />
                                         ) : user?.name ? (
-                                            // Use name fallback
-                                            <div className="h-10 w-10 bg-gray-300 flex items-center justify-center text-primary font-bold text-lg cursor-pointer">
+                                            <div className="h-10 w-10 bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
                                                 {user.name
                                                     .charAt(0)
                                                     .toUpperCase()}
                                             </div>
                                         ) : (
-                                            // Blank skeleton while waiting
-                                            <div className="h-10 w-10 bg-gray-200 animate-pulse rounded-full" />
+                                            <div className="h-10 w-10 bg-muted animate-pulse rounded-full" />
                                         )}
                                     </div>
                                 </DropdownMenuTrigger>
@@ -90,8 +87,8 @@ const Navbar = () => {
                         ) : (
                             <>
                                 <Button
-                                    variant="outline"
-                                    className="bg-gradient-to-r from-sky-400 to-cyan-300 text-white hidden sm:inline-flex cursor-pointer hover:bg-gradient-to-b hover:text-white"
+                                    variant="ghost"
+                                    className="hidden sm:inline-flex cursor-pointer font-medium"
                                     onClick={() =>
                                         router.push('/dashboard/urls')
                                     }
@@ -99,7 +96,7 @@ const Navbar = () => {
                                     {t('dashboard')}
                                 </Button>
                                 <Button
-                                    className="bg-gray-800 cursor-pointer"
+                                    className="bg-primary hover:bg-primary/90 cursor-pointer font-semibold shadow-lg shadow-primary/25"
                                     onClick={() => router.push('/signup')}
                                 >
                                     {t('signup')}

@@ -10,21 +10,25 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 
-const data = [
-    { date: '2025-07-19', visits: 100, visitors: 70 },
-    { date: '2025-07-20', visits: 300, visitors: 250 },
-    { date: '2025-07-21', visits: 200, visitors: 180 },
-    { date: '2025-07-22', visits: 250, visitors: 230 },
-    { date: '2025-07-23', visits: 220, visitors: 190 },
-    { date: '2025-07-24', visits: 180, visitors: 150 },
-    { date: '2025-07-25', visits: 100, visitors: 90 },
-];
+interface ViewsChartProps {
+    data?: { date: string; visits: number; visitors: number }[];
+}
 
-export default function ViewsChart() {
+export default function ViewsChart({ data: chartData }: ViewsChartProps) {
+    const displayData = chartData || [
+        { date: '2025-07-19', visits: 100, visitors: 70 },
+        { date: '2025-07-20', visits: 300, visitors: 250 },
+        { date: '2025-07-21', visits: 200, visitors: 180 },
+        { date: '2025-07-22', visits: 250, visitors: 230 },
+        { date: '2025-07-23', visits: 220, visitors: 190 },
+        { date: '2025-07-24', visits: 180, visitors: 150 },
+        { date: '2025-07-25', visits: 100, visitors: 90 },
+    ];
+
     return (
         <ResponsiveContainer width="100%" height={300}>
             <AreaChart
-                data={data}
+                data={displayData}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
             >
                 <defs>

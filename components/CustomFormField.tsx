@@ -14,6 +14,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import zxcvbn from 'zxcvbn';
 import { Control } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
+import { cn } from '@/lib/utils';
 
 interface PasswordFieldProps {
     control: Control<any>;
@@ -22,6 +23,7 @@ interface PasswordFieldProps {
     placeholder?: string;
     viewPasswordStrength?: boolean;
     viewPasswordMessage?: boolean;
+    className?: string;
 }
 
 export const PasswordField = ({
@@ -31,6 +33,7 @@ export const PasswordField = ({
     placeholder,
     viewPasswordStrength = true,
     viewPasswordMessage = true,
+    className,
 }: PasswordFieldProps) => {
     const t = useTranslations('common');
     const [showPassword, setShowPassword] = useState(false);
@@ -74,7 +77,7 @@ export const PasswordField = ({
                             <Input
                                 type={showPassword ? 'text' : 'password'}
                                 placeholder={placeholder || label}
-                                className="pr-10 w-full"
+                                className={cn('pr-10 w-full', className)}
                                 {...field}
                                 onChange={(e) =>
                                     handlePasswordChange(e, field.onChange)
@@ -118,14 +121,14 @@ export const PasswordField = ({
                                 </p>
                                 {passwordStrength.feedback.suggestions.length >
                                     0 && (
-                                    <ul className="list-disc list-inside text-sm text-gray-600">
-                                        {passwordStrength.feedback.suggestions.map(
-                                            (sug, i) => (
-                                                <li key={i}>{sug}</li>
-                                            )
-                                        )}
-                                    </ul>
-                                )}
+                                        <ul className="list-disc list-inside text-sm text-gray-600">
+                                            {passwordStrength.feedback.suggestions.map(
+                                                (sug, i) => (
+                                                    <li key={i}>{sug}</li>
+                                                )
+                                            )}
+                                        </ul>
+                                    )}
                                 {passwordStrength.feedback.warning && (
                                     <p className="text-sm text-red-500">
                                         {passwordStrength.feedback.warning}
@@ -147,6 +150,7 @@ interface TextFieldProps {
     label: string;
     type?: string;
     placeholder?: string;
+    className?: string;
 }
 
 export const TextField = ({
@@ -155,6 +159,7 @@ export const TextField = ({
     label,
     type = 'text',
     placeholder,
+    className,
 }: TextFieldProps) => {
     return (
         <FormField
@@ -167,6 +172,7 @@ export const TextField = ({
                         <Input
                             type={type}
                             placeholder={placeholder || label}
+                            className={className}
                             {...field}
                         />
                     </FormControl>

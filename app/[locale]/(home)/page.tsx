@@ -1,21 +1,20 @@
 'use client';
 
 import React from 'react';
-import Hero from '@/components/hero/hero';
-import Clients from '@/components/clients/clients';
-import Testimonial from '@/components/testimonial/testimonial';
-import Faq from '@/components/faq/faq';
+import NewHero from './components/NewHero';
+import FeaturesSection from './components/FeaturesSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import CTASection from './components/CTASection';
+import FAQSection from './components/FAQSection';
 
 export default function HomePage() {
     return (
         <>
-            <Hero />
-
-            <Clients />
-
-            <Testimonial />
-
-            <Faq />
+            <NewHero />
+            <FeaturesSection />
+            <TestimonialsSection />
+            <CTASection />
+            <FAQSection />
         </>
     );
 }

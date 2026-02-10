@@ -6,7 +6,7 @@
     "node": ">=20.x"
   },
   "scripts": {
-    "dev": "infisical run -- next dev --turbopack",
+    "dev": "next dev --turbopack",
     "prisma:generate": "prisma generate",
     "build": "rimraf .next && prisma generate && next build",
     "start": "infisical run -- next start",

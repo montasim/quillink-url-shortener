@@ -5,6 +5,8 @@ export interface IClickLog {
     id: string;
     shortKey: string;
     ipAddress?: string;
+    country?: string;
+    countryCode?: string;
     userAgent?: string;
     createdAt?: string;
 }

@@ -17,10 +17,12 @@ datasource db {
 model ClickLog {
   id String @id @default(cuid()) @map("_id")
 
-  shortKey  String
-  ipAddress String
-  userAgent String?
-  shortUrl  ShortUrl @relation(fields: [shortKey], references: [shortKey], onDelete: Cascade)
+  shortKey    String
+  ipAddress   String
+  country     String?
+  countryCode String?
+  userAgent   String?
+  shortUrl    ShortUrl @relation(fields: [shortKey], references: [shortKey], onDelete: Cascade)
 
   createdAt DateTime @default(now())
 }

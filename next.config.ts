@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
             process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI,
     },
     allowedDevOrigins: ['192.168.0.106'],
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
+        ],
+    },
 };
 
 export default withNextIntl(nextConfig);
