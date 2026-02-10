@@ -40,8 +40,10 @@ const UrlDashboard = () => {
                 return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
             } else if (sortBy === 'oldest') {
                 return new Date(a.createdAt || 0).getTime() - new Date(b.createdAt || 0).getTime();
+            } else if (sortBy === 'clicks') {
+                return (b.clicks || 0) - (a.clicks || 0);
             }
-            return 0; // clicks sorting can be added when click data is available
+            return 0;
         });
 
         return filtered;
@@ -49,10 +51,11 @@ const UrlDashboard = () => {
 
     // Calculate stats
     const stats = useMemo(() => {
+        const now = new Date();
         return {
             totalLinks: urls.length,
-            totalClicks: 0, // This would come from actual click data
-            activeLinks: urls.length, // This would be based on active status
+            totalClicks: urls.reduce((acc, url) => acc + (url.clicks || 0), 0),
+            activeLinks: urls.filter(url => !url.expiresAt || new Date(url.expiresAt) > now).length,
         };
     }, [urls]);
 
@@ -120,13 +123,15 @@ const UrlDashboard = () => {
                                 variant="outline"
                                 className="gap-2 h-11"
                                 onClick={() => {
-                                    const newSort = sortBy === 'newest' ? 'oldest' : 'newest';
-                                    setSortBy(newSort);
+                                    const options: ('newest' | 'oldest' | 'clicks')[] = ['newest', 'oldest', 'clicks'];
+                                    const currentIndex = options.indexOf(sortBy);
+                                    const nextIndex = (currentIndex + 1) % options.length;
+                                    setSortBy(options[nextIndex]);
                                 }}
                             >
                                 <SlidersHorizontal className="w-4 h-4" />
                                 <span className="hidden sm:inline">
-                                    {sortBy === 'newest' ? 'Newest' : 'Oldest'}
+                                    {sortBy === 'newest' ? 'Newest' : sortBy === 'oldest' ? 'Oldest' : 'Most Clicks'}
                                 </span>
                             </Button>
                             <CreateLinkModal onSuccess={() => fetchUrls(setUrls, setLoading)} />
@@ -159,7 +164,10 @@ const UrlDashboard = () => {
                                 </div>
                             </Card>
                         ) : (
-                            <UrlGrid urlData={filteredUrls} />
+                            <UrlGrid
+                                urlData={filteredUrls}
+                                onRefresh={() => fetchUrls(setUrls, setLoading)}
+                            />
                         )}
                     </div>
                 </div>

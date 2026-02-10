@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import dynamic from 'next/dynamic';
-import { Globe, MousePointerClick, Share2, Timer } from 'lucide-react';
+import { Globe, MousePointerClick, Share2, Timer, TrendingUp, Link } from 'lucide-react';
 
 const ViewsChart = dynamic(() => import('@/components/ViewsChart'), {
     ssr: false,
@@ -32,7 +32,14 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
         }));
 
     // Aggregate stats
-    const totalClicks = useMemo(() => urls.reduce((sum, url) => sum + (url.clicks || 0), 0), [urls]);
+    const stats = useMemo(() => {
+        const now = new Date();
+        return {
+            totalLinks: urls.length,
+            totalClicks: urls.reduce((sum, url) => sum + (url.clicks || 0), 0),
+            activeLinks: urls.filter(url => !url.expiresAt || new Date(url.expiresAt) > now).length,
+        };
+    }, [urls]);
 
     // Aggregate click logs for the chart (last 7 days)
     const chartData = useMemo(() => {
@@ -113,6 +120,44 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
+            {/* Stats Overview */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 border-blue-200 dark:border-blue-800/50 rounded-2xl shadow-sm">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Links</p>
+                            <p className="text-3xl font-bold text-blue-900 dark:text-blue-100 mt-1">{stats.totalLinks}</p>
+                        </div>
+                        <div className="p-3 bg-blue-200/50 dark:bg-blue-800/50 rounded-xl">
+                            <Link className="w-6 h-6 text-blue-700 dark:text-blue-300" />
+                        </div>
+                    </div>
+                </Card>
+
+                <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20 border-purple-200 dark:border-purple-800/50 rounded-2xl shadow-sm">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-purple-700 dark:text-purple-300">Total Clicks</p>
+                            <p className="text-3xl font-bold text-purple-900 dark:text-purple-100 mt-1">{stats.totalClicks}</p>
+                        </div>
+                        <div className="p-3 bg-purple-200/50 dark:bg-purple-800/50 rounded-xl">
+                            <MousePointerClick className="w-6 h-6 text-purple-700 dark:text-purple-300" />
+                        </div>
+                    </div>
+                </Card>
+
+                <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/20 border-green-200 dark:border-green-800/50 rounded-2xl shadow-sm">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-green-700 dark:text-green-300">Active Links</p>
+                            <p className="text-3xl font-bold text-green-900 dark:text-green-100 mt-1">{stats.activeLinks}</p>
+                        </div>
+                        <div className="p-3 bg-green-200/50 dark:bg-green-800/50 rounded-xl">
+                            <TrendingUp className="w-6 h-6 text-green-700 dark:text-green-300" />
+                        </div>
+                    </div>
+                </Card>
+            </div>
             {/* Main Growth Chart */}
             <Card className="border-none shadow-2xl shadow-primary/5 bg-card/50 backdrop-blur-sm overflow-hidden rounded-[32px]">
                 <CardHeader className="pb-2">

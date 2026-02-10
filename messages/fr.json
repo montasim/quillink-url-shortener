@@ -143,6 +143,7 @@
     "share": "Partager",
     "details": "Détails",
     "delete": "Supprimer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce lien court? Cette action est irréversible.",
     "shareAsLink": "Partager comme Lien",
     "shareWithFacebook": "Partager avec Facebook",
     "shareWithInstagram": "Partager avec Instagram",

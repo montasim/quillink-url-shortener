@@ -143,6 +143,7 @@
     "share": "Compartir",
     "details": "Detalles",
     "delete": "Eliminar",
+    "confirmDelete": "¿Estás seguro de que quieres eliminar este enlace corto? Esta acción no se puede deshacer.",
     "shareAsLink": "Compartir como Enlace",
     "shareWithFacebook": "Compartir con Facebook",
     "shareWithInstagram": "Compartir con Instagram",

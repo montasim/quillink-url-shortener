@@ -8,6 +8,8 @@ export const urlSelection = {
         select: {
             ipAddress: true,
             userAgent: true,
+            country: true,
+            countryCode: true,
             createdAt: true,
         },
         orderBy: { createdAt: 'desc' },
@@ -19,5 +21,7 @@ export const clickLogSelection = {
     shortKey: true,
     ipAddress: true,
     userAgent: true,
+    country: true,
+    countryCode: true,
     createdAt: true,
 };

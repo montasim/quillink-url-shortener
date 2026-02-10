@@ -5,9 +5,13 @@ import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
 import { ShortKeySchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
-import { deleteShortUrl, getShortUrlDetails } from '@/services/url.service';
+import { deleteShortUrl, getShortUrlDetails, getExistingShortUrl } from '@/services/url.service';
+import { getCookies } from '@/lib/cookies';
+import { verifyToken } from '@/lib/jwt';
+import { ISignedJwtPayload } from '@/types/types';
+import COOKIES from '@/constants/cookies';
 
-const { URL_DELETION, SINGLE_URL_DETAILS } = MESSAGES;
+const { URL_DELETION, SINGLE_URL_DETAILS, AUTHENTICATION } = MESSAGES;
 
 const deleteShortUrlById = async (
     request: NextRequest,
@@ -19,16 +23,54 @@ const deleteShortUrlById = async (
 
     const shortKey = validation.data.shortKey;
 
-    // Attempt to find the URL record before attempting deletion
-    const shortUrlRecord = await getShortUrlDetails({ shortKey });
+    const { accessCookie, guestCookie } = await getCookies();
+    let userId: string | null = null;
+    let guestId: string | null = null;
 
-    // If no record is found, return a 404 response
+    if (accessCookie) {
+        try {
+            const decodedPayload: ISignedJwtPayload = verifyToken(
+                accessCookie,
+                COOKIES.TYPE.ACCESS
+            );
+            if (decodedPayload?.currentUser?.id) {
+                userId = decodedPayload.currentUser.id;
+            }
+        } catch (error) {
+            console.error('Access token verification failed:', error);
+        }
+    }
+
+    if (!userId && guestCookie) {
+        guestId = guestCookie;
+    }
+
+    if (!userId && !guestId) {
+        return sendResponse(
+            httpStatusLite.UNAUTHORIZED,
+            AUTHENTICATION.UNAUTHORIZED
+        );
+    }
+
+    // Attempt to find the URL record before attempting deletion
+    const filterConditions: any = { shortKey };
+    if (userId) {
+        filterConditions.userId = userId;
+    } else {
+        filterConditions.guestId = guestId;
+    }
+
+    // Use findFirst check via getExistingShortUrl to ensure ownership
+    const shortUrlRecord = await getExistingShortUrl(filterConditions);
+
+    // If no record is found or not owned by user, return a 404 response
+    // (We return 404 instead of 403 to avoid leaking existence of links)
     if (!shortUrlRecord) {
         return sendResponse(httpStatusLite.NOT_FOUND, URL_DELETION.NOT_FOUND);
     }
 
     // Delete the short URL record from the database
-    await deleteShortUrl({ shortKey });
+    await deleteShortUrl(filterConditions);
 
     // Return a success response
     return sendResponse(httpStatusLite.OK, URL_DELETION.SUCCESS);

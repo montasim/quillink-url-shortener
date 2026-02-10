@@ -143,6 +143,7 @@
     "share": "分享",
     "details": "详情",
     "delete": "删除",
+    "confirmDelete": "您确定要删除此短链接吗？此操作无法撤消。",
     "shareAsLink": "分享为链接",
     "shareWithFacebook": "分享到Facebook",
     "shareWithInstagram": "分享到Instagram",
