@@ -90,29 +90,36 @@ const ContactPage = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-24 text-center p-10 rounded-[32px] bg-gradient-to-br from-muted/50 to-muted/30 border border-border max-w-4xl mx-auto">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <MessageSquare className="w-8 h-8 text-primary" />
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                        Prefer a live chat?
-                    </h2>
-                    <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-                        Our support team is available check the common questions in our FAQ section or reach out directly.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            href="/#faq"
-                            className="inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 shadow-lg shadow-primary/20"
-                        >
-                            View FAQs
-                        </Link>
-                        <Link
-                            href="mailto:montasimmamun@gmail.com"
-                            className="inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all bg-background border border-border hover:bg-muted h-12 px-8"
-                        >
-                            Email Support
-                        </Link>
+                <div className="mt-32 relative overflow-hidden p-12 md:p-20 rounded-[48px] bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] text-foreground border border-border shadow-2xl shadow-primary/5 max-w-5xl mx-auto group">
+                    {/* Background decoration */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-all duration-700"></div>
+                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+
+                    <div className="relative z-10 text-center">
+                        <div className="w-20 h-20 bg-primary/10 backdrop-blur-xl rounded-[28px] flex items-center justify-center mx-auto mb-10 border border-primary/20 shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                            <MessageSquare className="w-10 h-10 text-primary" />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight">
+                            Prefer a <span className="text-primary italic">live chat?</span>
+                        </h2>
+                        <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+                            Our support team is available check the common questions in our FAQ section or reach out directly.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                            <Link
+                                href="/#faq"
+                                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-primary text-primary-foreground hover:bg-primary/95 h-16 px-12 shadow-2xl active:scale-95"
+                            >
+                                View FAQs
+                            </Link>
+                            <Link
+                                href="mailto:montasimmamun@gmail.com"
+                                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-background border-2 border-border text-foreground hover:bg-muted h-16 px-12 shadow-xl active:scale-95"
+                            >
+                                Email Support
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

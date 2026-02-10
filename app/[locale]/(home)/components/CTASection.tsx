@@ -8,46 +8,50 @@ import Link from 'next/link';
 
 const CTASection = () => {
     return (
-        <section className="py-24 px-6 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl"></div>
+        <section className="py-32 px-6 bg-background relative overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+                <div className="relative rounded-[48px] bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] p-12 md:p-24 overflow-hidden border border-border shadow-2xl shadow-primary/5">
+                    {/* Background decoration */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
 
-            <div className="max-w-5xl mx-auto text-center relative z-10">
-                <Badge className="bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 rounded-full px-4 py-1.5 border border-primary-foreground/30 font-medium text-sm mb-6">
-                    Get Started Today
-                </Badge>
+                    <div className="max-w-3xl mx-auto text-center relative z-10">
+                        <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-bold text-sm mb-8 tracking-wider uppercase">
+                            Get Started Today
+                        </Badge>
 
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-                    Get closer to your audience with QuilLink today
-                </h2>
+                        <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 leading-[1.1] tracking-tight">
+                            Ready to <span className="text-primary italic">transform</span> your links?
+                        </h2>
 
-                <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-12">
-                    Join thousands of businesses and individuals who trust QuilLink to power their link management and analytics.
-                </p>
+                        <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 leading-relaxed">
+                            Join thousands of creators and businesses who use QuilLink to scale their reach and track every click.
+                        </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button
-                        size="lg"
-                        className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8 h-14 rounded-xl shadow-xl group"
-                        asChild
-                    >
-                        <Link href="/signup">
-                            Start for Free
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </Button>
-                    <Button
-                        size="lg"
-                        variant="outline"
-                        className="bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 h-14 rounded-xl"
-                        asChild
-                    >
-                        <Link href="/contact-us">
-                            Contact Sales
-                        </Link>
-                    </Button>
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                            <Button
+                                size="lg"
+                                className="bg-primary text-primary-foreground hover:bg-primary/95 font-black px-12 h-16 rounded-2xl shadow-2xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 group text-lg"
+                                asChild
+                            >
+                                <Link href="/signup">
+                                    Start for Free
+                                    <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                                </Link>
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="bg-background border-2 border-border text-foreground hover:bg-muted font-bold px-12 h-16 rounded-2xl transition-all text-lg"
+                                asChild
+                            >
+                                <Link href="/contact-us">
+                                    Contact Sales
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
