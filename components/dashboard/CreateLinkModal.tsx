@@ -27,7 +27,7 @@ interface CreateLinkModalProps {
     triggerLabel?: string;
 }
 
-const CreateLinkModal = ({ onSuccess, triggerLabel = 'Create Link' }: CreateLinkModalProps) => {
+const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
     const t = useTranslations('dashboard');
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -54,14 +54,14 @@ const CreateLinkModal = ({ onSuccess, triggerLabel = 'Create Link' }: CreateLink
             <DialogTrigger asChild>
                 <Button className="gap-2 h-11 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
                     <Plus className="w-4 h-4" />
-                    <span className="hidden sm:inline">{triggerLabel}</span>
+                    <span className="hidden sm:inline">{triggerLabel || t('createLink')}</span>
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md rounded-[24px]">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold">Create new link</DialogTitle>
+                    <DialogTitle className="text-2xl font-bold">{t('createNewLink')}</DialogTitle>
                     <DialogDescription>
-                        Enter your long URL to create a short, shareable link.
+                        {t('createLinkDesc')}
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
@@ -69,7 +69,7 @@ const CreateLinkModal = ({ onSuccess, triggerLabel = 'Create Link' }: CreateLink
                         <TextField
                             control={form.control}
                             name="originalUrl"
-                            label="Destination URL"
+                            label={t('destinationUrl')}
                             placeholder="https://example.com/very-long-url"
                             className="rounded-xl h-11"
                         />
@@ -80,13 +80,13 @@ const CreateLinkModal = ({ onSuccess, triggerLabel = 'Create Link' }: CreateLink
                                 onClick={() => setOpen(false)}
                                 className="rounded-xl"
                             >
-                                Cancel
+                                {t('cancel')}
                             </Button>
                             <SubmitButton
                                 disabled={!form.formState.isValid || loading}
                                 loading={loading}
-                                label="Create Link"
-                                loadingLabel="Creating..."
+                                label={t('createLink')}
+                                loadingLabel={t('generating')}
                                 className="rounded-xl px-8"
                             />
                         </div>

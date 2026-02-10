@@ -172,7 +172,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         }}
                     >
                         <ExternalLink className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">Visit</span>
+                        <span className="text-xs font-medium">{t('visit')}</span>
                     </Button>
 
                     <Button
@@ -182,7 +182,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         onClick={toggleQrPopover}
                     >
                         <QrCode className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">QR Code</span>
+                        <span className="text-xs font-medium">{t('qrCode')}</span>
                     </Button>
 
                     <Button
@@ -200,7 +200,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                     >
                         <Trash2 className="w-3.5 h-3.5" />
                         <span className="text-xs font-medium">
-                            {isDeleting ? 'Deleting...' : 'Delete'}
+                            {isDeleting ? t('deleting') : t('delete')}
                         </span>
                     </Button>
                 </div>
@@ -223,8 +223,8 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                     >
                         <div className="space-y-6">
                             <div className="text-center space-y-1">
-                                <h3 className="font-bold text-xl text-foreground">QR Code</h3>
-                                <p className="text-sm text-muted-foreground">Scan to visit your link</p>
+                                <h3 className="font-bold text-xl text-foreground">{t('qrCode')}</h3>
+                                <p className="text-sm text-muted-foreground">{t('scanToVisit')}</p>
                             </div>
 
                             {qrCodeUrl ? (
@@ -252,7 +252,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                                                 toast.success('QR Code downloaded');
                                             }}
                                         >
-                                            Download QR
+                                            {t('downloadQr')}
                                         </Button>
                                         <Button
                                             variant="ghost"
@@ -260,14 +260,14 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                                             className="w-full h-11 rounded-xl text-muted-foreground hover:text-foreground"
                                             onClick={() => setShowQrPopover(false)}
                                         >
-                                            Close
+                                            {t('close')}
                                         </Button>
                                     </div>
                                 </>
                             ) : (
                                 <div className="flex flex-col items-center justify-center py-12 gap-4">
                                     <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-                                    <p className="text-sm text-muted-foreground animate-pulse">Generating...</p>
+                                    <p className="text-sm text-muted-foreground animate-pulse">{t('generating')}</p>
                                 </div>
                             )}
                         </div>
@@ -283,7 +283,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                             <Trash2 className="w-8 h-8 text-destructive" />
                         </div>
                         <div className="space-y-2 text-center">
-                            <DialogTitle className="text-2xl font-black tracking-tight text-foreground">Are you sure?</DialogTitle>
+                            <DialogTitle className="text-2xl font-black tracking-tight text-foreground">{t('areYouSure')}</DialogTitle>
                             <DialogDescription className="text-base text-muted-foreground font-medium leading-relaxed">
                                 {t('confirmDelete')}
                             </DialogDescription>
@@ -295,7 +295,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                             onClick={() => setShowDeleteDialog(false)}
                             className="flex-1 h-12 rounded-xl font-bold border-border bg-background hover:bg-muted transition-all duration-300"
                         >
-                            Keep it
+                            {t('keepIt')}
                         </Button>
                         <Button
                             variant="destructive"
@@ -308,7 +308,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                             className="flex-1 h-12 rounded-xl font-bold bg-destructive text-white hover:bg-destructive/90 shadow-lg shadow-destructive/20 transition-all duration-300 active:scale-95"
                             disabled={isDeleting}
                         >
-                            {isDeleting ? 'Deleting...' : 'Delete Link'}
+                            {isDeleting ? t('deleting') : t('deleteLink')}
                         </Button>
                     </DialogFooter>
                 </DialogContent>

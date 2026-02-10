@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTranslations } from 'next-intl';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import dynamic from 'next/dynamic';
@@ -20,6 +21,7 @@ interface AnalysisTabProps {
 }
 
 const AnalysisTab = ({ urls }: AnalysisTabProps) => {
+    const t = useTranslations('dashboard');
     // Calculate top links from real data
     const topLinks = [...urls]
         .sort((a, b) => (b.clicks || 0) - (a.clicks || 0))
@@ -125,7 +127,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                 <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 border-blue-200 dark:border-blue-800/50 rounded-2xl shadow-sm">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Links</p>
+                            <p className="text-sm font-medium text-blue-700 dark:text-blue-300">{t('totalLinks')}</p>
                             <p className="text-3xl font-bold text-blue-900 dark:text-blue-100 mt-1">{stats.totalLinks}</p>
                         </div>
                         <div className="p-3 bg-blue-200/50 dark:bg-blue-800/50 rounded-xl">
@@ -137,7 +139,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                 <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20 border-purple-200 dark:border-purple-800/50 rounded-2xl shadow-sm">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-purple-700 dark:text-purple-300">Total Clicks</p>
+                            <p className="text-sm font-medium text-purple-700 dark:text-purple-300">{t('totalClicks')}</p>
                             <p className="text-3xl font-bold text-purple-900 dark:text-purple-100 mt-1">{stats.totalClicks}</p>
                         </div>
                         <div className="p-3 bg-purple-200/50 dark:bg-purple-800/50 rounded-xl">
@@ -149,7 +151,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                 <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/20 border-green-200 dark:border-green-800/50 rounded-2xl shadow-sm">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-green-700 dark:text-green-300">Active Links</p>
+                            <p className="text-sm font-medium text-green-700 dark:text-green-300">{t('activeLinks')}</p>
                             <p className="text-3xl font-bold text-green-900 dark:text-green-100 mt-1">{stats.activeLinks}</p>
                         </div>
                         <div className="p-3 bg-green-200/50 dark:bg-green-800/50 rounded-xl">
@@ -163,11 +165,11 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                 <CardHeader className="pb-2">
                     <div className="flex items-center justify-between">
                         <div>
-                            <CardTitle className="text-xl font-bold">Overall Traffic Evolution</CardTitle>
-                            <p className="text-sm text-muted-foreground">Clicks and unique visitors across all links</p>
+                            <CardTitle className="text-xl font-bold">{t('overallTraffic')}</CardTitle>
+                            <p className="text-sm text-muted-foreground">{t('overallTrafficDesc')}</p>
                         </div>
                         <div className="flex gap-2">
-                            <Badge variant="secondary" className="bg-primary/5 text-primary border-primary/10">Last 7 Days</Badge>
+                            <Badge variant="secondary" className="bg-primary/5 text-primary border-primary/10">{t('last7Days')}</Badge>
                         </div>
                     </div>
                 </CardHeader>
@@ -184,7 +186,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3 text-lg">
                             <Share2 className="w-5 h-5 text-primary" />
-                            Top Performing Links
+                            {t('topPerformingLinks')}
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -196,7 +198,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                                             {link.shortUrl}
                                         </span>
                                         <span className="text-xs text-muted-foreground flex items-center gap-1">
-                                            <Timer className="w-3 h-3" /> Updated 2h ago
+                                            <Timer className="w-3 h-3" /> {t('updatedAgo')}
                                         </span>
                                     </div>
                                     <div className="text-right">
@@ -210,7 +212,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                                     </div>
                                 </div>
                             )) : (
-                                <p className="text-center text-muted-foreground py-10 italic">No data yet</p>
+                                <p className="text-center text-muted-foreground py-10 italic">{t('noDataYet')}</p>
                             )}
                         </div>
                     </CardContent>
@@ -221,7 +223,7 @@ const AnalysisTab = ({ urls }: AnalysisTabProps) => {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3 text-lg">
                             <Globe className="w-5 h-5 text-primary" />
-                            Traffic by Location
+                            {t('trafficByLocation')}
                         </CardTitle>
                     </CardHeader>
                     <CardContent>

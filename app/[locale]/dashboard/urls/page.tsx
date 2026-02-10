@@ -73,7 +73,7 @@ const UrlDashboard = () => {
                         <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 border-blue-200 dark:border-blue-800/50">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Links</p>
+                                    <p className="text-sm font-medium text-blue-700 dark:text-blue-300">{t('totalLinks')}</p>
                                     <p className="text-3xl font-bold text-blue-900 dark:text-blue-100 mt-1">{stats.totalLinks}</p>
                                 </div>
                                 <div className="p-3 bg-blue-200 dark:bg-blue-800/50 rounded-xl">
@@ -85,7 +85,7 @@ const UrlDashboard = () => {
                         <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20 border-purple-200 dark:border-purple-800/50">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm font-medium text-purple-700 dark:text-purple-300">Total Clicks</p>
+                                    <p className="text-sm font-medium text-purple-700 dark:text-purple-300">{t('totalClicks')}</p>
                                     <p className="text-3xl font-bold text-purple-900 dark:text-purple-100 mt-1">{stats.totalClicks}</p>
                                 </div>
                                 <div className="p-3 bg-purple-200 dark:bg-purple-800/50 rounded-xl">
@@ -97,7 +97,7 @@ const UrlDashboard = () => {
                         <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/20 border-green-200 dark:border-green-800/50">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm font-medium text-green-700 dark:text-green-300">Active Links</p>
+                                    <p className="text-sm font-medium text-green-700 dark:text-green-300">{t('activeLinks')}</p>
                                     <p className="text-3xl font-bold text-green-900 dark:text-green-100 mt-1">{stats.activeLinks}</p>
                                 </div>
                                 <div className="p-3 bg-green-200 dark:bg-green-800/50 rounded-xl">
@@ -112,7 +112,7 @@ const UrlDashboard = () => {
                         <div className="relative flex-1">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                             <Input
-                                placeholder="Search by short link or destination URL..."
+                                placeholder={t('searchPlaceholder')}
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 className="pl-10 h-11 bg-card border-border/50 focus:border-primary/50"
@@ -131,7 +131,7 @@ const UrlDashboard = () => {
                             >
                                 <SlidersHorizontal className="w-4 h-4" />
                                 <span className="hidden sm:inline">
-                                    {sortBy === 'newest' ? 'Newest' : sortBy === 'oldest' ? 'Oldest' : 'Most Clicks'}
+                                    {sortBy === 'newest' ? t('newest') : sortBy === 'oldest' ? t('oldest') : t('mostClicks')}
                                 </span>
                             </Button>
                             <CreateLinkModal onSuccess={() => fetchUrls(setUrls, setLoading)} />
@@ -147,17 +147,17 @@ const UrlDashboard = () => {
                                         <Link2 className="w-10 h-10 text-primary" />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-2">
-                                        {searchQuery ? 'No links found' : t('noUrls')}
+                                        {searchQuery ? t('noLinksFound') : t('noUrls')}
                                     </h3>
                                     <p className="text-muted-foreground mb-6 max-w-md mx-auto">
                                         {searchQuery
-                                            ? 'Try adjusting your search query or filters'
-                                            : 'Create your first short link to get started with tracking and analytics'
+                                            ? t('tryAdjustingSearch')
+                                            : t('createFirstLinkDesc')
                                         }
                                     </p>
                                     {!searchQuery && (
                                         <CreateLinkModal
-                                            triggerLabel="Create Your First Link"
+                                            triggerLabel={t('createFirstLinkButton')}
                                             onSuccess={() => fetchUrls(setUrls, setLoading)}
                                         />
                                     )}
@@ -194,8 +194,8 @@ const UrlDashboard = () => {
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2">Links Dashboard</h1>
-                <p className="text-muted-foreground">Manage and track all your shortened links</p>
+                <h1 className="text-3xl font-bold mb-2">{t('dashboardTitle')}</h1>
+                <p className="text-muted-foreground">{t('dashboardSubtitle')}</p>
             </div>
 
             <TabSection
