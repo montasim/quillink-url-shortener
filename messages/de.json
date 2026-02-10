@@ -506,7 +506,12 @@
     "offeredIn": "angeboten in",
     "redirecting": "Weiterleitung...",
     "redirectingMessage": "Sie werden zu {shortKey} weitergeleitet",
-    "redirectingDescription": "Bitte warten Sie, während wir Sie zu Ihrem Ziel bringen"
+    "redirectingDescription": "Bitte warten Sie, während wir Sie zu Ihrem Ziel bringen",
+    "pageNotFound": "Seite nicht gefunden",
+    "pageNotFoundDescription": "Entschuldigung, wir konnten die Seite, nach der Sie suchen, nicht finden.",
+    "errorOccurredDescription": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kehren Sie zur Startseite zurück.",
+    "goToHomepage": "Zur Startseite gehen",
+    "tryAgain": "Erneut versuchen"
   },
   "footer": {
     "allRightsReserved": "Alle Rechte vorbehalten.",

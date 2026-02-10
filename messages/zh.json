@@ -506,7 +506,12 @@
     "offeredIn": "提供语言",
     "redirecting": "正在重定向...",
     "redirectingMessage": "正在将您重定向到 {shortKey}",
-    "redirectingDescription": "请稍候，我们正在带您前往目的地"
+    "redirectingDescription": "请稍候，我们正在带您前往目的地",
+    "pageNotFound": "页面未找到",
+    "pageNotFoundDescription": "抱歉，我们找不到您要查找的页面。",
+    "errorOccurredDescription": "发生意外错误。请重试或返回首页。",
+    "goToHomepage": "返回首页",
+    "tryAgain": "重试"
   },
   "footer": {
     "allRightsReserved": "保留所有权利。",

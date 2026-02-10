@@ -506,7 +506,12 @@
     "offeredIn": "متوفر بـ",
     "redirecting": "إعادة التوجيه...",
     "redirectingMessage": "يتم توجيهك إلى {shortKey}",
-    "redirectingDescription": "الرجاء الانتظار بينما نقوم بتوصيلك بوجهتك"
+    "redirectingDescription": "الرجاء الانتظار بينما نقوم بتوصيلك بوجهتك",
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDescription": "عذرًا، لم نتمكن من العثور على الصفحة التي تبحث عنها.",
+    "errorOccurredDescription": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى أو العودة إلى الصفحة الرئيسية.",
+    "goToHomepage": "الذهاب إلى الصفحة الرئيسية",
+    "tryAgain": "حاول مرة أخرى"
   },
   "footer": {
     "allRightsReserved": "كل الحقوق محفوظة.",

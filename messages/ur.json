@@ -506,7 +506,12 @@
     "offeredIn": "میں پیشکش",
     "redirecting": "ری ڈائریکٹ ہو رہا ہے...",
     "redirectingMessage": "آپ کو {shortKey} پر ری ڈائریکٹ کیا جا رہا ہے",
-    "redirectingDescription": "براہ کرم انتظار کریں جب ہم آپ کو آپ کے مقصد پر لے جاتے ہیں"
+    "redirectingDescription": "براہ کرم انتظار کریں جب ہم آپ کو آپ کے مقصد پر لے جاتے ہیں",
+    "pageNotFound": "صفحہ نہیں ملا",
+    "pageNotFoundDescription": "معاف کریں، ہم اس صفحے کو تلاش نہیں کر سکتے جس کی آپ تلاش کر رہے ہیں۔",
+    "errorOccurredDescription": "ایک غیر متوقع خرابی پیش آگئی۔ براہ کرم دوبارہ کوشش کریں یا ہوم پیج پر واپس جائیں۔",
+    "goToHomepage": "ہوم پیج پر جائیں",
+    "tryAgain": "دوبارہ کوشش کریں"
   },
   "footer": {
     "allRightsReserved": "جملہ حقوق محفوظ ہیں۔",

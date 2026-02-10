@@ -506,7 +506,12 @@
     "offeredIn": "ofrecido en",
     "redirecting": "Redireccionando...",
     "redirectingMessage": "Estás siendo redirigido a {shortKey}",
-    "redirectingDescription": "Por favor espera mientras te llevamos a tu destino"
+    "redirectingDescription": "Por favor espera mientras te llevamos a tu destino",
+    "pageNotFound": "Página no encontrada",
+    "pageNotFoundDescription": "Lo sentimos, no pudimos encontrar la página que estás buscando.",
+    "errorOccurredDescription": "Ocurrió un error inesperado. Por favor inténtalo de nuevo o regresa a la página principal.",
+    "goToHomepage": "Ir a la página principal",
+    "tryAgain": "Intentar de nuevo"
   },
   "footer": {
     "allRightsReserved": "Todos los derechos reservados.",
