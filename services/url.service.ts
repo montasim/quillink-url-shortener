@@ -66,6 +66,7 @@ interface FetchActionParams {
     setData: any;
     successMessage?: string;
     errorMessage?: string;
+    t?: (key: string) => string;
 }
 
 export const handleFetchAction = async ({
@@ -74,6 +75,7 @@ export const handleFetchAction = async ({
     setData,
     successMessage,
     errorMessage,
+    t,
 }: FetchActionParams) => {
     setLoading(true);
 
@@ -81,10 +83,10 @@ export const handleFetchAction = async ({
         const { success, message, data } = await getData(apiEndpoint);
 
         if (success) {
-            toast.success(successMessage || message);
+            toast.success(successMessage || message || (t ? t('common.successMessage') : message));
             setData(data);
         } else {
-            toast.error(errorMessage || message);
+            toast.error(errorMessage || message || (t ? t('common.errorMessage') : message));
         }
     } catch (error: any) {
         if (
@@ -94,7 +96,7 @@ export const handleFetchAction = async ({
         ) {
             toast.error(error.response.data.message);
         } else {
-            toast.error(errorMessage || MESSAGES.COMMON.UNEXPECTED_ERROR);
+            toast.error(errorMessage || (t ? t('common.unexpectedError') : MESSAGES.COMMON.UNEXPECTED_ERROR));
         }
     } finally {
         setLoading(false);

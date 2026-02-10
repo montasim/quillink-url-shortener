@@ -19,6 +19,7 @@ import { AnalysisSkeleton } from '@/components/dashboard/AnalysisSkeleton';
 
 const UrlDashboard = () => {
     const t = useTranslations('dashboard');
+    const urlT = useTranslations('url');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
@@ -134,7 +135,7 @@ const UrlDashboard = () => {
                                     {sortBy === 'newest' ? t('newest') : sortBy === 'oldest' ? t('oldest') : t('mostClicks')}
                                 </span>
                             </Button>
-                            <CreateLinkModal onSuccess={() => fetchUrls(setUrls, setLoading)} />
+                            <CreateLinkModal onSuccess={() => fetchUrls(setUrls, setLoading, urlT)} />
                         </div>
                     </div>
 
@@ -158,7 +159,7 @@ const UrlDashboard = () => {
                                     {!searchQuery && (
                                         <CreateLinkModal
                                             triggerLabel={t('createFirstLinkButton')}
-                                            onSuccess={() => fetchUrls(setUrls, setLoading)}
+                                            onSuccess={() => fetchUrls(setUrls, setLoading, urlT)}
                                         />
                                     )}
                                 </div>
@@ -166,7 +167,7 @@ const UrlDashboard = () => {
                         ) : (
                             <UrlGrid
                                 urlData={filteredUrls}
-                                onRefresh={() => fetchUrls(setUrls, setLoading)}
+                                onRefresh={() => fetchUrls(setUrls, setLoading, urlT)}
                             />
                         )}
                     </div>
@@ -188,7 +189,7 @@ const UrlDashboard = () => {
     ];
 
     useEffect(() => {
-        fetchUrls(setUrls, setLoading);
+        fetchUrls(setUrls, setLoading, urlT);
     }, []);
 
     return (

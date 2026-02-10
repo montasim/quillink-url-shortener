@@ -69,7 +69,7 @@ const ForgotPasswordPage = () => {
 
                     <div className="bg-card border border-border/60 rounded-[32px] p-8 shadow-2xl shadow-primary/5 ring-1 ring-border/50">
                         <p className="text-sm text-center text-muted-foreground mb-8">
-                            Enter your email address and we&apos;ll send you a link to reset your password.
+                            {t('subtitle')}
                         </p>
 
                         <Form {...form}>
@@ -82,7 +82,7 @@ const ForgotPasswordPage = () => {
                                     name="email"
                                     label={t('email')}
                                     type="email"
-                                    placeholder="name@company.com"
+                                    placeholder={t('emailPlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                 />
 
@@ -108,7 +108,7 @@ const ForgotPasswordPage = () => {
                         </Form>
 
                         <p className="mt-6 text-sm text-center text-muted-foreground">
-                            {t('rememberPassword')}
+                            {t('rememberPassword')}{' '}
                             <Link
                                 href="/login"
                                 className="ml-1 font-bold text-primary hover:underline hover:underline-offset-4 transition-all"

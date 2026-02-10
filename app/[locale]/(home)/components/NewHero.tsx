@@ -17,6 +17,7 @@ import { useTranslations } from 'next-intl';
 
 const NewHero = () => {
     const t = useTranslations('home.hero');
+    const urlT = useTranslations('url');
     const router = useRouter();
     const [creating, setCreating] = useState(false);
     const [url, setUrl] = useState('');
@@ -33,7 +34,7 @@ const NewHero = () => {
         e.preventDefault();
         if (!url) return;
 
-        await handleCreate({ originalUrl: url }, setCreating, router);
+        await handleCreate({ originalUrl: url }, setCreating, router, urlT);
     };
 
     return (

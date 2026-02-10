@@ -29,6 +29,7 @@ interface CreateLinkModalProps {
 
 const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
     const t = useTranslations('dashboard');
+    const urlT = useTranslations('url');
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
@@ -41,7 +42,7 @@ const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
     });
 
     const onSubmit = async (data: z.infer<typeof ShortenUrlSchema>) => {
-        await handleCreate(data, setLoading, router);
+        await handleCreate(data, setLoading, router, urlT);
         setOpen(false);
         form.reset();
         if (onSuccess) {

@@ -82,7 +82,7 @@ const ResetPassword = () => {
 
                     <div className="bg-card border border-border/60 rounded-[32px] p-8 shadow-2xl shadow-primary/5 ring-1 ring-border/50">
                         <p className="text-sm text-center text-muted-foreground mb-8">
-                            Create a strong new password for your account.
+                            {t('subtitle')}
                         </p>
 
                         <Form {...form}>
@@ -94,7 +94,7 @@ const ResetPassword = () => {
                                     control={form.control}
                                     name="newPassword"
                                     label={t('password')}
-                                    placeholder="Enter new password"
+                                    placeholder={t('passwordPlaceholder') || t('password')}
                                     className="rounded-xl h-10 text-sm"
                                 />
 
@@ -120,7 +120,7 @@ const ResetPassword = () => {
                         </Form>
 
                         <p className="mt-6 text-sm text-center text-muted-foreground">
-                            {t('rememberPassword')}
+                            {t('rememberPassword')}{' '}
                             <Link
                                 href="/login"
                                 className="ml-1 font-bold text-primary hover:underline hover:underline-offset-4 transition-all"

@@ -99,14 +99,14 @@ const LoginPage = () => {
                                     name="email"
                                     label={t('email')}
                                     type="email"
-                                    placeholder="name@company.com"
+                                    placeholder={t('emailPlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                 />
                                 <PasswordField
                                     control={form.control}
                                     name="password"
                                     label={t('password')}
-                                    placeholder="Enter your password"
+                                    placeholder={t('passwordPlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                     viewPasswordStrength={false}
                                     viewPasswordMessage={false}
@@ -143,7 +143,7 @@ const LoginPage = () => {
                         </Form>
 
                         <p className="mt-6 text-sm text-center text-muted-foreground">
-                            {t('noAccount')}
+                            {t('noAccount')}{' '}
                             <Link
                                 href="/signup"
                                 className="ml-1 font-bold text-primary hover:underline hover:underline-offset-4 transition-all"

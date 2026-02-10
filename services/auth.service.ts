@@ -12,6 +12,7 @@ interface AuthActionParams {
     successRedirectUrl?: string;
     successMessage?: string;
     errorMessage?: string;
+    t?: (key: string) => string;
 }
 
 export const handleAuthAction = async ({
@@ -22,6 +23,7 @@ export const handleAuthAction = async ({
     successRedirectUrl,
     successMessage,
     errorMessage,
+    t,
 }: AuthActionParams) => {
     setLoading(true);
 
@@ -29,12 +31,12 @@ export const handleAuthAction = async ({
         const { success, message } = await createData(apiEndpoint, formData);
 
         if (success) {
-            toast.success(successMessage || message);
+            toast.success(successMessage || message || (t ? t('common.authSuccessMessage') : message));
             if (successRedirectUrl) {
                 router.push(successRedirectUrl);
             }
         } else {
-            toast.error(errorMessage || message);
+            toast.error(errorMessage || message || (t ? t('common.authErrorMessage') : message));
         }
     } catch (error: any) {
         if (
@@ -44,7 +46,7 @@ export const handleAuthAction = async ({
         ) {
             toast.error(error.response.data.message);
         } else {
-            toast.error(errorMessage || MESSAGES.COMMON.UNEXPECTED_ERROR);
+            toast.error(errorMessage || (t ? t('common.unexpectedError') : MESSAGES.COMMON.UNEXPECTED_ERROR));
         }
     } finally {
         setLoading(false);

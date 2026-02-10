@@ -249,7 +249,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                                                 link.href = qrCodeUrl;
                                                 link.download = `${url?.shortKey || 'qr-code'}-qr.png`;
                                                 link.click();
-                                                toast.success('QR Code downloaded');
+                                                toast.success(t('qrCodeDownloaded'));
                                             }}
                                         >
                                             {t('downloadQr')}

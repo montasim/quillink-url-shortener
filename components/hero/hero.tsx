@@ -23,6 +23,7 @@ const Hero = () => {
     const router = useRouter();
     const [creating, setCreating] = useState(false);
     const t = useTranslations('hero');
+    const urlT = useTranslations('url');
 
     const form = useForm<z.infer<typeof ShortenUrlSchema>>({
         mode: 'onChange',
@@ -33,7 +34,7 @@ const Hero = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof ShortenUrlSchema>) => {
-        await handleCreate(data, setCreating, router);
+        await handleCreate(data, setCreating, router, urlT);
     };
 
     const tabs = [

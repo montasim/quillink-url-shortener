@@ -100,7 +100,7 @@ const SignUpPage = () => {
                                     control={form.control}
                                     name="name"
                                     label={t('name')}
-                                    placeholder="Enter your name"
+                                    placeholder={t('namePlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                 />
                                 <TextField
@@ -108,14 +108,14 @@ const SignUpPage = () => {
                                     name="email"
                                     label={t('email')}
                                     type="email"
-                                    placeholder="name@company.com"
+                                    placeholder={t('emailPlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                 />
                                 <PasswordField
                                     control={form.control}
                                     name="password"
                                     label={t('password')}
-                                    placeholder="Create a strong password"
+                                    placeholder={t('passwordPlaceholder')}
                                     className="rounded-xl h-10 text-sm"
                                 />
 
@@ -143,7 +143,7 @@ const SignUpPage = () => {
                         </Form>
 
                         <p className="mt-6 text-sm text-center text-muted-foreground">
-                            {t('haveAccount')}
+                            {t('haveAccount')}{' '}
                             <Link
                                 href="/login"
                                 className="ml-1 font-bold text-primary hover:underline hover:underline-offset-4 transition-all"
