@@ -503,7 +503,10 @@
     "strong": "मजबूत",
     "hidePassword": "पासवर्ड छिपाएं",
     "showPassword": "पासवर्ड दिखाएं",
-    "offeredIn": "में उपलब्ध"
+    "offeredIn": "में उपलब्ध",
+    "redirecting": "पुनर्निर्देशित किया जा रहा है...",
+    "redirectingMessage": "आपको {shortKey} पर पुनर्निर्देशित किया जा रहा है",
+    "redirectingDescription": "कृपया प्रतीक्षा करें जब हम आपको आपके गंतव्य पर ले जाते हैं"
   },
   "footer": {
     "allRightsReserved": "सर्वाधिकार सुरक्षित।",

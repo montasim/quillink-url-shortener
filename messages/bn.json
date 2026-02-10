@@ -513,6 +513,9 @@
     "showPassword": "পাসওয়ার্ড দেখান",
     "offeredIn": "প্রদান করা হচ্ছে",
     "authSuccessMessage": "ক্রিয়াকলাপ সফল হয়েছে।",
-    "authErrorMessage": "ক্রিয়াকলাপ ব্যর্থ হয়েছে।"
+    "authErrorMessage": "ক্রিয়াকলাপ ব্যর্থ হয়েছে।",
+    "redirecting": "পুনর্নির্দেশ করা হচ্ছে...",
+    "redirectingMessage": "আপনাকে {shortKey} এ পুনর্নির্দেশ করা হচ্ছে",
+    "redirectingDescription": "অপেক্ষা করুন যখন আমরা আপনাকে আপনার গন্তব্যে নিয়ে যাচ্ছি"
   }
 }

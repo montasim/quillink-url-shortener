@@ -503,7 +503,10 @@
     "strong": "قوي",
     "hidePassword": "إخفاء كلمة المرور",
     "showPassword": "إظهار كلمة المرور",
-    "offeredIn": "متوفر بـ"
+    "offeredIn": "متوفر بـ",
+    "redirecting": "إعادة التوجيه...",
+    "redirectingMessage": "يتم توجيهك إلى {shortKey}",
+    "redirectingDescription": "الرجاء الانتظار بينما نقوم بتوصيلك بوجهتك"
   },
   "footer": {
     "allRightsReserved": "كل الحقوق محفوظة.",

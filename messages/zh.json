@@ -503,7 +503,10 @@
     "strong": "强",
     "hidePassword": "隐藏密码",
     "showPassword": "显示密码",
-    "offeredIn": "提供语言"
+    "offeredIn": "提供语言",
+    "redirecting": "正在重定向...",
+    "redirectingMessage": "正在将您重定向到 {shortKey}",
+    "redirectingDescription": "请稍候，我们正在带您前往目的地"
   },
   "footer": {
     "allRightsReserved": "保留所有权利。",

@@ -503,7 +503,10 @@
     "strong": "Fuerte",
     "hidePassword": "Ocultar contraseña",
     "showPassword": "Mostrar contraseña",
-    "offeredIn": "ofrecido en"
+    "offeredIn": "ofrecido en",
+    "redirecting": "Redireccionando...",
+    "redirectingMessage": "Estás siendo redirigido a {shortKey}",
+    "redirectingDescription": "Por favor espera mientras te llevamos a tu destino"
   },
   "footer": {
     "allRightsReserved": "Todos los derechos reservados.",

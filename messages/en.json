@@ -509,7 +509,10 @@
     "strong": "Strong",
     "hidePassword": "Hide password",
     "showPassword": "Show password",
-    "offeredIn": "offered in"
+    "offeredIn": "offered in",
+    "redirecting": "Redirecting...",
+    "redirectingMessage": "You are being redirected to {shortKey}",
+    "redirectingDescription": "Please wait while we take you to your destination"
   },
   "footer": {
     "allRightsReserved": "All rights reserved.",
