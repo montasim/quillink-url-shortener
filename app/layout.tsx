@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'QuilLink – URL Shortener',
+    title: 'Shrnkly – URL Shortener',
     description: 'Create short links, QR codes, share them anywhere.',
 };
 

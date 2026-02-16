@@ -53,7 +53,7 @@ const SimpleFooter = () => {
                     <span>
                         &copy; {new Date().getFullYear()}{' '}
                         <Link href="/" className="hover:text-foreground transition-colors">
-                            QuilLink
+                            Shrnkly
                         </Link>
                         . All rights reserved
                     </span>

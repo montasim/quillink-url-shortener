@@ -15,7 +15,7 @@
       "headingPart1": "Machen Sie jede ",
       "headingPart2": "wertvoll",
       "headingHighlight": "Verbindung",
-      "subheading": "Erstellen Sie kurze, kurze Links in Sekunden. Verfolgen Sie Klicks, analysieren Sie die Leistung und teilen Sie sie überall mit dem leistungsstarken URL-Shortener von QuilLink.",
+      "subheading": "Erstellen Sie kurze, kurze Links in Sekunden. Verfolgen Sie Klicks, analysieren Sie die Leistung und teilen Sie sie überall mit dem leistungsstarken URL-Shortener von Shrnkly.",
       "inputPlaceholder": "Geben Sie hier Ihre lange URL ein...",
       "shortenButton": "URL kürzen",
       "creating": "Erstellen...",
@@ -78,13 +78,13 @@
     "testimonials": {
       "badge": "Referenzen",
       "heading": "Hunderte vertrauen uns bereits",
-      "subheading": "Sehen Sie, was unsere Kunden über ihre Erfahrungen mit QuilLink sagen.",
+      "subheading": "Sehen Sie, was unsere Kunden über ihre Erfahrungen mit Shrnkly sagen.",
       "list": {
         "sarah": {
           "name": "Sarah Johnson",
           "role": "Marketing Director",
           "company": "TechCorp Inc.",
-          "text": "QuilLink hat die Art und Weise verändert, wie wir unsere Marketingkampagnen verwalten. Die Analysen sind unglaublich detailliert und die Benutzeroberfläche ist so intuitiv."
+          "text": "Shrnkly hat die Art und Weise verändert, wie wir unsere Marketingkampagnen verwalten. Die Analysen sind unglaublich detailliert und die Benutzeroberfläche ist so intuitiv."
         },
         "michael": {
           "name": "Michael Chen",
@@ -96,13 +96,13 @@
           "name": "Emily Rodriguez",
           "role": "Content Creator",
           "company": "Freelancer",
-          "text": "Als Content Creator ist das Verfolgen der Link-Performance entscheidend. QuilLink macht es so einfach zu sehen, was funktioniert."
+          "text": "Als Content Creator ist das Verfolgen der Link-Performance entscheidend. Shrnkly macht es so einfach zu sehen, was funktioniert."
         },
         "david": {
           "name": "David Kim",
           "role": "E-Commerce-Inhaber",
           "company": "ShopNow",
-          "text": "Wir verwenden QuilLink für alle unsere Produktlinks. Die Zuverlässigkeit ist hervorragend und die Funktion für benutzerdefinierte Domains schafft Vertrauen."
+          "text": "Wir verwenden Shrnkly für alle unsere Produktlinks. Die Zuverlässigkeit ist hervorragend und die Funktion für benutzerdefinierte Domains schafft Vertrauen."
         },
         "lisa": {
           "name": "Lisa Anderson",
@@ -114,7 +114,7 @@
           "name": "James Wilson",
           "role": "Startup-Gründer",
           "company": "InnovateLab",
-          "text": "QuilLink ist ein unverzichtbares Werkzeug für unser Startup. Es ist erschwinglich, leistungsstark und das Support-Team reagiert unglaublich schnell."
+          "text": "Shrnkly ist ein unverzichtbares Werkzeug für unser Startup. Es ist erschwinglich, leistungsstark und das Support-Team reagiert unglaublich schnell."
         }
       }
     },
@@ -123,26 +123,26 @@
       "headingPart1": "Sind Sie bereit, Ihre Links zu ",
       "headingPart2": "?",
       "headingHighlight": "transformieren",
-      "subheading": "Schließen Sie sich Tausenden von Kreativen und Unternehmen an, die QuilLink nutzen, um ihre Reichweite zu vergrößern und jeden Klick zu verfolgen.",
+      "subheading": "Schließen Sie sich Tausenden von Kreativen und Unternehmen an, die Shrnkly nutzen, um ihre Reichweite zu vergrößern und jeden Klick zu verfolgen.",
       "startButton": "Kostenlos starten",
       "contactButton": "Vertrieb kontaktieren"
     },
     "faq": {
       "badge": "FAQ",
       "heading": "Ihre Fragen, beantwortet",
-      "subheading": "Alles, was Sie über QuilLink wissen müssen und wie es funktioniert.",
+      "subheading": "Alles, was Sie über Shrnkly wissen müssen und wie es funktioniert.",
       "questions": {
         "whatIs": {
           "q": "Was ist ein URL-Shortener?",
           "a": "Ein URL-Shortener ist ein Tool, das lange URLs in kürzere, handlichere Links umwandelt."
         },
         "howWork": {
-          "q": "Wie funktioniert QuilLink?",
-          "a": "Fügen Sie einfach Ihre lange URL in unseren Shortener ein, und QuilLink erstellt für Sie einen kurzen, einzigartigen Link."
+          "q": "Wie funktioniert Shrnkly?",
+          "a": "Fügen Sie einfach Ihre lange URL in unseren Shortener ein, und Shrnkly erstellt für Sie einen kurzen, einzigartigen Link."
         },
         "isFree": {
-          "q": "Ist QuilLink kostenlos?",
-          "a": "Ja! QuilLink bietet einen kostenlosen Plan mit wesentlichen Funktionen wie Link-Kürzung, grundlegenden Analysen und QR-Code-Generierung."
+          "q": "Ist Shrnkly kostenlos?",
+          "a": "Ja! Shrnkly bietet einen kostenlosen Plan mit wesentlichen Funktionen wie Link-Kürzung, grundlegenden Analysen und QR-Code-Generierung."
         },
         "canTrack": {
           "q": "Kann ich meine kurzen Links verfolgen?",
@@ -154,7 +154,7 @@
         },
         "howLong": {
           "q": "Wie lange bleiben kurze Links bestehen?",
-          "a": "Standardmäßig laufen mit QuilLink erstellte kurze Links nie ab."
+          "a": "Standardmäßig laufen mit Shrnkly erstellte kurze Links nie ab."
         },
         "limit": {
           "q": "Gibt es ein Limit für die Anzahl der erstellbaren Links?",
@@ -162,7 +162,7 @@
         },
         "safe": {
           "q": "Sind kurze Links sicher?",
-          "a": "Ja, QuilLink nimmt Sicherheit ernst. Wir scannen alle URLs auf bösartige Inhalte."
+          "a": "Ja, Shrnkly nimmt Sicherheit ernst. Wir scannen alle URLs auf bösartige Inhalte."
         }
       },
       "cta": {
@@ -290,7 +290,7 @@
     "sections": {
       "intro": {
         "title": "1. Einleitung",
-        "content": "Bei QuilLink nehmen wir Ihre Privatsphäre ernst. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen."
+        "content": "Bei Shrnkly nehmen wir Ihre Privatsphäre ernst. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen."
       },
       "collect": {
         "title": "2. Informationen, die wir sammeln",
@@ -308,7 +308,7 @@
       },
       "analytics": {
         "title": "4. Datenanalyse",
-        "content": "Wenn jemand auf einen QuilLink-Link klickt, sammeln wir bestimmte Informationen über den Klick, wie z. B. die IP-Adresse und den geografischen Standort."
+        "content": "Wenn jemand auf einen Shrnkly-Link klickt, sammeln wir bestimmte Informationen über den Klick, wie z. B. die IP-Adresse und den geografischen Standort."
       },
       "security": {
         "title": "5. Sicherheit",
@@ -317,7 +317,7 @@
       "contact": {
         "title": "6. Kontakt",
         "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:",
-        "email": "E-Mail: privacy@quillink.com"
+        "email": "E-Mail: privacy@shrnkly.com"
       }
     }
   },
@@ -329,15 +329,15 @@
     "sections": {
       "acceptance": {
         "title": "1. Annahme der Bedingungen",
-        "content": "Durch den Zugriff auf oder die Nutzung der Dienste von QuilLink stimmen Sie zu, an diese Nutzungsbedingungen gebunden zu sein."
+        "content": "Durch den Zugriff auf oder die Nutzung der Dienste von Shrnkly stimmen Sie zu, an diese Nutzungsbedingungen gebunden zu sein."
       },
       "description": {
         "title": "2. Beschreibung des Dienstes",
-        "content": "QuilLink bietet einen URL-Verkürzungsdienst an, mit dem Benutzer kürzere Versionen langer URLs erstellen können."
+        "content": "Shrnkly bietet einen URL-Verkürzungsdienst an, mit dem Benutzer kürzere Versionen langer URLs erstellen können."
       },
       "responsibilities": {
         "title": "3. Verantwortung des Benutzers",
-        "content": "Sie sind für alle Aktivitäten verantwortlich, die unter Ihrem Konto stattfinden. Sie stimmen zu, QuilLink nicht zu verwenden für:",
+        "content": "Sie sind für alle Aktivitäten verantwortlich, die unter Ihrem Konto stattfinden. Sie stimmen zu, Shrnkly nicht zu verwenden für:",
         "list": [
           "Versenden von Spam oder unaufgeforderten Mitteilungen",
           "Verbreitung von Malware, Viren oder anderem schädlichen Code",
@@ -351,11 +351,11 @@
       },
       "property": {
         "title": "5. Geistiges Eigentum",
-        "content": "Der Name QuilLink, das Logo und alle zugehörigen Designs und Software sind geistiges Eigentum von QuilLink."
+        "content": "Der Name Shrnkly, das Logo und alle zugehörigen Designs und Software sind geistiges Eigentum von Shrnkly."
       },
       "liability": {
         "title": "6. Haftungsbeschränkung",
-        "content": "QuilLink stellt seine Dienste \"wie besehen\" ohne jegliche Garantie zur Verfügung."
+        "content": "Shrnkly stellt seine Dienste \"wie besehen\" ohne jegliche Garantie zur Verfügung."
       },
       "termination": {
         "title": "7. Beendigung",
@@ -364,7 +364,7 @@
       "contact": {
         "title": "8. Kontakt",
         "content": "Fragen zu den Nutzungsbedingungen richten Sie bitte an uns:",
-        "email": "E-Mail: legal@quillink.com"
+        "email": "E-Mail: legal@shrnkly.com"
       }
     }
   },

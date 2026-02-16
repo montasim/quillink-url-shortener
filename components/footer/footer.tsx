@@ -79,7 +79,7 @@ const Footer = () => {
                             <LinkedinIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://github.com/montasim"
+                            href="https://github.com/montasim/shrnkly-url-shortener"
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >

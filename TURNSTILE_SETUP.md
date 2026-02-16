@@ -55,7 +55,7 @@ Simply don't set the Turnstile environment variables. The system will automatica
 2. Navigate to Turnstile
 3. Click "Add a site"
 4. Configure the site:
-    - **Site name**: Your app name (e.g., "QuilLink Production")
+    - **Site name**: Your app name (e.g., "Shrnkly Production")
     - **Domain**: Your production domain (e.g., `yourdomain.com`)
     - **Widget mode**: Managed (recommended)
     - **Pre-clearance**: Optional

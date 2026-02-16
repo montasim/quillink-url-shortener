@@ -15,7 +15,7 @@
       "headingPart1": "让每一次 ",
       "headingPart2": "算数",
       "headingHighlight": "连接",
-      "subheading": "在几秒钟内创建简短、难忘的链接。使用 QuilLink 强大的 URL 缩短器跟踪点击、分析性能并随时随地共享。",
+      "subheading": "在几秒钟内创建简短、难忘的链接。使用 Shrnkly 强大的 URL 缩短器跟踪点击、分析性能并随时随地共享。",
       "inputPlaceholder": "在此输入您的长链接...",
       "shortenButton": "缩短链接",
       "creating": "创建中...",
@@ -78,13 +78,13 @@
     "testimonials": {
       "badge": "感言",
       "heading": "数百人已经信任我们",
-      "subheading": "看看我们的客户如何评价他们使用 QuilLink 的体验。",
+      "subheading": "看看我们的客户如何评价他们使用 Shrnkly 的体验。",
       "list": {
         "sarah": {
           "name": "Sarah Johnson",
           "role": "营销总监",
           "company": "TechCorp Inc.",
-          "text": "QuilLink 改变了我们管理营销活动的方式。分析非常详细，界面也非常直观。"
+          "text": "Shrnkly 改变了我们管理营销活动的方式。分析非常详细，界面也非常直观。"
         },
         "michael": {
           "name": "Michael Chen",
@@ -96,13 +96,13 @@
           "name": "Emily Rodriguez",
           "role": "内容创作者",
           "company": "独立",
-          "text": "作为内容创作者，跟踪链接性能至关重要。QuilLink 让查看哪些有效变得非常容易。"
+          "text": "作为内容创作者，跟踪链接性能至关重要。Shrnkly 让查看哪些有效变得非常容易。"
         },
         "david": {
           "name": "David Kim",
           "role": "电子商务所有者",
           "company": "ShopNow",
-          "text": "我们所有的产品链接都使用 QuilLink。可靠性非常出色，自定义域名功能有助于建立信任。"
+          "text": "我们所有的产品链接都使用 Shrnkly。可靠性非常出色，自定义域名功能有助于建立信任。"
         },
         "lisa": {
           "name": "Lisa Anderson",
@@ -114,7 +114,7 @@
           "name": "James Wilson",
           "role": "创业创始人",
           "company": "InnovateLab",
-          "text": "QuilLink 是我们初创公司的必备工具。它价格实惠、功能强大，并且支持团队的响应速度非常快。"
+          "text": "Shrnkly 是我们初创公司的必备工具。它价格实惠、功能强大，并且支持团队的响应速度非常快。"
         }
       }
     },
@@ -123,26 +123,26 @@
       "headingPart1": "准备好 ",
       "headingPart2": " 您的链接了吗？",
       "headingHighlight": "改变",
-      "subheading": "加入成千上万使用 QuilLink 扩展其影响力并跟踪每次点击的创作者和企业。",
+      "subheading": "加入成千上万使用 Shrnkly 扩展其影响力并跟踪每次点击的创作者和企业。",
       "startButton": "免费开始",
       "contactButton": "联系销售"
     },
     "faq": {
       "badge": "常见问题",
       "heading": "您的问题，已回答",
-      "subheading": "您需要了解的有关 QuilLink 及其工作原理的一切。",
+      "subheading": "您需要了解的有关 Shrnkly 及其工作原理的一切。",
       "questions": {
         "whatIs": {
           "q": "什么是 URL 缩短器？",
           "a": "URL 缩短器是一种将长 URL 转换为更短、更易于管理的链接的工具。"
         },
         "howWork": {
-          "q": "QuilLink 如何运作？",
-          "a": "只需将您的长 URL 粘贴到我们的缩短器中，QuilLink 就会为您生成一个简短、独特的链接。"
+          "q": "Shrnkly 如何运作？",
+          "a": "只需将您的长 URL 粘贴到我们的缩短器中，Shrnkly 就会为您生成一个简短、独特的链接。"
         },
         "isFree": {
-          "q": "QuilLink 免费使用吗？",
-          "a": "是的！QuilLink 提供包含基本功能的免费计划，如链接缩短、基本分析和二维码生成。"
+          "q": "Shrnkly 免费使用吗？",
+          "a": "是的！Shrnkly 提供包含基本功能的免费计划，如链接缩短、基本分析和二维码生成。"
         },
         "canTrack": {
           "q": "我可以跟踪我的短链接吗？",
@@ -154,7 +154,7 @@
         },
         "howLong": {
           "q": "短链接持续多长时间？",
-          "a": "默认情况下，使用 QuilLink 创建的短链接永不过期。"
+          "a": "默认情况下，使用 Shrnkly 创建的短链接永不过期。"
         },
         "limit": {
           "q": "我可以创建的链接数量有限制吗？",
@@ -162,7 +162,7 @@
         },
         "safe": {
           "q": "短链接安全吗？",
-          "a": "是的，QuilLink 非常重视安全性。我们会扫描所有 URL 以查找恶意内容。"
+          "a": "是的，Shrnkly 非常重视安全性。我们会扫描所有 URL 以查找恶意内容。"
         }
       },
       "cta": {
@@ -290,7 +290,7 @@
     "sections": {
       "intro": {
         "title": "1. 简介",
-        "content": "在 QuilLink，我们非常重视您的隐私。本隐私政策解释了我们如何收集、使用和保护您的信息。"
+        "content": "在 Shrnkly，我们非常重视您的隐私。本隐私政策解释了我们如何收集、使用和保护您的信息。"
       },
       "collect": {
         "title": "2. 我们收集的信息",
@@ -308,7 +308,7 @@
       },
       "analytics": {
         "title": "4. 数据分析",
-        "content": "当有人点击 QuilLink 链接时，我们会收集有关点击的某些信息，例如 IP 地址和地理位置。"
+        "content": "当有人点击 Shrnkly 链接时，我们会收集有关点击的某些信息，例如 IP 地址和地理位置。"
       },
       "security": {
         "title": "5. 安全",
@@ -317,7 +317,7 @@
       "contact": {
         "title": "6. 联系我们",
         "content": "如果您对本隐私政策有疑问，请联系我们：",
-        "email": "电子邮件：privacy@quillink.com"
+        "email": "电子邮件：privacy@shrnkly.com"
       }
     }
   },
@@ -329,15 +329,15 @@
     "sections": {
       "acceptance": {
         "title": "1. 接受条款",
-        "content": "通过访问或使用 QuilLink 的服务，您同意受这些服务条款的约束。"
+        "content": "通过访问或使用 Shrnkly 的服务，您同意受这些服务条款的约束。"
       },
       "description": {
         "title": "2. 服务描述",
-        "content": "QuilLink 提供 URL 缩短服务，允许用户创建长 URL 的较短版本。"
+        "content": "Shrnkly 提供 URL 缩短服务，允许用户创建长 URL 的较短版本。"
       },
       "responsibilities": {
         "title": "3. 用户责任",
-        "content": "您对自己帐户下的所有活动负责。您同意不将 QuilLink 用于：",
+        "content": "您对自己帐户下的所有活动负责。您同意不将 Shrnkly 用于：",
         "list": [
           "发送垃圾邮件或未经请求的通信",
           "分发恶意软件、病毒或其他有害代码",
@@ -351,11 +351,11 @@
       },
       "property": {
         "title": "5. 知识产权",
-        "content": "QuilLink 名称、徽标及所有相关设计和软件均为 QuilLink 的知识产权。"
+        "content": "Shrnkly 名称、徽标及所有相关设计和软件均为 Shrnkly 的知识产权。"
       },
       "liability": {
         "title": "6. 责任限制",
-        "content": "QuilLink 按“原样”提供服务，不提供任何保证。"
+        "content": "Shrnkly 按“原样”提供服务，不提供任何保证。"
       },
       "termination": {
         "title": "7. 终止",
@@ -364,7 +364,7 @@
       "contact": {
         "title": "8. 联系",
         "content": "有关服务条款的问题应发送给我们：",
-        "email": "电子邮件：legal@quillink.com"
+        "email": "电子邮件：legal@shrnkly.com"
       }
     }
   },

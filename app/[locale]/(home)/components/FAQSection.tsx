@@ -111,7 +111,7 @@ const FAQSection = () => {
                                 className="h-16 px-12 rounded-2xl border-2 border-border bg-background text-foreground hover:bg-muted font-black text-lg transition-all shadow-xl"
                                 asChild
                             >
-                                <a href="mailto:support@quillink.com">
+                                <a href="mailto:montasimmamun@gmail.com">
                                     {t('cta.emailSupport')}
                                 </a>
                             </Button>

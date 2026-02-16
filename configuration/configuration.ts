@@ -1,6 +1,6 @@
 const configuration = {
     app: {
-        name: 'QuilLink',
+        name: 'Shrnkly',
         baseUrl: process.env.NEXT_PUBLIC_BASE_URL || '',
     },
 
