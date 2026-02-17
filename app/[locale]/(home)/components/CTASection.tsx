@@ -8,8 +8,12 @@ import Link from 'next/link';
 
 import { useTranslations } from 'next-intl';
 
-const CTASection = () => {
-    const t = useTranslations('home.cta');
+interface CTASectionProps {
+    translationKey?: string;
+}
+
+const CTASection = ({ translationKey = 'cta' }: CTASectionProps) => {
+    const t = useTranslations(`home.${translationKey}`);
 
     return (
         <section className="py-32 px-6 bg-background relative overflow-hidden">

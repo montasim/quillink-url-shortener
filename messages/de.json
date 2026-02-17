@@ -229,6 +229,15 @@
       "startButton": "Kostenlos starten",
       "contactButton": "Vertrieb kontaktieren"
     },
+    "textShareCta": {
+      "badge": "Starten Sie heute",
+      "headingPart1": "Sind Sie bereit, Ihren Text zu ",
+      "headingPart2": "?",
+      "headingHighlight": "teilen",
+      "subheading": "Schließen Sie sich Tausenden von Entwicklern und Teams an, die unsere Plattform nutzen, um Code, Notizen und Dokumente sofort zu teilen.",
+      "startButton": "Kostenlos starten",
+      "contactButton": "Vertrieb kontaktieren"
+    },
     "faq": {
       "badge": "FAQ",
       "heading": "Ihre Fragen, beantwortet",

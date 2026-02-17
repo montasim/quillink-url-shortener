@@ -229,6 +229,15 @@
       "startButton": "ابدأ مجانًا",
       "contactButton": "اتصل بالمبيعات"
     },
+    "textShareCta": {
+      "badge": "ابدأ اليوم",
+      "headingPart1": "هل أنت مستعد لـ ",
+      "headingPart2": " نصك؟",
+      "headingHighlight": "مشاركة",
+      "subheading": "انضم إلى آلاف المطورين والفرق الذين يستخدمون منصتنا لمشاركة الرمز والملاحظات والمستندات فورًا.",
+      "startButton": "ابدأ مجانًا",
+      "contactButton": "اتصل بالمبيعات"
+    },
     "faq": {
       "badge": "الأسئلة الشائعة",
       "heading": "إجابات لأسئلتك",

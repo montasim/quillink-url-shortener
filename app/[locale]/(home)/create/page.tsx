@@ -82,8 +82,8 @@ export default function CreateTextSharePage() {
             {/* Testimonials Section */}
             <TestimonialsSection testimonials={textShareTestimonials} translationKey="textShareTestimonials" />
 
-            {/* Additional Sections */}
-            <CTASection />
+            {/* CTA Section */}
+            <CTASection translationKey="textShareCta" />
             <FAQSection />
         </div>
     );

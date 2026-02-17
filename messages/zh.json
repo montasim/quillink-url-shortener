@@ -229,6 +229,15 @@
       "startButton": "免费开始",
       "contactButton": "联系销售"
     },
+    "textShareCta": {
+      "badge": "今天开始",
+      "headingPart1": "准备好 ",
+      "headingPart2": " 您的文本了吗？",
+      "headingHighlight": "分享",
+      "subheading": "加入成千上万的开发者和团队，他们使用我们的平台即时分享代码、笔记和文档。",
+      "startButton": "免费开始",
+      "contactButton": "联系销售"
+    },
     "faq": {
       "badge": "常见问题",
       "heading": "您的问题，已回答",

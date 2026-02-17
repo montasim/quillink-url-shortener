@@ -229,6 +229,15 @@
       "startButton": "Commencer gratuitement",
       "contactButton": "Contacter les ventes"
     },
+    "textShareCta": {
+      "badge": "Commencez aujourd'hui",
+      "headingPart1": "Prêt à ",
+      "headingPart2": " votre texte ?",
+      "headingHighlight": "partager",
+      "subheading": "Rejoignez des milliers de développeurs et d'équipes qui utilisent notre plateforme pour partager du code, des notes et des documents instantanément.",
+      "startButton": "Commencer gratuitement",
+      "contactButton": "Contacter les ventes"
+    },
     "faq": {
       "badge": "FAQ",
       "heading": "Vos questions, répondues",
