@@ -17,9 +17,9 @@ export default function FormatSelector({
     const t = useTranslations('textShare.create');
 
     const formats = [
-        { value: 'plain' as const, label: t('formatPlain') },
-        { value: 'markdown' as const, label: t('formatMarkdown') },
-        { value: 'code' as const, label: t('formatCode') },
+        { value: 'plain' as const, label: t('plainText') },
+        { value: 'markdown' as const, label: t('markdown') },
+        { value: 'code' as const, label: t('code') },
     ];
 
     return (

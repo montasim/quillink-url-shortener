@@ -101,7 +101,7 @@ const ContactPage = () => {
                             <MessageSquare className="w-10 h-10 text-primary" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight">
-                            {t('chat.title')}<span className="text-primary italic">{t('chat.titleHighlight')}</span>
+                            {t('chat.title')}<span className="text-primary italic">{t('chat.titleEmphasis')}</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
                             {t('chat.description')}

@@ -32,7 +32,7 @@ const CTASection = ({ translationKey = 'cta' }: CTASectionProps) => {
                         </Badge>
 
                         <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 leading-[1.1] tracking-tight">
-                            {t('headingPart1')}<span className="text-primary italic">{t('headingHighlight')}</span>{t('headingPart2')}
+                            {t('headingPrefix')}<span className="text-primary italic">{t('headingEmphasis')}</span>{t('headingSuffix')}
                         </h2>
 
                         <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 leading-relaxed">

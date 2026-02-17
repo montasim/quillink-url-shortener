@@ -34,7 +34,7 @@ const FeaturesSection = ({ features, translationKey }: FeaturesSectionProps) => 
                         {t('badge')}
                     </Badge>
                     <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-8 tracking-tight">
-                        {t('headingPart1')}<span className="text-primary">{t('headingHighlight')}</span>{t('headingPart2')}
+                        {t('headingPrefix')}<span className="text-primary">{t('headingEmphasis')}</span>{t('headingSuffix')}
                     </h2>
                     <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
                         {t('subheading')}
@@ -55,10 +55,10 @@ const FeaturesSection = ({ features, translationKey }: FeaturesSectionProps) => 
                                     <Icon className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                                    {t(`list.${key}.title`)}
+                                    {t(`featureList.${key}.title`)}
                                 </h3>
                                 <p className="text-muted-foreground/80 leading-relaxed">
-                                    {t(`list.${key}.description`)}
+                                    {t(`featureList.${key}.description`)}
                                 </p>
                             </div>
                         );

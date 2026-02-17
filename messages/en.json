@@ -13,9 +13,9 @@
   "home": {
     "textShareHero": {
       "badge": "✨ Instant Text Sharing",
-      "headingPart1": "Share ",
-      "headingPart2": "",
-      "headingHighlight": "instantly",
+      "headingPrefix": "Share ",
+      "headingSuffix": "",
+      "headingEmphasis": "instantly",
       "subheading": "Create beautiful, shareable links for your text, code, and notes. No sign-up required.",
       "stats": {
         "linksCreated": {
@@ -38,16 +38,16 @@
     },
     "hero": {
       "badge": "✨ Free URL Shortener",
-      "headingPart1": "Make every ",
-      "headingPart2": " count",
-      "headingHighlight": "connection",
+      "headingPrefix": "Make every ",
+      "headingSuffix": " count",
+      "headingEmphasis": "connection",
       "subheading": "Create short, memorable links in seconds. Track clicks, analyze performance, and share anywhere with Shrnkly's powerful URL shortener.",
       "inputPlaceholder": "Enter your long URL here...",
       "shortenButton": "Shorten URL",
       "creating": "Creating...",
-      "agreementPart1": "By shortening a URL, you agree to our ",
+      "agreementPrefix": "By shortening a URL, you agree to our ",
       "terms": "Terms of Service",
-      "agreementPart2": " and ",
+      "agreementSuffix": " and ",
       "privacy": "Privacy Policy",
       "stats": {
         "linksCreated": {
@@ -70,11 +70,11 @@
     },
     "features": {
       "badge": "Features",
-      "headingPart1": "Explore features for more ",
-      "headingPart2": "",
-      "headingHighlight": "efficiency",
+      "headingPrefix": "Explore features for more ",
+      "headingSuffix": "",
+      "headingEmphasis": "efficiency",
       "subheading": "Everything you need to create, manage, and track your shortened links in one powerful platform.",
-      "list": {
+      "featureList": {
         "shortening": {
           "title": "Easy Link Shortening",
           "description": "Transform long URLs into short, memorable links in just one click. Simple, fast, and efficient."
@@ -103,11 +103,11 @@
     },
     "textShareFeatures": {
       "badge": "Features",
-      "headingPart1": "Everything you need for ",
-      "headingHighlight": "text sharing",
-      "headingPart2": "",
+      "headingPrefix": "Everything you need for ",
+      "headingEmphasis": "text sharing",
+      "headingSuffix": "",
       "subheading": "Create, share, and manage your text snippets with powerful features designed for developers and teams.",
-      "list": {
+      "featureList": {
         "instant": {
           "title": "Instant Sharing",
           "description": "Create shareable links for your text and code instantly. No sign-up required for basic sharing."
@@ -138,42 +138,42 @@
       "badge": "Testimonials",
       "heading": "Hundreds of people already trust us",
       "subheading": "See what our customers have to say about their experience with Shrnkly.",
-      "list": {
+      "testimonialList": {
         "sarah": {
           "name": "Sarah Johnson",
           "role": "Marketing Director",
           "company": "TechCorp Inc.",
-          "text": "Shrnkly has transformed how we manage our marketing campaigns. The analytics are incredibly detailed and the interface is so intuitive. Highly recommend!"
+          "quote": "Shrnkly has transformed how we manage our marketing campaigns. The analytics are incredibly detailed and the interface is so intuitive. Highly recommend!"
         },
         "michael": {
           "name": "Michael Chen",
           "role": "Social Media Manager",
           "company": "Creative Studio",
-          "text": "The best URL shortener I've used. Custom domains, QR codes, and detailed analytics all in one place. It's a game-changer for our social media strategy."
+          "quote": "The best URL shortener I've used. Custom domains, QR codes, and detailed analytics all in one place. It's a game-changer for our social media strategy."
         },
         "emily": {
           "name": "Emily Rodriguez",
           "role": "Content Creator",
           "company": "Independent",
-          "text": "As a content creator, tracking link performance is crucial. Shrnkly makes it so easy to see what's working and what's not. Love the clean dashboard!"
+          "quote": "As a content creator, tracking link performance is crucial. Shrnkly makes it so easy to see what's working and what's not. Love the clean dashboard!"
         },
         "david": {
           "name": "David Kim",
           "role": "E-commerce Owner",
           "company": "ShopNow",
-          "text": "We use Shrnkly for all our product links. The reliability is outstanding and the custom domain feature helps build trust with our customers."
+          "quote": "We use Shrnkly for all our product links. The reliability is outstanding and the custom domain feature helps build trust with our customers."
         },
         "lisa": {
           "name": "Lisa Anderson",
           "role": "Digital Marketer",
           "company": "Growth Agency",
-          "text": "The analytics dashboard gives us insights we never had before. We can now optimize our campaigns in real-time. Absolutely worth it!"
+          "quote": "The analytics dashboard gives us insights we never had before. We can now optimize our campaigns in real-time. Absolutely worth it!"
         },
         "james": {
           "name": "James Wilson",
           "role": "Startup Founder",
           "company": "InnovateLab",
-          "text": "Shrnkly is an essential tool for our startup. It's affordable, powerful, and the support team is incredibly responsive. Can't imagine working without it."
+          "quote": "Shrnkly is an essential tool for our startup. It's affordable, powerful, and the support team is incredibly responsive. Can't imagine working without it."
         }
       }
     },
@@ -181,50 +181,50 @@
       "badge": "Testimonials",
       "heading": "Developers love our text sharing",
       "subheading": "See what developers and teams are saying about our text sharing platform.",
-      "list": {
+      "testimonialList": {
         "alex": {
           "name": "Alex Thompson",
           "role": "Senior Developer",
           "company": "TechStart",
-          "text": "This text sharing platform has become essential for our team. Sharing code snippets with syntax highlighting is so much easier now. Love the password protection feature!"
+          "quote": "This text sharing platform has become essential for our team. Sharing code snippets with syntax highlighting is so much easier now. Love the password protection feature!"
         },
         "priya": {
           "name": "Priya Patel",
           "role": "DevOps Engineer",
           "company": "CloudScale",
-          "text": "Finally, a text sharing tool that understands developers. Auto-expiration for sensitive configs, view tracking, and it's blazing fast. Highly recommend!"
+          "quote": "Finally, a text sharing tool that understands developers. Auto-expiration for sensitive configs, view tracking, and it's blazing fast. Highly recommend!"
         },
         "marcus": {
           "name": "Marcus Johnson",
           "role": "Full Stack Developer",
           "company": "Freelance",
-          "text": "I share code with clients daily. The ability to set view limits and expiration dates gives me peace of mind. The interface is clean and intuitive."
+          "quote": "I share code with clients daily. The ability to set view limits and expiration dates gives me peace of mind. The interface is clean and intuitive."
         },
         "sophie": {
           "name": "Sophie Chen",
           "role": "Tech Lead",
           "company": "InnovateCo",
-          "text": "Our team uses this for sharing logs, configs, and code reviews. The analytics help me understand what my team is viewing. Game changer for remote collaboration!"
+          "quote": "Our team uses this for sharing logs, configs, and code reviews. The analytics help me understand what my team is viewing. Game changer for remote collaboration!"
         },
         "daniel": {
           "name": "Daniel Brown",
           "role": "Backend Developer",
           "company": "DataFlow",
-          "text": "The syntax highlighting for multiple languages is perfect. I can share Python, Go, or SQL snippets and they always look great. No more screenshotting code!"
+          "quote": "The syntax highlighting for multiple languages is perfect. I can share Python, Go, or SQL snippets and they always look great. No more screenshotting code!"
         },
         "rachel": {
           "name": "Rachel Kim",
           "role": "Frontend Developer",
           "company": "DesignHub",
-          "text": "Love how I can share markdown-formatted documentation with my team. The custom slugs make it easy to organize and find shared content later."
+          "quote": "Love how I can share markdown-formatted documentation with my team. The custom slugs make it easy to organize and find shared content later."
         }
       }
     },
     "cta": {
       "badge": "Get Started Today",
-      "headingPart1": "Ready to ",
-      "headingPart2": " your links?",
-      "headingHighlight": "transform",
+      "headingPrefix": "Ready to ",
+      "headingSuffix": " your links?",
+      "headingEmphasis": "transform",
       "subheading": "Join thousands of creators and businesses who use Shrnkly to scale their reach and track every click.",
       "startButton": "Start for Free",
       "contactButton": "Contact Sales",
@@ -233,9 +233,9 @@
     },
     "textShareCta": {
       "badge": "Get Started Today",
-      "headingPart1": "Ready to ",
-      "headingPart2": " your text?",
-      "headingHighlight": "share",
+      "headingPrefix": "Ready to ",
+      "headingSuffix": " your text?",
+      "headingEmphasis": "share",
       "subheading": "Join thousands of developers and teams who use our platform to share code, notes, and documents instantly.",
       "startButton": "Start for Free",
       "contactButton": "Contact Sales",
@@ -248,42 +248,42 @@
       "subheading": "Everything you need to know about Shrnkly and how it works.",
       "questions": {
         "whatIs": {
-          "q": "What is a URL shortener?",
-          "a": "A URL shortener is a tool that converts long URLs into shorter, more manageable links. These shortened links redirect to the original URL when clicked, making them easier to share on social media, emails, and other platforms."
+          "question": "What is a URL shortener?",
+          "answer": "A URL shortener is a tool that converts long URLs into shorter, more manageable links. These shortened links redirect to the original URL when clicked, making them easier to share on social media, emails, and other platforms."
         },
         "howWork": {
-          "q": "How does Shrnkly work?",
-          "a": "Simply paste your long URL into our shortener, and Shrnkly will generate a short, unique link for you. You can customize the link, track its performance, and even generate QR codes - all from your dashboard."
+          "question": "How does Shrnkly work?",
+          "answer": "Simply paste your long URL into our shortener, and Shrnkly will generate a short, unique link for you. You can customize the link, track its performance, and even generate QR codes - all from your dashboard."
         },
         "isFree": {
-          "q": "Is Shrnkly free to use?",
-          "a": "Yes! Shrnkly offers a free plan with essential features including link shortening, basic analytics, and QR code generation. We also offer premium plans with advanced features like custom domains and detailed analytics."
+          "question": "Is Shrnkly free to use?",
+          "answer": "Yes! Shrnkly offers a free plan with essential features including link shortening, basic analytics, and QR code generation. We also offer premium plans with advanced features like custom domains and detailed analytics."
         },
         "canTrack": {
-          "q": "Can I track my shortened links?",
-          "a": "Absolutely! Every shortened link comes with comprehensive analytics including click counts, geographic data, referrer information, device types, and more. You can access all this data from your dashboard."
+          "question": "Can I track my shortened links?",
+          "answer": "Absolutely! Every shortened link comes with comprehensive analytics including click counts, geographic data, referrer information, device types, and more. You can access all this data from your dashboard."
         },
         "customDomain": {
-          "q": "Can I use my own custom domain?",
-          "a": "Yes, our premium plans allow you to use your own branded domain for shortened links. This helps build trust and brand recognition with your audience."
+          "question": "Can I use my own custom domain?",
+          "answer": "Yes, our premium plans allow you to use your own branded domain for shortened links. This helps build trust and brand recognition with your audience."
         },
         "howLong": {
-          "q": "How long do shortened links last?",
-          "a": "Shortened links created with Shrnkly never expire by default. However, you have the option to set custom expiration dates for your links if needed."
+          "question": "How long do shortened links last?",
+          "answer": "Shortened links created with Shrnkly never expire by default. However, you have the option to set custom expiration dates for your links if needed."
         },
         "limit": {
-          "q": "Is there a limit to how many links I can create?",
-          "a": "Free accounts can create up to 100 links per month. Premium plans offer unlimited link creation along with other advanced features."
+          "question": "Is there a limit to how many links I can create?",
+          "answer": "Free accounts can create up to 100 links per month. Premium plans offer unlimited link creation along with other advanced features."
         },
         "safe": {
-          "q": "Are shortened links safe?",
-          "a": "Yes, Shrnkly takes security seriously. We scan all URLs for malicious content and provide SSL encryption for all redirects. We also offer link password protection on premium plans."
+          "question": "Are shortened links safe?",
+          "answer": "Yes, Shrnkly takes security seriously. We scan all URLs for malicious content and provide SSL encryption for all redirects. We also offer link password protection on premium plans."
         }
       },
       "cta": {
-        "headingPart1": "Still have ",
-        "headingPart2": "?",
-        "headingHighlight": "questions",
+        "headingPrefix": "Still have ",
+        "headingSuffix": "?",
+        "headingEmphasis": "questions",
         "subheading": "Can't find the answer you're looking for? Join our community or chat with our friendly support team.",
         "getInTouch": "Get in Touch",
         "emailSupport": "Email Support"
@@ -294,43 +294,43 @@
       "subheading": "Everything you need to know about text sharing and how it works.",
       "questions": {
         "whatIs": {
-          "q": "What is text sharing?",
-          "a": "Text sharing is a tool that allows you to share text, code snippets, and notes via unique, shareable links. Simply paste your content and get an instant link you can share anywhere."
+          "question": "What is text sharing?",
+          "answer": "Text sharing is a tool that allows you to share text, code snippets, and notes via unique, shareable links. Simply paste your content and get an instant link you can share anywhere."
         },
         "howWork": {
-          "q": "How does text sharing work?",
-          "a": "Simply paste your text, code, or notes into our editor, choose your format (plain text, markdown, or code), and click create. You'll get an instant shareable link."
+          "question": "How does text sharing work?",
+          "answer": "Simply paste your text, code, or notes into our editor, choose your format (plain text, markdown, or code), and click create. You'll get an instant shareable link."
         },
         "isFree": {
-          "q": "Is it free to use?",
-          "a": "Yes! Text sharing is free with essential features including password protection, expiration dates, and view tracking. Premium plans offer unlimited shares and advanced features."
+          "question": "Is it free to use?",
+          "answer": "Yes! Text sharing is free with essential features including password protection, expiration dates, and view tracking. Premium plans offer unlimited shares and advanced features."
         },
         "passwordProtect": {
-          "q": "Can I password-protect my text?",
-          "a": "Absolutely! You can add optional password protection to any text share. Only people with the password will be able to view your content."
+          "question": "Can I password-protect my text?",
+          "answer": "Absolutely! You can add optional password protection to any text share. Only people with the password will be able to view your content."
         },
         "expiration": {
-          "q": "Can I set expiration dates?",
-          "a": "Yes, you can set custom expiration dates for your text shares. Content is automatically deleted after expiration for your privacy."
+          "question": "Can I set expiration dates?",
+          "answer": "Yes, you can set custom expiration dates for your text shares. Content is automatically deleted after expiration for your privacy."
         },
         "howLong": {
-          "q": "How long do text shares last?",
-          "a": "Text shares last until they expire or reach their view limit. You can set custom expiration dates or view limits when creating a share."
+          "question": "How long do text shares last?",
+          "answer": "Text shares last until they expire or reach their view limit. You can set custom expiration dates or view limits when creating a share."
         },
         "limit": {
-          "q": "Is there a limit to shares I can create?",
-          "a": "Free accounts can create up to 10 text shares. Premium plans offer unlimited text shares along with other advanced features."
+          "question": "Is there a limit to shares I can create?",
+          "answer": "Free accounts can create up to 10 text shares. Premium plans offer unlimited text shares along with other advanced features."
         },
         "secure": {
-          "q": "Is my content secure?",
-          "a": "Yes, we take security seriously. Your content is encrypted in transit and at rest. We also offer automatic deletion after expiration for added privacy."
+          "question": "Is my content secure?",
+          "answer": "Yes, we take security seriously. Your content is encrypted in transit and at rest. We also offer automatic deletion after expiration for added privacy."
         }
       },
       "cta": {
         "badge": "Text FAQ",
-        "headingPart1": "Still have ",
-        "headingPart2": "?",
-        "headingHighlight": "questions",
+        "headingPrefix": "Still have ",
+        "headingSuffix": "?",
+        "headingEmphasis": "questions",
         "subheading": "Can't find the answer you're looking for? Join our community or chat with our friendly support team.",
         "getInTouch": "Get in Touch",
         "emailSupport": "Email Support"
@@ -452,8 +452,8 @@
   },
   "privacy": {
     "badge": "Legal",
-    "titleHighlight": "Privacy",
-    "titlePart2": " Policy",
+    "titleEmphasis": "Privacy",
+    "titleSuffix": " Policy",
     "lastUpdated": "Last updated: February 10, 2026",
     "sections": {
       "intro": {
@@ -463,7 +463,7 @@
       "collect": {
         "title": "2. Information We Collect",
         "content": "We collect information that you provide directly to us when you create an account, shorten a URL, or contact us for support. This may include:",
-        "list": [
+        "infoList": [
           "Account information (name, email address, password)",
           "URLs you shorten and their original destinations",
           "Usage data and analytics for your shortened links",
@@ -491,8 +491,8 @@
   },
   "terms": {
     "badge": "Legal",
-    "titleHighlight": "Terms",
-    "titlePart2": " of Service",
+    "titleEmphasis": "Terms",
+    "titleSuffix": " of Service",
     "lastUpdated": "Last updated: February 10, 2026",
     "sections": {
       "acceptance": {
@@ -506,7 +506,7 @@
       "responsibilities": {
         "title": "3. User Responsibilities",
         "content": "You are responsible for all activity that occurs under your account. You agree not to use Shrnkly for:",
-        "list": [
+        "infoList": [
           "Spamming or sending unsolicited communications",
           "Distributing malware, viruses, or other harmful code",
           "Creating links to illegal or prohibited content",
@@ -554,7 +554,7 @@
     "githubLabel": "Check our GitHub",
     "chat": {
       "title": "Prefer a ",
-      "titleHighlight": "live chat?",
+      "titleEmphasis": "live chat?",
       "description": "Our support team is available check the common questions in our FAQ section or reach out directly.",
       "viewFaqs": "View FAQs",
       "emailSupport": "Email Support"
@@ -690,9 +690,9 @@
       "contentLabel": "Content",
       "contentPlaceholder": "Paste your text, code, or markdown here...",
       "formatLabel": "Format",
-      "formatPlain": "Plain Text",
-      "formatMarkdown": "Markdown",
-      "formatCode": "Code",
+      "plainText": "Plain Text",
+      "markdown": "Markdown",
+      "code": "Code",
       "languageLabel": "Syntax Language",
       "languagePlaceholder": "e.g., javascript, python, typescript...",
       "languageSelect": "Select a language...",
@@ -707,9 +707,9 @@
       "creating": "Creating...",
       "success": "Text share created! Link copied to clipboard.",
       "error": "Failed to create text share.",
-      "agreementPart1": "By creating a share, you agree to our ",
+      "agreementPrefix": "By creating a share, you agree to our ",
       "terms": "Terms of Service",
-      "agreementPart2": " and ",
+      "agreementSuffix": " and ",
       "privacy": "Privacy Policy",
       "showAdvanced": "Show Advanced Options",
       "hideAdvanced": "Hide Advanced Options",
@@ -746,7 +746,10 @@
       "editShare": "Edit Share",
       "viewStats": "View Stats",
       "totalShares": "Total Shares",
-      "totalViews": "Total Views"
+      "totalViews": "Total Views",
+      "links": "Links",
+      "analysis": "Analysis",
+      "realtime": "Realtime"
     },
     "stats": {
       "title": "Share Statistics",

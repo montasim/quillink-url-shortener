@@ -42,7 +42,7 @@ const UrlShortnerHero = () => {
 
                 {/* Main Heading */}
                 <h1 className="mt-8 text-4xl md:text-5xl font-extrabold !leading-[1.1] tracking-tight text-foreground">
-                    {t('headingPart1')}<span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('headingHighlight')}</span> {t('headingPart2')}
+                    {t('headingPrefix')}<span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('headingEmphasis')}</span> {t('headingSuffix')}
                 </h1>
 
                 {/* Subheading */}
@@ -77,11 +77,11 @@ const UrlShortnerHero = () => {
                         </Button>
                     </div>
                     <p className="mt-6 text-sm text-muted-foreground/60 font-medium">
-                        {t('agreementPart1')}{' '}
+                        {t('agreementPrefix')}{' '}
                         <Link href="/terms" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
                             {t('terms')}
                         </Link>
-                        {' '}{t('agreementPart2')}{' '}
+                        {' '}{t('agreementSuffix')}{' '}
                         <Link href="/privacy" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
                             {t('privacy')}
                         </Link>

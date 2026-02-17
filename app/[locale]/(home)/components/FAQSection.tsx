@@ -53,10 +53,10 @@ const FAQSection = ({ translationKey = 'faq' }: FAQSectionProps) => {
                                 className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
                             >
                                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
-                                    {t(`questions.${key}.q`)}
+                                    {t(`questions.${key}.question`)}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                                    {t(`questions.${key}.a`)}
+                                    {t(`questions.${key}.answer`)}
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
@@ -70,10 +70,10 @@ const FAQSection = ({ translationKey = 'faq' }: FAQSectionProps) => {
                                 className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
                             >
                                 <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
-                                    {t(`questions.${key}.q`)}
+                                    {t(`questions.${key}.question`)}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                                    {t(`questions.${key}.a`)}
+                                    {t(`questions.${key}.answer`)}
                                 </AccordionContent>
                             </AccordionItem>
                         ))}

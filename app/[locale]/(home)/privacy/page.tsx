@@ -22,7 +22,7 @@ const PrivacyPage = () => {
                         {t('badge')}
                     </Badge>
                     <h1 className="text-3xl md:text-4xl font-black tracking-tight text-foreground mb-6 leading-[1.1]">
-                        <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('titleHighlight')}</span>{t('titlePart2')}
+                        <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('titleEmphasis')}</span>{t('titleSuffix')}
                     </h1>
                     <p className="text-lg text-muted-foreground">
                         {t('lastUpdated')}
@@ -46,7 +46,7 @@ const PrivacyPage = () => {
                             </p>
                             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                                 {['0', '1', '2', '3'].map((i) => (
-                                    <li key={i}>{t(`sections.collect.list.${i}`)}</li>
+                                    <li key={i}>{t(`sections.collect.infoList.${i}`)}</li>
                                 ))}
                             </ul>
                         </div>

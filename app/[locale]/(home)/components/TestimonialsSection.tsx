@@ -54,7 +54,7 @@ const TestimonialsSection = ({ testimonials, translationKey }: TestimonialsSecti
 
                             {/* Content */}
                             <p className="text-foreground/80 mb-6 leading-relaxed">
-                                {t(`list.${item.key}.text`)}
+                                {t(`testimonialList.${item.key}.quote`)}
                             </p>
 
                             {/* Author */}
@@ -62,13 +62,13 @@ const TestimonialsSection = ({ testimonials, translationKey }: TestimonialsSecti
                                 <span className="text-4xl">{item.image}</span>
                                 <div>
                                     <h4 className="font-semibold text-foreground">
-                                        {t(`list.${item.key}.name`)}
+                                        {t(`testimonialList.${item.key}.name`)}
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
-                                        {t(`list.${item.key}.role`)}
+                                        {t(`testimonialList.${item.key}.role`)}
                                     </p>
                                     <p className="text-xs text-muted-foreground/60">
-                                        {t(`list.${item.key}.company`)}
+                                        {t(`testimonialList.${item.key}.company`)}
                                     </p>
                                 </div>
                             </div>
