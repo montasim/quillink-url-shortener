@@ -67,7 +67,7 @@ const Navbar = () => {
                                 >
                                     <DropdownMenuItem
                                         onClick={() =>
-                                            router.push('/dashboard/urls')
+                                            router.push('/dashboard/texts')
                                         }
                                         className="cursor-pointer rounded-xl h-11 font-medium"
                                     >
@@ -95,7 +95,7 @@ const Navbar = () => {
                                     variant="ghost"
                                     className="hidden sm:inline-flex cursor-pointer font-bold text-muted-foreground hover:text-primary transition-colors h-11 rounded-xl"
                                     onClick={() =>
-                                        router.push('/dashboard/urls')
+                                        router.push('/dashboard/texts')
                                     }
                                 >
                                     {t('dashboard')}

@@ -59,6 +59,18 @@ const configuration = {
             pass: process.env.MAILER_PASS || '',
         },
     },
+
+    textShare: {
+        maxContentLengthKb: parseInt(
+            process.env.TEXT_SHARE_MAX_CONTENT_LENGTH_KB || '100',
+            10
+        ),
+        defaultExpiryDays: parseInt(
+            process.env.TEXT_SHARE_DEFAULT_EXPIRY_DAYS || '30',
+            10
+        ),
+        cleanupCron: process.env.TEXT_SHARE_CLEANUP_CRON || '0 2 * * *',
+    },
 };
 
 export default configuration;

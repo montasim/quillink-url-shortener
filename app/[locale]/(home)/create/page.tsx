@@ -1,38 +1,46 @@
 'use client';
 
 import React from 'react';
-import { Link2, BarChart3, QrCode, Zap, Shield, Globe } from 'lucide-react';
-import NewHero from './components/NewHero';
-import FeaturesSection from './components/FeaturesSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import CTASection from './components/CTASection';
-import FAQSection from './components/FAQSection';
+import { FileText, Lock, Clock, BarChart3, Zap, Shield } from 'lucide-react';
+import TextShareHero from './components/TextShareHero';
+import FeaturesSection from '../components/FeaturesSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import CTASection from '../components/CTASection';
+import FAQSection from '../components/FAQSection';
 
-// URL Shortener Features
-const urlShortenerFeatures = [
+// Text Share Features
+const textShareFeatures = [
     {
-        icon: Link2,
-        key: 'shortening',
+        icon: FileText,
+        key: 'instant',
         color: 'from-blue-500 to-cyan-500',
         bg: 'bg-blue-50 dark:bg-blue-950/30',
         border: 'border-blue-200 dark:border-blue-800/50',
         text: 'text-blue-700 dark:text-blue-300'
     },
     {
-        icon: BarChart3,
-        key: 'analytics',
+        icon: Lock,
+        key: 'password',
         color: 'from-purple-500 to-pink-500',
         bg: 'bg-purple-50 dark:bg-purple-950/30',
         border: 'border-purple-200 dark:border-purple-800/50',
         text: 'text-purple-700 dark:text-purple-300'
     },
     {
-        icon: QrCode,
-        key: 'qr',
+        icon: Clock,
+        key: 'expire',
         color: 'from-orange-500 to-red-500',
         bg: 'bg-orange-50 dark:bg-orange-950/30',
         border: 'border-orange-200 dark:border-orange-800/50',
         text: 'text-orange-700 dark:text-orange-300'
+    },
+    {
+        icon: BarChart3,
+        key: 'analytics',
+        color: 'from-green-500 to-emerald-500',
+        bg: 'bg-green-50 dark:bg-green-950/30',
+        border: 'border-green-200 dark:border-green-800/50',
+        text: 'text-green-700 dark:text-green-300'
     },
     {
         icon: Zap,
@@ -45,14 +53,6 @@ const urlShortenerFeatures = [
     {
         icon: Shield,
         key: 'secure',
-        color: 'from-green-500 to-emerald-500',
-        bg: 'bg-green-50 dark:bg-green-950/30',
-        border: 'border-green-200 dark:border-green-800/50',
-        text: 'text-green-700 dark:text-green-300'
-    },
-    {
-        icon: Globe,
-        key: 'domains',
         color: 'from-indigo-500 to-violet-500',
         bg: 'bg-indigo-50 dark:bg-indigo-950/30',
         border: 'border-indigo-200 dark:border-indigo-800/50',
@@ -60,14 +60,19 @@ const urlShortenerFeatures = [
     },
 ];
 
-export default function HomePage() {
+export default function CreateTextSharePage() {
     return (
-        <>
-            <NewHero />
-            <FeaturesSection features={urlShortenerFeatures} translationKey="features" />
+        <div className="min-h-screen">
+            {/* Hero Section with Create Form */}
+            <TextShareHero />
+
+            {/* Features Section */}
+            <FeaturesSection features={textShareFeatures} translationKey="textShareFeatures" />
+
+            {/* Additional Sections */}
             <TestimonialsSection />
             <CTASection />
             <FAQSection />
-        </>
+        </div>
     );
 }

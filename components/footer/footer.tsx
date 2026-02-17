@@ -15,6 +15,10 @@ const Footer = () => {
             href: '/',
         },
         {
+            title: tNav('textShares'),
+            href: '/dashboard/texts',
+        },
+        {
             title: tNav('terms'),
             href: '/terms',
         },

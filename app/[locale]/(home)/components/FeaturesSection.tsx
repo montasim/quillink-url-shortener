@@ -1,21 +1,26 @@
 'use client';
 
 import React from 'react';
-import { BarChart3, Zap, Shield, Globe, QrCode, Link2 } from 'lucide-react';
-
+import { LucideIcon } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { useTranslations } from 'next-intl';
 
-const FeaturesSection = () => {
-    const t = useTranslations('home.features');
+interface FeatureItem {
+    icon: LucideIcon;
+    key: string;
+    color: string;
+    bg: string;
+    border: string;
+    text: string;
+}
 
-    const featuresList = [
-        { icon: Link2, key: 'shortening' },
-        { icon: BarChart3, key: 'analytics' },
-        { icon: QrCode, key: 'qr' },
-        { icon: Zap, key: 'fast' },
-        { icon: Shield, key: 'secure' },
-        { icon: Globe, key: 'domains' },
-    ];
+interface FeaturesSectionProps {
+    features: FeatureItem[];
+    translationKey: string;
+}
+
+const FeaturesSection = ({ features, translationKey }: FeaturesSectionProps) => {
+    const t = useTranslations(`home.${translationKey}`);
 
     return (
         <section className="py-32 px-6 bg-background relative">
@@ -38,7 +43,7 @@ const FeaturesSection = () => {
 
                 {/* Features Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                    {featuresList.map((feature, index) => {
+                    {features.map((feature, index) => {
                         const Icon = feature.icon;
                         const key = feature.key;
                         return (
@@ -46,13 +51,13 @@ const FeaturesSection = () => {
                                 key={index}
                                 className="group p-10 rounded-[32px] border border-border/60 bg-card/40 backdrop-blur-sm hover:bg-card/80 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-2 ring-1 ring-border/50"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 shadow-xl shadow-primary/20 group-hover:scale-110 transition-transform duration-500">
-                                    <Icon className="w-7 h-7 text-primary-foreground" />
+                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 shadow-xl shadow-primary/20 group-hover:scale-110 transition-transform duration-500`}>
+                                    <Icon className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
+                                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                                     {t(`list.${key}.title`)}
                                 </h3>
-                                <p className="text-muted-foreground/80 font-medium leading-relaxed">
+                                <p className="text-muted-foreground/80 leading-relaxed">
                                     {t(`list.${key}.description`)}
                                 </p>
                             </div>
@@ -63,8 +68,5 @@ const FeaturesSection = () => {
         </section>
     );
 };
-
-// Badge component import
-import { Badge } from '@/components/ui/badge';
 
 export default FeaturesSection;

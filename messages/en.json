@@ -7,29 +7,30 @@
     "logout": "Logout",
     "contactUs": "Contact Us",
     "terms": "Terms",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "textShares": "Text Shares"
   },
   "home": {
     "hero": {
-      "badge": "✨ Free URL Shortener",
-      "headingPart1": "Make every ",
-      "headingPart2": "count",
-      "headingHighlight": "connection",
-      "subheading": "Create short, memorable links in seconds. Track clicks, analyze performance, and share anywhere with Shrnkly's powerful URL shortener.",
-      "inputPlaceholder": "Enter your long URL here...",
-      "shortenButton": "Shorten URL",
+      "badge": "✨ Instant Text Sharing",
+      "headingPart1": "Share ",
+      "headingPart2": "",
+      "headingHighlight": "instantly",
+      "subheading": "Create beautiful, shareable links for your text, code, and notes. No sign-up required.",
+      "inputPlaceholder": "Paste your text or code here...",
+      "shortenButton": "Create Share",
       "creating": "Creating...",
-      "agreementPart1": "By shortening a URL, you agree to our ",
+      "agreementPart1": "By creating a share, you agree to our ",
       "terms": "Terms of Service",
       "agreementPart2": " and ",
       "privacy": "Privacy Policy",
       "stats": {
         "linksCreated": {
-          "value": "10M+",
-          "label": "Links Created"
+          "value": "1M+",
+          "label": "Text Shares Created"
         },
         "activeUsers": {
-          "value": "500K+",
+          "value": "100K+",
           "label": "Active Users"
         },
         "uptime": {
@@ -72,6 +73,39 @@
         "domains": {
           "title": "Custom Domains",
           "description": "Use your own branded domain for shortened links to build trust and recognition."
+        }
+      }
+    },
+    "textShareFeatures": {
+      "badge": "Features",
+      "headingPart1": "Everything you need for ",
+      "headingHighlight": "text sharing",
+      "headingPart2": "",
+      "subheading": "Create, share, and manage your text snippets with powerful features designed for developers and teams.",
+      "list": {
+        "instant": {
+          "title": "Instant Sharing",
+          "description": "Create shareable links for your text and code instantly. No sign-up required for basic sharing."
+        },
+        "password": {
+          "title": "Password Protection",
+          "description": "Secure your sensitive content with optional password protection. Only share with authorized viewers."
+        },
+        "expire": {
+          "title": "Auto-Expiration",
+          "description": "Set automatic expiration dates for your shares. Content is automatically deleted after expiry."
+        },
+        "analytics": {
+          "title": "View Analytics",
+          "description": "Track how many times your text has been viewed. Monitor engagement and reach."
+        },
+        "fast": {
+          "title": "Lightning Fast",
+          "description": "Instant access to your text snippets with our optimized global infrastructure."
+        },
+        "secure": {
+          "title": "Secure & Private",
+          "description": "Your content is encrypted and stored securely. Delete anytime with permanent removal."
         }
       }
     },
@@ -518,6 +552,86 @@
     "errorOccurredDescription": "An unexpected error occurred. Please try again or return to the homepage.",
     "goToHomepage": "Go to Homepage",
     "tryAgain": "Try Again"
+  },
+  "textShare": {
+    "create": {
+      "title": "Create Text Share",
+      "subtitle": "Share text, code, or notes instantly",
+      "titleLabel": "Title (optional)",
+      "titlePlaceholder": "Give your share a title...",
+      "contentLabel": "Content",
+      "contentPlaceholder": "Paste your text, code, or markdown here...",
+      "formatLabel": "Format",
+      "formatPlain": "Plain Text",
+      "formatMarkdown": "Markdown",
+      "formatCode": "Code",
+      "languageLabel": "Syntax Language",
+      "languagePlaceholder": "e.g., javascript, python, typescript...",
+      "passwordLabel": "Password (optional)",
+      "passwordPlaceholder": "Require a password to view",
+      "expiresAtLabel": "Expires At (optional)",
+      "viewLimitLabel": "View Limit (optional)",
+      "viewLimitPlaceholder": "Max views (1-1000)",
+      "customSlugLabel": "Custom Link (optional)",
+      "customSlugPlaceholder": "my-custom-link",
+      "createButton": "Create Share",
+      "creating": "Creating...",
+      "success": "Text share created! Link copied to clipboard.",
+      "error": "Failed to create text share."
+    },
+    "view": {
+      "copyButton": "Copy to Clipboard",
+      "copySuccess": "Copied to clipboard!",
+      "copyError": "Failed to copy",
+      "download": "Download",
+      "downloadTxt": "Download as .txt",
+      "downloadMd": "Download as .md",
+      "qrCode": "QR Code",
+      "shareLink": "Share Link",
+      "protectedContent": "This content is password protected",
+      "enterPassword": "Enter password to view",
+      "submitPassword": "View Content",
+      "verifying": "Verifying...",
+      "invalidPassword": "Invalid password",
+      "expired": "This share has expired",
+      "viewLimitReached": "View limit reached for this share",
+      "views": "{count} views"
+    },
+    "dashboard": {
+      "title": "My Text Shares",
+      "subtitle": "Manage your shared text and code snippets",
+      "newShare": "New Share",
+      "searchPlaceholder": "Search by title or content...",
+      "noShares": "No text shares yet",
+      "createFirstShare": "Create your first text share",
+      "deleteConfirm": "Are you sure you want to delete this share?",
+      "deleteSuccess": "Share deleted successfully",
+      "deleteError": "Failed to delete share",
+      "editShare": "Edit Share",
+      "viewStats": "View Stats",
+      "totalShares": "Total Shares",
+      "totalViews": "Total Views"
+    },
+    "stats": {
+      "title": "Share Statistics",
+      "totalViews": "Total Views",
+      "remainingViews": "Remaining Views",
+      "expiresAt": "Expires",
+      "neverExpires": "Never",
+      "recentViews": "Recent Views",
+      "noViewsYet": "No views yet",
+      "country": "Country",
+      "time": "Time",
+      "device": "Device"
+    },
+    "errors": {
+      "notFound": "Text share not found",
+      "unauthorized": "You don't have permission to view this",
+      "expired": "This text share has expired",
+      "viewLimitReached": "This share has reached its view limit",
+      "validationError": "Invalid data provided",
+      "serverError": "An error occurred. Please try again."
+    }
   },
   "footer": {
     "allRightsReserved": "All rights reserved.",
