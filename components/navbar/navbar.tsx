@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-import { useRouter } from '@/i18n/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
@@ -21,7 +21,18 @@ import { getData } from '@/lib/axios';
 const Navbar = () => {
     const t = useTranslations('navigation');
     const router = useRouter();
+    const pathname = usePathname();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
+
+    // Determine dashboard destination based on current path
+    const getDashboardPath = () => {
+        if (pathname?.includes('/texts') || pathname?.includes('/text/')) {
+            return '/dashboard/texts';
+        }
+        return '/dashboard/urls';
+    };
+
+    const dashboardPath = getDashboardPath();
 
     if (loading) return <Loading />;
 
@@ -67,7 +78,7 @@ const Navbar = () => {
                                 >
                                     <DropdownMenuItem
                                         onClick={() =>
-                                            router.push('/dashboard/texts')
+                                            router.push(dashboardPath)
                                         }
                                         className="cursor-pointer rounded-xl h-11 font-medium"
                                     >
@@ -95,7 +106,7 @@ const Navbar = () => {
                                     variant="ghost"
                                     className="hidden sm:inline-flex cursor-pointer font-bold text-muted-foreground hover:text-primary transition-colors h-11 rounded-xl"
                                     onClick={() =>
-                                        router.push('/dashboard/texts')
+                                        router.push(dashboardPath)
                                     }
                                 >
                                     {t('dashboard')}

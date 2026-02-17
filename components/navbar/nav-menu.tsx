@@ -1,3 +1,5 @@
+'use client';
+
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -5,11 +7,22 @@ import {
     NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { NavigationMenuProps } from '@radix-ui/react-navigation-menu';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 export const NavMenu = (props: NavigationMenuProps) => {
     const t = useTranslations('navigation');
+    const pathname = usePathname();
+
+    // Determine textShares destination based on current path
+    const getTextSharesPath = () => {
+        if (pathname?.includes('/urls') || pathname?.includes('/url/')) {
+            return '/dashboard/urls';
+        }
+        return '/dashboard/texts';
+    };
+
+    const textSharesPath = getTextSharesPath();
 
     return (
         <NavigationMenu {...props}>
@@ -21,7 +34,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link href="/dashboard/texts">{t('textShares')}</Link>
+                        <Link href={textSharesPath}>{t('textShares')}</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
