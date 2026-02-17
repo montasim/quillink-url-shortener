@@ -227,7 +227,9 @@
       "headingHighlight": "transformer",
       "subheading": "Rejoignez des milliers de créateurs et d'entreprises qui utilisent Shrnkly pour étendre leur portée et suivre chaque clic.",
       "startButton": "Commencer gratuitement",
-      "contactButton": "Contacter les ventes"
+      "contactButton": "Contacter les ventes",
+      "getInTouch": "Entrer en contact",
+      "emailSupport": "Support par email"
     },
     "textShareCta": {
       "badge": "Commencez aujourd'hui",
@@ -236,7 +238,9 @@
       "headingHighlight": "partager",
       "subheading": "Rejoignez des milliers de développeurs et d'équipes qui utilisent notre plateforme pour partager du code, des notes et des documents instantanément.",
       "startButton": "Commencer gratuitement",
-      "contactButton": "Contacter les ventes"
+      "contactButton": "Contacter les ventes",
+      "getInTouch": "Entrer en contact",
+      "emailSupport": "Support par email"
     },
     "faq": {
       "badge": "FAQ",
@@ -278,6 +282,53 @@
       },
       "cta": {
         "headingPart1": "Avez-vous encore des ",
+        "headingPart2": " ?",
+        "headingHighlight": "questions",
+        "subheading": "Vous ne trouvez pas la réponse que vous cherchez ? Rejoignez notre communauté ou discutez avec notre équipe de support amicale.",
+        "getInTouch": "Entrer en contact",
+        "emailSupport": "Support par email"
+      }
+    },
+    "textShareFaq": {
+      "heading": "Vos questions, répondues",
+      "subheading": "Tout ce que vous devez savoir sur le partage de texte et comment cela fonctionne.",
+      "questions": {
+        "whatIs": {
+          "q": "Qu'est-ce que le partage de texte ?",
+          "a": "Le partage de texte est un outil qui vous permet de partager du texte, des extraits de code et des notes via des liens uniques et partageables. Collez simplement votre contenu et obtenez un lien instantané que vous pouvez partager n'importe où."
+        },
+        "howWork": {
+          "q": "Comment fonctionne le partage de texte ?",
+          "a": "Collez simplement votre texte, code ou notes dans notre éditeur, choisissez votre format (texte brut, markdown ou code) et cliquez sur créer. Vous obtiendrez un lien partageable instantané."
+        },
+        "isFree": {
+          "q": "Est-ce gratuit à utiliser ?",
+          "a": "Oui ! Le partage de texte est gratuit avec des fonctionnalités essentielles incluant la protection par mot de passe, les dates d'expiration et le suivi des vues. Les plans premium offrent des shares illimités et des fonctionnalités avancées."
+        },
+        "passwordProtect": {
+          "q": "Puis-je protéger mon texte par mot de passe ?",
+          "a": "Absolument ! Vous pouvez ajouter une protection optionnelle par mot de passe à n'importe quel share de texte. Seules les personnes avec le mot de passe pourront voir votre contenu."
+        },
+        "expiration": {
+          "q": "Puis-je définir des dates d'expiration ?",
+          "a": "Oui, vous pouvez définir des dates d'expiration personnalisées pour vos shares de texte. Le contenu est automatiquement supprimé après expiration."
+        },
+        "howLong": {
+          "q": "Combien de temps durent les shares de texte ?",
+          "a": "Les shares de texte durent jusqu'à ce qu'ils expirent ou atteignent leur limite de vues. Vous pouvez définir des dates d'expiration ou des limites de vues personnalisées lors de la création d'un share."
+        },
+        "limit": {
+          "q": "Y a-t-il une limite de shares que je peux créer ?",
+          "a": "Les comptes gratuits peuvent créer jusqu'à 10 shares de texte. Les plans premium offrent des shares de texte illimités ainsi que d'autres fonctionnalités avancées."
+        },
+        "secure": {
+          "q": "Mon contenu est-il sécurisé ?",
+          "a": "Oui, nous prenons la sécurité au sérieux. Votre contenu est chiffré en transit et au repos. Nous offrons également une suppression automatique après expiration pour plus de confidentialité."
+        }
+      },
+      "cta": {
+        "badge": "FAQ Texte",
+        "headingPart1": "Vous avez encore des ",
         "headingPart2": " ?",
         "headingHighlight": "questions",
         "subheading": "Vous ne trouvez pas la réponse que vous cherchez ? Rejoignez notre communauté ou discutez avec notre équipe de support amicale.",

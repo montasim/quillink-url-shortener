@@ -227,7 +227,9 @@
       "headingHighlight": "transformieren",
       "subheading": "Schließen Sie sich Tausenden von Kreativen und Unternehmen an, die Shrnkly nutzen, um ihre Reichweite zu vergrößern und jeden Klick zu verfolgen.",
       "startButton": "Kostenlos starten",
-      "contactButton": "Vertrieb kontaktieren"
+      "contactButton": "Vertrieb kontaktieren",
+      "getInTouch": "Kontakt aufnehmen",
+      "emailSupport": "E-Mail-Support"
     },
     "textShareCta": {
       "badge": "Starten Sie heute",
@@ -236,7 +238,9 @@
       "headingHighlight": "teilen",
       "subheading": "Schließen Sie sich Tausenden von Entwicklern und Teams an, die unsere Plattform nutzen, um Code, Notizen und Dokumente sofort zu teilen.",
       "startButton": "Kostenlos starten",
-      "contactButton": "Vertrieb kontaktieren"
+      "contactButton": "Vertrieb kontaktieren",
+      "getInTouch": "Kontakt aufnehmen",
+      "emailSupport": "E-Mail-Support"
     },
     "faq": {
       "badge": "FAQ",
@@ -277,6 +281,53 @@
         }
       },
       "cta": {
+        "headingPart1": "Haben Sie noch ",
+        "headingPart2": "?",
+        "headingHighlight": "Fragen",
+        "subheading": "Finden Sie nicht die Antwort, nach der Sie suchen? Treten Sie unserer Community bei oder chatten Sie mit unserem freundlichen Support-Team.",
+        "getInTouch": "Kontakt aufnehmen",
+        "emailSupport": "E-Mail-Support"
+      }
+    },
+    "textShareFaq": {
+      "heading": "Ihre Fragen, beantwortet",
+      "subheading": "Alles, was Sie über Text-Sharing wissen müssen und wie es funktioniert.",
+      "questions": {
+        "whatIs": {
+          "q": "Was ist Text-Sharing?",
+          "a": "Text-Sharing ist ein Tool, mit dem Sie Text, Code-Snippets und Notizen über einzigartige, teilbare Links teilen können. Fügen Sie einfach Ihren Inhalt ein und erhalten Sie einen sofortigen Link, den Sie überall teilen können."
+        },
+        "howWork": {
+          "q": "Wie funktioniert Text-Sharing?",
+          "a": "Fügen Sie einfach Ihren Text, Code oder Notizen in unseren Editor ein, wählen Sie Ihr Format (Nur Text, Markdown oder Code) und klicken Sie auf Erstellen. Sie erhalten einen sofortigen teilbaren Link."
+        },
+        "isFree": {
+          "q": "Ist es kostenlos zu nutzen?",
+          "a": "Ja! Text-Sharing ist kostenlos mit grundlegenden Funktionen einschließlich Passwortschutz, Ablaufdaten und Ansichtsverfolgung. Premium-Pläne bieten unbegrenzte Shares und erweiterte Funktionen."
+        },
+        "passwordProtect": {
+          "q": "Kann ich meinen Text mit einem Passwort schützen?",
+          "a": "Absolut! Sie können optionalen Passwortschutz zu jedem Text-Share hinzufügen. Nur Personen mit dem Passwort können Ihren Inhalt anzeigen."
+        },
+        "expiration": {
+          "q": "Kann ich Ablaufdaten festlegen?",
+          "a": "Ja, Sie können benutzerdefinierte Ablaufdaten für Ihre Text-Shares festlegen. Inhalte werden nach dem Ablauf automatisch gelöscht."
+        },
+        "howLong": {
+          "q": "Wie lange bleiben Text-Shares erhalten?",
+          "a": "Text-Shares bleiben erhalten, bis sie ablaufen oder ihr Ansichtslimit erreichen. Sie können benutzerdefinierte Ablaufdaten oder Ansichtslimits beim Erstellen eines Shares festlegen."
+        },
+        "limit": {
+          "q": "Gibt es ein Limit für Shares, die ich erstellen kann?",
+          "a": "Kostenlose Konten können bis zu 10 Text-Shares erstellen. Premium-Pläne bieten unbegrenzte Text-Shares zusammen mit anderen erweiterten Funktionen."
+        },
+        "secure": {
+          "q": "Ist mein Inhalt sicher?",
+          "a": "Ja, wir nehmen Sicherheit ernst. Ihr Inhalt wird während der Übertragung und im Ruhezustand verschlüsselt. Wir bieten auch automatische Löschung nach Ablauf für zusätzlichen Datenschutz."
+        }
+      },
+      "cta": {
+        "badge": "Text FAQ",
         "headingPart1": "Haben Sie noch ",
         "headingPart2": "?",
         "headingHighlight": "Fragen",

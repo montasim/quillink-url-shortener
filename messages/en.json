@@ -227,7 +227,9 @@
       "headingHighlight": "transform",
       "subheading": "Join thousands of creators and businesses who use Shrnkly to scale their reach and track every click.",
       "startButton": "Start for Free",
-      "contactButton": "Contact Sales"
+      "contactButton": "Contact Sales",
+      "getInTouch": "Get in Touch",
+      "emailSupport": "Email Support"
     },
     "textShareCta": {
       "badge": "Get Started Today",
@@ -236,7 +238,9 @@
       "headingHighlight": "share",
       "subheading": "Join thousands of developers and teams who use our platform to share code, notes, and documents instantly.",
       "startButton": "Start for Free",
-      "contactButton": "Contact Sales"
+      "contactButton": "Contact Sales",
+      "getInTouch": "Get in Touch",
+      "emailSupport": "Email Support"
     },
     "faq": {
       "badge": "FAQ",
@@ -277,6 +281,53 @@
         }
       },
       "cta": {
+        "headingPart1": "Still have ",
+        "headingPart2": "?",
+        "headingHighlight": "questions",
+        "subheading": "Can't find the answer you're looking for? Join our community or chat with our friendly support team.",
+        "getInTouch": "Get in Touch",
+        "emailSupport": "Email Support"
+      }
+    },
+    "textShareFaq": {
+      "heading": "Your questions, answered",
+      "subheading": "Everything you need to know about text sharing and how it works.",
+      "questions": {
+        "whatIs": {
+          "q": "What is text sharing?",
+          "a": "Text sharing is a tool that allows you to share text, code snippets, and notes via unique, shareable links. Simply paste your content and get an instant link you can share anywhere."
+        },
+        "howWork": {
+          "q": "How does text sharing work?",
+          "a": "Simply paste your text, code, or notes into our editor, choose your format (plain text, markdown, or code), and click create. You'll get an instant shareable link."
+        },
+        "isFree": {
+          "q": "Is it free to use?",
+          "a": "Yes! Text sharing is free with essential features including password protection, expiration dates, and view tracking. Premium plans offer unlimited shares and advanced features."
+        },
+        "passwordProtect": {
+          "q": "Can I password-protect my text?",
+          "a": "Absolutely! You can add optional password protection to any text share. Only people with the password will be able to view your content."
+        },
+        "expiration": {
+          "q": "Can I set expiration dates?",
+          "a": "Yes, you can set custom expiration dates for your text shares. Content is automatically deleted after expiration for your privacy."
+        },
+        "howLong": {
+          "q": "How long do text shares last?",
+          "a": "Text shares last until they expire or reach their view limit. You can set custom expiration dates or view limits when creating a share."
+        },
+        "limit": {
+          "q": "Is there a limit to shares I can create?",
+          "a": "Free accounts can create up to 10 text shares. Premium plans offer unlimited text shares along with other advanced features."
+        },
+        "secure": {
+          "q": "Is my content secure?",
+          "a": "Yes, we take security seriously. Your content is encrypted in transit and at rest. We also offer automatic deletion after expiration for added privacy."
+        }
+      },
+      "cta": {
+        "badge": "Text FAQ",
         "headingPart1": "Still have ",
         "headingPart2": "?",
         "headingHighlight": "questions",

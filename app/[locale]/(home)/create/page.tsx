@@ -84,7 +84,12 @@ export default function CreateTextSharePage() {
 
             {/* CTA Section */}
             <CTASection translationKey="textShareCta" />
-            <FAQSection />
+
+            {/* FAQ Section */}
+            <FAQSection translationKey="textShareFaq" />
+
+            {/* FAQ CTA Section */}
+            <CTASection translationKey="textShareFaq" />
         </div>
     );
 }

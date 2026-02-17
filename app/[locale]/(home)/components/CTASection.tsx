@@ -13,7 +13,9 @@ interface CTASectionProps {
 }
 
 const CTASection = ({ translationKey = 'cta' }: CTASectionProps) => {
-    const t = useTranslations(`home.${translationKey}`);
+    // Check if this is a FAQ CTA (nested structure) or main CTA (flat structure)
+    const isFaqCta = translationKey === 'faq' || translationKey === 'textShareFaq';
+    const t = useTranslations(`home.${translationKey}${isFaqCta ? '.cta' : ''}`);
 
     return (
         <section className="py-32 px-6 bg-background relative overflow-hidden">
@@ -43,9 +45,8 @@ const CTASection = ({ translationKey = 'cta' }: CTASectionProps) => {
                                 className="bg-primary text-primary-foreground hover:bg-primary/95 font-black px-12 h-16 rounded-2xl shadow-2xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 group text-lg"
                                 asChild
                             >
-                                <Link href="/signup">
-                                    {t('startButton')}
-                                    <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                                <Link href="/contact-us">
+                                    {t('getInTouch')}
                                 </Link>
                             </Button>
                             <Button
@@ -54,9 +55,9 @@ const CTASection = ({ translationKey = 'cta' }: CTASectionProps) => {
                                 className="bg-background border-2 border-border text-foreground hover:bg-muted font-bold px-12 h-16 rounded-2xl transition-all text-lg"
                                 asChild
                             >
-                                <Link href="/contact-us">
-                                    {t('contactButton')}
-                                </Link>
+                                <a href="mailto:montasimmamun@gmail.com">
+                                    {t('emailSupport')}
+                                </a>
                             </Button>
                         </div>
                     </div>

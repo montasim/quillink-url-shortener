@@ -77,7 +77,8 @@ export default function HomePage() {
             <FeaturesSection features={urlShortenerFeatures} translationKey="features" />
             <TestimonialsSection testimonials={urlShortenerTestimonials} translationKey="testimonials" />
             <CTASection translationKey="cta" />
-            <FAQSection />
+            <FAQSection translationKey="faq" />
+            <CTASection translationKey="faq" />
         </>
     );
 }

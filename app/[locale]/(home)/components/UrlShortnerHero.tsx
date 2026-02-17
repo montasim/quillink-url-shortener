@@ -8,10 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Link as LinkIcon, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { handleCreate } from '@/lib/actions/home';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { ShortenUrlSchema } from '@/schemas/schemas';
-import { zodResolver } from '@hookform/resolvers/zod';
 
 import { useTranslations } from 'next-intl';
 
@@ -21,14 +17,6 @@ const UrlShortnerHero = () => {
     const router = useRouter();
     const [creating, setCreating] = useState(false);
     const [url, setUrl] = useState('');
-
-    const form = useForm<z.infer<typeof ShortenUrlSchema>>({
-        mode: 'onChange',
-        defaultValues: {
-            originalUrl: '',
-        },
-        resolver: zodResolver(ShortenUrlSchema),
-    });
 
     const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

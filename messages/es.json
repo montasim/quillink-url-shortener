@@ -227,7 +227,9 @@
       "headingHighlight": "transformar",
       "subheading": "Únete a miles de creadores y empresas que usan Shrnkly para escalar su alcance y rastrear cada clic.",
       "startButton": "Empieza gratis",
-      "contactButton": "Contactar ventas"
+      "contactButton": "Contactar ventas",
+      "getInTouch": "Ponerse en contacto",
+      "emailSupport": "Soporte por correo electrónico"
     },
     "textShareCta": {
       "badge": "Empieza hoy",
@@ -236,7 +238,9 @@
       "headingHighlight": "compartir",
       "subheading": "Únete a miles de desarrolladores y equipos que usan nuestra plataforma para compartir código, notas y documentos al instante.",
       "startButton": "Empieza gratis",
-      "contactButton": "Contactar ventas"
+      "contactButton": "Contactar ventas",
+      "getInTouch": "Ponerse en contacto",
+      "emailSupport": "Soporte por correo electrónico"
     },
     "faq": {
       "badge": "Preguntas frecuentes",
@@ -277,6 +281,53 @@
         }
       },
       "cta": {
+        "headingPart1": "¿Todavía tienes ",
+        "headingPart2": "?",
+        "headingHighlight": "preguntas",
+        "subheading": "¿No encuentras la respuesta que buscas? Únete a nuestra comunidad o chatea con nuestro amable equipo de soporte.",
+        "getInTouch": "Ponerse en contacto",
+        "emailSupport": "Soporte por correo electrónico"
+      }
+    },
+    "textShareFaq": {
+      "heading": "Tus preguntas, respondidas",
+      "subheading": "Todo lo que necesitas saber sobre compartir texto y cómo funciona.",
+      "questions": {
+        "whatIs": {
+          "q": "¿Qué es compartir texto?",
+          "a": "Compartir texto es una herramienta que te permite compartir texto, fragmentos de código y notas a través de enlaces únicos y compartibles. Simplemente pega tu contenido y obtén un enlace instantáneo que puedes compartir en cualquier lugar."
+        },
+        "howWork": {
+          "q": "¿Cómo funciona compartir texto?",
+          "a": "Simplemente pega tu texto, código o notas en nuestro editor, elige tu formato (texto plano, markdown o código) y haz clic en crear. Obtendrás un enlace compartible al instante."
+        },
+        "isFree": {
+          "q": "¿Es gratis usarlo?",
+          "a": "¡Sí! Compartir texto es gratis con funciones esenciales incluyendo protección con contraseña, fechas de caducidad y seguimiento de vistas. Los planes premium ofrecen shares ilimitados y funciones avanzadas."
+        },
+        "passwordProtect": {
+          "q": "¿Puedo proteger mi texto con contraseña?",
+          "a": "¡Absolutamente! Puedes agregar protección opcional con contraseña a cualquier share de texto. Solo las personas con la contraseña podrán ver tu contenido."
+        },
+        "expiration": {
+          "q": "¿Puedo establecer fechas de caducidad?",
+          "a": "Sí, puedes establecer fechas de caducidad personalizadas para tus shares de texto. El contenido se elimina automáticamente después de la caducidad."
+        },
+        "howLong": {
+          "q": "¿Cuánto duran los shares de texto?",
+          "a": "Los shares de texto duran hasta que caducan o alcanzan su límite de vistas. Puedes establecer fechas de caducidad o límites de vistas personalizados al crear un share."
+        },
+        "limit": {
+          "q": "¿Hay un límite de shares que puedo crear?",
+          "a": "Las cuentas gratuitas pueden crear hasta 10 shares de texto. Los planes premium ofrecen shares de texto ilimitados junto con otras funciones avanzadas."
+        },
+        "secure": {
+          "q": "¿Mi contenido está seguro?",
+          "a": "Sí, tomamos la seguridad en serio. Tu contenido está cifrado en tránsito y en reposo. También ofrecemos eliminación automática después de la caducidad para mayor privacidad."
+        }
+      },
+      "cta": {
+        "badge": "Preguntas frecuentes sobre texto",
         "headingPart1": "¿Todavía tienes ",
         "headingPart2": "?",
         "headingHighlight": "preguntas",
