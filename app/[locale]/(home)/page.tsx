@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link2, BarChart3, QrCode, Zap, Shield, Globe, Star } from 'lucide-react';
-import NewHero from '@/app/[locale]/(home)/components/NewHero';
+import UrlShortnerHero from '@/app/[locale]/(home)/components/UrlShortnerHero';
 import FeaturesSection from '@/app/[locale]/(home)/components/FeaturesSection';
 import TestimonialsSection from '@/app/[locale]/(home)/components/TestimonialsSection';
 import CTASection from '@/app/[locale]/(home)/components/CTASection';
@@ -73,7 +73,7 @@ const urlShortenerTestimonials = [
 export default function HomePage() {
     return (
         <>
-            <NewHero />
+            <UrlShortnerHero />
             <FeaturesSection features={urlShortenerFeatures} translationKey="features" />
             <TestimonialsSection testimonials={urlShortenerTestimonials} translationKey="testimonials" />
             <CTASection />

@@ -37,25 +37,25 @@
       }
     },
     "hero": {
-      "badge": "✨ Instant Text Sharing",
-      "headingPart1": "Share ",
-      "headingPart2": "",
-      "headingHighlight": "instantly",
-      "subheading": "Create beautiful, shareable links for your text, code, and notes. No sign-up required.",
-      "inputPlaceholder": "Paste your text or code here...",
-      "shortenButton": "Create Share",
+      "badge": "✨ Free URL Shortener",
+      "headingPart1": "Make every ",
+      "headingPart2": " count",
+      "headingHighlight": "connection",
+      "subheading": "Create short, memorable links in seconds. Track clicks, analyze performance, and share anywhere with Shrnkly's powerful URL shortener.",
+      "inputPlaceholder": "Enter your long URL here...",
+      "shortenButton": "Shorten URL",
       "creating": "Creating...",
-      "agreementPart1": "By creating a share, you agree to our ",
+      "agreementPart1": "By shortening a URL, you agree to our ",
       "terms": "Terms of Service",
       "agreementPart2": " and ",
       "privacy": "Privacy Policy",
       "stats": {
         "linksCreated": {
-          "value": "1M+",
-          "label": "Text Shares Created"
+          "value": "10M+",
+          "label": "Links Created"
         },
         "activeUsers": {
-          "value": "100K+",
+          "value": "500K+",
           "label": "Active Users"
         },
         "uptime": {

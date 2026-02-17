@@ -15,7 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { useTranslations } from 'next-intl';
 
-const NewHero = () => {
+const UrlShortnerHero = () => {
     const t = useTranslations('home.hero');
     const urlT = useTranslations('url');
     const router = useRouter();
@@ -118,4 +118,4 @@ const NewHero = () => {
     );
 };
 
-export default NewHero;
+export default UrlShortnerHero;
