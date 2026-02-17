@@ -15,8 +15,12 @@ const Footer = () => {
             href: '/',
         },
         {
+            title: tNav('urlShortner'),
+            href: '/urls',
+        },
+        {
             title: tNav('textShares'),
-            href: '/dashboard/texts',
+            href: '/texts',
         },
         {
             title: tNav('terms'),
