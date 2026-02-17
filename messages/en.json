@@ -715,7 +715,8 @@
       "privacy": "Privacy Policy",
       "showAdvanced": "Show advanced options",
       "hideAdvanced": "Hide advanced options",
-      "contentRequired": "Please enter some content"
+      "contentRequired": "Please enter some content",
+      "cancel": "Cancel"
     },
     "view": {
       "copyButton": "Copy Content",
@@ -749,9 +750,17 @@
       "viewStats": "View Statistics",
       "totalShares": "Total Shares",
       "totalViews": "Total Views",
+      "activeShares": "Active Shares",
       "links": "Links",
       "analysis": "Analytics",
-      "realtime": "Live"
+      "realtime": "Live",
+      "overallTraffic": "Traffic Overview",
+      "overallTrafficDesc": "Views over time",
+      "topPerformingShares": "Top Performing Shares",
+      "trafficByCountry": "Traffic by Country",
+      "noDataYet": "No data yet",
+      "last7Days": "Last 7 days",
+      "updatedAgo": "Updated 2 hours ago"
     },
     "stats": {
       "title": "Share Statistics",

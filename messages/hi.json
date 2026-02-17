@@ -715,7 +715,8 @@
       "privacy": "प्राइवेसी पॉलिसी",
       "showAdvanced": "एडवांस्ड ऑप्शन दिखाएँ",
       "hideAdvanced": "एडवांस्ड ऑप्शन छुपाएँ",
-      "contentRequired": "कृपया कुछ कंटेंट डालें"
+      "contentRequired": "कृपया कुछ कंटेंट डालें",
+      "cancel": "रद्द करें"
     },
     "view": {
       "copyButton": "कंटेंट कॉपी करें",
@@ -749,9 +750,17 @@
       "viewStats": "स्टैट्स देखें",
       "totalShares": "कुल शेयर",
       "totalViews": "कुल व्यूज",
+      "activeShares": "सक्रिय शेयर",
       "links": "लिंक",
       "analysis": "स्टैट्स",
-      "realtime": "रियल-टाइम"
+      "realtime": "रियल-टाइम",
+      "overallTraffic": "ट्रैफिक ओवरव्यू",
+      "overallTrafficDesc": "समय के साथ व्यू",
+      "topPerformingShares": "शीर्ष प्रदर्शन शेयर",
+      "trafficByCountry": "देश के अनुसार व्यू",
+      "noDataYet": "अभी कोई डेटा नहीं है",
+      "last7Days": "पिछले 7 दिन",
+      "updatedAgo": "2 घंटे पहले अपडेट हुआ"
     },
     "stats": {
       "title": "शेयर स्टैट्स",

@@ -715,7 +715,8 @@
       "privacy": "গোপনীয়তা নীতি",
       "showAdvanced": "অ্যাডভান্সড অপশন দেখান",
       "hideAdvanced": "অ্যাডভান্সড অপশন লুকান",
-      "contentRequired": "অনুগ্রহ করে কিছু কন্টেন্ট দিন"
+      "contentRequired": "অনুগ্রহ করে কিছু কন্টেন্ট দিন",
+      "cancel": "বাতিল"
     },
     "view": {
       "copyButton": "কন্টেন্ট কপি করুন",
@@ -749,9 +750,17 @@
       "viewStats": "পরিসংখ্যান দেখুন",
       "totalShares": "মোট শেয়ার",
       "totalViews": "মোট ভিউ",
+      "activeShares": "সক্রিয় শেয়ার",
       "links": "লিঙ্ক",
       "analysis": "অ্যানালিটিক্স",
-      "realtime": "লাইভ"
+      "realtime": "লাইভ",
+      "overallTraffic": "ট্রাফিক ওভারভিউ",
+      "overallTrafficDesc": "সময়ের সাথে ভিউ",
+      "topPerformingShares": "শীর্ষ পারফর্মিং শেয়ার",
+      "trafficByCountry": "দেশ অনুযায়ী ভিউ",
+      "noDataYet": "এখনও কোনো ডেটা নেই",
+      "last7Days": "শেষ ৭ দিন",
+      "updatedAgo": "২ ঘণ্টা আগে আপডেট হয়েছে"
     },
     "stats": {
       "title": "শেয়ার পরিসংখ্যান",

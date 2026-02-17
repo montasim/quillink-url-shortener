@@ -715,7 +715,8 @@
       "privacy": "پرائیسی پالیسی سے متفق ہیں۔",
       "showAdvanced": "مزید آپشنز دکھائیں",
       "hideAdvanced": "آپشنز چھپائیں",
-      "contentRequired": "براہ کرم کچھ مواد درج کریں"
+      "contentRequired": "براہ کرم کچھ مواد درج کریں",
+      "cancel": "منسوخ کریں"
     },
     "view": {
       "copyButton": "کاپی کریں",
@@ -749,9 +750,17 @@
       "viewStats": "اعداد و شمار دیکھیں",
       "totalShares": "کل شیئرز",
       "totalViews": "کل ویوز",
+      "activeShares": "فعال شیئرز",
       "links": "لنکس",
       "analysis": "تجزیات",
-      "realtime": "لائیو"
+      "realtime": "لائیو",
+      "overallTraffic": "ٹریفک کی تفصیلات",
+      "overallTrafficDesc": "وقت کے ساتھ ویوز",
+      "topPerformingShares": "ٹاپ پرفارمنگ شیئرز",
+      "trafficByCountry": "ملک کے لحاظ سے ٹریفک",
+      "noDataYet": "ابھی کوئی ڈیٹا نہیں",
+      "last7Days": "آخری 7 دن",
+      "updatedAgo": "2 گھنٹے پہلے اپ ڈیٹ ہوا"
     },
     "stats": {
       "title": "شیئر کے اعداد و شمار",

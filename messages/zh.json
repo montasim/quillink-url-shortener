@@ -715,7 +715,8 @@
       "privacy": "隱私政策",
       "showAdvanced": "展示高級選項",
       "hideAdvanced": "隱藏高級選項",
-      "contentRequired": "分享內容不能為空"
+      "contentRequired": "分享內容不能為空",
+      "cancel": "取消"
     },
     "view": {
       "copyButton": "複製內容",
@@ -749,9 +750,17 @@
       "viewStats": "數據分析",
       "totalShares": "累計分享",
       "totalViews": "累計查閱",
+      "activeShares": "活躍分享",
       "links": "鏈接列表",
       "analysis": "數據統計",
-      "realtime": "實時動態"
+      "realtime": "實時動態",
+      "overallTraffic": "訪問概覽",
+      "overallTrafficDesc": "隨時間的訪問數",
+      "topPerformingShares": "表現最好的分享",
+      "trafficByCountry": "按國家的訪問數",
+      "noDataYet": "暫無數據",
+      "last7Days": "最近 7 天",
+      "updatedAgo": "2 小時前更新"
     },
     "stats": {
       "title": "內容數據報告",

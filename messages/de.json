@@ -715,7 +715,8 @@
       "privacy": "Datenschutzbestimmungen",
       "showAdvanced": "Erweiterte Optionen anzeigen",
       "hideAdvanced": "Erweiterte Optionen ausblenden",
-      "contentRequired": "Bitte gib einen Inhalt ein"
+      "contentRequired": "Bitte gib einen Inhalt ein",
+      "cancel": "Abbrechen"
     },
     "view": {
       "copyButton": "Inhalt kopieren",
@@ -749,9 +750,17 @@
       "viewStats": "Stats ansehen",
       "totalShares": "Freigaben gesamt",
       "totalViews": "Aufrufe gesamt",
+      "activeShares": "Aktive Freigaben",
       "links": "Links",
       "analysis": "Statistiken",
-      "realtime": "Echtzeit"
+      "realtime": "Echtzeit",
+      "overallTraffic": "Traffic-Übersicht",
+      "overallTrafficDesc": "Aufrufe im Zeitverlauf",
+      "topPerformingShares": "Top Freigaben",
+      "trafficByCountry": "Traffic nach Ländern",
+      "noDataYet": "Noch keine Daten",
+      "last7Days": "Letzte 7 Tage",
+      "updatedAgo": "Vor 2 Std. aktualisiert"
     },
     "stats": {
       "title": "Freigabe-Statistiken",

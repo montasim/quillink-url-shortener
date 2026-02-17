@@ -715,7 +715,8 @@
       "privacy": "سياسة الخصوصية",
       "showAdvanced": "عرض الخيارات المتقدمة",
       "hideAdvanced": "إخفاء الخيارات المتقدمة",
-      "contentRequired": "يرجى إدخال بعض المحتوى"
+      "contentRequired": "يرجى إدخال بعض المحتوى",
+      "cancel": "إلغاء"
     },
     "view": {
       "copyButton": "نسخ المحتوى",
@@ -749,9 +750,17 @@
       "viewStats": "عرض الإحصائيات",
       "totalShares": "إجمالي المشاركات",
       "totalViews": "إجمالي المشاهدات",
+      "activeShares": "المشاركات النشطة",
       "links": "الروابط",
       "analysis": "الإحصائيات",
-      "realtime": "مباشر"
+      "realtime": "مباشر",
+      "overallTraffic": "نظرة عامة على الزيارات",
+      "overallTrafficDesc": "المشاهدات عبر الزمن",
+      "topPerformingShares": "أفضل المشاركات أداءً",
+      "trafficByCountry": "الزيارات حسب البلد",
+      "noDataYet": "لا توجد بيانات بعد",
+      "last7Days": "آخر 7 أيام",
+      "updatedAgo": "تم التحديث منذ ساعتين"
     },
     "stats": {
       "title": "إحصائيات المشاركة",

@@ -715,7 +715,8 @@
       "privacy": "Política de privacidad",
       "showAdvanced": "Ver opciones avanzadas",
       "hideAdvanced": "Ocultar opciones avanzadas",
-      "contentRequired": "Por favor escribe algo de contenido"
+      "contentRequired": "Por favor escribe algo de contenido",
+      "cancel": "Cancelar"
     },
     "view": {
       "copyButton": "Copiar contenido",
@@ -749,9 +750,17 @@
       "viewStats": "Ver estadísticas",
       "totalShares": "Total compartido",
       "totalViews": "Vistas totales",
+      "activeShares": "Notas activas",
       "links": "Links",
       "analysis": "Análisis",
-      "realtime": "En vivo"
+      "realtime": "En vivo",
+      "overallTraffic": "Resumen de tráfico",
+      "overallTrafficDesc": "Vistas a lo largo del tiempo",
+      "topPerformingShares": "Mejores notas",
+      "trafficByCountry": "Tráfico por país",
+      "noDataYet": "Sin datos aún",
+      "last7Days": "Últimos 7 días",
+      "updatedAgo": "Actualizado hace 2 horas"
     },
     "stats": {
       "title": "Estadísticas de la nota",
