@@ -7,9 +7,35 @@
     "logout": "Cerrar sesión",
     "contactUs": "Contacto",
     "terms": "Términos",
-    "privacy": "Privacidad"
+    "privacy": "Privacidad",
+    "textShares": "Textos Compartidos"
   },
   "home": {
+    "textShareHero": {
+      "badge": "✨ Compartir Texto Instantáneo",
+      "headingPart1": "Comparte ",
+      "headingPart2": "",
+      "headingHighlight": "instantáneamente",
+      "subheading": "Crea enlaces compartibles hermosos para tu texto, código y notas. No se requiere registro.",
+      "stats": {
+        "linksCreated": {
+          "value": "1M+",
+          "label": "Textos Compartidos Creados"
+        },
+        "activeUsers": {
+          "value": "100K+",
+          "label": "Usuarios Activos"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Tiempo de Actividad"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Soporte"
+        }
+      }
+    },
     "hero": {
       "badge": "✨ Acortador de URL gratuito",
       "headingPart1": "Haz que cada ",
@@ -115,6 +141,82 @@
           "role": "Fundador de Startup",
           "company": "Laboratorio de Innovación",
           "text": "Shrnkly es una herramienta esencial para nuestra startup. Es asequible, poderosa y el equipo de soporte responde increíblemente rápido."
+        }
+      }
+    },
+    "textShareFeatures": {
+      "badge": "Características",
+      "headingPart1": "Todo lo que necesitas para ",
+      "headingHighlight": "compartir texto",
+      "headingPart2": "",
+      "subheading": "Crea, comparte y gestiona tus fragmentos de texto con potentes funciones diseñadas para desarrolladores y equipos.",
+      "list": {
+        "instant": {
+          "title": "Compartir Instantáneo",
+          "description": "Crea enlaces compartibles para tu texto y código al instante. No se requiere registro para compartir básico."
+        },
+        "password": {
+          "title": "Protección con Contraseña",
+          "description": "Asegura tu contenido sensible con protección opcional con contraseña. Comparte solo con visualizadores autorizados."
+        },
+        "expire": {
+          "title": "Caducidad Automática",
+          "description": "Establece fechas de caducidad automáticas para tus compartidos. El contenido se elimina automáticamente después de la caducidad."
+        },
+        "analytics": {
+          "title": "Analíticas de Vistas",
+          "description": "Rastrea cuántas veces se ha visto tu texto. Monitorea el compromiso y el alcance."
+        },
+        "fast": {
+          "title": "Ultrarrápido",
+          "description": "Acceso instantáneo a tus fragmentos de texto con nuestra infraestructura global optimizada."
+        },
+        "secure": {
+          "title": "Seguro y Privado",
+          "description": "Tu contenido está cifrado y almacenado de forma segura. Elimina en cualquier momento con eliminación permanente."
+        }
+      }
+    },
+    "textShareTestimonials": {
+      "badge": "Testimonios",
+      "heading": "Los desarrolladores aman nuestro compartir texto",
+      "subheading": "Mira lo que los desarrolladores y equipos dicen sobre nuestra plataforma de compartir texto.",
+      "list": {
+        "alex": {
+          "name": "Alex Thompson",
+          "role": "Desarrollador Senior",
+          "company": "TechStart",
+          "text": "Esta plataforma de compartir texto se ha vuelto esencial para nuestro equipo. Compartir fragmentos de código con resaltado de sintaxis es ahora mucho más fácil. ¡Me encanta la función de protección con contraseña!"
+        },
+        "priya": {
+          "name": "Priya Patel",
+          "role": "Ingeniera DevOps",
+          "company": "CloudScale",
+          "text": "Finalmente, una herramienta de compartir texto que entiende a los desarrolladores. Caducidad automática para configuraciones sensibles, seguimiento de vistas y muy rápida. ¡Muy recomendable!"
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "Desarrollador Full Stack",
+          "company": "Freelance",
+          "text": "Comparto código con clientes diariamente. La capacidad de establecer límites de vistas y fechas de caducidad me da tranquilidad. La interfaz es limpia e intuitiva."
+        },
+        "sophie": {
+          "name": "Sophie Chen",
+          "role": "Líder Técnica",
+          "company": "InnovateCo",
+          "text": "Nuestro equipo usa esto para registros, configuraciones y revisiones de código. Las analíticas me ayudan a entender lo que mi equipo está viendo. ¡Cambio radical para la colaboración remota!"
+        },
+        "daniel": {
+          "name": "Daniel Brown",
+          "role": "Desarrollador Backend",
+          "company": "DataFlow",
+          "text": "El resaltado de sintaxis para múltiples lenguajes es perfecto. Puedo compartir fragmentos de Python, Go o SQL y siempre se ven geniales. ¡No más capturas de código!"
+        },
+        "rachel": {
+          "name": "Rachel Kim",
+          "role": "Desarrolladora Frontend",
+          "company": "DesignHub",
+          "text": "Me encanta cómo puedo compartir documentación formateada en Markdown con mi equipo. Los slugs personalizados facilitan organizar y encontrar contenido compartido más tarde."
         }
       }
     },
@@ -512,6 +614,79 @@
     "errorOccurredDescription": "Ocurrió un error inesperado. Por favor inténtalo de nuevo o regresa a la página principal.",
     "goToHomepage": "Ir a la página principal",
     "tryAgain": "Intentar de nuevo"
+  },
+  "textShare": {
+    "create": {
+      "title": "Crear Compartir Texto",
+      "subtitle": "Comparte texto, código o notas al instante",
+      "titleLabel": "Título (opcional)",
+      "titlePlaceholder": "Dale un título a tu compartido...",
+      "contentLabel": "Contenido",
+      "contentPlaceholder": "Pega tu texto, código o markdown aquí...",
+      "formatLabel": "Formato",
+      "formatPlain": "Texto Plano",
+      "formatMarkdown": "Markdown",
+      "formatCode": "Código",
+      "languageLabel": "Lenguaje de Sintaxis",
+      "languagePlaceholder": "ej. javascript, python, typescript...",
+      "languageSelect": "Seleccionar un lenguaje...",
+      "passwordLabel": "Contraseña (opcional)",
+      "passwordPlaceholder": "Requerir contraseña para ver",
+      "expiresAtLabel": "Expira El (opcional)",
+      "viewLimitLabel": "Límite de Vistas (opcional)",
+      "viewLimitPlaceholder": "Máx. vistas (1-1000)",
+      "customSlugLabel": "Enlace Personalizado (opcional)",
+      "customSlugPlaceholder": "mi-enlace-personalizado",
+      "createButton": "Crear Compartido",
+      "creating": "Creando...",
+      "success": "¡Texto compartido creado! Enlace copiado al portapapeles.",
+      "error": "Error al crear el texto compartido.",
+      "agreementPart1": "Al crear un compartido, aceptas nuestros ",
+      "terms": "Términos de Servicio",
+      "agreementPart2": " y ",
+      "privacy": "Política de Privacidad",
+      "showAdvanced": "Mostrar Opciones Avanzadas",
+      "hideAdvanced": "Ocultar Opciones Avanzadas",
+      "contentRequired": "El contenido es obligatorio"
+    },
+    "view": {
+      "copyButton": "Copiar al Portapapeles",
+      "copySuccess": "¡Copiado al portapapeles!",
+      "copyError": "Error al copiar",
+      "download": "Descargar",
+      "downloadTxt": "Descargar como .txt",
+      "downloadMd": "Descargar como .md",
+      "qrCode": "Código QR",
+      "shareLink": "Compartir Enlace",
+      "protectedContent": "Este contenido está protegido con contraseña",
+      "enterPassword": "Ingresa la contraseña para ver",
+      "submitPassword": "Ver Contenido",
+      "verifying": "Verificando...",
+      "invalidPassword": "Contraseña inválida",
+      "expired": "Este compartido ha expirado",
+      "viewLimitReached": "Límite de vistas alcanzado para este compartido",
+      "views": "{count} vistas"
+    },
+    "dashboard": {
+      "title": "Mis Textos Compartidos",
+      "subtitle": "Gestiona tus textos y fragmentos de código compartidos",
+      "newShare": "Nuevo Compartido",
+      "searchPlaceholder": "Buscar por título o contenido...",
+      "noShares": "Aún no hay textos compartidos",
+      "createFirstShare": "Crea tu primer texto compartido",
+      "deleteConfirm": "¿Estás seguro de que quieres eliminar este compartido?",
+      "deleteSuccess": "Compartido eliminado exitosamente",
+      "deleteError": "Error al eliminar el compartido",
+      "editShare": "Editar Compartido",
+      "viewStats": "Ver Estadísticas",
+      "totalShares": "Total de Compartidos",
+      "totalViews": "Total de Vistas",
+      "links": "Enlaces",
+      "analysis": "Análisis",
+      "realtime": "Tiempo Real",
+      "linkCopiedAlert": "¡Enlace copiado al portapapeles!",
+      "searchNoResults": "No se encontraron coincidencias"
+    }
   },
   "footer": {
     "allRightsReserved": "Todos los derechos reservados.",

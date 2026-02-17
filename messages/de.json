@@ -7,9 +7,35 @@
     "logout": "Abmelden",
     "contactUs": "Kontakt",
     "terms": "AGB",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "textShares": "Text-Freigaben"
   },
   "home": {
+    "textShareHero": {
+      "badge": "✨ Sofortige Textfreigabe",
+      "headingPart1": "Teilen Sie ",
+      "headingPart2": "",
+      "headingHighlight": "sofort",
+      "subheading": "Erstellen Sie schöne, teilbare Links für Ihren Text, Code und Notizen. Keine Anmeldung erforderlich.",
+      "stats": {
+        "linksCreated": {
+          "value": "1M+",
+          "label": "Textfreigaben erstellt"
+        },
+        "activeUsers": {
+          "value": "100K+",
+          "label": "Aktive Benutzer"
+        },
+        "uptime": {
+          "value": "99,9%",
+          "label": "Verfügbarkeit"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      }
+    },
     "hero": {
       "badge": "✨ Kostenloser URL Shortener",
       "headingPart1": "Machen Sie jede ",
@@ -115,6 +141,82 @@
           "role": "Startup-Gründer",
           "company": "InnovateLab",
           "text": "Shrnkly ist ein unverzichtbares Werkzeug für unser Startup. Es ist erschwinglich, leistungsstark und das Support-Team reagiert unglaublich schnell."
+        }
+      }
+    },
+    "textShareFeatures": {
+      "badge": "Funktionen",
+      "headingPart1": "Alles, was Sie für ",
+      "headingHighlight": "Text-Sharing",
+      "headingPart2": " benötigen",
+      "subheading": "Erstellen, teilen und verwalten Sie Ihre Text-Snippets mit leistungsstarken Funktionen für Entwickler und Teams.",
+      "list": {
+        "instant": {
+          "title": "Sofortiges Teilen",
+          "description": "Erstellen Sie sofort teilbare Links für Ihren Text und Code. Keine Anmeldung erforderlich für grundlegendes Teilen."
+        },
+        "password": {
+          "title": "Passwortschutz",
+          "description": "Sichern Sie Ihre sensiblen Inhalte mit optionalem Passwortschutz. Nur mit autorisierten Betrachtern teilen."
+        },
+        "expire": {
+          "title": "Automatische Löschung",
+          "description": "Legen Sie automatische Ablaufdaten für Ihre Shares fest. Inhalte werden nach Ablauf automatisch gelöscht."
+        },
+        "analytics": {
+          "title": "Besucheranalysen",
+          "description": "Verfolgen Sie, wie oft Ihr Text angesehen wurde. Überwachen Sie Engagement und Reichweite."
+        },
+        "fast": {
+          "title": "Blitzschnell",
+          "description": "Sofortiger Zugriff auf Ihre Text-Snippets mit unserer optimierten globalen Infrastruktur."
+        },
+        "secure": {
+          "title": "Sicher & Privat",
+          "description": "Ihre Inhalte werden verschlüsselt und sicher gespeichert. Jederzeit mit permanenter Entfernung löschen."
+        }
+      }
+    },
+    "textShareTestimonials": {
+      "badge": "Referenzen",
+      "heading": "Entwickler lieben unser Text-Sharing",
+      "subheading": "Sehen Sie, was Entwickler und Teams über unsere Text-Sharing-Plattform sagen.",
+      "list": {
+        "alex": {
+          "name": "Alex Thompson",
+          "role": "Senior Developer",
+          "company": "TechStart",
+          "text": "Diese Text-Sharing-Plattform ist für unser Team unverzichtbar geworden. Code-Snippets mit Syntax-Highlighting zu teilen ist jetzt so viel einfacher. Liebe die Passwortschutz-Funktion!"
+        },
+        "priya": {
+          "name": "Priya Patel",
+          "role": "DevOps Engineer",
+          "company": "CloudScale",
+          "text": "Endlich ein Text-Sharing-Tool, das Entwickler versteht. Automatische Löschung für sensible Konfigurationen, Besucher-Tracking und blitzschnell. Sehr empfehlenswert!"
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "Full Stack Developer",
+          "company": "Freelance",
+          "text": "Ich teile täglich Code mit Kunden. Die Möglichkeit, Ansichtslimits und Ablaufdaten festzulegen, gibt mir Sicherheit. Die Oberfläche ist sauber und intuitiv."
+        },
+        "sophie": {
+          "name": "Sophie Chen",
+          "role": "Tech Lead",
+          "company": "InnovateCo",
+          "text": "Unser Team nutzt dies für Logs, Konfigurationen und Code-Reviews. Die Analysen helfen mir zu verstehen, was mein Team ansieht. Gamechanger für Remote-Zusammenarbeit!"
+        },
+        "daniel": {
+          "name": "Daniel Brown",
+          "role": "Backend Developer",
+          "company": "DataFlow",
+          "text": "Die Syntax-Hervorhebung für mehrere Sprachen ist perfekt. Ich kann Python, Go oder SQL-Snippets teilen und sie sehen immer großartig aus. Keine Screenshots mehr!"
+        },
+        "rachel": {
+          "name": "Rachel Kim",
+          "role": "Frontend Developer",
+          "company": "DesignHub",
+          "text": "Liebe es, wie ich Markdown-formatierte Dokumentation mit meinem Team teilen kann. Die benutzerdefinierten Slugs machen es einfach, geteilte Inhalte später zu organisieren."
         }
       }
     },
@@ -512,6 +614,79 @@
     "errorOccurredDescription": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kehren Sie zur Startseite zurück.",
     "goToHomepage": "Zur Startseite gehen",
     "tryAgain": "Erneut versuchen"
+  },
+  "textShare": {
+    "create": {
+      "title": "Text-Freigabe erstellen",
+      "subtitle": "Text, Code oder Notizen sofort teilen",
+      "titleLabel": "Titel (optional)",
+      "titlePlaceholder": "Geben Sie Ihrer Freigabe einen Titel...",
+      "contentLabel": "Inhalt",
+      "contentPlaceholder": "Fügen Sie hier Ihren Text, Code oder Markdown ein...",
+      "formatLabel": "Format",
+      "formatPlain": "Nur Text",
+      "formatMarkdown": "Markdown",
+      "formatCode": "Code",
+      "languageLabel": "Syntax-Sprache",
+      "languagePlaceholder": "z.B. javascript, python, typescript...",
+      "languageSelect": "Sprache auswählen...",
+      "passwordLabel": "Passwort (optional)",
+      "passwordPlaceholder": "Passwort zum Anzeigen erforderlich",
+      "expiresAtLabel": "Läuft ab am (optional)",
+      "viewLimitLabel": "Ansichtslimit (optional)",
+      "viewLimitPlaceholder": "Max. Ansichten (1-1000)",
+      "customSlugLabel": "Benutzerdefinierter Link (optional)",
+      "customSlugPlaceholder": "mein-benutzerlink",
+      "createButton": "Freigabe erstellen",
+      "creating": "Erstellen...",
+      "success": "Text-Freigabe erstellt! Link in Zwischenablage kopiert.",
+      "error": "Text-Freigabe konnte nicht erstellt werden.",
+      "agreementPart1": "Durch das Erstellen einer Freigabe stimmen Sie unseren ",
+      "terms": "Nutzungsbedingungen",
+      "agreementPart2": " und ",
+      "privacy": "Datenschutzrichtlinien",
+      "showAdvanced": "Erweiterte Optionen anzeigen",
+      "hideAdvanced": "Erweiterte Optionen ausblenden",
+      "contentRequired": "Inhalt ist erforderlich"
+    },
+    "view": {
+      "copyButton": "In Zwischenablage kopieren",
+      "copySuccess": "In Zwischenablage kopiert!",
+      "copyError": "Kopieren fehlgeschlagen",
+      "download": "Herunterladen",
+      "downloadTxt": "Als .txt herunterladen",
+      "downloadMd": "Als .md herunterladen",
+      "qrCode": "QR-Code",
+      "shareLink": "Link teilen",
+      "protectedContent": "Dieser Inhalt ist passwortgeschützt",
+      "enterPassword": "Passwort zum Anzeigen eingeben",
+      "submitPassword": "Inhalt anzeigen",
+      "verifying": "Überprüfen...",
+      "invalidPassword": "Ungültiges Passwort",
+      "expired": "Diese Freigabe ist abgelaufen",
+      "viewLimitReached": "Ansichtslimit für diese Freigabe erreicht",
+      "views": "{count} Ansichten"
+    },
+    "dashboard": {
+      "title": "Meine Text-Freigaben",
+      "subtitle": "Verwalten Sie Ihre freigegebenen Texte und Code-Snippets",
+      "newShare": "Neue Freigabe",
+      "searchPlaceholder": "Nach Titel oder Inhalt suchen...",
+      "noShares": "Noch keine Text-Freigaben",
+      "createFirstShare": "Erstellen Sie Ihre erste Text-Freigabe",
+      "deleteConfirm": "Möchten Sie diese Freigabe wirklich löschen?",
+      "deleteSuccess": "Freigabe erfolgreich gelöscht",
+      "deleteError": "Freigabe konnte nicht gelöscht werden",
+      "editShare": "Freigabe bearbeiten",
+      "viewStats": "Statistiken anzeigen",
+      "totalShares": "Gesamte Freigaben",
+      "totalViews": "Gesamte Ansichten",
+      "links": "Links",
+      "analysis": "Analyse",
+      "realtime": "Echtzeit",
+      "linkCopiedAlert": "Link in Zwischenablage kopiert!",
+      "searchNoResults": "Keine Übereinstimmungen gefunden"
+    }
   },
   "footer": {
     "allRightsReserved": "Alle Rechte vorbehalten.",

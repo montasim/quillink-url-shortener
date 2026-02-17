@@ -11,6 +11,31 @@
     "textShares": "Text Shares"
   },
   "home": {
+    "textShareHero": {
+      "badge": "✨ Instant Text Sharing",
+      "headingPart1": "Share ",
+      "headingPart2": "",
+      "headingHighlight": "instantly",
+      "subheading": "Create beautiful, shareable links for your text, code, and notes. No sign-up required.",
+      "stats": {
+        "linksCreated": {
+          "value": "1M+",
+          "label": "Text Shares Created"
+        },
+        "activeUsers": {
+          "value": "100K+",
+          "label": "Active Users"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Uptime"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      }
+    },
     "hero": {
       "badge": "✨ Instant Text Sharing",
       "headingPart1": "Share ",
@@ -610,6 +635,7 @@
       "formatCode": "Code",
       "languageLabel": "Syntax Language",
       "languagePlaceholder": "e.g., javascript, python, typescript...",
+      "languageSelect": "Select a language...",
       "passwordLabel": "Password (optional)",
       "passwordPlaceholder": "Require a password to view",
       "expiresAtLabel": "Expires At (optional)",
@@ -620,7 +646,14 @@
       "createButton": "Create Share",
       "creating": "Creating...",
       "success": "Text share created! Link copied to clipboard.",
-      "error": "Failed to create text share."
+      "error": "Failed to create text share.",
+      "agreementPart1": "By creating a share, you agree to our ",
+      "terms": "Terms of Service",
+      "agreementPart2": " and ",
+      "privacy": "Privacy Policy",
+      "showAdvanced": "Show Advanced Options",
+      "hideAdvanced": "Hide Advanced Options",
+      "contentRequired": "Content is required"
     },
     "view": {
       "copyButton": "Copy to Clipboard",

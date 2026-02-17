@@ -7,9 +7,35 @@
     "logout": "注销",
     "contactUs": "联系我们",
     "terms": "条款",
-    "privacy": "隐私"
+    "privacy": "隐私",
+    "textShares": "文本分享"
   },
   "home": {
+    "textShareHero": {
+      "badge": "✨ 即时文本分享",
+      "headingPart1": "分享 ",
+      "headingPart2": "",
+      "headingHighlight": "即时",
+      "subheading": "为您的文本、代码和笔记创建美观的可分享链接。无需注册。",
+      "stats": {
+        "linksCreated": {
+          "value": "1M+",
+          "label": "创建的文本分享"
+        },
+        "activeUsers": {
+          "value": "100K+",
+          "label": "活跃用户"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "正常运行时间"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "支持"
+        }
+      }
+    },
     "hero": {
       "badge": "✨ 免费链接缩短器",
       "headingPart1": "让每一次 ",
@@ -115,6 +141,82 @@
           "role": "创业创始人",
           "company": "InnovateLab",
           "text": "Shrnkly 是我们初创公司的必备工具。它价格实惠、功能强大，并且支持团队的响应速度非常快。"
+        }
+      }
+    },
+    "textShareFeatures": {
+      "badge": "功能",
+      "headingPart1": "您需要的一切，用于",
+      "headingHighlight": "文本分享",
+      "headingPart2": "",
+      "subheading": "使用专为开发者和团队设计的强大功能创建、分享和管理您的文本片段。",
+      "list": {
+        "instant": {
+          "title": "即时分享",
+          "description": "立即为您的文本和代码创建可分享链接。基本分享无需注册。"
+        },
+        "password": {
+          "title": "密码保护",
+          "description": "使用可选密码保护保护您的敏感内容。仅与授权查看者分享。"
+        },
+        "expire": {
+          "title": "自动过期",
+          "description": "为您的分享设置自动过期日期。内容在过期后自动删除。"
+        },
+        "analytics": {
+          "title": "查看分析",
+          "description": "跟踪您的文本被查看的次数。监控参与度和覆盖范围。"
+        },
+        "fast": {
+          "title": "超快速",
+          "description": "通过我们优化的全球基础设施即时访问您的文本片段。"
+        },
+        "secure": {
+          "title": "安全可靠",
+          "description": "您的内容经过加密并安全存储。随时删除并永久移除。"
+        }
+      }
+    },
+    "textShareTestimonials": {
+      "badge": "用户评价",
+      "heading": "开发者喜爱我们的文本分享",
+      "subheading": "看看开发者和团队对我们的文本分享平台的评价。",
+      "list": {
+        "alex": {
+          "name": "Alex Thompson",
+          "role": "高级开发者",
+          "company": "TechStart",
+          "text": "这个文本分享平台已成为我们团队的必备工具。现在分享带有语法高亮的代码片段容易多了。喜欢密码保护功能！"
+        },
+        "priya": {
+          "name": "Priya Patel",
+          "role": "DevOps 工程师",
+          "company": "CloudScale",
+          "text": "终于有一个理解开发者的文本分享工具了。敏感配置自动过期、查看跟踪，而且速度超快。强烈推荐！"
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "全栈开发者",
+          "company": "自由职业",
+          "text": "我每天与客户分享代码。能够设置查看限制和过期日期让我很放心。界面简洁直观。"
+        },
+        "sophie": {
+          "name": "Sophie Chen",
+          "role": "技术主管",
+          "company": "InnovateCo",
+          "text": "我们团队用它来分享日志、配置和代码审查。分析帮助我了解团队在查看什么。远程协作的革命性改变！"
+        },
+        "daniel": {
+          "name": "Daniel Brown",
+          "role": "后端开发者",
+          "company": "DataFlow",
+          "text": "多种语言的语法高亮非常完美。我可以分享 Python、Go 或 SQL 片段，它们看起来总是很棒。再也不用截图代码了！"
+        },
+        "rachel": {
+          "name": "Rachel Kim",
+          "role": "前端开发者",
+          "company": "DesignHub",
+          "text": "喜欢我可以与团队分享 Markdown 格式的文档。自定义短链接使以后组织和查找分享内容变得容易。"
         }
       }
     },
@@ -512,6 +614,79 @@
     "errorOccurredDescription": "发生意外错误。请重试或返回首页。",
     "goToHomepage": "返回首页",
     "tryAgain": "重试"
+  },
+  "textShare": {
+    "create": {
+      "title": "创建文本分享",
+      "subtitle": "即时分享文本、代码或笔记",
+      "titleLabel": "标题（可选）",
+      "titlePlaceholder": "给您的分享一个标题...",
+      "contentLabel": "内容",
+      "contentPlaceholder": "在此粘贴您的文本、代码或 markdown...",
+      "formatLabel": "格式",
+      "formatPlain": "纯文本",
+      "formatMarkdown": "Markdown",
+      "formatCode": "代码",
+      "languageLabel": "语法语言",
+      "languagePlaceholder": "例如 javascript、python、typescript...",
+      "languageSelect": "选择一种语言...",
+      "passwordLabel": "密码（可选）",
+      "passwordPlaceholder": "需要密码才能查看",
+      "expiresAtLabel": "过期时间（可选）",
+      "viewLimitLabel": "查看限制（可选）",
+      "viewLimitPlaceholder": "最大查看次数（1-1000）",
+      "customSlugLabel": "自定义链接（可选）",
+      "customSlugPlaceholder": "my-custom-link",
+      "createButton": "创建分享",
+      "creating": "创建中...",
+      "success": "文本分享已创建！链接已复制到剪贴板。",
+      "error": "创建文本分享失败。",
+      "agreementPart1": "创建分享即表示您同意我们的",
+      "terms": "服务条款",
+      "agreementPart2": "和",
+      "privacy": "隐私政策",
+      "showAdvanced": "显示高级选项",
+      "hideAdvanced": "隐藏高级选项",
+      "contentRequired": "内容为必填项"
+    },
+    "view": {
+      "copyButton": "复制到剪贴板",
+      "copySuccess": "已复制到剪贴板！",
+      "copyError": "复制失败",
+      "download": "下载",
+      "downloadTxt": "下载为 .txt",
+      "downloadMd": "下载为 .md",
+      "qrCode": "二维码",
+      "shareLink": "分享链接",
+      "protectedContent": "此内容受密码保护",
+      "enterPassword": "输入密码以查看",
+      "submitPassword": "查看内容",
+      "verifying": "验证中...",
+      "invalidPassword": "密码无效",
+      "expired": "此分享已过期",
+      "viewLimitReached": "此分享的查看次数已达上限",
+      "views": "{count} 次查看"
+    },
+    "dashboard": {
+      "title": "我的文本分享",
+      "subtitle": "管理您分享的文本和代码片段",
+      "newShare": "新分享",
+      "searchPlaceholder": "按标题或内容搜索...",
+      "noShares": "暂无文本分享",
+      "createFirstShare": "创建您的第一个文本分享",
+      "deleteConfirm": "您确定要删除此分享吗？",
+      "deleteSuccess": "分享删除成功",
+      "deleteError": "删除分享失败",
+      "editShare": "编辑分享",
+      "viewStats": "查看统计",
+      "totalShares": "分享总数",
+      "totalViews": "查看总数",
+      "links": "链接",
+      "analysis": "分析",
+      "realtime": "实时",
+      "linkCopiedAlert": "链接已复制到剪贴板！",
+      "searchNoResults": "未找到匹配结果"
+    }
   },
   "footer": {
     "allRightsReserved": "保留所有权利。",

@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 interface FormatSelectorProps {
     value: 'plain' | 'markdown' | 'code';
@@ -13,10 +14,12 @@ export default function FormatSelector({
     onChange,
     disabled,
 }: FormatSelectorProps) {
+    const t = useTranslations('textShare.create');
+
     const formats = [
-        { value: 'plain' as const, label: 'Plain Text' },
-        { value: 'markdown' as const, label: 'Markdown' },
-        { value: 'code' as const, label: 'Code' },
+        { value: 'plain' as const, label: t('formatPlain') },
+        { value: 'markdown' as const, label: t('formatMarkdown') },
+        { value: 'code' as const, label: t('formatCode') },
     ];
 
     return (

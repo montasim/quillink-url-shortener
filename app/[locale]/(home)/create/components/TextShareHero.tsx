@@ -9,13 +9,14 @@ import { Label } from '@/components/ui/label';
 import { FileText, Zap, Lock, Clock, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
+import Link from 'next/link';
 import FormatSelector from '@/components/textShare/FormatSelector';
 import TextEditor from '@/components/textShare/TextEditor';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { createData } from '@/lib/axios';
 
 const TextShareHero = () => {
-    const t = useTranslations('home.hero');
+    const t = useTranslations('home.textShareHero');
     const createT = useTranslations('textShare.create');
     const router = useRouter();
 
@@ -36,7 +37,7 @@ const TextShareHero = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!formData.content) {
-            toast.error('Content is required');
+            toast.error(createT('contentRequired'));
             return;
         }
 
@@ -118,7 +119,7 @@ const TextShareHero = () => {
                         {/* Syntax Language (for code) */}
                         {formData.format === 'code' && (
                             <div className="space-y-2">
-                                <Label htmlFor="syntaxLanguage" className="text-sm font-semibold">Language</Label>
+                                <Label htmlFor="syntaxLanguage" className="text-sm font-semibold">{createT('languageLabel')}</Label>
                                 <select
                                     id="syntaxLanguage"
                                     value={formData.syntaxLanguage}
@@ -126,7 +127,7 @@ const TextShareHero = () => {
                                     disabled={isLoading}
                                     className="w-full h-11 px-4 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                 >
-                                    <option value="">Select a language...</option>
+                                    <option value="">{createT('languageSelect')}</option>
                                     <option value="javascript">JavaScript</option>
                                     <option value="typescript">TypeScript</option>
                                     <option value="python">Python</option>
@@ -173,7 +174,7 @@ const TextShareHero = () => {
                             onClick={() => setShowAdvanced(!showAdvanced)}
                             className="text-sm"
                         >
-                            {showAdvanced ? 'Hide' : 'Show'} Advanced Options
+                            {showAdvanced ? createT('hideAdvanced') : createT('showAdvanced')}
                         </Button>
 
                         {/* Advanced Options */}
@@ -227,13 +228,13 @@ const TextShareHero = () => {
                     {/* Agreement Text */}
                     <p className="mt-6 text-sm text-muted-foreground/60 font-medium">
                         {createT('agreementPart1')}{' '}
-                        <a href="/terms" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
+                        <Link href="/terms" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
                             {createT('terms')}
-                        </a>
+                        </Link>
                         {' '}{createT('agreementPart2')}{' '}
-                        <a href="/privacy" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
+                        <Link href="/privacy" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
                             {createT('privacy')}
-                        </a>
+                        </Link>
                     </p>
                 </form>
 
