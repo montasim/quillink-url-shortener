@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FileText, Lock, Clock, BarChart3, Zap, Shield, Star } from 'lucide-react';
-import TextShareHero from '@/app/[locale]/(home)/create/components/TextShareHero';
+import TextShareHero from '@/app/[locale]/(home)/texts/components/TextShareHero';
 import FeaturesSection from '@/app/[locale]/(home)/components/FeaturesSection';
 import TestimonialsSection from '@/app/[locale]/(home)/components/TestimonialsSection';
 import CTASection from '@/app/[locale]/(home)/components/CTASection';
