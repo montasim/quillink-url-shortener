@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { Link2, BarChart3, QrCode, Zap, Shield, Globe } from 'lucide-react';
-import NewHero from './components/NewHero';
-import FeaturesSection from './components/FeaturesSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import CTASection from './components/CTASection';
-import FAQSection from './components/FAQSection';
+import { Link2, BarChart3, QrCode, Zap, Shield, Globe, Star } from 'lucide-react';
+import NewHero from '@/app/[locale]/(home)/components/NewHero';
+import FeaturesSection from '@/app/[locale]/(home)/components/FeaturesSection';
+import TestimonialsSection from '@/app/[locale]/(home)/components/TestimonialsSection';
+import CTASection from '@/app/[locale]/(home)/components/CTASection';
+import FAQSection from '@/app/[locale]/(home)/components/FAQSection';
 
 // URL Shortener Features
 const urlShortenerFeatures = [
@@ -60,12 +60,22 @@ const urlShortenerFeatures = [
     },
 ];
 
+// URL Shortener Testimonials
+const urlShortenerTestimonials = [
+    { key: 'sarah', image: '👩‍💼', rating: 5 },
+    { key: 'michael', image: '👨‍💻', rating: 5 },
+    { key: 'emily', image: '👩‍🎨', rating: 5 },
+    { key: 'david', image: '👨‍💼', rating: 5 },
+    { key: 'lisa', image: '👩', rating: 5 },
+    { key: 'james', image: '👨', rating: 5 },
+];
+
 export default function HomePage() {
     return (
         <>
             <NewHero />
             <FeaturesSection features={urlShortenerFeatures} translationKey="features" />
-            <TestimonialsSection />
+            <TestimonialsSection testimonials={urlShortenerTestimonials} translationKey="testimonials" />
             <CTASection />
             <FAQSection />
         </>

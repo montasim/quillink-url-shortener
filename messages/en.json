@@ -152,6 +152,49 @@
         }
       }
     },
+    "textShareTestimonials": {
+      "badge": "Testimonials",
+      "heading": "Developers love our text sharing",
+      "subheading": "See what developers and teams are saying about our text sharing platform.",
+      "list": {
+        "alex": {
+          "name": "Alex Thompson",
+          "role": "Senior Developer",
+          "company": "TechStart",
+          "text": "This text sharing platform has become essential for our team. Sharing code snippets with syntax highlighting is so much easier now. Love the password protection feature!"
+        },
+        "priya": {
+          "name": "Priya Patel",
+          "role": "DevOps Engineer",
+          "company": "CloudScale",
+          "text": "Finally, a text sharing tool that understands developers. Auto-expiration for sensitive configs, view tracking, and it's blazing fast. Highly recommend!"
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "Full Stack Developer",
+          "company": "Freelance",
+          "text": "I share code with clients daily. The ability to set view limits and expiration dates gives me peace of mind. The interface is clean and intuitive."
+        },
+        "sophie": {
+          "name": "Sophie Chen",
+          "role": "Tech Lead",
+          "company": "InnovateCo",
+          "text": "Our team uses this for sharing logs, configs, and code reviews. The analytics help me understand what my team is viewing. Game changer for remote collaboration!"
+        },
+        "daniel": {
+          "name": "Daniel Brown",
+          "role": "Backend Developer",
+          "company": "DataFlow",
+          "text": "The syntax highlighting for multiple languages is perfect. I can share Python, Go, or SQL snippets and they always look great. No more screenshotting code!"
+        },
+        "rachel": {
+          "name": "Rachel Kim",
+          "role": "Frontend Developer",
+          "company": "DesignHub",
+          "text": "Love how I can share markdown-formatted documentation with my team. The custom slugs make it easy to organize and find shared content later."
+        }
+      }
+    },
     "cta": {
       "badge": "Get Started Today",
       "headingPart1": "Ready to ",

@@ -3,20 +3,21 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-
 import { useTranslations } from 'next-intl';
 
-const TestimonialsSection = () => {
-    const t = useTranslations('home.testimonials');
+interface TestimonialItem {
+    key: string;
+    image: string;
+    rating: number;
+}
 
-    const testimonialsList = [
-        { key: 'sarah', image: '👩‍💼', rating: 5 },
-        { key: 'michael', image: '👨‍💻', rating: 5 },
-        { key: 'emily', image: '👩‍🎨', rating: 5 },
-        { key: 'david', image: '👨‍💼', rating: 5 },
-        { key: 'lisa', image: '👩', rating: 5 },
-        { key: 'james', image: '👨', rating: 5 },
-    ];
+interface TestimonialsSectionProps {
+    testimonials: TestimonialItem[];
+    translationKey: string;
+}
+
+const TestimonialsSection = ({ testimonials, translationKey }: TestimonialsSectionProps) => {
+    const t = useTranslations(`home.${translationKey}`);
 
     return (
         <section className="py-24 px-6 bg-muted/30">
@@ -36,7 +37,7 @@ const TestimonialsSection = () => {
 
                 {/* Testimonials Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {testimonialsList.map((item, index) => (
+                    {testimonials.map((item, index) => (
                         <div
                             key={index}
                             className="p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow duration-300"
@@ -51,23 +52,24 @@ const TestimonialsSection = () => {
                                 ))}
                             </div>
 
-                            {/* Testimonial Text */}
-                            <p className="text-muted-foreground leading-relaxed mb-6">
-                                "{t(`list.${item.key}.text`)}"
+                            {/* Content */}
+                            <p className="text-foreground/80 mb-6 leading-relaxed">
+                                {t(`list.${item.key}.text`)}
                             </p>
 
                             {/* Author */}
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-2xl">
-                                    {item.image}
-                                </div>
+                            <div className="flex items-center gap-4">
+                                <span className="text-4xl">{item.image}</span>
                                 <div>
-                                    <div className="font-semibold text-foreground">
+                                    <h4 className="font-semibold text-foreground">
                                         {t(`list.${item.key}.name`)}
-                                    </div>
-                                    <div className="text-sm text-muted-foreground">
-                                        {t(`list.${item.key}.role`)} at {t(`list.${item.key}.company`)}
-                                    </div>
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground">
+                                        {t(`list.${item.key}.role`)}
+                                    </p>
+                                    <p className="text-xs text-muted-foreground/60">
+                                        {t(`list.${item.key}.company`)}
+                                    </p>
                                 </div>
                             </div>
                         </div>

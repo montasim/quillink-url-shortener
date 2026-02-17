@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { FileText, Lock, Clock, BarChart3, Zap, Shield } from 'lucide-react';
-import TextShareHero from './components/TextShareHero';
-import FeaturesSection from '../components/FeaturesSection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import CTASection from '../components/CTASection';
-import FAQSection from '../components/FAQSection';
+import { FileText, Lock, Clock, BarChart3, Zap, Shield, Star } from 'lucide-react';
+import TextShareHero from '@/app/[locale]/(home)/create/components/TextShareHero';
+import FeaturesSection from '@/app/[locale]/(home)/components/FeaturesSection';
+import TestimonialsSection from '@/app/[locale]/(home)/components/TestimonialsSection';
+import CTASection from '@/app/[locale]/(home)/components/CTASection';
+import FAQSection from '@/app/[locale]/(home)/components/FAQSection';
 
 // Text Share Features
 const textShareFeatures = [
@@ -60,6 +60,16 @@ const textShareFeatures = [
     },
 ];
 
+// Text Share Testimonials
+const textShareTestimonials = [
+    { key: 'alex', image: '👨‍💻', rating: 5 },
+    { key: 'priya', image: '👩‍🔧', rating: 5 },
+    { key: 'marcus', image: '👨‍💼', rating: 5 },
+    { key: 'sophie', image: '👩‍💻', rating: 5 },
+    { key: 'daniel', image: '👨‍🎓', rating: 5 },
+    { key: 'rachel', image: '👩‍🎨', rating: 5 },
+];
+
 export default function CreateTextSharePage() {
     return (
         <div className="min-h-screen">
@@ -69,8 +79,10 @@ export default function CreateTextSharePage() {
             {/* Features Section */}
             <FeaturesSection features={textShareFeatures} translationKey="textShareFeatures" />
 
+            {/* Testimonials Section */}
+            <TestimonialsSection testimonials={textShareTestimonials} translationKey="textShareTestimonials" />
+
             {/* Additional Sections */}
-            <TestimonialsSection />
             <CTASection />
             <FAQSection />
         </div>
