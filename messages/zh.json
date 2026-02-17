@@ -1,756 +1,780 @@
 {
   "navigation": {
     "home": "首页",
-    "dashboard": "仪表板",
-    "login": "登录",
-    "signup": "注册",
-    "logout": "注销",
-    "contactUs": "联系我们",
-    "terms": "条款",
-    "privacy": "隐私",
+    "dashboard": "控制台",
+    "login": "登錄",
+    "signup": "注冊",
+    "logout": "退出登錄",
+    "contactUs": "聯繫我們",
+    "terms": "服務協議",
+    "privacy": "隱私政策",
     "textShares": "文本分享"
   },
   "home": {
     "textShareHero": {
-      "badge": "✨ 即时文本分享",
-      "headingPart1": "分享 ",
-      "headingPart2": "",
-      "headingHighlight": "即时",
-      "subheading": "为您的文本、代码和笔记创建美观的可分享链接。无需注册。",
+      "badge": "✨ 文本即刻分享",
+      "headingPrefix": "隨時隨地，",
+      "headingSuffix": "",
+      "headingEmphasis": "秒傳一切",
+      "subheading": "為你的文本、代碼、筆記或 Markdown 創建精緻的分享鏈接，無需註冊即可使用。",
       "stats": {
         "linksCreated": {
           "value": "1M+",
-          "label": "创建的文本分享"
+          "label": "分享總數"
         },
         "activeUsers": {
           "value": "100K+",
-          "label": "活跃用户"
+          "label": "活躍用戶"
         },
         "uptime": {
           "value": "99.9%",
-          "label": "正常运行时间"
+          "label": "穩定運行"
         },
         "support": {
           "value": "24/7",
-          "label": "支持"
+          "label": "全天候支持"
         }
       }
     },
     "hero": {
-      "badge": "✨ 免费链接缩短器",
-      "headingPart1": "让每一次 ",
-      "headingPart2": "算数",
-      "headingHighlight": "连接",
-      "subheading": "在几秒钟内创建简短、难忘的链接。使用 Shrnkly 强大的 URL 缩短器跟踪点击、分析性能并随时随地共享。",
-      "inputPlaceholder": "在此输入您的长链接...",
-      "shortenButton": "缩短链接",
-      "creating": "创建中...",
-      "agreementPart1": "通过缩短链接，您同意我们的 ",
-      "terms": "服务条款",
-      "agreementPart2": " 和 ",
-      "privacy": "隐私政策",
+      "badge": "✨ 智能短鏈工具",
+      "headingPrefix": "讓每個 ",
+      "headingSuffix": " 更有力量",
+      "headingEmphasis": "鏈接",
+      "subheading": "將冗長的網址秒變簡潔、美觀且可追踪的短鏈接。適用於社交媒體、郵件和短信發送。",
+      "inputPlaceholder": "在此粘貼長網址...",
+      "shortenButton": "立即縮短",
+      "creating": "正在生成...",
+      "agreementPrefix": "點擊生成即代表你同意我們的 ",
+      "terms": "服務協議",
+      "agreementSuffix": " 和 ",
+      "privacy": "隱私政策",
       "stats": {
         "linksCreated": {
-          "value": "1000万+",
-          "label": "创建的链接"
+          "value": "10M+",
+          "label": "累計生成"
         },
         "activeUsers": {
-          "value": "50万+",
-          "label": "活跃用户"
+          "value": "500K+",
+          "label": "活躍用戶"
         },
         "uptime": {
           "value": "99.9%",
-          "label": "正常运行时间"
+          "label": "穩定運行"
         },
         "support": {
           "value": "24/7",
-          "label": "支持"
+          "label": "全天候支持"
         }
       }
     },
     "features": {
-      "badge": "特点",
-      "headingPart1": "探索更多 ",
-      "headingPart2": " 的特点",
-      "headingHighlight": "效率",
-      "subheading": "在一个强大的平台上创建、管理和跟踪您的短链接所需的一切。",
-      "list": {
+      "badge": "產品功能",
+      "headingPrefix": "助力品牌，",
+      "headingSuffix": "",
+      "headingEmphasis": "鏈接更高效",
+      "subheading": "提供創建、自定義、保護及數據分析的一站式短鏈工具。",
+      "featureList": {
         "shortening": {
-          "title": "简单的链接缩短",
-          "description": "只需单击一下即可将长 URL 转换为简短、难忘的链接。简单、快速、高效。"
+          "title": "極速縮短",
+          "description": "一鍵將複雜網址轉換為簡潔好記的短鏈接。"
         },
         "analytics": {
-          "title": "高级分析",
-          "description": "通过我们全面的分析仪表板跟踪点击、地理数据、推荐人等。"
+          "title": "數據分析",
+          "description": "實時監測點擊量、地理位置、設備來源等核心數據。"
         },
         "qr": {
-          "title": "二维码生成",
-          "description": "自动为您的短链接生成二维码。非常适合打印和移动设备。"
+          "title": "內置二維碼",
+          "description": "每個短鏈自動生成專屬二維碼，方便線下物料使用。"
         },
         "fast": {
-          "title": "闪电般快速",
-          "description": "我们的全球 CDN 确保您的链接在世界任何地方都能立即重定向。"
+          "title": "全球加速",
+          "description": "部署全球節點，確保鏈接跳轉無延遲。"
         },
         "secure": {
           "title": "安全可靠",
-          "description": "企业级安全性，拥有 99.9% 的正常运行时间保证。您的链接始终可用。"
+          "description": "全站 HTTPS 加密，自動攔截風險網址。"
         },
         "domains": {
-          "title": "自定义域名",
-          "description": "使用您自己的品牌域名作为短链接，以建立信任和认可。"
-        }
-      }
-    },
-    "testimonials": {
-      "badge": "感言",
-      "heading": "数百人已经信任我们",
-      "subheading": "看看我们的客户如何评价他们使用 Shrnkly 的体验。",
-      "list": {
-        "sarah": {
-          "name": "Sarah Johnson",
-          "role": "营销总监",
-          "company": "TechCorp Inc.",
-          "text": "Shrnkly 改变了我们管理营销活动的方式。分析非常详细，界面也非常直观。"
-        },
-        "michael": {
-          "name": "Michael Chen",
-          "role": "社交媒体经理",
-          "company": "创意工作室",
-          "text": "我用过的最好的 URL 缩短器。自定义域名、二维码和详细分析都集中在一个地方。"
-        },
-        "emily": {
-          "name": "Emily Rodriguez",
-          "role": "内容创作者",
-          "company": "独立",
-          "text": "作为内容创作者，跟踪链接性能至关重要。Shrnkly 让查看哪些有效变得非常容易。"
-        },
-        "david": {
-          "name": "David Kim",
-          "role": "电子商务所有者",
-          "company": "ShopNow",
-          "text": "我们所有的产品链接都使用 Shrnkly。可靠性非常出色，自定义域名功能有助于建立信任。"
-        },
-        "lisa": {
-          "name": "Lisa Anderson",
-          "role": "数字营销人员",
-          "company": "成长代理机构",
-          "text": "分析仪表板为我们提供了以前从未有过的见解。现在我们可以实时优化我们的活动。"
-        },
-        "james": {
-          "name": "James Wilson",
-          "role": "创业创始人",
-          "company": "InnovateLab",
-          "text": "Shrnkly 是我们初创公司的必备工具。它价格实惠、功能强大，并且支持团队的响应速度非常快。"
+          "title": "自定義域名",
+          "description": "綁定品牌專屬域名，提升用戶信任感與點擊率。"
         }
       }
     },
     "textShareFeatures": {
-      "badge": "功能",
-      "headingPart1": "您需要的一切，用于",
-      "headingHighlight": "文本分享",
-      "headingPart2": "",
-      "subheading": "使用专为开发者和团队设计的强大功能创建、分享和管理您的文本片段。",
-      "list": {
+      "badge": "產品功能",
+      "headingPrefix": "專業的 ",
+      "headingEmphasis": "文本分享",
+      "headingSuffix": "方案",
+      "subheading": "專為開發者、創作者和團隊打造，安全、快速且可控。",
+      "featureList": {
         "instant": {
-          "title": "即时分享",
-          "description": "立即为您的文本和代码创建可分享链接。基本分享无需注册。"
+          "title": "即開即用",
+          "description": "粘貼 → 生成 → 分享。無需註冊即可快速傳輸內容。"
         },
         "password": {
-          "title": "密码保护",
-          "description": "使用可选密码保护保护您的敏感内容。仅与授权查看者分享。"
+          "title": "密碼保護",
+          "description": "為敏感內容設置密碼，僅授權用戶可見。"
         },
         "expire": {
-          "title": "自动过期",
-          "description": "为您的分享设置自动过期日期。内容在过期后自动删除。"
+          "title": "自動銷毀",
+          "description": "設置有效期，到期後內容自動永久刪除。"
         },
         "analytics": {
-          "title": "查看分析",
-          "description": "跟踪您的文本被查看的次数。监控参与度和覆盖范围。"
+          "title": "訪問統計",
+          "description": "查看內容被查閱的次數、來源和設備分佈。"
         },
         "fast": {
-          "title": "超快速",
-          "description": "通过我们优化的全球基础设施即时访问您的文本片段。"
+          "title": "流暢體驗",
+          "description": "極簡頁面加載，確保你的內容在全球範圍內秒開。"
         },
         "secure": {
-          "title": "安全可靠",
-          "description": "您的内容经过加密并安全存储。随时删除并永久移除。"
+          "title": "隱私加密",
+          "description": "全鏈路加密處理，你可以隨時手動撤回或刪除內容。"
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "用戶口碑",
+      "heading": "萬千用戶的信賴之選",
+      "subheading": "看看大家是如何評價 Shrnkly 的。",
+      "testimonialList": {
+        "sarah": {
+          "name": "Sarah Johnson",
+          "role": "市場總監",
+          "company": "TechCorp Inc.",
+          "quote": "Shrnkly 徹底改變了我們管理活動鏈接的方式。統計數據非常精準，界面也很清爽。"
+        },
+        "michael": {
+          "name": "Michael Chen",
+          "role": "社媒運營",
+          "company": "Creative Studio",
+          "quote": "這是我用過最好的短鏈工具。自定義域名、二維碼和統計功能樣樣俱全，強烈推薦。"
+        },
+        "emily": {
+          "name": "Emily Rodriguez",
+          "role": "內容創作者",
+          "company": "自由職業者",
+          "quote": "我需要知道每個點擊的來源。Shrnkly 的數據看板讓這一切變得簡單直接，太讚了！"
+        },
+        "david": {
+          "name": "David Kim",
+          "role": "電商負責人",
+          "company": "ShopNow",
+          "quote": "我們所有的產品推廣都用 Shrnkly。品牌自定義域名極大提升了用戶的購買信心。"
+        },
+        "lisa": {
+          "name": "Lisa Anderson",
+          "role": "數字營銷經理",
+          "company": "Growth Agency",
+          "quote": "實時數據分析讓我們能隨時優化投放策略。對於專業團隊來說這是剛需。"
+        },
+        "james": {
+          "name": "James Wilson",
+          "role": "創業公司創始人",
+          "company": "InnovateLab",
+          "quote": "創業必備工具。功能強大、價格合理，且客服響應速度非常快。"
         }
       }
     },
     "textShareTestimonials": {
-      "badge": "用户评价",
-      "heading": "开发者喜爱我们的文本分享",
-      "subheading": "看看开发者和团队对我们的文本分享平台的评价。",
-      "list": {
+      "badge": "用戶口碑",
+      "heading": "深受開發者與團隊喜愛",
+      "subheading": "高效分享代碼片段與筆記的真實反饋。",
+      "testimonialList": {
         "alex": {
           "name": "Alex Thompson",
-          "role": "高级开发者",
+          "role": "資深開發工程師",
           "company": "TechStart",
-          "text": "这个文本分享平台已成为我们团队的必备工具。现在分享带有语法高亮的代码片段容易多了。喜欢密码保护功能！"
+          "quote": "代碼高亮、密碼保護和自動銷毀功能結合得太棒了。跟客戶對接代碼片段時非常方便。"
         },
         "priya": {
           "name": "Priya Patel",
-          "role": "DevOps 工程师",
+          "role": "运维工程師",
           "company": "CloudScale",
-          "text": "终于有一个理解开发者的文本分享工具了。敏感配置自动过期、查看跟踪，而且速度超快。强烈推荐！"
+          "quote": "終於有一個懂開發者的工具了。自動銷毀敏感信息，還能追踪訪問記錄，速度極快。"
         },
         "marcus": {
           "name": "Marcus Johnson",
-          "role": "全栈开发者",
-          "company": "自由职业",
-          "text": "我每天与客户分享代码。能够设置查看限制和过期日期让我很放心。界面简洁直观。"
+          "role": "全棧工程師",
+          "company": "Freelance",
+          "quote": "次數限制和有效期功能讓我能安心分享私密代碼。UI 設計也很符合審美。"
         },
         "sophie": {
           "name": "Sophie Chen",
-          "role": "技术主管",
+          "role": "技術負責人",
           "company": "InnovateCo",
-          "text": "我们团队用它来分享日志、配置和代码审查。分析帮助我了解团队在查看什么。远程协作的革命性改变！"
+          "quote": "我們用它來同步日誌、報錯信息和配置。數據統計能幫我們掌握內部的查閱情況。"
         },
         "daniel": {
           "name": "Daniel Brown",
-          "role": "后端开发者",
+          "role": "後端工程師",
           "company": "DataFlow",
-          "text": "多种语言的语法高亮非常完美。我可以分享 Python、Go 或 SQL 片段，它们看起来总是很棒。再也不用截图代码了！"
+          "quote": "Python、Go 和 SQL 的高亮效果非常出色。再也不用發那些模糊的代碼截圖了。"
         },
         "rachel": {
           "name": "Rachel Kim",
-          "role": "前端开发者",
+          "role": "前端工程師",
           "company": "DesignHub",
-          "text": "喜欢我可以与团队分享 Markdown 格式的文档。自定义短链接使以后组织和查找分享内容变得容易。"
+          "quote": "Markdown 支持堪稱完美。我經常精它來分享會議記錄和技術文檔。"
         }
       }
     },
     "cta": {
-      "badge": "今天开始",
-      "headingPart1": "准备好 ",
-      "headingPart2": " 您的链接了吗？",
-      "headingHighlight": "改变",
-      "subheading": "加入成千上万使用 Shrnkly 扩展其影响力并跟踪每次点击的创作者和企业。",
-      "startButton": "免费开始",
-      "contactButton": "联系销售",
-      "getInTouch": "取得联系",
-      "emailSupport": "电子邮件支持"
+      "badge": "免費開始",
+      "headingPrefix": "準備好優化你的 ",
+      "headingSuffix": " 嗎？",
+      "headingEmphasis": "推廣鏈接",
+      "subheading": "加入上萬名市場人員、創作者和開發者的行列，即刻體驗 Shrnkly。",
+      "startButton": "免費試用",
+      "contactButton": "聯繫商務",
+      "getInTouch": "與我們交流",
+      "emailSupport": "郵件支持"
     },
     "textShareCta": {
-      "badge": "今天开始",
-      "headingPart1": "准备好 ",
-      "headingPart2": " 您的文本了吗？",
-      "headingHighlight": "分享",
-      "subheading": "加入成千上万的开发者和团队，他们使用我们的平台即时分享代码、笔记和文档。",
-      "startButton": "免费开始",
-      "contactButton": "联系销售",
-      "getInTouch": "取得联系",
-      "emailSupport": "电子邮件支持"
+      "badge": "免費開始",
+      "headingPrefix": "開啟更專業的 ",
+      "headingSuffix": " 體驗",
+      "headingEmphasis": "文本分享",
+      "subheading": "數千名工程師和團隊已選擇我們的平台，安全高效地分享代碼片段。",
+      "startButton": "免費試用",
+      "contactButton": "聯繫商務",
+      "getInTouch": "與我們交流",
+      "emailSupport": "郵件支持"
     },
     "faq": {
-      "badge": "常见问题",
-      "heading": "您的问题，已回答",
-      "subheading": "您需要了解的有关 Shrnkly 及其工作原理的一切。",
+      "badge": "常見問題",
+      "heading": "你想知道的都在這裡",
+      "subheading": "快速解答關於 Shrnkly 的常見疑問。",
       "questions": {
         "whatIs": {
-          "q": "什么是 URL 缩短器？",
-          "a": "URL 缩短器是一种将长 URL 转换为更短、更易于管理的链接的工具。"
+          "question": "什麼是短鏈接工具？",
+          "answer": "它能將超長的網址轉化為簡短且易於分享的鏈接，點擊後會自動跳轉至原始網頁。"
         },
         "howWork": {
-          "q": "Shrnkly 如何运作？",
-          "a": "只需将您的长 URL 粘贴到我们的缩短器中，Shrnkly 就会为您生成一个简短、独特的链接。"
+          "question": "Shrnkly 如何運作？",
+          "answer": "粘貼你的長鏈接，點擊「縮短」即可。你還可以自定義後綴、添加密碼或查看點擊數據。"
         },
         "isFree": {
-          "q": "Shrnkly 免费使用吗？",
-          "a": "是的！Shrnkly 提供包含基本功能的免费计划，如链接缩短、基本分析和二维码生成。"
+          "question": "Shrnkly 是免費的嗎？",
+          "answer": "是的，基礎功能（短鏈生成、基礎統計、二維碼）永久免費。專業版提供自定義域名和深度分析。"
         },
         "canTrack": {
-          "q": "我可以跟踪我的短链接吗？",
-          "a": "当然！每个短链接都附带全面的分析，包括点击次数和地理数据。"
+          "question": "我可以追踪點擊數據嗎？",
+          "answer": "當然！你可以查看到點擊次數、地理位置、來源媒介及訪客設備等詳細報告。"
         },
         "customDomain": {
-          "q": "我可以使用自己的自定义域名吗？",
-          "a": "是的，我们的高级计划允许您使用自己的品牌域名作为短链接。"
+          "question": "我可以使用自己的域名嗎？",
+          "answer": "可以。專業版支持綁定個人或品牌域名，打造專屬品牌鏈接。"
         },
         "howLong": {
-          "q": "短链接持续多长时间？",
-          "a": "默认情况下，使用 Shrnkly 创建的短链接永不过期。"
+          "question": "短鏈接會過期嗎？",
+          "answer": "默認情況下永久有效。你也可以根據需求手動設置自動銷毀時間。"
         },
         "limit": {
-          "q": "我可以创建的链接数量有限制吗？",
-          "a": "免费帐户每月最多可以创建 100 个链接。"
+          "question": "免費賬戶有創建限制嗎？",
+          "answer": "免費版用戶每月可創建 100 條短鏈。升級專業版可享受無限量創建。"
         },
         "safe": {
-          "q": "短链接安全吗？",
-          "a": "是的，Shrnkly 非常重视安全性。我们会扫描所有 URL 以查找恶意内容。"
+          "question": "鏈接安全嗎？",
+          "answer": "我們內置了惡意網址監測、全站 HTTPS 加密，並提供密碼保護功能以確保訪問安全。"
         }
       },
       "cta": {
-        "headingPart1": "还有 ",
-        "headingPart2": " 吗？",
-        "headingHighlight": "问题",
-        "subheading": "找不到您要找的答案？加入我们的社区或与我们友好的支持团队聊天。",
-        "getInTouch": "取得联系",
-        "emailSupport": "电子邮件支持"
+        "headingPrefix": "還有 ",
+        "headingSuffix": " ？",
+        "headingEmphasis": "其他疑慮",
+        "subheading": "沒關係，我們的團隊隨時待命為你解答。",
+        "getInTouch": "在線諮詢",
+        "emailSupport": "郵件支持"
       }
     },
     "textShareFaq": {
-      "heading": "您的问题，已回答",
-      "subheading": "您需要了解的有关文本分享及其工作原理的一切。",
+      "heading": "常見問題",
+      "subheading": "關於文本、代碼及筆記分享的疑問解答。",
       "questions": {
         "whatIs": {
-          "q": "什么是文本分享？",
-          "a": "文本分享是一个工具，允许您通过唯一的可分享链接分享文本、代码片段和笔记。只需粘贴您的内容即可获得一个即时链接，您可以在任何地方分享。"
+          "question": "什麼是文本分享？",
+          "answer": "一種快速將文本、代碼或筆記轉換為可分享鏈接的方式，支持私密或公開傳輸。"
         },
         "howWork": {
-          "q": "文本分享如何工作？",
-          "a": "只需将您的文本、代码或笔记粘贴到我们的编辑器中，选择您的格式（纯文本、markdown 或代码），然后单击创建。您将获得一个即时可分享的链接。"
+          "question": "如何使用？",
+          "answer": "粘貼內容，選擇格式（純文本、Markdown 或代碼），設置安全選項後即可獲取分享鏈接。"
         },
         "isFree": {
-          "q": "使用免费吗？",
-          "a": "是的！文本分享免费提供基本功能，包括密码保护、过期日期和查看跟踪。高级计划提供无限分享和高级功能。"
+          "question": "這項服務收費嗎？",
+          "answer": "基礎分享、密碼保護和自動銷毀功能都是免費的。專業版可解鎖更多存儲空間和高級權限。"
         },
         "passwordProtect": {
-          "q": "我可以密码保护我的文本吗？",
-          "a": "当然可以！您可以为任何文本分享添加可选的密码保护。只有有密码的人才能查看您的内容。"
+          "question": "我可以設置密碼嗎？",
+          "answer": "當然，你可以設置獨立密碼，確保只有知曉密碼的用戶才能查閱內容。"
         },
         "expiration": {
-          "q": "我可以设置过期日期吗？",
-          "a": "是的，您可以为文本分享设置自定义过期日期。内容在过期后自动删除。"
+          "question": "內容可以自動過期嗎？",
+          "answer": "可以。設置指定的日期或時間，到期後內容將自動從服務器中刪除。"
         },
         "howLong": {
-          "q": "文本分享持续多久？",
-          "a": "文本分享持续到过期或达到查看限制。您可以在创建分享时设置自定义过期日期或查看限制。"
+          "question": "分享內容會保存多久？",
+          "answer": "除非設置了到期銷毀或達到了訪問次數限制，否則內容將持續保存。"
         },
         "limit": {
-          "q": "我可以创建的分享数量有限制吗？",
-          "a": "免费账户每月可以创建最多 10 个文本分享。高级计划提供无限文本分享以及其他高级功能。"
+          "question": "免費版有限制嗎？",
+          "answer": "免費版用戶可同時保存 10 條分享記錄。升級 Pro 後不限創建數量。"
         },
         "secure": {
-          "q": "我的内容安全吗？",
-          "a": "是的，我们认真对待安全。您的内容在传输和静态时都经过加密。我们还提供过期后自动删除以增加隐私。"
+          "question": "我的內容安全嗎？",
+          "answer": "絕對安全。所有傳輸均經過加密，你對內容的銷毀、有效期和訪問權限擁有完整控制權。"
         }
       },
       "cta": {
-        "badge": "文本常见问题",
-        "headingPart1": "还有 ",
-        "headingPart2": " 吗？",
-        "headingHighlight": "问题",
-        "subheading": "找不到您要找的答案？加入我们的社区或与我们友好的支持团队聊天。",
-        "getInTouch": "取得联系",
-        "emailSupport": "电子邮件支持"
+        "badge": "有疑問？",
+        "headingPrefix": "找不到 ",
+        "headingSuffix": " ？",
+        "headingEmphasis": "答案",
+        "subheading": "如果你有特殊需求或技術問題，歡迎隨時聯繫我們。",
+        "getInTouch": "在線諮詢",
+        "emailSupport": "郵件支持"
       }
     }
   },
   "auth": {
     "login": {
-      "title": "欢迎回来",
-      "subtitle": "登录到您的帐户",
-      "email": "电子邮件",
-      "emailPlaceholder": "name@company.com",
-      "password": "密码",
-      "passwordPlaceholder": "输入您的密码",
-      "submitButton": "登录",
-      "forgotPassword": "忘记密码？",
-      "noAccount": "没有帐户？",
-      "signUpLink": "在此注册",
-      "validationError": "无效的请求类型。",
-      "unauthorized": "无效的电子邮件或密码。请重试。",
-      "success": "登录成功。",
-      "turnstileError": "请验证您不是机器人。",
-      "continueWithGoogle": "继续使用 Google",
+      "title": "歡迎回來",
+      "subtitle": "登錄你的 Shrnkly 賬號",
+      "email": "電子郵箱",
+      "emailPlaceholder": "hello@example.com",
+      "password": "密碼",
+      "passwordPlaceholder": "輸入你的密碼",
+      "submitButton": "立即登錄",
+      "forgotPassword": "忘記密碼？",
+      "noAccount": "還沒有賬號？",
+      "signUpLink": "立即注冊",
+      "validationError": "請檢查你輸入的信息。",
+      "unauthorized": "郵箱或密碼錯誤，請重試。",
+      "success": "登錄成功！",
+      "turnstileError": "請完成人機驗證。",
+      "continueWithGoogle": "使用 Google 賬號登錄",
       "or": "或",
-      "authenticating": "正在验证"
+      "authenticating": "正在驗證..."
     },
     "signup": {
-      "title": "创建帐户",
-      "subtitle": "今天加入我们",
-      "continueWithGoogle": "继续使用 Google",
+      "title": "創建賬號",
+      "subtitle": "加入數千名高效用戶的行列",
+      "continueWithGoogle": "使用 Google 賬號注冊",
       "or": "或",
-      "name": "全名",
-      "namePlaceholder": "输入您的姓名",
-      "email": "电子邮件",
-      "emailPlaceholder": "name@company.com",
-      "password": "密码",
-      "passwordPlaceholder": "创建一个强密码",
-      "confirmPassword": "确认密码",
-      "submitButton": "创建帐户",
-      "haveAccount": "已有帐户？",
-      "loginLink": "在此登录",
-      "validationError": "无效的请求类型。",
-      "alreadyExists": "具有此电子邮件的帐户已存在。",
-      "success": "注册成功。您现在可以登录。",
-      "turnstileError": "请验证您不是机器人。"
+      "name": "真實姓名",
+      "namePlaceholder": "你的名字",
+      "email": "電子郵箱",
+      "emailPlaceholder": "hello@example.com",
+      "password": "設置密碼",
+      "passwordPlaceholder": "設置一個高強度密碼",
+      "confirmPassword": "確認密碼",
+      "submitButton": "立即注冊",
+      "haveAccount": "已有賬號？",
+      "loginLink": "前往登錄",
+      "validationError": "請檢查你輸入的信息。",
+      "alreadyExists": "該郵箱已被註冊。",
+      "success": "注冊成功！現在可以登錄了。",
+      "turnstileError": "請完成人機驗證。"
     },
     "forgotPassword": {
-      "title": "忘记密码？",
-      "subtitle": "输入您的电子邮件以重置密码",
-      "email": "电子邮件",
-      "emailPlaceholder": "输入有效的电子邮件",
-      "processing": "处理中",
-      "submitButton": "发送验证邮件",
-      "rememberPassword": "记起密码了？",
-      "loginLink": "登录",
-      "turnstileError": "请验证您不是机器人。",
-      "backToLogin": "返回登录",
-      "validationError": "无效的电子邮件。请重试。",
-      "forbidden": "如果您的电子邮件已注册，您很快就会收到重置说明。",
-      "success": "密码重置链接已发送。"
+      "title": "找回密碼",
+      "subtitle": "輸入郵箱，我們將發送重置指引",
+      "email": "電子郵箱",
+      "emailPlaceholder": "你的註冊郵箱",
+      "processing": "正在發送...",
+      "submitButton": "發送重置鏈接",
+      "rememberPassword": "突然想起來了？",
+      "loginLink": "返回登錄",
+      "turnstileError": "請完成人機驗證。",
+      "backToLogin": "回到登錄頁面",
+      "validationError": "請輸入正確的郵箱地址。",
+      "forbidden": "若該郵箱已注冊，你將很快收到郵件。",
+      "success": "發送成功！請檢查你的收件箱。"
     },
     "resetPassword": {
-      "title": "设置新密码",
-      "subtitle": "输入您的新密码",
-      "password": "新密码",
-      "passwordPlaceholder": "输入新密码",
-      "confirmPassword": "确认新密码",
-      "submitButton": "重置密码",
-      "validationError": "无效的电子邮件或密码。请重试。",
-      "invalidToken": "无效或过期的令牌。",
-      "success": "密码重置成功。"
+      "title": "重置密碼",
+      "subtitle": "請設置並確認你的新密碼",
+      "password": "新密碼",
+      "passwordPlaceholder": "輸入新密碼",
+      "confirmPassword": "確認新密碼",
+      "submitButton": "更新密碼",
+      "validationError": "密碼不匹配或強度不足。",
+      "invalidToken": "鏈接已失效或已過期。",
+      "success": "密碼重置成功！請重新登錄。",
+      "noTokenError": "驗證憑證丟失，正在返回登錄頁...",
+      "turnstileError": "請完成人機驗證。",
+      "processing": "更新中...",
+      "rememberPassword": "不打算改了？",
+      "loginLink": "回到登錄",
+      "loading": "加載中..."
     }
   },
   "url": {
     "creation": {
-      "validationError": "提供的数据无效。请检查您的输入。",
-      "ownDomainError": "您不能缩短指向此服务的 URL。",
-      "alreadyExists": "此 URL 已被缩短。",
-      "success": "短 URL 创建成功。",
-      "internalError": "发生意外错误。请稍后重试。",
-      "needLogin": "已达到限制。登录以创建更多。",
-      "needSubscription": "已达到限制。登录以创建更多。"
+      "validationError": "網址格式不正確，請檢查。",
+      "ownDomainError": "不能縮短指向本站服務的鏈接。",
+      "alreadyExists": "該網址已經生成過短鏈接了。",
+      "success": "短鏈接生成成功！",
+      "internalError": "服務器開小差了，請稍後重試。",
+      "needLogin": "已達到匿名限額，請登錄後繼續。",
+      "needSubscription": "當前套餐額度已耗盡，請升級以繼續。"
     },
     "retrieval": {
-      "notFound": "未找到请求的短 URL。",
-      "success": "成功检索短 URL。"
+      "notFound": "找不到該短鏈接。",
+      "success": "加載成功。"
     },
     "deletion": {
-      "notFound": "未找到要删除的短 URL。",
-      "success": "成功删除短 URL。"
+      "notFound": "找不到要刪除的鏈接。",
+      "success": "鏈接已成功刪除。"
     },
     "details": {
-      "notFound": "未找到此短 URL 的详细信息。",
-      "expired": "此短 URL 已过期。",
-      "success": "成功获取短 URL 详细信息。"
+      "notFound": "未找到該鏈接的詳情。",
+      "expired": "該鏈接已失效。",
+      "success": "詳情加載成功。"
     },
     "redirect": {
-      "notFound": "未找到用于重定向的短 URL。",
-      "expired": "此短 URL 已过期，无法重定向。"
+      "notFound": "鏈接不存在。",
+      "expired": "抱歉，該鏈接已到期銷毀。"
     },
     "listing": {
-      "notFound": "未找到符合您标准的短 URL。",
-      "success": "成功获取所有短 URL。"
+      "notFound": "暫無鏈接數據。",
+      "success": "鏈接列表加載成功。"
     },
     "validation": {
-      "invalidShortKeyFormat": "短键格式无效。"
+      "invalidShortKeyFormat": "短鏈路徑格式非法。"
     }
   },
   "qrCode": {
-    "missingShortKey": "缺少 ShortKey。请提供短键以生成二维码。",
-    "notFound": "未找到用于生成二维码的短 URL。",
-    "success": "二维码生成成功。"
+    "missingShortKey": "路徑缺失，無法生成二維碼。",
+    "notFound": "未找到對應鏈接，生成失敗。",
+    "success": "二維碼已生成！"
   },
   "privacy": {
-    "badge": "法律",
-    "titleHighlight": "政策",
-    "titlePart2": " 隐私",
-    "lastUpdated": "最后更新：2026年2月10日",
+    "badge": "法規細則",
+    "titleEmphasis": "隱私",
+    "titleSuffix": " 政策",
+    "lastUpdated": "最後更新日期：2026 年 2 月 10 日",
     "sections": {
       "intro": {
-        "title": "1. 简介",
-        "content": "在 Shrnkly，我们非常重视您的隐私。本隐私政策解释了我们如何收集、使用和保护您的信息。"
+        "title": "1. 概述",
+        "content": "Shrnkly 極其重視用戶隱私。本政策旨在說明我們如何收集、使用並保護你的個人信息。"
       },
       "collect": {
-        "title": "2. 我们收集的信息",
-        "content": "当您创建帐户或使用我们的服务时，我们会直接从您那里收集信息。这可能包括：",
-        "list": [
-          "帐户信息（姓名、电子邮件地址、密码）",
-          "您缩短的 URL 及其原始目的地",
-          "您的短链接的使用数据和分析",
-          "设备和浏览器信息"
+        "title": "2. 信息收集",
+        "content": "我們僅收集維持服務運行的必要信息：",
+        "infoList": [
+          "賬戶信息（姓名、郵箱、加密密碼）",
+          "你縮短的網址及其目標地址",
+          "鏈接點擊統計數據",
+          "基礎的設備及瀏覽器信息"
         ]
       },
       "use": {
-        "title": "3. 我们如何使用您的信息",
-        "content": "我们使用收集的信息来提供、维护和改进我们的服务。"
+        "title": "3. 信息用途",
+        "content": "收集數據是為了提供核心服務、展示統計報告、防止濫用以及優化平台性能。"
       },
       "analytics": {
-        "title": "4. 数据分析",
-        "content": "当有人点击 Shrnkly 链接时，我们会收集有关点击的某些信息，例如 IP 地址和地理位置。"
+        "title": "4. 數據統計",
+        "content": "當訪客點擊短鏈時，我們會記錄匿名數據（大致位置、設備類型、來源、瀏覽器），以便為你生成數據報表。"
       },
       "security": {
-        "title": "5. 安全",
-        "content": "我们使用管理、技术和物理安全措施来帮助保护您的个人信息。"
+        "title": "5. 安全保障",
+        "content": "我們採用行業領先的安全標準。雖然沒有絕對安全的網絡，但我們會竭力保護你的數據。"
       },
       "contact": {
-        "title": "6. 联系我们",
-        "content": "如果您对本隐私政策有疑问，请联系我们：",
-        "email": "电子邮件：privacy@shrnkly.com"
+        "title": "6. 聯繫我們",
+        "content": "對隱私政策有任何疑問？",
+        "email": "郵箱：privacy@shrnkly.com"
       }
     }
   },
   "terms": {
-    "badge": "法律",
-    "titleHighlight": "条款",
-    "titlePart2": " 服务",
-    "lastUpdated": "最后更新：2026年2月10日",
+    "badge": "法規細則",
+    "titleEmphasis": "服務",
+    "titleSuffix": " 協議",
+    "lastUpdated": "最後更新日期：2026 年 2 月 10 日",
     "sections": {
       "acceptance": {
-        "title": "1. 接受条款",
-        "content": "通过访问或使用 Shrnkly 的服务，您同意受这些服务条款的约束。"
+        "title": "1. 條款接受",
+        "content": "使用 Shrnkly 即代表你同意本條款。若不同意，請停止使用。"
       },
       "description": {
-        "title": "2. 服务描述",
-        "content": "Shrnkly 提供 URL 缩短服务，允许用户创建长 URL 的较短版本。"
+        "title": "2. 服務內容",
+        "content": "Shrnkly 提供網址縮短、數據統計、二維碼生成及文本分享服務。"
       },
       "responsibilities": {
-        "title": "3. 用户责任",
-        "content": "您对自己帐户下的所有活动负责。您同意不将 Shrnkly 用于：",
-        "list": [
-          "发送垃圾邮件或未经请求的通信",
-          "分发恶意软件、病毒或其他有害代码",
-          "创建指向非法或禁止内容的链接",
-          "任何违反法律的活动"
+        "title": "3. 用戶責任",
+        "content": "嚴禁使用 Shrnkly 進行以下行為：",
+        "infoList": [
+          "發送垃圾郵件或未經授權的信息",
+          "分發木馬、病毒或惡意代碼",
+          "鏈接至非法、侵權或極端內容",
+          "違反任何當地法律法規"
         ]
       },
       "expiration": {
-        "title": "4. 链接内容和过期",
-        "content": "我们保留禁用任何违反我们条款的链接的权利。"
+        "title": "4. 內容與過期",
+        "content": "我們不對你生成的內容擁有所有權，但有權封禁違反協議的違規鏈接。"
       },
       "property": {
-        "title": "5. 知识产权",
-        "content": "Shrnkly 名称、徽标及所有相关设计和软件均为 Shrnkly 的知识产权。"
+        "title": "5. 知識產權",
+        "content": "Shrnkly 的名稱、設計、代碼和 Logo 均屬我們所有。未經許可嚴禁轉載或使用。"
       },
       "liability": {
-        "title": "6. 责任限制",
-        "content": "Shrnkly 按“原样”提供服务，不提供任何保证。"
+        "title": "6. 免責聲明",
+        "content": "服務按「現狀」提供。我們不對因數據丟失或服務中斷造成的損害承擔賠償責任。"
       },
       "termination": {
-        "title": "7. 终止",
-        "content": "我们保留随时终止或暂停您的帐户的权利。"
+        "title": "7. 服務終止",
+        "content": "對於違反條款或損害平台利益的賬戶，我們保留隨時停用的權利。"
       },
       "contact": {
-        "title": "8. 联系",
-        "content": "有关服务条款的问题应发送给我们：",
-        "email": "电子邮件：legal@shrnkly.com"
+        "title": "8. 聯繫我們",
+        "content": "對服務協議有疑問？",
+        "email": "郵箱：legal@shrnkly.com"
       }
     }
   },
   "contact": {
-    "badge": "联系我们",
-    "title": "联系我们",
-    "subtitle": "与我们取得联系",
-    "description": "我们很乐意听取您的意见。给我们发送消息，我们会尽快回复。",
-    "email": "电子邮件",
-    "office": "办公室",
+    "badge": "聯繫我們",
+    "title": "在線留言",
+    "subtitle": "隨時為你提供支持",
+    "description": "有建議、疑問或者只是想打個招呼？歡迎給我們留言。",
+    "email": "電子郵箱",
+    "office": "辦公地址",
     "github": "GitHub",
-    "name": "姓名",
-    "message": "消息",
-    "send": "发送消息",
-    "sending": "发送中...",
-    "emailLabel": "发送电子邮件",
-    "linkedin": "领英",
-    "linkedinLabel": "在领英上留言",
-    "githubLabel": "查看我们的 GitHub",
+    "name": "你的稱呼",
+    "message": "留言內容",
+    "send": "立即提交",
+    "sending": "提交中...",
+    "emailLabel": "發送郵件",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "關注領英",
+    "githubLabel": "查看 GitHub 倉庫",
     "chat": {
-      "title": "喜欢 ",
-      "titleHighlight": "实时聊天？",
-      "description": "我们的支持团队随时待命。查看我们的常见问题解答或直接联系。",
-      "viewFaqs": "查看常见问题",
-      "emailSupport": "电子邮件支持"
+      "title": "需要 ",
+      "titleEmphasis": "實時幫助嗎？",
+      "description": "建議先查閱常見問題 (FAQ)。你也可以通過郵件聯繫我們，我們通常會快速回覆。",
+      "viewFaqs": "查看常見問題",
+      "emailSupport": "發送郵件"
     }
   },
   "dashboard": {
-    "dashboardTitle": "链接仪表板",
-    "dashboardSubtitle": "管理和跟踪您的所有短链接",
-    "totalLinks": "链接总数",
-    "totalClicks": "点击总数",
-    "activeLinks": "活跃链接",
-    "searchPlaceholder": "按短链接或目标 URL 搜索...",
-    "newest": "最新",
-    "oldest": "最旧",
-    "mostClicks": "点击最多",
-    "noLinksFound": "未找到链接",
-    "tryAdjustingSearch": "尝试调整您的搜索查询或筛选条件",
-    "createFirstLinkDesc": "创建您的第一个短链接以开始跟踪和分析",
-    "createFirstLinkButton": "创建您的第一个链接",
-    "createLink": "创建链接",
-    "createNewLink": "创建新链接",
-    "createLinkDesc": "输入您的长 URL 以创建一个简短、可共享的链接。",
-    "destinationUrl": "目标 URL",
+    "dashboardTitle": "我的控制台",
+    "dashboardSubtitle": "統一管理並追踪你所有的短鏈接",
+    "totalLinks": "鏈接總數",
+    "totalClicks": "點擊總量",
+    "activeLinks": "活躍鏈接",
+    "searchPlaceholder": "搜索鏈接或目標地址...",
+    "newest": "最新創建",
+    "oldest": "最早創建",
+    "mostClicks": "最高點擊",
+    "noLinksFound": "未找到相關鏈接",
+    "tryAdjustingSearch": "嘗試更換搜索關鍵詞或篩選條件",
+    "createFirstLinkDesc": "還沒有鏈接？現在就去創建你的第一個短鏈吧！",
+    "createFirstLinkButton": "立即創建",
+    "createLink": "新建短鏈",
+    "createNewLink": "生成短鏈接",
+    "createLinkDesc": "輸入長網址，獲取美觀、可追踪的短鏈。",
+    "destinationUrl": "目標網址 (URL)",
     "cancel": "取消",
-    "visit": "访问",
-    "qrCode": "二维码",
-    "scanToVisit": "扫描以访问您的链接",
-    "downloadQr": "下载二维码",
-    "close": "关闭",
+    "visit": "訪問",
+    "qrCode": "二維碼",
+    "scanToVisit": "掃一掃訪問",
+    "downloadQr": "下載二維碼",
+    "close": "關閉",
     "generating": "生成中...",
-    "areYouSure": "您确定吗？",
+    "areYouSure": "確認操作？",
     "keepIt": "保留",
-    "deleteLink": "删除链接",
-    "deleting": "删除中...",
-    "overallTraffic": "总体流量演变",
-    "overallTrafficDesc": "所有链接的点击次数和唯一访问者",
-    "topPerformingLinks": "表现最佳的链接",
-    "updatedAgo": "2 小时前更新",
-    "noDataYet": "暂无数据",
-    "trafficByLocation": "按位置的流量",
-    "links": "链接",
-    "analysis": "分析",
-    "realtime": "实时",
-    "analysisComingSoon": "分析即将推出...",
-    "realtimeComingSoon": "实时统计即将推出...",
-    "loadingUrls": "正在加载短 URL...",
-    "noUrls": "暂无短 URL。从创建一个开始！",
-    "createdAt": "创建于",
-    "originalUrl": "原始 URL",
-    "shortUrl": "短 URL",
-    "clicks": "点击次数",
+    "deleteLink": "確認刪除",
+    "deleting": "刪除中...",
+    "overallTraffic": "訪問概覽",
+    "overallTrafficDesc": "點擊量與獨立訪客變化趨勢",
+    "topPerformingLinks": "熱門鏈接排行",
+    "updatedAgo": "2 小時前更新",
+    "noDataYet": "暫無數據",
+    "trafficByLocation": "訪客地區分佈",
+    "links": "鏈接管理",
+    "analysis": "數據統計",
+    "realtime": "實時動態",
+    "analysisComingSoon": "深度數據報告 —— 即將上線",
+    "realtimeComingSoon": "實時訪問監測 —— 即將上線",
+    "loadingUrls": "正在加載鏈接列表...",
+    "noUrls": "你還沒有創建過短鏈接。",
+    "createdAt": "創建於",
+    "originalUrl": "原始網址",
+    "shortUrl": "短網址",
+    "clicks": "點擊數",
     "actions": "操作",
-    "copy": "复制",
+    "copy": "複製",
     "share": "分享",
-    "details": "详情",
-    "delete": "删除",
-    "confirmDelete": "您确定要删除此短链接吗？此操作无法撤消。",
-    "shareAsLink": "作为链接分享",
-    "shareWithFacebook": "分享到 Facebook",
-    "shareWithInstagram": "分享到 Instagram",
-    "shareWithGithub": "分享到 GitHub",
-    "missingUrl": "缺少 URL",
-    "qrCodeUnavailable": "二维码不可用",
+    "details": "詳情",
+    "delete": "刪除",
+    "confirmDelete": "確定要永久刪除這個短鏈嗎？操作不可撤銷。",
+    "shareAsLink": "複製鏈接",
+    "shareWithFacebook": "分享至 Facebook",
+    "shareWithInstagram": "分享至 Instagram",
+    "shareWithGithub": "分享至 GitHub",
+    "missingUrl": "網址缺失",
+    "qrCodeUnavailable": "二維碼不可用",
     "ipAddress": "IP 地址",
-    "browser": "浏览器",
-    "os": "操作系统",
-    "clickedAt": "点击时间",
-    "noClickLogs": "无点击日志",
+    "browser": "瀏覽器",
+    "os": "系統",
+    "clickedAt": "點擊時間",
+    "noClickLogs": "暫無點擊記錄",
     "unknown": "未知",
-    "sink": "Sink",
-    "last7Days": "过去 7 天",
-    "filterLinks": "筛选链接",
-    "visits": "访问",
-    "visitors": "访客",
-    "referrers": "推荐来源",
-    "views": "查看",
-    "locations": "位置",
-    "worldMapHere": "世界地图在此",
-    "country": "国家",
-    "region": "地区",
+    "sink": "來源",
+    "last7Days": "最近 7 天",
+    "filterLinks": "篩選鏈接",
+    "visits": "訪問次數",
+    "visitors": "獨立訪客",
+    "referrers": "來源媒介",
+    "views": "查看數",
+    "locations": "訪問地區",
+    "worldMapHere": "全球地圖",
+    "country": "國家/地區",
+    "region": "省份/州",
     "city": "城市",
-    "referrer": "推荐来源",
-    "language": "语言",
-    "device": "设备",
-    "type": "类型",
-    "noDataAvailable": "暂无数据。",
-    "footerText": "Sink © 2025 HTML_ZONE 产品",
-    "copiedToClipboard": "已复制到剪贴板",
-    "deletedSuccessfully": "删除成功",
-    "qrCodeFetchFailed": "获取二维码失败。",
-    "qrCodeDownloaded": "二维码已下载",
-    "downloadQrCode": "下载二维码",
-    "loading": "加载中...",
-    "qrCodeAlt": "二维码",
-    "linkCopiedAlert": "链接已复制到剪贴板！",
-    "linkCopyFailedAlert": "复制链接失败。",
-    "confirmDeleteAlert": "您确定要删除此短网址吗？",
-    "instagramManualShare": "Instagram 不支持直接网页分享。请手动分享。"
+    "referrer": "來源自",
+    "language": "瀏覽器語言",
+    "device": "訪問設備",
+    "type": "類型",
+    "noDataAvailable": "暫無數據顯示。",
+    "footerText": "© 2025 Shrnkly",
+    "copiedToClipboard": "複製成功！",
+    "deletedSuccessfully": "鏈接已刪除",
+    "qrCodeFetchFailed": "二維碼獲取失敗",
+    "qrCodeDownloaded": "二維碼已保存至本地",
+    "downloadQrCode": "下載二維碼",
+    "loading": "加載中...",
+    "qrCodeAlt": "短鏈二維碼",
+    "linkCopiedAlert": "短鏈接已複製到剪貼板",
+    "linkCopyFailedAlert": "複製失敗，請重試",
+    "confirmDeleteAlert": "確定要刪除嗎？",
+    "instagramManualShare": "Instagram 不支持直接跳轉，請手動粘貼鏈接。"
   },
   "common": {
-    "validationRequired": "此字段为必填项。",
-    "validationError": "提供了无效的请求类型。",
-    "internalServerError": "发生了意外的内部服务器错误。",
-    "unexpectedError": "发生了意外错误。请稍后重试。",
-    "comingSoon": "即将推出...",
-    "verify": "验证",
-    "somethingWentWrong": "出了点问题",
-    "networkError": "网络错误：未收到服务器响应。",
-    "axiosError": "Axios 错误：{message}",
-    "veryWeak": "非常弱",
-    "weak": "弱",
+    "validationRequired": "此項為必填。",
+    "validationError": "輸入有誤，請重試。",
+    "internalServerError": "服務器內部出錯。",
+    "unexpectedError": "發生了意外錯誤。",
+    "comingSoon": "敬請期待...",
+    "verify": "驗證",
+    "somethingWentWrong": "好像出錯了",
+    "networkError": "網絡連接異常，請檢查你的網絡。",
+    "axiosError": "請求出錯：{message}",
+    "veryWeak": "極弱",
+    "weak": "較弱",
     "fair": "一般",
-    "good": "好",
-    "strong": "强",
-    "hidePassword": "隐藏密码",
-    "showPassword": "显示密码",
-    "offeredIn": "提供语言",
-    "redirecting": "正在重定向...",
-    "redirectingMessage": "正在将您重定向到 {shortKey}",
-    "redirectingDescription": "请稍候，我们正在带您前往目的地",
-    "pageNotFound": "页面未找到",
-    "pageNotFoundDescription": "抱歉，我们找不到您要查找的页面。",
-    "errorOccurredDescription": "发生意外错误。请重试或返回首页。",
-    "goToHomepage": "返回首页",
-    "tryAgain": "重试"
+    "good": "良好",
+    "strong": "強",
+    "hidePassword": "隱藏密碼",
+    "showPassword": "顯示密碼",
+    "offeredIn": "可用語言：",
+    "redirecting": "正在跳轉...",
+    "redirectingMessage": "正在為你跳轉至 {shortKey}",
+    "redirectingDescription": "請稍候...",
+    "pageNotFound": "頁面走丟了",
+    "pageNotFoundDescription": "你訪問的頁面不存在或已被移除。",
+    "errorOccurredDescription": "抱歉，出了一點問題。你可以重試或返回首頁。",
+    "goToHomepage": "回到首頁",
+    "tryAgain": "再試一次"
   },
   "textShare": {
     "create": {
-      "title": "创建文本分享",
-      "subtitle": "即时分享文本、代码或笔记",
-      "titleLabel": "标题（可选）",
-      "titlePlaceholder": "给您的分享一个标题...",
-      "contentLabel": "内容",
-      "contentPlaceholder": "在此粘贴您的文本、代码或 markdown...",
-      "formatLabel": "格式",
-      "formatPlain": "纯文本",
-      "formatMarkdown": "Markdown",
-      "formatCode": "代码",
-      "languageLabel": "语法语言",
-      "languagePlaceholder": "例如 javascript、python、typescript...",
-      "languageSelect": "选择一种语言...",
-      "passwordLabel": "密码（可选）",
-      "passwordPlaceholder": "需要密码才能查看",
-      "expiresAtLabel": "过期时间（可选）",
-      "viewLimitLabel": "查看限制（可选）",
-      "viewLimitPlaceholder": "最大查看次数（1-1000）",
-      "customSlugLabel": "自定义链接（可选）",
-      "customSlugPlaceholder": "my-custom-link",
-      "createButton": "创建分享",
-      "creating": "创建中...",
-      "success": "文本分享已创建！链接已复制到剪贴板。",
-      "error": "创建文本分享失败。",
-      "agreementPart1": "创建分享即表示您同意我们的",
-      "terms": "服务条款",
-      "agreementPart2": "和",
-      "privacy": "隐私政策",
-      "showAdvanced": "显示高级选项",
-      "hideAdvanced": "隐藏高级选项",
-      "contentRequired": "内容为必填项"
+      "title": "新建文本分享",
+      "subtitle": "秒傳代碼、筆記或配置文件",
+      "titleLabel": "標題 (選填)",
+      "titlePlaceholder": "給內容起個名字吧",
+      "contentLabel": "分享內容",
+      "contentPlaceholder": "在此粘貼或輸入文本、代碼、Markdown...",
+      "formatLabel": "內容格式",
+      "plainText": "純文本",
+      "markdown": "Markdown",
+      "code": "代碼片段",
+      "languageLabel": "編程語言",
+      "languagePlaceholder": "如 javascript, python, rust...",
+      "languageSelect": "選擇語言...",
+      "passwordLabel": "設置密碼 (選填)",
+      "passwordPlaceholder": "設置後僅有密碼者可見",
+      "expiresAtLabel": "有效期 (選填)",
+      "viewLimitLabel": "查閱次數限制 (選填)",
+      "viewLimitPlaceholder": "1-1000 次",
+      "customSlugLabel": "自訂後綴 (選填)",
+      "customSlugPlaceholder": "my-secret-notes",
+      "createButton": "生成分享鏈接",
+      "creating": "正在生成...",
+      "success": "分享成功！鏈接已複製。",
+      "error": "生成失敗，請重試。",
+      "agreementPrefix": "創建即代表你同意我們的 ",
+      "terms": "服務協議",
+      "agreementSuffix": " 和 ",
+      "privacy": "隱私政策",
+      "showAdvanced": "展示高級選項",
+      "hideAdvanced": "隱藏高級選項",
+      "contentRequired": "分享內容不能為空"
     },
     "view": {
-      "copyButton": "复制到剪贴板",
-      "copySuccess": "已复制到剪贴板！",
-      "copyError": "复制失败",
-      "download": "下载",
-      "downloadTxt": "下载为 .txt",
-      "downloadMd": "下载为 .md",
-      "qrCode": "二维码",
-      "shareLink": "分享链接",
-      "protectedContent": "此内容受密码保护",
-      "enterPassword": "输入密码以查看",
-      "submitPassword": "查看内容",
-      "verifying": "验证中...",
-      "invalidPassword": "密码无效",
-      "expired": "此分享已过期",
-      "viewLimitReached": "此分享的查看次数已达上限",
-      "views": "{count} 次查看"
+      "copyButton": "複製內容",
+      "copySuccess": "已複製！",
+      "copyError": "複製失敗",
+      "download": "下載文件",
+      "downloadTxt": "下載為 .txt",
+      "downloadMd": "下載為 .md",
+      "qrCode": "查看二維碼",
+      "shareLink": "分享此頁面",
+      "protectedContent": "受密碼保護的內容",
+      "enterPassword": "請輸入密碼以查閱",
+      "submitPassword": "提交驗證",
+      "verifying": "驗證中...",
+      "invalidPassword": "密碼錯誤",
+      "expired": "該分享已過期",
+      "viewLimitReached": "已達到查閱次數上限",
+      "views": "{count} 次查閱"
     },
     "dashboard": {
-      "title": "我的文本分享",
-      "subtitle": "管理您分享的文本和代码片段",
-      "newShare": "新分享",
-      "searchPlaceholder": "按标题或内容搜索...",
-      "noShares": "暂无文本分享",
-      "createFirstShare": "创建您的第一个文本分享",
-      "deleteConfirm": "您确定要删除此分享吗？",
-      "deleteSuccess": "分享删除成功",
-      "deleteError": "删除分享失败",
-      "editShare": "编辑分享",
-      "viewStats": "查看统计",
-      "totalShares": "分享总数",
-      "totalViews": "查看总数",
-      "links": "链接",
-      "analysis": "分析",
-      "realtime": "实时",
-      "linkCopiedAlert": "链接已复制到剪贴板！",
-      "searchNoResults": "未找到匹配结果"
+      "title": "文本分享管理",
+      "subtitle": "管理你分享過的文本、代碼和筆記",
+      "newShare": "新建分享",
+      "searchPlaceholder": "搜索標題或內容...",
+      "noShares": "暫無分享記錄",
+      "createFirstShare": "創建你的首條文本分享",
+      "deleteConfirm": "確認要永久刪除嗎？",
+      "deleteSuccess": "刪除成功",
+      "deleteError": "刪除失敗",
+      "editShare": "編輯",
+      "viewStats": "數據分析",
+      "totalShares": "累計分享",
+      "totalViews": "累計查閱",
+      "links": "鏈接列表",
+      "analysis": "數據統計",
+      "realtime": "實時動態"
+    },
+    "stats": {
+      "title": "內容數據報告",
+      "totalViews": "查閱總量",
+      "remainingViews": "剩餘次數",
+      "expiresAt": "失效時間",
+      "neverExpires": "永久有效",
+      "recentViews": "最近訪問",
+      "noViewsYet": "暫無查閱記錄",
+      "country": "地區",
+      "time": "訪問時間",
+      "device": "訪問設備"
+    },
+    "errors": {
+      "notFound": "內容不存在或已被刪除",
+      "unauthorized": "未經授權，無法訪問",
+      "expired": "該內容已過期",
+      "viewLimitReached": "查閱次數已達上限",
+      "validationError": "提交的信息有誤，請檢查",
+      "serverError": "服務器忙，請稍後重試。"
     }
   },
   "footer": {
-    "allRightsReserved": "保留所有权利。",
-    "privacyPolicy": "隐私政策",
-    "termsOfService": "服务条款"
+    "allRightsReserved": "保留所有權利。",
+    "privacyPolicy": "隱私政策",
+    "termsOfService": "服務協議"
   }
 }
