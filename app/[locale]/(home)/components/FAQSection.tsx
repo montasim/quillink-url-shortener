@@ -18,9 +18,11 @@ interface FAQSectionProps {
 const FAQSection = ({ translationKey = 'faq' }: FAQSectionProps) => {
     const t = useTranslations(`home.${translationKey}`);
 
-    // Different FAQ keys for URL shortener vs text sharing
+    // Different FAQ keys for URL shortener vs text sharing vs QR generator
     const faqKeys = translationKey === 'textShareFaq'
         ? ['whatIs', 'howWork', 'isFree', 'passwordProtect', 'expiration', 'howLong', 'limit', 'secure']
+        : translationKey === 'qrFaq'
+        ? ['whatIs', 'howWork', 'isFree', 'safe', 'expire', 'scan', 'formats', 'errorCorrection']
         : ['whatIs', 'howWork', 'isFree', 'canTrack', 'customDomain', 'howLong', 'limit', 'safe'];
 
     const half = Math.ceil(faqKeys.length / 2);

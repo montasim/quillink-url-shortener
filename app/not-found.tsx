@@ -13,7 +13,7 @@ const NotFoundPage = () => {
         <div className="flex flex-col min-h-screen">
             <SimpleNavbar />
             <main className="flex-grow">
-                <section className="relative min-h-screen py-24 md:py-40 px-6 overflow-hidden bg-background">
+                <section className="relative min-h-screen py-24 md:py-32 px-6 overflow-hidden bg-background">
                     {/* Background enhancement */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">

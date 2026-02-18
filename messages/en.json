@@ -337,6 +337,166 @@
         "getInTouch": "Get in Touch",
         "emailSupport": "Email Support"
       }
+    },
+    "qrHero": {
+      "badge": "✨ Free QR Code Generator",
+      "headingPrefix": "Create custom ",
+      "headingSuffix": " instantly",
+      "headingEmphasis": "QR codes",
+      "subheading": "Generate beautiful, scannable QR codes for URLs, text, WiFi, contacts and more — completely free, no signup required.",
+      "stats": {
+        "qrCreated": {
+          "value": "1M+",
+          "label": "QR Codes Created"
+        },
+        "activeUsers": {
+          "value": "100K+",
+          "label": "Happy Users"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Uptime"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      }
+    },
+    "qrFeatures": {
+      "badge": "Features",
+      "headingPrefix": "Everything you need for ",
+      "headingSuffix": "",
+      "headingEmphasis": "better QR codes",
+      "subheading": "Powerful tools to create, customize, and share QR codes — all in one place, completely free.",
+      "featureList": {
+        "instant": {
+          "title": "Instant Generation",
+          "description": "Create QR codes in real-time as you type. No waiting, no server delays."
+        },
+        "customization": {
+          "title": "Full Customization",
+          "description": "Choose colors, sizes, and error correction levels to match your brand."
+        },
+        "private": {
+          "title": "100% Private",
+          "description": "All QR generation happens in your browser. Nothing is sent to our servers."
+        },
+        "formats": {
+          "title": "Multiple Formats",
+          "description": "Download as PNG for images or SVG for scalable vector graphics."
+        },
+        "types": {
+          "title": "Multiple Types",
+          "description": "URLs, text, WiFi credentials, vCards, SMS, email — all supported."
+        },
+        "offline": {
+          "title": "Works Offline",
+          "description": "Generate QR codes even without an internet connection."
+        }
+      }
+    },
+    "qrTestimonials": {
+      "badge": "Testimonials",
+      "heading": "Loved by users worldwide",
+      "subheading": "Here's what people say about our QR code generator.",
+      "testimonialList": {
+        "alex": {
+          "name": "Alex Rivera",
+          "role": "Small Business Owner",
+          "company": "Café Corner",
+          "quote": "I create QR codes for our menu every week. This tool is fast, free, and the customization options are perfect."
+        },
+        "sarah": {
+          "name": "Sarah Mitchell",
+          "role": "Marketing Manager",
+          "company": "BrandBoost",
+          "quote": "The ability to customize colors and download SVG files is a game-changer for our print campaigns."
+        },
+        "marcus": {
+          "name": "Marcus Chen",
+          "role": "Event Coordinator",
+          "company": "EventPro",
+          "quote": "WiFi QR codes make event check-ins seamless. Guests just scan and connect — no typing passwords!"
+        },
+        "emma": {
+          "name": "Emma Thompson",
+          "role": "Real Estate Agent",
+          "company": "HomeFinders",
+          "quote": "I put QR codes on all my property flyers. Clients can instantly view listings on their phones."
+        },
+        "david": {
+          "name": "David Park",
+          "role": "Developer",
+          "company": "TechStart",
+          "quote": "Love that it's client-side and private. No data leaves my browser. Perfect for sensitive info."
+        },
+        "lisa": {
+          "name": "Lisa Anderson",
+          "role": "Teacher",
+          "company": "Lincoln High School",
+          "quote": "I create QR codes for worksheets and resources. Students can access materials instantly."
+        }
+      }
+    },
+    "qrFaq": {
+      "badge": "FAQ",
+      "heading": "Frequently Asked Questions",
+      "subheading": "Quick answers to common questions about QR codes.",
+      "questions": {
+        "whatIs": {
+          "question": "What is a QR code?",
+          "answer": "A QR (Quick Response) code is a 2D barcode that stores information in a square grid. When scanned with a smartphone camera, it instantly displays the encoded content like URLs, text, or contact info."
+        },
+        "howWork": {
+          "question": "How does this QR generator work?",
+          "answer": "Simply enter your content (URL, text, WiFi details, etc.), customize colors and size if desired, and the QR code is generated instantly in your browser — no server required."
+        },
+        "isFree": {
+          "question": "Is this QR code generator free?",
+          "answer": "Yes! All features are completely free — unlimited QR codes, full customization, multiple formats (PNG/SVG), and no signup required."
+        },
+        "safe": {
+          "question": "Are QR codes safe to scan?",
+          "answer": "QR codes themselves are safe. However, always verify the destination before entering sensitive information. Our generator creates standard QR codes that work with any scanner."
+        },
+        "expire": {
+          "question": "Do QR codes expire?",
+          "answer": "Static QR codes (like those generated here) never expire — they encode the data directly. However, if the content changes (like a URL destination), you'll need to generate a new QR code."
+        },
+        "scan": {
+          "question": "How do I scan a QR code?",
+          "answer": "Most modern smartphones can scan QR codes with the built-in camera app. Just point your camera at the code and tap the notification that appears."
+        },
+        "formats": {
+          "question": "What's the difference between PNG and SVG?",
+          "answer": "PNG is a raster image format (pixels), great for web use. SVG is a vector format (math-based), perfect for print as it scales to any size without quality loss."
+        },
+        "errorCorrection": {
+          "question": "What is error correction?",
+          "answer": "Error correction allows QR codes to still work even if partially damaged. Higher levels (Q, H) add more redundancy but make the code larger. Use H for logos or harsh environments."
+        }
+      },
+      "cta": {
+        "badge": "Questions?",
+        "headingPrefix": "Still have ",
+        "headingSuffix": "?",
+        "headingEmphasis": "questions?",
+        "subheading": "Can't find the answer? Just send us a message — we're happy to help.",
+        "getInTouch": "Get in Touch",
+        "emailSupport": "Email Support"
+      }
+    },
+    "qrCta": {
+      "badge": "Get Started — It's free",
+      "headingPrefix": "Ready to ",
+      "headingSuffix": " QR codes?",
+      "headingEmphasis": "create",
+      "subheading": "Join thousands of users creating beautiful, custom QR codes every day. No signup required.",
+      "startButton": "Create QR Code Now",
+      "contactButton": "Contact Sales",
+      "getInTouch": "Get in Touch",
+      "emailSupport": "Email Support"
     }
   },
   "auth": {
@@ -820,5 +980,93 @@
     "allRightsReserved": "All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "qrGenerator": {
+    "livePreview": "Live Preview",
+    "qrPreview": "QR Code Preview",
+    "generating": "Generating…",
+    "generationError": "Failed to generate QR code",
+    "enterContent": "Enter content to generate QR",
+    "qrCodeAlt": "QR Code",
+    "contentPreview": "Content Preview",
+    "errorCorrection": "Error Correction",
+    "size": "QR Code Size",
+    "selectSize": "Select size",
+    "colors": "Colors",
+    "foregroundColor": "Foreground",
+    "backgroundColor": "Background",
+    "presetColors": "Presets",
+    "basicTypes": "Basic Types",
+    "advancedTypes": "Advanced Types",
+    "formatLabel": "Format",
+    "plainText": "Plain Text",
+    "markdown": "Markdown",
+    "url": "URL",
+    "code": "Code",
+    "languageLabel": "Language (for code)",
+    "languageSelect": "Select language…",
+    "textLabel": "Text Content",
+    "textPlaceholder": "Enter any text here…",
+    "urlLabel": "Website URL",
+    "urlPlaceholder": "https://example.com",
+    "noteLabel": "Note Content",
+    "notePlaceholder": "Write your note here…",
+    "networkName": "Network Name (SSID)",
+    "networkNamePlaceholder": "MyWiFi",
+    "password": "Password",
+    "passwordPlaceholder": "Network password",
+    "encryption": "Encryption Type",
+    "selectEncryption": "Select encryption",
+    "hiddenNetwork": "Hidden network",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "organization": "Organization",
+    "organizationPlaceholder": "Company Name",
+    "title": "Job Title",
+    "titlePlaceholder": "Software Engineer",
+    "phone": "Phone Number",
+    "phonePlaceholder": "+1 234 567 8900",
+    "email": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "website": "Website",
+    "websitePlaceholder": "https://example.com",
+    "address": "Address",
+    "addressPlaceholder": "123 Main St, City, Country",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "+1 234 567 8900",
+    "message": "Message",
+    "messagePlaceholder": "Your SMS message here…",
+    "emailAddress": "Email Address",
+    "emailAddressPlaceholder": "recipient@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Email subject",
+    "body": "Email Body",
+    "bodyPlaceholder": "Your email message here…",
+    "showCustomization": "Show Customization Options",
+    "hideCustomization": "Hide Customization Options",
+    "showAdvanced": "Show Advanced Options",
+    "hideAdvanced": "Hide Advanced Options",
+    "generateButton": "Generate QR Code",
+    "download": "Download",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "share": "Share",
+    "imageFormat": "(Image)",
+    "vectorFormat": "(Vector)",
+    "downloadSuccess": "QR code downloaded as {format}",
+    "downloadError": "Failed to download QR code",
+    "copySuccess": "QR code copied to clipboard",
+    "copyError": "Failed to copy to clipboard",
+    "shareSuccess": "QR code shared successfully",
+    "shareError": "Failed to share QR code",
+    "shareTitle": "QR Code",
+    "shareText": "Check out this QR code!",
+    "noContent": "Please enter some content first",
+    "agreementPrefix": "By generating QR codes, you agree to our",
+    "terms": "Terms of Service",
+    "agreementSuffix": "and",
+    "privacy": "Privacy Policy"
   }
 }
