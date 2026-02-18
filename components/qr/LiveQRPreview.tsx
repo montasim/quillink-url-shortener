@@ -14,7 +14,7 @@ interface LiveQRPreviewProps {
 }
 
 const LiveQRPreview = ({ content, options, isLoading: parentLoading }: LiveQRPreviewProps) => {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
     const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | null>(null);
     const [isGenerating, setIsGenerating] = useState(false);
     const [error, setError] = useState<string | null>(null);

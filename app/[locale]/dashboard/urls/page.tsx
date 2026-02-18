@@ -17,8 +17,8 @@ import UrlDashboardSkeleton from '@/components/dashboard/UrlDashboardSkeleton';
 import Pagination from '@/components/Pagination';
 
 const UrlDashboard = () => {
-    const t = useTranslations('dashboard');
-    const urlT = useTranslations('url');
+    const t = useTranslations('dashboard.urls');
+    const urlT = useTranslations('dashboard.urls.messages');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');

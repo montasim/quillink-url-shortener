@@ -5,7 +5,7 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 import { useTranslations } from 'next-intl';
 
 const TermsPage = () => {
-    const t = useTranslations('terms');
+    const t = useTranslations('home.terms');
 
     return (
         <LegalPageLayout

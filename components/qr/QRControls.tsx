@@ -21,7 +21,7 @@ interface QRControlsProps {
 }
 
 const QRControls = ({ options, onOptionsChange, disabled }: QRControlsProps) => {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
 
     const handleSizeChange = (value: string) => {
         onOptionsChange({ ...options, size: parseInt(value) });

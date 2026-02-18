@@ -42,7 +42,7 @@ interface ShortUrl {
 }
 
 export default function UrlSummaryPage() {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
     const params = useParams();
     const router = useRouter();
     const shortKey = params.shortKey as string;

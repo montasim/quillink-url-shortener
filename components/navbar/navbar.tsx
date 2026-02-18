@@ -19,7 +19,7 @@ import { LayoutDashboardIcon, LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
 
 const Navbar = () => {
-    const t = useTranslations('navigation');
+    const t = useTranslations('layout.navigation');
     const router = useRouter();
     const pathname = usePathname();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();

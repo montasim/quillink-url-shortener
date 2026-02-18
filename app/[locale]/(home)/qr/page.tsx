@@ -74,10 +74,10 @@ export default function QRPage() {
     return (
         <>
             <QRGeneratorHero />
-            <FeaturesSection features={qrFeatures} translationKey="qrFeatures" />
-            <TestimonialsSection testimonials={qrTestimonials} translationKey="qrTestimonials" />
-            <FAQSection translationKey="qrFaq" />
-            <CTASection translationKey="qrCta" />
+            <FeaturesSection features={qrFeatures} translationKey="qr.features" />
+            <TestimonialsSection testimonials={qrTestimonials} translationKey="qr.testimonials" />
+            <FAQSection translationKey="qr.faq" />
+            <CTASection translationKey="qr.cta" />
         </>
     );
 }

@@ -37,7 +37,7 @@ interface TextShareCardProps {
 }
 
 const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
-    const t = useTranslations('textShare.dashboard');
+    const t = useTranslations('dashboard.texts');
     const router = useRouter();
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);

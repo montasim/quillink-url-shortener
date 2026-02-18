@@ -6,8 +6,8 @@ import configuration from '@/configuration/configuration';
 import { Logo } from '@/components/logo';
 
 const Footer = () => {
-    const t = useTranslations('footer');
-    const tNav = useTranslations('navigation');
+    const t = useTranslations('layout.footer');
+    const tNav = useTranslations('layout.navigation');
 
     const footerLinks = [
         {

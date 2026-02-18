@@ -17,6 +17,7 @@ interface TestimonialsSectionProps {
 }
 
 const TestimonialsSection = ({ testimonials, translationKey }: TestimonialsSectionProps) => {
+    // Support both nested (urls.testimonials) and flat (testimonials) structures
     const t = useTranslations(`home.${translationKey}`);
 
     return (

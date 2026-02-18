@@ -28,8 +28,8 @@ interface CreateLinkModalProps {
 }
 
 const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
-    const t = useTranslations('dashboard');
-    const urlT = useTranslations('url');
+    const t = useTranslations('dashboard.urls');
+    const urlT = useTranslations('dashboard.urls.messages');
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const router = useRouter();

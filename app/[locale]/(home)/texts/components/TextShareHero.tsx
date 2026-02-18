@@ -16,8 +16,8 @@ import API_ENDPOINT from '@/constants/apiEndPoint';
 import { createData } from '@/lib/axios';
 
 const TextShareHero = () => {
-    const t = useTranslations('home.textShareHero');
-    const createT = useTranslations('textShare.create');
+    const t = useTranslations('home.texts.hero');
+    const createT = useTranslations('dashboard.texts.create');
     const router = useRouter();
 
     const [formData, setFormData] = useState({

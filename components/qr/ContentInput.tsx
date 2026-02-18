@@ -27,7 +27,7 @@ const ContentInput = ({
     onChange,
     disabled
 }: ContentInputProps) => {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
 
     // Simple text/URL/note input
     if (['text', 'url', 'note'].includes(contentType)) {

@@ -12,8 +12,8 @@ import { handleCreate } from '@/lib/actions/home';
 import { useTranslations } from 'next-intl';
 
 const UrlShortnerHero = () => {
-    const t = useTranslations('home.hero');
-    const urlT = useTranslations('url');
+    const t = useTranslations('home.urls.hero');
+    const urlT = useTranslations('dashboard.urls.messages');
     const router = useRouter();
     const [creating, setCreating] = useState(false);
     const [url, setUrl] = useState('');

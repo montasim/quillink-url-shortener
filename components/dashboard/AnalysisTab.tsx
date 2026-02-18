@@ -21,7 +21,7 @@ interface AnalysisTabProps {
 }
 
 const AnalysisTab = ({ urls }: AnalysisTabProps) => {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
     // Calculate top links from real data
     const topLinks = [...urls]
         .sort((a, b) => (b.clicks || 0) - (a.clicks || 0))

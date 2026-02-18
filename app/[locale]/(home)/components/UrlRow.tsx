@@ -37,7 +37,7 @@ const RenderUrlRow: React.FC<IRenderUrlRowProps> = ({
     setExpandedId,
     setUrls,
 }) => {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
     const shortUrlFull =
         typeof window !== 'undefined'
             ? `${window.location.origin}/${url.shortKey}`

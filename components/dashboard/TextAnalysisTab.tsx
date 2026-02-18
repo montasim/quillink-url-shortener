@@ -51,7 +51,7 @@ function getFlagEmoji(countryCode: string) {
 }
 
 const TextAnalysisTab = ({ shares }: TextAnalysisTabProps) => {
-    const t = useTranslations('textShare.dashboard');
+    const t = useTranslations('dashboard.texts');
 
     // Calculate top shares from real data
     const topShares = useMemo(() => {

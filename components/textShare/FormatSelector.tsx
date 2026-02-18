@@ -14,7 +14,7 @@ export default function FormatSelector({
     onChange,
     disabled,
 }: FormatSelectorProps) {
-    const t = useTranslations('textShare.create');
+    const t = useTranslations('dashboard.texts.create');
 
     const formats = [
         { value: 'plain' as const, label: t('plainText') },

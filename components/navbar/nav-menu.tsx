@@ -11,7 +11,7 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 export const NavMenu = (props: NavigationMenuProps) => {
-    const t = useTranslations('navigation');
+    const t = useTranslations('layout.navigation');
 
     return (
         <NavigationMenu {...props}>

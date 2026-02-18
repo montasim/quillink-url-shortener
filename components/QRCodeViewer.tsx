@@ -21,7 +21,7 @@ export default function QRCodeViewer({
     onClose,
     downloadFileName,
 }: QRCodeViewerProps) {
-    const t = useTranslations(type === 'url' ? 'dashboard' : 'textShare.dashboard');
+    const t = useTranslations(type === 'url' ? 'dashboard.urls' : 'dashboard.texts');
     const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const popoverRef = useRef<HTMLDivElement>(null);

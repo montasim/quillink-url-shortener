@@ -77,19 +77,19 @@ export default function CreateTextSharePage() {
             <TextShareHero />
 
             {/* Features Section */}
-            <FeaturesSection features={textShareFeatures} translationKey="textShareFeatures" />
+            <FeaturesSection features={textShareFeatures} translationKey="texts.features" />
 
             {/* Testimonials Section */}
-            <TestimonialsSection testimonials={textShareTestimonials} translationKey="textShareTestimonials" />
+            <TestimonialsSection testimonials={textShareTestimonials} translationKey="texts.testimonials" />
 
             {/* CTA Section */}
-            <CTASection translationKey="textShareCta" />
+            <CTASection translationKey="texts.cta" />
 
             {/* FAQ Section */}
-            <FAQSection translationKey="textShareFaq" />
+            <FAQSection translationKey="texts.faq" />
 
             {/* FAQ CTA Section */}
-            <CTASection translationKey="textShareFaq" />
+            <CTASection translationKey="texts.faq" />
         </div>
     );
 }

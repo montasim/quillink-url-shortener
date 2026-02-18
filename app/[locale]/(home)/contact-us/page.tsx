@@ -8,7 +8,7 @@ import React from 'react';
 import CTASection from '../components/CTASection';
 
 const ContactPage = () => {
-    const t = useTranslations('contact');
+    const t = useTranslations('home.contact');
 
     const contactMethods = [
         {

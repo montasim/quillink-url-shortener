@@ -12,7 +12,7 @@ interface TypeSelectorProps {
 }
 
 const TypeSelector = ({ value, onChange, disabled }: TypeSelectorProps) => {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
 
     const types: QRContentType[] = ['text', 'url', 'note', 'wifi', 'vcard', 'sms', 'email'];
     const basicTypes: QRContentType[] = ['text', 'url', 'note'];

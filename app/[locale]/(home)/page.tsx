@@ -74,11 +74,11 @@ export default function HomePage() {
     return (
         <>
             <UrlShortnerHero />
-            <FeaturesSection features={urlShortenerFeatures} translationKey="features" />
-            <TestimonialsSection testimonials={urlShortenerTestimonials} translationKey="testimonials" />
-            <CTASection translationKey="cta" />
-            <FAQSection translationKey="faq" />
-            <CTASection translationKey="faq" />
+            <FeaturesSection features={urlShortenerFeatures} translationKey="urls.features" />
+            <TestimonialsSection testimonials={urlShortenerTestimonials} translationKey="urls.testimonials" />
+            <CTASection translationKey="urls.cta" />
+            <FAQSection translationKey="urls.faq" />
+            <CTASection translationKey="urls.faq" />
         </>
     );
 }

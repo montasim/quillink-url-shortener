@@ -6,7 +6,7 @@ import RenderClickChart from '@/app/[locale]/(home)/components/ClickChart';
 import RenderClickLogs from '@/app/[locale]/(home)/components/ClickLogs';
 
 const RenderDetails = (url: IShortUrl) => {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
 
     return (
         <TableRow className="rounded-xl">

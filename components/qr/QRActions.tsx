@@ -21,7 +21,7 @@ interface QRActionsProps {
 }
 
 const QRActions = ({ content, options, disabled }: QRActionsProps) => {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
     const [isDownloading, setIsDownloading] = useState(false);
     const [isCopying, setIsCopying] = useState(false);
     const [isSharing, setIsSharing] = useState(false);

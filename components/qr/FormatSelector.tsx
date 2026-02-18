@@ -16,7 +16,7 @@ export default function FormatSelector({
     onChange,
     disabled,
 }: FormatSelectorProps) {
-    const t = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.generator');
 
     const formats: QRContentType[] = ['text', 'url', 'note'];
 

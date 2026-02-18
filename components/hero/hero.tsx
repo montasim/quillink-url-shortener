@@ -22,8 +22,8 @@ import { useTranslations } from 'next-intl';
 const Hero = () => {
     const router = useRouter();
     const [creating, setCreating] = useState(false);
-    const t = useTranslations('hero');
-    const urlT = useTranslations('url');
+    const t = useTranslations('home.urls.hero');
+    const urlT = useTranslations('dashboard.urls.messages');
 
     const form = useForm<z.infer<typeof ShortenUrlSchema>>({
         mode: 'onChange',

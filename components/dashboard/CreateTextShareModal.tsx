@@ -45,8 +45,8 @@ interface CreateTextShareModalProps {
 }
 
 const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalProps) => {
-    const t = useTranslations('textShare.dashboard');
-    const createT = useTranslations('textShare.create');
+    const t = useTranslations('dashboard.texts');
+    const createT = useTranslations('dashboard.texts.create');
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showAdvanced, setShowAdvanced] = useState(false);

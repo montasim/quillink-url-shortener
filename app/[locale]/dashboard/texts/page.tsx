@@ -42,7 +42,7 @@ interface TextShare {
 }
 
 export default function DashboardTextsPage() {
-    const t = useTranslations('textShare.dashboard');
+    const t = useTranslations('dashboard.texts');
     const router = useRouter();
 
     const [shares, setShares] = useState<TextShare[]>([]);

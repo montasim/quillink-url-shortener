@@ -17,8 +17,8 @@ import { contentTypeLabels } from '@/lib/qrCodeTypes';
 import { generateQRContent } from '@/lib/qrCodeTypes';
 
 const QRGeneratorHero = () => {
-    const t = useTranslations('home.qrHero');
-    const qrT = useTranslations('qrGenerator');
+    const t = useTranslations('home.qr.hero');
+    const qrT = useTranslations('home.qr.generator');
 
     const [contentType, setContentType] = useState<QRContentType>('url');
     const [contentValue, setContentValue] = useState<any>('');

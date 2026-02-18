@@ -19,7 +19,7 @@ import { format, subDays, eachDayOfInterval } from 'date-fns';
 import { DashboardSkeleton } from '@/components/dashboard/DashboardSkeleton';
 
 export default function DashboardPage() {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
 

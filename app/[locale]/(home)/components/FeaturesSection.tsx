@@ -20,6 +20,7 @@ interface FeaturesSectionProps {
 }
 
 const FeaturesSection = ({ features, translationKey }: FeaturesSectionProps) => {
+    // Support both nested (urls.features) and flat (features) structures
     const t = useTranslations(`home.${translationKey}`);
 
     return (

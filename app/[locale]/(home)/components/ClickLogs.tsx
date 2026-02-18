@@ -17,7 +17,7 @@ const parseUserAgent = (ua: string, unknownText: string) => {
 };
 
 const RenderClickLogs = (logs?: IClickLog[]) => {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
 
     return Array.isArray(logs) && logs.length > 0 ? (
         logs.map((log) => {

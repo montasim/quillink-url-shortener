@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/dialog';
 
 const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) => {
-    const t = useTranslations('dashboard');
+    const t = useTranslations('dashboard.urls');
     const router = useRouter();
     const [showQrPopover, setShowQrPopover] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);

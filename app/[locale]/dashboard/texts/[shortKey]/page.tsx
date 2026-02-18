@@ -42,7 +42,7 @@ interface TextShare {
 }
 
 export default function TextShareSummaryPage() {
-    const t = useTranslations('textShare.dashboard');
+    const t = useTranslations('dashboard.texts');
     const params = useParams();
     const router = useRouter();
     const shortKey = params.shortKey as string;

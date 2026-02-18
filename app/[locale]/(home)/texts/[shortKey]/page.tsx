@@ -39,8 +39,8 @@ interface TextShareData {
 }
 
 export default function ViewTextSharePage() {
-    const t = useTranslations('textShare.view');
-    const createT = useTranslations('textShare.create');
+    const t = useTranslations('dashboard.texts.view');
+    const createT = useTranslations('dashboard.texts.create');
     const params = useParams();
     const shortKey = params.shortKey as string;
 

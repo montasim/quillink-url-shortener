@@ -40,7 +40,8 @@ const CTASection = ({
     const hasCustomContent = !!(title || primaryButton);
 
     // Check if this is a FAQ CTA (nested structure) or main CTA (flat structure)
-    const isFaqCta = translationKey === 'faq' || translationKey === 'textShareFaq';
+    // Handle both old and new nested translation key structures
+    const isFaqCta = translationKey.endsWith('.faq') || translationKey.endsWith('faq') || translationKey === 'faq' || translationKey === 'textShareFaq' || translationKey === 'urls.faq';
     const t = useTranslations(`home.${translationKey}${isFaqCta ? '.cta' : ''}`);
 
     return (

@@ -5,7 +5,7 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 import { useTranslations } from 'next-intl';
 
 const PrivacyPage = () => {
-    const t = useTranslations('privacy');
+    const t = useTranslations('home.privacy');
 
     return (
         <LegalPageLayout

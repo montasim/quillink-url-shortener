@@ -15,14 +15,22 @@ interface FAQSectionProps {
     translationKey?: string;
 }
 
-const FAQSection = ({ translationKey = 'faq' }: FAQSectionProps) => {
+const FAQSection = ({ translationKey = 'urls.faq' }: FAQSectionProps) => {
+    // Support both nested (urls.faq) and flat (faq) structures
     const t = useTranslations(`home.${translationKey}`);
 
     // Different FAQ keys for URL shortener vs text sharing vs QR generator
-    const faqKeys = translationKey === 'textShareFaq'
+    // Support both old and new nested translation key structures
+    const isTextShareFaq = translationKey === 'textShareFaq' || translationKey === 'texts.faq';
+    const isQrFaq = translationKey === 'qrFaq' || translationKey === 'qr.faq';
+    const isUrlsFaq = translationKey === 'urls.faq';
+
+    const faqKeys = isTextShareFaq
         ? ['whatIs', 'howWork', 'isFree', 'passwordProtect', 'expiration', 'howLong', 'limit', 'secure']
-        : translationKey === 'qrFaq'
+        : isQrFaq
         ? ['whatIs', 'howWork', 'isFree', 'safe', 'expire', 'scan', 'formats', 'errorCorrection']
+        : isUrlsFaq
+        ? ['whatIs', 'howWork', 'isFree', 'canTrack', 'customDomain', 'howLong', 'limit', 'safe']
         : ['whatIs', 'howWork', 'isFree', 'canTrack', 'customDomain', 'howLong', 'limit', 'safe'];
 
     const half = Math.ceil(faqKeys.length / 2);
