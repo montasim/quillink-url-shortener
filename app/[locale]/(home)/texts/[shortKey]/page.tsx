@@ -213,7 +213,7 @@ export default function ViewTextSharePage() {
                 </Badge>
 
                 <p className="text-lg text-muted-foreground/80 max-w-3xl mb-8">
-                    Shared via Shrnkly Text Share
+                    Shared via {process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly'} Text Share
                 </p>
 
                 {/* Action Buttons */}

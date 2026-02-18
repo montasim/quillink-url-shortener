@@ -1,7 +1,16 @@
 const configuration = {
     app: {
-        name: 'Shrnkly',
+        name: process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly',
         baseUrl: process.env.NEXT_PUBLIC_BASE_URL || '',
+    },
+
+    contact: {
+        email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com',
+    },
+
+    social: {
+        linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/in/montasimmamun',
+        github: process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/montasim',
     },
 
     nodeEnv: process.env.NODE_ENV || '',

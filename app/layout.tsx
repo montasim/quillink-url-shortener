@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Shrnkly – URL Shortener',
+    title: `${process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly'} – URL Shortener`,
     description: 'Create short links, QR codes, share them anywhere.',
 };
 

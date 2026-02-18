@@ -35,6 +35,11 @@ const SimpleFooter = () => {
         },
     ];
 
+    const projectName = process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly';
+    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com';
+    const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/in/montasimmamun';
+    const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/montasim';
+
     return (
         <footer className="border-t border-border bg-background">
             <div className="max-w-7xl mx-auto py-12 px-4 xl:px-0">
@@ -65,28 +70,28 @@ const SimpleFooter = () => {
                     <span>
                         &copy; {new Date().getFullYear()}{' '}
                         <Link href="/" className="hover:text-foreground transition-colors">
-                            Shrnkly
+                            {projectName}
                         </Link>
                         . All rights reserved
                     </span>
 
                     <div className="flex items-center gap-5">
                         <a
-                            href="mailto:montasimmamun@gmail.com"
+                            href={`mailto:${contactEmail}`}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <MailIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://linkedin.com/in/montasimmamun"
+                            href={linkedinUrl}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <LinkedinIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://github.com/montasim"
+                            href={githubUrl}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >

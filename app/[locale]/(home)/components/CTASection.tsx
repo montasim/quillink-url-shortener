@@ -126,7 +126,7 @@ const CTASection = ({
                                 className="bg-background border-2 border-border text-foreground hover:bg-muted font-bold px-12 h-16 rounded-2xl transition-all text-lg"
                                 asChild
                             >
-                                <a href="mailto:montasimmamun@gmail.com">
+                                <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com'}`}>
                                     {t('emailSupport')}
                                 </a>
                             </Button>

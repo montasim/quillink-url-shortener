@@ -4,7 +4,7 @@ import React from 'react';
 import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
-    title: 'Shrnkly – URL Shortener',
+    title: `${process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly'} – URL Shortener`,
     description: 'Create short links, QR codes, share them anywhere.',
 };
 

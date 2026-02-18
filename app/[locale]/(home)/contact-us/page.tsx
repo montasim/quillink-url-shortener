@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import React from 'react';
 import CTASection from '../components/CTASection';
+import configuration from '@/configuration/configuration';
 
 const ContactPage = () => {
     const t = useTranslations('home.contact');
@@ -14,8 +15,8 @@ const ContactPage = () => {
         {
             icon: MailIcon,
             title: t('email'),
-            value: 'montasimmamun@gmail.com',
-            href: 'mailto:montasimmamun@gmail.com',
+            value: configuration.contact.email,
+            href: `mailto:${configuration.contact.email}`,
             label: t('emailLabel'),
             color: 'text-blue-500',
             bgColor: 'bg-blue-500/10'
@@ -24,7 +25,7 @@ const ContactPage = () => {
             icon: LinkedinIcon,
             title: t('linkedin'),
             value: 'LinkedIn Profile',
-            href: 'https://linkedin.com/in/montasimmamun',
+            href: configuration.social.linkedin,
             label: t('linkedinLabel'),
             color: 'text-sky-600',
             bgColor: 'bg-sky-600/10'
@@ -33,7 +34,7 @@ const ContactPage = () => {
             icon: GithubIcon,
             title: t('github'),
             value: 'GitHub Profile',
-            href: 'https://github.com/montasim',
+            href: configuration.social.github,
             label: t('githubLabel'),
             color: 'text-slate-900 dark:text-slate-100',
             bgColor: 'bg-slate-900/10 dark:bg-slate-100/10'
@@ -69,7 +70,7 @@ const ContactPage = () => {
                         {t('badge')}
                     </Badge>
                     <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-8">
-                        {t('title')}<span className="text-primary">{t('titleEmphasis')}</span>
+                        {t('title')} <span className="text-primary">{t('titleEmphasis')}</span>
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
                         {t('description')}
@@ -131,7 +132,7 @@ const ContactPage = () => {
                     titleEmphasis={t('chat.titleEmphasis')}
                     description={t('chat.description')}
                     primaryButton={{ text: t('chat.viewFaqs'), href: '/#faq' }}
-                    secondaryButton={{ text: t('chat.emailSupport'), href: 'mailto:montasimmamun@gmail.com' }}
+                    secondaryButton={{ text: t('chat.emailSupport'), href: `mailto:${configuration.contact.email}` }}
                 />
             </div>
         </div>
