@@ -654,7 +654,16 @@
     "linkCopiedAlert": "Short link copied!",
     "linkCopyFailedAlert": "Couldn't copy link",
     "confirmDeleteAlert": "Really delete this short link?",
-    "instagramManualShare": "Instagram doesn't allow direct sharing from web. Copy the link and share manually."
+    "instagramManualShare": "Instagram doesn't allow direct sharing from web. Copy the link and share manually.",
+    "back": "Back",
+    "backToDashboard": "Back to Dashboard",
+    "customSlug": "Custom URL",
+    "originalDomain": "Original Domain",
+    "copyShortLink": "Copy Link",
+    "visitUrl": "Visit",
+    "recentClicks": "Recent Clicks",
+    "expiresAt": "Expires",
+    "neverExpires": "Never"
   },
   "common": {
     "validationRequired": "This field is required.",
@@ -772,7 +781,19 @@
       "trafficByCountry": "Traffic by Country",
       "noDataYet": "No data yet",
       "last7Days": "Last 7 days",
-      "updatedAgo": "Updated 2 hours ago"
+      "updatedAgo": "Updated 2 hours ago",
+      "back": "Back",
+      "backToDashboard": "Back to Dashboard",
+      "customSlug": "Custom URL",
+      "protected": "Protected",
+      "createdAt": "Created",
+      "copyLink": "Copy Link",
+      "viewShare": "View",
+      "format": "Format",
+      "expiresAt": "Expires",
+      "neverExpires": "Never",
+      "recentViews": "Recent Views",
+      "unknown": "Unknown"
     },
     "stats": {
       "title": "Share Statistics",

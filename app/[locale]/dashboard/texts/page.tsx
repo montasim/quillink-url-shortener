@@ -8,12 +8,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import TabSection from '@/components/TabSection';
-import TextShareGrid from './TextShareGrid';
+import TextShareGrid from './components/TextShareGrid';
 import TextAnalysisTab from '@/components/dashboard/TextAnalysisTab';
 import TextAnalysisSkeleton from '@/components/dashboard/TextAnalysisSkeleton';
 import TextShareDashboardSkeleton from '@/components/dashboard/TextShareDashboardSkeleton';
 import CreateTextShareModal from '@/components/dashboard/CreateTextShareModal';
 import ComingSoonFeatures from '@/components/dashboard/ComingSoonFeatures';
+import Pagination from '@/components/Pagination';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
 
@@ -48,6 +49,8 @@ export default function DashboardTextsPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'views'>('newest');
+    const [currentPage, setCurrentPage] = useState(1);
+    const ITEMS_PER_PAGE = 9;
 
     const fetchShares = async () => {
         setIsLoading(true);
@@ -121,6 +124,18 @@ export default function DashboardTextsPage() {
         return filtered;
     }, [shares, searchQuery, sortBy]);
 
+    // Paginate shares
+    const paginatedShares = useMemo(() => {
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+        return filteredShares.slice(startIndex, endIndex);
+    }, [filteredShares, currentPage]);
+
+    // Reset to page 1 when search or sort changes
+    useMemo(() => {
+        setCurrentPage(1);
+    }, [searchQuery, sortBy]);
+
     const tabs = [
         {
             name: t('links'),
@@ -182,10 +197,18 @@ export default function DashboardTextsPage() {
                                 </div>
                             </Card>
                         ) : (
-                            <TextShareGrid
-                                shares={filteredShares}
-                                onRefresh={fetchShares}
-                            />
+                            <>
+                                <TextShareGrid
+                                    shares={paginatedShares}
+                                    onRefresh={fetchShares}
+                                />
+                                <Pagination
+                                    currentPage={currentPage}
+                                    totalItems={filteredShares.length}
+                                    itemsPerPage={ITEMS_PER_PAGE}
+                                    onPageChange={setCurrentPage}
+                                />
+                            </>
                         )}
                     </div>
                 </div>

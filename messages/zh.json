@@ -654,7 +654,16 @@
     "linkCopiedAlert": "短鏈接已複製到剪貼板",
     "linkCopyFailedAlert": "複製失敗，請重試",
     "confirmDeleteAlert": "確定要刪除嗎？",
-    "instagramManualShare": "Instagram 不支持直接跳轉，請手動粘貼鏈接。"
+    "instagramManualShare": "Instagram 不支持直接跳轉，請手動粘貼鏈接。",
+    "back": "返回",
+    "backToDashboard": "返回儀表板",
+    "customSlug": "自定義網址",
+    "originalDomain": "原始網域",
+    "copyShortLink": "複製連結",
+    "visitUrl": "訪問",
+    "recentClicks": "最近點擊",
+    "expiresAt": "失效時間",
+    "neverExpires": "永久有效"
   },
   "common": {
     "validationRequired": "此項為必填。",
@@ -772,7 +781,19 @@
       "trafficByCountry": "按國家的訪問數",
       "noDataYet": "暫無數據",
       "last7Days": "最近 7 天",
-      "updatedAgo": "2 小時前更新"
+      "updatedAgo": "2 小時前更新",
+      "back": "返回",
+      "backToDashboard": "返回儀表板",
+      "customSlug": "自定義短鏈",
+      "protected": "受保護",
+      "createdAt": "創建時間",
+      "copyLink": "複製連結",
+      "viewShare": "查看",
+      "format": "格式",
+      "expiresAt": "失效時間",
+      "neverExpires": "永久有效",
+      "recentViews": "最近訪問",
+      "unknown": "未知"
     },
     "stats": {
       "title": "內容數據報告",

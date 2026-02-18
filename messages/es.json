@@ -654,7 +654,16 @@
     "linkCopiedAlert": "¡Link corto copiado!",
     "linkCopyFailedAlert": "No se pudo copiar el link",
     "confirmDeleteAlert": "¿De verdad quieres borrar este link?",
-    "instagramManualShare": "Instagram no permite compartir directo. Copia el link y pégalo manualmente."
+    "instagramManualShare": "Instagram no permite compartir directo. Copia el link y pégalo manualmente.",
+    "back": "Atrás",
+    "backToDashboard": "Volver al Dashboard",
+    "customSlug": "URL Personalizado",
+    "originalDomain": "Dominio Original",
+    "copyShortLink": "Copiar Link",
+    "visitUrl": "Visitar",
+    "recentClicks": "Clics Recientes",
+    "expiresAt": "Vence",
+    "neverExpires": "Nunca"
   },
   "common": {
     "validationRequired": "Este campo es obligatorio.",
@@ -772,7 +781,19 @@
       "trafficByCountry": "Tráfico por país",
       "noDataYet": "Sin datos aún",
       "last7Days": "Últimos 7 días",
-      "updatedAgo": "Actualizado hace 2 horas"
+      "updatedAgo": "Actualizado hace 2 horas",
+      "back": "Atrás",
+      "backToDashboard": "Volver al Dashboard",
+      "customSlug": "Slug Personalizado",
+      "protected": "Protegido",
+      "createdAt": "Creado",
+      "copyLink": "Copiar Link",
+      "viewShare": "Ver",
+      "format": "Formato",
+      "expiresAt": "Vence",
+      "neverExpires": "Nunca",
+      "recentViews": "Vistas recientes",
+      "unknown": "Desconocido"
     },
     "stats": {
       "title": "Estadísticas de la nota",

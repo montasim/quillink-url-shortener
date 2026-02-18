@@ -654,7 +654,16 @@
     "linkCopiedAlert": "ছোট লিঙ্ক কপি হয়েছে!",
     "linkCopyFailedAlert": "লিঙ্ক কপি করা যায়নি",
     "confirmDeleteAlert": "সত্যিই এই ছোট লিঙ্কটি মুছে ফেলবেন?",
-    "instagramManualShare": "Instagram ওয়েব থেকে সরাসরি শেয়ার করতে দেয় না। লিঙ্ক কপি করে ম্যানুয়ালি শেয়ার করুন।"
+    "instagramManualShare": "Instagram ওয়েব থেকে সরাসরি শেয়ার করতে দেয় না। লিঙ্ক কপি করে ম্যানুয়ালি শেয়ার করুন।",
+    "back": "পিছনে",
+    "backToDashboard": "ড্যাশবোর্ডে ফিরে যান",
+    "customSlug": "কাস্টম URL",
+    "originalDomain": "মূল ডোমেইন",
+    "copyShortLink": "লিঙ্ক কপি করুন",
+    "visitUrl": "ভিজিট করুন",
+    "recentClicks": "সাম্প্রতিক ক্লিক",
+    "expiresAt": "মেয়াদ শেষ",
+    "neverExpires": "কখনও না"
   },
   "common": {
     "validationRequired": "এই ফিল্ডটি আবশ্যক।",
@@ -772,7 +781,19 @@
       "trafficByCountry": "দেশ অনুযায়ী ভিউ",
       "noDataYet": "এখনও কোনো ডেটা নেই",
       "last7Days": "শেষ ৭ দিন",
-      "updatedAgo": "২ ঘণ্টা আগে আপডেট হয়েছে"
+      "updatedAgo": "২ ঘণ্টা আগে আপডেট হয়েছে",
+      "back": "পিছনে",
+      "backToDashboard": "ড্যাশবোর্ডে ফিরে যান",
+      "customSlug": "কাস্টম স্লাগ",
+      "protected": "সুরক্ষিত",
+      "createdAt": "তৈরি হয়েছে",
+      "copyLink": "লিঙ্ক কপি করুন",
+      "viewShare": "দেখুন",
+      "format": "ফরম্যাট",
+      "expiresAt": "মেয়াদ শেষ",
+      "neverExpires": "কখনও না",
+      "recentViews": "সাম্প্রতিক ভিউ",
+      "unknown": "অজানা"
     },
     "stats": {
       "title": "শেয়ার পরিসংখ্যান",

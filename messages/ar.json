@@ -654,7 +654,16 @@
     "linkCopiedAlert": "تم نسخ الرابط المختصر!",
     "linkCopyFailedAlert": "تعذر نسخ الرابط",
     "confirmDeleteAlert": "هل تريد حقًا حذف هذا الرابط المختصر؟",
-    "instagramManualShare": "لا يسمح Instagram بالمشاركة المباشرة من الويب. انسخ الرابط وشارِكه يدويًا."
+    "instagramManualShare": "لا يسمح Instagram بالمشاركة المباشرة من الويب. انسخ الرابط وشارِكه يدويًا.",
+    "back": "رجوع",
+    "backToDashboard": "العودة إلى لوحة التحكم",
+    "customSlug": "رابط مخصص",
+    "originalDomain": "النطاق الأصلي",
+    "copyShortLink": "نسخ الرابط",
+    "visitUrl": "زيارة",
+    "recentClicks": "النقرات الأخيرة",
+    "expiresAt": "تنتهي في",
+    "neverExpires": "أبدًا"
   },
   "common": {
     "validationRequired": "هذا الحقل مطلوب.",
@@ -772,7 +781,19 @@
       "trafficByCountry": "الزيارات حسب البلد",
       "noDataYet": "لا توجد بيانات بعد",
       "last7Days": "آخر 7 أيام",
-      "updatedAgo": "تم التحديث منذ ساعتين"
+      "updatedAgo": "تم التحديث منذ ساعتين",
+      "back": "رجوع",
+      "backToDashboard": "العودة إلى لوحة التحكم",
+      "customSlug": "رابط مخصص",
+      "protected": "محمي",
+      "createdAt": "تاريخ الإنشاء",
+      "copyLink": "نسخ الرابط",
+      "viewShare": "عرض",
+      "format": "التنسيق",
+      "expiresAt": "تنتهي في",
+      "neverExpires": "أبدًا",
+      "recentViews": "المشاهدات الأخيرة",
+      "unknown": "غير معروف"
     },
     "stats": {
       "title": "إحصائيات المشاركة",

@@ -6,6 +6,8 @@ const API_ENDPOINT = Object.freeze({
     RESET_PASSWORD: '/api/v1/auth/reset-password',
 
     URLS: '/api/v1/urls',
+    URLS_GET: (shortKey: string) => `/api/v1/urls/${shortKey}`,
+    URLS_STATS: (shortKey: string) => `/api/v1/urls/${shortKey}/stats`,
 
     // Text Share
     TEXT_SHARE_CREATE: '/api/v1/texts',

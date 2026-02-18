@@ -654,7 +654,16 @@
     "linkCopiedAlert": "Lien court copié !",
     "linkCopyFailedAlert": "Impossible de copier le lien",
     "confirmDeleteAlert": "Vraiment supprimer ce lien ?",
-    "instagramManualShare": "Instagram ne permet pas le partage direct. Copie le lien et partage-le manuellement."
+    "instagramManualShare": "Instagram ne permet pas le partage direct. Copie le lien et partage-le manuellement.",
+    "back": "Retour",
+    "backToDashboard": "Retour au Dashboard",
+    "customSlug": "URL Personnalisé",
+    "originalDomain": "Domaine d'Origine",
+    "copyShortLink": "Copier le Lien",
+    "visitUrl": "Visiter",
+    "recentClicks": "Clics Récents",
+    "expiresAt": "Expire le",
+    "neverExpires": "Jamais"
   },
   "common": {
     "validationRequired": "Ce champ est obligatoire.",
@@ -772,7 +781,19 @@
       "trafficByCountry": "Trafic par pays",
       "noDataYet": "Pas encore de données",
       "last7Days": "7 derniers jours",
-      "updatedAgo": "Mis à jour il y a 2h"
+      "updatedAgo": "Mis à jour il y a 2h",
+      "back": "Retour",
+      "backToDashboard": "Retour au Dashboard",
+      "customSlug": "Slug Personnalisé",
+      "protected": "Protégé",
+      "createdAt": "Créé le",
+      "copyLink": "Copier le lien",
+      "viewShare": "Voir",
+      "format": "Format",
+      "expiresAt": "Expire le",
+      "neverExpires": "Jamais",
+      "recentViews": "Vues récentes",
+      "unknown": "Inconnu"
     },
     "stats": {
       "title": "Statistiques de partage",

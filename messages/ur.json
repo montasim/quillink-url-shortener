@@ -654,7 +654,16 @@
     "linkCopiedAlert": "مختصر لنک کاپی ہو گیا!",
     "linkCopyFailedAlert": "لنک کاپی نہیں ہو سکا",
     "confirmDeleteAlert": "کیا واقعی یہ لنک ڈیلیٹ کرنا ہے؟",
-    "instagramManualShare": "انسٹاگرام ویب سے ڈائریکٹ شیئرنگ کی اجازت نہیں دیتا۔ لنک کاپی کریں اور خود شیئر کریں۔"
+    "instagramManualShare": "انسٹاگرام ویب سے ڈائریکٹ شیئرنگ کی اجازت نہیں دیتا۔ لنک کاپی کریں اور خود شیئر کریں۔",
+    "back": "واپس",
+    "backToDashboard": "ڈیش بورڈ پر واپس",
+    "customSlug": "کسٹم URL",
+    "originalDomain": "اصل ڈومین",
+    "copyShortLink": "لنک کاپی کریں",
+    "visitUrl": "وزٹ کریں",
+    "recentClicks": "حالیہ کلکس",
+    "expiresAt": "ختم ہوگا",
+    "neverExpires": "کبھی نہیں"
   },
   "common": {
     "validationRequired": "یہ خانہ پُر کرنا ضروری ہے۔",
@@ -772,7 +781,19 @@
       "trafficByCountry": "ملک کے لحاظ سے ٹریفک",
       "noDataYet": "ابھی کوئی ڈیٹا نہیں",
       "last7Days": "آخری 7 دن",
-      "updatedAgo": "2 گھنٹے پہلے اپ ڈیٹ ہوا"
+      "updatedAgo": "2 گھنٹے پہلے اپ ڈیٹ ہوا",
+      "back": "واپس",
+      "backToDashboard": "ڈیش بورڈ پر واپس",
+      "customSlug": "کسٹم سلگ",
+      "protected": "محفوظ",
+      "createdAt": "بنایا گیا",
+      "copyLink": "لنک کاپی کریں",
+      "viewShare": "دیکھیں",
+      "format": "فارمیٹ",
+      "expiresAt": "ختم ہوگا",
+      "neverExpires": "کبھی نہیں",
+      "recentViews": "حالیہ ویوز",
+      "unknown": "نامعلوم"
     },
     "stats": {
       "title": "شیئر کے اعداد و شمار",

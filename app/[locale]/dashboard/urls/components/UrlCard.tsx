@@ -8,6 +8,7 @@ import { IShortUrl } from '@/types/types';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { deleteUrl } from '@/lib/actions/dashboard';
 import QRCodeViewer from '@/components/QRCodeViewer';
 import Image from 'next/image';
@@ -22,6 +23,7 @@ import {
 
 const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) => {
     const t = useTranslations('dashboard');
+    const router = useRouter();
     const [showQrPopover, setShowQrPopover] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [copied, setCopied] = useState(false);
@@ -138,7 +140,13 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                     </div>
 
                     {/* Stats Badge */}
-                    <div className="shrink-0 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50">
+                    <div
+                        className="shrink-0 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 cursor-pointer hover:bg-primary/10 hover:border-primary/30 transition-all"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(`/dashboard/urls/${url.shortKey}`);
+                        }}
+                    >
                         <div className="flex items-center gap-1.5">
                             <BarChart3 className="w-3.5 h-3.5 text-muted-foreground" />
                             <span className="text-xs font-medium text-foreground">{url.clicks || 0}</span>

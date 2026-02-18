@@ -654,7 +654,16 @@
     "linkCopiedAlert": "शॉर्ट लिंक कॉपी हो गया!",
     "linkCopyFailedAlert": "कॉपी नहीं कर पाए",
     "confirmDeleteAlert": "क्या वाकई डिलीट करना है?",
-    "instagramManualShare": "Instagram पर डायरेक्ट शेयर नहीं हो सकता। लिंक कॉपी करके खुद पेस्ट करें।"
+    "instagramManualShare": "Instagram पर डायरेक्ट शेयर नहीं हो सकता। लिंक कॉपी करके खुद पेस्ट करें।",
+    "back": "वापस",
+    "backToDashboard": "डैशबोर्ड पर वापस",
+    "customSlug": "कस्टम URL",
+    "originalDomain": "मूल डोमेन",
+    "copyShortLink": "लिंक कॉपी करें",
+    "visitUrl": "विजिट करें",
+    "recentClicks": "हालिया क्लिक्स",
+    "expiresAt": "एक्सपायर होगा",
+    "neverExpires": "कभी नहीं"
   },
   "common": {
     "validationRequired": "यह भरना ज़रूरी है।",
@@ -772,7 +781,19 @@
       "trafficByCountry": "देश के अनुसार व्यू",
       "noDataYet": "अभी कोई डेटा नहीं है",
       "last7Days": "पिछले 7 दिन",
-      "updatedAgo": "2 घंटे पहले अपडेट हुआ"
+      "updatedAgo": "2 घंटे पहले अपडेट हुआ",
+      "back": "वापस",
+      "backToDashboard": "डैशबोर्ड पर वापस",
+      "customSlug": "कस्टम स्लग",
+      "protected": "सुरक्षित",
+      "createdAt": "बनाया गया",
+      "copyLink": "लिंक कॉपी करें",
+      "viewShare": "देखें",
+      "format": "फॉर्मैट",
+      "expiresAt": "एक्सपायर होगा",
+      "neverExpires": "कभी नहीं",
+      "recentViews": "हालिया व्यूज",
+      "unknown": "अज्ञात"
     },
     "stats": {
       "title": "शेयर स्टैट्स",
