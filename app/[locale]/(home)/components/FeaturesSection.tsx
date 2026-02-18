@@ -34,7 +34,7 @@ const FeaturesSection = ({ features, translationKey }: FeaturesSectionProps) => 
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-semibold text-sm mb-8 backdrop-blur-sm">
                         {t('badge')}
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-8 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 tracking-tight">
                         {t('headingPrefix')}<span className="text-primary">{t('headingEmphasis')}</span>{t('headingSuffix')}
                     </h2>
                     <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">

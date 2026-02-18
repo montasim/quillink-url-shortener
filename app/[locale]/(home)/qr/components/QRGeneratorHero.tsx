@@ -57,7 +57,7 @@ const QRGeneratorHero = () => {
                     </Badge>
 
                     {/* Main Heading */}
-                    <h1 className="mt-8 text-4xl md:text-5xl font-extrabold !leading-[1.1] tracking-tight text-foreground">
+                    <h1 className="mt-8 text-4xl md:text-5xl font-bold !leading-[1.1] tracking-tight text-foreground">
                         {t('headingPrefix')}
                         <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">
                             {t('headingEmphasis')}
@@ -231,7 +231,7 @@ const QRGeneratorHero = () => {
                     {['qrCreated', 'activeUsers', 'uptime', 'support'].map(
                         (statKey) => (
                             <div key={statKey} className="text-center group">
-                                <div className="text-3xl md:text-4xl font-black text-foreground group-hover:text-primary transition-colors tracking-tight">
+                                <div className="text-3xl md:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors tracking-tight">
                                     {t(`stats.${statKey}.value`)}
                                 </div>
                                 <div className="mt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground/60">

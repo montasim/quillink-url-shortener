@@ -95,9 +95,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
     };
 
     return (
-        <Card
-            className="group relative overflow-hidden bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
-        >
+        <Card className="group relative overflow-hidden bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer">
             {/* Gradient Background Accent */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -120,15 +118,19 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                                     variant="ghost"
                                     size="sm"
                                     className={cn(
-                                        "h-7 w-7 p-0 hover:bg-primary/10",
-                                        copied && "bg-green-500/10"
+                                        'h-7 w-7 p-0 hover:bg-primary/10',
+                                        copied && 'bg-green-500/10'
                                     )}
                                     onClick={copyToClipboard}
                                 >
-                                    <Copy className={cn(
-                                        "w-3.5 h-3.5 transition-colors",
-                                        copied ? "text-green-600" : "text-muted-foreground hover:text-primary"
-                                    )} />
+                                    <Copy
+                                        className={cn(
+                                            'w-3.5 h-3.5 transition-colors',
+                                            copied
+                                                ? 'text-green-600'
+                                                : 'text-muted-foreground hover:text-primary'
+                                        )}
+                                    />
                                 </Button>
                             </div>
 
@@ -149,7 +151,9 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                     >
                         <div className="flex items-center gap-1.5">
                             <BarChart3 className="w-3.5 h-3.5 text-muted-foreground" />
-                            <span className="text-xs font-medium text-foreground">{url.clicks || 0}</span>
+                            <span className="text-xs font-medium text-foreground">
+                                {url.clicks || 0}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -181,7 +185,9 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         }}
                     >
                         <ExternalLink className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">{t('visit')}</span>
+                        <span className="text-xs font-medium">
+                            {t('visit')}
+                        </span>
                     </Button>
 
                     <Button
@@ -191,15 +197,17 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         onClick={toggleQrPopover}
                     >
                         <QrCode className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">{t('qrCode')}</span>
+                        <span className="text-xs font-medium">
+                            {t('qrCode')}
+                        </span>
                     </Button>
 
                     <Button
                         variant="outline"
                         size="sm"
                         className={cn(
-                            "flex-1 gap-2 h-9 border-destructive/20 text-destructive hover:bg-destructive hover:text-white transition-all duration-300",
-                            isDeleting && "opacity-50 cursor-not-allowed"
+                            'flex-1 gap-2 h-9 border-destructive/20 text-destructive hover:bg-destructive hover:text-white transition-all duration-300',
+                            isDeleting && 'opacity-50 cursor-not-allowed'
                         )}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -232,7 +240,9 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                             <Trash2 className="w-8 h-8 text-destructive" />
                         </div>
                         <div className="space-y-2 text-center">
-                            <DialogTitle className="text-2xl font-black tracking-tight text-foreground">{t('areYouSure')}</DialogTitle>
+                            <DialogTitle className="text-2xl font-semibold tracking-tight text-foreground">
+                                {t('areYouSure')}
+                            </DialogTitle>
                             <DialogDescription className="text-base text-muted-foreground font-medium leading-relaxed">
                                 {t('confirmDelete')}
                             </DialogDescription>
@@ -249,10 +259,14 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         <Button
                             variant="destructive"
                             onClick={() => {
-                                deleteUrl(url?.shortKey || '', setIsDeleting, () => {
-                                    setShowDeleteDialog(false);
-                                    onRefresh();
-                                });
+                                deleteUrl(
+                                    url?.shortKey || '',
+                                    setIsDeleting,
+                                    () => {
+                                        setShowDeleteDialog(false);
+                                        onRefresh();
+                                    }
+                                );
                             }}
                             className="flex-1 h-12 rounded-xl font-bold bg-destructive text-white hover:bg-destructive/90 shadow-lg shadow-destructive/20 transition-all duration-300 active:scale-95"
                             disabled={isDeleting}

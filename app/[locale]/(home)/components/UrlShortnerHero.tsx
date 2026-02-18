@@ -31,7 +31,10 @@ const UrlShortnerHero = () => {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
                 <div className="absolute top-1/4 -left-12 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
-                <div className="absolute bottom-1/4 -right-12 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div
+                    className="absolute bottom-1/4 -right-12 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse"
+                    style={{ animationDelay: '2s' }}
+                ></div>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -41,8 +44,12 @@ const UrlShortnerHero = () => {
                 </Badge>
 
                 {/* Main Heading */}
-                <h1 className="mt-8 text-4xl md:text-5xl font-extrabold !leading-[1.1] tracking-tight text-foreground">
-                    {t('headingPrefix')}<span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">{t('headingEmphasis')}</span> {t('headingSuffix')}
+                <h1 className="mt-8 text-4xl md:text-5xl font-bold !leading-[1.1] tracking-tight text-foreground">
+                    {t('headingPrefix')}
+                    <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[size:200%_auto] bg-clip-text text-transparent animate-[shine_5s_linear_infinite]">
+                        {t('headingEmphasis')}
+                    </span>{' '}
+                    {t('headingSuffix')}
                 </h1>
 
                 {/* Subheading */}
@@ -78,11 +85,17 @@ const UrlShortnerHero = () => {
                     </div>
                     <p className="mt-6 text-sm text-muted-foreground/60 font-medium">
                         {t('agreementPrefix')}{' '}
-                        <Link href="/terms" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
+                        <Link
+                            href="/terms"
+                            className="text-primary hover:underline transition-colors decoration-2 underline-offset-4"
+                        >
                             {t('terms')}
-                        </Link>
-                        {' '}{t('agreementSuffix')}{' '}
-                        <Link href="/privacy" className="text-primary hover:underline transition-colors decoration-2 underline-offset-4">
+                        </Link>{' '}
+                        {t('agreementSuffix')}{' '}
+                        <Link
+                            href="/privacy"
+                            className="text-primary hover:underline transition-colors decoration-2 underline-offset-4"
+                        >
                             {t('privacy')}
                         </Link>
                     </p>
@@ -90,16 +103,18 @@ const UrlShortnerHero = () => {
 
                 {/* Stats */}
                 <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
-                    {['linksCreated', 'activeUsers', 'uptime', 'support'].map((statKey) => (
-                        <div key={statKey} className="text-center group">
-                            <div className="text-3xl md:text-4xl font-black text-foreground group-hover:text-primary transition-colors tracking-tight">
-                                {t(`stats.${statKey}.value`)}
+                    {['linksCreated', 'activeUsers', 'uptime', 'support'].map(
+                        (statKey) => (
+                            <div key={statKey} className="text-center group">
+                                <div className="text-3xl md:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors tracking-tight">
+                                    {t(`stats.${statKey}.value`)}
+                                </div>
+                                <div className="mt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground/60">
+                                    {t(`stats.${statKey}.label`)}
+                                </div>
                             </div>
-                            <div className="mt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground/60">
-                                {t(`stats.${statKey}.label`)}
-                            </div>
-                        </div>
-                    ))}
+                        )
+                    )}
                 </div>
             </div>
         </section>

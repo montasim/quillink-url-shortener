@@ -57,11 +57,14 @@ const Navbar = () => {
                                             {user?.picture ? (
                                                 <img
                                                     src={user.picture}
-                                                    alt={user.name || 'User Avatar'}
+                                                    alt={
+                                                        user.name ||
+                                                        'User Avatar'
+                                                    }
                                                     className="h-full w-full object-cover"
                                                 />
                                             ) : user?.name ? (
-                                                <div className="h-full w-full flex items-center justify-center text-primary font-black text-lg italic">
+                                                <div className="h-full w-full flex items-center justify-center text-primary font-semibold text-lg italic">
                                                     {user.name
                                                         .charAt(0)
                                                         .toUpperCase()}
@@ -105,14 +108,12 @@ const Navbar = () => {
                                 <Button
                                     variant="ghost"
                                     className="hidden sm:inline-flex cursor-pointer font-bold text-muted-foreground hover:text-primary transition-colors h-11 rounded-xl"
-                                    onClick={() =>
-                                        router.push(dashboardPath)
-                                    }
+                                    onClick={() => router.push(dashboardPath)}
                                 >
                                     {t('dashboard')}
                                 </Button>
                                 <Button
-                                    className="bg-primary hover:bg-primary/95 text-primary-foreground cursor-pointer font-black h-11 rounded-xl shadow-xl shadow-primary/20 px-6 active:scale-95 transition-all text-sm"
+                                    className="bg-primary hover:bg-primary/95 text-primary-foreground cursor-pointer font-semibold h-11 rounded-xl shadow-xl shadow-primary/20 px-6 active:scale-95 transition-all text-sm"
                                     onClick={() => router.push('/signup')}
                                 >
                                     {t('signup')}
