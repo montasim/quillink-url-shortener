@@ -42,13 +42,13 @@ const FAQSection = ({ translationKey = 'urls.faq' }: FAQSectionProps) => {
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
-                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-semibold text-sm mb-8 backdrop-blur-sm">
                         {t('badge')}
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 tracking-tight">
                         {t('heading')}
                     </h2>
-                    <p className="text-lg text-muted-foreground">
+                    <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
                         {t('subheading')}
                     </p>
                 </div>
@@ -60,12 +60,12 @@ const FAQSection = ({ translationKey = 'urls.faq' }: FAQSectionProps) => {
                             <AccordionItem
                                 key={index}
                                 value={`left-item-${index}`}
-                                className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
+                                className="border border-border/60 last:border-b rounded-2xl px-6 bg-card/40 backdrop-blur-sm hover:bg-card/80 hover:shadow-md transition-all duration-300"
                             >
-                                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
+                                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6 hover:text-primary transition-colors">
                                     {t(`questions.${key}.question`)}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                                <AccordionContent className="text-muted-foreground/80 leading-relaxed pb-6">
                                     {t(`questions.${key}.answer`)}
                                 </AccordionContent>
                             </AccordionItem>
@@ -77,12 +77,12 @@ const FAQSection = ({ translationKey = 'urls.faq' }: FAQSectionProps) => {
                             <AccordionItem
                                 key={index}
                                 value={`right-item-${index}`}
-                                className="border border-border last:border-b rounded-2xl px-6 bg-card hover:shadow-md transition-shadow"
+                                className="border border-border/60 last:border-b rounded-2xl px-6 bg-card/40 backdrop-blur-sm hover:bg-card/80 hover:shadow-md transition-all duration-300"
                             >
-                                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6">
+                                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-6 hover:text-primary transition-colors">
                                     {t(`questions.${key}.question`)}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                                <AccordionContent className="text-muted-foreground/80 leading-relaxed pb-6">
                                     {t(`questions.${key}.answer`)}
                                 </AccordionContent>
                             </AccordionItem>
