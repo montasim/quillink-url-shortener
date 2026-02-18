@@ -1,188 +1,164 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { CircleAlert, GithubIcon, LinkedinIcon, MailIcon, MessageSquare, Star } from 'lucide-react';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
+import { CircleAlert, GithubIcon, LinkedinIcon, MailIcon, MessageSquare, QrCode, Star, Link2 } from 'lucide-react';
 import React from 'react';
 import CTASection from '../components/CTASection';
+import ContactFeaturesSection from '../components/ContactFeaturesSection';
 import configuration from '@/configuration/configuration';
 
 const ContactPage = () => {
     const t = useTranslations('home.contact');
 
-    const contactMethods = [
+    // Product Features Section
+    const productFeatures = [
         {
-            icon: MailIcon,
-            title: t('email'),
-            value: configuration.contact.email,
-            href: `mailto:${configuration.contact.email}`,
-            label: t('emailLabel'),
-            color: 'text-blue-500',
-            bgColor: 'bg-blue-500/10'
+            icon: Link2,
+            titleKey: t('sections.features.urlShortening'),
+            descriptionKey: t('sections.features.urlShorteningDesc'),
+            color: 'from-blue-500 to-blue-600',
+            bg: 'bg-blue-500/10',
+            border: 'border-blue-500/20',
         },
         {
-            icon: LinkedinIcon,
-            title: t('linkedin'),
-            value: 'LinkedIn Profile',
-            href: configuration.social.linkedin,
-            label: t('linkedinLabel'),
-            color: 'text-sky-600',
-            bgColor: 'bg-sky-600/10'
+            icon: MessageSquare,
+            titleKey: t('sections.features.textSharing'),
+            descriptionKey: t('sections.features.textSharingDesc'),
+            color: 'from-green-500 to-green-600',
+            bg: 'bg-green-500/10',
+            border: 'border-green-500/20',
         },
         {
-            icon: GithubIcon,
-            title: t('github'),
-            value: 'GitHub Profile',
-            href: configuration.social.github,
-            label: t('githubLabel'),
-            color: 'text-slate-900 dark:text-slate-100',
-            bgColor: 'bg-slate-900/10 dark:bg-slate-100/10'
+            icon: QrCode,
+            titleKey: t('sections.features.qrCodes'),
+            descriptionKey: t('sections.features.qrCodesDesc'),
+            color: 'from-purple-500 to-purple-600',
+            bg: 'bg-purple-500/10',
+            border: 'border-purple-500/20',
         },
     ];
 
-    const features = [
-        {
-            name: t('features.urlShortening'),
-            description: 'Shorten URLs, track clicks, view analytics'
-        },
-        {
-            name: t('features.textSharing'),
-            description: 'Share code, notes, documents securely'
-        },
-        {
-            name: t('features.qrCodes'),
-            description: 'Generate custom QR codes instantly'
-        },
-    ];
-
-    const githubLinks = [
+    // GitHub Section
+    const githubFeatures = [
         {
             icon: Star,
-            title: t('githubRepo'),
-            label: t('githubRepoLabel'),
+            titleKey: t('sections.github.repo'),
+            descriptionKey: t('sections.github.repoDesc'),
             href: configuration.github.repo,
-            actionText: t('viewRepo'),
-            color: 'text-yellow-500',
-            bgColor: 'bg-yellow-500/10'
+            color: 'from-yellow-500 to-orange-500',
+            bg: 'bg-yellow-500/10',
+            border: 'border-yellow-500/20',
+            external: true,
         },
         {
             icon: CircleAlert,
-            title: t('githubIssues'),
-            label: t('githubIssuesLabel'),
+            titleKey: t('sections.github.issues'),
+            descriptionKey: t('sections.github.issuesDesc'),
             href: configuration.github.issues,
-            actionText: t('reportIssue'),
-            color: 'text-red-500',
-            bgColor: 'bg-red-500/10'
+            color: 'from-red-500 to-red-600',
+            bg: 'bg-red-500/10',
+            border: 'border-red-500/20',
+            external: true,
+        },
+    ];
+
+    // Contact Methods Section
+    const contactFeatures = [
+        {
+            icon: MailIcon,
+            titleKey: t('sections.contactMethods.email'),
+            descriptionKey: t('sections.contactMethods.emailDesc'),
+            href: `mailto:${configuration.contact.email}`,
+            color: 'from-blue-500 to-cyan-500',
+            bg: 'bg-blue-500/10',
+            border: 'border-blue-500/20',
+            external: false,
+        },
+        {
+            icon: LinkedinIcon,
+            titleKey: t('sections.contactMethods.linkedin'),
+            descriptionKey: t('sections.contactMethods.linkedinDesc'),
+            href: configuration.social.linkedin,
+            color: 'from-sky-600 to-blue-700',
+            bg: 'bg-sky-600/10',
+            border: 'border-sky-600/20',
+            external: true,
+        },
+        {
+            icon: GithubIcon,
+            titleKey: t('sections.contactMethods.github'),
+            descriptionKey: t('sections.contactMethods.githubDesc'),
+            href: configuration.social.github,
+            color: 'from-slate-700 to-slate-900',
+            bg: 'bg-slate-700/10',
+            border: 'border-slate-700/20',
+            external: true,
         },
     ];
 
     return (
         <div className="min-h-screen bg-background relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 -left-24 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+            {/* Hero Section */}
+            <section className="relative py-24 px-6 overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 -left-24 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
-                {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-semibold text-sm mb-8 backdrop-blur-sm">
-                        {t('badge')}
-                    </Badge>
-                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-8">
+                <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                        <span className="text-2xl">👋</span>
+                        <span className="text-sm font-semibold text-primary">{t('badge')}</span>
+                    </div>
+
+                    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
                         {t('title')} <span className="text-primary">{t('titleEmphasis')}</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
+
+                    <p className="text-xl text-muted-foreground/80 font-medium leading-relaxed max-w-2xl mx-auto">
                         {t('description')}
                     </p>
                 </div>
+            </section>
 
-                {/* Features Summary */}
-                <div className="grid md:grid-cols-3 gap-6 mb-16">
-                    {features.map((feature, index) => (
-                        <div
-                            key={index}
-                            className="p-6 rounded-2xl border border-border bg-card/50 hover:bg-card transition-colors duration-300"
-                        >
-                            <h3 className="text-lg font-semibold text-foreground mb-2">
-                                {feature.name}
-                            </h3>
-                            <p className="text-sm text-muted-foreground">
-                                {feature.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+            {/* Product Features Section */}
+            <ContactFeaturesSection
+                features={productFeatures}
+                badge={t('sections.features.badge')}
+                title={t('sections.features.title')}
+                titleEmphasis={t('sections.features.titleEmphasis')}
+                subheading={t('sections.features.subheading')}
+                translationKey="contact"
+                align="left"
+            />
 
-                {/* GitHub Links */}
-                <div className="grid md:grid-cols-2 gap-6 mb-16">
-                    {githubLinks.map((link, index) => {
-                        const Icon = link.icon;
-                        return (
-                            <a
-                                key={index}
-                                href={link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group p-6 rounded-2xl border border-border bg-card/50 hover:border-primary/50 hover:bg-card transition-all duration-300"
-                            >
-                                <div className="flex items-start gap-4">
-                                    <div className={`w-12 h-12 rounded-xl ${link.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                                        <Icon className={`w-6 h-6 ${link.color}`} />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-semibold text-foreground mb-2">
-                                            {link.title}
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground mb-3">
-                                            {link.label}
-                                        </p>
-                                        <div className="flex items-center text-sm font-semibold text-primary group-hover:underline">
-                                            {link.actionText}
-                                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        );
-                    })}
-                </div>
+            {/* GitHub Section */}
+            <ContactFeaturesSection
+                features={githubFeatures}
+                badge={t('sections.github.badge')}
+                title={t('sections.github.title')}
+                titleEmphasis={t('sections.github.titleEmphasis')}
+                subheading={t('sections.github.subheading')}
+                translationKey="contact"
+                className="bg-muted/20"
+                align="left"
+            />
 
-                {/* Contact Cards */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {contactMethods.map((method, index) => {
-                        const Icon = method.icon;
-                        return (
-                            <a
-                                key={index}
-                                href={method.href}
-                                target={method.href.startsWith('http') ? '_blank' : undefined}
-                                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                className="group p-8 rounded-3xl border border-border bg-card hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-center text-center"
-                            >
-                                <div className={`w-14 h-14 rounded-2xl ${method.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                                    <Icon className={`w-7 h-7 ${method.color}`} />
-                                </div>
-                                <h3 className="text-xl font-semibold text-foreground mb-2">
-                                    {method.title}
-                                </h3>
-                                <p className="text-muted-foreground mb-6">
-                                    {method.label}
-                                </p>
-                                <div className="mt-auto font-semibold text-primary group-hover:underline">
-                                    {method.value}
-                                </div>
-                            </a>
-                        );
-                    })}
-                </div>
+            {/* Contact Methods Section */}
+            <ContactFeaturesSection
+                features={contactFeatures}
+                badge={t('sections.contactMethods.badge')}
+                title={t('sections.contactMethods.title')}
+                titleEmphasis={t('sections.contactMethods.titleEmphasis')}
+                subheading={t('sections.contactMethods.subheading')}
+                translationKey="contact"
+                align="left"
+            />
 
-                {/* Bottom CTA */}
+            {/* FAQ CTA Section */}
+            <section className="py-16 px-6">
                 <CTASection
-                    className="mt-32 mb-0"
+                    className="mb-0"
                     icon={MessageSquare}
                     iconRotation
                     title={t('chat.title')}
@@ -191,10 +167,9 @@ const ContactPage = () => {
                     primaryButton={{ text: t('chat.viewFaqs'), href: '/#faq' }}
                     secondaryButton={{ text: t('chat.emailSupport'), href: `mailto:${configuration.contact.email}` }}
                 />
-            </div>
+            </section>
         </div>
     );
 };
 
 export default ContactPage;
-

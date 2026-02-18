@@ -777,7 +777,43 @@
       "githubRepoLabel": "Quellcode ansehen, beitragen, den Projekt starren",
       "githubIssuesLabel": "Fehler melden, Funktionen anfragen, Fortschritt verfolgen",
       "viewRepo": "Repository ansehen",
-      "reportIssue": "Problem melden"
+      "reportIssue": "Problem melden",
+      "sections": {
+        "features": {
+          "badge": "Unser Angebot",
+          "title": "Unsere ",
+          "titleEmphasis": "Dienstleistungen",
+          "subheading": "Drei leistungsstarke Tools zur Vereinfachung Ihres digitalen Workflows. Alles, was Sie brauchen, an einem Ort.",
+          "urlShortening": "URL-Kürzung",
+          "urlShorteningDesc": "Verwandeln Sie lange URLs in kurze, trackbare Links mit Echtzeit-Analysen und benutzerdefinierten Slugs.",
+          "textSharing": "Text-Teilen",
+          "textSharingDesc": "Teilen Sie Code, Notizen und Dokumente sicher mit Passwortschutz und automatischem Verfall.",
+          "qrCodes": "QR-Codes",
+          "qrCodesDesc": "Generieren Sie sofort schöne, benutzerdefinierte QR-Codes für URLs, Text, WiFi, Kontakte und mehr."
+        },
+        "github": {
+          "badge": "Mitmachen",
+          "title": "Offener ",
+          "titleEmphasis": "Quellcode",
+          "subheading": "Wir bauen in der Öffentlichkeit auf. Tragen Sie bei, melden Sie Probleme oder durchstöbern Sie einfach unsere Codebasis.",
+          "repo": "Repository",
+          "repoDesc": "Entdecken Sie unseren Quellcode, tragen Sie Verbesserungen bei oder geben Sie uns einen Stern zur Unterstützung.",
+          "issues": "Probleme",
+          "issuesDesc": "Einen Fehler gefunden? Haben Sie eine Funktionsanfrage? Verfolgen Sie den Fortschritt und helfen Sie uns, bessere Tools zu entwickeln."
+        },
+        "contactMethods": {
+          "badge": "Kontakt aufnehmen",
+          "title": "Nehmen Sie ",
+          "titleEmphasis": "Kontakt auf",
+          "subheading": "Haben Sie Fragen? Wir sind für Sie da. Wählen Sie Ihre bevorzugte Kontaktmethode.",
+          "email": "E-Mail",
+          "emailDesc": "Senden Sie uns eine Nachricht und wir melden uns so schnell wie möglich bei Ihnen.",
+          "linkedin": "LinkedIn",
+          "linkedinDesc": "Vernetzen Sie sich professionell mit uns und bleiben Sie über unsere neuesten Nachrichten informiert.",
+          "github": "GitHub",
+          "githubDesc": "Folgen Sie unseren Projekten, tragen Sie Code bei oder entdecken Sie unsere Open-Source-Arbeit."
+        }
+      }
     },
     "notFound": {
       "badge": "404 Fehler",

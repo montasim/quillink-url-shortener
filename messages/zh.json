@@ -777,7 +777,43 @@
       "githubRepoLabel": "查看源代码、贡献、给项目加星",
       "githubIssuesLabel": "报告错误、请求功能、跟踪进度",
       "viewRepo": "查看仓库",
-      "reportIssue": "报告问题"
+      "reportIssue": "报告问题",
+      "sections": {
+        "features": {
+          "badge": "我们的服务",
+          "title": "我们的",
+          "titleEmphasis": "服务",
+          "subheading": "三个强大的工具，简化您的数字工作流程。您所需的一切，尽在一处。",
+          "urlShortening": "网址缩短",
+          "urlShorteningDesc": "将长网址转换为短小、可追踪的链接，支持实时分析和自定义短链。",
+          "textSharing": "文本分享",
+          "textSharingDesc": "通过密码保护和自动过期功能，安全地分享代码、笔记和文档。",
+          "qrCodes": "二维码",
+          "qrCodesDesc": "立即为网址、文本、WiFi、联系人等生成美观的自定义二维码。"
+        },
+        "github": {
+          "badge": "参与贡献",
+          "title": "开源",
+          "titleEmphasis": "",
+          "subheading": "我们公开构建。贡献代码、报告问题，或只是探索我们的代码库。",
+          "repo": "仓库",
+          "repoDesc": "探索我们的源代码，贡献改进，或给项目加星以示支持。",
+          "issues": "问题",
+          "issuesDesc": "发现错误？有功能请求？跟踪进度并帮助我们构建更好的工具。"
+        },
+        "contactMethods": {
+          "badge": "联系我们",
+          "title": "取得",
+          "titleEmphasis": "联系",
+          "subheading": "有疑问？我们随时为您提供帮助。选择您喜欢的联系方式。",
+          "email": "电子邮件",
+          "emailDesc": "给我们发送消息，我们会尽快回复您。",
+          "linkedin": "LinkedIn",
+          "linkedinDesc": "与我们建立专业联系，随时了解我们的最新动态。",
+          "github": "GitHub",
+          "githubDesc": "关注我们的项目，贡献代码，或探索我们的开源工作。"
+        }
+      }
     },
     "notFound": {
       "badge": "404 错误",

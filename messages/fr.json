@@ -777,7 +777,43 @@
       "githubRepoLabel": "Voir le code source, contribuer, mettre une étoile au projet",
       "githubIssuesLabel": "Signaler des bugs, demander des fonctionnalités, suivre les progrès",
       "viewRepo": "Voir le dépôt",
-      "reportIssue": "Signaler un problème"
+      "reportIssue": "Signaler un problème",
+      "sections": {
+        "features": {
+          "badge": "Ce que nous offrons",
+          "title": "Nos ",
+          "titleEmphasis": "Services",
+          "subheading": "Trois outils puissants pour simplifier votre flux de travail numérique. Tout ce dont vous avez besoin au même endroit.",
+          "urlShortening": "Raccourcissement d'URL",
+          "urlShorteningDesc": "Transformez de longues URLs en liens courts et traçables avec des analyses en temps réel et des slugs personnalisés.",
+          "textSharing": "Partage de texte",
+          "textSharingDesc": "Partagez du code, des notes et des documents en toute sécurité avec protection par mot de passe et expiration automatique.",
+          "qrCodes": "QR codes",
+          "qrCodesDesc": "Générez instantanément de beaux QR codes personnalisés pour les URLs, le texte, le WiFi, les contacts et plus encore."
+        },
+        "github": {
+          "badge": "Participez",
+          "title": "Code ",
+          "titleEmphasis": "Ouvert",
+          "subheading": "Nous construisons en toute transparence. Contribuez, signalez des problèmes ou explorez simplement notre base de code.",
+          "repo": "Dépôt",
+          "repoDesc": "Explorez notre code source, contribuez aux améliorations ou donnez-nous une étoile pour montrer votre soutien.",
+          "issues": "Problèmes",
+          "issuesDesc": "Vous avez trouvé un bug ? Une demande de fonctionnalité ? Suivez les progrès et aidez-nous à créer de meilleurs outils."
+        },
+        "contactMethods": {
+          "badge": "Contactez-nous",
+          "title": "Prenez ",
+          "titleEmphasis": "Contact",
+          "subheading": "Vous avez des questions ? Nous sommes là pour vous aider. Choisissez votre méthode de contact préférée.",
+          "email": "Email",
+          "emailDesc": "Envoyez-nous un message et nous vous répondrons dès que possible.",
+          "linkedin": "LinkedIn",
+          "linkedinDesc": "Connectez-vous avec nous professionnellement et restez informé de nos dernières actualités.",
+          "github": "GitHub",
+          "githubDesc": "Suivez nos projets, contribuez du code ou explorez notre travail open source."
+        }
+      }
     },
     "notFound": {
       "badge": "Erreur 404",

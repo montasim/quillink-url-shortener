@@ -777,7 +777,43 @@
       "githubRepoLabel": "View source code, contribute, star the project",
       "githubIssuesLabel": "Report bugs, request features, track progress",
       "viewRepo": "View Repository",
-      "reportIssue": "Report Issue"
+      "reportIssue": "Report Issue",
+      "sections": {
+        "features": {
+          "badge": "What We Offer",
+          "title": "Our ",
+          "titleEmphasis": "Services",
+          "subheading": "Three powerful tools to simplify your digital workflow. Everything you need in one place.",
+          "urlShortening": "URL Shortening",
+          "urlShorteningDesc": "Transform long URLs into short, trackable links with real-time analytics and custom slugs.",
+          "textSharing": "Text Sharing",
+          "textSharingDesc": "Share code, notes, and documents securely with password protection and auto-expiration.",
+          "qrCodes": "QR Codes",
+          "qrCodesDesc": "Generate beautiful, custom QR codes instantly for URLs, text, WiFi, contacts and more."
+        },
+        "github": {
+          "badge": "Get Involved",
+          "title": "Open ",
+          "titleEmphasis": "Source",
+          "subheading": "We're building in the open. Contribute, report issues, or just explore our codebase.",
+          "repo": "Repository",
+          "repoDesc": "Explore our source code, contribute improvements, or give us a star to show support.",
+          "issues": "Issues",
+          "issuesDesc": "Found a bug? Have a feature request? Track progress and help us build better tools."
+        },
+        "contactMethods": {
+          "badge": "Reach Out",
+          "title": "Get in ",
+          "titleEmphasis": "Touch",
+          "subheading": "Have questions? We're here to help. Choose your preferred way to connect.",
+          "email": "Email",
+          "emailDesc": "Send us a message and we'll get back to you as soon as possible.",
+          "linkedin": "LinkedIn",
+          "linkedinDesc": "Connect with us professionally and stay updated on our latest news.",
+          "github": "GitHub",
+          "githubDesc": "Follow our projects, contribute code, or explore our open source work."
+        }
+      }
     },
     "notFound": {
       "badge": "404 Error",
