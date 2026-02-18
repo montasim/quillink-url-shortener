@@ -32,7 +32,7 @@ export default function TextShareCard({
     baseUrl,
 }: TextShareCardProps) {
     const [showQR, setShowQR] = useState(false);
-    const shareUrl = `${baseUrl}/text/${shortKey}`;
+    const shareUrl = `${baseUrl}/texts/${shortKey}`;
 
     const handleCopy = async () => {
         try {

@@ -52,10 +52,10 @@ const TextShareHero = () => {
             });
 
             if (response.success) {
-                const shareUrl = `${window.location.origin}/text/${response.data.shortKey}`;
+                const shareUrl = `${window.location.origin}/texts/${response.data.shortKey}`;
                 await navigator.clipboard.writeText(shareUrl);
                 toast.success(createT('success'));
-                router.push(`/text/${response.data.shortKey}`);
+                router.push(`/texts/${response.data.shortKey}`);
             } else {
                 toast.error(response.message || createT('error'));
             }

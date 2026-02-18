@@ -26,7 +26,7 @@ const Navbar = () => {
 
     // Determine dashboard destination based on current path
     const getDashboardPath = () => {
-        if (pathname?.includes('/texts') || pathname?.includes('/text/')) {
+        if (pathname?.includes('/texts')) {
             return '/dashboard/texts';
         }
         return '/dashboard/urls';

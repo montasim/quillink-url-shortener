@@ -116,7 +116,7 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
             const response = await createData(API_ENDPOINT.TEXT_SHARE_CREATE, submitData);
 
             if (response.success) {
-                const shareUrl = `${window.location.origin}/text/${response.data.shortKey}`;
+                const shareUrl = `${window.location.origin}/texts/${response.data.shortKey}`;
                 await navigator.clipboard.writeText(shareUrl);
                 toast.success(createT('success'));
                 setOpen(false);

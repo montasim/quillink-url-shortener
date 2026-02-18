@@ -12,6 +12,7 @@ import TabSection from '@/components/TabSection';
 import TextShareGrid from './TextShareGrid';
 import TextAnalysisTab from '@/components/dashboard/TextAnalysisTab';
 import TextAnalysisSkeleton from '@/components/dashboard/TextAnalysisSkeleton';
+import TextShareLinksSkeleton from '@/components/dashboard/TextShareLinksSkeleton';
 import CreateTextShareModal from '@/components/dashboard/CreateTextShareModal';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
@@ -126,7 +127,7 @@ export default function DashboardTextsPage() {
             value: 'links',
             icon: <FileText className="w-4 h-4" />,
             content: isLoading ? (
-                <div className="text-center py-12 text-muted-foreground">Loading...</div>
+                <TextShareLinksSkeleton />
             ) : (
                 <div className="space-y-6">
                     {/* Search and Filter Bar */}

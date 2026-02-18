@@ -2,7 +2,6 @@
 
 import { Calendar, Copy, Link as LinkIcon, QrCode, ExternalLink, BarChart3, Trash2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { toast } from 'sonner';
 import { IShortUrl } from '@/types/types';
@@ -10,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { deleteUrl } from '@/lib/actions/dashboard';
+import QRCodeViewer from '@/components/QRCodeViewer';
+import Image from 'next/image';
 import {
     Dialog,
     DialogContent,
@@ -21,11 +22,11 @@ import {
 
 const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) => {
     const t = useTranslations('dashboard');
-    const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const [showQrPopover, setShowQrPopover] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [copied, setCopied] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const popoverRef = useRef<HTMLDivElement>(null);
 
     const shortUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${url?.shortKey}`;
@@ -206,74 +207,14 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                 </div>
             </div>
 
-            {/* QR Popover with Backdrop */}
-            {showQrPopover && (
-                <>
-                    {/* Backdrop */}
-                    <div
-                        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 animate-in fade-in duration-300"
-                        onClick={() => setShowQrPopover(false)}
-                    />
-
-                    {/* QR Code Modal */}
-                    <div
-                        ref={popoverRef}
-                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-3xl shadow-2xl p-8 z-50 w-[320px] animate-in zoom-in-95 fade-in slide-in-from-bottom-4 duration-300"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="space-y-6">
-                            <div className="text-center space-y-1">
-                                <h3 className="font-bold text-xl text-foreground">{t('qrCode')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('scanToVisit')}</p>
-                            </div>
-
-                            {qrCodeUrl ? (
-                                <>
-                                    <div className="bg-white p-4 rounded-2xl border border-border shadow-inner">
-                                        <Image
-                                            src={qrCodeUrl}
-                                            alt={t('qrCodeAlt')}
-                                            width={240}
-                                            height={240}
-                                            unoptimized
-                                            className="w-full h-auto"
-                                        />
-                                    </div>
-
-                                    <div className="flex flex-col gap-3">
-                                        <Button
-                                            size="sm"
-                                            className="w-full h-11 gap-2 rounded-xl font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
-                                            onClick={() => {
-                                                const link = document.createElement('a');
-                                                link.href = qrCodeUrl;
-                                                link.download = `${url?.shortKey || 'qr-code'}-qr.png`;
-                                                link.click();
-                                                toast.success(t('qrCodeDownloaded'));
-                                            }}
-                                        >
-                                            {t('downloadQr')}
-                                        </Button>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            className="w-full h-11 rounded-xl text-muted-foreground hover:text-foreground"
-                                            onClick={() => setShowQrPopover(false)}
-                                        >
-                                            {t('close')}
-                                        </Button>
-                                    </div>
-                                </>
-                            ) : (
-                                <div className="flex flex-col items-center justify-center py-12 gap-4">
-                                    <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-                                    <p className="text-sm text-muted-foreground animate-pulse">{t('generating')}</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </>
-            )}
+            {/* QR Code Viewer */}
+            <QRCodeViewer
+                shortKey={url?.shortKey || ''}
+                type="url"
+                isOpen={showQrPopover}
+                onClose={() => setShowQrPopover(false)}
+                downloadFileName={`${url?.shortKey || 'qr-code'}-qr.png`}
+            />
 
             {/* Delete Confirmation Dialog */}
             <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>

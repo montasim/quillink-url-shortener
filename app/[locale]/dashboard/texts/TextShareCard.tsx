@@ -1,12 +1,13 @@
 'use client';
 
-import { Calendar, Copy, FileText, ExternalLink, BarChart3, Trash2, Lock, Clock } from 'lucide-react';
+import { Calendar, Copy, FileText, ExternalLink, BarChart3, Trash2, Lock, Clock, QrCode } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import QRCodeViewer from '@/components/QRCodeViewer';
 import {
     Dialog,
     DialogContent,
@@ -38,8 +39,9 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [copied, setCopied] = useState(false);
+    const [showQrPopover, setShowQrPopover] = useState(false);
 
-    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/text/${share?.shortKey}`;
+    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/texts/${share?.shortKey}`;
     const date = new Date(share?.createdAt || '').toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
@@ -68,7 +70,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                 method: 'DELETE',
             });
             const result = await response.json();
-            
+
             if (result.success) {
                 toast.success(t('deleteSuccess'));
                 onRefresh();
@@ -190,11 +192,11 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                         className="flex-1 gap-2 h-9 hover:bg-primary/10 hover:text-primary hover:border-primary/30"
                         onClick={(e) => {
                             e.stopPropagation();
-                            window.open(`/text/${share.shortKey}`, '_blank');
+                            setShowQrPopover(true);
                         }}
                     >
-                        <BarChart3 className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">Stats</span>
+                        <QrCode className="w-3.5 h-3.5" />
+                        <span className="text-xs font-medium">{t('qrCode') || 'QR Code'}</span>
                     </Button>
 
                     <Button
@@ -217,6 +219,15 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                     </Button>
                 </div>
             </div>
+
+            {/* QR Code Viewer */}
+            <QRCodeViewer
+                shortKey={share?.shortKey || ''}
+                type="text"
+                isOpen={showQrPopover}
+                onClose={() => setShowQrPopover(false)}
+                downloadFileName={`${share?.shortKey || 'qr-code'}-qr.png`}
+            />
 
             {/* Delete Confirmation Dialog */}
             <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
