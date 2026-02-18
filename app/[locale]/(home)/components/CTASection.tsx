@@ -46,7 +46,7 @@ const CTASection = ({
 
     return (
         <div
-            className={`relative overflow-hidden p-12 md:p-20 rounded-[48px] bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] text-foreground border border-border shadow-2xl shadow-primary/5 max-w-5xl mx-auto group ${className || 'my-32'}`}
+            className={`relative overflow-hidden px-6 py-12 md:px-20 md:py-20 rounded-[48px] bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] text-foreground border border-border shadow-2xl shadow-primary/5 max-w-5xl mx-auto group ${className || 'my-32'}`}
         >
             {/* Background decoration */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
@@ -116,7 +116,7 @@ const CTASection = ({
                                 className="bg-primary text-primary-foreground hover:bg-primary/95 font-semibold px-12 h-16 rounded-2xl shadow-2xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 group text-lg"
                                 asChild
                             >
-                                <Link href="/contact-us">
+                                <Link href="/contact">
                                     {t('getInTouch')}
                                 </Link>
                             </Button>

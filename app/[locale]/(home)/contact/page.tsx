@@ -156,9 +156,9 @@ const ContactPage = () => {
             />
 
             {/* FAQ CTA Section */}
-            <section className="py-16 px-6">
+            <section className="py-16 md:py-24 px-6">
                 <CTASection
-                    className="mb-0"
+                    className="mt-0 mb-8 md:mb-16"
                     icon={MessageSquare}
                     iconRotation
                     title={t('chat.title')}
