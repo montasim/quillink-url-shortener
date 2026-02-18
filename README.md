@@ -24,19 +24,20 @@
 ## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=120&height=24&lines=CONTENTS:" alt="CONTENTS:" />
 
 1. [Features](#-features)
-2. [Tech Stack](#-tech-stack)
-3. [Prerequisites](#-prerequisites)
-4. [Setup](#-setup)
-5. [Running the Application](#-running-the-application)
-6. [Docker Support](#-docker-support)
-7. [Environment Variables](#-environment-variables)
-8. [Project Structure](#-project-structure)
-9. [Hosting](#-hosting)
-10. [API Documentation](#-api-documentation)
-11. [Contributing](#-contributing)
-12. [Contributors](#-contributors)
-13. [License](#-license)
-14. [Contact](#-contact)
+2. [Usage Limits](#-usage-limits)
+3. [Tech Stack](#-tech-stack)
+4. [Prerequisites](#-prerequisites)
+5. [Setup](#-setup)
+6. [Running the Application](#-running-the-application)
+7. [Docker Support](#-docker-support)
+8. [Environment Variables](#-environment-variables)
+9. [Project Structure](#-project-structure)
+10. [Hosting](#-hosting)
+11. [API Documentation](#-api-documentation)
+12. [Contributing](#-contributing)
+13. [Contributors](#-contributors)
+14. [License](#-license)
+15. [Contact](#-contact)
 
 <br/>
 
@@ -101,6 +102,95 @@ Support for 9 languages:
 - 🇮🇳 Hindi (हिन्दी)
 - 🇧🇩 Bengali (বাংলা)
 - 🇸🇦 Arabic (العربية)
+
+<br/>
+
+## ⚖️ Usage Limits
+
+Shrnkly offers different usage limits based on your account status. Here's a comprehensive breakdown:
+
+### 🔗 URL Shortener Limits
+
+| Feature | Guest (No Account) | Registered User | Premium |
+|---------|-------------------|---------------|---------|
+| **URL Creation Limit** | 10 URLs | 20 URLs | Unlimited |
+| **Custom Slugs** | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Analytics** | ✅ Basic | ✅ Full | ✅ Full + Export |
+| **QR Codes** | ✅ Yes | ✅ Yes | ✅ Yes + Custom |
+| **Link Expiration** | ❌ No | ⚠️ Limited | ✅ Full Control |
+| **Password Protection** | ❌ No | ❌ No | ✅ Yes |
+| **API Access** | ❌ No | ⚠️ Rate Limited | ✅ Full Access |
+| **Priority Support** | ❌ No | ❌ No | ✅ Yes |
+
+### 📝 Text Sharing Limits
+
+| Feature | Guest (No Account) | Registered User | Premium |
+|---------|-------------------|---------------|---------|
+| **Text Share Creation** | 10 shares | 20 shares | Unlimited |
+| **Max Content Length** | 100 KB | 100 KB | 500 KB |
+| **Max View Limit** | 1000 views | 1000 views | 10,000 views |
+| **Default Expiry** | 30 days | 30 days | Custom |
+| **Password Protection** | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Syntax Highlighting** | ✅ 100+ languages | ✅ 100+ languages | ✅ 100+ languages |
+| **Analytics** | ❌ No | ✅ Basic | ✅ Advanced |
+| **Custom Slugs** | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Auto-Expiration** | ✅ Yes | ✅ Yes | ✅ Advanced Rules |
+
+### 📱 QR Code Generator
+
+**All features are completely FREE with NO limits:**
+- ✅ Unlimited QR code generation
+- ✅ All types (URL, Text, WiFi, vCard, SMS, Email)
+- ✅ Full customization (colors, size, error correction)
+- ✅ Multiple formats (PNG, SVG)
+- ✅ No registration required
+- ✅ 100% client-side (privacy-focused)
+
+### 📊 Understanding Account Tiers
+
+#### **Guest (No Account)**
+Perfect for trying out Shrnkly. No registration required, but limited to 10 creations per feature.
+
+**Best for:** Quick, one-time use
+
+#### **Registered User (Free)**
+Create an account for free to get double the limits and access to analytics dashboard.
+
+**Benefits:**
+- 20 URL creations
+- 20 text shares
+- Full analytics dashboard
+- Link management interface
+- Save and organize your links
+
+**Best for:** Regular users, small projects
+
+#### **Premium (Subscription)**
+Unlock unlimited creations and advanced features for power users and businesses.
+
+**Benefits:**
+- Unlimited URLs and text shares
+- Password protection for links
+- Custom expiration rules
+- Priority support
+- API access
+- Advanced analytics with export
+- Custom branding options
+
+**Best for:** Businesses, marketers, developers, high-volume users
+
+### 🔄 What Happens When You Reach Limits?
+
+- **Guests:** You'll be prompted to create an account to continue
+- **Registered Users:** You can delete old links to create new ones, or upgrade to Premium
+- **Premium:** No limits! Create as many as you need
+
+### 💡 Tips to Manage Limits
+
+1. **Delete unused links** - Remove old or unused links to free up space
+2. **Use custom slugs** - Make links memorable and reusable
+3. **Set expiration dates** - Auto-delete temporary links
+4. **Upgrade to Premium** - For unlimited access and advanced features
 
 <br/>
 
