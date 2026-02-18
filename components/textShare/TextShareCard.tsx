@@ -162,7 +162,7 @@ export default function TextShareCard({
                     </DialogHeader>
                     <div className="flex justify-center py-4">
                         <img
-                            src={`/api/v1/text/${shortKey}/qr`}
+                            src={`/api/v1/texts/${shortKey}/qr`}
                             alt="QR Code"
                             className="w-48 h-48"
                             onError={(e) => {

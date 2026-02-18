@@ -716,7 +716,10 @@
       "showAdvanced": "عرض الخيارات المتقدمة",
       "hideAdvanced": "إخفاء الخيارات المتقدمة",
       "contentRequired": "يرجى إدخال بعض المحتوى",
-      "cancel": "إلغاء"
+      "cancel": "إلغاء",
+      "slugAvailable": "هذا الرابط مخصص متاح",
+      "slugTaken": "هذا الرابط المخصص مستخدم بالفعل",
+      "slugChecking": "جاري التحقق من التوفر..."
     },
     "view": {
       "copyButton": "نسخ المحتوى",

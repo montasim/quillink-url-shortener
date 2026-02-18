@@ -98,6 +98,31 @@ export async function getTextShareById(id: string) {
 }
 
 /**
+ * Check if a text share with same content already exists for user/guest
+ */
+export async function getExistingTextShare({
+    content,
+    title,
+    guestId,
+    userId,
+}: {
+    content: string;
+    title?: string;
+    guestId?: string;
+    userId?: string;
+}) {
+    return prisma.textShare.findFirst({
+        where: {
+            content,
+            title: title || undefined,
+            ...(guestId ? { guestId } : {}),
+            ...(userId ? { userId } : {}),
+        },
+        select: textShareSelection,
+    });
+}
+
+/**
  * Update a text share
  */
 export async function updateTextShare(

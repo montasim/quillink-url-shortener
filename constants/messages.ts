@@ -127,6 +127,8 @@ const MESSAGES = Object.freeze({
     TEXT_SHARE: {
         VALIDATION_ERROR: 'Invalid data provided. Please check your input.',
         CREATION_SUCCESS: 'Text share created successfully.',
+        CREATION_ERROR: 'Couldn\'t create share. Please try again.',
+        ALREADY_EXISTS: 'This text share already exists.',
         FETCH_SUCCESS: 'Text share fetched successfully.',
         UPDATE_SUCCESS: 'Text share updated successfully.',
         DELETION_SUCCESS: 'Text share deleted successfully.',
@@ -140,6 +142,7 @@ const MESSAGES = Object.freeze({
         LIST_SUCCESS: 'Text shares fetched successfully.',
         STATS_SUCCESS: 'Stats fetched successfully.',
         SLUG_TAKEN: 'This custom link is already taken.',
+        SLUG_AVAILABLE: 'This custom link is available.',
         LIMIT_REACHED: 'Creation limit reached.',
     },
 } as const);

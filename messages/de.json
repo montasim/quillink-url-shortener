@@ -716,7 +716,10 @@
       "showAdvanced": "Erweiterte Optionen anzeigen",
       "hideAdvanced": "Erweiterte Optionen ausblenden",
       "contentRequired": "Bitte gib einen Inhalt ein",
-      "cancel": "Abbrechen"
+      "cancel": "Abbrechen",
+      "slugAvailable": "Dieser benutzerdefinierte Link ist verfügbar",
+      "slugTaken": "Dieser benutzerdefinierte Link ist bereits vergeben",
+      "slugChecking": "Verfügbarkeit wird überprüft..."
     },
     "view": {
       "copyButton": "Inhalt kopieren",

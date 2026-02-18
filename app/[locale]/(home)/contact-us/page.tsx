@@ -5,6 +5,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, MessageSquare } from 'lucide-react'
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import React from 'react';
+import CTASection from '../components/CTASection';
 
 const ContactPage = () => {
     const t = useTranslations('contact');
@@ -90,38 +91,16 @@ const ContactPage = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-32 relative overflow-hidden p-12 md:p-20 rounded-[48px] bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] text-foreground border border-border shadow-2xl shadow-primary/5 max-w-5xl mx-auto group">
-                    {/* Background decoration */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-all duration-700"></div>
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
-
-                    <div className="relative z-10 text-center">
-                        <div className="w-20 h-20 bg-primary/10 backdrop-blur-xl rounded-[28px] flex items-center justify-center mx-auto mb-10 border border-primary/20 shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                            <MessageSquare className="w-10 h-10 text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight">
-                            {t('chat.title')}<span className="text-primary italic">{t('chat.titleEmphasis')}</span>
-                        </h2>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-                            {t('chat.description')}
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                            <Link
-                                href="/#faq"
-                                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-primary text-primary-foreground hover:bg-primary/95 h-16 px-12 shadow-2xl active:scale-95"
-                            >
-                                {t('chat.viewFaqs')}
-                            </Link>
-                            <Link
-                                href="mailto:montasimmamun@gmail.com"
-                                className="inline-flex items-center justify-center rounded-2xl text-xl font-black transition-all bg-background border-2 border-border text-foreground hover:bg-muted h-16 px-12 shadow-xl active:scale-95"
-                            >
-                                {t('chat.emailSupport')}
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                <CTASection
+                    className="mt-32 mb-0"
+                    icon={MessageSquare}
+                    iconRotation
+                    title={t('chat.title')}
+                    titleEmphasis={t('chat.titleEmphasis')}
+                    description={t('chat.description')}
+                    primaryButton={{ text: t('chat.viewFaqs'), href: '/#faq' }}
+                    secondaryButton={{ text: t('chat.emailSupport'), href: 'mailto:montasimmamun@gmail.com' }}
+                />
             </div>
         </div>
     );

@@ -21,6 +21,7 @@ import {
     getShortUrlList,
 } from '@/services/url.service';
 import { getUserDetails } from '@/services/user.service';
+import { generateShortKey } from '@/lib/generateShortKey';
 
 const { AUTHENTICATION, ALL_URLS_LISTING, URL_CREATION } = MESSAGES;
 const { URL_CREATION_LIMIT } = CONSTANTS;
@@ -108,9 +109,7 @@ const handleCreateShortUrl = async (request: NextRequest) => {
     }
 
     // Create short URL
-    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    const nanoid = customAlphabet(alphabet, 7);
-    const shortKey = nanoid();
+    const shortKey = generateShortKey();
     const expiresAt = addMonths(new Date(), 6);
 
     const createdShortUrl = await createShortUrl(

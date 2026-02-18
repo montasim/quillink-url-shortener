@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -17,13 +17,14 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Plus } from 'lucide-react';
+import { Plus, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import API_ENDPOINT from '@/constants/apiEndPoint';
-import { createData } from '@/lib/axios';
+import { createData, getData } from '@/lib/axios';
 import TextEditor from '@/components/textShare/TextEditor';
 import FormatSelector from '@/components/textShare/FormatSelector';
+import { cn } from '@/lib/utils';
 
 // Form schema (before transformation)
 const TextShareFormSchema = z.object({
@@ -49,6 +50,7 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showAdvanced, setShowAdvanced] = useState(false);
+    const [slugAvailability, setSlugAvailability] = useState<'idle' | 'checking' | 'available' | 'taken'>('idle');
     const router = useRouter();
 
     const form = useForm({
@@ -66,7 +68,42 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
         },
     });
 
+    const customSlug = form.watch('customSlug');
+
+    // Check slug availability with debouncing - wait for user to finish typing
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (customSlug && customSlug.trim().length > 0) {
+                checkSlugAvailability(customSlug.trim());
+            } else {
+                setSlugAvailability('idle');
+            }
+        }, 1000); // 1 second debounce - gives user time to finish typing
+
+        return () => clearTimeout(timer);
+    }, [customSlug]);
+
+    const checkSlugAvailability = async (slug: string) => {
+        setSlugAvailability('checking');
+        try {
+            const response = await getData(`${API_ENDPOINT.TEXT_SHARE_CHECK_SLUG}?slug=${encodeURIComponent(slug)}`);
+            if (response.success && response.data.available) {
+                setSlugAvailability('available');
+            } else {
+                setSlugAvailability('taken');
+            }
+        } catch (error) {
+            setSlugAvailability('taken');
+        }
+    };
+
     const onSubmit = async (data: any) => {
+        // Prevent submission if custom slug is taken
+        if (data.customSlug && slugAvailability === 'taken') {
+            toast.error('This custom link is already taken. Please choose another or remove it.');
+            return;
+        }
+
         setLoading(true);
         try {
             const submitData = {
@@ -247,13 +284,37 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
-                                                <Input
-                                                    {...field}
-                                                    placeholder={createT('customSlugPlaceholder')}
-                                                    disabled={loading}
-                                                />
+                                                <div className="relative">
+                                                    <Input
+                                                        {...field}
+                                                        placeholder={createT('customSlugPlaceholder')}
+                                                        disabled={loading || slugAvailability === 'checking'}
+                                                        className={cn(
+                                                            'pr-10 h-11',
+                                                            slugAvailability === 'available' && 'border-green-500 focus:border-green-600 focus:ring-green-500',
+                                                            slugAvailability === 'taken' && 'border-red-500 focus:border-red-600 focus:ring-red-500'
+                                                        )}
+                                                    />
+                                                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                                        {slugAvailability === 'checking' && (
+                                                            <Loader2 className="w-4 h-4 text-muted-foreground animate-spin" />
+                                                        )}
+                                                        {slugAvailability === 'available' && (
+                                                            <CheckCircle2 className="w-4 h-4 text-green-500" />
+                                                        )}
+                                                        {slugAvailability === 'taken' && (
+                                                            <XCircle className="w-4 h-4 text-red-500" />
+                                                        )}
+                                                    </div>
+                                                </div>
                                             </FormControl>
                                             <FormMessage />
+                                            {slugAvailability === 'available' && (
+                                                <p className="text-xs text-green-600 mt-1">✓ This custom link is available</p>
+                                            )}
+                                            {slugAvailability === 'taken' && (
+                                                <p className="text-xs text-red-600 mt-1">✗ This custom link is already taken</p>
+                                            )}
                                         </FormItem>
                                     )}
                                 />

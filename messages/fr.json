@@ -716,7 +716,10 @@
       "showAdvanced": "Options avancées",
       "hideAdvanced": "Masquer les options avancées",
       "contentRequired": "Merci de saisir du contenu",
-      "cancel": "Annuler"
+      "cancel": "Annuler",
+      "slugAvailable": "Ce lien personnalisé est disponible",
+      "slugTaken": "Ce lien personnalisé est déjà pris",
+      "slugChecking": "Vérification de la disponibilité..."
     },
     "view": {
       "copyButton": "Copier le contenu",

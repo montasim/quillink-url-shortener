@@ -716,7 +716,10 @@
       "showAdvanced": "مزید آپشنز دکھائیں",
       "hideAdvanced": "آپشنز چھپائیں",
       "contentRequired": "براہ کرم کچھ مواد درج کریں",
-      "cancel": "منسوخ کریں"
+      "cancel": "منسوخ کریں",
+      "slugAvailable": "یہ کسٹم لنک دستیاب ہے",
+      "slugTaken": "یہ کسٹم لنک پہلے سے لیا گیا ہے",
+      "slugChecking": "دستیابی کی جانچ کی جا رہی ہے..."
     },
     "view": {
       "copyButton": "کاپی کریں",

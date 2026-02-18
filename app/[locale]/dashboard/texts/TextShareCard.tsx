@@ -64,7 +64,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
     const handleDelete = async () => {
         setIsDeleting(true);
         try {
-            const response = await fetch(`/api/v1/text/${share.shortKey}`, {
+            const response = await fetch(`/api/v1/texts/${share.shortKey}`, {
                 method: 'DELETE',
             });
             const result = await response.json();

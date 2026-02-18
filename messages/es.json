@@ -716,7 +716,10 @@
       "showAdvanced": "Ver opciones avanzadas",
       "hideAdvanced": "Ocultar opciones avanzadas",
       "contentRequired": "Por favor escribe algo de contenido",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "slugAvailable": "Este enlace personalizado está disponible",
+      "slugTaken": "Este enlace personalizado ya está en uso",
+      "slugChecking": "Verificando disponibilidad..."
     },
     "view": {
       "copyButton": "Copiar contenido",

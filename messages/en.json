@@ -716,7 +716,10 @@
       "showAdvanced": "Show advanced options",
       "hideAdvanced": "Hide advanced options",
       "contentRequired": "Please enter some content",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "slugAvailable": "This custom link is available",
+      "slugTaken": "This custom link is already taken",
+      "slugChecking": "Checking availability..."
     },
     "view": {
       "copyButton": "Copy Content",

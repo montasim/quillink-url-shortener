@@ -67,7 +67,7 @@ export default function ViewTextSharePage() {
         setPasswordError(null);
 
         try {
-            const response = await fetch(`/api/v1/text/${shortKey}/verify-password`, {
+            const response = await fetch(`/api/v1/texts/${shortKey}/verify-password`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ password }),

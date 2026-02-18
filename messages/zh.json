@@ -716,7 +716,10 @@
       "showAdvanced": "展示高級選項",
       "hideAdvanced": "隱藏高級選項",
       "contentRequired": "分享內容不能為空",
-      "cancel": "取消"
+      "cancel": "取消",
+      "slugAvailable": "此自定義鏈接可用",
+      "slugTaken": "此自定義鏈接已被使用",
+      "slugChecking": "正在檢查可用性..."
     },
     "view": {
       "copyButton": "複製內容",

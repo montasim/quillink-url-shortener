@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import httpStatusLite from 'http-status-lite';
-import { customAlphabet } from 'nanoid';
+import { addMonths } from 'date-fns';
 import asyncError from '@/lib/asyncError';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
@@ -10,6 +10,7 @@ import {
     getTextShare,
     getTextShareList,
     isCustomSlugAvailable,
+    getExistingTextShare,
 } from '@/services/text-share.service';
 import { getOrCreateGuestId } from '@/lib/guest';
 import COOKIES from '@/constants/cookies';
@@ -21,6 +22,7 @@ import { getAccessCookie, getCookies } from '@/lib/cookies';
 import { getUserDetails } from '@/services/user.service';
 import CONSTANTS from './constants';
 import { hashPassword } from '@/lib/hashPassword';
+import { generateShortKey } from '@/lib/generateShortKey';
 
 const { AUTHENTICATION, TEXT_SHARE } = MESSAGES;
 const { TEXT_SHARE_CREATION_LIMIT } = CONSTANTS;
@@ -34,6 +36,7 @@ const handleCreateTextShare = async (request: NextRequest) => {
     // Parse request body
     const requestBody = await request.json();
     const schemaValidationResult = TextShareSchema.safeParse(requestBody);
+
     if (!schemaValidationResult.success) {
         return sendResponse(
             httpStatus.BAD_REQUEST,
@@ -42,9 +45,10 @@ const handleCreateTextShare = async (request: NextRequest) => {
             schemaValidationResult.error.flatten()
         );
     }
+
     const data = schemaValidationResult.data;
 
-    // Identify user or guest with limits
+    // Identify user or guest
     if (accessCookie) {
         try {
             const decoded = verifyToken(accessCookie, COOKIES.TYPE.ACCESS);
@@ -72,33 +76,37 @@ const handleCreateTextShare = async (request: NextRequest) => {
             );
         }
 
-        // Check user's text share limit
         const userTextShares = await getTextShareList({ userId });
+
         if (
             !user.subscription &&
-            userTextShares.length >= TEXT_SHARE_CREATION_LIMIT.USER_WITHOUT_SUBSCRIPTION
+            userTextShares.length >=
+                TEXT_SHARE_CREATION_LIMIT.USER_WITHOUT_SUBSCRIPTION
         ) {
             return sendResponse(
                 httpStatus.FORBIDDEN,
-                TEXT_SHARE?.LIMIT_REACHED || 'Limit reached. Subscribe to create more.'
+                TEXT_SHARE?.LIMIT_REACHED ||
+                    'Limit reached. Subscribe to create more.'
             );
         }
     } else {
         guestId = await getOrCreateGuestId();
 
-        // Check guest's text share limit
         const guestTextShares = await getTextShareList({ guestId });
+
         if (guestTextShares.length >= TEXT_SHARE_CREATION_LIMIT.GUEST) {
             return sendResponse(
                 httpStatus.FORBIDDEN,
-                TEXT_SHARE?.LIMIT_REACHED || 'Limit reached. Sign in to create more.'
+                TEXT_SHARE?.LIMIT_REACHED ||
+                    'Limit reached. Sign in to create more.'
             );
         }
     }
 
-    // Check if custom slug is available
-    if (data.customSlug) {
+    // Check custom slug availability
+    if (data?.customSlug) {
         const isAvailable = await isCustomSlugAvailable(data.customSlug);
+
         if (!isAvailable) {
             return sendResponse(
                 httpStatus.CONFLICT,
@@ -108,10 +116,21 @@ const handleCreateTextShare = async (request: NextRequest) => {
         }
     }
 
-    // Generate short key
-    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    const nanoid = customAlphabet(alphabet, 7);
-    const shortKey = data.customSlug || nanoid();
+    // Check duplicate content for same user/guest
+    const existingTextShare = await getExistingTextShare({
+        content: data.content,
+        title: data.title,
+        ...(guestId ? { guestId } : {}),
+        ...(userId ? { userId } : {}),
+    });
+
+    if (existingTextShare) {
+        return sendResponse(
+            httpStatus.OK,
+            TEXT_SHARE?.ALREADY_EXISTS || 'This text share already exists',
+            existingTextShare
+        );
+    }
 
     // Hash password if provided
     let passwordHash: string | undefined;
@@ -119,27 +138,84 @@ const handleCreateTextShare = async (request: NextRequest) => {
         passwordHash = await hashPassword(data.password);
     }
 
-    // Create text share
-    const createdTextShare = await createTextShare({
-        shortKey,
-        title: data.title,
-        content: data.content,
-        format: data.format,
-        syntaxLanguage: data.syntaxLanguage,
-        passwordHash,
-        expiresAt: data.expiresAt,
-        viewLimit: data.viewLimit,
-        isPublic: data.isPublic,
-        ...(guestId ? { guestId } : {}),
-        ...(userId ? { userId } : {}),
-    });
+    // Default expiration = 6 months
+    const expiresAt = data.expiresAt || addMonths(new Date(), 6);
 
-    // Return without sensitive data
-    const { passwordHash: _, ...safeData } = createdTextShare;
+    // Generate shortKey with retry logic
+    const maxRetries = data.customSlug ? 1 : 10;
+    let retries = 0;
+    let shortKey = data.customSlug || generateShortKey();
+
+    while (retries < maxRetries) {
+        try {
+            const createdTextShare = await createTextShare({
+                shortKey,
+                customSlug: data.customSlug || undefined,
+                title: data.title,
+                content: data.content,
+                format: data.format,
+                syntaxLanguage: data.syntaxLanguage,
+                passwordHash,
+                expiresAt,
+                viewLimit: data.viewLimit,
+                isPublic: data.isPublic,
+                ...(guestId ? { guestId } : {}),
+                ...(userId ? { userId } : {}),
+            });
+
+            const { passwordHash: _, ...safeData } = createdTextShare;
+
+            return sendResponse(
+                httpStatus.CREATED,
+                TEXT_SHARE?.CREATION_SUCCESS ||
+                    'Text share created successfully',
+                safeData
+            );
+        } catch (error: any) {
+            const isShortKeyCollision =
+                error.code === 'P2002' &&
+                error.meta?.target?.includes('shortKey');
+
+            if (isShortKeyCollision) {
+                if (data.customSlug) {
+                    return sendResponse(
+                        httpStatus.CONFLICT,
+                        TEXT_SHARE?.SLUG_TAKEN ||
+                            'This custom link is already taken',
+                        {}
+                    );
+                }
+
+                retries++;
+                console.log(
+                    `ShortKey collision (${retries}/${maxRetries}), regenerating...`
+                );
+
+                shortKey = generateShortKey();
+                continue;
+            }
+
+            // real error (content duplicate, title duplicate, etc.)
+            console.error('Text share creation error:', {
+                code: error?.code,
+                message: error?.message,
+                meta: error?.meta,
+                stack: error?.stack,
+            });
+
+            throw error;
+        }
+    }
+
+    console.error(
+        `Failed to generate unique shortKey after ${maxRetries} attempts`
+    );
+
     return sendResponse(
-        httpStatus.CREATED,
-        TEXT_SHARE?.CREATION_SUCCESS || 'Text share created successfully',
-        safeData
+        httpStatus.CONFLICT,
+        TEXT_SHARE?.CREATION_ERROR ||
+            "Couldn't create share. Please try again.",
+        {}
     );
 };
 
