@@ -65,13 +65,13 @@ const ContactPage = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-5 py-2 border border-primary/20 font-semibold text-sm mb-8 backdrop-blur-sm">
                         {t('badge')}
                     </Badge>
-                    <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
-                        {t('subtitle')}
+                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-8">
+                        {t('title')}<span className="text-primary">{t('titleEmphasis')}</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    <p className="text-lg md:text-xl text-muted-foreground/80 font-medium leading-relaxed">
                         {t('description')}
                     </p>
                 </div>

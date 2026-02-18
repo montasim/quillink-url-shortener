@@ -770,7 +770,8 @@
         "description": "Consulta nuestras FAQ primero o envíanos un email — nuestro equipo suele responder muy rápido.",
         "viewFaqs": "Ver FAQ",
         "emailSupport": "Soporte por email"
-      }
+      },
+      "titleEmphasis": "Estamos aquí para ayudarte"
     },
     "notFound": {
       "badge": "Error 404",

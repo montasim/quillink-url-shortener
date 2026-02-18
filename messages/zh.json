@@ -770,7 +770,8 @@
         "description": "先查看我们的常见问题解答或给我们发送电子邮件 — 我们的团队通常回复很快。",
         "viewFaqs": "查看常见问题",
         "emailSupport": "邮件支持"
-      }
+      },
+      "titleEmphasis": "我们随时为您提供帮助"
     },
     "notFound": {
       "badge": "404 错误",
