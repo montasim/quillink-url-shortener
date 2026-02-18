@@ -1,824 +1,1093 @@
 {
-  "navigation": {
-    "home": "Home",
-    "dashboard": "Dashboard",
-    "login": "Anmelden",
-    "signup": "Registrieren",
-    "logout": "Abmelden",
-    "contactUs": "Kontakt",
-    "terms": "AGB",
-    "privacy": "Datenschutz",
-    "textShares": "Text-Freigaben",
-    "urlShortner": "URL-Kürzer"
+  "common": {
+    "validationRequired": "Dieses Feld ist erforderlich.",
+    "validationError": "Bitte überprüfe deine Eingabe.",
+    "internalServerError": "Auf unserer Seite ist etwas schiefgelaufen. Bitte versuch es erneut.",
+    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Versuch es später noch einmal.",
+    "comingSoon": "Bald verfügbar…",
+    "verify": "Verifizieren",
+    "somethingWentWrong": "Etwas ist schiefgelaufen",
+    "networkError": "Server nicht erreichbar. Überprüfe deine Internetverbindung.",
+    "axiosError": "Verbindungsfehler: {message}",
+    "veryWeak": "Sehr schwach",
+    "weak": "Schwach",
+    "fair": "Okay",
+    "good": "Gut",
+    "strong": "Stark",
+    "hidePassword": "Passwort verbergen",
+    "showPassword": "Passwort anzeigen",
+    "offeredIn": "Verfügbar in",
+    "redirecting": "Weiterleitung…",
+    "redirectingMessage": "Wir bringen dich zu {shortKey}",
+    "redirectingDescription": "Einen Moment bitte…",
+    "pageNotFound": "Seite nicht gefunden",
+    "pageNotFoundDescription": "Die gesuchte Seite existiert nicht (oder hat nie existiert).",
+    "errorOccurredDescription": "Etwas ist schiefgelaufen. Versuch es erneut oder geh zurück zur Startseite.",
+    "goToHomepage": "Zur Startseite",
+    "tryAgain": "Erneut versuchen"
+  },
+  "layout": {
+    "navigation": {
+      "home": "Startseite",
+      "dashboard": "Dashboard",
+      "login": "Anmelden",
+      "signup": "Registrieren",
+      "logout": "Abmelden",
+      "contactUs": "Kontakt",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutz",
+      "textShares": "Text-Freigaben",
+      "urlShortner": "URL-Kürzer"
+    },
+    "footer": {
+      "allRightsReserved": "Alle Rechte vorbehalten.",
+      "privacyPolicy": "Datenschutz",
+      "termsOfService": "Nutzungsbedingungen"
+    }
   },
   "home": {
-    "textShareHero": {
-      "badge": "✨ Texte sofort teilen",
-      "headingPrefix": "Teile alles ",
-      "headingSuffix": "",
-      "headingEmphasis": "in Sekunden",
-      "subheading": "Erstelle saubere, ansprechende Links für deine Texte, Code-Snippets, Notizen oder Markdown-Dateien. Kein Account nötig.",
-      "stats": {
-        "linksCreated": {
-          "value": "1M+",
-          "label": "Geteilte Texte"
-        },
-        "activeUsers": {
-          "value": "100K+",
-          "label": "Glückliche Nutzer"
-        },
-        "uptime": {
-          "value": "99,9%",
-          "label": "Verfügbarkeit"
-        },
-        "support": {
-          "value": "24/7",
-          "label": "Support"
+    "urls": {
+      "hero": {
+        "badge": "✨ Intelligenter URL-Kürzer",
+        "headingPrefix": "Mach jeden ",
+        "headingSuffix": " leistungsstark",
+        "headingEmphasis": "Link",
+        "subheading": "Verwandle lange URLs in Sekunden in kurze, schöne und trackbare Links. Perfekt für Social Media, E-Mails, Messaging und mehr.",
+        "inputPlaceholder": "Füge hier deine lange URL ein…",
+        "shortenButton": "Jetzt kürzen",
+        "creating": "Wird gekürzt…",
+        "agreementPrefix": "Mit dem Kürzen akzeptierst du unsere ",
+        "terms": "Nutzungsbedingungen",
+        "agreementSuffix": " und ",
+        "privacy": "Datenschutzbestimmungen",
+        "stats": {
+          "linksCreated": {
+            "value": "10M+",
+            "label": "Gekürzte Links"
+          },
+          "activeUsers": {
+            "value": "500K+",
+            "label": "Aktive Nutzer"
+          },
+          "uptime": {
+            "value": "99,9%",
+            "label": "Verfügbarkeit"
+          },
+          "support": {
+            "value": "24/7",
+            "label": "Support"
+          }
         }
-      }
-    },
-    "hero": {
-      "badge": "✨ Smarter URL-Shortener",
-      "headingPrefix": "Mach jeden ",
-      "headingSuffix": " leistungsstark",
-      "headingEmphasis": "Link",
-      "subheading": "Verwandle lange URLs in Sekunden in kurze, schöne und trackbare Links. Perfekt für Social Media, E-Mails und Nachrichten.",
-      "inputPlaceholder": "Langen Link hier einfügen...",
-      "shortenButton": "Kürzen",
-      "creating": "Wird gekürzt...",
-      "agreementPrefix": "Durch das Kürzen akzeptierst du unsere ",
-      "terms": "Nutzungsbedingungen",
-      "agreementSuffix": " und ",
-      "privacy": "Datenschutzbestimmungen",
-      "stats": {
-        "linksCreated": {
-          "value": "10M+",
-          "label": "Gekürzte Links"
-        },
-        "activeUsers": {
-          "value": "500K+",
-          "label": "Aktive Nutzer"
-        },
-        "uptime": {
-          "value": "99,9%",
-          "label": "Verfügbarkeit"
-        },
-        "support": {
-          "value": "24/7",
-          "label": "Support"
+      },
+      "features": {
+        "badge": "Funktionen",
+        "headingPrefix": "Alles, was du für ",
+        "headingSuffix": "",
+        "headingEmphasis": "bessere Links",
+        "subheading": "Leistungsstarke Tools zum Erstellen, Anpassen, Schützen und Analysieren deiner Kurzlinks – alles an einem Ort.",
+        "featureList": {
+          "shortening": {
+            "title": "Sofortiges Kürzen",
+            "description": "Verwandle lange, unübersichtliche URLs mit nur einem Klick in kurze, saubere, einprägsame Links."
+          },
+          "analytics": {
+            "title": "Intelligente Analysen",
+            "description": "Sieh genau, wer klickt – Standorte, Geräte, Referrer, Zeittrends und vieles mehr."
+          },
+          "qr": {
+            "title": "QR-Codes inklusive",
+            "description": "Jeder Kurzlink bekommt seinen eigenen QR-Code – perfekt für Poster, Visitenkarten, Flyer."
+          },
+          "fast": {
+            "title": "Blitzschnelle Weiterleitungen",
+            "description": "Unser globales CDN sorgt für nahezu sofortige Weiterleitungen von überall auf der Welt."
+          },
+          "secure": {
+            "title": "Sicher & zuverlässig",
+            "description": "Überall HTTPS, 99,9% Verfügbarkeit und Schutz vor bösartigen URLs."
+          },
+          "domains": {
+            "title": "Eigene Domains",
+            "description": "Nutze deine eigene Domain (deinbrand.link) für mehr Vertrauen und stärkere Markenpräsenz."
+          }
         }
-      }
-    },
-    "features": {
-      "badge": "Features",
-      "headingPrefix": "Alles, was du für ",
-      "headingSuffix": " brauchst",
-      "headingEmphasis": "bessere Links",
-      "subheading": "Leistungsstarke Tools zum Erstellen, Personalisieren, Schützen und Analysieren deiner Kurzlinks an einem Ort.",
-      "featureList": {
-        "shortening": {
-          "title": "Sofortiges Kürzen",
-          "description": "Verwandle lange, komplexe URLs mit nur einem Klick in kurze, einprägsame Links."
-        },
-        "analytics": {
-          "title": "Smarte Statistiken",
-          "description": "Erfahre genau, wer klickt: Standorte, Geräte, Quellen, Trends und mehr."
-        },
-        "qr": {
-          "title": "Inklusive QR-Codes",
-          "description": "Jeder Kurzlink kommt mit eigenem QR-Code – ideal für Flyer, Visitenkarten oder Präsentationen."
-        },
-        "fast": {
-          "title": "Blitzschnelle Weiterleitung",
-          "description": "Unser globales Netzwerk garantiert, dass deine Links von überall auf der Welt sofort laden."
-        },
-        "secure": {
-          "title": "Sicher & zuverlässig",
-          "description": "HTTPS-Verschlüsselung, hohe Verfügbarkeit und Schutz vor schädlichen URLs."
-        },
-        "domains": {
-          "title": "Eigene Domains",
-          "description": "Nutze deine eigene Marke (dein.link), um Vertrauen zu schaffen und dein Branding zu stärken."
-        }
-      }
-    },
-    "textShareFeatures": {
-      "badge": "Features",
-      "headingPrefix": "Alles für den ",
-      "headingEmphasis": "Text-Austausch",
-      "headingSuffix": "",
-      "subheading": "Entwickelt für Devs, Autoren und Teams – schnell, sicher und mit voller Kontrolle.",
-      "featureList": {
-        "instant": {
-          "title": "Sofort einsatzbereit",
-          "description": "Einfügen → Erstellen → Teilen. Direkt loslegen, ganz ohne Anmeldung."
-        },
-        "password": {
-          "title": "Passwortschutz",
-          "description": "Schütze sensible Notizen oder Code – nur Personen mit Passwort können den Inhalt sehen."
-        },
-        "expire": {
-          "title": "Automatischer Verfall",
-          "description": "Lege ein Ablaufdatum fest, damit deine Inhalte nach einer bestimmten Zeit automatisch gelöscht werden."
-        },
-        "analytics": {
-          "title": "Aufrufe tracken",
-          "description": "Sieh dir an, wie oft deine Notiz geöffnet wurde, von wo und mit welchem Gerät."
-        },
-        "fast": {
-          "title": "Extrem schnell",
-          "description": "Unsere optimierte Infrastruktur sorgt dafür, dass deine Inhalte weltweit sofort geladen werden."
-        },
-        "secure": {
-          "title": "Verschlüsselt & Privat",
-          "description": "End-to-End verschlüsselt. Du kannst deine Inhalte jederzeit dauerhaft löschen."
-        }
-      }
-    },
-    "testimonials": {
-      "badge": "Testimonials",
-      "heading": "Tausende Nutzer vertrauen uns",
-      "subheading": "Das sagen Leute, die Shrnkly jeden Tag benutzen.",
-      "testimonialList": {
-        "sarah": {
-          "name": "Sarah Johnson",
-          "role": "Marketing Director",
-          "company": "TechCorp Inc.",
-          "quote": "Shrnkly hat unser Link-Management für Kampagnen komplett verändert. Die Analysen sind top und das Dashboard ist super intuitiv."
-        },
-        "michael": {
-          "name": "Michael Chen",
-          "role": "Social Media Manager",
-          "company": "Creative Studio",
-          "quote": "Der beste Shortener, den ich je genutzt habe. Eigene Domains, QR-Codes und detaillierte Stats in einem Tool. Einfach essenziell."
-        },
-        "emily": {
-          "name": "Emily Rodriguez",
-          "role": "Content Creator",
-          "company": "Freelance",
-          "quote": "Ich muss wissen, was Klicks generiert. Das Shrnkly-Dashboard macht es mir leicht. Ich liebe es!"
-        },
-        "david": {
-          "name": "David Kim",
-          "role": "E-Commerce Owner",
-          "company": "ShopNow",
-          "quote": "Wir kürzen alle Produktlinks mit Shrnkly. Eigene Domains sorgen für viel mehr Vertrauen bei den Kunden."
-        },
-        "lisa": {
-          "name": "Lisa Anderson",
-          "role": "Digital Marketer",
-          "company": "Growth Agency",
-          "quote": "Echtzeit-Statistiken helfen uns, Kampagnen sofort zu optimieren. Ein echter Game-Changer für uns."
-        },
-        "james": {
-          "name": "James Wilson",
-          "role": "Startup Founder",
-          "company": "InnovateLab",
-          "quote": "Ein Must-have Tool für jedes Startup. Mächtig, erschwinglich und der Support antwortet wirklich schnell."
-        }
-      }
-    },
-    "textShareTestimonials": {
-      "badge": "Testimonials",
-      "heading": "Beliebt bei Devs & Teams",
-      "subheading": "Echtes Feedback von Leuten, die täglich Code und Notizen teilen.",
-      "testimonialList": {
-        "alex": {
-          "name": "Alex Thompson",
-          "role": "Senior Developer",
-          "company": "TechStart",
-          "quote": "Syntaxhervorhebung, Passwortschutz und Verfallsdatum. Perfekt, um Code-Snippets mit Kunden zu teilen."
-        },
-        "priya": {
-          "name": "Priya Patel",
-          "role": "DevOps Engineer",
-          "company": "CloudScale",
-          "quote": "Endlich ein Tool, das Entwickler versteht. Automatisches Löschen, Tracking der Aufrufe und extrem schnell."
-        },
-        "marcus": {
-          "name": "Marcus Johnson",
-          "role": "Full Stack Developer",
-          "company": "Freelance",
-          "quote": "Das Limit für Aufrufe und Ablaufdaten geben mir Sicherheit beim Teilen von privatem Code. Die UI ist klasse."
-        },
-        "sophie": {
-          "name": "Sophie Chen",
-          "role": "Tech Lead",
-          "company": "InnovateCo",
-          "quote": "Wir nutzen es für Logs, Fehlermeldungen und Configs. Die Statistiken helfen uns, die interne Nutzung zu verstehen."
-        },
-        "daniel": {
-          "name": "Daniel Brown",
-          "role": "Backend Developer",
-          "company": "DataFlow",
-          "quote": "Die Syntaxhervorhebung für Python, Go und SQL ist fantastisch. Nie wieder hässliche Code-Screenshots!"
-        },
-        "rachel": {
-          "name": "Rachel Kim",
-          "role": "Frontend Developer",
-          "company": "DesignHub",
-          "quote": "Markdown-Support ist exzellent. Ich teile damit Meeting-Notes und Dokumentationen super einfach."
-        }
-      }
-    },
-    "cta": {
-      "badge": "Kostenlos starten",
-      "headingPrefix": "Bereit für ",
-      "headingSuffix": " Links?",
-      "headingEmphasis": "bessere",
-      "subheading": "Werde Teil der Community aus Marketer, Creatorn und Devs, die Shrnkly jeden Tag vertrauen.",
-      "startButton": "Kostenlos starten",
-      "contactButton": "Sales kontaktieren",
-      "getInTouch": "Kontakt aufnehmen",
-      "emailSupport": "E-Mail Support"
-    },
-    "textShareCta": {
-      "badge": "Kostenlos starten",
-      "headingPrefix": "Bereit, deine Texte zu ",
-      "headingSuffix": "?",
-      "headingEmphasis": "teilen",
-      "subheading": "Tausende Entwickler und Teams nutzen unsere Plattform bereits, um Snippets sicher zu teilen.",
-      "startButton": "Kostenlos starten",
-      "contactButton": "Sales kontaktieren",
-      "getInTouch": "Kontakt aufnehmen",
-      "emailSupport": "E-Mail Support"
-    },
-    "faq": {
-      "badge": "FAQ",
-      "heading": "Häufige Fragen",
-      "subheading": "Schnelle Antworten auf das, was uns am meisten gefragt wird.",
-      "questions": {
-        "whatIs": {
-          "question": "Was ist ein URL-Shortener?",
-          "answer": "Ein Tool, das lange Web-Adressen in kurze, leicht zu teilende Links verwandelt, die zur gleichen Seite führen."
-        },
-        "howWork": {
-          "question": "Wie funktioniert Shrnkly?",
-          "answer": "Füge einfach deinen langen Link ein, klicke auf 'Kürzen' und erhalte einen Kurzlink, den du personalisieren, tracken und schützen kannst."
-        },
-        "isFree": {
-          "question": "Ist Shrnkly kostenlos?",
-          "answer": "Ja, Basis-Funktionen wie Kürzen, QR-Codes und einfache Statistiken sind dauerhaft kostenlos. Pro-Pläne bieten eigene Domains und erweiterte Analysen."
-        },
-        "canTrack": {
-          "question": "Kann ich sehen, wer klickt?",
-          "answer": "Auf jeden Fall! Du erhältst Details zu Klicks, Ländern, Geräten, Browsern und den Quellen deines Traffics."
-        },
-        "customDomain": {
-          "question": "Kann ich meine eigene Domain nutzen?",
-          "answer": "Ja, mit unseren Paid-Plänen kannst du deine eigene Domain (deine.marke) verwenden, um dein Branding zu stärken."
-        },
-        "howLong": {
-          "question": "Laufen die Kurzlinks ab?",
-          "answer": "Standardmäßig bleiben sie für immer aktiv. Du hast aber die Option, ein Ablaufdatum festzulegen."
-        },
-        "limit": {
-          "question": "Gibt es ein Limit für Gratis-Accounts?",
-          "answer": "Als kostenloser Nutzer kannst du bis zu 100 Links pro Monat erstellen. Unsere Pro-Pläne bieten unbegrenzte Links."
-        },
-        "safe": {
-          "question": "Sind die Links sicher?",
-          "answer": "Wir scannen Links auf Malware, nutzen HTTPS und bieten Passwortschutz an, um deine Zielgruppe zu schützen."
+      },
+      "testimonials": {
+        "badge": "Erfahrungsberichte",
+        "heading": "Von Tausenden Nutzern geliebt",
+        "subheading": "Das sagen Leute, die Shrnkly jeden Tag nutzen.",
+        "testimonialList": {
+          "sarah": {
+            "name": "Sarah Johnson",
+            "role": "Marketing Director",
+            "company": "TechCorp Inc.",
+            "quote": "Shrnkly hat komplett verändert, wie wir Kampagnen-Links verwalten. Die Analysen sind hervorragend und das Dashboard ist super übersichtlich. Absolute Empfehlung!"
+          },
+          "michael": {
+            "name": "Michael Chen",
+            "role": "Social Media Manager",
+            "company": "Creative Studio",
+            "quote": "Der beste Shortener, den ich je benutzt habe – ohne Frage. Eigene Domains + QR-Codes + tolle Analysen in einem Tool. Unverzichtbar für Social Media."
+          },
+          "emily": {
+            "name": "Emily Rodriguez",
+            "role": "Content Creator",
+            "company": "Selbstständig",
+            "quote": "Als Creator muss ich wissen, was wirklich Klicks bringt. Shrnklys Dashboard macht es mir kinderleicht. Ich liebe es!"
+          },
+          "david": {
+            "name": "David Kim",
+            "role": "E-Commerce Inhaber",
+            "company": "ShopNow",
+            "quote": "Wir haben alle Produktlinks mit Shrnkly gekürzt. Eigene Domains schaffen Vertrauen und der Service ist absolut zuverlässig."
+          },
+          "lisa": {
+            "name": "Lisa Anderson",
+            "role": "Digital Marketer",
+            "company": "Growth Agency",
+            "quote": "Die Echtzeit-Analysen ermöglichen es uns, Kampagnen während des Laufs zu optimieren. Ein Game-Changer für unser Team."
+          },
+          "james": {
+            "name": "James Wilson",
+            "role": "Startup Gründer",
+            "company": "InnovateLab",
+            "quote": "Unverzichtbares Tool für jedes Startup. Erschwinglich, leistungsstark und der Support antwortet wirklich schnell."
+          }
         }
       },
       "cta": {
-        "headingPrefix": "Noch ",
+        "badge": "Los geht's – Kostenlos",
+        "headingPrefix": "Bereit, deine Links auf das nächste Level zu ",
         "headingSuffix": "?",
-        "headingEmphasis": "Fragen",
-        "subheading": "Wir sind für dich da. Schreib unserem Team einfach eine Nachricht.",
-        "getInTouch": "Kontakt",
-        "emailSupport": "E-Mail Support",
-        "badge": "Hilfe benötigt?"
+        "headingEmphasis": "bringen",
+        "subheading": "Schließe dich Tausenden von Marketern, Creators, Entwicklern und Unternehmen an, die Shrnkly jeden Tag vertrauen.",
+        "startButton": "Kostenlos starten",
+        "contactButton": "Vertrieb kontaktieren",
+        "getInTouch": "Kontakt aufnehmen",
+        "emailSupport": "E-Mail Support"
+      },
+      "faq": {
+        "badge": "FAQ",
+        "heading": "Häufig gestellte Fragen",
+        "subheading": "Schnelle Antworten auf die Fragen, die uns am häufigsten gestellt werden.",
+        "questions": {
+          "whatIs": {
+            "question": "Was ist ein URL-Kürzer?",
+            "answer": "Ein URL-Kürzer verwandelt lange Webadressen in kurze, einfach zu teilende Links, die trotzdem auf die ursprüngliche Seite zeigen."
+          },
+          "howWork": {
+            "question": "Wie funktioniert Shrnkly?",
+            "answer": "Füge einfach deine lange URL ein, klicke auf \"Kürzen\" und erhalte einen Kurzlink, den du anpassen, tracken, schützen und in einen QR-Code verwandeln kannst."
+          },
+          "isFree": {
+            "question": "Ist Shrnkly kostenlos?",
+            "answer": "Ja – die Kernfunktionen (Kürzen, Basis-Statistiken, QR-Codes) sind dauerhaft kostenlos. Premium-Pläne schalten eigene Domains, erweiterte Analysen und höhere Limits frei."
+          },
+          "canTrack": {
+            "question": "Kann ich sehen, wer auf meine Links klickt?",
+            "answer": "Ja! Du erhältst detaillierte Analysen: Klickanzahl, Länder, Städte, Geräte, Browser, Referrer und Zeittrends."
+          },
+          "customDomain": {
+            "question": "Kann ich meine eigene Domain nutzen?",
+            "answer": "Ja – mit kostenpflichtigen Plänen kannst du deinbrand.link, go.deinedomain.com usw. nutzen, um vollständig gebrandete Kurzlinks zu erstellen."
+          },
+          "howLong": {
+            "question": "Laufen Kurzlinks ab?",
+            "answer": "Standardmäßig nein – sie bleiben für immer aktiv. Du kannst optional Ablaufdaten für jeden Link festlegen."
+          },
+          "limit": {
+            "question": "Gibt es ein Limit für kostenlose Accounts?",
+            "answer": "Kostenlose Nutzer können bis zu 100 Kurzlinks pro Monat erstellen. Bezahlte Pläne bieten unbegrenzte Links."
+          },
+          "safe": {
+            "question": "Sind die Links sicher?",
+            "answer": "Wir scannen URLs auf Malware, nutzen überall HTTPS und bieten Passwortschutz (Premium), um dein Publikum zu schützen."
+          }
+        },
+        "cta": {
+          "headingPrefix": "Immer noch ",
+          "headingSuffix": "?",
+          "headingEmphasis": "Fragen?",
+          "subheading": "Wir sind für dich da – schreib einfach unserem Support-Team.",
+          "getInTouch": "Kontakt aufnehmen",
+          "emailSupport": "E-Mail Support",
+          "badge": "Hilfe benötigt?"
+        }
       }
     },
-    "textShareFaq": {
-      "heading": "FAQ",
-      "subheading": "Häufige Fragen zum Teilen von Texten, Code und Notizen.",
-      "questions": {
-        "whatIs": {
-          "question": "Was ist Text-Sharing?",
-          "answer": "Eine einfache Art, Texte, Code oder Notizen in einen öffentlichen oder privaten Link zu verwandeln, den du leicht verschicken kannst."
+    "texts": {
+      "hero": {
+        "badge": "✨ Sofortige Text-Freigabe",
+        "headingPrefix": "Teile alles ",
+        "headingSuffix": "",
+        "headingEmphasis": "blitzschnell",
+        "subheading": "Erstelle saubere, schöne, teilbare Links für deine Texte, Code-Snippets, Notizen und Markdown – kein Account erforderlich.",
+        "stats": {
+          "linksCreated": {
+            "value": "1M+",
+            "label": "Erstellte Text-Freigaben"
+          },
+          "activeUsers": {
+            "value": "100K+",
+            "label": "Zufriedene Nutzer"
+          },
+          "uptime": {
+            "value": "99,9%",
+            "label": "Verfügbarkeit"
+          },
+          "support": {
+            "value": "24/7",
+            "label": "Support"
+          }
+        }
+      },
+      "features": {
+        "badge": "Funktionen",
+        "headingPrefix": "Alles, was du zum ",
+        "headingEmphasis": "von Texten",
+        "headingSuffix": "",
+        "subheading": "Gemacht für Entwickler, Autoren, Teams – schnell, sicher und mit nützlichen Funktionen.",
+        "featureList": {
+          "instant": {
+            "title": "Sofortiges Teilen",
+            "description": "Einfügen → Erstellen → Teilen. Keine Registrierung für die Basisnutzung erforderlich."
+          },
+          "password": {
+            "title": "Passwortschutz",
+            "description": "Halte sensible Notizen, Konfigurationen oder Code privat – nur Personen mit dem Passwort können sie einsehen."
+          },
+          "expire": {
+            "title": "Automatischer Verfall",
+            "description": "Lege ein Löschdatum fest, damit nichts für immer online bleibt, es sei denn, du möchtest es."
+          },
+          "analytics": {
+            "title": "Analysen anzeigen",
+            "description": "Sieh, wie oft dein Snippet geöffnet wurde, von wo und auf welchen Geräten."
+          },
+          "fast": {
+            "title": "Blitzschnell",
+            "description": "Optimierte Infrastruktur bedeutet, dass dein geteilter Text weltweit sofort lädt."
+          },
+          "secure": {
+            "title": "Verschlüsselt & Privat",
+            "description": "Inhalte werden während der Übertragung und im Ruhezustand verschlüsselt. Du kannst sie jederzeit dauerhaft löschen."
+          }
+        }
+      },
+      "testimonials": {
+        "badge": "Erfahrungsberichte",
+        "heading": "Entwickler & Teams lieben es",
+        "subheading": "Echtes Feedback von Leuten, die täglich Code und Notizen teilen.",
+        "testimonialList": {
+          "alex": {
+            "name": "Alex Thompson",
+            "role": "Senior Entwickler",
+            "company": "TechStart",
+            "quote": "Syntax-Hervorhebung + Passwortschutz + Verfall = perfekt für das Teilen von Code intern und mit Kunden."
+          },
+          "priya": {
+            "name": "Priya Patel",
+            "role": "DevOps Ingenieur",
+            "company": "CloudScale",
+            "quote": "Endlich ein Pastebin-Tool, das Entwickler versteht. Auto-Verfall für Geheimnisse, Ansichts-Tracking und sehr schnell. Liebe es."
+          },
+          "marcus": {
+            "name": "Marcus Johnson",
+            "role": "Full Stack Entwickler",
+            "company": "Freelance",
+            "quote": "Ansichtslimits + Ablaufdaten geben mir Sicherheit beim Teilen von Code mit Kunden. Dazu noch eine saubere UI."
+          },
+          "sophie": {
+            "name": "Sophie Chen",
+            "role": "Tech Lead",
+            "company": "InnovateCo",
+            "quote": "Wir nutzen es täglich für Logs, Fehlermeldungen, Konfigurationen und PR-Reviews. Die Ansichtsstatistiken helfen uns, die Teamnutzung zu verstehen."
+          },
+          "daniel": {
+            "name": "Daniel Brown",
+            "role": "Backend Entwickler",
+            "company": "DataFlow",
+            "quote": "Wunderschöne Syntax-Hervorhebung für Python, Go, SQL, Rust… Keine hässlichen Code-Screenshots mehr!"
+          },
+          "rachel": {
+            "name": "Rachel Kim",
+            "role": "Frontend Entwicklerin",
+            "company": "DesignHub",
+            "quote": "Die Markdown-Unterstützung ist hervorragend. Ich teile damit Komponentendokumentationen, Design-Tokens und Meeting-Notizen ganz einfach."
+          }
+        }
+      },
+      "cta": {
+        "badge": "Los geht's – Kostenlos",
+        "headingPrefix": "Bereit, deinen Text & Code zu ",
+        "headingSuffix": "?",
+        "headingEmphasis": "teilen",
+        "subheading": "Tausende Entwickler und Teams nutzen unsere Plattform bereits, um Snippets sicher und schön zu teilen.",
+        "startButton": "Kostenlos starten",
+        "contactButton": "Vertrieb kontaktieren",
+        "getInTouch": "Kontakt aufnehmen",
+        "emailSupport": "E-Mail Support"
+      },
+      "faq": {
+        "heading": "Häufig gestellte Fragen",
+        "subheading": "Häufige Fragen zum Teilen von Texten, Code und Notizen.",
+        "questions": {
+          "whatIs": {
+            "question": "Was ist Text-Freigabe?",
+            "answer": "Eine einfache Möglichkeit, jeden Text, Code, Markdown oder Notizen in einen privaten oder öffentlichen, teilbaren Link zu verwandeln."
+          },
+          "howWork": {
+            "question": "Wie funktioniert es?",
+            "answer": "Füge deinen Inhalt ein, wähle die Formatierung (Text, Markdown, Code), füge optional Passwort/Verfall hinzu und erhalte sofort einen Link."
+          },
+          "isFree": {
+            "question": "Ist Text-Freigabe kostenlos?",
+            "answer": "Ja – Basis-Freigabe, Passwortschutz, Verfall und Ansichts-Tracking sind kostenlos. Premium schaltet unbegrenzte Freigaben und mehr Kontrolle frei."
+          },
+          "passwordProtect": {
+            "question": "Kann ich Freigaben mit einem Passwort schützen?",
+            "answer": "Ja – füge ein Passwort hinzu, damit nur Personen, die es kennen, deinen Inhalt sehen können."
+          },
+          "expiration": {
+            "question": "Kann ich Freigaben verfallen lassen?",
+            "answer": "Ja – lege ein beliebiges zukünftiges Datum und eine Uhrzeit fest. Danach wird der Inhalt automatisch gelöscht."
+          },
+          "howLong": {
+            "question": "Wie lange bleiben Freigaben bestehen?",
+            "answer": "Sie bleiben bis zum festgelegten Ablaufdatum oder bis das Ansichtslimit erreicht ist – je nachdem, was zuerst eintritt."
+          },
+          "limit": {
+            "question": "Gibt es ein Limit für kostenlose Accounts?",
+            "answer": "Kostenlose Nutzer können bis zu 10 Text-Freigaben erstellen. Bezahlte Pläne bieten unbegrenzte Freigaben."
+          },
+          "secure": {
+            "question": "Ist mein Inhalt sicher?",
+            "answer": "Ja – verschlüsselt während der Übertragung und im Ruhezustand. Du kontrollierst Löschung, Verfall und Zugriff."
+          }
         },
-        "howWork": {
-          "question": "Wie funktioniert es?",
-          "answer": "Inhalt einfügen, Format wählen (Text, Markdown oder Code), Sicherheitseinstellungen festlegen und sofort deinen Link erhalten."
+        "cta": {
+          "badge": "Fragen?",
+          "headingPrefix": "Immer noch ",
+          "headingSuffix": "?",
+          "headingEmphasis": "Fragen?",
+          "subheading": "Keine Antwort gefunden? Schick uns einfach eine Nachricht – wir helfen gerne.",
+          "getInTouch": "Kontakt aufnehmen",
+          "emailSupport": "E-Mail Support"
+        }
+      }
+    },
+    "qr": {
+      "hero": {
+        "badge": "✨ Kostenloser QR-Code Generator",
+        "headingPrefix": "Erstelle benutzerdefinierte ",
+        "headingSuffix": " sofort",
+        "headingEmphasis": "QR-Codes",
+        "subheading": "Generiere schöne, scannbare QR-Codes für URLs, Texte, WLAN, Kontakte und mehr – komplett kostenlos, keine Anmeldung erforderlich.",
+        "stats": {
+          "qrCreated": {
+            "value": "1M+",
+            "label": "Erstellte QR-Codes"
+          },
+          "activeUsers": {
+            "value": "100K+",
+            "label": "Zufriedene Nutzer"
+          },
+          "uptime": {
+            "value": "99,9%",
+            "label": "Verfügbarkeit"
+          },
+          "support": {
+            "value": "24/7",
+            "label": "Support"
+          }
+        }
+      },
+      "features": {
+        "badge": "Funktionen",
+        "headingPrefix": "Alles, was du für ",
+        "headingSuffix": "",
+        "headingEmphasis": "bessere QR-Codes",
+        "subheading": "Leistungsstarke Tools zum Erstellen, Anpassen und Teilen von QR-Codes – alles an einem Ort, komplett kostenlos.",
+        "featureList": {
+          "instant": {
+            "title": "Sofortige Generierung",
+            "description": "Erstelle QR-Codes in Echtzeit während du tippst. Kein Warten, keine Server-Verzögerungen."
+          },
+          "customization": {
+            "title": "Vollständige Anpassung",
+            "description": "Wähle Farben, Größen und Fehlerkorrekturstufen, die zu deiner Marke passen."
+          },
+          "private": {
+            "title": "100% Privat",
+            "description": "Die gesamte QR-Generierung erfolgt in deinem Browser. Nichts wird an unsere Server gesendet."
+          },
+          "formats": {
+            "title": "Mehrere Formate",
+            "description": "Lade als PNG für Bilder oder SVG für skalierbare Vektorgrafiken herunter."
+          },
+          "types": {
+            "title": "Mehrere Typen",
+            "description": "URLs, Texte, WLAN-Zugangsdaten, vCards, SMS, E-Mail – alles unterstützt."
+          },
+          "offline": {
+            "title": "Funktioniert offline",
+            "description": "Generiere QR-Codes auch ohne Internetverbindung."
+          }
+        }
+      },
+      "testimonials": {
+        "badge": "Erfahrungsberichte",
+        "heading": "Von Nutzern weltweit geliebt",
+        "subheading": "Das sagen Leute über unseren QR-Code Generator.",
+        "testimonialList": {
+          "alex": {
+            "name": "Alex Rivera",
+            "role": "Kleinunternehmer",
+            "company": "Café Corner",
+            "quote": "Ich erstelle jede Woche QR-Codes für unsere Speisekarte. Dieses Tool ist schnell, kostenlos und die Anpassungsoptionen sind perfekt."
+          },
+          "sarah": {
+            "name": "Sarah Mitchell",
+            "role": "Marketing Manager",
+            "company": "BrandBoost",
+            "quote": "Die Möglichkeit, Farben anzupassen und SVG-Dateien herunterzuladen, ist ein Game-Changer für unsere Print-Kampagnen."
+          },
+          "marcus": {
+            "name": "Marcus Chen",
+            "role": "Event-Koordinator",
+            "company": "EventPro",
+            "quote": "WLAN-QR-Codes machen Event-Check-ins nahtlos. Gäste scannen einfach und verbinden sich – kein Passwort-Tippen!"
+          },
+          "emma": {
+            "name": "Emma Thompson",
+            "role": "Immobilienmaklerin",
+            "company": "HomeFinders",
+            "quote": "Ich füge QR-Codes auf alle meine Immobilien-Flyer ein. Kunden können Angebote sofort auf ihren Handys ansehen."
+          },
+          "david": {
+            "name": "David Park",
+            "role": "Entwickler",
+            "company": "TechStart",
+            "quote": "Liebe, dass es clientseitig und privat ist. Keine Daten verlassen meinen Browser. Perfekt für sensible Informationen."
+          },
+          "lisa": {
+            "name": "Lisa Anderson",
+            "role": "Lehrerin",
+            "company": "Lincoln High School",
+            "quote": "Ich erstelle QR-Codes für Arbeitsblätter und Ressourcen. Schüler können sofort auf Materialien zugreifen."
+          }
+        }
+      },
+      "faq": {
+        "badge": "FAQ",
+        "heading": "Häufig gestellte Fragen",
+        "subheading": "Schnelle Antworten auf häufige Fragen zu QR-Codes.",
+        "questions": {
+          "whatIs": {
+            "question": "Was ist ein QR-Code?",
+            "answer": "Ein QR-Code (Quick Response) ist ein 2D-Barcode, der Informationen in einem quadratischen Raster speichert. Beim Scannen mit einer Smartphone-Kamera wird der kodierte Inhalt wie URLs, Texte oder Kontaktinformationen sofort angezeigt."
+          },
+          "howWork": {
+            "question": "Wie funktioniert dieser QR-Generator?",
+            "answer": "Gib einfach deinen Inhalt ein (URL, Text, WLAN-Details usw.), passe bei Wunsch Farben und Größe an, und der QR-Code wird sofort in deinem Browser generiert – kein Server erforderlich."
+          },
+          "isFree": {
+            "question": "Ist dieser QR-Code Generator kostenlos?",
+            "answer": "Ja! Alle Funktionen sind komplett kostenlos – unbegrenzte QR-Codes, vollständige Anpassung, mehrere Formate (PNG/SVG) und keine Anmeldung erforderlich."
+          },
+          "safe": {
+            "question": "Sind QR-Codes sicher zu scannen?",
+            "answer": "QR-Codes selbst sind sicher. Überprüfe jedoch immer das Ziel, bevor du sensible Informationen eingibst. Unser Generator erstellt Standard-QR-Codes, die mit jedem Scanner funktionieren."
+          },
+          "expire": {
+            "question": "Verfallen QR-Codes?",
+            "answer": "Statische QR-Codes (wie die hier generierten) verfallen nie – sie kodieren die Daten direkt. Wenn sich jedoch der Inhalt ändert (wie ein URL-Ziel), musst du einen neuen QR-Code generieren."
+          },
+          "scan": {
+            "question": "Wie scanne ich einen QR-Code?",
+            "answer": "Die meisten modernen Smartphones können QR-Codes mit der integrierten Kamera-App scannen. Richte einfach deine Kamera auf den Code und tippe auf die erscheinende Benachrichtigung."
+          },
+          "formats": {
+            "question": "Was ist der Unterschied zwischen PNG und SVG?",
+            "answer": "PNG ist ein Rasterbildformat (Pixel), großartig für die Web-Nutzung. SVG ist ein Vektorformat (mathematisch basiert), perfekt für den Druck, da es ohne Qualitätsverlust in jede Größe skaliert werden kann."
+          },
+          "errorCorrection": {
+            "question": "Was ist Fehlerkorrektur?",
+            "answer": "Fehlerkorrektur ermöglicht es QR-Codes, auch bei teilweiser Beschädigung zu funktionieren. Höhere Stufen (Q, H) fügen mehr Redundanz hinzu, machen den Code aber größer. Verwende H für Logos oder raue Umgebungen."
+          }
         },
-        "isFree": {
-          "question": "Ist das Teilen kostenlos?",
-          "answer": "Ja, Grundfunktionen wie Teilen, Passwortschutz und Ablaufdatum sind kostenlos. Der Pro-Plan bietet mehr Kapazität und Kontrolle."
+        "cta": {
+          "badge": "Fragen?",
+          "headingPrefix": "Immer noch ",
+          "headingSuffix": "?",
+          "headingEmphasis": "Fragen?",
+          "subheading": "Keine Antwort gefunden? Schick uns einfach eine Nachricht – wir helfen gerne.",
+          "getInTouch": "Kontakt aufnehmen",
+          "emailSupport": "E-Mail Support"
+        }
+      },
+      "cta": {
+        "badge": "Los geht's – Kostenlos",
+        "headingPrefix": "Bereit, QR-Codes zu ",
+        "headingSuffix": "?",
+        "headingEmphasis": "erstellen",
+        "subheading": "Schließe dich Tausenden von Nutzern an, die täglich schöne, benutzerdefinierte QR-Codes erstellen. Keine Anmeldung erforderlich.",
+        "startButton": "Jetzt QR-Code erstellen",
+        "contactButton": "Vertrieb kontaktieren",
+        "getInTouch": "Kontakt aufnehmen",
+        "emailSupport": "E-Mail Support"
+      },
+      "generator": {
+        "livePreview": "Live-Vorschau",
+        "qrPreview": "QR-Code Vorschau",
+        "generating": "Wird generiert…",
+        "generationError": "QR-Code konnte nicht generiert werden",
+        "enterContent": "Inhalt eingeben, um QR zu generieren",
+        "qrCodeAlt": "QR Code",
+        "contentPreview": "Inhaltsvorschau",
+        "errorCorrection": "Fehlerkorrektur",
+        "size": "QR-Code Größe",
+        "selectSize": "Größe auswählen",
+        "colors": "Farben",
+        "foregroundColor": "Vordergrund",
+        "backgroundColor": "Hintergrund",
+        "presetColors": "Voreinstellungen",
+        "basicTypes": "Grundlegende Typen",
+        "advancedTypes": "Erweiterte Typen",
+        "formatLabel": "Format",
+        "plainText": "Nur Text",
+        "markdown": "Markdown",
+        "url": "URL",
+        "code": "Code",
+        "languageLabel": "Sprache (für Code)",
+        "languageSelect": "Sprache auswählen…",
+        "textLabel": "Textinhalt",
+        "textPlaceholder": "Text hier eingeben…",
+        "urlLabel": "Website-URL",
+        "urlPlaceholder": "https://beispiel.de",
+        "noteLabel": "Notizinhalt",
+        "notePlaceholder": "Schreibe hier deine Notiz…",
+        "networkName": "Netzwerkname (SSID)",
+        "networkNamePlaceholder": "MeinWLAN",
+        "password": "Passwort",
+        "passwordPlaceholder": "Netzwerkpasswort",
+        "encryption": "Verschlüsselungstyp",
+        "selectEncryption": "Verschlüsselung auswählen",
+        "hiddenNetwork": "Verstecktes Netzwerk",
+        "firstName": "Vorname",
+        "firstNamePlaceholder": "Max",
+        "lastName": "Nachname",
+        "lastNamePlaceholder": "Mustermann",
+        "organization": "Organisation",
+        "organizationPlaceholder": "Firmenname",
+        "title": "Berufsbezeichnung",
+        "titlePlaceholder": "Softwareentwickler",
+        "phone": "Telefonnummer",
+        "phonePlaceholder": "+49 123 456 7890",
+        "email": "E-Mail-Adresse",
+        "emailPlaceholder": "max@beispiel.de",
+        "website": "Website",
+        "websitePlaceholder": "https://beispiel.de",
+        "address": "Adresse",
+        "addressPlaceholder": "Hauptstraße 123, Stadt, Land",
+        "phoneNumber": "Telefonnummer",
+        "phoneNumberPlaceholder": "+49 123 456 7890",
+        "message": "Nachricht",
+        "messagePlaceholder": "Deine SMS-Nachricht hier…",
+        "emailAddress": "E-Mail-Adresse",
+        "emailAddressPlaceholder": "empfänger@beispiel.de",
+        "subject": "Betreff",
+        "subjectPlaceholder": "E-Mail-Betreff",
+        "body": "E-Mail-Text",
+        "bodyPlaceholder": "Deine E-Mail-Nachricht hier…",
+        "showCustomization": "Anpassungsoptionen anzeigen",
+        "hideCustomization": "Anpassungsoptionen ausblenden",
+        "showAdvanced": "Erweiterte Optionen anzeigen",
+        "hideAdvanced": "Erweiterte Optionen ausblenden",
+        "generateButton": "QR-Code generieren",
+        "download": "Herunterladen",
+        "copy": "Kopieren",
+        "copied": "Kopiert!",
+        "share": "Teilen",
+        "imageFormat": "(Bild)",
+        "vectorFormat": "(Vektor)",
+        "downloadSuccess": "QR-Code als {format} heruntergeladen",
+        "downloadError": "QR-Code konnte nicht heruntergeladen werden",
+        "copySuccess": "QR-Code in die Zwischenablage kopiert",
+        "copyError": "Kopieren in die Zwischenablage fehlgeschlagen",
+        "shareSuccess": "QR-Code erfolgreich geteilt",
+        "shareError": "QR-Code konnte nicht geteilt werden",
+        "shareTitle": "QR-Code",
+        "shareText": "Schau dir diesen QR-Code an!",
+        "noContent": "Bitte gib zuerst einen Inhalt ein",
+        "agreementPrefix": "Mit dem Generieren von QR-Codes akzeptierst du unsere",
+        "terms": "Nutzungsbedingungen",
+        "agreementSuffix": "und",
+        "privacy": "Datenschutzbestimmungen"
+      }
+    },
+    "privacy": {
+      "badge": "Rechtliches",
+      "titleEmphasis": "Datenschutz",
+      "titleSuffix": "-Bestimmungen",
+      "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
+      "sections": {
+        "intro": {
+          "title": "1. Einleitung",
+          "content": "Bei Shrnkly liegt uns deine Privatsphäre am Herzen. Diese Richtlinie erklärt, welche Daten wir sammeln, wie wir sie nutzen und wie wir sie schützen, wenn du unseren Dienst nutzt."
         },
-        "passwordProtect": {
-          "question": "Kann ich ein Passwort festlegen?",
-          "answer": "Klar, du kannst ein Passwort hinzufügen, damit nur autorisierte Personen deinen Inhalt sehen können."
+        "collect": {
+          "title": "2. Informationen, die wir sammeln",
+          "content": "Wir sammeln nur die Informationen, die für unseren Dienst notwendig sind:",
+          "infoList": [
+            "Kontodetails (Name, E-Mail, Passwort-Hash)",
+            "URLs, die du kürzt und wohin sie zeigen",
+            "Klick-Analysen für deine Links",
+            "Grundlegende Geräte-/Browser-Informationen"
+          ]
+        },
+        "use": {
+          "title": "3. Wie wir deine Informationen nutzen",
+          "content": "Wir nutzen diese Daten, um den Dienst bereitzustellen, dir Analysen anzuzeigen, Missbrauch zu verhindern, Funktionen zu verbessern und die Plattform sicher und schnell zu halten."
+        },
+        "analytics": {
+          "title": "4. Klick-Analysen",
+          "content": "Wenn jemand auf einen Kurzlink klickt, sammeln wir anonymisierte Daten (ungefährer Standort, Gerätetyp, Referrer, Browser), um dir nützliche Statistiken bereitzustellen."
+        },
+        "security": {
+          "title": "5. Sicherheit",
+          "content": "Wir nutzen branchenübliche Sicherheitspraktiken. Obwohl kein System 100% sicher ist, arbeiten wir hart daran, deine Daten zu schützen."
+        },
+        "contact": {
+          "title": "6. Kontaktiere uns",
+          "content": "Fragen oder Bedenken zum Datenschutz?",
+          "email": "E-Mail: privacy@shrnkly.com"
+        }
+      }
+    },
+    "terms": {
+      "badge": "Rechtliches",
+      "titleEmphasis": "Nutzungs",
+      "titleSuffix": "bedingungen",
+      "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
+      "sections": {
+        "acceptance": {
+          "title": "1. Akzeptanz der Bedingungen",
+          "content": "Durch die Nutzung von Shrnkly stimmst du diesen Nutzungsbedingungen zu. Wenn du nicht einverstanden bist, nutze den Dienst bitte nicht."
+        },
+        "description": {
+          "title": "2. Unser Dienst",
+          "content": "Shrnkly ermöglicht es dir, URLs zu kürzen, Klicks zu tracken, QR-Codes zu generieren und Texte sicher zu teilen. Wir können Funktionen jederzeit aktualisieren oder ändern."
+        },
+        "responsibilities": {
+          "title": "3. Deine Verantwortlichkeiten",
+          "content": "Du darfst Shrnkly nicht nutzen für:",
+          "infoList": [
+            "Spam oder unaufgeforderte Nachrichten senden",
+            "Malware oder schädlichen Code verbreiten",
+            "Auf illegale oder missbräuchliche Inhalte verlinken",
+            "Gesetze verletzen"
+          ]
         },
         "expiration": {
-          "question": "Können Links verfallen?",
-          "answer": "Ja, du kannst ein Datum und eine Uhrzeit festlegen, nach denen der Inhalt automatisch gelöscht wird."
+          "title": "4. Inhalte & Verfall",
+          "content": "Wir besitzen nicht die Inhalte, die du kürzt oder teilst. Wir können Links deaktivieren, die gegen diese Bedingungen verstoßen. Kostenlose Links können Nutzungslimits haben."
         },
-        "howLong": {
-          "question": "Wie lange bleiben geteilte Notizen aktiv?",
-          "answer": "Bis zum gewählten Ablaufdatum oder bis das eingestellte Limit für Aufrufe erreicht wurde."
+        "property": {
+          "title": "5. Unser geistiges Eigentum",
+          "content": "Der Name, das Design, der Code und das Logo von Shrnkly gehören uns. Du darfst sie ohne Erlaubnis nicht kopieren oder nutzen."
         },
-        "limit": {
-          "question": "Gibt es Limits in der Gratis-Version?",
-          "answer": "Gratis-Nutzer können bis zu 10 geteilte Notizen erstellen. Pro-Pläne haben keine Limits."
+        "liability": {
+          "title": "6. Haftungsbeschränkung",
+          "content": "Wir stellen den Dienst \"wie besehen\" bereit. Wir sind nicht verantwortlich für verlorene Gewinne, Datenverlust oder Serviceunterbrechungen."
         },
-        "secure": {
-          "question": "Sind meine Inhalte sicher?",
-          "answer": "Absolut. Alle Inhalte sind verschlüsselt und du hast die volle Kontrolle über Zugriff, Ablauf und Löschung."
+        "termination": {
+          "title": "7. Kündigung",
+          "content": "Wir können Konten sperren oder kündigen, die gegen diese Bedingungen verstoßen oder der Plattform oder anderen Nutzern schaden."
+        },
+        "contact": {
+          "title": "8. Kontakt",
+          "content": "Fragen zu diesen Bedingungen?",
+          "email": "E-Mail: legal@shrnkly.com"
         }
-      },
-      "cta": {
-        "badge": "Fragen?",
-        "headingPrefix": "Immer noch ",
-        "headingSuffix": "?",
-        "headingEmphasis": "Fragen",
-        "subheading": "Nicht fündig geworden? Schreib uns und wir helfen dir gerne weiter.",
-        "getInTouch": "Kontakt",
+      }
+    },
+    "contact": {
+      "badge": "Kontaktiere uns",
+      "title": "Nimm Kontakt auf",
+      "subtitle": "Wir sind für dich da",
+      "description": "Hast du eine Frage, einen Vorschlag oder möchtest einfach nur Hallo sagen? Schreib uns eine Nachricht.",
+      "email": "E-Mail",
+      "office": "Büro",
+      "github": "GitHub",
+      "name": "Name",
+      "message": "Deine Nachricht",
+      "send": "Nachricht senden",
+      "sending": "Wird gesendet…",
+      "emailLabel": "Schick uns eine E-Mail",
+      "linkedin": "LinkedIn",
+      "linkedinLabel": "Auf LinkedIn vernetzen",
+      "githubLabel": "Unser GitHub besuchen",
+      "chat": {
+        "title": "Bevorzugst du ",
+        "titleEmphasis": "Live-Chat?",
+        "description": "Schau zuerst in unsere FAQ oder schick uns eine E-Mail – unser Team antwortet normalerweise sehr schnell.",
+        "viewFaqs": "FAQs ansehen",
         "emailSupport": "E-Mail Support"
       }
     }
   },
   "auth": {
     "login": {
-      "title": "Willkommen zurück!",
-      "subtitle": "Melde dich bei deinem Shrnkly-Account an",
-      "email": "E-Mail-Adresse",
+      "title": "Willkommen zurück",
+      "subtitle": "Melde dich bei deinem Shrnkly-Konto an",
+      "email": "E-Mail",
       "emailPlaceholder": "hallo@deinefirma.de",
       "password": "Passwort",
       "passwordPlaceholder": "Dein Passwort",
       "submitButton": "Anmelden",
       "forgotPassword": "Passwort vergessen?",
-      "noAccount": "Noch keinen Account?",
+      "noAccount": "Noch kein Konto?",
       "signUpLink": "Registrieren",
-      "validationError": "Bitte überprüfe deine Eingaben.",
-      "unauthorized": "E-Mail oder Passwort falsch. Versuch es nochmal.",
-      "success": "Anmeldung erfolgreich!",
+      "validationError": "Bitte überprüfe deine Eingabe.",
+      "unauthorized": "Falsche E-Mail oder Passwort. Bitte versuch es erneut.",
+      "success": "Erfolgreich angemeldet!",
       "turnstileError": "Bitte schließe die Verifizierung ab.",
-      "continueWithGoogle": "Mit Google anmelden",
+      "continueWithGoogle": "Mit Google fortfahren",
       "or": "oder",
-      "authenticating": "Wird angemeldet..."
+      "authenticating": "Du wirst angemeldet…"
     },
     "signup": {
-      "title": "Account erstellen",
-      "subtitle": "Werde heute Teil von tausenden Nutzern",
+      "title": "Erstelle dein Konto",
+      "subtitle": "Schließe dich heute Tausenden von Nutzern an",
       "continueWithGoogle": "Mit Google registrieren",
       "or": "oder",
       "name": "Vollständiger Name",
       "namePlaceholder": "Dein Name",
-      "email": "E-Mail-Adresse",
+      "email": "E-Mail",
       "emailPlaceholder": "hallo@deinefirma.de",
       "password": "Passwort",
-      "passwordPlaceholder": "Wähle ein sicheres Passwort",
+      "passwordPlaceholder": "Erstelle ein sicheres Passwort",
       "confirmPassword": "Passwort bestätigen",
-      "submitButton": "Account erstellen",
-      "haveAccount": "Schon einen Account?",
+      "submitButton": "Konto erstellen",
+      "haveAccount": "Bereits ein Konto?",
       "loginLink": "Anmelden",
-      "validationError": "Bitte überprüfe deine Eingaben.",
-      "alreadyExists": "Es gibt bereits einen Account mit dieser E-Mail.",
-      "success": "Account erstellt! Du kannst dich jetzt anmelden.",
+      "validationError": "Bitte überprüfe deine Eingabe.",
+      "alreadyExists": "Ein Konto mit dieser E-Mail existiert bereits.",
+      "success": "Konto erstellt! Du kannst dich jetzt anmelden.",
       "turnstileError": "Bitte schließe die Verifizierung ab."
     },
     "forgotPassword": {
-      "title": "Passwort zurücksetzen",
-      "subtitle": "Gib deine E-Mail an, um Anweisungen zu erhalten",
-      "email": "E-Mail-Adresse",
+      "title": "Setze dein Passwort zurück",
+      "subtitle": "Gib deine E-Mail ein, um Anweisungen zum Zurücksetzen zu erhalten",
+      "email": "E-Mail",
       "emailPlaceholder": "Deine E-Mail-Adresse",
-      "processing": "Wird gesendet...",
+      "processing": "Wird gesendet…",
       "submitButton": "Link zum Zurücksetzen senden",
-      "rememberPassword": "Wieder eingefallen?",
+      "rememberPassword": "Doch eingefallen?",
       "loginLink": "Anmelden",
       "turnstileError": "Bitte schließe die Verifizierung ab.",
-      "backToLogin": "Zurück zum Login",
-      "validationError": "Bitte gib eine gültige E-Mail an.",
-      "forbidden": "Falls die E-Mail registriert ist, erhältst du gleich Post.",
-      "success": "Gesendet! Check mal deinen Posteingang."
+      "backToLogin": "Zurück zur Anmeldung",
+      "validationError": "Bitte gib eine gültige E-Mail ein.",
+      "forbidden": "Wenn diese E-Mail registriert ist, erhältst du in Kürze Anweisungen zum Zurücksetzen.",
+      "success": "Link zum Zurücksetzen gesendet! Überprüfe dein Postfach."
     },
     "resetPassword": {
-      "title": "Neues Passwort vergeben",
+      "title": "Wähle ein neues Passwort",
       "subtitle": "Gib dein neues Passwort ein und bestätige es",
       "password": "Neues Passwort",
-      "passwordPlaceholder": "Neues, sicheres Passwort",
-      "confirmPassword": "Passwort bestätigen",
+      "passwordPlaceholder": "Neues sicheres Passwort",
+      "confirmPassword": "Neues Passwort bestätigen",
       "submitButton": "Passwort aktualisieren",
       "validationError": "Passwörter stimmen nicht überein oder sind zu schwach.",
-      "invalidToken": "Der Link ist ungültig oder abgelaufen.",
-      "success": "Passwort aktualisiert! Du kannst dich jetzt anmelden.",
-      "noTokenError": "Kein Token gefunden. Zurück zum Login...",
+      "invalidToken": "Dieser Link zum Zurücksetzen ist ungültig oder abgelaufen.",
+      "success": "Passwort erfolgreich aktualisiert! Du kannst dich jetzt anmelden.",
+      "noTokenError": "Kein Token zum Zurücksetzen gefunden. Weiterleitung zur Anmeldung…",
       "turnstileError": "Bitte schließe die Verifizierung ab.",
-      "processing": "Wird aktualisiert...",
+      "processing": "Wird aktualisiert…",
       "rememberPassword": "Doch das alte behalten?",
       "loginLink": "Anmelden",
-      "loading": "Wird geladen..."
-    }
-  },
-  "url": {
-    "creation": {
-      "validationError": "Überprüfe bitte den Link.",
-      "ownDomainError": "Du kannst keine Links kürzen, die auf unseren eigenen Dienst verweisen.",
-      "alreadyExists": "Dieser Link wurde bereits gekürzt.",
-      "success": "Kurzlink erfolgreich erstellt!",
-      "internalError": "Etwas ist schiefgelaufen. Versuch es nochmal.",
-      "needLogin": "Gratis-Limit erreicht. Melde dich an, um mehr zu erstellen.",
-      "needSubscription": "Limit deines Plans erreicht. Upgrade deinen Account für mehr Links."
-    },
-    "retrieval": {
-      "notFound": "Dieser Kurzlink existiert nicht.",
-      "success": "Link erfolgreich geladen."
-    },
-    "deletion": {
-      "notFound": "Link zum Löschen nicht gefunden.",
-      "success": "Link erfolgreich gelöscht."
-    },
-    "details": {
-      "notFound": "Keine Details für diesen Link gefunden.",
-      "expired": "Dieser Link ist abgelaufen.",
-      "success": "Link-Details geladen."
-    },
-    "redirect": {
-      "notFound": "Dieser Kurzlink existiert nicht.",
-      "expired": "Sorry, dieser Link ist bereits abgelaufen."
-    },
-    "listing": {
-      "notFound": "Keine Links gefunden.",
-      "success": "Deine Links wurden geladen."
-    },
-    "validation": {
-      "invalidShortKeyFormat": "Ungültiges Kurzlink-Format."
-    }
-  },
-  "qrCode": {
-    "missingShortKey": "QR-Code-Erstellung fehlgeschlagen: Link-Key fehlt.",
-    "notFound": "Link für den QR-Code nicht gefunden.",
-    "success": "QR-Code ist bereit!"
-  },
-  "privacy": {
-    "badge": "Rechtliches",
-    "titleEmphasis": "Datenschutz-",
-    "titleSuffix": "Bestimmungen",
-    "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
-    "sections": {
-      "intro": {
-        "title": "1. Einleitung",
-        "content": "Bei Shrnkly nehmen wir den Schutz deiner Daten ernst. Diese Richtlinie erklärt, welche Daten wir sammeln, wie wir sie nutzen und wie wir sie schützen."
-      },
-      "collect": {
-        "title": "2. Daten, die wir sammeln",
-        "content": "Wir sammeln nur die für den Dienst notwendigen Informationen:",
-        "infoList": [
-          "Account-Daten (Name, E-Mail, verschlüsseltes Passwort)",
-          "URLs, die du kürzt, und deren Zieladressen",
-          "Klick-Statistiken deiner Links",
-          "Basis-Infos zu Gerät und Browser"
-        ]
-      },
-      "use": {
-        "title": "3. Nutzung deiner Daten",
-        "content": "Wir nutzen diese Daten, um den Dienst bereitzustellen, Statistiken anzuzeigen, Missbrauch zu verhindern und die Plattform sicher und schnell zu halten."
-      },
-      "analytics": {
-        "title": "4. Klick-Analysen",
-        "content": "Wenn jemand auf einen Kurzlink klickt, erfassen wir anonymisierte Daten (grober Standort, Gerätetyp, Browser), um dir hilfreiche Statistiken zu liefern."
-      },
-      "security": {
-        "title": "5. Sicherheit",
-        "content": "Wir nutzen branchenübliche Sicherheitsstandards. Obwohl kein System 100% sicher ist, arbeiten wir hart daran, deine Daten zu schützen."
-      },
-      "contact": {
-        "title": "6. Kontakt",
-        "content": "Fragen zum Datenschutz?",
-        "email": "E-Mail: privacy@shrnkly.com"
-      }
-    }
-  },
-  "terms": {
-    "badge": "Rechtliches",
-    "titleEmphasis": "Nutzungs-",
-    "titleSuffix": "bedingungen (AGB)",
-    "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
-    "sections": {
-      "acceptance": {
-        "title": "1. Akzeptanz der Bedingungen",
-        "content": "Durch die Nutzung von Shrnkly akzeptierst du diese Bedingungen. Falls du nicht einverstanden bist, nutze den Dienst bitte nicht."
-      },
-      "description": {
-        "title": "2. Unser Service",
-        "content": "Shrnkly erlaubt es dir, URLs zu kürzen, Klicks zu tracken, QR-Codes zu erstellen und Texte sicher zu teilen."
-      },
-      "responsibilities": {
-        "title": "3. Deine Pflichten",
-        "content": "Du darfst Shrnkly nicht nutzen für:",
-        "infoList": [
-          "Spam oder unerwünschte Nachrichten",
-          "Verbreitung von Malware oder Schadcode",
-          "Verlinkung zu illegalen oder missbräuchlichen Inhalten",
-          "Verstöße gegen geltendes Recht"
-        ]
-      },
-      "expiration": {
-        "title": "4. Inhalte & Verfall",
-        "content": "Wir besitzen nicht die Inhalte, die du kürzt oder teilst. Wir können Links deaktivieren, die gegen diese Bedingungen verstoßen."
-      },
-      "property": {
-        "title": "5. Geistiges Eigentum",
-        "content": "Name, Design, Code und Logo von Shrnkly gehören uns. Du darfst sie nicht ohne Erlaubnis kopieren oder nutzen."
-      },
-      "liability": {
-        "title": "6. Haftungsbeschränkung",
-        "content": "Wir bieten den Dienst 'wie besehen' an. Wir haften nicht für Datenverluste oder Unterbrechungen des Dienstes."
-      },
-      "termination": {
-        "title": "7. Kündigung",
-        "content": "Wir können Accounts sperren, die gegen Bedingungen verstoßen oder der Plattform und anderen Nutzern schaden."
-      },
-      "contact": {
-        "title": "8. Kontakt",
-        "content": "Fragen zu den AGB?",
-        "email": "E-Mail: legal@shrnkly.com"
-      }
-    }
-  },
-  "contact": {
-    "badge": "Kontakt",
-    "title": "Schreib uns",
-    "subtitle": "Wir helfen dir gerne",
-    "description": "Hast du Fragen, Anregungen oder willst einfach nur Hallo sagen? Schreib uns eine Nachricht.",
-    "email": "E-Mail",
-    "office": "Büro",
-    "github": "GitHub",
-    "name": "Name",
-    "message": "Deine Nachricht",
-    "send": "Nachricht senden",
-    "sending": "Wird gesendet...",
-    "emailLabel": "Schreib uns eine E-Mail",
-    "linkedin": "LinkedIn",
-    "linkedinLabel": "Vernetze dich auf LinkedIn",
-    "githubLabel": "Besuch unser GitHub",
-    "chat": {
-      "title": "Lieber per ",
-      "titleEmphasis": "Live-Chat?",
-      "description": "Check zuerst unsere FAQ oder schreib uns eine E-Mail – wir antworten meistens sehr schnell.",
-      "viewFaqs": "FAQ ansehen",
-      "emailSupport": "E-Mail Support"
+      "loading": "Wird geladen…"
     }
   },
   "dashboard": {
-    "dashboardTitle": "Dein Dashboard",
-    "dashboardSubtitle": "Verwalte und tracke alle deine Kurzlinks",
-    "totalLinks": "Links gesamt",
-    "totalClicks": "Klicks gesamt",
-    "activeLinks": "Aktive Links",
-    "searchPlaceholder": "Nach Links oder Zielen suchen...",
-    "newest": "Neueste",
-    "oldest": "Älteste",
-    "mostClicks": "Meiste Klicks",
-    "noLinksFound": "Keine Links gefunden",
-    "tryAdjustingSearch": "Versuch es mit einem anderen Suchbegriff oder Filtern",
-    "createFirstLinkDesc": "Du hast noch keine Kurzlinks. Erstell jetzt deinen ersten!",
-    "createFirstLinkButton": "Ersten Link erstellen",
-    "createLink": "Neuer Kurzlink",
-    "createNewLink": "Kurzlink erstellen",
-    "createLinkDesc": "Füge eine lange URL ein, um eine kurze, trackbare Version zu erhalten.",
-    "destinationUrl": "Ziel-URL",
-    "cancel": "Abbrechen",
-    "visit": "Besuchen",
-    "qrCode": "QR-Code",
-    "scanToVisit": "Scannen zum Öffnen",
-    "downloadQr": "QR herunterladen",
-    "close": "Schließen",
-    "generating": "Wird generiert...",
-    "areYouSure": "Bist du sicher?",
-    "keepIt": "Behalten",
-    "deleteLink": "Link löschen",
-    "deleting": "Wird gelöscht...",
-    "overallTraffic": "Traffic-Übersicht",
-    "overallTrafficDesc": "Klicks und eindeutige Besucher über Zeit",
-    "topPerformingLinks": "Top Links",
-    "updatedAgo": "Vor 2 Std. aktualisiert",
-    "noDataYet": "Noch keine Daten",
-    "trafficByLocation": "Traffic nach Land",
-    "links": "Links",
-    "analysis": "Statistiken",
-    "realtime": "Echtzeit",
-    "analysisComingSoon": "Erweiterte Analysen – bald verfügbar",
-    "realtimeComingSoon": "Live-Stats – bald verfügbar",
-    "loadingUrls": "Links werden geladen...",
-    "noUrls": "Noch keine Links vorhanden. Leg gleich los!",
-    "createdAt": "Erstellt am",
-    "originalUrl": "Ziel",
-    "shortUrl": "Kurzlink",
-    "clicks": "Klicks",
-    "actions": "Aktionen",
-    "copy": "Kopieren",
-    "share": "Teilen",
-    "details": "Details",
-    "delete": "Löschen",
-    "confirmDelete": "Diesen Kurzlink dauerhaft löschen? Das kann nicht rückgängig gemacht werden.",
-    "shareAsLink": "Link kopieren",
-    "shareWithFacebook": "Auf Facebook teilen",
-    "shareWithInstagram": "Auf Instagram teilen",
-    "shareWithGithub": "Auf GitHub teilen",
-    "missingUrl": "URL fehlt",
-    "qrCodeUnavailable": "QR-Code nicht verfügbar",
-    "ipAddress": "IP",
-    "browser": "Browser",
-    "os": "Betriebssystem",
-    "clickedAt": "Geklickt am",
-    "noClickLogs": "Noch keine Klicks registriert",
-    "unknown": "Unbekannt",
-    "sink": "Quelle",
-    "last7Days": "Letzte 7 Tage",
-    "filterLinks": "Links filtern",
-    "visits": "Besuche",
-    "visitors": "Besucher",
-    "referrers": "Quellen",
-    "views": "Aufrufe",
-    "locations": "Standorte",
-    "worldMapHere": "Weltkarte",
-    "country": "Land",
-    "region": "Region",
-    "city": "Stadt",
-    "referrer": "Von",
-    "language": "Sprache",
-    "device": "Gerät",
-    "type": "Typ",
-    "noDataAvailable": "Keine Daten verfügbar.",
-    "footerText": "© 2025 Shrnkly",
-    "copiedToClipboard": "Kopiert!",
-    "deletedSuccessfully": "Link gelöscht",
-    "qrCodeFetchFailed": "QR-Code konnte nicht geladen werden",
-    "qrCodeDownloaded": "QR-Code heruntergeladen",
-    "downloadQrCode": "QR-Code herunterladen",
-    "loading": "Wird geladen...",
-    "qrCodeAlt": "QR-Code für Link",
-    "linkCopiedAlert": "Kurzlink kopiert!",
-    "linkCopyFailedAlert": "Kopieren fehlgeschlagen",
-    "confirmDeleteAlert": "Link wirklich löschen?",
-    "instagramManualShare": "Instagram erlaubt kein direktes Teilen. Kopiere den Link und füge ihn manuell ein.",
-    "back": "Zurück",
-    "backToDashboard": "Zurück zum Dashboard",
-    "customSlug": "Benutzerdefinierte URL",
-    "originalDomain": "Ursprüngliche Domain",
-    "copyShortLink": "Link kopieren",
-    "visitUrl": "Besuchen",
-    "recentClicks": "Letzte Klicks",
-    "expiresAt": "Läuft ab am",
-    "neverExpires": "Nie"
-  },
-  "common": {
-    "validationRequired": "Dieses Feld ist erforderlich.",
-    "validationError": "Überprüfe deine Eingaben.",
-    "internalServerError": "Server-Fehler. Versuch es nochmal.",
-    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten.",
-    "comingSoon": "Bald verfügbar...",
-    "verify": "Verifizieren",
-    "somethingWentWrong": "Etwas ist schiefgelaufen",
-    "networkError": "Server nicht erreichbar. Check mal dein Internet.",
-    "axiosError": "Verbindungsfehler: {message}",
-    "veryWeak": "Sehr schwach",
-    "weak": "Schwach",
-    "fair": "Ok",
-    "good": "Gut",
-    "strong": "Stark",
-    "hidePassword": "Verbergen",
-    "showPassword": "Anzeigen",
-    "offeredIn": "verfügbar in",
-    "redirecting": "Wird weitergeleitet...",
-    "redirectingMessage": "Du wirst zu {shortKey} weitergeleitet",
-    "redirectingDescription": "Einen Moment bitte...",
-    "pageNotFound": "Seite nicht gefunden",
-    "pageNotFoundDescription": "Die gesuchte Seite existiert nicht (mehr).",
-    "errorOccurredDescription": "Ein Fehler ist aufgetreten. Versuch es nochmal oder geh zurück zur Startseite.",
-    "goToHomepage": "Zur Startseite",
-    "tryAgain": "Nochmal versuchen"
-  },
-  "textShare": {
-    "create": {
-      "title": "Neuen Text teilen",
-      "subtitle": "Teile Code, Notizen oder Configs – sofort",
-      "titleLabel": "Titel (optional)",
-      "titlePlaceholder": "Worum geht's?",
-      "contentLabel": "Inhalt",
-      "contentPlaceholder": "Füge hier deinen Text, Code oder Markdown ein...",
-      "formatLabel": "Format",
-      "plainText": "Nur Text",
-      "markdown": "Markdown",
-      "code": "Code",
-      "languageLabel": "Sprache (für Code)",
-      "languagePlaceholder": "javascript, python, rust...",
-      "languageSelect": "Sprache wählen...",
-      "passwordLabel": "Mit Passwort schützen (optional)",
-      "passwordPlaceholder": "Nur wer das Passwort hat, kann den Inhalt sehen",
-      "expiresAtLabel": "Automatisch löschen nach (optional)",
-      "viewLimitLabel": "Limit für Aufrufe (optional)",
-      "viewLimitPlaceholder": "1–1000 Aufrufe",
-      "customSlugLabel": "Wunsch-URL (optional)",
-      "customSlugPlaceholder": "meine-geheime-config",
-      "createButton": "Freigabe-Link erstellen",
-      "creating": "Wird erstellt...",
-      "success": "Erfolgreich! Link in die Zwischenablage kopiert.",
-      "error": "Erstellung fehlgeschlagen. Versuch es nochmal.",
-      "agreementPrefix": "Mit der Erstellung akzeptierst du unsere ",
-      "terms": "Nutzungsbedingungen",
-      "agreementSuffix": " und ",
-      "privacy": "Datenschutzbestimmungen",
-      "showAdvanced": "Erweiterte Optionen anzeigen",
-      "hideAdvanced": "Erweiterte Optionen ausblenden",
-      "contentRequired": "Bitte gib einen Inhalt ein",
+    "common": {
       "cancel": "Abbrechen",
-      "slugAvailable": "Dieser benutzerdefinierte Link ist verfügbar",
-      "slugTaken": "Dieser benutzerdefinierte Link ist bereits vergeben",
-      "slugChecking": "Verfügbarkeit wird überprüft..."
-    },
-    "view": {
-      "copyButton": "Inhalt kopieren",
-      "copySuccess": "Kopiert!",
-      "copyError": "Kopieren fehlgeschlagen",
-      "download": "Download",
-      "downloadTxt": "Als .txt herunterladen",
-      "downloadMd": "Als .md herunterladen",
-      "qrCode": "QR-Code",
-      "shareLink": "Diese Seite teilen",
-      "protectedContent": "Inhalt ist passwortgeschützt",
-      "enterPassword": "Gib das Passwort ein, um den Inhalt zu sehen",
-      "submitPassword": "Entsperren",
-      "verifying": "Wird geprüft...",
-      "invalidPassword": "Falsches Passwort",
-      "expired": "Dieser Inhalt ist abgelaufen",
-      "viewLimitReached": "Limit für Aufrufe erreicht",
-      "views": "{count} Aufrufe"
-    },
-    "dashboard": {
-      "title": "Meine Text-Freigaben",
-      "subtitle": "Verwalte deine geteilten Texte, Codes und Notizen",
-      "newShare": "Neue Freigabe",
-      "searchPlaceholder": "Nach Titel oder Inhalt suchen...",
-      "noShares": "Noch keine Freigaben vorhanden",
-      "createFirstShare": "Erstelle deine erste Text-Freigabe",
-      "deleteConfirm": "Dauerhaft löschen?",
-      "deleteSuccess": "Erfolgreich gelöscht",
-      "deleteError": "Löschen fehlgeschlagen",
-      "qrCode": "QR-Code",
-      "scanToVisit": "Scannen zum Öffnen",
-      "downloadQr": "QR herunterladen",
       "close": "Schließen",
-      "generating": "Wird erstellt…",
+      "generating": "Wird generiert…",
+      "areYouSure": "Bist du sicher?",
+      "keepIt": "Behalten",
+      "deleteLink": "Link löschen",
+      "deleting": "Wird gelöscht…",
+      "confirmDelete": "Diesen Kurzlink dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.",
+      "qrCode": "QR-Code",
+      "scanToVisit": "Scannen zum Besuchen",
+      "downloadQr": "QR herunterladen",
       "qrCodeFetchFailed": "QR-Code konnte nicht geladen werden",
       "qrCodeDownloaded": "QR-Code heruntergeladen",
       "qrCodeAlt": "QR-Code",
       "qrCodeUnavailable": "QR-Code nicht verfügbar",
-      "editShare": "Bearbeiten",
-      "viewStats": "Stats ansehen",
+      "back": "Zurück",
+      "backToDashboard": "Zurück zum Dashboard",
+      "customSlug": "Benutzerdefinierte URL",
+      "expiresAt": "Läuft ab am",
+      "neverExpires": "Nie",
+      "unknown": "Unbekannt",
+      "last7Days": "Letzte 7 Tage",
+      "overallTraffic": "Traffic-Übersicht",
+      "topPerforming": "Top-Performer",
+      "trafficByCountry": "Traffic nach Land",
+      "noDataYet": "Noch keine Daten",
+      "updatedAgo": "Vor 2 Stunden aktualisiert",
+      "links": "Links",
+      "analysis": "Analysen",
+      "realtime": "Live",
+      "loading": "Wird geladen…"
+    },
+    "urls": {
+      "dashboardTitle": "Dein Links-Dashboard",
+      "dashboardSubtitle": "Erstelle, verwalte und tracke alle deine Kurzlinks",
+      "totalLinks": "Links gesamt",
+      "totalClicks": "Klicks gesamt",
+      "activeLinks": "Aktive Links",
+      "searchPlaceholder": "Links oder Ziele suchen…",
+      "newest": "Neueste zuerst",
+      "oldest": "Älteste zuerst",
+      "mostClicks": "Meistgeklickt",
+      "noLinksFound": "Keine Links gefunden",
+      "tryAdjustingSearch": "Versuche, deine Suche oder Filter anzupassen",
+      "createFirstLinkDesc": "Du hast noch keine Kurzlinks erstellt. Erstelle jetzt deinen ersten!",
+      "createFirstLinkButton": "Ersten Link erstellen",
+      "createLink": "Neuer Kurzlink",
+      "createNewLink": "Kurzlink erstellen",
+      "createLinkDesc": "Füge eine lange URL ein, um eine kurze, trackbare Version zu erhalten.",
+      "destinationUrl": "Lange URL",
+      "visit": "Besuchen",
+      "overallTrafficDesc": "Klicks und eindeutige Besucher im Zeitverlauf",
+      "topPerformingLinks": "Top-Performer Links",
+      "loadingUrls": "Deine Links werden geladen…",
+      "noUrls": "Noch keine Kurzlinks. Erstelle einen, um zu starten!",
+      "createdAt": "Erstellt",
+      "originalUrl": "Ziel",
+      "shortUrl": "Kurzlink",
+      "clicks": "Klicks",
+      "actions": "Aktionen",
+      "copy": "Kopieren",
+      "share": "Teilen",
+      "details": "Details",
+      "delete": "Löschen",
+      "shareAsLink": "Link kopieren",
+      "shareWithFacebook": "Auf Facebook teilen",
+      "shareWithInstagram": "Auf Instagram teilen",
+      "shareWithGithub": "Auf GitHub teilen",
+      "missingUrl": "Keine URL angegeben",
+      "ipAddress": "IP",
+      "browser": "Browser",
+      "os": "Betriebssystem",
+      "clickedAt": "Geklickt am",
+      "noClickLogs": "Noch keine Klicks aufgezeichnet",
+      "sink": "Quelle",
+      "filterLinks": "Links filtern",
+      "visits": "Besuche",
+      "visitors": "Eindeutige Besucher",
+      "referrers": "Referrer",
+      "views": "Aufrufe",
+      "locations": "Standorte",
+      "worldMapHere": "Weltkarte",
+      "country": "Land",
+      "region": "Region",
+      "city": "Stadt",
+      "referrer": "Von",
+      "language": "Sprache",
+      "device": "Gerät",
+      "type": "Typ",
+      "noDataAvailable": "Noch keine Daten vorhanden.",
+      "footerText": "© 2025 Shrnkly",
+      "copiedToClipboard": "Kopiert!",
+      "deletedSuccessfully": "Link gelöscht",
+      "downloadQrCode": "QR-Code herunterladen",
+      "linkCopiedAlert": "Kurzlink kopiert!",
+      "linkCopyFailedAlert": "Link konnte nicht kopiert werden",
+      "confirmDeleteAlert": "Diesen Kurzlink wirklich löschen?",
+      "instagramManualShare": "Instagram erlaubt kein direktes Teilen von der Website. Kopiere den Link und teile ihn manuell.",
+      "originalDomain": "Ursprüngliche Domain",
+      "copyShortLink": "Link kopieren",
+      "visitUrl": "Besuchen",
+      "recentClicks": "Letzte Klicks",
+      "back": "Zurück",
+      "cancel": "Abbrechen",
+      "expiresAt": "Läuft ab am",
+      "areYouSure": "Bist du sicher?",
+      "confirmDelete": "Diesen Kurzlink dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.",
+      "keepIt": "Behalten",
+      "deleteLink": "Link löschen",
+      "qrCode": "QR-Code",
+      "scanToVisit": "Scannen zum Besuchen",
+      "downloadQr": "QR herunterladen",
+      "close": "Schließen",
+      "overallTraffic": "Traffic-Übersicht",
+      "last7Days": "Letzte 7 Tage",
+      "trafficByLocation": "Traffic nach Land",
+      "noDataYet": "Noch keine Daten",
+      "qrCodeMessages": {
+        "missingShortKey": "QR-Code kann nicht generiert werden – Kurzlink-Schlüssel fehlt.",
+        "notFound": "Kein Kurzlink für die QR-Code-Erstellung gefunden.",
+        "success": "QR-Code bereit!"
+      },
+      "links": "Links",
+      "analysis": "Analysen",
+      "realtime": "Live",
+      "messages": {
+        "creation": {
+          "validationError": "Bitte überprüfe die eingegebene URL.",
+          "ownDomainError": "Du kannst keinen Link kürzen, der auf unseren eigenen Dienst zeigt.",
+          "alreadyExists": "Diese genaue URL wurde bereits gekürzt.",
+          "success": "Kurzlink erfolgreich erstellt!",
+          "internalError": "Etwas ist schiefgelaufen. Bitte versuch es erneut.",
+          "needLogin": "Du hast das kostenlose Limit erreicht. Bitte melde dich an, um mehr zu erstellen.",
+          "needSubscription": "Du hast dein Plan-Limit erreicht. Upgrade für mehr Links."
+        },
+        "retrieval": {
+          "notFound": "Dieser Kurzlink existiert nicht.",
+          "success": "Kurzlink erfolgreich geladen."
+        },
+        "deletion": {
+          "notFound": "Der zu löschende Link konnte nicht gefunden werden.",
+          "success": "Link erfolgreich gelöscht."
+        },
+        "details": {
+          "notFound": "Keine Details für diesen Link gefunden.",
+          "expired": "Dieser Link ist abgelaufen.",
+          "success": "Link-Details geladen."
+        },
+        "redirect": {
+          "notFound": "Dieser Kurzlink existiert nicht.",
+          "expired": "Entschuldigung – dieser Link ist abgelaufen."
+        },
+        "listing": {
+          "notFound": "Keine Links gefunden.",
+          "success": "Deine Links wurden erfolgreich geladen."
+        },
+        "validation": {
+          "invalidShortKeyFormat": "Ungültiges Kurzlink-Format."
+        }
+      }
+    },
+    "texts": {
+      "title": "Meine Text-Freigaben",
+      "subtitle": "Verwalte alle deine geteilten Texte, Codes & Notizen",
+      "newShare": "Neue Freigabe",
+      "searchPlaceholder": "Nach Titel oder Inhalt suchen…",
+      "noShares": "Noch keine Freigaben",
+      "createFirstShare": "Erstelle deine erste Text-Freigabe",
+      "deleteConfirm": "Diese Freigabe dauerhaft löschen?",
+      "deleteSuccess": "Freigabe gelöscht",
+      "deleteError": "Freigabe konnte nicht gelöscht werden",
+      "editShare": "Freigabe bearbeiten",
+      "viewStats": "Statistiken anzeigen",
       "totalShares": "Freigaben gesamt",
       "totalViews": "Aufrufe gesamt",
       "activeShares": "Aktive Freigaben",
-      "links": "Links",
-      "analysis": "Statistiken",
-      "realtime": "Echtzeit",
-      "overallTraffic": "Traffic-Übersicht",
       "overallTrafficDesc": "Aufrufe im Zeitverlauf",
-      "topPerformingShares": "Top Freigaben",
-      "trafficByCountry": "Traffic nach Ländern",
-      "noDataYet": "Noch keine Daten",
-      "last7Days": "Letzte 7 Tage",
-      "updatedAgo": "Vor 2 Std. aktualisiert",
-      "back": "Zurück",
-      "backToDashboard": "Zurück zum Dashboard",
-      "customSlug": "Benutzerdefinierter Slug",
+      "topPerformingShares": "Top-Performer Freigaben",
       "protected": "Geschützt",
-      "createdAt": "Erstellt am",
       "copyLink": "Link kopieren",
       "viewShare": "Ansehen",
       "format": "Format",
-      "expiresAt": "Läuft ab am",
-      "neverExpires": "Nie",
       "recentViews": "Letzte Aufrufe",
-      "unknown": "Unbekannt"
-    },
-    "stats": {
-      "title": "Freigabe-Statistiken",
-      "totalViews": "Aufrufe gesamt",
-      "remainingViews": "Verbleibende Aufrufe",
+      "back": "Zurück",
+      "cancel": "Abbrechen",
       "expiresAt": "Läuft ab am",
-      "neverExpires": "Nie",
-      "recentViews": "Letzte Aufrufe",
-      "noViewsYet": "Noch keine Aufrufe",
-      "country": "Land",
-      "time": "Zeitpunkt",
-      "device": "Gerät"
-    },
-    "errors": {
-      "notFound": "Diese Freigabe existiert nicht mehr",
-      "unauthorized": "Keine Zugriffsberechtigung",
-      "expired": "Inhalt ist abgelaufen",
-      "viewLimitReached": "Maximale Anzahl an Aufrufen erreicht",
-      "validationError": "Ungültige Daten, bitte prüfen",
-      "serverError": "Server-Fehler. Bitte später nochmal versuchen."
+      "areYouSure": "Bist du sicher?",
+      "confirmDelete": "Diese Freigabe dauerhaft löschen?",
+      "keepIt": "Behalten",
+      "deleteLink": "Freigabe löschen",
+      "qrCode": "QR-Code",
+      "scanToVisit": "Scannen zum Besuchen",
+      "downloadQr": "QR herunterladen",
+      "close": "Schließen",
+      "overallTraffic": "Traffic-Übersicht",
+      "last7Days": "Letzte 7 Tage",
+      "trafficByLocation": "Traffic nach Land",
+      "noDataYet": "Noch keine Daten",
+      "create": {
+        "title": "Neue Text-Freigabe erstellen",
+        "subtitle": "Teile Code, Notizen, Logs, Konfigurationen – sofort",
+        "titleLabel": "Titel (optional)",
+        "titlePlaceholder": "Worum geht es? (optional)",
+        "contentLabel": "Dein Inhalt",
+        "contentPlaceholder": "Füge hier deinen Text, Code oder Markdown ein…",
+        "formatLabel": "Format",
+        "plainText": "Nur Text",
+        "markdown": "Markdown",
+        "code": "Code",
+        "languageLabel": "Sprache (für Code)",
+        "languagePlaceholder": "JavaScript, Python, Go, Rust…",
+        "languageSelect": "Sprache auswählen…",
+        "passwordLabel": "Passwortschutz (optional)",
+        "passwordPlaceholder": "Nur Personen mit diesem Passwort können ansehen",
+        "expiresAtLabel": "Automatisch löschen nach (optional)",
+        "viewLimitLabel": "Maximale Aufrufe (optional)",
+        "viewLimitPlaceholder": "1–1000 Aufrufe",
+        "customSlugLabel": "Benutzerdefinierte URL (optional)",
+        "customSlugPlaceholder": "meine-geheime-konfiguration",
+        "createButton": "Freigabe-Link erstellen",
+        "creating": "Wird erstellt…",
+        "success": "Freigabe erstellt! Link in die Zwischenablage kopiert.",
+        "error": "Freigabe konnte nicht erstellt werden. Bitte versuche es erneut.",
+        "agreementPrefix": "Mit dem Erstellen dieser Freigabe akzeptierst du unsere ",
+        "terms": "Nutzungsbedingungen",
+        "agreementSuffix": " und ",
+        "privacy": "Datenschutzbestimmungen",
+        "showAdvanced": "Erweiterte Optionen anzeigen",
+        "hideAdvanced": "Erweiterte Optionen ausblenden",
+        "contentRequired": "Bitte gib einen Inhalt ein",
+        "cancel": "Abbrechen",
+        "slugAvailable": "Dieser benutzerdefinierte Link ist verfügbar",
+        "slugTaken": "Dieser benutzerdefinierte Link ist bereits vergeben",
+        "slugChecking": "Verfügbarkeit wird überprüft…"
+      },
+      "view": {
+        "copyButton": "Inhalt kopieren",
+        "copySuccess": "Kopiert!",
+        "copyError": "Kopieren fehlgeschlagen",
+        "download": "Herunterladen",
+        "downloadTxt": "Als .txt herunterladen",
+        "downloadMd": "Als .md herunterladen",
+        "qrCode": "QR-Code",
+        "shareLink": "Diese Seite teilen",
+        "protectedContent": "Diese Freigabe ist passwortgeschützt",
+        "enterPassword": "Passwort eingeben, um anzusehen",
+        "submitPassword": "Entsperren",
+        "verifying": "Wird überprüft…",
+        "invalidPassword": "Falsches Passwort",
+        "expired": "Diese Freigabe ist abgelaufen",
+        "viewLimitReached": "Maximale Aufrufe erreicht",
+        "views": "{count} Aufrufe"
+      },
+      "stats": {
+        "title": "Freigabe-Statistiken",
+        "totalViews": "Aufrufe gesamt",
+        "remainingViews": "Verbleibende Aufrufe",
+        "expiresAt": "Läuft ab am",
+        "neverExpires": "Nie",
+        "recentViews": "Letzte Aufrufe",
+        "noViewsYet": "Noch keine Aufrufe",
+        "country": "Land",
+        "time": "Zeit",
+        "device": "Gerät"
+      },
+      "errors": {
+        "notFound": "Diese Freigabe existiert nicht (mehr)",
+        "unauthorized": "Du hast keine Berechtigung, dies anzusehen",
+        "expired": "Diese Freigabe ist abgelaufen",
+        "viewLimitReached": "Maximale Anzahl an Aufrufen erreicht",
+        "validationError": "Ungültige Eingabe – bitte überprüfe deine Daten",
+        "serverError": "Etwas ist schiefgelaufen. Versuch es später noch einmal."
+      },
+      "links": "Links",
+      "analysis": "Analysen",
+      "realtime": "Live"
     }
-  },
-  "footer": {
-    "allRightsReserved": "Alle Rechte vorbehalten.",
-    "privacyPolicy": "Datenschutz",
-    "termsOfService": "AGB"
   }
 }
