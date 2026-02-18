@@ -771,7 +771,13 @@
         "viewFaqs": "FAQs ansehen",
         "emailSupport": "E-Mail Support"
       },
-      "titleEmphasis": "Wir sind für dich da"
+      "titleEmphasis": "Wir sind für dich da",
+      "githubRepo": "GitHub Repository",
+      "githubIssues": "Probleme melden",
+      "githubRepoLabel": "Quellcode ansehen, beitragen, den Projekt starren",
+      "githubIssuesLabel": "Fehler melden, Funktionen anfragen, Fortschritt verfolgen",
+      "viewRepo": "Repository ansehen",
+      "reportIssue": "Problem melden"
     },
     "notFound": {
       "badge": "404 Fehler",

@@ -3,9 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ShrnklyLogo from '@/public/logo.png';
+import configuration from '@/configuration/configuration';
 
 export const Logo = () => {
-    const projectName = process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly';
+    const projectName = configuration.app.name;
 
     return (
         <Link href="/" className="flex items-center gap-3 group">

@@ -771,7 +771,13 @@
         "viewFaqs": "FAQs देखें",
         "emailSupport": "ईमेल सपोर्ट"
       },
-      "titleEmphasis": "हम आपकी मदद के लिए यहां हैं"
+      "titleEmphasis": "हम आपकी मदद के लिए यहां हैं",
+      "githubRepo": "GitHub रिपॉजिटरी",
+      "githubIssues": "समस्याएं रिपोर्ट करें",
+      "githubRepoLabel": "सोर्स कोड देखें, योगदान करें, प्रोजेक्ट को स्टार करें",
+      "githubIssuesLabel": "बग्स रिपोर्ट करें, फीचर्स अनुरोध करें, प्रगति ट्रैक करें",
+      "viewRepo": "रिपॉजिटरी देखें",
+      "reportIssue": "समस्या रिपोर्ट करें"
     },
     "notFound": {
       "badge": "404 त्रुटि",

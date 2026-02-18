@@ -771,7 +771,13 @@
         "viewFaqs": "Ver FAQ",
         "emailSupport": "Soporte por email"
       },
-      "titleEmphasis": "Estamos aquí para ayudarte"
+      "titleEmphasis": "Estamos aquí para ayudarte",
+      "githubRepo": "Repositorio de GitHub",
+      "githubIssues": "Reportar problemas",
+      "githubRepoLabel": "Ver código fuente, contribuir, dar estrella al proyecto",
+      "githubIssuesLabel": "Reportar errores, solicitar funciones, seguir el progreso",
+      "viewRepo": "Ver repositorio",
+      "reportIssue": "Reportar problema"
     },
     "notFound": {
       "badge": "Error 404",

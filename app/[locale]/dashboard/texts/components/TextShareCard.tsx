@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import QRCodeViewer from '@/components/QRCodeViewer';
+import configuration from '@/configuration/configuration';
 import {
     Dialog,
     DialogContent,
@@ -44,7 +45,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
     const [copied, setCopied] = useState(false);
     const [showQrPopover, setShowQrPopover] = useState(false);
 
-    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/texts/${share?.shortKey}`;
+    const shareUrl = `${configuration.app.baseUrl}/texts/${share?.shortKey}`;
     const date = new Date(share?.createdAt || '').toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',

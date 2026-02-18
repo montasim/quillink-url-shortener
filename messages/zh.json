@@ -771,7 +771,13 @@
         "viewFaqs": "查看常见问题",
         "emailSupport": "邮件支持"
       },
-      "titleEmphasis": "我们随时为您提供帮助"
+      "titleEmphasis": "我们随时为您提供帮助",
+      "githubRepo": "GitHub 仓库",
+      "githubIssues": "报告问题",
+      "githubRepoLabel": "查看源代码、贡献、给项目加星",
+      "githubIssuesLabel": "报告错误、请求功能、跟踪进度",
+      "viewRepo": "查看仓库",
+      "reportIssue": "报告问题"
     },
     "notFound": {
       "badge": "404 错误",

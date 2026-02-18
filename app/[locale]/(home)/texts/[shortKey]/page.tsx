@@ -23,6 +23,7 @@ import FormatSelector from '@/components/textShare/FormatSelector';
 import TextShareViewSkeleton from '@/components/textShare/TextShareViewSkeleton';
 import QRCodeViewer from '@/components/QRCodeViewer';
 import API_ENDPOINT from '@/constants/apiEndPoint';
+import configuration from '@/configuration/configuration';
 import { getData } from '@/lib/axios';
 import { cn } from '@/lib/utils';
 
@@ -213,7 +214,7 @@ export default function ViewTextSharePage() {
                 </Badge>
 
                 <p className="text-lg text-muted-foreground/80 max-w-3xl mb-8">
-                    Shared via {process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly'} Text Share
+                    Shared via {configuration.app.name} Text Share
                 </p>
 
                 {/* Action Buttons */}

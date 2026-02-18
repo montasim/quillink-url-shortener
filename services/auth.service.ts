@@ -3,6 +3,7 @@ import { toast } from 'sonner';
 import contentTypesLite from 'content-types-lite';
 import { createData } from '@/lib/axios';
 import MESSAGES from '@/constants/messages';
+import configuration from '@/configuration/configuration';
 
 interface AuthActionParams {
     apiEndpoint: string;
@@ -54,8 +55,8 @@ export const handleAuthAction = async ({
 };
 
 export async function verifyTurnstileToken(token: string, ip?: string) {
-    const secret = process.env.CF_TURNSTILE_SECRET_KEY || '';
-    const verifyUrl = process.env.CF_TURNSTILE_VERIFY_URL || '';
+    const secret = configuration.turnstile.secretKey;
+    const verifyUrl = configuration.turnstile.verifyUrl;
     const response = await axios.post(
         verifyUrl,
         new URLSearchParams({

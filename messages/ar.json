@@ -771,7 +771,13 @@
         "viewFaqs": "عرض الأسئلة الشائعة",
         "emailSupport": "دعم البريد الإلكتروني"
       },
-      "titleEmphasis": "نحن هنا لمساعدتك"
+      "titleEmphasis": "نحن هنا لمساعدتك",
+      "githubRepo": "مستودع GitHub",
+      "githubIssues": "الإبلاغ عن المشاكل",
+      "githubRepoLabel": "عرض الكود المصدري، المساهمة، وضع نجمة للمشروع",
+      "githubIssuesLabel": "الإبلاغ عن الأخطاء، طلب الميزات، تتبع التقدم",
+      "viewRepo": "عرض المستودع",
+      "reportIssue": "الإبلاغ عن مشكلة"
     },
     "notFound": {
       "badge": "خطأ 404",

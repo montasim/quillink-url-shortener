@@ -13,6 +13,17 @@ const configuration = {
         github: process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/montasim',
     },
 
+    github: {
+        repo: process.env.NEXT_PUBLIC_GITHUB_REPO_URL || 'https://github.com/montasim/shrnkly',
+        issues: process.env.NEXT_PUBLIC_GITHUB_ISSUES_URL || 'https://github.com/montasim/shrnkly/issues',
+    },
+
+    turnstile: {
+        siteKey: process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY || '',
+        secretKey: process.env.CF_TURNSTILE_SECRET_KEY || '',
+        verifyUrl: process.env.CF_TURNSTILE_VERIFY_URL || 'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+    },
+
     nodeEnv: process.env.NODE_ENV || '',
 
     api: {
@@ -59,6 +70,8 @@ const configuration = {
         redirectUri: process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI || '',
         tokenUrl: process.env.GOOGLE_OAUTH_TOKEN_URL || '',
         userInfoUrl: process.env.GOOGLE_OAUTH_USERINFO_URL || '',
+        publicClientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+        publicRedirectUri: process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI || '',
     },
 
     mailer: {

@@ -12,6 +12,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import ViewsChart from '@/components/ViewsChart';
 import QRCodeViewer from '@/components/QRCodeViewer';
 import { toast } from 'sonner';
+import configuration from '@/configuration/configuration';
 import { fetchUrlDetails } from '@/app/[locale]/dashboard/urls/actions';
 import { format, subDays, eachDayOfInterval } from 'date-fns';
 import { motion } from 'motion/react';
@@ -147,7 +148,7 @@ export default function UrlSummaryPage() {
 
     const handleCopyShortLink = async () => {
         if (!url) return;
-        const shortUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${url.shortKey}`;
+        const shortUrl = `${configuration.app.baseUrl}/${url.shortKey}`;
         try {
             await navigator.clipboard.writeText(shortUrl);
             toast.success(t('copiedToClipboard') || 'Link copied!');

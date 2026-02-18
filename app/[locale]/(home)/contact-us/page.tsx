@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { GithubIcon, LinkedinIcon, MailIcon, MessageSquare } from 'lucide-react';
+import { CircleAlert, GithubIcon, LinkedinIcon, MailIcon, MessageSquare, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import React from 'react';
@@ -56,6 +56,27 @@ const ContactPage = () => {
         },
     ];
 
+    const githubLinks = [
+        {
+            icon: Star,
+            title: t('githubRepo'),
+            label: t('githubRepoLabel'),
+            href: configuration.github.repo,
+            actionText: t('viewRepo'),
+            color: 'text-yellow-500',
+            bgColor: 'bg-yellow-500/10'
+        },
+        {
+            icon: CircleAlert,
+            title: t('githubIssues'),
+            label: t('githubIssuesLabel'),
+            href: configuration.github.issues,
+            actionText: t('reportIssue'),
+            color: 'text-red-500',
+            bgColor: 'bg-red-500/10'
+        },
+    ];
+
     return (
         <div className="min-h-screen bg-background relative overflow-hidden">
             {/* Background elements */}
@@ -92,6 +113,42 @@ const ContactPage = () => {
                             </p>
                         </div>
                     ))}
+                </div>
+
+                {/* GitHub Links */}
+                <div className="grid md:grid-cols-2 gap-6 mb-16">
+                    {githubLinks.map((link, index) => {
+                        const Icon = link.icon;
+                        return (
+                            <a
+                                key={index}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group p-6 rounded-2xl border border-border bg-card/50 hover:border-primary/50 hover:bg-card transition-all duration-300"
+                            >
+                                <div className="flex items-start gap-4">
+                                    <div className={`w-12 h-12 rounded-xl ${link.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                                        <Icon className={`w-6 h-6 ${link.color}`} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-semibold text-foreground mb-2">
+                                            {link.title}
+                                        </h3>
+                                        <p className="text-sm text-muted-foreground mb-3">
+                                            {link.label}
+                                        </p>
+                                        <div className="flex items-center text-sm font-semibold text-primary group-hover:underline">
+                                            {link.actionText}
+                                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        );
+                    })}
                 </div>
 
                 {/* Contact Cards */}

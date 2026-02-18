@@ -18,6 +18,7 @@ import GoogleLogo from '@/components/googleLogo';
 import { PasswordField, TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
+import configuration from '@/configuration/configuration';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
 
 const LoginPage = () => {
@@ -38,7 +39,7 @@ const LoginPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
-        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+        const siteKey = configuration.turnstile.siteKey;
 
         // Only require Turnstile token if site key is configured
         if (siteKey && !cfToken) {

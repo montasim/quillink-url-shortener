@@ -2,6 +2,7 @@ import { Separator } from '@/components/ui/separator';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import configuration from '@/configuration/configuration';
 
 const SimpleFooter = () => {
     const footerLinks = [
@@ -35,10 +36,10 @@ const SimpleFooter = () => {
         },
     ];
 
-    const projectName = process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly';
-    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com';
-    const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/in/montasimmamun';
-    const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/montasim';
+    const projectName = configuration.app.name;
+    const contactEmail = configuration.contact.email;
+    const linkedinUrl = configuration.social.linkedin;
+    const githubUrl = configuration.social.github;
 
     return (
         <footer className="border-t border-border bg-background">

@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 import { deleteUrl } from '@/lib/actions/dashboard';
 import QRCodeViewer from '@/components/QRCodeViewer';
 import Image from 'next/image';
+import configuration from '@/configuration/configuration';
 import {
     Dialog,
     DialogContent,
@@ -31,7 +32,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
     const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const popoverRef = useRef<HTMLDivElement>(null);
 
-    const shortUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${url?.shortKey}`;
+    const shortUrl = `${configuration.app.baseUrl}/${url?.shortKey}`;
     const fullUrl = url?.originalUrl;
     const date = new Date(url?.createdAt || '').toLocaleDateString('en-US', {
         month: 'short',

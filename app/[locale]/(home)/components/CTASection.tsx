@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, TrendingUp, Users, Target, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
-
 import { useTranslations } from 'next-intl';
+import configuration from '@/configuration/configuration';
 
 interface ButtonConfig {
     text: string;
@@ -126,7 +126,7 @@ const CTASection = ({
                                 className="bg-background border-2 border-border text-foreground hover:bg-muted font-bold px-12 h-16 rounded-2xl transition-all text-lg"
                                 asChild
                             >
-                                <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com'}`}>
+                                <a href={`mailto:${configuration.contact.email}`}>
                                     {t('emailSupport')}
                                 </a>
                             </Button>

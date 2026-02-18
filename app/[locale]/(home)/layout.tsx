@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/navbar/navbar';
 import React from 'react';
 import Footer from '@/components/footer/footer';
+import configuration from '@/configuration/configuration';
 
 export const metadata: Metadata = {
-    title: `${process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly'} – URL Shortener`,
+    title: `${configuration.app.name} – URL Shortener`,
     description: 'Create short links, QR codes, share them anywhere.',
 };
 

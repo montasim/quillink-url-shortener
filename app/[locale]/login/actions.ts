@@ -2,6 +2,7 @@ import { handleAuthAction } from '@/services/auth.service';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { startProactiveRefresh } from '@/lib/axios';
 import ROUTE_ENDPOINT from '@/constants/routeEndPoint';
+import configuration from '@/configuration/configuration';
 
 export const handleLogin = async (
     formData: any,
@@ -26,8 +27,8 @@ export const handleGoogleLogin = () => {
     const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
 
     const options = {
-        redirect_uri: process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI || '',
-        client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+        redirect_uri: configuration.googleOauth2.publicRedirectUri,
+        client_id: configuration.googleOauth2.publicClientId,
         access_type: 'offline',
         response_type: 'code',
         prompt: 'consent',

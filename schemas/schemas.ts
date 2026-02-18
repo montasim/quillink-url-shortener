@@ -2,6 +2,7 @@ import { z } from 'zod';
 import MESSAGES from '@/constants/messages';
 import REGEX_PATTERNS from '@/constants/regexPatterns';
 import getEnvironmentData from '@/utils/getEnvironmentData';
+import configuration from '@/configuration/configuration';
 
 const {
     ENGLISH_LETTERS_ONLY,
@@ -120,7 +121,7 @@ export const ShortenUrlSchema = z
             .transform((val) => normalizeUrl(val))
             .refine(
                 (val) => {
-                    const ownDomain = process.env.NEXT_PUBLIC_BASE_URL;
+                    const ownDomain = configuration.app.baseUrl;
                     // Only apply the restriction if ownDomain is set and not empty
                     if (!ownDomain || ownDomain.trim() === '') {
                         return true;

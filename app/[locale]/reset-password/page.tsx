@@ -17,6 +17,7 @@ import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 import { useTranslations } from 'next-intl';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
+import configuration from '@/configuration/configuration';
 
 const ResetPassword = () => {
     const t = useTranslations('auth.resetPassword');
@@ -46,7 +47,7 @@ const ResetPassword = () => {
     }, [searchParams, form, router, t]);
 
     const onSubmit = async (data: z.infer<typeof ResetPasswordSchema>) => {
-        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+        const siteKey = configuration.turnstile.siteKey;
 
         // Only require Turnstile token if site key is configured
         if (siteKey && !cfToken) {

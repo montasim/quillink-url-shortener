@@ -21,6 +21,7 @@ import { PasswordField, TextField } from '@/components/CustomFormField';
 import TurnstileField from '@/components/TurnstileField';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
 import { motion, AnimatePresence } from 'motion/react';
+import configuration from '@/configuration/configuration';
 
 
 
@@ -42,7 +43,7 @@ const SignUpPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof SignupSchema>) => {
-        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+        const siteKey = configuration.turnstile.siteKey;
 
         if (siteKey && !cfToken) {
             form.setError('email', {

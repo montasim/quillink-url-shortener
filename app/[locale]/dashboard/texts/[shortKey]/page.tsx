@@ -12,6 +12,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import ViewsChart from '@/components/ViewsChart';
 import QRCodeViewer from '@/components/QRCodeViewer';
 import { toast } from 'sonner';
+import configuration from '@/configuration/configuration';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
 import { format, startOfDay, subDays, eachDayOfInterval } from 'date-fns';
@@ -163,7 +164,7 @@ export default function TextShareSummaryPage() {
 
     const handleCopyLink = async () => {
         if (!share) return;
-        const url = `${process.env.NEXT_PUBLIC_BASE_URL}/texts/${share.shortKey}`;
+        const url = `${configuration.app.baseUrl}/texts/${share.shortKey}`;
         try {
             await navigator.clipboard.writeText(url);
             toast.success(t('linkCopiedAlert') || 'Link copied!');

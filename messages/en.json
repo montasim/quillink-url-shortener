@@ -771,7 +771,13 @@
         "viewFaqs": "View FAQs",
         "emailSupport": "Email Support"
       },
-      "titleEmphasis": "We're here to help"
+      "titleEmphasis": "We're here to help",
+      "githubRepo": "GitHub Repository",
+      "githubIssues": "Report Issues",
+      "githubRepoLabel": "View source code, contribute, star the project",
+      "githubIssuesLabel": "Report bugs, request features, track progress",
+      "viewRepo": "View Repository",
+      "reportIssue": "Report Issue"
     },
     "notFound": {
       "badge": "404 Error",
