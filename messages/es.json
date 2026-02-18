@@ -24,7 +24,20 @@
     "pageNotFoundDescription": "La página que buscas no existe (o nunca existió).",
     "errorOccurredDescription": "Algo salió mal. Inténtalo de nuevo o vuelve al inicio.",
     "goToHomepage": "Ir al inicio",
-    "tryAgain": "Intentar de nuevo"
+    "tryAgain": "Intentar de nuevo",
+    "notFound": {
+      "title": "404",
+      "heading": "Página no encontrada",
+      "description": "Lo sentimos, no pudimos encontrar la página que estás buscando.",
+      "goHome": "Ir al inicio"
+    },
+    "error": {
+      "title": "¡Ups!",
+      "heading": "¡Algo salió mal!",
+      "description": "Ocurrió un error inesperado. Por favor, inténtalo más tarde.",
+      "tryAgain": "Intentar de nuevo",
+      "goHome": "Ir al inicio"
+    }
   },
   "layout": {
     "navigation": {
@@ -36,8 +49,9 @@
       "contactUs": "Contacto",
       "terms": "Términos de servicio",
       "privacy": "Privacidad",
-      "textShares": "Notas compartidas",
-      "urlShortner": "Acortador de URLs"
+      "textShares": "Compartidor de Texto",
+      "urlShortner": "Acortador de Enlaces",
+      "qrCode": "Creador de QR"
     },
     "footer": {
       "allRightsReserved": "Todos los derechos reservados.",
@@ -669,44 +683,54 @@
       "badge": "Legal",
       "titleEmphasis": "Términos de ",
       "titleSuffix": "Servicio",
-      "lastUpdated": "Última actualización: 10 de febrero de 2026",
+      "lastUpdated": "Última actualización: 18 de febrero de 2026",
       "sections": {
         "acceptance": {
           "title": "1. Aceptación de los términos",
           "content": "Al usar Shrnkly aceptas estos Términos de Servicio. Si no estás de acuerdo, por favor no uses el servicio."
         },
         "description": {
-          "title": "2. Nuestro servicio",
-          "content": "Shrnkly te permite acortar URLs, rastrear clics, generar códigos QR y compartir texto de forma segura. Podemos actualizar o cambiar funciones en cualquier momento."
+          "title": "2. Nuestros servicios",
+          "content": "Shrnkly ofrece tres servicios principales: (1) Acortamiento de URLs con análisis y generación de códigos QR, (2) Compartir texto seguro para código, notas y documentos, y (3) Generación de códigos QR personalizados para URLs, texto, WiFi, contactos y más. Podemos actualizar o cambiar funciones en cualquier momento."
         },
         "responsibilities": {
           "title": "3. Tus responsabilidades",
           "content": "No debes usar Shrnkly para:",
           "infoList": [
-            "Enviar spam o mensajes no solicitados",
-            "Difundir malware o código dañino",
-            "Enlazar a contenido ilegal o abusivo",
-            "Violar cualquier ley"
+            "Enviar spam, phishing o mensajes no solicitados",
+            "Difundir malware, virus o código dañino",
+            "Enlazar o compartir contenido ilegal, abusivo o que infrinja derechos",
+            "Compartir información sensible (contraseñas, claves API, datos personales)",
+            "Generar códigos QR que engañen a los usuarios o eludan la seguridad",
+            "Violar leyes aplicables o derechos de terceros"
           ]
         },
-        "expiration": {
-          "title": "4. Contenido y vencimiento",
-          "content": "No poseemos el contenido que acortas o compartes. Podemos desactivar links que violen estos términos. Los links gratuitos pueden tener límites de uso."
+        "qrCodes": {
+          "title": "4. Uso de códigos QR",
+          "content": "Los códigos QR generados en Shrnkly deben usarse solo para fines legítimos. Eres responsable de hacia dónde apuntan tus códigos QR. Podemos desactivar códigos QR o bloquear dominios que violen estos términos, hagan phishing o difundan contenido dañino. Los códigos QR son estáticos: si el destino cambia, debes generar un nuevo código QR."
+        },
+        "textSharing": {
+          "title": "5. Reglas para compartir texto",
+          "content": "Al compartir texto, código o notas: (1) Conservas la propiedad de tu contenido, (2) No compartas material protegido por derechos de autor sin permiso, (3) No compartas secretos, credenciales o datos sensibles, incluso con protección por contraseña, (4) Establece fechas de vencimiento apropiadas para contenido temporal, (5) Podemos eliminar contenido que viole estos términos o reciba reportes de abuso."
+        },
+        "urlShortening": {
+          "title": "6. Acortamiento de URLs y análisis",
+          "content": "Las URLs acortadas redirigen a sus destinos. Recopilamos análisis de clics anonimizados (ubicación, dispositivo, fuente) para proporcionar estadísticas. Podemos desactivar enlaces que violen estos términos, reciban reportes de abuso o apunten a páginas dañinas. Los enlaces gratuitos pueden tener límites de uso y vencer después de inactividad prolongada."
         },
         "property": {
-          "title": "5. Nuestra propiedad intelectual",
+          "title": "7. Nuestra propiedad intelectual",
           "content": "El nombre, diseño, código y logo de Shrnkly nos pertenecen. No puedes copiarlos o usarlos sin permiso."
         },
         "liability": {
-          "title": "6. Limitación de responsabilidad",
-          "content": "Proporcionamos el servicio \"tal cual\". No somos responsables de pérdidas de ganancias, pérdida de datos o interrupciones del servicio."
+          "title": "8. Limitación de responsabilidad",
+          "content": "Proporcionamos el servicio \"tal cual\". No somos responsables de pérdidas de ganancias, pérdida de datos, interrupciones del servicio o daños resultantes del uso de nuestros servicios."
         },
         "termination": {
-          "title": "7. Terminación",
+          "title": "9. Terminación",
           "content": "Podemos suspender o terminar cuentas que violen estos términos o dañen la plataforma u otros usuarios."
         },
         "contact": {
-          "title": "8. Contacto",
+          "title": "10. Contacto",
           "content": "¿Preguntas sobre estos términos?",
           "email": "Email: legal@shrnkly.com"
         }
@@ -716,7 +740,19 @@
       "badge": "Contáctanos",
       "title": "Ponte en contacto",
       "subtitle": "Estamos aquí para ayudarte",
-      "description": "¿Tienes una pregunta, sugerencia o solo quieres decir hola? Envíanos un mensaje.",
+      "description": "¿Tienes una pregunta sobre acortamiento de URLs, compartir texto o códigos QR? ¿Necesitas soporte o quieres reportar un problema? Estamos aquí para ti, solo envíanos un mensaje.",
+      "features": {
+        "urlShortening": "Acortamiento de URLs",
+        "textSharing": "Compartir texto",
+        "qrCodes": "Códigos QR"
+      },
+      "reasons": {
+        "general": "Consulta general",
+        "support": "Soporte técnico",
+        "abuse": "Reportar abuso",
+        "privacy": "Problema de privacidad",
+        "feedback": "Comentarios"
+      },
       "email": "Email",
       "office": "Oficina",
       "github": "GitHub",
@@ -735,6 +771,35 @@
         "viewFaqs": "Ver FAQ",
         "emailSupport": "Soporte por email"
       }
+    },
+    "notFound": {
+      "badge": "Error 404",
+      "title": "Página no encontrada",
+      "description": "Lo sentimos, no pudimos encontrar la página que estás buscando. ¡Pero tenemos mucho que existe!",
+      "goHome": "Ir al inicio",
+      "exploreFeatures": "Explora nuestras funciones",
+      "features": {
+        "shortenUrl": {
+          "title": "Acortar URL",
+          "description": "Convierte URLs largas en enlaces cortos y rastreables"
+        },
+        "shareText": {
+          "title": "Compartir texto",
+          "description": "Comparte código, notas y documentos de forma segura"
+        },
+        "generateQr": {
+          "title": "Generar QR",
+          "description": "Crea códigos QR personalizados al instante"
+        }
+      }
+    },
+    "errorPage": {
+      "badge": "Error",
+      "title": "¡Algo salió mal!",
+      "description": "Ocurrió un error inesperado. Por favor, inténtalo más tarde.",
+      "tryAgain": "Intentar de nuevo",
+      "goHome": "Ir al inicio",
+      "or": "o"
     }
   },
   "auth": {

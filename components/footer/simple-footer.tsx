@@ -10,6 +10,18 @@ const SimpleFooter = () => {
             href: '/',
         },
         {
+            title: 'Link Shrinker',
+            href: '/urls',
+        },
+        {
+            title: 'Text Sharer',
+            href: '/texts',
+        },
+        {
+            title: 'QR Creator',
+            href: '/qr',
+        },
+        {
             title: 'Terms',
             href: '/terms',
         },

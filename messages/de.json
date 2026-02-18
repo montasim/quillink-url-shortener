@@ -24,7 +24,20 @@
     "pageNotFoundDescription": "Die gesuchte Seite existiert nicht (oder hat nie existiert).",
     "errorOccurredDescription": "Etwas ist schiefgelaufen. Versuch es erneut oder geh zurück zur Startseite.",
     "goToHomepage": "Zur Startseite",
-    "tryAgain": "Erneut versuchen"
+    "tryAgain": "Erneut versuchen",
+    "notFound": {
+      "title": "404",
+      "heading": "Seite nicht gefunden",
+      "description": "Sorry, wir konnten die gesuchte Seite nicht finden.",
+      "goHome": "Zur Startseite"
+    },
+    "error": {
+      "title": "Ups!",
+      "heading": "Etwas ist schiefgelaufen!",
+      "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuch es später noch einmal.",
+      "tryAgain": "Erneut versuchen",
+      "goHome": "Zur Startseite"
+    }
   },
   "layout": {
     "navigation": {
@@ -36,8 +49,9 @@
       "contactUs": "Kontakt",
       "terms": "Nutzungsbedingungen",
       "privacy": "Datenschutz",
-      "textShares": "Text-Freigaben",
-      "urlShortner": "URL-Kürzer"
+      "textShares": "Text-Teiler",
+      "urlShortner": "Link-Kürzer",
+      "qrCode": "QR-Ersteller"
     },
     "footer": {
       "allRightsReserved": "Alle Rechte vorbehalten.",
@@ -669,44 +683,54 @@
       "badge": "Rechtliches",
       "titleEmphasis": "Nutzungs",
       "titleSuffix": "bedingungen",
-      "lastUpdated": "Zuletzt aktualisiert: 10. Februar 2026",
+      "lastUpdated": "Zuletzt aktualisiert: 18. Februar 2026",
       "sections": {
         "acceptance": {
           "title": "1. Akzeptanz der Bedingungen",
           "content": "Durch die Nutzung von Shrnkly stimmst du diesen Nutzungsbedingungen zu. Wenn du nicht einverstanden bist, nutze den Dienst bitte nicht."
         },
         "description": {
-          "title": "2. Unser Dienst",
-          "content": "Shrnkly ermöglicht es dir, URLs zu kürzen, Klicks zu tracken, QR-Codes zu generieren und Texte sicher zu teilen. Wir können Funktionen jederzeit aktualisieren oder ändern."
+          "title": "2. Unsere Dienste",
+          "content": "Shrnkly bietet drei Hauptdienste an: (1) URL-Kürzung mit Analytics und QR-Code-Generierung, (2) sicheres Text-Teilen für Code, Notizen und Dokumente, und (3) benutzerdefinierte QR-Code-Generierung für URLs, Text, WiFi, Kontakte und mehr. Wir können Funktionen jederzeit aktualisieren oder ändern."
         },
         "responsibilities": {
           "title": "3. Deine Verantwortlichkeiten",
           "content": "Du darfst Shrnkly nicht nutzen für:",
           "infoList": [
-            "Spam oder unaufgeforderte Nachrichten senden",
-            "Malware oder schädlichen Code verbreiten",
-            "Auf illegale oder missbräuchliche Inhalte verlinken",
-            "Gesetze verletzen"
+            "Spam, Phishing oder unaufgeforderte Nachrichten senden",
+            "Malware, Viren oder schädlichen Code verbreiten",
+            "Auf illegale, missbräuchliche oder rechtsverletzende Inhalte verlinken oder diese teilen",
+            "Sensible Informationen teilen (Passwörter, API-Schlüssel, personenbezogene Daten)",
+            "QR-Codes generieren, die Nutzer täuschen oder Sicherheit umgehen",
+            "Geltende Gesetze oder Rechte Dritter verletzen"
           ]
         },
-        "expiration": {
-          "title": "4. Inhalte & Verfall",
-          "content": "Wir besitzen nicht die Inhalte, die du kürzt oder teilst. Wir können Links deaktivieren, die gegen diese Bedingungen verstoßen. Kostenlose Links können Nutzungslimits haben."
+        "qrCodes": {
+          "title": "4. QR-Code-Nutzung",
+          "content": "Auf Shrnkly generierte QR-Codes dürfen nur für legitime Zwecke verwendet werden. Du bist dafür verantwortlich, wohin deine QR-Codes führen. Wir können QR-Codes deaktivieren oder Domains blockieren, die gegen diese Bedingungen verstoßen, Phishing betreiben oder schädliche Inhalte verbreiten. QR-Codes sind statisch – wenn sich das Ziel ändert, musst du einen neuen QR-Code generieren."
+        },
+        "textSharing": {
+          "title": "5. Regeln für das Text-Teilen",
+          "content": "Beim Teilen von Text, Code oder Notizen: (1) Du behältst das Eigentum an deinen Inhalten, (2) Teile kein urheberrechtlich geschütztes Material ohne Erlaubnis, (3) Teile keine Geheimnisse, Anmeldeinformationen oder sensible Daten – auch nicht mit Passwortschutz, (4) Lege angemessene Verfallsdaten für temporäre Inhalte fest, (5) Wir können Inhalte entfernen, die gegen diese Bedingungen verstoßen oder Missmeldungen erhalten."
+        },
+        "urlShortening": {
+          "title": "6. URL-Kürzung & Analytics",
+          "content": "Gekürzte URLs leiten auf ihre Ziele weiter. Wir sammeln anonymisierte Klick-Analytics (Standort, Gerät, Referrer) zur Bereitstellung von Statistiken. Wir können Links deaktivieren, die gegen diese Bedingungen verstoßen, Missmeldungen erhalten oder auf schädliche Seiten verweisen. Kostenlose Links können Nutzungslimits haben und nach längerer Inaktivität verfallen."
         },
         "property": {
-          "title": "5. Unser geistiges Eigentum",
+          "title": "7. Unser geistiges Eigentum",
           "content": "Der Name, das Design, der Code und das Logo von Shrnkly gehören uns. Du darfst sie ohne Erlaubnis nicht kopieren oder nutzen."
         },
         "liability": {
-          "title": "6. Haftungsbeschränkung",
-          "content": "Wir stellen den Dienst \"wie besehen\" bereit. Wir sind nicht verantwortlich für verlorene Gewinne, Datenverlust oder Serviceunterbrechungen."
+          "title": "8. Haftungsbeschränkung",
+          "content": "Wir stellen den Dienst \"wie besehen\" bereit. Wir sind nicht verantwortlich für verlorene Gewinne, Datenverlust, Serviceunterbrechungen oder Schäden, die aus der Nutzung unserer Dienste entstehen."
         },
         "termination": {
-          "title": "7. Kündigung",
+          "title": "9. Kündigung",
           "content": "Wir können Konten sperren oder kündigen, die gegen diese Bedingungen verstoßen oder der Plattform oder anderen Nutzern schaden."
         },
         "contact": {
-          "title": "8. Kontakt",
+          "title": "10. Kontakt",
           "content": "Fragen zu diesen Bedingungen?",
           "email": "E-Mail: legal@shrnkly.com"
         }
@@ -716,7 +740,19 @@
       "badge": "Kontaktiere uns",
       "title": "Nimm Kontakt auf",
       "subtitle": "Wir sind für dich da",
-      "description": "Hast du eine Frage, einen Vorschlag oder möchtest einfach nur Hallo sagen? Schreib uns eine Nachricht.",
+      "description": "Hast du eine Frage zu URL-Kürzung, Text-Teilen oder QR-Codes? Brauchst du Support oder möchtest ein Problem melden? Wir sind für dich da – schreib uns einfach eine Nachricht.",
+      "features": {
+        "urlShortening": "URL-Kürzung",
+        "textSharing": "Text-Teilen",
+        "qrCodes": "QR-Codes"
+      },
+      "reasons": {
+        "general": "Allgemeine Anfrage",
+        "support": "Technischer Support",
+        "abuse": "Missbrauch melden",
+        "privacy": "Datenschutzbedenken",
+        "feedback": "Feedback"
+      },
       "email": "E-Mail",
       "office": "Büro",
       "github": "GitHub",
@@ -735,6 +771,35 @@
         "viewFaqs": "FAQs ansehen",
         "emailSupport": "E-Mail Support"
       }
+    },
+    "notFound": {
+      "badge": "404 Fehler",
+      "title": "Seite nicht gefunden",
+      "description": "Sorry, wir konnten die gesuchte Seite nicht finden. Aber wir haben viel, das existiert!",
+      "goHome": "Zur Startseite",
+      "exploreFeatures": "Entdecke unsere Funktionen",
+      "features": {
+        "shortenUrl": {
+          "title": "URL kürzen",
+          "description": "Verwandle lange URLs in kurze, trackbare Links"
+        },
+        "shareText": {
+          "title": "Text teilen",
+          "description": "Teile Code, Notizen und Dokumente sicher"
+        },
+        "generateQr": {
+          "title": "QR-Code generieren",
+          "description": "Erstelle benutzerdefinierte QR-Codes sofort"
+        }
+      }
+    },
+    "errorPage": {
+      "badge": "Fehler",
+      "title": "Etwas ist schiefgelaufen!",
+      "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuch es später noch einmal.",
+      "tryAgain": "Erneut versuchen",
+      "goHome": "Zur Startseite",
+      "or": "oder"
     }
   },
   "auth": {

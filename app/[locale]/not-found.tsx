@@ -2,36 +2,39 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import SimpleNavbar from '@/components/navbar/simple-navbar';
-import SimpleFooter from '@/components/footer/simple-footer';
+import { useTranslations } from 'next-intl';
 import { ArrowRight, Link2, MessageSquare, QrCode } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import SimpleNavbar from '@/components/navbar/simple-navbar';
+import SimpleFooter from '@/components/footer/simple-footer';
 
 const NotFoundPage = () => {
+    const t = useTranslations('home.notFound');
+
     const features = [
         {
-            title: 'Shorten a URL',
-            description: 'Turn long URLs into short, trackable links',
+            title: t('features.shortenUrl.title'),
+            description: t('features.shortenUrl.description'),
             icon: Link2,
-            href: '/en/urls',
+            href: '/urls',
             color: 'text-blue-500',
             bgColor: 'bg-blue-500/10',
             borderColor: 'border-blue-500/20'
         },
         {
-            title: 'Share Text',
-            description: 'Share code, notes, and documents securely',
+            title: t('features.shareText.title'),
+            description: t('features.shareText.description'),
             icon: MessageSquare,
-            href: '/en/texts',
+            href: '/texts',
             color: 'text-green-500',
             bgColor: 'bg-green-500/10',
             borderColor: 'border-green-500/20'
         },
         {
-            title: 'Generate QR Code',
-            description: 'Create custom QR codes instantly',
+            title: t('features.generateQr.title'),
+            description: t('features.generateQr.description'),
             icon: QrCode,
-            href: '/en/qr',
+            href: '/qr',
             color: 'text-purple-500',
             bgColor: 'bg-purple-500/10',
             borderColor: 'border-purple-500/20'
@@ -43,6 +46,7 @@ const NotFoundPage = () => {
             <SimpleNavbar />
             <main className="flex-grow">
                 <section className="relative min-h-screen py-24 md:py-32 px-6 overflow-hidden bg-background">
+                    {/* Background enhancement */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
                         <div className="absolute top-1/4 -left-12 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
@@ -54,27 +58,31 @@ const NotFoundPage = () => {
 
                     <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
                         <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
-                            404 Error
+                            {t('badge')}
                         </Badge>
 
                         <div className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                            Page Not Found
+                            {t('title')}
                         </div>
 
+                        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                            {t('title')}
+                        </h1>
+
                         <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-                            Sorry, we couldn't find the page you're looking for.
-                            But we have plenty that does exist!
+                            {t('description')}
                         </p>
 
-                        <Link href="/en" passHref>
+                        <Link href="/" passHref>
                             <Button className="h-11 px-6 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-lg shadow-primary/20 hover:bg-primary/90">
-                                Go to Homepage
+                                {t('goHome')}
                             </Button>
                         </Link>
 
+                        {/* Feature Cards */}
                         <div className="mt-20 w-full">
                             <h2 className="text-2xl font-bold mb-8">
-                                Explore Our Features
+                                {t('exploreFeatures')}
                             </h2>
                             <div className="grid md:grid-cols-3 gap-6">
                                 {features.map((feature, index) => {

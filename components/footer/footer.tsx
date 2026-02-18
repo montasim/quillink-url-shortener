@@ -23,6 +23,10 @@ const Footer = () => {
             href: '/texts',
         },
         {
+            title: tNav('qrCode'),
+            href: '/qr',
+        },
+        {
             title: tNav('terms'),
             href: '/terms',
         },

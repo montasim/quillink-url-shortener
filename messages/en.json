@@ -24,7 +24,20 @@
     "pageNotFoundDescription": "The page you're looking for doesn't exist (or never did).",
     "errorOccurredDescription": "Something went wrong. Try again or go back home.",
     "goToHomepage": "Go to Homepage",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "notFound": {
+      "title": "404",
+      "heading": "Page Not Found",
+      "description": "Sorry, we couldn't find the page you're looking for.",
+      "goHome": "Go to Homepage"
+    },
+    "error": {
+      "title": "Oops!",
+      "heading": "Something went wrong!",
+      "description": "An unexpected error occurred. Please try again later.",
+      "tryAgain": "Try Again",
+      "goHome": "Go to Homepage"
+    }
   },
   "layout": {
     "navigation": {
@@ -36,8 +49,9 @@
       "contactUs": "Contact Us",
       "terms": "Terms of Service",
       "privacy": "Privacy Policy",
-      "textShares": "Text Shares",
-      "urlShortner": "URL Shortner"
+      "textShares": "Text Sharer",
+      "urlShortner": "Link Shrinker",
+      "qrCode": "QR Creator"
     },
     "footer": {
       "allRightsReserved": "All rights reserved.",
@@ -669,44 +683,54 @@
       "badge": "Legal",
       "titleEmphasis": "Terms",
       "titleSuffix": " of Service",
-      "lastUpdated": "Last updated: February 10, 2026",
+      "lastUpdated": "Last updated: February 18, 2026",
       "sections": {
         "acceptance": {
           "title": "1. Acceptance of Terms",
           "content": "By using Shrnkly you agree to these Terms of Service. If you don't agree, please don't use the service."
         },
         "description": {
-          "title": "2. Our Service",
-          "content": "Shrnkly lets you shorten URLs, track clicks, generate QR codes, and share text securely. We may update or change features at any time."
+          "title": "2. Our Services",
+          "content": "Shrnkly provides three core services: (1) URL shortening with analytics and QR code generation, (2) secure text sharing for code, notes and documents, and (3) custom QR code generation for URLs, text, WiFi, contacts and more. We may update or change features at any time."
         },
         "responsibilities": {
           "title": "3. Your Responsibilities",
           "content": "You must not use Shrnkly to:",
           "infoList": [
-            "Send spam or unsolicited messages",
-            "Spread malware or harmful code",
-            "Link to illegal or abusive content",
-            "Violate any laws"
+            "Send spam, phishing attempts or unsolicited messages",
+            "Spread malware, viruses or harmful code",
+            "Link to or share illegal, abusive or infringing content",
+            "Share sensitive information (passwords, API keys, personal data)",
+            "Generate QR codes that deceive users or bypass security",
+            "Violate any applicable laws or third-party rights"
           ]
         },
-        "expiration": {
-          "title": "4. Content & Expiration",
-          "content": "We don't own the content you shorten or share. We may disable links that violate these terms. Free links may have usage limits."
+        "qrCodes": {
+          "title": "4. QR Code Usage",
+          "content": "QR codes generated on Shrnkly are for legitimate purposes only. You are responsible for where your QR codes lead. We may disable QR codes or block domains that violate these terms, engage in phishing, or distribute malicious content. QR codes are static — if the destination changes, you must generate a new QR code."
+        },
+        "textSharing": {
+          "title": "5. Text Sharing Rules",
+          "content": "When sharing text, code or notes: (1) You retain ownership of your content, (2) Do not share copyrighted material without permission, (3) Do not share secrets, credentials or sensitive data even with password protection, (4) Set appropriate expiration dates for temporary content, (5) We may remove content that violates these terms or receives abuse reports."
+        },
+        "urlShortening": {
+          "title": "6. URL Shortening & Analytics",
+          "content": "Shortened URLs redirect to their destinations. We collect anonymized click analytics (location, device, referrer) to provide statistics. We may disable links that violate these terms, receive abuse reports, or point to malicious sites. Free links may have usage limits and may expire after extended inactivity."
         },
         "property": {
-          "title": "5. Our Intellectual Property",
+          "title": "7. Our Intellectual Property",
           "content": "The Shrnkly name, design, code and logo are ours. You may not copy or use them without permission."
         },
         "liability": {
-          "title": "6. Limitation of Liability",
-          "content": "We provide the service \"as is\". We are not responsible for lost profits, data loss, or service interruptions."
+          "title": "8. Limitation of Liability",
+          "content": "We provide the service \"as is\". We are not responsible for lost profits, data loss, service interruptions, or any damages resulting from use of our services."
         },
         "termination": {
-          "title": "7. Termination",
+          "title": "9. Termination",
           "content": "We may suspend or terminate accounts that violate these terms or harm the platform or other users."
         },
         "contact": {
-          "title": "8. Contact",
+          "title": "10. Contact",
           "content": "Questions about these terms?",
           "email": "Email: legal@shrnkly.com"
         }
@@ -716,7 +740,19 @@
       "badge": "Contact Us",
       "title": "Get in Touch",
       "subtitle": "We're here to help",
-      "description": "Have a question, suggestion or just want to say hi? Drop us a message.",
+      "description": "Have a question about URL shortening, text sharing, or QR codes? Need support or want to report an issue? We're here to help — just send us a message.",
+      "features": {
+        "urlShortening": "URL Shortening",
+        "textSharing": "Text Sharing",
+        "qrCodes": "QR Codes"
+      },
+      "reasons": {
+        "general": "General Inquiry",
+        "support": "Technical Support",
+        "abuse": "Report Abuse",
+        "privacy": "Privacy Concern",
+        "feedback": "Feedback"
+      },
       "email": "Email",
       "office": "Office",
       "github": "GitHub",
@@ -735,6 +771,35 @@
         "viewFaqs": "View FAQs",
         "emailSupport": "Email Support"
       }
+    },
+    "notFound": {
+      "badge": "404 Error",
+      "title": "Page Not Found",
+      "description": "Sorry, we couldn't find the page you're looking for. But we have plenty that does exist!",
+      "goHome": "Go to Homepage",
+      "exploreFeatures": "Explore Our Features",
+      "features": {
+        "shortenUrl": {
+          "title": "Shorten a URL",
+          "description": "Turn long URLs into short, trackable links"
+        },
+        "shareText": {
+          "title": "Share Text",
+          "description": "Share code, notes, and documents securely"
+        },
+        "generateQr": {
+          "title": "Generate QR Code",
+          "description": "Create custom QR codes instantly"
+        }
+      }
+    },
+    "errorPage": {
+      "badge": "Error",
+      "title": "Something went wrong!",
+      "description": "An unexpected error occurred. Please try again later.",
+      "tryAgain": "Try Again",
+      "goHome": "Go to Homepage",
+      "or": "or"
     }
   },
   "auth": {

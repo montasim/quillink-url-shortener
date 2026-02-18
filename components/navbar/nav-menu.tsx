@@ -26,6 +26,11 @@ export const NavMenu = (props: NavigationMenuProps) => {
                         <Link href='/texts'>{t('textShares')}</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild>
+                        <Link href='/qr'>{t('qrCode')}</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
     );

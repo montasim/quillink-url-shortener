@@ -29,6 +29,9 @@ const Navbar = () => {
         if (pathname?.includes('/texts')) {
             return '/dashboard/texts';
         }
+        if (pathname?.includes('/qr')) {
+            return '/dashboard/qr';
+        }
         return '/dashboard/urls';
     };
 

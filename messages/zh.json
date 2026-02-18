@@ -24,7 +24,20 @@
     "pageNotFoundDescription": "您查找的页面不存在（或从未存在过）。",
     "errorOccurredDescription": "出现错误，请重试或返回首页。",
     "goToHomepage": "返回首页",
-    "tryAgain": "重试"
+    "tryAgain": "重试",
+    "notFound": {
+      "title": "404",
+      "heading": "页面未找到",
+      "description": "抱歉，我们找不到您正在查找的页面。",
+      "goHome": "返回首页"
+    },
+    "error": {
+      "title": "哎呀！",
+      "heading": "出了点问题！",
+      "description": "发生了意外错误，请稍后再试。",
+      "tryAgain": "重试",
+      "goHome": "返回首页"
+    }
   },
   "layout": {
     "navigation": {
@@ -36,8 +49,9 @@
       "contactUs": "联系我们",
       "terms": "服务条款",
       "privacy": "隐私政策",
-      "textShares": "文本分享",
-      "urlShortner": "短链接"
+      "textShares": "文本分享器",
+      "urlShortner": "链接缩短器",
+      "qrCode": "二维码生成器"
     },
     "footer": {
       "allRightsReserved": "版权所有。",
@@ -669,7 +683,7 @@
       "badge": "法律声明",
       "titleEmphasis": "服务",
       "titleSuffix": "条款",
-      "lastUpdated": "最后更新：2026 年 2 月 10 日",
+      "lastUpdated": "最后更新：2026 年 2 月 18 日",
       "sections": {
         "acceptance": {
           "title": "1. 接受条款",
@@ -677,36 +691,46 @@
         },
         "description": {
           "title": "2. 我们的服务",
-          "content": "Shrnkly 允许您缩短网址、追踪点击、生成二维码并安全地分享文本。我们可能会随时更新或更改功能。"
+          "content": "Shrnkly 提供三项主要服务：(1) 带分析功能和二维码生成的网址缩短服务，(2) 用于代码、笔记和文档的安全文本分享服务，以及 (3) 用于网址、文本、WiFi、联系人等的自定义二维码生成服务。我们可能会随时更新或更改功能。"
         },
         "responsibilities": {
           "title": "3. 您的责任",
           "content": "您不得使用 Shrnkly 进行以下行为：",
           "infoList": [
-            "发送垃圾邮件或未经请求的消息",
-            "传播恶意软件或有害代码",
-            "链接到非法或滥用内容",
-            "违反任何法律"
+            "发送垃圾邮件、网络钓鱼或未经请求的消息",
+            "传播恶意软件、病毒或有害代码",
+            "链接或分享非法、滥用或侵犯权利的内容",
+            "分享敏感信息（密码、API 密钥、个人数据）",
+            "生成欺骗用户或绕过安全的二维码",
+            "违反适用法律或第三方权利"
           ]
         },
-        "expiration": {
-          "title": "4. 内容与过期",
-          "content": "我们不拥有您缩短或分享的内容。我们可能会禁用违反这些条款的链接。免费链接可能有使用限制。"
+        "qrCodes": {
+          "title": "4. 二维码使用",
+          "content": "在 Shrnkly 上生成的二维码只能用于合法目的。您对自己的二维码指向的目的地负责。我们可能会禁用违反这些条款、进行网络钓鱼或传播有害内容的二维码或阻止相关域名。二维码是静态的——如果目的地发生变化，您需要生成新的二维码。"
+        },
+        "textSharing": {
+          "title": "5. 文本分享规则",
+          "content": "分享文本、代码或笔记时：(1) 您保留内容的所有权，(2) 未经许可不得分享受版权保护的材料，(3) 不得分享秘密、凭证或敏感数据——即使有密码保护也不行，(4) 为临时内容设置适当的过期日期，(5) 我们可能会删除违反这些条款或收到滥用报告的内容。"
+        },
+        "urlShortening": {
+          "title": "6. 网址缩短和分析",
+          "content": "缩短的网址会重定向到其目的地。我们收集匿名点击分析（位置、设备、来源）以提供统计数据。我们可能会禁用违反这些条款、收到滥用报告或指向有害页面的链接。免费链接可能有使用限制，并在长时间不活动后过期。"
         },
         "property": {
           "title": "5. 我们的知识产权",
           "content": "Shrnkly 的名称、设计、代码和标志归我们所有。未经许可，您不得复制或使用它们。"
         },
         "liability": {
-          "title": "6. 责任限制",
-          "content": "我们按\"原样\"提供服务。我们不对利润损失、数据丢失或服务中断负责。"
+          "title": "8. 责任限制",
+          "content": "我们按\"原样\"提供服务。我们不对利润损失、数据丢失、服务中断或使用我们服务造成的损害负责。"
         },
         "termination": {
-          "title": "7. 终止",
+          "title": "9. 终止",
           "content": "我们可能会暂停或终止违反这些条款或损害平台或其他用户的账户。"
         },
         "contact": {
-          "title": "8. 联系方式",
+          "title": "10. 联系方式",
           "content": "对这些条款有疑问？",
           "email": "电子邮件：legal@shrnkly.com"
         }
@@ -716,7 +740,19 @@
       "badge": "联系我们",
       "title": "取得联系",
       "subtitle": "我们随时为您提供帮助",
-      "description": "有问题、建议或只是想打个招呼？请给我们留言。",
+      "description": "您对网址缩短、文本分享或二维码有疑问吗？需要帮助或想报告问题？我们随时为您提供帮助——请给我们留言。",
+      "features": {
+        "urlShortening": "网址缩短",
+        "textSharing": "文本分享",
+        "qrCodes": "二维码"
+      },
+      "reasons": {
+        "general": "一般咨询",
+        "support": "技术支持",
+        "abuse": "举报滥用",
+        "privacy": "隐私问题",
+        "feedback": "反馈"
+      },
       "email": "电子邮件",
       "office": "办公室",
       "github": "GitHub",
@@ -735,6 +771,35 @@
         "viewFaqs": "查看常见问题",
         "emailSupport": "邮件支持"
       }
+    },
+    "notFound": {
+      "badge": "404 错误",
+      "title": "页面未找到",
+      "description": "抱歉，我们找不到您正在查找的页面。但我们有很多存在的东西！",
+      "goHome": "返回首页",
+      "exploreFeatures": "探索我们的功能",
+      "features": {
+        "shortenUrl": {
+          "title": "缩短网址",
+          "description": "将长网址转换为短的可追踪链接"
+        },
+        "shareText": {
+          "title": "分享文本",
+          "description": "安全地分享代码、笔记和文档"
+        },
+        "generateQr": {
+          "title": "生成二维码",
+          "description": "立即创建自定义二维码"
+        }
+      }
+    },
+    "errorPage": {
+      "badge": "错误",
+      "title": "出了点问题！",
+      "description": "发生了意外错误，请稍后再试。",
+      "tryAgain": "重试",
+      "goHome": "返回首页",
+      "or": "或"
     }
   },
   "auth": {

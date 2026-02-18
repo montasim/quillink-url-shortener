@@ -40,6 +40,21 @@ const ContactPage = () => {
         },
     ];
 
+    const features = [
+        {
+            name: t('features.urlShortening'),
+            description: 'Shorten URLs, track clicks, view analytics'
+        },
+        {
+            name: t('features.textSharing'),
+            description: 'Share code, notes, documents securely'
+        },
+        {
+            name: t('features.qrCodes'),
+            description: 'Generate custom QR codes instantly'
+        },
+    ];
+
     return (
         <div className="min-h-screen bg-background relative overflow-hidden">
             {/* Background elements */}
@@ -53,12 +68,29 @@ const ContactPage = () => {
                     <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full px-4 py-1.5 border border-primary/20 font-medium text-sm mb-6">
                         {t('badge')}
                     </Badge>
-                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+                    <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
                         {t('subtitle')}
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                         {t('description')}
                     </p>
+                </div>
+
+                {/* Features Summary */}
+                <div className="grid md:grid-cols-3 gap-6 mb-16">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="p-6 rounded-2xl border border-border bg-card/50 hover:bg-card transition-colors duration-300"
+                        >
+                            <h3 className="text-lg font-semibold text-foreground mb-2">
+                                {feature.name}
+                            </h3>
+                            <p className="text-sm text-muted-foreground">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Contact Cards */}
@@ -76,7 +108,7 @@ const ContactPage = () => {
                                 <div className={`w-14 h-14 rounded-2xl ${method.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                                     <Icon className={`w-7 h-7 ${method.color}`} />
                                 </div>
-                                <h3 className="text-xl font-bold text-foreground mb-2">
+                                <h3 className="text-xl font-semibold text-foreground mb-2">
                                     {method.title}
                                 </h3>
                                 <p className="text-muted-foreground mb-6">

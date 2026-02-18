@@ -24,7 +24,20 @@
     "pageNotFoundDescription": "La page que vous recherchez n'existe pas (ou n'a jamais existé).",
     "errorOccurredDescription": "Quelque chose s'est mal passé. Réessayez ou retournez à l'accueil.",
     "goToHomepage": "Aller à l'accueil",
-    "tryAgain": "Réessayer"
+    "tryAgain": "Réessayer",
+    "notFound": {
+      "title": "404",
+      "heading": "Page non trouvée",
+      "description": "Désolé, nous n'avons pas pu trouver la page que vous recherchez.",
+      "goHome": "Aller à l'accueil"
+    },
+    "error": {
+      "title": "Oups !",
+      "heading": "Quelque chose s'est mal passé !",
+      "description": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
+      "tryAgain": "Réessayer",
+      "goHome": "Aller à l'accueil"
+    }
   },
   "layout": {
     "navigation": {
@@ -36,8 +49,9 @@
       "contactUs": "Nous contacter",
       "terms": "Conditions d'utilisation",
       "privacy": "Confidentialité",
-      "textShares": "Partages de texte",
-      "urlShortner": "Raccourcisseur d'URL"
+      "textShares": "Partageur de Texte",
+      "urlShortner": "Réducteur de Liens",
+      "qrCode": "Créateur de QR"
     },
     "footer": {
       "allRightsReserved": "Tous droits réservés.",
@@ -669,44 +683,54 @@
       "badge": "Mentions légales",
       "titleEmphasis": "Conditions d'",
       "titleSuffix": "utilisation",
-      "lastUpdated": "Dernière mise à jour : 10 février 2026",
+      "lastUpdated": "Dernière mise à jour : 18 février 2026",
       "sections": {
         "acceptance": {
           "title": "1. Acceptation des conditions",
           "content": "En utilisant Shrnkly, tu acceptes ces Conditions d'utilisation. Si tu n'es pas d'accord, merci de ne pas utiliser le service."
         },
         "description": {
-          "title": "2. Notre service",
-          "content": "Shrnkly te permet de raccourcir des URLs, de suivre les clics, de générer des QR codes et de partager du texte en toute sécurité. Nous pouvons mettre à jour ou modifier les fonctionnalités à tout moment."
+          "title": "2. Nos services",
+          "content": "Shrnkly propose trois services principaux : (1) Raccourcissement d'URL avec analyses et génération de QR codes, (2) Partage de texte sécurisé pour code, notes et documents, et (3) Génération de QR codes personnalisés pour URLs, texte, WiFi, contacts et plus. Nous pouvons mettre à jour ou modifier les fonctionnalités à tout moment."
         },
         "responsibilities": {
           "title": "3. Tes responsabilités",
           "content": "Tu ne dois pas utiliser Shrnkly pour :",
           "infoList": [
-            "Envoyer du spam ou des messages non sollicités",
-            "Propager des malwares ou du code nuisible",
-            "Lier vers du contenu illégal ou abusif",
-            "Violer les lois"
+            "Envoyer du spam, du phishing ou des messages non sollicités",
+            "Propager des malwares, virus ou code nuisible",
+            "Lier vers ou partager du contenu illégal, abusif ou violant des droits",
+            "Partager des informations sensibles (mots de passe, clés API, données personnelles)",
+            "Générer des QR codes qui trompent les utilisateurs ou contournent la sécurité",
+            "Violer les lois applicables ou les droits de tiers"
           ]
         },
-        "expiration": {
-          "title": "4. Contenu et expiration",
-          "content": "Nous ne possédons pas le contenu que tu raccourcis ou partages. Nous pouvons désactiver les liens qui violent ces conditions. Les liens gratuits peuvent avoir des limites d'utilisation."
+        "qrCodes": {
+          "title": "4. Utilisation des QR codes",
+          "content": "Les QR codes générés sur Shrnkly doivent être utilisés uniquement à des fins légitimes. Tu es responsable de la destination de tes QR codes. Nous pouvons désactiver des QR codes ou bloquer des domaines qui violent ces conditions, font du phishing ou diffusent du contenu nuisible. Les QR codes sont statiques – si la destination change, tu dois générer un nouveau QR code."
+        },
+        "textSharing": {
+          "title": "5. Règles de partage de texte",
+          "content": "Lors du partage de texte, code ou notes : (1) Tu conserves la propriété de ton contenu, (2) Ne partage pas de matériel protégé par des droits d'auteur sans permission, (3) Ne partage pas de secrets, identifiants ou données sensibles – même avec protection par mot de passe, (4) Définis des dates d'expiration appropriées pour le contenu temporaire, (5) Nous pouvons supprimer du contenu qui viole ces conditions ou reçoit des signalements d'abus."
+        },
+        "urlShortening": {
+          "title": "6. Raccourcissement d'URL et analyses",
+          "content": "Les URLs raccourcies redirigent vers leurs destinations. Nous collectons des analyses de clics anonymisées (localisation, appareil, source) pour fournir des statistiques. Nous pouvons désactiver des liens qui violent ces conditions, reçoivent des signalements d'abus ou pointent vers des pages nuisibles. Les liens gratuits peuvent avoir des limites d'utilisation et expirer après une inactivité prolongée."
         },
         "property": {
-          "title": "5. Notre propriété intellectuelle",
+          "title": "7. Notre propriété intellectuelle",
           "content": "Le nom, le design, le code et le logo de Shrnkly nous appartiennent. Tu ne peux pas les copier ou les utiliser sans permission."
         },
         "liability": {
-          "title": "6. Limitation de responsabilité",
-          "content": "Nous fournissons le service « tel quel ». Nous ne sommes pas responsables des pertes de profits, de données ou des interruptions de service."
+          "title": "8. Limitation de responsabilité",
+          "content": "Nous fournissons le service « tel quel ». Nous ne sommes pas responsables des pertes de profits, de données, des interruptions de service ou des dommages résultant de l'utilisation de nos services."
         },
         "termination": {
-          "title": "7. Résiliation",
+          "title": "9. Résiliation",
           "content": "Nous pouvons suspendre ou résilier les comptes qui violent ces conditions ou nuisent à la plateforme ou aux autres utilisateurs."
         },
         "contact": {
-          "title": "8. Contact",
+          "title": "10. Contact",
           "content": "Des questions sur ces conditions ?",
           "email": "Email : legal@shrnkly.com"
         }
@@ -716,7 +740,19 @@
       "badge": "Nous contacter",
       "title": "Prends contact",
       "subtitle": "Nous sommes là pour t'aider",
-      "description": "Tu as une question, une suggestion ou tu veux simplement dire bonjour ? Envoie-nous un message.",
+      "description": "Tu as une question sur le raccourcissement d'URL, le partage de texte ou les QR codes ? Besoin d'assistance ou tu veux signaler un problème ? Nous sommes là pour toi – envoie-nous simplement un message.",
+      "features": {
+        "urlShortening": "Raccourcissement d'URL",
+        "textSharing": "Partage de texte",
+        "qrCodes": "QR codes"
+      },
+      "reasons": {
+        "general": "Demande générale",
+        "support": "Support technique",
+        "abuse": "Signaler un abus",
+        "privacy": "Problème de confidentialité",
+        "feedback": "Commentaires"
+      },
       "email": "Email",
       "office": "Bureau",
       "github": "GitHub",
@@ -735,6 +771,35 @@
         "viewFaqs": "Voir la FAQ",
         "emailSupport": "Support par email"
       }
+    },
+    "notFound": {
+      "badge": "Erreur 404",
+      "title": "Page non trouvée",
+      "description": "Désolé, nous n'avons pas pu trouver la page que vous recherchez. Mais nous avons beaucoup de choses qui existent !",
+      "goHome": "Aller à l'accueil",
+      "exploreFeatures": "Découvre nos fonctionnalités",
+      "features": {
+        "shortenUrl": {
+          "title": "Raccourcir l'URL",
+          "description": "Transforme les URLs longues en liens courts et traçables"
+        },
+        "shareText": {
+          "title": "Partager du texte",
+          "description": "Partage du code, des notes et des documents en toute sécurité"
+        },
+        "generateQr": {
+          "title": "Générer un QR code",
+          "description": "Crée des QR codes personnalisés instantanément"
+        }
+      }
+    },
+    "errorPage": {
+      "badge": "Erreur",
+      "title": "Quelque chose s'est mal passé !",
+      "description": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
+      "tryAgain": "Réessayer",
+      "goHome": "Aller à l'accueil",
+      "or": "ou"
     }
   },
   "auth": {
