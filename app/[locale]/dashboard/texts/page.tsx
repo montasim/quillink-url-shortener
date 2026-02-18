@@ -3,8 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { toast } from 'sonner';
-import { FileText, Search, SlidersHorizontal, Plus, TrendingUp, Activity } from 'lucide-react';
+import { FileText, Search, SlidersHorizontal, TrendingUp, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -12,8 +11,9 @@ import TabSection from '@/components/TabSection';
 import TextShareGrid from './TextShareGrid';
 import TextAnalysisTab from '@/components/dashboard/TextAnalysisTab';
 import TextAnalysisSkeleton from '@/components/dashboard/TextAnalysisSkeleton';
-import TextShareLinksSkeleton from '@/components/dashboard/TextShareLinksSkeleton';
+import TextShareDashboardSkeleton from '@/components/dashboard/TextShareDashboardSkeleton';
 import CreateTextShareModal from '@/components/dashboard/CreateTextShareModal';
+import ComingSoonFeatures from '@/components/dashboard/ComingSoonFeatures';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
 
@@ -126,9 +126,7 @@ export default function DashboardTextsPage() {
             name: t('links'),
             value: 'links',
             icon: <FileText className="w-4 h-4" />,
-            content: isLoading ? (
-                <TextShareLinksSkeleton />
-            ) : (
+            content: (
                 <div className="space-y-6">
                     {/* Search and Filter Bar */}
                     <div className="flex flex-col sm:flex-row gap-3">
@@ -207,17 +205,13 @@ export default function DashboardTextsPage() {
             name: t('realtime'),
             value: 'realtime',
             icon: <Activity className="w-4 h-4" />,
-            content: (
-                <div className="text-center py-12">
-                    <div className="mx-auto w-20 h-20 bg-muted rounded-full flex items-center justify-center mb-4">
-                        <Activity className="w-10 h-10 text-muted-foreground" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                    <p className="text-muted-foreground">Real-time stats will be available soon.</p>
-                </div>
-            ),
+            content: <ComingSoonFeatures />,
         },
     ];
+
+    if (isLoading) {
+        return <TextShareDashboardSkeleton />;
+    }
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">

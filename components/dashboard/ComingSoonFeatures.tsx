@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Activity, Zap, Loader2, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 
-const RealtimeComingSoon = () => {
+const ComingSoonFeatures = () => {
     return (
         <div className="relative w-full py-16 md:py-24 overflow-hidden rounded-[32px] border border-border/40 bg-card/30 backdrop-blur-sm">
             {/* Background Aesthetics - Matching Root Page */}
@@ -72,4 +72,4 @@ const RealtimeComingSoon = () => {
     );
 };
 
-export default RealtimeComingSoon;
+export default ComingSoonFeatures;

@@ -757,6 +757,7 @@
       "qrCodeFetchFailed": "無法加載二維碼",
       "qrCodeDownloaded": "二維碼已下載",
       "qrCodeAlt": "二維碼",
+      "qrCodeUnavailable": "二維碼不可用",
       "editShare": "編輯",
       "viewStats": "數據分析",
       "totalShares": "累計分享",

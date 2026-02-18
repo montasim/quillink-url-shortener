@@ -6,16 +6,14 @@ import { IShortUrl } from '@/types/types';
 import { fetchUrls } from '@/lib/actions/dashboard';
 import UrlGrid from '@/app/[locale]/dashboard/urls/UrlGrid';
 import TabSection from '@/components/TabSection';
-import { Link2, Search, SlidersHorizontal, Plus, TrendingUp, MousePointerClick, Link } from 'lucide-react';
-import ComingSoon from '@/components/ComingSoon';
+import { Link2, Search, SlidersHorizontal, TrendingUp } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import CreateLinkModal from '@/components/dashboard/CreateLinkModal';
 import AnalysisTab from '@/components/dashboard/AnalysisTab';
-import RealtimeComingSoon from '@/components/dashboard/RealtimeComingSoon';
-import { LinksSkeleton } from '@/components/dashboard/LinksSkeleton';
-import { AnalysisSkeleton } from '@/components/dashboard/AnalysisSkeleton';
+import ComingSoonFeatures from '@/components/dashboard/ComingSoonFeatures';
+import UrlDashboardSkeleton from '@/components/dashboard/UrlDashboardSkeleton';
 
 const UrlDashboard = () => {
     const t = useTranslations('dashboard');
@@ -65,9 +63,7 @@ const UrlDashboard = () => {
             name: t('links'),
             value: 'links',
             icon: <Link2 className="w-4 h-4" />,
-            content: loading ? (
-                <LinksSkeleton />
-            ) : (
+            content: (
                 <div className="space-y-6">
                     {/*/!* Stats Cards *!/*/}
                     {/*<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">*/}
@@ -178,19 +174,23 @@ const UrlDashboard = () => {
             name: t('analysis'),
             value: 'analysis',
             icon: <TrendingUp className="w-4 h-4" />,
-            content: loading ? <AnalysisSkeleton /> : <AnalysisTab urls={urls} />,
+            content: <AnalysisTab urls={urls} />,
         },
         {
             name: t('realtime'),
             value: 'realtime',
             icon: <Activity className="w-4 h-4" />,
-            content: <RealtimeComingSoon />,
+            content: <ComingSoonFeatures />,
         },
     ];
 
     useEffect(() => {
         fetchUrls(setUrls, setLoading, urlT);
     }, []);
+
+    if (loading) {
+        return <UrlDashboardSkeleton />;
+    }
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">

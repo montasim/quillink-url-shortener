@@ -48,6 +48,7 @@ export default function ViewTextSharePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordVerified, setIsPasswordVerified] = useState(false);
     const [passwordError, setPasswordError] = useState<string | null>(null);
     const [isVerifying, setIsVerifying] = useState(false);
     const [showQR, setShowQR] = useState(false);
@@ -60,7 +61,8 @@ export default function ViewTextSharePage() {
             const response = await getData(`${API_ENDPOINT.TEXT_SHARE_GET(shortKey)}`);
             if (response.success) {
                 setData(response.data);
-                if (response.data.requiresPassword) {
+                // Only show password modal if not already verified
+                if (response.data.requiresPassword && !isPasswordVerified) {
                     setShowPassword(true);
                 }
             } else {
@@ -94,8 +96,10 @@ export default function ViewTextSharePage() {
             const result = await response.json();
 
             if (result.success) {
+                // Mark as verified and hide modal
+                setIsPasswordVerified(true);
                 setShowPassword(false);
-                fetchTextShare();
+                // No need to re-fetch - we already have the data
             } else {
                 setPasswordError(result.message || t('invalidPassword'));
             }
@@ -162,56 +166,7 @@ export default function ViewTextSharePage() {
     }, [shortKey]);
 
     if (isLoading) {
-        return (
-            <div className="min-h-screen relative">
-                {/* Background */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-                <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 space-y-6">
-                    <TextShareViewSkeleton />
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-3">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className="gap-2"
-                            disabled
-                        >
-                            <Copy className="h-4 w-4" />
-                            Copy
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className="gap-2"
-                            disabled
-                        >
-                            <Share2 className="h-4 w-4" />
-                            Share
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className="gap-2"
-                            disabled
-                        >
-                            <QrCode className="h-4 w-4" />
-                            QR Code
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className="gap-2"
-                            disabled
-                        >
-                            <Download className="h-4 w-4" />
-                            Download
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        );
+        return <TextShareViewSkeleton />;
     }
 
     if (error) {

@@ -757,6 +757,7 @@
       "qrCodeFetchFailed": "کیو آر کوڈ لوڈ نہیں ہو سکا",
       "qrCodeDownloaded": "کیو آر کوڈ ڈاؤن لوڈ ہو گیا",
       "qrCodeAlt": "کیو آر کوڈ",
+      "qrCodeUnavailable": "کیو آر کوڈ دستیاب نہیں ہے",
       "editShare": "ایڈٹ کریں",
       "viewStats": "اعداد و شمار دیکھیں",
       "totalShares": "کل شیئرز",

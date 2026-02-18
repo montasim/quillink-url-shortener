@@ -286,8 +286,11 @@ const handleGetTextShares = async (request: NextRequest) => {
         );
     }
 
-    // Remove passwordHash from results
-    const safeTextShares = textShares.map(({ passwordHash, ...share }) => share);
+    // Remove passwordHash and add requiresPassword boolean for security
+    const safeTextShares = textShares.map(({ passwordHash, ...share }) => ({
+        ...share,
+        requiresPassword: !!passwordHash,
+    }));
 
     return sendResponse(
         httpStatus.OK,

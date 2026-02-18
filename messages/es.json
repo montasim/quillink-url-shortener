@@ -757,6 +757,7 @@
       "qrCodeFetchFailed": "No se pudo cargar el QR",
       "qrCodeDownloaded": "QR descargado",
       "qrCodeAlt": "Código QR",
+      "qrCodeUnavailable": "Código QR no disponible",
       "editShare": "Editar",
       "viewStats": "Ver estadísticas",
       "totalShares": "Total compartido",

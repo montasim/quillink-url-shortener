@@ -757,6 +757,7 @@
       "qrCodeFetchFailed": "QR कोड लोड नहीं हो पाया",
       "qrCodeDownloaded": "QR कोड डाउनलोड हो गया",
       "qrCodeAlt": "QR कोड",
+      "qrCodeUnavailable": "QR कोड उपलब्ध नहीं है",
       "editShare": "एडिट",
       "viewStats": "स्टैट्स देखें",
       "totalShares": "कुल शेयर",

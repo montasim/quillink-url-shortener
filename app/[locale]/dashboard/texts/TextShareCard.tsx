@@ -26,7 +26,7 @@ interface TextShare {
     viewCount: number;
     createdAt: string;
     expiresAt?: string;
-    passwordHash?: string;
+    requiresPassword?: boolean;
 }
 
 interface TextShareCardProps {
@@ -49,7 +49,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
     });
 
     const isExpired = share.expiresAt && new Date(share.expiresAt) < new Date();
-    const hasPassword = !!share.passwordHash;
+    const hasPassword = share.requiresPassword;
 
     const copyToClipboard = (e: React.MouseEvent) => {
         e.stopPropagation();

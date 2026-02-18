@@ -757,6 +757,7 @@
       "qrCodeFetchFailed": "تعذر تحميل رمز QR",
       "qrCodeDownloaded": "تم تنزيل رمز QR",
       "qrCodeAlt": "رمز QR",
+      "qrCodeUnavailable": "رمز QR غير متاح",
       "editShare": "تعديل المشاركة",
       "viewStats": "عرض الإحصائيات",
       "totalShares": "إجمالي المشاركات",
