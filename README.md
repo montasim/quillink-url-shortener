@@ -2,13 +2,7 @@
 
 # <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=28&duration=1&pause=1&color=EB008B&center=true&vCenter=true&repeat=false&width=105&height=28&lines=shrnkly" alt="shrnkly" />
 
-[//]: # '<!-- GitHub actions badges start -->'
-[//]: # '<div>'
-[//]: # '    <img loading="lazy" alt="Continuous Integration" src="https://github.com/montasim/shrnkly/actions/workflows/ci.yml/badge.svg?labelColor=EB008B&color=00B8B5">'
-[//]: # '    <img loading="lazy" alt="Build on Merge" src="https://github.com/montasim/shrnkly/actions/workflows/build-on-merge.yml/badge.svg?labelColor=EB008B&color=00B8B5">'
-[//]: # '    <img loading="lazy" alt="Automated Release Workflow for PR Merges" src="https://github.com/montasim/shrnkly/actions/workflows/create-release.yml/badge.svg?labelColor=EB008B&color=00B8B5">'
-[//]: # '</div>'
-[//]: # '<!-- GitHub actions badges end -->'
+> **Shrnkly** is a modern, feature-rich URL management platform that combines URL shortening, text sharing, and QR code generation in one beautiful interface. Built with Next.js 16, React 19, and TypeScript.
 
 <!-- repository summary badges start -->
 <div>
@@ -29,288 +23,466 @@
 
 ## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=120&height=24&lines=CONTENTS:" alt="CONTENTS:" />
 
-1. [FEATURES](#1-features)
-2. [PREREQUISITES](#2-prerequisites)
-3. [SETUP](#3-setup)
-4. [RUNNING THE SCRIPT](#4-running-the-script)
-5. [ERROR HANDLING](#5-error-handling)
-6. [HOSTING](#6-hosting)
-7. [USED PACKAGES](#7-used-packages)
-8. [TOOLS](#8-tools)
-9. [ARTICLES](#9-articles)
-10. [DO NOT FORGET TO DO](#10-do-not-forget-to-do)
-11. [TUTORIALS](#11-tutorials)
-12. [INSPIRATIONS](#12-inspirations)
-13. [CONTRIBUTE](#13-contribute)
-14. [CONTRIBUTORS](#14-contributors)
-15. [SPECIAL THANKS](#15-special-thanks)
-16. [LICENSE](#16-license)
-17. [CONTACT](#17-contact)
+1. [Features](#-features)
+2. [Tech Stack](#-tech-stack)
+3. [Prerequisites](#-prerequisites)
+4. [Setup](#-setup)
+5. [Running the Application](#-running-the-application)
+6. [Docker Support](#-docker-support)
+7. [Environment Variables](#-environment-variables)
+8. [Project Structure](#-project-structure)
+9. [Hosting](#-hosting)
+10. [API Documentation](#-api-documentation)
+11. [Contributing](#-contributing)
+12. [Contributors](#-contributors)
+13. [License](#-license)
+14. [Contact](#-contact)
 
 <br/>
 
-[//]: # '1. FEATURES'
+## ✨ Features
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=120&height=24&lines=1.+FEATURES" alt="1. FEATURES" id="1-features" />
+### 🔗 URL Shortener
+- Create short, memorable links instantly
+- Custom slug/alias support
+- Real-time click analytics and traffic insights
+- Geographic tracking (country, region, city)
+- Device, browser, and referrer analytics
+- Link expiration settings
+- QR code generation for each short link
+- Password protection (premium feature)
 
-1. Create short URL
-2. Redirect to the original URL
-3. QR code
-4. URL Analytics
+### 📝 Text Sharing
+- Share code snippets, notes, and documents securely
+- Syntax highlighting for 100+ programming languages
+- Password protection for sensitive content
+- Auto-expiration with customizable timelines
+- View count limits
+- Markdown support
+- Private and public sharing options
+- View analytics and access logs
 
-<br/>
+### 📱 QR Code Generator
+- Generate QR codes for URLs, text, WiFi, contacts, and more
+- Real-time preview with full customization
+- Multiple output formats (PNG, SVG)
+- Color customization and branding options
+- Error correction levels (L, M, Q, H)
+- 100% client-side generation (privacy-focused)
+- Works offline
+- No registration required
 
-[//]: # '2. PREREQUISITES'
+### 🔐 Authentication & Security
+- Google OAuth 2.0 integration
+- Email/password authentication
+- Password reset via email
+- Cloudflare Turnstile protection (bot prevention)
+- JWT-based session management
+- Bcrypt password hashing
+- Rate limiting and abuse prevention
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=168&height=24&lines=2.+PREREQUISITES" alt="2. PREREQUISITES" id="2-prerequisites" />
+### 📊 Dashboard
+- Comprehensive link management interface
+- Real-time analytics and statistics
+- Traffic overview with interactive charts
+- Top-performing links/shares
+- Geographic distribution maps
+- Recent activity logs
+- Bulk operations support
 
-1. Node v18
-2. PNPM v10
-
-<br/>
-
-[//]: # '3. SETUP'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=80&height=24&lines=3.+SETUP" alt="3. SETUP" id="3-setup" />
-
-1. **Clone the repository and navigate to the directory:**
-
-    ```bash
-    git clone https://github.com/montasim/shrnkly.git
-    cd shrnkly
-    ```
-
-2. **Install the dependencies:**
-
-    ```bash
-    pnpm install
-    ```
-
-3. **Configuring the Environment:**
-
-    Create a `.env.development` or `.env.staging` or `.env.production` file in the root directory of the project and populate it with the necessary environment variables. See the [.env.example](.env.example) file for an example.
-
-<br/>
-
-[//]: # '4. RUNNING THE SCRIPT'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=230&height=24&lines=4.+RUNNING+THE+SCRIPT" alt="4. RUNNING THE SCRIPT" id="4-running-the-script" />
-
-1. **Running the Application:**
-
-    To start the application in development mode, use:
-
-    ```bash
-    pnpm dev
-    ```
-
-    This will run the server with nodemon, automatically restarting when any changes are made.
-
-2. **To build the application, use:**
-
-    ```bash
-    pnpm build
-    ```
-
-    This will build the application.
-
-3. **To run the application, use:**
-
-    To run the application, use:
-
-    ```bash
-    pnpm start
-    ```
-
-    This will run the project.
-
-4. **Code Prettier:**
-    - To check if files are formatted correctly:
-
-        ```bash
-        pnpm prettier:check
-        ```
-
-    - To format files:
-
-        ```bash
-        pnpm prettier:fix
-        ```
-
-### Docker
-
-1. **Build the Docker Compose Services:**
-
-    ```bash
-    pnpm docker:build-dev
-    ```
-
-2. **Run the Docker Compose Services:**
-
-    ```bash
-    pnpm docker:run-dev
-    ```
-
-3. **Stop the Containers:**
-
-    ```bash
-    pnpm docker:stop-dev
-    ```
-
-4. **Rebuild the Containers:**
-
-    ```bash
-    pnpm docker:rebuild-dev
-    ```
-
-[//]: # '5. ERROR HANDLING'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=195&height=24&lines=5.+ERROR+HANDLING" alt="5. ERROR HANDLING" id="5-error-handling" />
+### 🌍 Internationalization
+Support for 9 languages:
+- 🇺🇸 English
+- 🇩🇪 German (Deutsch)
+- 🇫🇷 French (Français)
+- 🇪🇸 Spanish (Español)
+- 🇨🇳 Chinese (简体中文)
+- 🇵🇰 Urdu (اردو)
+- 🇮🇳 Hindi (हिन्दी)
+- 🇧🇩 Bengali (বাংলা)
+- 🇸🇦 Arabic (العربية)
 
 <br/>
 
-[//]: # '6. HOSTING'
+## 🛠 Tech Stack
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=112&height=24&lines=6.+HOSTING" alt="6. HOSTING" id="6-hosting" />
+| Category | Technology |
+|----------|------------|
+| **Framework** | Next.js 16.1.6 (App Router) |
+| **Language** | TypeScript 5.8+ |
+| **UI Library** | React 19.1.0 |
+| **Styling** | Tailwind CSS 4.1+ |
+| **Components** | Radix UI, shadcn/ui |
+| **Animations** | Framer Motion |
+| **Database** | MongoDB (via Prisma ORM) |
+| **Caching** | Redis (ioredis) |
+| **Authentication** | Google OAuth, JWT, bcrypt |
+| **Validation** | Zod, React Hook Form |
+| **HTTP Client** | Axios |
+| **i18n** | next-intl |
+| **Charts** | Recharts |
+| **QR Codes** | qrcode |
+| **Email** | Nodemailer |
+| **Security** | Cloudflare Turnstile |
+| **Cron Jobs** | node-cron |
+| **Testing** | Jest, ts-jest |
+| **Code Quality** | Prettier, ESLint, Commitlint |
+| **Secrets** | Infisical |
+
+<br/>
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+1. **Node.js** v20.x or higher
+2. **PNPM** v10.x or higher
+3. **MongoDB** (local or cloud instance like MongoDB Atlas)
+4. **Redis** (optional, for caching)
+
+<br/>
+
+## 🚀 Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/montasim/shrnkly.git
+cd shrnkly
+```
+
+### 2. Install Dependencies
+
+```bash
+pnpm install
+```
+
+### 3. Environment Configuration
+
+Create a `.env` file in the root directory (copy from `.env.example`):
+
+```bash
+cp .env.example .env
+```
+
+Configure the following environment variables:
+
+#### Project Configuration
+```env
+NEXT_PUBLIC_PROJECT_NAME=Shrnkly
+NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
+NEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/in/yourprofile
+NEXT_PUBLIC_GITHUB_URL=https://github.com/yourusername
+```
+
+#### Database
+```env
+DATABASE_URL=mongodb+srv://username:password@cluster.mongodb.net/dbname
+```
+
+#### Authentication
+```env
+JWT_ACCESS_TOKEN_SECRET=your-secret-key
+JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES=60
+JWT_REFRESH_TOKEN_SECRET=your-refresh-secret
+JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES=84000
+```
+
+#### Google OAuth (Optional)
+```env
+GOOGLE_OAUTH_GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_OAUTH_GOOGLE_CLIENT_SECRET=your-client-secret
+GOOGLE_OAUTH_GOOGLE_REDIRECT_URI=https://yourdomain.com/api/v1/auth/google/callback
+```
+
+#### Cloudflare Turnstile
+```env
+NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY=your-site-key
+CF_TURNSTILE_SECRET_KEY=your-secret-key
+```
+
+#### Email (for password reset)
+```env
+MAILER_SERVICE=Gmail
+MAILER_USER=your-email@gmail.com
+MAILER_PASS=your-app-password
+```
+
+See [.env.example](.env.example) for the complete list of variables.
+
+### 4. Generate Prisma Client
+
+```bash
+pnpm prisma:generate
+```
+
+### 5. Run Database Migrations
+
+```bash
+pnpm prisma migrate dev
+```
+
+<br/>
+
+## 🏃 Running the Application
+
+### Development Mode
+
+```bash
+pnpm dev
+```
+
+The application will start at `http://localhost:3000`
+
+### Production Build
+
+```bash
+pnpm build
+pnpm start
+```
+
+### Code Quality
+
+```bash
+# Check formatting
+pnpm prettier:check
+
+# Fix formatting
+pnpm prettier:fix
+
+# Run linter
+pnpm lint
+
+# Run tests
+pnpm test
+pnpm test:watch
+```
+
+<br/>
+
+## 🐳 Docker Support
+
+### Build and Run Development
+
+```bash
+# Build Docker Compose services
+pnpm docker:build-dev
+
+# Run services
+pnpm docker:run-dev
+
+# Stop services
+pnpm docker:stop-dev
+
+# Rebuild services
+pnpm docker:rebuild-dev
+```
+
+### Docker Compose Configuration
+
+The project includes a `docker-compose.yml` with:
+- Next.js application
+- MongoDB
+- Redis (optional)
+
+<br/>
+
+## 📝 Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_PROJECT_NAME` | Project/brand name | Shrnkly |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Contact email | - |
+| `NEXT_PUBLIC_LINKEDIN_URL` | LinkedIn profile URL | - |
+| `NEXT_PUBLIC_GITHUB_URL` | GitHub URL | - |
+| `DATABASE_URL` | MongoDB connection string | - |
+| `JWT_ACCESS_TOKEN_SECRET` | JWT access token secret | - |
+| `JWT_ACCESS_TOKEN_EXPIRATION_IN_MINUTES` | Access token expiry | 60 |
+| `JWT_REFRESH_TOKEN_SECRET` | JWT refresh token secret | - |
+| `JWT_REFRESH_TOKEN_EXPIRATION_IN_MINUTES` | Refresh token expiry | 84000 |
+| `NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key | - |
+| `CF_TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret | - |
+| `MAILER_SERVICE` | Email service | Gmail |
+| `MAILER_USER` | Email address | - |
+| `MAILER_PASS` | Email password/app password | - |
+| `TEXT_SHARE_MAX_CONTENT_LENGTH_KB` | Max text share size | 100 |
+| `TEXT_SHARE_DEFAULT_EXPIRY_DAYS` | Default expiry days | 30 |
+
+See [.env.example](.env.example) for all available options.
+
+<br/>
+
+## 📁 Project Structure
+
+```
+shrnkly/
+├── app/                        # Next.js App Router
+│   ├── [locale]/              # Internationalized routes
+│   │   ├── (home)/           # Public pages
+│   │   ├── dashboard/        # User dashboard
+│   │   └── layout.tsx        # Locale layout
+│   ├── api/                   # API routes
+│   └── layout.tsx            # Root layout
+├── components/                # React components
+│   ├── dashboard/            # Dashboard components
+│   ├── footer/               # Footer components
+│   ├── navbar/               # Navigation components
+│   ├── qr/                   # QR code components
+│   └── ui/                   # UI components (shadcn)
+├── configuration/             # App configuration
+├── constants/                 # Constants and configs
+├── context/                   # React contexts
+├── i18n/                      # Internationalization
+├── lib/                       # Utilities and helpers
+│   ├── generated/            # Generated code (Prisma)
+│   └── actions/              # Server actions
+├── messages/                  # Translation files
+├── prisma/                    # Prisma schema and migrations
+├── public/                    # Static assets
+├── schemas/                   # Zod validation schemas
+├── scripts/                   # Utility scripts
+├── services/                  # Business logic services
+├── types/                     # TypeScript types
+└── utils/                     # Utility functions
+```
+
+<br/>
+
+## 🌐 Hosting
+
+### Deploy to Vercel
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/montasim/shrnkly)
 
 <details>
-    <summary>
-        Step-by-step guide on setting up your own Vercel instance:
-    </summary>
+<summary>Vercel Setup Guide</summary>
 
-Vercel is the recommended option for hosting the files since it is free and easy to set up.
+1. Go to [vercel.com](https://vercel.com/) and sign in with GitHub
+2. Fork this repository
+3. In Vercel dashboard, click "Add New Project"
+4. Import your forked repository
+5. Configure environment variables (copy from `.env.example`)
+6. Click Deploy
 
-1.  Go to [vercel.com](https://vercel.com/).
-2.  Click on `Log in`.
-    ![Login page](https://files.catbox.moe/qwqrjn.png)
-3.  Sign in with GitHub by pressing `Continue with GitHub`.
-    ![Sign in with GitHub](https://files.catbox.moe/18vwjq.png)
-4.  Sign in to GitHub and allow access to all repositories if prompted.
-5.  [Fork this repo.](https://github.com/montasim/shrnkly/fork)
-6.  Go back to your [Vercel dashboard](https://vercel.com/dashboard).
-7.  To import a project, click the `Add New...` button and select the `Project` option.
-    ![Add new project](https://files.catbox.moe/h1a87z.png)
-8.  Click the `Continue with GitHub` button, search for the required Git Repository and import it by clicking the `Import` button. Alternatively, you can import a Third-Party Git Repository using the `Import Third-Party Git Repository ->` link at the bottom of the page.
-    ![Select GitHub project](https://files.catbox.moe/9ubkss.png)
-9.  Create a personal access token (PAT) [here](https://github.com/settings/tokens/new) and enable the `repo` and `user` permissions (this allows access to see private repo and user stats).
-10. Copy all the .env.development file as environment variables in the Vercel dashboard.
-11. Click deploy, and you're good to go. See your domains to use the API!
 </details>
 
-<br/>
+### Self-Hosting
 
-[//]: # '7. USED PACKAGES'
+1. Clone the repository
+2. Install dependencies: `pnpm install`
+3. Configure environment variables
+4. Build: `pnpm build`
+5. Start: `pnpm start`
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=185&height=24&lines=7.+USED+PACKAGES" alt="7. USED PACKAGES" id="7-used-packages" />
-
-<br/>
-
-[//]: # '8. TOOLS'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=85&height=24&lines=8.+TOOLS" alt="8. TOOLS" id="8-tools" />
-
-1. [WebStorm](https://www.jetbrains.com/webstorm/)
-2. [Postman](https://www.postman.com/)
-3. [Swagify.io](https://swagify.io/convert/)
+Or use Docker:
+```bash
+docker-compose up -d
+```
 
 <br/>
 
-[//]: # '9. ARTICLES'
+## 📚 API Documentation
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=115&height=24&lines=9.+ARTICLES" alt="9. ARTICLES" id="9-articles" />
+API endpoints are available under `/api/v1/`:
+
+### Authentication
+- `POST /api/v1/auth/signup` - Create account
+- `POST /api/v1/auth/login` - Login
+- `POST /api/v1/auth/logout` - Logout
+- `POST /api/v1/auth/forgot-password` - Request password reset
+- `POST /api/v1/auth/reset-password` - Reset password
+- `GET /api/v1/auth/me` - Get current user
+
+### URLs
+- `POST /api/v1/urls` - Create short URL
+- `GET /api/v1/urls` - List user's URLs
+- `GET /api/v1/urls/:shortKey` - Get URL details
+- `DELETE /api/v1/urls/:shortKey` - Delete URL
+- `GET /api/v1/urls/qr-code/:shortKey` - Get QR code
+
+### Text Shares
+- `POST /api/v1/texts` - Create text share
+- `GET /api/v1/texts` - List user's shares
+- `GET /api/v1/texts/:shortKey` - Get share content
+- `GET /api/v1/texts/:shortKey/stats` - Get share statistics
+- `DELETE /api/v1/texts/:shortKey` - Delete share
+
+See the [API documentation](docs/API.md) for detailed endpoint documentation.
 
 <br/>
 
-[//]: # '10. DO NOT FORGET TO DO'
+## 🤝 Contributing
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=255&height=24&lines=10.+DO+NOT+FORGET+TO+DO" alt="10. DO NOT FORGET TO DO" id="10-do-not-forget-to-do" />
+Contributions are always welcome! Please read the [contribution guidelines](CONTRIBUTING.md) first.
 
-<br/>
+### How to Contribute
 
-[//]: # '11. TUTORIALS'
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=135&height=24&lines=11.+TUTORIALS" alt="11. TUTORIALS" id="11-tutorials" />
+### Development Workflow
 
-<br/>
-
-[//]: # '12. INSPIRATIONS'
-
-<br/>
-
-[//]: # '13. CONTRIBUTE'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=155&height=24&lines=13.+CONTRIBUTE" alt="13. CONTRIBUTE" id="13-contribute" />
-
-Contributions are always welcome!
-Please read the [contribution guidelines](CONTRIBUTION.md) and [contributor license agreement](CLA.md).
+- Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification
+- Run tests before submitting PR: `pnpm test`
+- Ensure code is formatted: `pnpm prettier:check`
+- Update documentation as needed
 
 <br/>
 
-[//]: # '14. CONTRIBUTORS'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=185&height=24&lines=14.+CONTRIBUTORS" alt="14. CONTRIBUTORS" id="14-contributors" />
+## 👥 Contributors
 
 <img loading="lazy" src="https://badges.pufler.dev/contributors/montasim/shrnkly?size=50&padding=5&perRow=10&bots=true" alt="contributors" />
 
 <br/>
 
-[//]: # '15. SPECIAL THANKS'
+## 📄 License
 
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=195&height=24&lines=15.+SPECIAL+THANKS" alt="15. SPECIAL THANKS" id="15-special-thanks" />
-
-<br/>
-
-[//]: # '16. LICENSE'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=108&height=24&lines=16.+LICENSE" alt="16. LICENSE" id="16-license" />
-
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <br/>
 
-[//]: # '17. CONTACT'
-
-## <img loading="lazy" src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=20&duration=1&pause=1&color=00B8B5&center=true&vCenter=true&repeat=false&width=130&height=24&lines=17.+CONTACT" alt="17. CONTACT" id="17-contact" />
+## 📬 Contact
 
 <!-- social media links start -->
 <table align="center">
     <thead align="center">
         <tr>
             <th>
-                <a href="https://www.linkedin.com/in/montasim" target="_blank" rel="noopener noreferrer" title="linkedin.com/in/montasim">
-                    <img loading="lazy" alt="linkedin icon" src="https://cdn.simpleicons.org/linkedin/EB008B" width="35px">
+                <a href="https://www.linkedin.com/in/montasim" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <img loading="lazy" alt="linkedin" src="https://cdn.simpleicons.org/linkedin/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="https://www.github.com/montasim" target="_blank" rel="noopener noreferrer" title="github.com/montasim">
-                    <img loading="lazy" alt="github icon" src="https://cdn.simpleicons.org/github/EB008B" width="35px">
+                <a href="https://github.com/montasim" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <img loading="lazy" alt="github" src="https://cdn.simpleicons.org/github/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="https://stackoverflow.com/users/20348607/montasim" target="_blank" rel="noopener noreferrer" title="stackoverflow.com/users/20348607/montasim">
-                    <img loading="lazy" alt="github icon" src="https://cdn.simpleicons.org/stackoverflow/EB008B" width="35px">
+                <a href="https://stackoverflow.com/users/20348607/montasim" target="_blank" rel="noopener noreferrer" title="Stack Overflow">
+                    <img loading="lazy" alt="stackoverflow" src="https://cdn.simpleicons.org/stackoverflow/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="https://montasim-dev.web.app/" target="_blank" rel="noopener noreferrer" title="montasim-dev.web.app">
-                    <img loading="lazy" alt="web icon" src="https://cdn.simpleicons.org/googlechrome/EB008B" width="35px">
+                <a href="https://montasim-dev.web.app/" target="_blank" rel="noopener noreferrer" title="Portfolio">
+                    <img loading="lazy" alt="website" src="https://cdn.simpleicons.org/googlechrome/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="mailto:montasimmamun@gmail.com" target="_blank" rel="noopener noreferrer" title="montasimmamun@gmail.com">
-                    <img loading="lazy" alt="gmail icon" src="https://cdn.simpleicons.org/gmail/EB008B" width="35px">
+                <a href="mailto:montasimmamun@gmail.com" target="_blank" rel="noopener noreferrer" title="Email">
+                    <img loading="lazy" alt="email" src="https://cdn.simpleicons.org/gmail/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="https://www.facebook.com/montasimmamun/" target="_blank" rel="noopener noreferrer" title="facebook.com/montasimmamun">
-                    <img loading="lazy" alt="facebook icon" src="https://cdn.simpleicons.org/facebook/EB008B" width="35px">
+                <a href="https://www.facebook.com/montasimmamun/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <img loading="lazy" alt="facebook" src="https://cdn.simpleicons.org/facebook/EB008B" width="35px">
                 </a>
             </th>
             <th>
-                <a href="https://x.com/montasimmamun" target="_blank" rel="noopener noreferrer" title="https://x.com/montasimmamun">
-                    <img loading="lazy" alt="x icon" src="https://cdn.simpleicons.org/x/EB008B" width="35px">
+                <a href="https://x.com/montasimmamun" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+                    <img loading="lazy" alt="x" src="https://cdn.simpleicons.org/x/EB008B" width="35px">
                 </a>
             </th>
         </tr>
@@ -320,4 +492,5 @@ Please read the [contribution guidelines](CONTRIBUTION.md) and [contributor lice
 
 <br/>
 <br/>
-<br/>
+
+<p align="center">Made with ❤️ by <a href="https://github.com/montasim">montasim</a></p>
