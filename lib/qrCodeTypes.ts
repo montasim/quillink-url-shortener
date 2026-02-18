@@ -76,8 +76,8 @@ export function generateQRContent(type: QRContentType, data: any): string {
     switch (type) {
         case 'wifi': {
             const config = data as WiFiConfig;
-            const hidden = config.hidden ? ',H:true' : '';
-            return `WIFI:T:${config.encryption};S:${config.ssid};P:${config.password}${hidden};;`;
+            const hidden = config.hidden ? ';H:true' : '';
+            return `WIFI:T:${config.encryption};S:${config.ssid};P:${config.password}${hidden};`;
         }
         case 'vcard': {
             const config = data as VCardConfig;
