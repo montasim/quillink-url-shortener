@@ -16,6 +16,7 @@ import { TextField } from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import TurnstileField from '@/components/TurnstileField';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
+import configuration from '@/configuration/configuration';
 
 const ForgotPasswordPage = () => {
     const t = useTranslations('auth.forgotPassword');
@@ -33,7 +34,7 @@ const ForgotPasswordPage = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof ForgotPasswordSchema>) => {
-        const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY;
+        const siteKey = configuration.turnstile.siteKey;
 
         // Only require Turnstile token if site key is configured
         if (siteKey && !cfToken) {

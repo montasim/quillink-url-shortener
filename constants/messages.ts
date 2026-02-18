@@ -123,6 +123,28 @@ const MESSAGES = Object.freeze({
         UNEXPECTED_ENV_VALIDATION_ERROR:
             'Failed to load environment configuration.',
     },
+
+    TEXT_SHARE: {
+        VALIDATION_ERROR: 'Invalid data provided. Please check your input.',
+        CREATION_SUCCESS: 'Text share created successfully.',
+        CREATION_ERROR: 'Couldn\'t create share. Please try again.',
+        ALREADY_EXISTS: 'This text share already exists.',
+        FETCH_SUCCESS: 'Text share fetched successfully.',
+        UPDATE_SUCCESS: 'Text share updated successfully.',
+        DELETION_SUCCESS: 'Text share deleted successfully.',
+        NOT_FOUND: 'Text share not found.',
+        EXPIRED: 'This text share has expired.',
+        VIEW_LIMIT_REACHED: 'This text share has reached its view limit.',
+        UNAUTHORIZED: 'Unauthorized access.',
+        INVALID_PASSWORD: 'Invalid password.',
+        NO_PASSWORD_REQUIRED: 'This text share does not require a password.',
+        PASSWORD_VERIFIED: 'Password verified successfully.',
+        LIST_SUCCESS: 'Text shares fetched successfully.',
+        STATS_SUCCESS: 'Stats fetched successfully.',
+        SLUG_TAKEN: 'This custom link is already taken.',
+        SLUG_AVAILABLE: 'This custom link is available.',
+        LIMIT_REACHED: 'Creation limit reached.',
+    },
 } as const);
 
 export default MESSAGES;

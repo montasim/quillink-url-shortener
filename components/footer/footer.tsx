@@ -6,13 +6,25 @@ import configuration from '@/configuration/configuration';
 import { Logo } from '@/components/logo';
 
 const Footer = () => {
-    const t = useTranslations('footer');
-    const tNav = useTranslations('navigation');
+    const t = useTranslations('layout.footer');
+    const tNav = useTranslations('layout.navigation');
 
     const footerLinks = [
         {
             title: tNav('home'),
             href: '/',
+        },
+        {
+            title: tNav('urlShortner'),
+            href: '/urls',
+        },
+        {
+            title: tNav('textShares'),
+            href: '/texts',
+        },
+        {
+            title: tNav('qrCode'),
+            href: '/qr',
         },
         {
             title: tNav('terms'),
@@ -24,7 +36,7 @@ const Footer = () => {
         },
         {
             title: tNav('contactUs'),
-            href: '/contact-us',
+            href: '/contact',
         },
     ];
 
@@ -65,21 +77,21 @@ const Footer = () => {
 
                     <div className="flex items-center gap-5">
                         <a
-                            href="mailto:montasimmamun@gmail.com"
+                            href={`mailto:${configuration.contact.email}`}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <MailIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://linkedin.com/in/montasimmamun"
+                            href={configuration.social.linkedin}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <LinkedinIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://github.com/montasim/shrnkly-url-shortener"
+                            href={configuration.social.github}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >

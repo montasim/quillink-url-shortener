@@ -1,7 +1,27 @@
 const configuration = {
     app: {
-        name: 'Shrnkly',
+        name: process.env.NEXT_PUBLIC_PROJECT_NAME || 'Shrnkly',
         baseUrl: process.env.NEXT_PUBLIC_BASE_URL || '',
+    },
+
+    contact: {
+        email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'montasimmamun@gmail.com',
+    },
+
+    social: {
+        linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/in/montasimmamun',
+        github: process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/montasim',
+    },
+
+    github: {
+        repo: process.env.NEXT_PUBLIC_GITHUB_REPO_URL || 'https://github.com/montasim/shrnkly',
+        issues: process.env.NEXT_PUBLIC_GITHUB_ISSUES_URL || 'https://github.com/montasim/shrnkly/issues',
+    },
+
+    turnstile: {
+        siteKey: process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY || '',
+        secretKey: process.env.CF_TURNSTILE_SECRET_KEY || '',
+        verifyUrl: process.env.CF_TURNSTILE_VERIFY_URL || 'https://challenges.cloudflare.com/turnstile/v0/siteverify',
     },
 
     nodeEnv: process.env.NODE_ENV || '',
@@ -50,6 +70,8 @@ const configuration = {
         redirectUri: process.env.GOOGLE_OAUTH_GOOGLE_REDIRECT_URI || '',
         tokenUrl: process.env.GOOGLE_OAUTH_TOKEN_URL || '',
         userInfoUrl: process.env.GOOGLE_OAUTH_USERINFO_URL || '',
+        publicClientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+        publicRedirectUri: process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI || '',
     },
 
     mailer: {
@@ -58,6 +80,18 @@ const configuration = {
             user: process.env.MAILER_USER || '',
             pass: process.env.MAILER_PASS || '',
         },
+    },
+
+    textShare: {
+        maxContentLengthKb: parseInt(
+            process.env.TEXT_SHARE_MAX_CONTENT_LENGTH_KB || '100',
+            10
+        ),
+        defaultExpiryDays: parseInt(
+            process.env.TEXT_SHARE_DEFAULT_EXPIRY_DAYS || '30',
+            10
+        ),
+        cleanupCron: process.env.TEXT_SHARE_CLEANUP_CRON || '0 2 * * *',
     },
 };
 

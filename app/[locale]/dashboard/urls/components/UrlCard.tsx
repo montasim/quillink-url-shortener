@@ -2,14 +2,17 @@
 
 import { Calendar, Copy, Link as LinkIcon, QrCode, ExternalLink, BarChart3, Trash2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { toast } from 'sonner';
 import { IShortUrl } from '@/types/types';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { deleteUrl } from '@/lib/actions/dashboard';
+import QRCodeViewer from '@/components/QRCodeViewer';
+import Image from 'next/image';
+import configuration from '@/configuration/configuration';
 import {
     Dialog,
     DialogContent,
@@ -20,15 +23,16 @@ import {
 } from '@/components/ui/dialog';
 
 const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) => {
-    const t = useTranslations('dashboard');
-    const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
+    const t = useTranslations('dashboard.urls');
+    const router = useRouter();
     const [showQrPopover, setShowQrPopover] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [copied, setCopied] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
     const popoverRef = useRef<HTMLDivElement>(null);
 
-    const shortUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${url?.shortKey}`;
+    const shortUrl = `${configuration.app.baseUrl}/${url?.shortKey}`;
     const fullUrl = url?.originalUrl;
     const date = new Date(url?.createdAt || '').toLocaleDateString('en-US', {
         month: 'short',
@@ -92,9 +96,7 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
     };
 
     return (
-        <Card
-            className="group relative overflow-hidden bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
-        >
+        <Card className="group relative overflow-hidden bg-card border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer">
             {/* Gradient Background Accent */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -117,15 +119,19 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                                     variant="ghost"
                                     size="sm"
                                     className={cn(
-                                        "h-7 w-7 p-0 hover:bg-primary/10",
-                                        copied && "bg-green-500/10"
+                                        'h-7 w-7 p-0 hover:bg-primary/10',
+                                        copied && 'bg-green-500/10'
                                     )}
                                     onClick={copyToClipboard}
                                 >
-                                    <Copy className={cn(
-                                        "w-3.5 h-3.5 transition-colors",
-                                        copied ? "text-green-600" : "text-muted-foreground hover:text-primary"
-                                    )} />
+                                    <Copy
+                                        className={cn(
+                                            'w-3.5 h-3.5 transition-colors',
+                                            copied
+                                                ? 'text-green-600'
+                                                : 'text-muted-foreground hover:text-primary'
+                                        )}
+                                    />
                                 </Button>
                             </div>
 
@@ -137,10 +143,18 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                     </div>
 
                     {/* Stats Badge */}
-                    <div className="shrink-0 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50">
+                    <div
+                        className="shrink-0 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 cursor-pointer hover:bg-primary/10 hover:border-primary/30 transition-all"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(`/dashboard/urls/${url.shortKey}`);
+                        }}
+                    >
                         <div className="flex items-center gap-1.5">
                             <BarChart3 className="w-3.5 h-3.5 text-muted-foreground" />
-                            <span className="text-xs font-medium text-foreground">{url.clicks || 0}</span>
+                            <span className="text-xs font-medium text-foreground">
+                                {url.clicks || 0}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -172,7 +186,9 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         }}
                     >
                         <ExternalLink className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">{t('visit')}</span>
+                        <span className="text-xs font-medium">
+                            {t('visit')}
+                        </span>
                     </Button>
 
                     <Button
@@ -182,15 +198,17 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         onClick={toggleQrPopover}
                     >
                         <QrCode className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">{t('qrCode')}</span>
+                        <span className="text-xs font-medium">
+                            {t('qrCode')}
+                        </span>
                     </Button>
 
                     <Button
                         variant="outline"
                         size="sm"
                         className={cn(
-                            "flex-1 gap-2 h-9 border-destructive/20 text-destructive hover:bg-destructive hover:text-white transition-all duration-300",
-                            isDeleting && "opacity-50 cursor-not-allowed"
+                            'flex-1 gap-2 h-9 border-destructive/20 text-destructive hover:bg-destructive hover:text-white transition-all duration-300',
+                            isDeleting && 'opacity-50 cursor-not-allowed'
                         )}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -206,74 +224,14 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                 </div>
             </div>
 
-            {/* QR Popover with Backdrop */}
-            {showQrPopover && (
-                <>
-                    {/* Backdrop */}
-                    <div
-                        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 animate-in fade-in duration-300"
-                        onClick={() => setShowQrPopover(false)}
-                    />
-
-                    {/* QR Code Modal */}
-                    <div
-                        ref={popoverRef}
-                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-3xl shadow-2xl p-8 z-50 w-[320px] animate-in zoom-in-95 fade-in slide-in-from-bottom-4 duration-300"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="space-y-6">
-                            <div className="text-center space-y-1">
-                                <h3 className="font-bold text-xl text-foreground">{t('qrCode')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('scanToVisit')}</p>
-                            </div>
-
-                            {qrCodeUrl ? (
-                                <>
-                                    <div className="bg-white p-4 rounded-2xl border border-border shadow-inner">
-                                        <Image
-                                            src={qrCodeUrl}
-                                            alt={t('qrCodeAlt')}
-                                            width={240}
-                                            height={240}
-                                            unoptimized
-                                            className="w-full h-auto"
-                                        />
-                                    </div>
-
-                                    <div className="flex flex-col gap-3">
-                                        <Button
-                                            size="sm"
-                                            className="w-full h-11 gap-2 rounded-xl font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
-                                            onClick={() => {
-                                                const link = document.createElement('a');
-                                                link.href = qrCodeUrl;
-                                                link.download = `${url?.shortKey || 'qr-code'}-qr.png`;
-                                                link.click();
-                                                toast.success(t('qrCodeDownloaded'));
-                                            }}
-                                        >
-                                            {t('downloadQr')}
-                                        </Button>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            className="w-full h-11 rounded-xl text-muted-foreground hover:text-foreground"
-                                            onClick={() => setShowQrPopover(false)}
-                                        >
-                                            {t('close')}
-                                        </Button>
-                                    </div>
-                                </>
-                            ) : (
-                                <div className="flex flex-col items-center justify-center py-12 gap-4">
-                                    <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-                                    <p className="text-sm text-muted-foreground animate-pulse">{t('generating')}</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </>
-            )}
+            {/* QR Code Viewer */}
+            <QRCodeViewer
+                shortKey={url?.shortKey || ''}
+                type="url"
+                isOpen={showQrPopover}
+                onClose={() => setShowQrPopover(false)}
+                downloadFileName={`${url?.shortKey || 'qr-code'}-qr.png`}
+            />
 
             {/* Delete Confirmation Dialog */}
             <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
@@ -283,7 +241,9 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                             <Trash2 className="w-8 h-8 text-destructive" />
                         </div>
                         <div className="space-y-2 text-center">
-                            <DialogTitle className="text-2xl font-black tracking-tight text-foreground">{t('areYouSure')}</DialogTitle>
+                            <DialogTitle className="text-2xl font-semibold tracking-tight text-foreground">
+                                {t('areYouSure')}
+                            </DialogTitle>
                             <DialogDescription className="text-base text-muted-foreground font-medium leading-relaxed">
                                 {t('confirmDelete')}
                             </DialogDescription>
@@ -300,10 +260,14 @@ const UrlCard = ({ url, onRefresh }: { url: IShortUrl, onRefresh: () => void }) 
                         <Button
                             variant="destructive"
                             onClick={() => {
-                                deleteUrl(url?.shortKey || '', setIsDeleting, () => {
-                                    setShowDeleteDialog(false);
-                                    onRefresh();
-                                });
+                                deleteUrl(
+                                    url?.shortKey || '',
+                                    setIsDeleting,
+                                    () => {
+                                        setShowDeleteDialog(false);
+                                        onRefresh();
+                                    }
+                                );
                             }}
                             className="flex-1 h-12 rounded-xl font-bold bg-destructive text-white hover:bg-destructive/90 shadow-lg shadow-destructive/20 transition-all duration-300 active:scale-95"
                             disabled={isDeleting}

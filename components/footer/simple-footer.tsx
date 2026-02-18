@@ -2,12 +2,25 @@ import { Separator } from '@/components/ui/separator';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import configuration from '@/configuration/configuration';
 
 const SimpleFooter = () => {
     const footerLinks = [
         {
             title: 'Home',
             href: '/',
+        },
+        {
+            title: 'Link Shrinker',
+            href: '/urls',
+        },
+        {
+            title: 'Text Sharer',
+            href: '/texts',
+        },
+        {
+            title: 'QR Creator',
+            href: '/qr',
         },
         {
             title: 'Terms',
@@ -19,9 +32,14 @@ const SimpleFooter = () => {
         },
         {
             title: 'Contact Us',
-            href: '/contact-us',
+            href: '/contact',
         },
     ];
+
+    const projectName = configuration.app.name;
+    const contactEmail = configuration.contact.email;
+    const linkedinUrl = configuration.social.linkedin;
+    const githubUrl = configuration.social.github;
 
     return (
         <footer className="border-t border-border bg-background">
@@ -53,28 +71,28 @@ const SimpleFooter = () => {
                     <span>
                         &copy; {new Date().getFullYear()}{' '}
                         <Link href="/" className="hover:text-foreground transition-colors">
-                            Shrnkly
+                            {projectName}
                         </Link>
                         . All rights reserved
                     </span>
 
                     <div className="flex items-center gap-5">
                         <a
-                            href="mailto:montasimmamun@gmail.com"
+                            href={`mailto:${contactEmail}`}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <MailIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://linkedin.com/in/montasimmamun"
+                            href={linkedinUrl}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >
                             <LinkedinIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href="https://github.com/montasim"
+                            href={githubUrl}
                             target="_blank"
                             className="hover:text-foreground transition-colors"
                         >

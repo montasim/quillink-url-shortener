@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import configuration from '@/configuration/configuration';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Shrnkly – URL Shortener',
+    title: `${configuration.app.name} – URL Shortener`,
     description: 'Create short links, QR codes, share them anywhere.',
 };
 

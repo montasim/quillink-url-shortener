@@ -56,6 +56,7 @@ model User {
 
   shortUrls ShortUrl[]
   token     Token[]
+  textShares TextShare[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime?
@@ -71,4 +72,45 @@ model Token {
   expiresAt DateTime
 
   createdAt DateTime @default(now())
+}
+
+model TextShare {
+  id String @id @default(cuid()) @map("_id")
+
+  shortKey       String   @unique
+  title          String?
+  content        String
+  format         String   @default("plain") // 'plain' | 'markdown' | 'code'
+  syntaxLanguage String?  // e.g., 'javascript', 'python', 'typescript'
+
+  passwordHash   String?  // Optional password protection
+  expiresAt      DateTime? // Optional expiration
+  viewLimit      Int?     // Optional view limit (null = unlimited)
+  viewCount      Int      @default(0)
+
+  isPublic       Boolean  @default(true)
+  customSlug     String?  @unique // Optional user-defined slug
+
+  guestId        String?
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
+
+  viewLogs       TextShareViewLog[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+}
+
+model TextShareViewLog {
+  id String @id @default(cuid()) @map("_id")
+
+  textShareId String
+  textShare   TextShare @relation(fields: [textShareId], references: [id], onDelete: Cascade)
+
+  ipAddress   String
+  country     String?
+  countryCode String?
+  userAgent   String?
+
+  accessedAt  DateTime @default(now())
 }

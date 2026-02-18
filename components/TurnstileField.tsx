@@ -8,6 +8,7 @@ import {
     FormMessage,
 } from '@/components/ui/form';
 import { useTranslations } from 'next-intl';
+import configuration from '@/configuration/configuration';
 
 interface Props {
     onVerify: (token: string) => void;
@@ -15,7 +16,7 @@ interface Props {
 
 const TurnstileField = ({ onVerify }: Props) => {
     const t = useTranslations('common');
-    const siteKey = process.env.NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY || '';
+    const siteKey = configuration.turnstile.siteKey;
 
     return (
         <FormItem>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-import { useRouter } from '@/i18n/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
@@ -19,9 +19,23 @@ import { LayoutDashboardIcon, LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
 
 const Navbar = () => {
-    const t = useTranslations('navigation');
+    const t = useTranslations('layout.navigation');
     const router = useRouter();
+    const pathname = usePathname();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
+
+    // Determine dashboard destination based on current path
+    const getDashboardPath = () => {
+        if (pathname?.includes('/texts')) {
+            return '/dashboard/texts';
+        }
+        if (pathname?.includes('/qr')) {
+            return '/dashboard/qr';
+        }
+        return '/dashboard/urls';
+    };
+
+    const dashboardPath = getDashboardPath();
 
     if (loading) return <Loading />;
 
@@ -46,11 +60,14 @@ const Navbar = () => {
                                             {user?.picture ? (
                                                 <img
                                                     src={user.picture}
-                                                    alt={user.name || 'User Avatar'}
+                                                    alt={
+                                                        user.name ||
+                                                        'User Avatar'
+                                                    }
                                                     className="h-full w-full object-cover"
                                                 />
                                             ) : user?.name ? (
-                                                <div className="h-full w-full flex items-center justify-center text-primary font-black text-lg italic">
+                                                <div className="h-full w-full flex items-center justify-center text-primary font-semibold text-lg italic">
                                                     {user.name
                                                         .charAt(0)
                                                         .toUpperCase()}
@@ -67,7 +84,7 @@ const Navbar = () => {
                                 >
                                     <DropdownMenuItem
                                         onClick={() =>
-                                            router.push('/dashboard/urls')
+                                            router.push(dashboardPath)
                                         }
                                         className="cursor-pointer rounded-xl h-11 font-medium"
                                     >
@@ -94,14 +111,12 @@ const Navbar = () => {
                                 <Button
                                     variant="ghost"
                                     className="hidden sm:inline-flex cursor-pointer font-bold text-muted-foreground hover:text-primary transition-colors h-11 rounded-xl"
-                                    onClick={() =>
-                                        router.push('/dashboard/urls')
-                                    }
+                                    onClick={() => router.push(dashboardPath)}
                                 >
                                     {t('dashboard')}
                                 </Button>
                                 <Button
-                                    className="bg-primary hover:bg-primary/95 text-primary-foreground cursor-pointer font-black h-11 rounded-xl shadow-xl shadow-primary/20 px-6 active:scale-95 transition-all text-sm"
+                                    className="bg-primary hover:bg-primary/95 text-primary-foreground cursor-pointer font-semibold h-11 rounded-xl shadow-xl shadow-primary/20 px-6 active:scale-95 transition-all text-sm"
                                     onClick={() => router.push('/signup')}
                                 >
                                     {t('signup')}
