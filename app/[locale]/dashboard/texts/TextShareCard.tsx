@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Copy, FileText, ExternalLink, BarChart3, Trash2, Lock, Clock, QrCode } from 'lucide-react';
+import { Calendar, Copy, FileText, ExternalLink, BarChart3, Trash2, Lock, Clock, QrCode, Link as LinkIcon } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useState } from 'react';
 import { toast } from 'sonner';
@@ -27,6 +27,7 @@ interface TextShare {
     createdAt: string;
     expiresAt?: string;
     requiresPassword?: boolean;
+    customSlug?: string;
 }
 
 interface TextShareCardProps {
@@ -157,6 +158,12 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                     <span className="text-xs px-2 py-1 rounded-full bg-muted/50 border border-border/50 capitalize">
                         {share.format}
                     </span>
+                    {share.customSlug && (
+                        <span className="text-xs px-2 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 flex items-center gap-1">
+                            <LinkIcon className="w-3 h-3" />
+                            Custom URL
+                        </span>
+                    )}
                     {hasPassword && (
                         <span className="text-xs px-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 flex items-center gap-1">
                             <Lock className="w-3 h-3" />

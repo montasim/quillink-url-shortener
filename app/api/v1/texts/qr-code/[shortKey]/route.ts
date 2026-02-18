@@ -6,7 +6,7 @@ import httpStatusLite from 'http-status-lite';
 import contentTypesLite from 'content-types-lite';
 import sendResponse from '@/utils/sendResponse';
 import MESSAGES from '@/constants/messages';
-import { ShortKeySchema } from '@/schemas/schemas';
+import { CustomSlugSchema } from '@/schemas/schemas';
 import validateParams from '@/lib/validateParams';
 import configuration from '@/configuration/configuration';
 import { getTextShare } from '@/services/text-share.service';
@@ -19,7 +19,7 @@ const generateTextShareQrCode = async (
     context: { params: Promise<{ shortKey: string }> }
 ) => {
     const resolvedParams = await context.params;
-    const validation = validateParams(ShortKeySchema, resolvedParams);
+    const validation = validateParams(CustomSlugSchema, resolvedParams);
     if (!validation.success) return validation.response;
 
     const shortKey = validation.data.shortKey;

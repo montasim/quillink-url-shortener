@@ -93,7 +93,7 @@ export default function QRCodeViewer({
             {/* QR Code Modal */}
             <div
                 ref={popoverRef}
-                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-3xl shadow-2xl p-8 z-50 w-[320px] animate-in zoom-in-95 fade-in slide-in-from-bottom-4 duration-300"
+                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-3xl shadow-2xl p-8 z-50 w-100 animate-in zoom-in-95 fade-in slide-in-from-bottom-4 duration-300"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="space-y-6">
@@ -120,10 +120,10 @@ export default function QRCodeViewer({
                                 />
                             </div>
 
-                            <div className="flex flex-col gap-3">
+                            <div className="flex items-center justify-between gap-3">
                                 <Button
                                     size="sm"
-                                    className="w-full h-11 gap-2 rounded-xl font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
+                                    className="w-40 h-11 gap-2 rounded-xl font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
                                     onClick={handleDownload}
                                 >
                                     {t('downloadQr') || 'Download QR'}
@@ -131,7 +131,7 @@ export default function QRCodeViewer({
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    className="w-full h-11 rounded-xl text-muted-foreground hover:text-foreground"
+                                    className="w-40 h-11 rounded-xl text-muted-foreground hover:text-foreground"
                                     onClick={onClose}
                                 >
                                     {t('close') || 'Close'}

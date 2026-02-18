@@ -11,6 +11,7 @@ const {
     FLOAT_STRING,
     POSITIVE_INTEGER_STRING,
     SHORT_KEY,
+    CUSTOM_SLUG,
     EMAIL,
     UPPERCASE,
     LOWERCASE,
@@ -141,6 +142,18 @@ export const ShortKeySchema = z
             .min(1, MESSAGES.COMMON.VALIDATION_REQUIRED)
             .regex(SHORT_KEY, {
                 message: MESSAGES.URL_VALIDATION.INVALID_SHORT_KEY_FORMAT,
+            }),
+    })
+    .strict();
+
+export const CustomSlugSchema = z
+    .object({
+        shortKey: z
+            .string()
+            .trim()
+            .min(1, MESSAGES.COMMON.VALIDATION_REQUIRED)
+            .regex(CUSTOM_SLUG, {
+                message: 'Short key must contain only letters, numbers, hyphens, and underscores.',
             }),
     })
     .strict();
