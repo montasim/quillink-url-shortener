@@ -17,11 +17,13 @@ import UrlDashboardSkeleton from '@/components/dashboard/UrlDashboardSkeleton';
 import Pagination from '@/components/Pagination';
 import UsageProgress from '@/components/dashboard/UsageProgress';
 import useUsageStats from '@/hooks/useUsageStats';
+import { useAuth } from '@/context/AuthContext';
 
 const UrlDashboard = () => {
     const t = useTranslations('dashboard.urls');
     const urlT = useTranslations('dashboard.urls.messages');
     const usageT = useTranslations('dashboard.urls.usage');
+    const { isAuthenticated } = useAuth();
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
@@ -231,29 +233,40 @@ const UrlDashboard = () => {
                         </div>
                         <div className="flex-1">
                             <h3 className="text-lg font-semibold text-foreground mb-2">
-                                URL Creation Limit Reached
+                                {t('limitTitle')}
                             </h3>
                             <p className="text-sm text-muted-foreground mb-4">
-                                You've used all {usage.limit} URLs available for guest users.
-                                {usage.limit === 10 ? (
-                                    <> Sign up for a free account to create more URLs! </>
+                                {t('limitMessage', { limit: usage.limit })}
+                                {isAuthenticated ? (
+                                    <> {t('upgradeMessage.upgrade')} </>
                                 ) : (
-                                    <> Upgrade to Premium for unlimited URLs! </>
+                                    <> {t('upgradeMessage.signup')} </>
                                 )}
                             </p>
                             <div className="flex flex-wrap gap-3">
-                                <Button
-                                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                                    onClick={() => window.location.href = '/signup'}
-                                >
-                                    Sign Up Free
-                                </Button>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => window.location.href = '/login'}
-                                >
-                                    Log In
-                                </Button>
+                                {!isAuthenticated ? (
+                                    <>
+                                        <Button
+                                            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                            onClick={() => window.location.href = '/signup'}
+                                        >
+                                            {t('signUpFree')}
+                                        </Button>
+                                        <Button
+                                            variant="outline"
+                                            onClick={() => window.location.href = '/login'}
+                                        >
+                                            {t('login')}
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <Button
+                                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                        onClick={() => window.location.href = '/pricing'}
+                                    >
+                                        {t('upgradeMessage.upgrade')}
+                                    </Button>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -269,7 +282,7 @@ const UrlDashboard = () => {
                     <div className="mb-6 p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
                         <p className="text-sm text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
                             <AlertCircle className="w-4 h-4" />
-                            {usage.remaining} URLs remaining. {usageT('upgradeForMore')}
+                            {usage.remaining} {t('remaining')} {usageT('upgradeForMore')}
                         </p>
                     </div>
                 )}

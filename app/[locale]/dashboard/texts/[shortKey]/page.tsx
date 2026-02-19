@@ -15,7 +15,7 @@ import { toast } from 'sonner';
 import configuration from '@/configuration/configuration';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
-import { format, startOfDay, subDays, eachDayOfInterval } from 'date-fns';
+import { format, subDays, eachDayOfInterval } from 'date-fns';
 
 interface TextViewLog {
     id: string;

@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
@@ -20,10 +19,7 @@ import SubmitButton from '@/components/SubmitButton';
 import { PasswordField, TextField } from '@/components/CustomFormField';
 import TurnstileField from '@/components/TurnstileField';
 import LanguageOfferSwitcher from '@/components/LanguageOfferSwitcher';
-import { motion, AnimatePresence } from 'motion/react';
 import configuration from '@/configuration/configuration';
-
-
 
 const SignUpPage = () => {
     const t = useTranslations('auth.signup');

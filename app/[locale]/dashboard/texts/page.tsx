@@ -18,6 +18,7 @@ import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
 import UsageProgress from '@/components/dashboard/UsageProgress';
 import useUsageStats from '@/hooks/useUsageStats';
+import { useAuth } from '@/context/AuthContext';
 
 interface TextViewLog {
     id: string;
@@ -45,6 +46,7 @@ interface TextShare {
 export default function DashboardTextsPage() {
     const t = useTranslations('dashboard.texts');
     const usageT = useTranslations('dashboard.texts.usage');
+    const { isAuthenticated } = useAuth();
 
     const [shares, setShares] = useState<TextShare[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -289,29 +291,40 @@ export default function DashboardTextsPage() {
                         </div>
                         <div className="flex-1">
                             <h3 className="text-lg font-semibold text-foreground mb-2">
-                                Text Share Limit Reached
+                                {t('limitTitle')}
                             </h3>
                             <p className="text-sm text-muted-foreground mb-4">
-                                You've used all {usage.limit} text shares available for guest users.
-                                {usage.limit === 10 ? (
-                                    <> Sign up for a free account to create more text shares! </>
+                                {t('limitMessage', { limit: usage.limit })}
+                                {isAuthenticated ? (
+                                    <> {t('upgradeMessage.upgrade')} </>
                                 ) : (
-                                    <> Upgrade to Premium for unlimited text shares! </>
+                                    <> {t('upgradeMessage.signup')} </>
                                 )}
                             </p>
                             <div className="flex flex-wrap gap-3">
-                                <Button
-                                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                                    onClick={() => window.location.href = '/signup'}
-                                >
-                                    Sign Up Free
-                                </Button>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => window.location.href = '/login'}
-                                >
-                                    Log In
-                                </Button>
+                                {!isAuthenticated ? (
+                                    <>
+                                        <Button
+                                            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                            onClick={() => window.location.href = '/signup'}
+                                        >
+                                            {t('signUpFree')}
+                                        </Button>
+                                        <Button
+                                            variant="outline"
+                                            onClick={() => window.location.href = '/login'}
+                                        >
+                                            {t('login')}
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <Button
+                                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                        onClick={() => window.location.href = '/pricing'}
+                                    >
+                                        {t('upgradeMessage.upgrade')}
+                                    </Button>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -327,7 +340,7 @@ export default function DashboardTextsPage() {
                     <div className="mb-6 p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
                         <p className="text-sm text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
                             <AlertCircle className="w-4 h-4" />
-                            {usage.remaining} text shares remaining. {usageT('upgradeForMore')}
+                            {usage.remaining} {t('remaining')} {usageT('upgradeForMore')}
                         </p>
                     </div>
                 )}
