@@ -10,7 +10,7 @@ interface UsageLimitPromptProps {
     /** Whether the user is authenticated */
     isAuthenticated: boolean;
     /** Translation function */
-    t: (key: string) => string;
+    t: (key: string, params?: Record<string, string | number>) => string;
     /** Optional: limit value for limit-reached variant */
     limit?: number;
     /** Optional: remaining count for low-limit variant */
