@@ -23,9 +23,12 @@ import { getUserDetails } from '@/services/user.service';
 import CONSTANTS from './constants';
 import { hashPassword } from '@/lib/hashPassword';
 import { generateShortKey } from '@/lib/generateShortKey';
+import { getUserSubscription, canCreateTextShare } from '@/services/subscription.service';
+import { incrementTextShareCreation } from '@/services/usage.service';
+import { SubscriptionTier } from '@/lib/generated/prisma';
 
 const { AUTHENTICATION, TEXT_SHARE } = MESSAGES;
-const { TEXT_SHARE_CREATION_LIMIT } = CONSTANTS;
+const { TEXT_SHARE_CREATION_LIMIT, MAX_CONTENT_LENGTH_KB, MAX_VIEW_LIMIT, TEXT_SHARE_FEATURES } = CONSTANTS;
 
 const handleCreateTextShare = async (request: NextRequest) => {
     const accessCookie = await getAccessCookie();
@@ -76,29 +79,86 @@ const handleCreateTextShare = async (request: NextRequest) => {
             );
         }
 
-        const userTextShares = await getTextShareList({ userId });
+        // Get user's subscription and check limits
+        const subscription = await getUserSubscription(userId);
+        const features = TEXT_SHARE_FEATURES[subscription.tier];
+        const contentLimit = MAX_CONTENT_LENGTH_KB[subscription.tier];
+        const viewLimit = MAX_VIEW_LIMIT[subscription.tier];
 
-        if (
-            !user.subscription &&
-            userTextShares.length >=
-                TEXT_SHARE_CREATION_LIMIT.USER_WITHOUT_SUBSCRIPTION
-        ) {
+        // Check if user can create more text shares
+        const userTextShares = await getTextShareList({ userId });
+        const { canCreate } = await canCreateTextShare(userId, userTextShares.length);
+
+        if (!canCreate) {
+            if (subscription.tier === SubscriptionTier.FREE) {
+                return sendResponse(
+                    httpStatus.FORBIDDEN,
+                    TEXT_SHARE?.LIMIT_REACHED || 'Limit reached. Sign in to create more.'
+                );
+            } else {
+                return sendResponse(
+                    httpStatus.FORBIDDEN,
+                    TEXT_SHARE?.LIMIT_REACHED || 'Limit reached. Subscribe to create more.'
+                );
+            }
+        }
+
+        // Validate content length based on tier
+        if (data.content && data.content.length > contentLimit * 1024) {
+            return sendResponse(
+                httpStatus.BAD_REQUEST,
+                `Content exceeds maximum length of ${contentLimit} KB for your tier.`
+            );
+        }
+
+        // Validate view limit based on tier
+        const tierViewLimit = viewLimit as number;
+        if (data.viewLimit && (tierViewLimit === -1 || data.viewLimit <= tierViewLimit)) {
+            // Valid - unlimited or within limit
+        } else if (data.viewLimit && tierViewLimit !== -1 && data.viewLimit > tierViewLimit) {
+            return sendResponse(
+                httpStatus.BAD_REQUEST,
+                `View limit cannot exceed ${tierViewLimit} for your tier.`
+            );
+        }
+
+        // Check premium features access
+        if (data.password && !features.passwordProtection) {
             return sendResponse(
                 httpStatus.FORBIDDEN,
-                TEXT_SHARE?.LIMIT_REACHED ||
-                    'Limit reached. Subscribe to create more.'
+                'Password protection is available for your tier.'
             );
         }
     } else {
         guestId = await getOrCreateGuestId();
 
         const guestTextShares = await getTextShareList({ guestId });
+        const { canCreate } = await canCreateTextShare(null, guestTextShares.length);
 
-        if (guestTextShares.length >= TEXT_SHARE_CREATION_LIMIT.GUEST) {
+        if (!canCreate) {
             return sendResponse(
                 httpStatus.FORBIDDEN,
-                TEXT_SHARE?.LIMIT_REACHED ||
-                    'Limit reached. Sign in to create more.'
+                TEXT_SHARE?.LIMIT_REACHED || 'Limit reached. Sign in to create more.'
+            );
+        }
+
+        // Guest limits
+        const contentLimit = MAX_CONTENT_LENGTH_KB[SubscriptionTier.GUEST];
+        const guestViewLimit = MAX_VIEW_LIMIT[SubscriptionTier.GUEST] as number;
+
+        if (data.content && data.content.length > contentLimit * 1024) {
+            return sendResponse(
+                httpStatus.BAD_REQUEST,
+                `Content exceeds maximum length of ${contentLimit} KB.`
+            );
+        }
+
+        if (data.viewLimit && (guestViewLimit === -1 || data.viewLimit <= guestViewLimit)) {
+            // Valid - unlimited or within limit
+        } else if (data.viewLimit && guestViewLimit !== -1 && data.viewLimit > guestViewLimit) {
+            return sendResponse(
+                httpStatus.BAD_REQUEST,
+                `View limit cannot exceed ${guestViewLimit}.`
             );
         }
     }
@@ -164,6 +224,11 @@ const handleCreateTextShare = async (request: NextRequest) => {
             });
 
             const { passwordHash: _, ...safeData } = createdTextShare;
+
+            // Increment usage counter
+            if (userId) {
+                await incrementTextShareCreation(userId);
+            }
 
             return sendResponse(
                 httpStatus.CREATED,

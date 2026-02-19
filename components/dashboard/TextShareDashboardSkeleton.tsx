@@ -1,13 +1,29 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { TextShareLinksSkeleton } from "./TextShareLinksSkeleton";
+import { FileText } from "lucide-react";
 
 export const TextShareDashboardSkeleton = () => {
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">
-            {/* Header Skeleton */}
-            <div className="mb-8">
-                <Skeleton className="h-10 w-64 mb-2" />
-                <Skeleton className="h-5 w-96" />
+            {/* Header Skeleton - Title with Icon and Usage Progress */}
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex items-center gap-3">
+                    <Skeleton className="h-10 w-10 rounded-xl" />
+                    <div>
+                        <Skeleton className="h-10 w-64 mb-2" />
+                        <Skeleton className="h-5 w-96" />
+                    </div>
+                </div>
+
+                {/* Usage Progress Skeleton - Circular */}
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/50">
+                    <Skeleton className="h-5 w-5" />
+                    <Skeleton className="h-20 w-20 rounded-full" />
+                    <div className="flex-1">
+                        <Skeleton className="h-5 w-32 mb-2" />
+                        <Skeleton className="h-4 w-40" />
+                    </div>
+                </div>
             </div>
 
             {/* Tab Navigation Skeleton */}

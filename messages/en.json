@@ -37,18 +37,22 @@
       "description": "An unexpected error occurred. Please try again later.",
       "tryAgain": "Try Again",
       "goHome": "Go to Homepage"
-    }
+    },
+    "remainingUsage": "Remaining"
   },
   "layout": {
     "navigation": {
       "home": "Home",
       "dashboard": "Dashboard",
+      "dashboardLinks": "Link Management",
+      "dashboardTexts": "Text Shares",
       "login": "Log In",
       "signup": "Sign Up",
       "logout": "Log Out",
       "contactUs": "Contact Us",
       "terms": "Terms of Service",
       "privacy": "Privacy Policy",
+      "pricing": "Pricing",
       "textShares": "Text Sharer",
       "urlShortner": "Link Shrinker",
       "qrCode": "QR Creator"
@@ -815,6 +819,123 @@
         }
       }
     },
+    "pricing": {
+      "badge": "Pricing Plans",
+      "title": "Choose Your",
+      "titleEmphasis": "Perfect Plan",
+      "description": "Start free and upgrade as you grow. All plans include core features with no hidden fees.",
+      "mostPopular": "Most Popular",
+      "tiers": {
+        "guest": {
+          "name": "Guest",
+          "price": "Free",
+          "description": "Perfect for trying out Shrnkly",
+          "cta": "Get Started",
+          "features": {
+            "urlLimit": "10 URLs per month",
+            "textLimit": "10 text shares",
+            "basicAnalytics": "Basic analytics",
+            "qrCodes": "QR code generation",
+            "customSlugs": "Custom slugs",
+            "passwordProtection": "Password protection",
+            "linkExpiration": "Link expiration",
+            "apiAccess": "API access",
+            "prioritySupport": "Priority support"
+          }
+        },
+        "registered": {
+          "name": "Registered",
+          "price": "Free",
+          "description": "For regular users who need more",
+          "cta": "Sign Up Free",
+          "features": {
+            "urlLimit": "20 URLs per month",
+            "textLimit": "20 text shares",
+            "fullAnalytics": "Full analytics",
+            "qrCodes": "QR code generation",
+            "customSlugs": "Custom slugs",
+            "passwordProtection": "Password protection",
+            "linkExpiration": "Link expiration",
+            "apiAccess": "Rate-limited API",
+            "prioritySupport": "Priority support"
+          }
+        },
+        "premium": {
+          "name": "Premium",
+          "price": "$0.99/mo",
+          "description": "Unlimited access for power users",
+          "cta": "Start Free Trial",
+          "features": {
+            "unlimitedUrls": "Unlimited URLs",
+            "unlimitedTexts": "Unlimited text shares",
+            "advancedAnalytics": "Advanced analytics + export",
+            "customQrCodes": "Custom QR codes",
+            "customSlugs": "Custom slugs",
+            "passwordProtection": "Password protection",
+            "linkExpiration": "Link expiration",
+            "fullApiAccess": "Full API access",
+            "prioritySupport": "Priority support"
+          }
+        }
+      },
+      "chat": {
+        "title": "Have ",
+        "titleEmphasis": "questions?",
+        "description": "Need help choosing a plan? Our team is here to help.",
+        "viewFaqs": "View FAQs",
+        "contactSales": "Contact Sales"
+      },
+      "faq": {
+        "badge": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Quick answers to common questions about our pricing and plans.",
+        "questions": {
+          "whatIsFree": {
+            "question": "What's included in the free plan?",
+            "answer": "Our free plan includes up to 20 URLs per month, 20 text shares, full analytics, QR code generation, custom slugs, and rate-limited API access. Perfect for regular users!"
+          },
+          "upgrade": {
+            "question": "Can I upgrade or downgrade anytime?",
+            "answer": "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges or credits."
+          },
+          "paymentMethods": {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans."
+          },
+          "refund": {
+            "question": "Is there a refund policy?",
+            "answer": "Yes! We offer a 14-day money-back guarantee. If you're not satisfied with Premium, contact us within 14 days for a full refund."
+          },
+          "limits": {
+            "question": "What happens if I exceed my plan limits?",
+            "answer": "If you exceed your monthly URL or text share limits, you'll need to wait until next month or upgrade to Premium for unlimited usage."
+          },
+          "premiumFeatures": {
+            "question": "What makes Premium worth it?",
+            "answer": "Premium gives you unlimited URLs and text shares, advanced analytics with export, custom QR codes, password protection, link expiration, full API access, and priority support."
+          },
+          "annualDiscount": {
+            "question": "Do you offer annual plans?",
+            "answer": "Yes! Save 20% with our annual Premium plan. That's 2 months free compared to monthly billing."
+          },
+          "cancel": {
+            "question": "How do I cancel my subscription?",
+            "answer": "You can cancel anytime from your account settings. Your Premium features will remain active until the end of your billing period."
+          }
+        }
+      },
+      "cta": {
+        "badge": "Get Started — It's Free",
+        "headingPrefix": "Ready to ",
+        "headingSuffix": " your links?",
+        "headingEmphasis": "level up",
+        "subheading": "Join thousands of marketers, creators, developers and businesses who trust Shrnkly every day.",
+        "startButton": "Start for Free",
+        "contactButton": "Contact Sales",
+        "getInTouch": "Get in Touch",
+        "emailSupport": "Email Support"
+      }
+    },
     "notFound": {
       "badge": "404 Error",
       "title": "Page Not Found",
@@ -916,6 +1037,14 @@
       "rememberPassword": "Remembered your old password?",
       "loginLink": "Log in",
       "loading": "Loading…"
+    },
+    "creatingAccount": "Creating account…",
+    "signUpFree": "Sign Up Free",
+    "referrers": {
+      "direct": "Direct",
+      "google": "Google",
+      "twitter": "Twitter",
+      "facebook": "Facebook"
     }
   },
   "dashboard": {
@@ -950,7 +1079,18 @@
       "links": "Links",
       "analysis": "Analytics",
       "realtime": "Live",
-      "loading": "Loading…"
+      "loading": "Loading…",
+      "remainingUsage": "Remaining",
+      "userAvatar": "User Avatar",
+      "mapComingSoon": "Map visualization is coming soon.",
+      "mapCollectingData": "Geographic data is being collected.",
+      "mapNoData": "No geographic data available",
+      "noData": "No data",
+      "noMatches": "No matches found",
+      "error": "Error",
+      "used": "used",
+      "unlimitedUsage": "Enjoy unlimited usage!",
+      "noClickData": "No click data available."
     },
     "urls": {
       "dashboardTitle": "Your Links Dashboard",
@@ -998,7 +1138,6 @@
       "filterLinks": "Filter links",
       "visits": "Visits",
       "visitors": "Unique Visitors",
-      "referrers": "Referrers",
       "views": "Views",
       "locations": "Locations",
       "worldMapHere": "World Map",
@@ -1037,6 +1176,30 @@
       "last7Days": "Last 7 days",
       "trafficByLocation": "Traffic by Country",
       "noDataYet": "No data yet",
+      "limitReached": "URL creation limit reached",
+      "limitTitle": "URL Creation Limit Reached",
+      "limitMessage": "You've used all {limit} URLs available for guest users.",
+      "upgradeMessage": {
+        "signup": "Sign up for a free account to create more URLs!",
+        "upgrade": "Upgrade to Premium for unlimited URLs!"
+      },
+      "signUpFree": "Sign Up Free",
+      "login": "Log In",
+      "remaining": "URLs remaining.",
+      "lowLimitTitle": "Running Low on URLs",
+      "lowLimitMessage": "You only have {remaining} URLs remaining.",
+      "lowLimitPrompt": {
+        "signup": "Sign up for a free account to get more URLs!",
+        "upgrade": "Upgrade to Premium for unlimited URLs!"
+      },
+      "noGeoData": "No geographic data available",
+      "placeholderUrl": "https://example.com/very-long-url",
+      "referrers": {
+        "direct": "Direct",
+        "google": "Google",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
+      },
       "qrCodeMessages": {
         "missingShortKey": "Cannot generate QR — short link key is missing.",
         "notFound": "No short link found to create QR code for.",
@@ -1045,6 +1208,8 @@
       "links": "Links",
       "analysis": "Analytics",
       "realtime": "Live",
+      "mapComingSoon": "Map visualization is coming soon.",
+      "mapCollectingData": "Geographic data is being collected.",
       "messages": {
         "creation": {
           "validationError": "Please check the URL you entered.",
@@ -1079,6 +1244,14 @@
         "validation": {
           "invalidShortKeyFormat": "Invalid short link format."
         }
+      },
+      "usage": {
+        "urlsUsed": "URLs Used",
+        "textsUsed": "Text Shares Used",
+        "unlimited": "Unlimited",
+        "of": "of",
+        "remaining": "Remaining",
+        "upgradeForMore": "Upgrade to Premium for unlimited usage"
       }
     },
     "texts": {
@@ -1118,6 +1291,56 @@
       "last7Days": "Last 7 days",
       "trafficByLocation": "Traffic by Country",
       "noDataYet": "No data yet",
+      "limitReached": "Text share creation limit reached",
+      "limitTitle": "Text Share Limit Reached",
+      "limitMessage": "You've used all {limit} text shares available for guest users.",
+      "upgradeMessage": {
+        "signup": "Sign up for a free account to create more text shares!",
+        "upgrade": "Upgrade to Premium for unlimited text shares!"
+      },
+      "signUpFree": "Sign Up Free",
+      "login": "Log In",
+      "remaining": "text shares remaining.",
+      "validation": {
+        "titleMax": "Title must be less than 100 characters",
+        "contentRequired": "Content is required",
+        "passwordMin": "Password must be at least 4 characters",
+        "slugMax": "Custom slug must be less than 50 characters",
+        "slugFormat": "Custom slug must contain only alphanumeric characters, hyphens, and underscores"
+      },
+      "copied": "Copied to clipboard!",
+      "copyFailed": "Failed to copy",
+      "linkCopied": "Link copied to clipboard!",
+      "linkCopyFailed": "Failed to copy link",
+      "downloadStarted": "Download started!",
+      "defaultTitle": "Text Share",
+      "scanToView": "Scan to View",
+      "customUrl": "Custom URL",
+      "expired": "Expired",
+      "deleting": "Deleting…",
+      "delete": "Delete",
+      "confirmTitle": "Are you sure?",
+      "confirmMessage": "This action cannot be undone. The text share will be permanently deleted.",
+      "editorPlaceholder": "Paste your text here…",
+      "passwordRequired": "Password Required",
+      "passwordProtected": "This content is password protected. Enter the password to view.",
+      "enterPassword": "Enter password",
+      "verifying": "Verifying…",
+      "viewContent": "View Content",
+      "expiredMessage": "This content has expired and is no longer available.",
+      "expiredTitle": "Content Expired",
+      "slugAvailable": "✓ This custom link is available",
+      "slugTaken": "This custom link is already taken. Please choose another or remove it.",
+      "slugTakenMessage": "✗ This custom link is already taken",
+      "copyContentTitle": "Copy content",
+      "formatLabel": "Format",
+      "languageLabel": "Language",
+      "viewsCount": "{count} views",
+      "expiresLabel": "Expires:",
+      "shareLinkTitle": "Share link",
+      "qrCodeTitle": "QR Code",
+      "downloadTitle": "Download",
+      "copyLinkBtn": "Copy Link",
       "create": {
         "title": "Create New Text Share",
         "subtitle": "Share code, notes, logs, configs — instantly",
@@ -1171,7 +1394,20 @@
         "invalidPassword": "Wrong password",
         "expired": "This share has expired",
         "viewLimitReached": "Maximum views reached",
-        "views": "{count} views"
+        "views": "{count} views",
+        "linkCopied": "Link copied to clipboard!",
+        "linkCopyFailed": "Failed to copy link",
+        "downloadStarted": "Download started!",
+        "defaultTitle": "Text Share",
+        "notFoundDescription": "This text share may have been deleted or never existed.",
+        "viewOnly": "View Only",
+        "sharedVia": "Shared via {name} Text Share",
+        "copy": "Copy",
+        "share": "Share",
+        "titlePlaceholder": "Title",
+        "format": "Format",
+        "language": "Language",
+        "expires": "Expires:"
       },
       "stats": {
         "title": "Share Statistics",
@@ -1195,7 +1431,160 @@
       },
       "links": "Links",
       "analysis": "Analytics",
-      "realtime": "Live"
+      "realtime": "Live",
+      "usage": {
+        "urlsUsed": "URLs Used",
+        "textsUsed": "Text Shares Used",
+        "unlimited": "Unlimited",
+        "of": "of",
+        "remaining": "Remaining",
+        "upgradeForMore": "Upgrade to Premium for unlimited usage"
+      },
+      "languages": {
+        "javascript": "JavaScript",
+        "typescript": "TypeScript",
+        "python": "Python",
+        "java": "Java",
+        "cpp": "C++",
+        "c": "C",
+        "csharp": "C#",
+        "go": "Go",
+        "rust": "Rust",
+        "php": "PHP",
+        "ruby": "Ruby",
+        "swift": "Swift",
+        "kotlin": "Kotlin",
+        "scala": "Scala",
+        "sql": "SQL",
+        "html": "HTML",
+        "css": "CSS",
+        "scss": "SCSS",
+        "bash": "Bash/Shell",
+        "json": "JSON",
+        "yaml": "YAML",
+        "xml": "XML",
+        "markdown": "Markdown"
+      }
+    },
+    "comingSoon": {
+      "nextGenMonitoring": "Next-Gen Monitoring",
+      "livePulseComingSoon": "Live Pulse coming soon",
+      "description": "We're engineering an ultra-low latency engine to track your links in real-time. Watch growth happen as it occurs.",
+      "activeSessions": "Active Sessions",
+      "liveClickStream": "Live Click Stream",
+      "engineInDevelopment": "Engine in Development"
+    },
+    "qr": {
+      "fetchFailed": "Failed to fetch QR code",
+      "downloaded": "QR code downloaded",
+      "title": "QR Code",
+      "scanToVisit": "Scan to visit",
+      "alt": "QR Code",
+      "download": "Download QR",
+      "unavailable": "QR code unavailable",
+      "generationError": "Failed to generate QR code",
+      "generateButton": "Generate QR Code",
+      "format": {
+        "png": "PNG",
+        "svg": "SVG"
+      },
+      "colors": {
+        "classic": "Classic",
+        "blue": "Blue",
+        "red": "Red",
+        "green": "Green",
+        "purple": "Purple",
+        "orange": "Orange",
+        "warm": "Warm",
+        "cool": "Cool"
+      },
+      "encryption": {
+        "wpa": "WPA/WPA2",
+        "wep": "WEP",
+        "none": "No Encryption"
+      }
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Shrnkly – Smart URL Shortener, Text Sharing & QR Code Generator",
+      "description": "Free URL shortener with analytics, secure text sharing, and custom QR codes. Create trackable links, share code snippets, and generate QR codes in seconds."
+    },
+    "pricing": {
+      "title": "Pricing – Shrnkly",
+      "description": "Choose the perfect plan for your needs. Free URL shortening for everyone, with premium features for power users."
+    },
+    "qr": {
+      "title": "QR Code Generator – Shrnkly",
+      "description": "Generate custom QR codes for URLs, text, WiFi, contacts and more. Free online QR code generator with colors, logos, and multiple formats. No signup required."
+    },
+    "urls": {
+      "title": "URL Shortener – Shrnkly",
+      "description": "Shorten long URLs into compact, trackable links. Free URL shortener with analytics and custom slugs."
+    },
+    "texts": {
+      "title": "Text Sharing – Shrnkly",
+      "description": "Share text snippets, code, and notes with secure, expiring links. Perfect for developers and teams."
+    },
+    "contact": {
+      "title": "Contact Us – Shrnkly",
+      "description": "Get in touch with our team. We're here to help with any questions about our URL shortener service."
+    },
+    "privacy": {
+      "title": "Privacy Policy – Shrnkly",
+      "description": "Learn how we protect your privacy and handle your data when you use our URL shortening service."
+    },
+    "terms": {
+      "title": "Terms of Service – Shrnkly",
+      "description": "Read our terms of service and understand the rules for using our URL shortening platform."
+    },
+    "login": {
+      "title": "Log In – Shrnkly",
+      "description": "Access your dashboard to manage URLs, view analytics, and create custom short links."
+    },
+    "signup": {
+      "title": "Sign Up – Shrnkly",
+      "description": "Create a free account to unlock advanced features like analytics, custom slugs, and API access."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password – Shrnkly",
+      "description": "Reset your password and regain access to your account."
+    },
+    "resetPassword": {
+      "title": "Reset Password – Shrnkly",
+      "description": "Set a new password for your account."
+    },
+    "dashboard": {
+      "title": "Dashboard – Shrnkly",
+      "description": "Manage your shortened URLs, view analytics, and track link performance."
+    },
+    "dashboardUrls": {
+      "title": "Link Management – Shrnkly",
+      "description": "Create, edit, and manage all your shortened URLs in one place."
+    },
+    "dashboardTexts": {
+      "title": "Text Shares – Shrnkly",
+      "description": "Manage your shared text snippets and code blocks."
+    },
+    "text": {
+      "title": "View Text – Shrnkly",
+      "description": "View shared text snippet or code."
+    },
+    "url": {
+      "title": "View URL – Shrnkly",
+      "description": "View shortened URL details."
+    },
+    "editText": {
+      "title": "Edit Text – Shrnkly",
+      "description": "Edit your shared text snippet."
+    },
+    "editUrl": {
+      "title": "Edit URL – Shrnkly",
+      "description": "Edit your shortened URL."
+    },
+    "redirect": {
+      "title": "Redirecting – Shrnkly",
+      "description": "Redirecting to your destination URL..."
     }
   }
 }

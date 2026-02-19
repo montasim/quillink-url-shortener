@@ -37,18 +37,22 @@
       "description": "Ocurrió un error inesperado. Por favor, inténtalo más tarde.",
       "tryAgain": "Intentar de nuevo",
       "goHome": "Ir al inicio"
-    }
+    },
+    "remainingUsage": "Restante"
   },
   "layout": {
     "navigation": {
       "home": "Inicio",
       "dashboard": "Panel",
+      "dashboardLinks": "Gestión de Enlaces",
+      "dashboardTexts": "Notas Compartidas",
       "login": "Iniciar sesión",
       "signup": "Registrarse",
       "logout": "Cerrar sesión",
       "contactUs": "Contacto",
       "terms": "Términos de servicio",
       "privacy": "Privacidad",
+      "pricing": "Precios",
       "textShares": "Compartidor de Texto",
       "urlShortner": "Acortador de Enlaces",
       "qrCode": "Creador de QR"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "Planes de Precios",
+      "title": "Elige Tu",
+      "titleEmphasis": "Plan Perfecto",
+      "description": "Comienza gratis y mejora mientras creces. Todos los planes incluyen funciones principales sin tarifas ocultas.",
+      "mostPopular": "Más Popular",
+      "tiers": {
+        "guest": {
+          "name": "Invitado",
+          "price": "Gratis",
+          "description": "Perfecto para probar Shrnkly",
+          "cta": "Comenzar",
+          "features": {
+            "urlLimit": "10 URLs por mes",
+            "textLimit": "10 notas compartidas",
+            "basicAnalytics": "Estadísticas básicas",
+            "qrCodes": "Generación de códigos QR",
+            "customSlugs": "Slugs personalizados",
+            "passwordProtection": "Protección con contraseña",
+            "linkExpiration": "Expiración de enlaces",
+            "apiAccess": "Acceso a API",
+            "prioritySupport": "Soporte prioritario"
+          }
+        },
+        "registered": {
+          "name": "Registrado",
+          "price": "Gratis",
+          "description": "Para usuarios regulares que necesitan más",
+          "cta": "Registrarse Gratis",
+          "features": {
+            "urlLimit": "20 URLs por mes",
+            "textLimit": "20 notas compartidas",
+            "fullAnalytics": "Estadísticas completas",
+            "qrCodes": "Generación de códigos QR",
+            "customSlugs": "Slugs personalizados",
+            "passwordProtection": "Protección con contraseña",
+            "linkExpiration": "Expiración de enlaces",
+            "apiAccess": "API con límite de tasa",
+            "prioritySupport": "Soporte prioritario"
+          }
+        },
+        "premium": {
+          "name": "Premium",
+          "price": "$0.99/mes",
+          "description": "Acceso ilimitado para usuarios avanzados",
+          "cta": "Iniciar Prueba Gratis",
+          "features": {
+            "unlimitedUrls": "URLs ilimitadas",
+            "unlimitedTexts": "Notas compartidas ilimitadas",
+            "advancedAnalytics": "Estadísticas avanzadas + exportar",
+            "customQrCodes": "Códigos QR personalizados",
+            "customSlugs": "Slugs personalizados",
+            "passwordProtection": "Protección con contraseña",
+            "linkExpiration": "Expiración de enlaces",
+            "fullApiAccess": "Acceso completo a API",
+            "prioritySupport": "Soporte prioritario"
+          }
+        }
+      },
+      "chat": {
+        "title": "¿Tienes ",
+        "titleEmphasis": "preguntas?",
+        "description": "¿Necesitas ayuda para elegir un plan? Nuestro equipo está aquí para ayudar.",
+        "viewFaqs": "Ver Preguntas Frecuentes",
+        "contactSales": "Contactar Ventas"
+      }
+    },
     "notFound": {
       "badge": "Error 404",
       "title": "Página no encontrada",
@@ -1195,7 +1266,15 @@
       },
       "links": "Links",
       "analysis": "Análisis",
-      "realtime": "En vivo"
+      "realtime": "En vivo",
+      "usage": {
+        "urlsUsed": "URLs Usadas",
+        "textsUsed": "Notas Compartidas Usadas",
+        "unlimited": "Ilimitado",
+        "of": "de",
+        "remaining": "Restante",
+        "upgradeForMore": "Mejora a Premium para uso ilimitado"
+      }
     }
   }
 }

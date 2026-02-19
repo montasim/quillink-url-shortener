@@ -37,18 +37,22 @@
       "description": "एक अप्रत्याशित त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
       "tryAgain": "पुनः प्रयास करें",
       "goHome": "होमपेज पर जाएं"
-    }
+    },
+    "remainingUsage": "शेष"
   },
   "layout": {
     "navigation": {
       "home": "होम",
       "dashboard": "डैशबोर्ड",
+      "dashboardLinks": "लिंक प्रबंधन",
+      "dashboardTexts": "टेक्स्ट शेयर",
       "login": "लॉगिन",
       "signup": "साइनअप",
       "logout": "लॉगआउट",
       "contactUs": "संपर्क करें",
       "terms": "नियम और शर्तें",
       "privacy": "प्राइवेसी",
+      "pricing": "मूल्य",
       "textShares": "टेक्स्ट शेयरर",
       "urlShortner": "लिंक श्रिंकर",
       "qrCode": "QR निर्माता"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "मूल्य योजनाएं",
+      "title": "अपना",
+      "titleEmphasis": "सही योजना चुनें",
+      "description": "मुफ्त शुरू करें और बढ़ने पर अपग्रेड करें। सभी योजनाओं में कोई छिपी हुई फीस के बिना मूल सुविधाएं शामिल हैं।",
+      "mostPopular": "सबसे लोकप्रिय",
+      "tiers": {
+        "guest": {
+          "name": "अतिथि",
+          "price": "मुफ्त",
+          "description": "Shrnkly आज़माने के लिए एकदम सही",
+          "cta": "शुरू करें",
+          "features": {
+            "urlLimit": "10 URLs प्रति माह",
+            "textLimit": "10 टेक्स्ट शेयर",
+            "basicAnalytics": "मूल एनालिटिक्स",
+            "qrCodes": "QR कोड जनरेशन",
+            "customSlugs": "कस्टम स्लग",
+            "passwordProtection": "पासवर्ड सुरक्षा",
+            "linkExpiration": "लिंक समाप्ति",
+            "apiAccess": "API एक्सेस",
+            "prioritySupport": "प्राथमिकता सपोर्ट"
+          }
+        },
+        "registered": {
+          "name": "पंजीकृत",
+          "price": "मुफ्त",
+          "description": "नियमित उपयोगकर्ताओं के लिए जिन्हें अधिक चाहिए",
+          "cta": "मुफ्त साइन अप",
+          "features": {
+            "urlLimit": "20 URLs प्रति माह",
+            "textLimit": "20 टेक्स्ट शेयर",
+            "fullAnalytics": "पूर्ण एनालिटिक्स",
+            "qrCodes": "QR कोड जनरेशन",
+            "customSlugs": "कस्टम स्लग",
+            "passwordProtection": "पासवर्ड सुरक्षा",
+            "linkExpiration": "लिंक समाप्ति",
+            "apiAccess": "रेट-सीमित API",
+            "prioritySupport": "प्राथमिकता सपोर्ट"
+          }
+        },
+        "premium": {
+          "name": "प्रीमियम",
+          "price": "$0.99/माह",
+          "description": "पावर उपयोगकर्ताओं के लिए असीमित एक्सेस",
+          "cta": "मुफ्त ट्रायल शुरू करें",
+          "features": {
+            "unlimitedUrls": "असीमित URLs",
+            "unlimitedTexts": "असीमित टेक्स्ट शेयर",
+            "advancedAnalytics": "उन्नत एनालिटिक्स + एक्सपोर्ट",
+            "customQrCodes": "कस्टम QR कोड",
+            "customSlugs": "कस्टम स्लग",
+            "passwordProtection": "पासवर्ड सुरक्षा",
+            "linkExpiration": "लिंक समाप्ति",
+            "fullApiAccess": "पूर्ण API एक्सेस",
+            "prioritySupport": "प्राथमिकता सपोर्ट"
+          }
+        }
+      },
+      "chat": {
+        "title": "क्या आपके पास ",
+        "titleEmphasis": "प्रश्न हैं?",
+        "description": "योजना चुनने में मदद चाहिए? हमारी टीम यहाँ मदद के लिए है।",
+        "viewFaqs": "अक्सर पूछे जाने वाले प्रश्न देखें",
+        "contactSales": "बिक्री से संपर्क करें"
+      }
+    },
     "notFound": {
       "badge": "404 त्रुटि",
       "title": "पेज नहीं मिला",
@@ -1195,7 +1266,15 @@
       },
       "links": "लिंक्स",
       "analysis": "विश्लेषण",
-      "realtime": "लाइव"
+      "realtime": "लाइव",
+      "usage": {
+        "urlsUsed": "URL उपयोग किए गए",
+        "textsUsed": "टेक्स्ट शेयर उपयोग किए गए",
+        "unlimited": "असीमित",
+        "of": "का",
+        "remaining": "शेष",
+        "upgradeForMore": "असीमित उपयोग के लिए प्रीमियम पर अपग्रेड करें"
+      }
     }
   }
 }

@@ -37,18 +37,22 @@
       "description": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
       "tryAgain": "Réessayer",
       "goHome": "Aller à l'accueil"
-    }
+    },
+    "remainingUsage": "Restant"
   },
   "layout": {
     "navigation": {
       "home": "Accueil",
       "dashboard": "Tableau de bord",
+      "dashboardLinks": "Gestion des Liens",
+      "dashboardTexts": "Partages de Texte",
       "login": "Se connecter",
       "signup": "S'inscrire",
       "logout": "Se déconnecter",
       "contactUs": "Nous contacter",
       "terms": "Conditions d'utilisation",
       "privacy": "Confidentialité",
+      "pricing": "Tarifs",
       "textShares": "Partageur de Texte",
       "urlShortner": "Réducteur de Liens",
       "qrCode": "Créateur de QR"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "Offres Tarifaires",
+      "title": "Choisissez Votre",
+      "titleEmphasis": "Offre Parfaite",
+      "description": "Commencez gratuitement et évoluez selon vos besoins. Tous les offres incluent les fonctionnalités essentielles sans frais cachés.",
+      "mostPopular": "Plus Populaire",
+      "tiers": {
+        "guest": {
+          "name": "Invité",
+          "price": "Gratuit",
+          "description": "Parfait pour essayer Shrnkly",
+          "cta": "Commencer",
+          "features": {
+            "urlLimit": "10 URLs par mois",
+            "textLimit": "10 partages de texte",
+            "basicAnalytics": "Analyses de base",
+            "qrCodes": "Génération de QR codes",
+            "customSlugs": "Slugs personnalisés",
+            "passwordProtection": "Protection par mot de passe",
+            "linkExpiration": "Expiration des liens",
+            "apiAccess": "Accès API",
+            "prioritySupport": "Support prioritaire"
+          }
+        },
+        "registered": {
+          "name": "Inscrit",
+          "price": "Gratuit",
+          "description": "Pour les utilisateurs réguliers qui ont besoin de plus",
+          "cta": "S'inscrire Gratuitement",
+          "features": {
+            "urlLimit": "20 URLs par mois",
+            "textLimit": "20 partages de texte",
+            "fullAnalytics": "Analyses complètes",
+            "qrCodes": "Génération de QR codes",
+            "customSlugs": "Slugs personnalisés",
+            "passwordProtection": "Protection par mot de passe",
+            "linkExpiration": "Expiration des liens",
+            "apiAccess": "API avec limite de débit",
+            "prioritySupport": "Support prioritaire"
+          }
+        },
+        "premium": {
+          "name": "Premium",
+          "price": "9,99 €/mois",
+          "description": "Accès illimité pour les utilisateurs avancés",
+          "cta": "Commencer l'Essai Gratuit",
+          "features": {
+            "unlimitedUrls": "URLs illimitées",
+            "unlimitedTexts": "Partages de texte illimités",
+            "advancedAnalytics": "Analyses avancées + export",
+            "customQrCodes": "QR codes personnalisés",
+            "customSlugs": "Slugs personnalisés",
+            "passwordProtection": "Protection par mot de passe",
+            "linkExpiration": "Expiration des liens",
+            "fullApiAccess": "Accès API complet",
+            "prioritySupport": "Support prioritaire"
+          }
+        }
+      },
+      "chat": {
+        "title": "Vous avez ",
+        "titleEmphasis": "des questions ?",
+        "description": "Besoin d'aide pour choisir une offre ? Notre équipe est là pour vous aider.",
+        "viewFaqs": "Voir la FAQ",
+        "contactSales": "Contacter les Ventes"
+      }
+    },
     "notFound": {
       "badge": "Erreur 404",
       "title": "Page non trouvée",
@@ -1195,7 +1266,15 @@
       },
       "links": "Liens",
       "analysis": "Analyses",
-      "realtime": "En direct"
+      "realtime": "En direct",
+      "usage": {
+        "urlsUsed": "URLs Utilisées",
+        "textsUsed": "Partages de Texte Utilisés",
+        "unlimited": "Illimité",
+        "of": "sur",
+        "remaining": "Restant",
+        "upgradeForMore": "Passez à Premium pour une utilisation illimitée"
+      }
     }
   }
 }

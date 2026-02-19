@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { AuthProvider } from '@/context/AuthContext';
 import { locales } from '@/i18n/config';
 import React from 'react';
+import { MetadataProvider } from '@/components/metadata-provider';
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
@@ -28,8 +29,10 @@ export default async function LocaleLayout({
     return (
         <NextIntlClientProvider messages={messages}>
             <AuthProvider>
-                {children}
-                <Toaster richColors />
+                <MetadataProvider>
+                    {children}
+                    <Toaster richColors />
+                </MetadataProvider>
             </AuthProvider>
         </NextIntlClientProvider>
     );

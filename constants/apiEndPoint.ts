@@ -9,6 +9,9 @@ const API_ENDPOINT = Object.freeze({
     URLS_GET: (shortKey: string) => `/api/v1/urls/${shortKey}`,
     URLS_STATS: (shortKey: string) => `/api/v1/urls/${shortKey}/stats`,
 
+    // Usage Stats
+    USAGE: '/api/v1/usage',
+
     // Text Share
     TEXT_SHARE_CREATE: '/api/v1/texts',
     TEXT_SHARE_LIST: '/api/v1/texts',

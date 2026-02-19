@@ -42,9 +42,11 @@ const TextShareFormSchema = z.object({
 interface CreateTextShareModalProps {
     onRefresh?: () => void;
     triggerLabel?: string;
+    isDisabled?: boolean;
+    disabledReason?: string;
 }
 
-const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalProps) => {
+const CreateTextShareModal = ({ onRefresh, triggerLabel, isDisabled = false, disabledReason }: CreateTextShareModalProps) => {
     const t = useTranslations('dashboard.texts');
     const createT = useTranslations('dashboard.texts.create');
     const [open, setOpen] = useState(false);
@@ -98,6 +100,12 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
     };
 
     const onSubmit = async (data: any) => {
+        // Prevent submission if limit reached
+        if (isDisabled) {
+            toast.error('Text share creation limit reached. Please upgrade to create more.');
+            return;
+        }
+
         // Prevent submission if custom slug is taken
         if (data.customSlug && slugAvailability === 'taken') {
             toast.error('This custom link is already taken. Please choose another or remove it.');
@@ -139,7 +147,10 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="gap-2 h-11 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
+                <Button
+                    className="gap-2 h-11 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+                    disabled={isDisabled}
+                >
                     <Plus className="w-4 h-4" />
                     <span className="hidden sm:inline">{triggerLabel || t('newShare')}</span>
                 </Button>
@@ -310,10 +321,10 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel }: CreateTextShareModalP
                                             </FormControl>
                                             <FormMessage />
                                             {slugAvailability === 'available' && (
-                                                <p className="text-xs text-green-600 mt-1">✓ This custom link is available</p>
+                                                <p className="text-xs text-green-600 mt-1">{t('slugAvailable')}</p>
                                             )}
                                             {slugAvailability === 'taken' && (
-                                                <p className="text-xs text-red-600 mt-1">✗ This custom link is already taken</p>
+                                                <p className="text-xs text-red-600 mt-1">{t('slugTakenMessage')}</p>
                                             )}
                                         </FormItem>
                                     )}

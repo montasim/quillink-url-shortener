@@ -37,18 +37,22 @@
       "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuch es später noch einmal.",
       "tryAgain": "Erneut versuchen",
       "goHome": "Zur Startseite"
-    }
+    },
+    "remainingUsage": "Verbleibend"
   },
   "layout": {
     "navigation": {
       "home": "Startseite",
       "dashboard": "Dashboard",
+      "dashboardLinks": "Link-Verwaltung",
+      "dashboardTexts": "Text-Freigaben",
       "login": "Anmelden",
       "signup": "Registrieren",
       "logout": "Abmelden",
       "contactUs": "Kontakt",
       "terms": "Nutzungsbedingungen",
       "privacy": "Datenschutz",
+      "pricing": "Preise",
       "textShares": "Text-Teiler",
       "urlShortner": "Link-Kürzer",
       "qrCode": "QR-Ersteller"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "Preispläne",
+      "title": "Wähle deinen",
+      "titleEmphasis": "perfekten Plan",
+      "description": "Starte kostenlos und upgrade, wenn du wächst. Alle Pläne beinhalten Kernfunktionen ohne versteckte Gebühren.",
+      "mostPopular": "Beliebteste",
+      "tiers": {
+        "guest": {
+          "name": "Gast",
+          "price": "Kostenlos",
+          "description": "Perfekt zum Ausprobieren von Shrnkly",
+          "cta": "Loslegen",
+          "features": {
+            "urlLimit": "10 URLs pro Monat",
+            "textLimit": "10 Text-Freigaben",
+            "basicAnalytics": "Einfache Analysen",
+            "qrCodes": "QR-Code-Generierung",
+            "customSlugs": "Benutzerdefinierte Slugs",
+            "passwordProtection": "Passwortschutz",
+            "linkExpiration": "Link-Ablauf",
+            "apiAccess": "API-Zugriff",
+            "prioritySupport": "Priorisierter Support"
+          }
+        },
+        "registered": {
+          "name": "Registriert",
+          "price": "Kostenlos",
+          "description": "Für regelmäßige Nutzer, die mehr brauchen",
+          "cta": "Kostenlos registrieren",
+          "features": {
+            "urlLimit": "20 URLs pro Monat",
+            "textLimit": "20 Text-Freigaben",
+            "fullAnalytics": "Vollständige Analysen",
+            "qrCodes": "QR-Code-Generierung",
+            "customSlugs": "Benutzerdefinierte Slugs",
+            "passwordProtection": "Passwortschutz",
+            "linkExpiration": "Link-Ablauf",
+            "apiAccess": "Ratenbegrenzter API",
+            "prioritySupport": "Priorisierter Support"
+          }
+        },
+        "premium": {
+          "name": "Premium",
+          "price": "9,99 €/Monat",
+          "description": "Unbegrenzter Zugriff für Power-User",
+          "cta": "Kostenlose Testversion starten",
+          "features": {
+            "unlimitedUrls": "Unbegrenzte URLs",
+            "unlimitedTexts": "Unbegrenzte Text-Freigaben",
+            "advancedAnalytics": "Erweiterte Analysen + Export",
+            "customQrCodes": "Benutzerdefinierte QR-Codes",
+            "customSlugs": "Benutzerdefinierte Slugs",
+            "passwordProtection": "Passwortschutz",
+            "linkExpiration": "Link-Ablauf",
+            "fullApiAccess": "Vollständiger API-Zugriff",
+            "prioritySupport": "Priorisierter Support"
+          }
+        }
+      },
+      "chat": {
+        "title": "Hast du ",
+        "titleEmphasis": "Fragen?",
+        "description": "Brauchst du Hilfe bei der Auswahl eines Plans? Unser Team ist für dich da.",
+        "viewFaqs": "FAQs ansehen",
+        "contactSales": "Vertrieb kontaktieren"
+      }
+    },
     "notFound": {
       "badge": "404 Fehler",
       "title": "Seite nicht gefunden",
@@ -1195,7 +1266,15 @@
       },
       "links": "Links",
       "analysis": "Analysen",
-      "realtime": "Live"
+      "realtime": "Live",
+      "usage": {
+        "urlsUsed": "URLs verwendet",
+        "textsUsed": "Text-Freigaben verwendet",
+        "unlimited": "Unbegrenzt",
+        "of": "von",
+        "remaining": "Verbleibend",
+        "upgradeForMore": "Upgrade auf Premium für unbegrenzte Nutzung"
+      }
     }
   }
 }

@@ -186,7 +186,7 @@ export default function ViewTextSharePage() {
                     </div>
                 ) : (
                     <div className="rounded-lg border bg-card p-8 text-center">
-                        <h2 className="text-xl font-semibold mb-2">Error</h2>
+                        <h2 className="text-xl font-semibold mb-2">{t('error')}</h2>
                         <p className="text-muted-foreground">{error}</p>
                     </div>
                 )}
@@ -282,7 +282,7 @@ export default function ViewTextSharePage() {
 
                     {/* Format & Language (disabled) */}
                     <div className="flex items-center justify-between gap-4 pt-2 border-t">
-                        <Label className="text-sm font-semibold">Format</Label>
+                        <Label className="text-sm font-semibold">{t('formatLabel')}</Label>
                         <FormatSelector
                             value={data.format}
                             onChange={() => {}}
@@ -293,7 +293,7 @@ export default function ViewTextSharePage() {
                     {data.format === 'code' && data.syntaxLanguage && (
                         <div className="flex items-center justify-between gap-4 pt-2 border-t">
                             <Label className="text-sm font-semibold">
-                                Language
+                                {t('languageLabel')}
                             </Label>
                             <select
                                 value={data.syntaxLanguage}
@@ -312,13 +312,13 @@ export default function ViewTextSharePage() {
                 <div className="mt-12 flex items-center justify-center gap-8 text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
                         <FileText className="w-4 h-4" />
-                        <span>{data.viewCount || 0} views</span>
+                        <span>{t('viewsCount', { count: data.viewCount || 0 })}</span>
                     </div>
                     {data.expiresAt && (
                         <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
                             <span>
-                                Expires:{' '}
+                                {t('expiresLabel')}{' '}
                                 {new Date(data.expiresAt).toLocaleDateString()}
                             </span>
                         </div>

@@ -132,6 +132,9 @@ export const ShortenUrlSchema = z
                     message: MESSAGES.URL_CREATION.OWN_DOMAIN_ERROR,
                 }
             ),
+        customSlug: z.string().optional(),
+        password: z.string().min(8).optional(),
+        expiresAt: z.string().datetime().optional(),
     })
     .strict();
 

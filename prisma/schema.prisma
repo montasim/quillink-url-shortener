@@ -14,6 +14,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Subscription tiers
+enum SubscriptionTier {
+  GUEST
+  FREE
+  PREMIUM
+}
+
 model ClickLog {
   id String @id @default(cuid()) @map("_id")
 
@@ -40,8 +47,12 @@ model ShortUrl {
   userId  String? // null = guest
   user    User?   @relation(fields: [userId], references: [id])
 
-  createdAt DateTime  @default(now())
-  expiresAt DateTime?
+  // Premium features
+  passwordHash String?  // Password protection (Premium)
+  expiresAt    DateTime? // Link expiration (Premium)
+  customSlug   String?  // Custom slug (All tiers) - uniqueness handled in app code
+
+  createdAt DateTime @default(now())
 }
 
 model User {
@@ -52,11 +63,18 @@ model User {
   email        String  @unique
   password     String?
   provider     String? // e.g., 'google', 'credentials'
-  subscription Boolean @default(false)
+
+  // Subscription management
+  subscriptionTier    SubscriptionTier @default(FREE)
+  subscriptionActive  Boolean          @default(false)
+  subscriptionStartedAt DateTime?
+  subscriptionExpiresAt DateTime?
+  stripeCustomerId  String? // Stripe customer ID for payment processing
 
   shortUrls ShortUrl[]
   token     Token[]
   textShares TextShare[]
+  usage     Usage[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime?
@@ -89,7 +107,7 @@ model TextShare {
   viewCount      Int      @default(0)
 
   isPublic       Boolean  @default(true)
-  customSlug     String?  @unique // Optional user-defined slug
+  customSlug     String?  // Optional user-defined slug - uniqueness handled in app code
 
   guestId        String?
   userId         String?
@@ -113,4 +131,30 @@ model TextShareViewLog {
   userAgent   String?
 
   accessedAt  DateTime @default(now())
+}
+
+// Usage tracking for rate limiting and feature access
+model Usage {
+  id String @id @default(cuid()) @map("_id")
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Feature usage tracking
+  urlsCreated       Int @default(0)
+  textSharesCreated Int @default(0)
+  apiCalls          Int @default(0)
+  qrCodesGenerated  Int @default(0)
+
+  // Rate limiting
+  lastApiCall       DateTime?
+  lastUrlCreation   DateTime?
+  lastTextShare     DateTime?
+
+  // Reset period
+  periodStart       DateTime @default(now())
+  periodEnd         DateTime? // null = rolling window
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @default(now())
 }

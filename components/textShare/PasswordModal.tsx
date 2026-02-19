@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,6 +19,7 @@ export default function PasswordModal({
     isLoading,
     error,
 }: PasswordModalProps) {
+    const t = useTranslations('dashboard.texts');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -32,11 +34,11 @@ export default function PasswordModal({
             <div className="bg-card rounded-lg shadow-lg max-w-md w-full p-6">
                 <div className="flex items-center gap-3 mb-4">
                     <Lock className="h-6 w-6 text-muted-foreground" />
-                    <h2 className="text-lg font-semibold">Password Required</h2>
+                    <h2 className="text-lg font-semibold">{t('passwordRequired')}</h2>
                 </div>
 
                 <p className="text-muted-foreground mb-4">
-                    This content is password protected. Enter the password to view.
+                    {t('passwordProtected')}
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -44,7 +46,7 @@ export default function PasswordModal({
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter password"
+                        placeholder={t('enterPassword')}
                         disabled={isLoading}
                         className="mb-4"
                         autoFocus
@@ -63,7 +65,7 @@ export default function PasswordModal({
                                 disabled={isLoading}
                                 className="flex-1"
                             >
-                                Cancel
+                                {t('cancel')}
                             </Button>
                         )}
                         <Button
@@ -71,7 +73,7 @@ export default function PasswordModal({
                             disabled={isLoading || !password.trim()}
                             className="flex-1"
                         >
-                            {isLoading ? 'Verifying...' : 'View Content'}
+                            {isLoading ? t('verifying') : t('viewContent')}
                         </Button>
                     </div>
                 </form>

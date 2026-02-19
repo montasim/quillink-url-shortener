@@ -37,18 +37,22 @@
       "description": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقًا.",
       "tryAgain": "حاول مرة أخرى",
       "goHome": "الذهاب إلى الصفحة الرئيسية"
-    }
+    },
+    "remainingUsage": "المتبقي"
   },
   "layout": {
     "navigation": {
       "home": "الرئيسية",
       "dashboard": "لوحة التحكم",
+      "dashboardLinks": "إدارة الروابط",
+      "dashboardTexts": "مشاركات النصوص",
       "login": "تسجيل الدخول",
       "signup": "إنشاء حساب",
       "logout": "تسجيل الخروج",
       "contactUs": "تواصل معنا",
       "terms": "شروط الخدمة",
       "privacy": "سياسة الخصوصية",
+      "pricing": "الأسعار",
       "textShares": "مشارك النصوص",
       "urlShortner": "مختصر الروابط",
       "qrCode": "منشئ رموز QR"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "خطط الأسعار",
+      "title": "اختر",
+      "titleEmphasis": "خطتك المثالية",
+      "description": "ابدأ مجانًا وقم بالترقية عند النمو. تتضمن جميع الخطط الميزات الأساسية بدون رسوم مخفية.",
+      "mostPopular": "الأكثر شعبية",
+      "tiers": {
+        "guest": {
+          "name": "زائر",
+          "price": "مجاناً",
+          "description": "مثالي لتجربة Shrnkly",
+          "cta": "ابدأ الآن",
+          "features": {
+            "urlLimit": "10 روابط شهرياً",
+            "textLimit": "10 مشاركات نصية",
+            "basicAnalytics": "تحليلات أساسية",
+            "qrCodes": "إنشاء رموز QR",
+            "customSlugs": "روابط مخصصة",
+            "passwordProtection": "حماية بكلمة مرور",
+            "linkExpiration": "انتهاء صلاحية الرابط",
+            "apiAccess": "الوصول إلى API",
+            "prioritySupport": "دعم ذو أولوية"
+          }
+        },
+        "registered": {
+          "name": "مسجل",
+          "price": "مجاناً",
+          "description": "للمستخدمين المنتظمين الذين يحتاجون المزيد",
+          "cta": "سجل مجاناً",
+          "features": {
+            "urlLimit": "20 رابط شهرياً",
+            "textLimit": "20 مشاركة نصية",
+            "fullAnalytics": "تحليلات كاملة",
+            "qrCodes": "إنشاء رموز QR",
+            "customSlugs": "روابط مخصصة",
+            "passwordProtection": "حماية بكلمة مرور",
+            "linkExpiration": "انتهاء صلاحية الرابط",
+            "apiAccess": "API محدود المعدل",
+            "prioritySupport": "دعم ذو أولوية"
+          }
+        },
+        "premium": {
+          "name": "بريميوم",
+          "price": "$0.99/شهر",
+          "description": "وصول غير محدود للمستخدمين المحترفين",
+          "cta": "ابدأ التجربة المجانية",
+          "features": {
+            "unlimitedUrls": "روابط غير محدودة",
+            "unlimitedTexts": "مشاركات نصية غير محدودة",
+            "advancedAnalytics": "تحليلات متقدمة + تصدير",
+            "customQrCodes": "رموز QR مخصصة",
+            "customSlugs": "روابط مخصصة",
+            "passwordProtection": "حماية بكلمة مرور",
+            "linkExpiration": "انتهاء صلاحية الرابط",
+            "fullApiAccess": "وصول كامل إلى API",
+            "prioritySupport": "دعم ذو أولوية"
+          }
+        }
+      },
+      "chat": {
+        "title": "هل لديك ",
+        "titleEmphasis": "أسئلة؟",
+        "description": "تحتاج مساعدة في اختيار الخطة؟ فريقنا هنا للمساعدة.",
+        "viewFaqs": "عرض الأسئلة الشائعة",
+        "contactSales": "تواصل مع المبيعات"
+      }
+    },
     "notFound": {
       "badge": "خطأ 404",
       "title": "الصفحة غير موجودة",
@@ -1195,7 +1266,15 @@
       },
       "links": "روابط",
       "analysis": "التحليلات",
-      "realtime": "مباشر"
+      "realtime": "مباشر",
+      "usage": {
+        "urlsUsed": "الروابط المستخدمة",
+        "textsUsed": "المشاركات النصية المستخدمة",
+        "unlimited": "غير محدود",
+        "of": "من",
+        "remaining": "المتبقي",
+        "upgradeForMore": "قم بالترقية إلى بريميوم للحصول على استخدام غير محدود"
+      }
     }
   }
 }
