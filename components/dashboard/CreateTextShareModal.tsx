@@ -321,10 +321,10 @@ const CreateTextShareModal = ({ onRefresh, triggerLabel, isDisabled = false, dis
                                             </FormControl>
                                             <FormMessage />
                                             {slugAvailability === 'available' && (
-                                                <p className="text-xs text-green-600 mt-1">✓ This custom link is available</p>
+                                                <p className="text-xs text-green-600 mt-1">{t('slugAvailable')}</p>
                                             )}
                                             {slugAvailability === 'taken' && (
-                                                <p className="text-xs text-red-600 mt-1">✗ This custom link is already taken</p>
+                                                <p className="text-xs text-red-600 mt-1">{t('slugTakenMessage')}</p>
                                             )}
                                         </FormItem>
                                     )}

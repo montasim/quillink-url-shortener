@@ -137,8 +137,8 @@ export default function DashboardPage() {
                         </h2>
                         <div className="flex-1 bg-muted/30 flex items-center justify-center rounded-[24px] border border-dashed border-border/50">
                             <div className="text-center p-8">
-                                <p className="text-muted-foreground font-medium">Map visualization is coming soon.</p>
-                                <p className="text-xs text-muted-foreground/60 mt-2">Geographic data is being collected.</p>
+                                <p className="text-muted-foreground font-medium">{t('mapComingSoon')}</p>
+                                <p className="text-xs text-muted-foreground/60 mt-2">{t('mapCollectingData')}</p>
                             </div>
                         </div>
                     </CardContent>

@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { useTranslations } from 'next-intl';
 import {
     LineChart,
     Line,
@@ -10,8 +11,10 @@ import {
 import { IClickLog } from '@/types/types';
 
 const RenderClickChart = (logs?: IClickLog[]) => {
+    const t = useTranslations('dashboard.common');
+
     if (!Array.isArray(logs) || logs.length === 0) {
-        return <p className="text-muted text-sm">No click data available.</p>;
+        return <p className="text-muted text-sm">{t('noClickData')}</p>;
     }
 
     const grouped = logs.reduce((acc: Record<string, number>, log) => {

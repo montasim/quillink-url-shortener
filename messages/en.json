@@ -1087,7 +1087,10 @@
       "mapNoData": "No geographic data available",
       "noData": "No data",
       "noMatches": "No matches found",
-      "error": "Error"
+      "error": "Error",
+      "used": "used",
+      "unlimitedUsage": "Enjoy unlimited usage!",
+      "noClickData": "No click data available."
     },
     "urls": {
       "dashboardTitle": "Your Links Dashboard",
@@ -1205,6 +1208,8 @@
       "links": "Links",
       "analysis": "Analytics",
       "realtime": "Live",
+      "mapComingSoon": "Map visualization is coming soon.",
+      "mapCollectingData": "Geographic data is being collected.",
       "messages": {
         "creation": {
           "validationError": "Please check the URL you entered.",
@@ -1328,6 +1333,10 @@
       "slugTaken": "This custom link is already taken. Please choose another or remove it.",
       "slugTakenMessage": "✗ This custom link is already taken",
       "copyContentTitle": "Copy content",
+      "formatLabel": "Format",
+      "languageLabel": "Language",
+      "viewsCount": "{count} views",
+      "expiresLabel": "Expires:",
       "shareLinkTitle": "Share link",
       "qrCodeTitle": "QR Code",
       "downloadTitle": "Download",

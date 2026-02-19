@@ -203,7 +203,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                         }}
                     >
                         <ExternalLink className="w-3.5 h-3.5" />
-                        <span className="text-xs font-medium">View</span>
+                        <span className="text-xs font-medium">{t('viewShare')}</span>
                     </Button>
 
                     <Button
@@ -217,7 +217,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                     >
                         <QrCode className="w-3.5 h-3.5" />
                         <span className="text-xs font-medium">
-                            {t('qrCode') || 'QR Code'}
+                            {t('qrCode')}
                         </span>
                     </Button>
 
@@ -236,7 +236,7 @@ const TextShareCard = ({ share, onRefresh }: TextShareCardProps) => {
                     >
                         <Trash2 className="w-3.5 h-3.5" />
                         <span className="text-xs font-medium">
-                            {isDeleting ? 'Deleting...' : 'Delete'}
+                            {isDeleting ? t('deleting') : t('delete')}
                         </span>
                     </Button>
                 </div>

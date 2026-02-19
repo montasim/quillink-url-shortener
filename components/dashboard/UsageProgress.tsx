@@ -54,7 +54,7 @@ export const UsageProgress: React.FC<UsageProgressProps> = ({
                         )}
                     </div>
                     {isUnlimited ? (
-                        <p className="text-xs text-green-500">Enjoy unlimited usage!</p>
+                        <p className="text-xs text-green-500">{t('unlimitedUsage')}</p>
                     ) : (
                         <>
                             {remaining <= 10 && remaining > 0 && (

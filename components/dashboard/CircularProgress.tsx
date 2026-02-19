@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { AlertCircle, CheckCircle, TrendingUp } from 'lucide-react';
 
 interface CircularProgressProps {
@@ -18,6 +19,8 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
     size = 'md',
     showLabel = true,
 }) => {
+    const t = useTranslations('dashboard.common');
+
     // Handle unlimited (-1)
     const isUnlimited = limit === -1;
     const percentage = isUnlimited ? 0 : Math.min((current / limit) * 100, 100);
@@ -89,7 +92,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
                         {isUnlimited ? (
                             <>
                                 <span className={`${config.text} font-bold text-green-500`}>{current}</span>
-                                <div className="text-xs text-muted-foreground leading-none mt-0.5">used</div>
+                                <div className="text-xs text-muted-foreground leading-none mt-0.5">{t('used')}</div>
                             </>
                         ) : (
                             <>
