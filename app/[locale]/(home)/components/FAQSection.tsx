@@ -19,16 +19,18 @@ const FAQSection = ({ translationKey = 'urls.faq' }: FAQSectionProps) => {
     // Support both nested (urls.faq) and flat (faq) structures
     const t = useTranslations(`home.${translationKey}`);
 
-    // Different FAQ keys for URL shortener vs text sharing vs QR generator
-    // Support both old and new nested translation key structures
+    // Different FAQ keys for URL shortener vs text sharing vs QR generator vs pricing
     const isTextShareFaq = translationKey === 'textShareFaq' || translationKey === 'texts.faq';
     const isQrFaq = translationKey === 'qrFaq' || translationKey === 'qr.faq';
+    const isPricingFaq = translationKey === 'pricing.faq';
     const isUrlsFaq = translationKey === 'urls.faq';
 
     const faqKeys = isTextShareFaq
         ? ['whatIs', 'howWork', 'isFree', 'passwordProtect', 'expiration', 'howLong', 'limit', 'secure']
         : isQrFaq
         ? ['whatIs', 'howWork', 'isFree', 'safe', 'expire', 'scan', 'formats', 'errorCorrection']
+        : isPricingFaq
+        ? ['whatIsFree', 'upgrade', 'paymentMethods', 'refund', 'limits', 'premiumFeatures', 'annualDiscount', 'cancel']
         : isUrlsFaq
         ? ['whatIs', 'howWork', 'isFree', 'canTrack', 'customDomain', 'howLong', 'limit', 'safe']
         : ['whatIs', 'howWork', 'isFree', 'canTrack', 'customDomain', 'howLong', 'limit', 'safe'];

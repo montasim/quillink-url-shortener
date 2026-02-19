@@ -884,6 +884,56 @@
         "description": "Need help choosing a plan? Our team is here to help.",
         "viewFaqs": "View FAQs",
         "contactSales": "Contact Sales"
+      },
+      "faq": {
+        "badge": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Quick answers to common questions about our pricing and plans.",
+        "questions": {
+          "whatIsFree": {
+            "question": "What's included in the free plan?",
+            "answer": "Our free plan includes up to 20 URLs per month, 20 text shares, full analytics, QR code generation, custom slugs, and rate-limited API access. Perfect for regular users!"
+          },
+          "upgrade": {
+            "question": "Can I upgrade or downgrade anytime?",
+            "answer": "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges or credits."
+          },
+          "paymentMethods": {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans."
+          },
+          "refund": {
+            "question": "Is there a refund policy?",
+            "answer": "Yes! We offer a 14-day money-back guarantee. If you're not satisfied with Premium, contact us within 14 days for a full refund."
+          },
+          "limits": {
+            "question": "What happens if I exceed my plan limits?",
+            "answer": "If you exceed your monthly URL or text share limits, you'll need to wait until next month or upgrade to Premium for unlimited usage."
+          },
+          "premiumFeatures": {
+            "question": "What makes Premium worth it?",
+            "answer": "Premium gives you unlimited URLs and text shares, advanced analytics with export, custom QR codes, password protection, link expiration, full API access, and priority support."
+          },
+          "annualDiscount": {
+            "question": "Do you offer annual plans?",
+            "answer": "Yes! Save 20% with our annual Premium plan. That's 2 months free compared to monthly billing."
+          },
+          "cancel": {
+            "question": "How do I cancel my subscription?",
+            "answer": "You can cancel anytime from your account settings. Your Premium features will remain active until the end of your billing period."
+          }
+        }
+      },
+      "cta": {
+        "badge": "Get Started — It's Free",
+        "headingPrefix": "Ready to ",
+        "headingSuffix": " your links?",
+        "headingEmphasis": "level up",
+        "subheading": "Join thousands of marketers, creators, developers and businesses who trust Shrnkly every day.",
+        "startButton": "Start for Free",
+        "contactButton": "Contact Sales",
+        "getInTouch": "Get in Touch",
+        "emailSupport": "Email Support"
       }
     },
     "notFound": {
@@ -1516,6 +1566,10 @@
     "editUrl": {
       "title": "Edit URL – Shrnkly",
       "description": "Edit your shortened URL."
+    },
+    "redirect": {
+      "title": "Redirecting – Shrnkly",
+      "description": "Redirecting to your destination URL..."
     }
   }
 }

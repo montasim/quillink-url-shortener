@@ -6,11 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Check, X, Star } from 'lucide-react';
 import Link from 'next/link';
-import SimpleNavbar from '@/components/navbar/simple-navbar';
-import SimpleFooter from '@/components/footer/simple-footer';
 import CTASection from '../components/CTASection';
+import FAQSection from '../components/FAQSection';
 import { MessageSquare } from 'lucide-react';
-import configuration from '@/configuration/configuration';
 
 const PricingPage = () => {
     const t = useTranslations('home.pricing');
@@ -161,19 +159,15 @@ const PricingPage = () => {
                     </div>
                 </section>
 
-                {/* FAQ CTA */}
-                <section className="py-16 px-6">
-                    <CTASection
-                        className="mb-0"
-                        icon={MessageSquare}
-                        iconRotation
-                        title={t('chat.title')}
-                        titleEmphasis={t('chat.titleEmphasis')}
-                        description={t('chat.description')}
-                        primaryButton={{ text: t('chat.viewFaqs'), href: '/#faq' }}
-                        secondaryButton={{ text: t('chat.contactSales'), href: '/contact' }}
-                    />
-                </section>
+                {/* FAQ Section */}
+                <FAQSection translationKey="pricing.faq" />
+
+                {/* CTA Section */}
+                <CTASection
+                    translationKey="pricing.cta"
+                    icon={MessageSquare}
+                    iconRotation
+                />
             </main>
         </div>
     );

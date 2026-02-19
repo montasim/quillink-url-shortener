@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const projectName = configuration.app.name;
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shrnkly.com';
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'support@shrnkly.com';
 
 export const metadata: Metadata = {
@@ -41,6 +41,12 @@ export const metadata: Metadata = {
     ],
     authors: [{ name: projectName }],
     creator: projectName,
+    publisher: projectName,
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
     openGraph: {
         type: 'website',
         locale: 'en_US',
@@ -48,11 +54,20 @@ export const metadata: Metadata = {
         title: projectName,
         description: 'Free URL shortener with analytics, secure text sharing, and custom QR codes.',
         siteName: projectName,
+        images: [
+            {
+                url: `${baseUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: `${projectName} - Smart URL Shortener`,
+            },
+        ],
     },
     twitter: {
         card: 'summary_large_image',
         title: projectName,
         description: 'Free URL shortener with analytics, secure text sharing, and custom QR codes.',
+        images: [`${baseUrl}/twitter-image.png`],
     },
     robots: {
         index: true,
@@ -65,10 +80,35 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
+    alternates: {
+        canonical: baseUrl,
+        languages: {
+            'en-US': `${baseUrl}/en`,
+            'es-ES': `${baseUrl}/es`,
+            'fr-FR': `${baseUrl}/fr`,
+            'de-DE': `${baseUrl}/de`,
+            'ar-SA': `${baseUrl}/ar`,
+            'zh-CN': `${baseUrl}/zh`,
+            'hi-IN': `${baseUrl}/hi`,
+            'ur-PK': `${baseUrl}/ur`,
+            'bn-BD': `${baseUrl}/bn`,
+        },
+    },
     verification: {
         other: {
             'contact': contactEmail,
         },
+    },
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: 'default',
+        title: projectName,
+    },
+    manifest: `${baseUrl}/manifest.json`,
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon-16x16.png',
+        apple: '/apple-touch-icon.png',
     },
 };
 
@@ -78,7 +118,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
             >
