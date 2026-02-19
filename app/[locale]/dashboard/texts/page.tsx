@@ -17,6 +17,7 @@ import Pagination from '@/components/Pagination';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
 import UsageProgress from '@/components/dashboard/UsageProgress';
+import UsageLimitPrompt from '@/components/dashboard/UsageLimitPrompt';
 import useUsageStats from '@/hooks/useUsageStats';
 import { useAuth } from '@/context/AuthContext';
 
@@ -284,51 +285,12 @@ export default function DashboardTextsPage() {
 
             {/* Upgrade/Login prompt when limit reached */}
             {!usageLoading && usage && usage.limit !== -1 && usage.remaining <= 0 && (
-                <div className="mb-6 p-6 rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/5 to-orange-500/5">
-                    <div className="flex items-start gap-4">
-                        <div className="p-2 rounded-xl bg-red-500/10">
-                            <AlertCircle className="w-6 h-6 text-red-500" />
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-foreground mb-2">
-                                {t('limitTitle')}
-                            </h3>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                {t('limitMessage', { limit: usage.limit })}
-                                {isAuthenticated ? (
-                                    <> {t('upgradeMessage.upgrade')} </>
-                                ) : (
-                                    <> {t('upgradeMessage.signup')} </>
-                                )}
-                            </p>
-                            <div className="flex flex-wrap gap-3">
-                                {!isAuthenticated ? (
-                                    <>
-                                        <Button
-                                            className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                                            onClick={() => window.location.href = '/signup'}
-                                        >
-                                            {t('signUpFree')}
-                                        </Button>
-                                        <Button
-                                            variant="outline"
-                                            onClick={() => window.location.href = '/login'}
-                                        >
-                                            {t('login')}
-                                        </Button>
-                                    </>
-                                ) : (
-                                    <Button
-                                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                                        onClick={() => window.location.href = '/pricing'}
-                                    >
-                                        {t('upgradeMessage.upgrade')}
-                                    </Button>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <UsageLimitPrompt
+                    variant="limit-reached"
+                    isAuthenticated={isAuthenticated}
+                    t={t}
+                    limit={usage.limit}
+                />
             )}
 
             {/* Low usage warning */}
@@ -343,6 +305,20 @@ export default function DashboardTextsPage() {
                             {usage.remaining} {t('remaining')} {usageT('upgradeForMore')}
                         </p>
                     </div>
+                )}
+
+            {/* Upgrade/Login prompt when only 2 text shares remaining */}
+            {!usageLoading &&
+                usage &&
+                usage.limit !== -1 &&
+                usage.remaining > 0 &&
+                usage.remaining <= 2 && (
+                    <UsageLimitPrompt
+                        variant="low-limit"
+                        isAuthenticated={isAuthenticated}
+                        t={t}
+                        remaining={usage.remaining}
+                    />
                 )}
 
             <TabSection

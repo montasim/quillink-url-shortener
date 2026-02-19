@@ -1183,6 +1183,12 @@
       "signUpFree": "Sign Up Free",
       "login": "Log In",
       "remaining": "URLs remaining.",
+      "lowLimitTitle": "Running Low on URLs",
+      "lowLimitMessage": "You only have {remaining} URLs remaining.",
+      "lowLimitPrompt": {
+        "signup": "Sign up for a free account to get more URLs!",
+        "upgrade": "Upgrade to Premium for unlimited URLs!"
+      },
       "noGeoData": "No geographic data available",
       "placeholderUrl": "https://example.com/very-long-url",
       "referrers": {
