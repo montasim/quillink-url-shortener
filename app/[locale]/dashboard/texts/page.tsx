@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { FileText, Search, SlidersHorizontal, TrendingUp, Activity } from 'lucide-react';
+import { FileText, Search, SlidersHorizontal, TrendingUp, Activity, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -17,6 +16,8 @@ import ComingSoonFeatures from '@/components/dashboard/ComingSoonFeatures';
 import Pagination from '@/components/Pagination';
 import API_ENDPOINT from '@/constants/apiEndPoint';
 import { getData } from '@/lib/axios';
+import UsageProgress from '@/components/dashboard/UsageProgress';
+import useUsageStats from '@/hooks/useUsageStats';
 
 interface TextViewLog {
     id: string;
@@ -43,7 +44,7 @@ interface TextShare {
 
 export default function DashboardTextsPage() {
     const t = useTranslations('dashboard.texts');
-    const router = useRouter();
+    const usageT = useTranslations('dashboard.texts.usage');
 
     const [shares, setShares] = useState<TextShare[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +52,15 @@ export default function DashboardTextsPage() {
     const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'views'>('newest');
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 9;
+
+    // Use reusable usage stats hook
+    const { usage, usageLoading, fetchUsageStats } = useUsageStats('textShares');
+
+    // Combined refresh function for shares and usage
+    const handleRefresh = useCallback(() => {
+        fetchShares();
+        fetchUsageStats();
+    }, [fetchUsageStats]);
 
     const fetchShares = async () => {
         setIsLoading(true);
@@ -95,8 +105,8 @@ export default function DashboardTextsPage() {
     };
 
     useEffect(() => {
-        fetchShares();
-    }, []);
+        handleRefresh();
+    }, [handleRefresh]);
 
     // Filter and sort shares
     const filteredShares = useMemo(() => {
@@ -114,7 +124,7 @@ export default function DashboardTextsPage() {
             if (sortBy === 'newest') {
                 return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
             } else if (sortBy === 'oldest') {
-                return new Date(a.createdAt || 0).getTime() - new Date(b.createdAt || 0).getTime();
+                return new Date(a.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
             } else if (sortBy === 'views') {
                 return (b.viewCount || 0) - (a.viewCount || 0);
             }
@@ -170,7 +180,11 @@ export default function DashboardTextsPage() {
                                     {sortBy === 'newest' ? 'Newest' : sortBy === 'oldest' ? 'Oldest' : 'Most Views'}
                                 </span>
                             </Button>
-                            <CreateTextShareModal onRefresh={fetchShares} />
+                            <CreateTextShareModal
+                                onRefresh={handleRefresh}
+                                isDisabled={!!(usage && usage.limit !== -1 && usage.remaining <= 0)}
+                                disabledReason="Text share creation limit reached"
+                            />
                         </div>
                     </div>
 
@@ -192,7 +206,11 @@ export default function DashboardTextsPage() {
                                         }
                                     </p>
                                     {!searchQuery && (
-                                        <CreateTextShareModal onRefresh={fetchShares} />
+                                        <CreateTextShareModal
+                                onRefresh={handleRefresh}
+                                isDisabled={!!(usage && usage.limit !== -1 && usage.remaining <= 0)}
+                                disabledReason="Text share creation limit reached"
+                            />
                                     )}
                                 </div>
                             </Card>
@@ -200,7 +218,7 @@ export default function DashboardTextsPage() {
                             <>
                                 <TextShareGrid
                                     shares={paginatedShares}
-                                    onRefresh={fetchShares}
+                                    onRefresh={handleRefresh}
                                 />
                                 <Pagination
                                     currentPage={currentPage}
@@ -238,10 +256,81 @@ export default function DashboardTextsPage() {
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2">{t('title')}</h1>
-                <p className="text-muted-foreground">{t('subtitle')}</p>
+            {/* Header with Usage Stats - Side by Side */}
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                    <div className="flex items-center gap-2 mb-2">
+                        <FileText className="w-5 h-5 text-primary" />
+                        <h1 className="text-2xl font-semibold">
+                            {t('title')}
+                        </h1>
+                    </div>
+                    <p className="text-muted-foreground">{t('subtitle')}</p>
+                </div>
+
+                {/* Usage Stats Card - Circular */}
+                {!usageLoading && usage && (
+                    <UsageProgress
+                        current={usage.used}
+                        limit={usage.limit}
+                        label={usageT('textsUsed')}
+                        variant="circular"
+                        size="md"
+                    />
+                )}
             </div>
+
+            {/* Upgrade/Login prompt when limit reached */}
+            {!usageLoading && usage && usage.limit !== -1 && usage.remaining <= 0 && (
+                <div className="mb-6 p-6 rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/5 to-orange-500/5">
+                    <div className="flex items-start gap-4">
+                        <div className="p-2 rounded-xl bg-red-500/10">
+                            <AlertCircle className="w-6 h-6 text-red-500" />
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-foreground mb-2">
+                                Text Share Limit Reached
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-4">
+                                You've used all {usage.limit} text shares available for guest users.
+                                {usage.limit === 10 ? (
+                                    <> Sign up for a free account to create more text shares! </>
+                                ) : (
+                                    <> Upgrade to Premium for unlimited text shares! </>
+                                )}
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button
+                                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                    onClick={() => window.location.href = '/signup'}
+                                >
+                                    Sign Up Free
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    onClick={() => window.location.href = '/login'}
+                                >
+                                    Log In
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Low usage warning */}
+            {!usageLoading &&
+                usage &&
+                usage.limit !== -1 &&
+                usage.remaining > 0 &&
+                usage.remaining <= 5 && (
+                    <div className="mb-6 p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
+                        <p className="text-sm text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
+                            <AlertCircle className="w-4 h-4" />
+                            {usage.remaining} text shares remaining. {usageT('upgradeForMore')}
+                        </p>
+                    </div>
+                )}
 
             <TabSection
                 defaultValue="links"

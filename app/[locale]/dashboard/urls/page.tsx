@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { IShortUrl } from '@/types/types';
 import { fetchUrls } from '@/lib/actions/dashboard';
 import UrlGrid from '@/app/[locale]/dashboard/urls/components/UrlGrid';
 import TabSection from '@/components/TabSection';
-import { Link2, Search, SlidersHorizontal, TrendingUp } from 'lucide-react';
+import { Link2, Search, SlidersHorizontal, TrendingUp, Activity, AlertCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -15,16 +15,28 @@ import AnalysisTab from '@/components/dashboard/AnalysisTab';
 import ComingSoonFeatures from '@/components/dashboard/ComingSoonFeatures';
 import UrlDashboardSkeleton from '@/components/dashboard/UrlDashboardSkeleton';
 import Pagination from '@/components/Pagination';
+import UsageProgress from '@/components/dashboard/UsageProgress';
+import useUsageStats from '@/hooks/useUsageStats';
 
 const UrlDashboard = () => {
     const t = useTranslations('dashboard.urls');
     const urlT = useTranslations('dashboard.urls.messages');
+    const usageT = useTranslations('dashboard.urls.usage');
     const [urls, setUrls] = useState<IShortUrl[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'clicks'>('newest');
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 9;
+
+    // Use reusable usage stats hook
+    const { usage, usageLoading, fetchUsageStats } = useUsageStats('urls');
+
+    // Combined refresh function for URLs and usage
+    const handleRefresh = useCallback(() => {
+        fetchUrls(setUrls, setLoading, urlT);
+        fetchUsageStats();
+    }, [fetchUsageStats, urlT]);
 
     // Filter and sort URLs
     const filteredUrls = useMemo(() => {
@@ -107,7 +119,11 @@ const UrlDashboard = () => {
                                     {sortBy === 'newest' ? t('newest') : sortBy === 'oldest' ? t('oldest') : t('mostClicks')}
                                 </span>
                             </Button>
-                            <CreateLinkModal onSuccess={() => fetchUrls(setUrls, setLoading, urlT)} />
+                            <CreateLinkModal
+                                onSuccess={handleRefresh}
+                                isDisabled={!!(usage && usage.limit !== -1 && usage.remaining <= 0)}
+                                disabledReason="URL creation limit reached"
+                            />
                         </div>
                     </div>
 
@@ -131,7 +147,9 @@ const UrlDashboard = () => {
                                     {!searchQuery && (
                                         <CreateLinkModal
                                             triggerLabel={t('createFirstLinkButton')}
-                                            onSuccess={() => fetchUrls(setUrls, setLoading, urlT)}
+                                            onSuccess={handleRefresh}
+                                            isDisabled={!!(usage && usage.limit !== -1 && usage.remaining <= 0)}
+                                            disabledReason="URL creation limit reached"
                                         />
                                     )}
                                 </div>
@@ -169,8 +187,8 @@ const UrlDashboard = () => {
     ];
 
     useEffect(() => {
-        fetchUrls(setUrls, setLoading, urlT);
-    }, []);
+        handleRefresh();
+    }, [handleRefresh]);
 
     if (loading) {
         return <UrlDashboardSkeleton />;
@@ -178,10 +196,83 @@ const UrlDashboard = () => {
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 xl:px-0 py-8">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2">{t('dashboardTitle')}</h1>
-                <p className="text-muted-foreground">{t('dashboardSubtitle')}</p>
+            {/* Header with Usage Stats - Side by Side */}
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                    <div className="flex items-center gap-2 mb-2">
+                        <Link2 className="w-5 h-5 text-primary" />
+                        <h1 className="text-2xl font-semibold">
+                            {t('dashboardTitle')}
+                        </h1>
+                    </div>
+                    <p className="text-muted-foreground">
+                        {t('dashboardSubtitle')}
+                    </p>
+                </div>
+
+                {/* Usage Stats Card - Circular */}
+                {!usageLoading && usage && (
+                    <UsageProgress
+                        current={usage.used}
+                        limit={usage.limit}
+                        label={usageT('urlsUsed')}
+                        variant="circular"
+                        size="md"
+                    />
+                )}
             </div>
+
+            {/* Upgrade/Login prompt when limit reached */}
+            {!usageLoading && usage && usage.limit !== -1 && usage.remaining <= 0 && (
+                <div className="mb-6 p-6 rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/5 to-orange-500/5">
+                    <div className="flex items-start gap-4">
+                        <div className="p-2 rounded-xl bg-red-500/10">
+                            <AlertCircle className="w-6 h-6 text-red-500" />
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-foreground mb-2">
+                                URL Creation Limit Reached
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-4">
+                                You've used all {usage.limit} URLs available for guest users.
+                                {usage.limit === 10 ? (
+                                    <> Sign up for a free account to create more URLs! </>
+                                ) : (
+                                    <> Upgrade to Premium for unlimited URLs! </>
+                                )}
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button
+                                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                                    onClick={() => window.location.href = '/signup'}
+                                >
+                                    Sign Up Free
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    onClick={() => window.location.href = '/login'}
+                                >
+                                    Log In
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Low usage warning */}
+            {!usageLoading &&
+                usage &&
+                usage.limit !== -1 &&
+                usage.remaining > 0 &&
+                usage.remaining <= 5 && (
+                    <div className="mb-6 p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
+                        <p className="text-sm text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
+                            <AlertCircle className="w-4 h-4" />
+                            {usage.remaining} URLs remaining. {usageT('upgradeForMore')}
+                        </p>
+                    </div>
+                )}
 
             <TabSection
                 defaultValue="links"
@@ -193,7 +284,5 @@ const UrlDashboard = () => {
         </div>
     );
 };
-
-import { Activity } from 'lucide-react';
 
 export default UrlDashboard;

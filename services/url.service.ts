@@ -12,10 +12,27 @@ export const deleteShortUrl = async (filterConditions?: {}) => {
     });
 };
 
-export const createShortUrl = async (data: {}, dataSelection?: {}) => {
+export const createShortUrl = async (data: {
+    originalUrl: string;
+    shortKey: string;
+    expiresAt?: Date | null;
+    passwordHash?: string | null;
+    customSlug?: string | null;
+    guestId?: string | null;
+    userId?: string | null;
+}, dataSelection?: {}) => {
     // Create the short URL record
     return await shortUrlModel.create({
-        data: data,
+        data: {
+            originalUrl: data.originalUrl,
+            shortKey: data.shortKey,
+            clicks: 0,
+            expiresAt: data.expiresAt,
+            passwordHash: data.passwordHash,
+            customSlug: data.customSlug,
+            ...(data.guestId ? { guestId: data.guestId } : {}),
+            ...(data.userId ? { userId: data.userId } : {}),
+        },
         select: dataSelection,
     });
 };

@@ -25,9 +25,11 @@ import { useRouter } from 'next/navigation';
 interface CreateLinkModalProps {
     onSuccess?: () => void;
     triggerLabel?: string;
+    isDisabled?: boolean;
+    disabledReason?: string;
 }
 
-const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
+const CreateLinkModal = ({ onSuccess, triggerLabel, isDisabled = false, disabledReason }: CreateLinkModalProps) => {
     const t = useTranslations('dashboard.urls');
     const urlT = useTranslations('dashboard.urls.messages');
     const [open, setOpen] = useState(false);
@@ -42,6 +44,9 @@ const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
     });
 
     const onSubmit = async (data: z.infer<typeof ShortenUrlSchema>) => {
+        if (isDisabled) {
+            return;
+        }
         await handleCreate(data, setLoading, router, urlT);
         setOpen(false);
         form.reset();
@@ -53,7 +58,10 @@ const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="gap-2 h-11 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
+                <Button
+                    className="gap-2 h-11 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+                    disabled={isDisabled}
+                >
                     <Plus className="w-4 h-4" />
                     <span className="hidden sm:inline">{triggerLabel || t('createLink')}</span>
                 </Button>
@@ -84,7 +92,7 @@ const CreateLinkModal = ({ onSuccess, triggerLabel }: CreateLinkModalProps) => {
                                 {t('cancel')}
                             </Button>
                             <SubmitButton
-                                disabled={!form.formState.isValid || loading}
+                                disabled={!form.formState.isValid || loading || isDisabled}
                                 loading={loading}
                                 label={t('createLink')}
                                 loadingLabel={t('generating')}

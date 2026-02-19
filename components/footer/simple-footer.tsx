@@ -11,6 +11,10 @@ const SimpleFooter = () => {
             href: '/',
         },
         {
+            title: 'Pricing',
+            href: '/pricing',
+        },
+        {
             title: 'Link Shrinker',
             href: '/urls',
         },

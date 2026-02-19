@@ -38,6 +38,10 @@ const Footer = () => {
             title: tNav('contactUs'),
             href: '/contact',
         },
+        {
+            title: tNav('pricing'),
+            href: '/pricing',
+        },
     ];
 
     return (

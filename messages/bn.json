@@ -37,18 +37,22 @@
       "description": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
       "tryAgain": "আবার চেষ্টা করুন",
       "goHome": "হোমপেজে যান"
-    }
+    },
+    "remainingUsage": "অবশিষ্ট"
   },
   "layout": {
     "navigation": {
       "home": "হোম",
       "dashboard": "ড্যাশবোর্ড",
+      "dashboardLinks": "লিংক ব্যবস্থাপনা",
+      "dashboardTexts": "টেক্সট শেয়ার",
       "login": "লগ ইন করুন",
       "signup": "সাইন আপ করুন",
       "logout": "লগ আউট করুন",
       "contactUs": "যোগাযোগ করুন",
       "terms": "সেবার শর্তাবলী",
       "privacy": "গোপনীয়তা নীতি",
+      "pricing": "মূল্য",
       "textShares": "টেক্সট শেয়ারার",
       "urlShortner": "লিংক শ্রিঙ্কার",
       "qrCode": "QR তৈরিকারী"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "মূল্য পরিকল্পনা",
+      "title": "আপনার",
+      "titleEmphasis": "নিখুঁত পরিকল্পনা বেছে নিন",
+      "description": "বিনামূল্যে শুরু করুন এবং বাড়ার সাথে সাথে আপগ্রেড করুন। সমস্ত পরিকল্পনায় কোনো লুকানো ফি ছাড়াই মূল বৈশিষ্ট্য রয়েছে।",
+      "mostPopular": "সবচেয়ে জনপ্রিয়",
+      "tiers": {
+        "guest": {
+          "name": "অতিথি",
+          "price": "বিনামূল্যে",
+          "description": "Shrnkly চেষ্টা করার জন্য নিখুঁত",
+          "cta": "শুরু করুন",
+          "features": {
+            "urlLimit": "মাসে 10টি URL",
+            "textLimit": "10টি টেক্সট শেয়ার",
+            "basicAnalytics": "মৌলিক অ্যানালিটিক্স",
+            "qrCodes": "QR কোড তৈরি",
+            "customSlugs": "কাস্টম স্লাগ",
+            "passwordProtection": "পাসওয়ার্ড সুরক্ষা",
+            "linkExpiration": "লিংক মেয়াদোত্তীর্ণ",
+            "apiAccess": "API অ্যাক্সেস",
+            "prioritySupport": "অগ্রাধিকার সহায়তা"
+          }
+        },
+        "registered": {
+          "name": "নিবন্ধিত",
+          "price": "বিনামূল্যে",
+          "description": "যাদের বেশি প্রয়োজন তাদের জন্য",
+          "cta": "বিনামূল্যে সাইন আপ",
+          "features": {
+            "urlLimit": "মাসে 20টি URL",
+            "textLimit": "20টি টেক্সট শেয়ার",
+            "fullAnalytics": "পূর্ণাঙ্গ অ্যানালিটিক্স",
+            "qrCodes": "QR কোড তৈরি",
+            "customSlugs": "কাস্টম স্লাগ",
+            "passwordProtection": "পাসওয়ার্ড সুরক্ষা",
+            "linkExpiration": "লিংক মেয়াদোত্তীর্ণ",
+            "apiAccess": "রেট-সীমিত API",
+            "prioritySupport": "অগ্রাধিকার সহায়তা"
+          }
+        },
+        "premium": {
+          "name": "প্রিমিয়াম",
+          "price": "$0.99/মাস",
+          "description": "পাওয়ার ব্যবহারকারীদের জন্য অসীম অ্যাক্সেস",
+          "cta": "বিনামূল্যে ট্রায়াল শুরু করুন",
+          "features": {
+            "unlimitedUrls": "অসীম URL",
+            "unlimitedTexts": "অসীম টেক্সট শেয়ার",
+            "advancedAnalytics": "উন্নত অ্যানালিটিক্স + এক্সপোর্ট",
+            "customQrCodes": "কাস্টম QR কোড",
+            "customSlugs": "কাস্টম স্লাগ",
+            "passwordProtection": "পাসওয়ার্ড সুরক্ষা",
+            "linkExpiration": "লিংক মেয়াদোত্তীর্ণ",
+            "fullApiAccess": "পূর্ণ API অ্যাক্সেস",
+            "prioritySupport": "অগ্রাধিকার সহায়তা"
+          }
+        }
+      },
+      "chat": {
+        "title": "আপনার কি ",
+        "titleEmphasis": "প্রশ্ন আছে?",
+        "description": "পরিকল্পনা বেছে নিতে সাহায্য প্রয়োজন? আমাদের দল এখানে সাহায্য করার জন্য আছে।",
+        "viewFaqs": "প্রায়শই জিজ্ঞাসিত প্রশ্ন দেখুন",
+        "contactSales": "বিক্রয় দলের সাথে যোগাযোগ করুন"
+      }
+    },
     "notFound": {
       "badge": "404 ত্রুটি",
       "title": "পেজ পাওয়া যায়নি",
@@ -1195,7 +1266,15 @@
       },
       "links": "লিঙ্ক",
       "analysis": "বিশ্লেষণ",
-      "realtime": "লাইভ"
+      "realtime": "লাইভ",
+      "usage": {
+        "urlsUsed": "ব্যবহৃত URL",
+        "textsUsed": "ব্যবহৃত টেক্সট শেয়ার",
+        "unlimited": "অসীম",
+        "of": "-এর",
+        "remaining": "অবশিষ্ট",
+        "upgradeForMore": "অসীম ব্যবহারের জন্য প্রিমিয়ামে আপগ্রেড করুন"
+      }
     }
   }
 }

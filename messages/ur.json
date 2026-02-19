@@ -37,18 +37,22 @@
       "description": "کوئی غیر متوقع خرابی پیش آگئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
       "tryAgain": "دوبارہ کوشش کریں",
       "goHome": "ہوم پیج پر جائیں"
-    }
+    },
+    "remainingUsage": "باقی"
   },
   "layout": {
     "navigation": {
       "home": "ہوم",
       "dashboard": "ڈیش بورڈ",
+      "dashboardLinks": "لنک مینجمنٹ",
+      "dashboardTexts": "ٹیکسٹ شیئرز",
       "login": "لاگ ان",
       "signup": "سائن اپ",
       "logout": "لاگ آؤٹ",
       "contactUs": "رابطہ کریں",
       "terms": "شرائط و ضوابط",
       "privacy": "پرائیویسی پالیسی",
+      "pricing": "قیمتیں",
       "textShares": "ٹیکسٹ شیئرر",
       "urlShortner": "لنک شرینکر",
       "qrCode": "QR تخلیق کار"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "قیمتی منصوبے",
+      "title": "اپنا",
+      "titleEmphasis": "مکمل منصوبہ منتخب کریں",
+      "description": "مفت شروع کریں اور جیسے جیسے بڑھیں اپ گریڈ کریں۔ تمام منصوبوں میں بنیادی خصوصیات بغیر کسی پوشیدہ فیس کے شامل ہیں۔",
+      "mostPopular": "سب سے مقبول",
+      "tiers": {
+        "guest": {
+          "name": "مہمان",
+          "price": "مفت",
+          "description": "Shrnkly آزمانے کے لیے بہترین",
+          "cta": "شروع کریں",
+          "features": {
+            "urlLimit": "10 URLs فی ماہ",
+            "textLimit": "10 ٹیکسٹ شیئرز",
+            "basicAnalytics": "بنیادی تجزیات",
+            "qrCodes": "QR کوڈ جنریشن",
+            "customSlugs": "کسٹم سلگ",
+            "passwordProtection": "پاس ورڈ تحفظ",
+            "linkExpiration": "لنک میعاد",
+            "apiAccess": "API رسائی",
+            "prioritySupport": "پرائیوریٹی سپورٹ"
+          }
+        },
+        "registered": {
+          "name": "رجسٹرڈ",
+          "price": "مفت",
+          "description": "باقاعدہ صارفین کے لیے جنہیں زیادہ چاہیے",
+          "cta": "مفت سائن اپ",
+          "features": {
+            "urlLimit": "20 URLs فی ماہ",
+            "textLimit": "20 ٹیکسٹ شیئرز",
+            "fullAnalytics": "مکمل تجزیات",
+            "qrCodes": "QR کوڈ جنریشن",
+            "customSlugs": "کسٹم سلگ",
+            "passwordProtection": "پاس ورڈ تحفظ",
+            "linkExpiration": "لنک میعاد",
+            "apiAccess": "ریٹ لمیٹڈ API",
+            "prioritySupport": "پرائیوریٹی سپورٹ"
+          }
+        },
+        "premium": {
+          "name": "پریمیم",
+          "price": "$0.99/ماہانہ",
+          "description": "پاور صارفین کے لیے لامحدود رسائی",
+          "cta": "مفت ٹرائل شروع کریں",
+          "features": {
+            "unlimitedUrls": "لامحدود URLs",
+            "unlimitedTexts": "لامحدود ٹیکسٹ شیئرز",
+            "advancedAnalytics": "جدید تجزیات + ایکسپورٹ",
+            "customQrCodes": "کسٹم QR کوڈز",
+            "customSlugs": "کسٹم سلگ",
+            "passwordProtection": "پاس ورڈ تحفظ",
+            "linkExpiration": "لنک میعاد",
+            "fullApiAccess": "مکمل API رسائی",
+            "prioritySupport": "پرائیوریٹی سپورٹ"
+          }
+        }
+      },
+      "chat": {
+        "title": "کیا آپ کے پاس ",
+        "titleEmphasis": "سوالات ہیں؟",
+        "description": "منصوبہ منتخب کرنے میں مدد چاہیے؟ ہماری ٹیم مدد کے لیے یہاں ہے۔",
+        "viewFaqs": "عمومی سوالات دیکھیں",
+        "contactSales": "سیلز سے رابطہ کریں"
+      }
+    },
     "notFound": {
       "badge": "404 خرابی",
       "title": "صفحہ نہیں ملا",
@@ -1195,7 +1266,15 @@
       },
       "links": "لنکس",
       "analysis": "تجزیات",
-      "realtime": "لائیو"
+      "realtime": "لائیو",
+      "usage": {
+        "urlsUsed": "استعمال شدہ URLs",
+        "textsUsed": "استعمال شدہ ٹیکسٹ شیئرز",
+        "unlimited": "لامحدود",
+        "of": "کا",
+        "remaining": "باقی",
+        "upgradeForMore": "لامحدود استعمال کے لیے پریمیم پر اپ گریڈ کریں"
+      }
     }
   }
 }

@@ -4,6 +4,8 @@ export const urlSelection = {
     clicks: true,
     createdAt: true,
     expiresAt: true,
+    passwordHash: true,
+    customSlug: true,
     clickLogs: {
         select: {
             ipAddress: true,

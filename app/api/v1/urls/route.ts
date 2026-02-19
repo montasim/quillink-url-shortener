@@ -22,9 +22,13 @@ import {
 } from '@/services/url.service';
 import { getUserDetails } from '@/services/user.service';
 import { generateShortKey } from '@/lib/generateShortKey';
+import { getUserSubscription, canCreateUrl } from '@/services/subscription.service';
+import { incrementUrlCreation, checkRateLimit } from '@/services/usage.service';
+import { SubscriptionTier } from '@/lib/generated/prisma';
+import bcrypt from 'bcrypt';
 
 const { AUTHENTICATION, ALL_URLS_LISTING, URL_CREATION } = MESSAGES;
-const { URL_CREATION_LIMIT } = CONSTANTS;
+const { URL_CREATION_LIMIT, URL_FEATURES, RATE_LIMITS } = CONSTANTS;
 
 const handleCreateShortUrl = async (request: NextRequest) => {
     const accessCookie = await getAccessCookie();
@@ -43,7 +47,7 @@ const handleCreateShortUrl = async (request: NextRequest) => {
             schemaValidationResult.error.flatten()
         );
     }
-    const { originalUrl } = schemaValidationResult.data;
+    const { originalUrl, customSlug, password, expiresAt } = schemaValidationResult.data;
 
     // Identify user or guest
     if (accessCookie) {
@@ -73,23 +77,57 @@ const handleCreateShortUrl = async (request: NextRequest) => {
             );
         }
 
-        const userUrls = await getShortUrlList({ userId }, urlSelection);
+        // Get user's subscription and check limits
+        const subscription = await getUserSubscription(userId);
+        const features = URL_FEATURES[subscription.tier];
 
-        if (
-            !user.subscription &&
-            userUrls.length >= URL_CREATION_LIMIT.USER_WITHOUT_SUBSCRIPTION
-        ) {
+        // Check if user can create more URLs
+        const userUrls = await getShortUrlList({ userId }, urlSelection);
+        const { canCreate, remaining } = await canCreateUrl(userId, userUrls.length);
+
+        if (!canCreate) {
+            if (subscription.tier === SubscriptionTier.FREE) {
+                return sendResponse(
+                    httpStatus.FORBIDDEN,
+                    URL_CREATION.NEED_LOGIN
+                );
+            } else {
+                return sendResponse(
+                    httpStatus.FORBIDDEN,
+                    URL_CREATION.NEED_SUBSCRIPTION
+                );
+            }
+        }
+
+        // Check premium features access
+        if (password && !features.passwordProtection) {
             return sendResponse(
                 httpStatus.FORBIDDEN,
-                URL_CREATION.NEED_SUBSCRIPTION
+                'Password protection is only available for Premium users.'
+            );
+        }
+
+        if (expiresAt && !features.linkExpiration) {
+            return sendResponse(
+                httpStatus.FORBIDDEN,
+                'Link expiration is only available for Premium users.'
             );
         }
     } else {
         guestId = await getOrCreateGuestId();
         const guestUrls = await getShortUrlList({ guestId }, urlSelection);
 
-        if (guestUrls.length >= URL_CREATION_LIMIT.GUEST) {
+        const { canCreate } = await canCreateUrl(null, guestUrls.length);
+        if (!canCreate) {
             return sendResponse(httpStatus.FORBIDDEN, URL_CREATION.NEED_LOGIN);
+        }
+
+        // Guests can't use premium features
+        if (password || expiresAt) {
+            return sendResponse(
+                httpStatus.FORBIDDEN,
+                'This feature is only available for registered users.'
+            );
         }
     }
 
@@ -109,19 +147,32 @@ const handleCreateShortUrl = async (request: NextRequest) => {
     }
 
     // Create short URL
-    const shortKey = generateShortKey();
-    const expiresAt = addMonths(new Date(), 6);
+    const shortKey = customSlug || generateShortKey();
+    const urlExpiresAt = expiresAt ? new Date(expiresAt) : (userId ? addMonths(new Date(), 6) : null);
+
+    // Hash password if provided
+    let passwordHash: string | null = null;
+    if (password) {
+        passwordHash = await bcrypt.hash(password, 10);
+    }
 
     const createdShortUrl = await createShortUrl(
         {
             originalUrl,
             shortKey,
-            expiresAt,
+            expiresAt: urlExpiresAt,
+            passwordHash,
+            customSlug,
             ...(guestId ? { guestId } : {}),
             ...(userId ? { userId } : {}),
         },
         urlSelection
     );
+
+    // Increment usage counter
+    if (userId) {
+        await incrementUrlCreation(userId);
+    }
 
     return sendResponse(
         httpStatus.CREATED,

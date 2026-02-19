@@ -1,11 +1,26 @@
 import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from './i18n/config';
+import { rateLimitMiddleware } from './middleware/rate-limit';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default createMiddleware({
+const intlMiddleware = createMiddleware({
     locales,
     defaultLocale,
     localePrefix: 'as-needed',
 });
+
+export default async function middleware(request: NextRequest) {
+    // Apply rate limiting to API routes first
+    if (request.nextUrl.pathname.startsWith('/api/')) {
+        const rateLimitResponse = rateLimitMiddleware(request);
+        if (rateLimitResponse) {
+            return rateLimitResponse;
+        }
+    }
+
+    // Apply i18n middleware
+    return intlMiddleware(request);
+}
 
 export const config = {
     matcher: [
@@ -20,5 +35,8 @@ export const config = {
         // (e.g. `/pathnames` -> `/en/pathnames`)
         // Exclude API routes, _next, _vercel, and static files
         '/((?!api|_next|_vercel|.*\\..*).*)',
+
+        // API routes for rate limiting
+        '/api/:path*',
     ],
 };

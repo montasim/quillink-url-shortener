@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-import { useRouter, usePathname } from '@/i18n/navigation';
+import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
@@ -15,27 +15,13 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { LayoutDashboardIcon, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { getData } from '@/lib/axios';
 
 const Navbar = () => {
     const t = useTranslations('layout.navigation');
     const router = useRouter();
-    const pathname = usePathname();
     const { isAuthenticated, user, loading, refreshAuth } = useAuth();
-
-    // Determine dashboard destination based on current path
-    const getDashboardPath = () => {
-        if (pathname?.includes('/texts')) {
-            return '/dashboard/texts';
-        }
-        if (pathname?.includes('/qr')) {
-            return '/dashboard/qr';
-        }
-        return '/dashboard/urls';
-    };
-
-    const dashboardPath = getDashboardPath();
 
     if (loading) return <Loading />;
 
@@ -83,15 +69,6 @@ const Navbar = () => {
                                     className="w-56 rounded-2xl p-2 border-border/60 shadow-2xl shadow-primary/5 backdrop-blur-xl"
                                 >
                                     <DropdownMenuItem
-                                        onClick={() =>
-                                            router.push(dashboardPath)
-                                        }
-                                        className="cursor-pointer rounded-xl h-11 font-medium"
-                                    >
-                                        <LayoutDashboardIcon className="w-4 h-4 mr-2 text-primary" />
-                                        {t('dashboard')}
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem
                                         onClick={async () => {
                                             await getData(
                                                 '/api/v1/auth/logout'
@@ -108,13 +85,6 @@ const Navbar = () => {
                             </DropdownMenu>
                         ) : (
                             <div className="flex items-center gap-2">
-                                <Button
-                                    variant="ghost"
-                                    className="hidden sm:inline-flex cursor-pointer font-bold text-muted-foreground hover:text-primary transition-colors h-11 rounded-xl"
-                                    onClick={() => router.push(dashboardPath)}
-                                >
-                                    {t('dashboard')}
-                                </Button>
                                 <Button
                                     className="bg-primary hover:bg-primary/95 text-primary-foreground cursor-pointer font-semibold h-11 rounded-xl shadow-xl shadow-primary/20 px-6 active:scale-95 transition-all text-sm"
                                     onClick={() => router.push('/signup')}

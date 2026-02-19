@@ -231,7 +231,7 @@ export async function deleteExpiredTextShares() {
  * Check if a custom slug is available
  */
 export async function isCustomSlugAvailable(customSlug: string) {
-    const existing = await prisma.textShare.findUnique({
+    const existing = await prisma.textShare.findFirst({
         where: { customSlug },
     });
     return !existing;

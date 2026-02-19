@@ -37,18 +37,22 @@
       "description": "发生了意外错误，请稍后再试。",
       "tryAgain": "重试",
       "goHome": "返回首页"
-    }
+    },
+    "remainingUsage": "剩余"
   },
   "layout": {
     "navigation": {
       "home": "首页",
       "dashboard": "控制台",
+      "dashboardLinks": "链接管理",
+      "dashboardTexts": "文本分享",
       "login": "登录",
       "signup": "注册",
       "logout": "退出登录",
       "contactUs": "联系我们",
       "terms": "服务条款",
       "privacy": "隐私政策",
+      "pricing": "定价",
       "textShares": "文本分享器",
       "urlShortner": "链接缩短器",
       "qrCode": "二维码生成器"
@@ -815,6 +819,73 @@
         }
       }
     },
+    "pricing": {
+      "badge": "定价计划",
+      "title": "选择您的",
+      "titleEmphasis": "完美计划",
+      "description": "免费开始，随着需求增长而升级。所有计划都包含核心功能，无隐藏费用。",
+      "mostPopular": "最受欢迎",
+      "tiers": {
+        "guest": {
+          "name": "访客",
+          "price": "免费",
+          "description": "体验 Shrnkly 的理想选择",
+          "cta": "开始使用",
+          "features": {
+            "urlLimit": "每月 10 个 URL",
+            "textLimit": "10 次文本分享",
+            "basicAnalytics": "基础数据分析",
+            "qrCodes": "二维码生成",
+            "customSlugs": "自定义短链",
+            "passwordProtection": "密码保护",
+            "linkExpiration": "链接过期",
+            "apiAccess": "API 访问",
+            "prioritySupport": "优先支持"
+          }
+        },
+        "registered": {
+          "name": "注册用户",
+          "price": "免费",
+          "description": "为需要更多功能的常规用户设计",
+          "cta": "免费注册",
+          "features": {
+            "urlLimit": "每月 20 个 URL",
+            "textLimit": "20 次文本分享",
+            "fullAnalytics": "完整数据分析",
+            "qrCodes": "二维码生成",
+            "customSlugs": "自定义短链",
+            "passwordProtection": "密码保护",
+            "linkExpiration": "链接过期",
+            "apiAccess": "限流 API",
+            "prioritySupport": "优先支持"
+          }
+        },
+        "premium": {
+          "name": "高级版",
+          "price": "$0.99/月",
+          "description": "为高级用户提供无限访问",
+          "cta": "开始免费试用",
+          "features": {
+            "unlimitedUrls": "无限 URL",
+            "unlimitedTexts": "无限文本分享",
+            "advancedAnalytics": "高级数据分析 + 导出",
+            "customQrCodes": "自定义二维码",
+            "customSlugs": "自定义短链",
+            "passwordProtection": "密码保护",
+            "linkExpiration": "链接过期",
+            "fullApiAccess": "完整 API 访问",
+            "prioritySupport": "优先支持"
+          }
+        }
+      },
+      "chat": {
+        "title": "有",
+        "titleEmphasis": "疑问？",
+        "description": "需要帮助选择计划？我们的团队随时为您提供帮助。",
+        "viewFaqs": "查看常见问题",
+        "contactSales": "联系销售"
+      }
+    },
     "notFound": {
       "badge": "404 错误",
       "title": "页面未找到",
@@ -1195,7 +1266,15 @@
       },
       "links": "链接",
       "analysis": "分析",
-      "realtime": "实时"
+      "realtime": "实时",
+      "usage": {
+        "urlsUsed": "已用 URL",
+        "textsUsed": "已用文本分享",
+        "unlimited": "无限",
+        "of": "的",
+        "remaining": "剩余",
+        "upgradeForMore": "升级到高级版以获得无限使用"
+      }
     }
   }
 }
